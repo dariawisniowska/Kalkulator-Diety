@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="KalkulatorDietyDatabase" targetNamespace="http://tempuri.org/KalkulatorDietyDatabase.xsd" xmlns:mstns="http://tempuri.org/KalkulatorDietyDatabase.xsd" xmlns="http://tempuri.org/KalkulatorDietyDatabase.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="KalkulatorDietyDatabase" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="KalkulatorDietyDatabase" msprop:Generator_UserDSName="KalkulatorDietyDatabase">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Produkt" msprop:Generator_TableClassName="ProduktDataTable" msprop:Generator_TableVarName="tableProdukt" msprop:Generator_RowChangedName="ProduktRowChanged" msprop:Generator_TablePropName="Produkt" msprop:Generator_RowDeletingName="ProduktRowDeleting" msprop:Generator_RowChangingName="ProduktRowChanging" msprop:Generator_RowEvHandlerName="ProduktRowChangeEventHandler" msprop:Generator_RowDeletedName="ProduktRowDeleted" msprop:Generator_RowClassName="ProduktRow" msprop:Generator_UserTableName="Produkt" msprop:Generator_RowEvArgName="ProduktRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nazwa_x0020_produktu" msprop:Generator_ColumnVarNameInTable="columnNazwa_produktu" msprop:Generator_ColumnPropNameInRow="Nazwa_produktu" msprop:Generator_ColumnPropNameInTable="Nazwa_produktuColumn" msprop:Generator_UserColumnName="Nazwa produktu" type="xs:string" minOccurs="0" />
+              <xs:element name="Kategoria" msprop:Generator_ColumnVarNameInTable="columnKategoria" msprop:Generator_ColumnPropNameInRow="Kategoria" msprop:Generator_ColumnPropNameInTable="KategoriaColumn" msprop:Generator_UserColumnName="Kategoria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Energia" msprop:Generator_ColumnVarNameInTable="columnEnergia" msprop:Generator_ColumnPropNameInRow="Energia" msprop:Generator_ColumnPropNameInTable="EnergiaColumn" msprop:Generator_UserColumnName="Energia" type="xs:double" minOccurs="0" />
+              <xs:element name="Białko" msprop:Generator_ColumnVarNameInTable="columnBiałko" msprop:Generator_ColumnPropNameInRow="Białko" msprop:Generator_ColumnPropNameInTable="BiałkoColumn" msprop:Generator_UserColumnName="Białko" type="xs:double" minOccurs="0" />
+              <xs:element name="Tłuszcze" msprop:Generator_ColumnVarNameInTable="columnTłuszcze" msprop:Generator_ColumnPropNameInRow="Tłuszcze" msprop:Generator_ColumnPropNameInTable="TłuszczeColumn" msprop:Generator_UserColumnName="Tłuszcze" type="xs:double" minOccurs="0" />
+              <xs:element name="Węglowodany" msprop:Generator_ColumnVarNameInTable="columnWęglowodany" msprop:Generator_ColumnPropNameInRow="Węglowodany" msprop:Generator_ColumnPropNameInTable="WęglowodanyColumn" msprop:Generator_UserColumnName="Węglowodany" type="xs:double" minOccurs="0" />
+              <xs:element name="Sód" msprop:Generator_ColumnVarNameInTable="columnSód" msprop:Generator_ColumnPropNameInRow="Sód" msprop:Generator_ColumnPropNameInTable="SódColumn" msprop:Generator_UserColumnName="Sód" type="xs:double" minOccurs="0" />
+              <xs:element name="Kwasy_x0020_tłuszczowe_x0020_nasycone" msprop:Generator_ColumnVarNameInTable="columnKwasy_tłuszczowe_nasycone" msprop:Generator_ColumnPropNameInRow="Kwasy_tłuszczowe_nasycone" msprop:Generator_ColumnPropNameInTable="Kwasy_tłuszczowe_nasyconeColumn" msprop:Generator_UserColumnName="Kwasy tłuszczowe nasycone" type="xs:double" minOccurs="0" />
+              <xs:element name="Węglowodany_x0020_przyswajalne" msprop:Generator_ColumnVarNameInTable="columnWęglowodany_przyswajalne" msprop:Generator_ColumnPropNameInRow="Węglowodany_przyswajalne" msprop:Generator_ColumnPropNameInTable="Węglowodany_przyswajalneColumn" msprop:Generator_UserColumnName="Węglowodany przyswajalne" type="xs:string" minOccurs="0" />
+              <xs:element name="Błonnik" msprop:Generator_ColumnVarNameInTable="columnBłonnik" msprop:Generator_ColumnPropNameInRow="Błonnik" msprop:Generator_ColumnPropNameInTable="BłonnikColumn" msprop:Generator_UserColumnName="Błonnik" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Receptury" msprop:Generator_TableClassName="RecepturyDataTable" msprop:Generator_TableVarName="tableReceptury" msprop:Generator_TablePropName="Receptury" msprop:Generator_RowDeletingName="RecepturyRowDeleting" msprop:Generator_RowChangingName="RecepturyRowChanging" msprop:Generator_RowEvHandlerName="RecepturyRowChangeEventHandler" msprop:Generator_RowDeletedName="RecepturyRowDeleted" msprop:Generator_UserTableName="Receptury" msprop:Generator_RowChangedName="RecepturyRowChanged" msprop:Generator_RowEvArgName="RecepturyRowChangeEvent" msprop:Generator_RowClassName="RecepturyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nazwa_x0020_receptury" msprop:Generator_ColumnVarNameInTable="columnNazwa_receptury" msprop:Generator_ColumnPropNameInRow="Nazwa_receptury" msprop:Generator_ColumnPropNameInTable="Nazwa_recepturyColumn" msprop:Generator_UserColumnName="Nazwa receptury" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład_x0020_receptury" msprop:Generator_ColumnVarNameInTable="columnSkład_receptury" msprop:Generator_ColumnPropNameInRow="Skład_receptury" msprop:Generator_ColumnPropNameInTable="Skład_recepturyColumn" msprop:Generator_UserColumnName="Skład receptury" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Jadłospisy" msprop:Generator_TableClassName="JadłospisyDataTable" msprop:Generator_TableVarName="tableJadłospisy" msprop:Generator_RowChangedName="JadłospisyRowChanged" msprop:Generator_TablePropName="Jadłospisy" msprop:Generator_RowDeletingName="JadłospisyRowDeleting" msprop:Generator_RowChangingName="JadłospisyRowChanging" msprop:Generator_RowEvHandlerName="JadłospisyRowChangeEventHandler" msprop:Generator_RowDeletedName="JadłospisyRowDeleted" msprop:Generator_RowClassName="JadłospisyRow" msprop:Generator_UserTableName="Jadłospisy" msprop:Generator_RowEvArgName="JadłospisyRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Data" msprop:Generator_ColumnVarNameInTable="columnData" msprop:Generator_ColumnPropNameInRow="Data" msprop:Generator_ColumnPropNameInTable="DataColumn" msprop:Generator_UserColumnName="Data" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Śniadanie" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Śniadanie" msprop:Generator_ColumnPropNameInRow="_Nazwa_Śniadanie" msprop:Generator_ColumnPropNameInTable="_Nazwa_ŚniadanieColumn" msprop:Generator_UserColumnName="Nazwa-Śniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Śniadanie" msprop:Generator_ColumnVarNameInTable="_columnSkład_Śniadanie" msprop:Generator_ColumnPropNameInRow="_Skład_Śniadanie" msprop:Generator_ColumnPropNameInTable="_Skład_ŚniadanieColumn" msprop:Generator_UserColumnName="Skład-Śniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-IIŚniadanie" msprop:Generator_ColumnVarNameInTable="_columnNazwa_IIŚniadanie" msprop:Generator_ColumnPropNameInRow="_Nazwa_IIŚniadanie" msprop:Generator_ColumnPropNameInTable="_Nazwa_IIŚniadanieColumn" msprop:Generator_UserColumnName="Nazwa-IIŚniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-IIŚniadanie" msprop:Generator_ColumnVarNameInTable="_columnSkład_IIŚniadanie" msprop:Generator_ColumnPropNameInRow="_Skład_IIŚniadanie" msprop:Generator_ColumnPropNameInTable="_Skład_IIŚniadanieColumn" msprop:Generator_UserColumnName="Skład-IIŚniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Obiad" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Obiad" msprop:Generator_ColumnPropNameInRow="_Nazwa_Obiad" msprop:Generator_ColumnPropNameInTable="_Nazwa_ObiadColumn" msprop:Generator_UserColumnName="Nazwa-Obiad" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Obiad" msprop:Generator_ColumnVarNameInTable="_columnSkład_Obiad" msprop:Generator_ColumnPropNameInRow="_Skład_Obiad" msprop:Generator_ColumnPropNameInTable="_Skład_ObiadColumn" msprop:Generator_UserColumnName="Skład-Obiad" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Podwieczorek" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Podwieczorek" msprop:Generator_ColumnPropNameInRow="_Nazwa_Podwieczorek" msprop:Generator_ColumnPropNameInTable="_Nazwa_PodwieczorekColumn" msprop:Generator_UserColumnName="Nazwa-Podwieczorek" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Podwieczorek" msprop:Generator_ColumnVarNameInTable="_columnSkład_Podwieczorek" msprop:Generator_ColumnPropNameInRow="_Skład_Podwieczorek" msprop:Generator_ColumnPropNameInTable="_Skład_PodwieczorekColumn" msprop:Generator_UserColumnName="Skład-Podwieczorek" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Kolacja" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Kolacja" msprop:Generator_ColumnPropNameInRow="_Nazwa_Kolacja" msprop:Generator_ColumnPropNameInTable="_Nazwa_KolacjaColumn" msprop:Generator_UserColumnName="Nazwa-Kolacja" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Kolacja" msprop:Generator_ColumnVarNameInTable="_columnSkład_Kolacja" msprop:Generator_ColumnPropNameInRow="_Skład_Kolacja" msprop:Generator_ColumnPropNameInTable="_Skład_KolacjaColumn" msprop:Generator_UserColumnName="Skład-Kolacja" type="xs:string" minOccurs="0" />
+              <xs:element name="Dieta" msprop:Generator_ColumnVarNameInTable="columnDieta" msprop:Generator_ColumnPropNameInRow="Dieta" msprop:Generator_ColumnPropNameInTable="DietaColumn" msprop:Generator_UserColumnName="Dieta" type="xs:string" minOccurs="0" />
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Diety" msprop:Generator_TableClassName="DietyDataTable" msprop:Generator_TableVarName="tableDiety" msprop:Generator_TablePropName="Diety" msprop:Generator_RowDeletingName="DietyRowDeleting" msprop:Generator_RowChangingName="DietyRowChanging" msprop:Generator_RowEvHandlerName="DietyRowChangeEventHandler" msprop:Generator_RowDeletedName="DietyRowDeleted" msprop:Generator_UserTableName="Diety" msprop:Generator_RowChangedName="DietyRowChanged" msprop:Generator_RowEvArgName="DietyRowChangeEvent" msprop:Generator_RowClassName="DietyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nazwa_x0020_diety" msprop:Generator_ColumnVarNameInTable="columnNazwa_diety" msprop:Generator_ColumnPropNameInRow="Nazwa_diety" msprop:Generator_ColumnPropNameInTable="Nazwa_dietyColumn" msprop:Generator_UserColumnName="Nazwa diety" type="xs:string" minOccurs="0" />
+              <xs:element name="Energia" msprop:Generator_ColumnVarNameInTable="columnEnergia" msprop:Generator_ColumnPropNameInRow="Energia" msprop:Generator_ColumnPropNameInTable="EnergiaColumn" msprop:Generator_UserColumnName="Energia" type="xs:string" minOccurs="0" />
+              <xs:element name="Białko" msprop:Generator_ColumnVarNameInTable="columnBiałko" msprop:Generator_ColumnPropNameInRow="Białko" msprop:Generator_ColumnPropNameInTable="BiałkoColumn" msprop:Generator_UserColumnName="Białko" type="xs:string" minOccurs="0" />
+              <xs:element name="Węglowodany" msprop:Generator_ColumnVarNameInTable="columnWęglowodany" msprop:Generator_ColumnPropNameInRow="Węglowodany" msprop:Generator_ColumnPropNameInTable="WęglowodanyColumn" msprop:Generator_UserColumnName="Węglowodany" type="xs:string" minOccurs="0" />
+              <xs:element name="Tłuszcze" msprop:Generator_ColumnVarNameInTable="columnTłuszcze" msprop:Generator_ColumnPropNameInRow="Tłuszcze" msprop:Generator_ColumnPropNameInTable="TłuszczeColumn" msprop:Generator_UserColumnName="Tłuszcze" type="xs:string" minOccurs="0" />
+              <xs:element name="Sód" msprop:Generator_ColumnVarNameInTable="columnSód" msprop:Generator_ColumnPropNameInRow="Sód" msprop:Generator_ColumnPropNameInTable="SódColumn" msprop:Generator_UserColumnName="Sód" type="xs:string" minOccurs="0" />
+              <xs:element name="Węglowodany_x0020_przyswajalne" msprop:Generator_ColumnVarNameInTable="columnWęglowodany_przyswajalne" msprop:Generator_ColumnPropNameInRow="Węglowodany_przyswajalne" msprop:Generator_ColumnPropNameInTable="Węglowodany_przyswajalneColumn" msprop:Generator_UserColumnName="Węglowodany przyswajalne" type="xs:string" minOccurs="0" />
+              <xs:element name="Błonnik" msprop:Generator_ColumnVarNameInTable="columnBłonnik" msprop:Generator_ColumnPropNameInRow="Błonnik" msprop:Generator_ColumnPropNameInTable="BłonnikColumn" msprop:Generator_UserColumnName="Błonnik" type="xs:string" minOccurs="0" />
+              <xs:element name="Kwasy_x0020_tłuszczowe_x0020_nasycone" msprop:Generator_ColumnVarNameInTable="columnKwasy_tłuszczowe_nasycone" msprop:Generator_ColumnPropNameInRow="Kwasy_tłuszczowe_nasycone" msprop:Generator_ColumnPropNameInTable="Kwasy_tłuszczowe_nasyconeColumn" msprop:Generator_UserColumnName="Kwasy tłuszczowe nasycone" type="xs:string" minOccurs="0" />
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Dekadowka" msprop:Generator_TableClassName="DekadowkaDataTable" msprop:Generator_TableVarName="tableDekadowka" msprop:Generator_TablePropName="Dekadowka" msprop:Generator_RowDeletingName="DekadowkaRowDeleting" msprop:Generator_RowChangingName="DekadowkaRowChanging" msprop:Generator_RowEvHandlerName="DekadowkaRowChangeEventHandler" msprop:Generator_RowDeletedName="DekadowkaRowDeleted" msprop:Generator_UserTableName="Dekadowka" msprop:Generator_RowChangedName="DekadowkaRowChanged" msprop:Generator_RowEvArgName="DekadowkaRowChangeEvent" msprop:Generator_RowClassName="DekadowkaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Identyfikator" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnIdentyfikator" msprop:Generator_ColumnPropNameInRow="Identyfikator" msprop:Generator_ColumnPropNameInTable="IdentyfikatorColumn" msprop:Generator_UserColumnName="Identyfikator" type="xs:int" />
+              <xs:element name="Nazwa" msprop:Generator_ColumnVarNameInTable="columnNazwa" msprop:Generator_ColumnPropNameInRow="Nazwa" msprop:Generator_ColumnPropNameInTable="NazwaColumn" msprop:Generator_UserColumnName="Nazwa" type="xs:string" minOccurs="0" />
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto" type="xs:string" minOccurs="0" />
+              <xs:element name="DzienStart" msprop:Generator_ColumnVarNameInTable="columnDzienStart" msprop:Generator_ColumnPropNameInRow="DzienStart" msprop:Generator_ColumnPropNameInTable="DzienStartColumn" msprop:Generator_UserColumnName="DzienStart" type="xs:string" minOccurs="0" />
+              <xs:element name="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnPropNameInTable="DniColumn" msprop:Generator_UserColumnName="Dni" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Jadlospis" msprop:Generator_TableClassName="JadlospisDataTable" msprop:Generator_TableVarName="tableJadlospis" msprop:Generator_TablePropName="Jadlospis" msprop:Generator_RowDeletingName="JadlospisRowDeleting" msprop:Generator_RowChangingName="JadlospisRowChanging" msprop:Generator_RowEvHandlerName="JadlospisRowChangeEventHandler" msprop:Generator_RowDeletedName="JadlospisRowDeleted" msprop:Generator_UserTableName="Jadlospis" msprop:Generator_RowChangedName="JadlospisRowChanged" msprop:Generator_RowEvArgName="JadlospisRowChangeEvent" msprop:Generator_RowClassName="JadlospisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nazwa-Śniadanie" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Śniadanie" msprop:Generator_ColumnPropNameInRow="_Nazwa_Śniadanie" msprop:Generator_ColumnPropNameInTable="_Nazwa_ŚniadanieColumn" msprop:Generator_UserColumnName="Nazwa-Śniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Śniadanie" msprop:Generator_ColumnVarNameInTable="_columnSkład_Śniadanie" msprop:Generator_ColumnPropNameInRow="_Skład_Śniadanie" msprop:Generator_ColumnPropNameInTable="_Skład_ŚniadanieColumn" msprop:Generator_UserColumnName="Skład-Śniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-IIŚniadanie" msprop:Generator_ColumnVarNameInTable="_columnNazwa_IIŚniadanie" msprop:Generator_ColumnPropNameInRow="_Nazwa_IIŚniadanie" msprop:Generator_ColumnPropNameInTable="_Nazwa_IIŚniadanieColumn" msprop:Generator_UserColumnName="Nazwa-IIŚniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-IIŚniadanie" msprop:Generator_ColumnVarNameInTable="_columnSkład_IIŚniadanie" msprop:Generator_ColumnPropNameInRow="_Skład_IIŚniadanie" msprop:Generator_ColumnPropNameInTable="_Skład_IIŚniadanieColumn" msprop:Generator_UserColumnName="Skład-IIŚniadanie" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Obiad" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Obiad" msprop:Generator_ColumnPropNameInRow="_Nazwa_Obiad" msprop:Generator_ColumnPropNameInTable="_Nazwa_ObiadColumn" msprop:Generator_UserColumnName="Nazwa-Obiad" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Obiad" msprop:Generator_ColumnVarNameInTable="_columnSkład_Obiad" msprop:Generator_ColumnPropNameInRow="_Skład_Obiad" msprop:Generator_ColumnPropNameInTable="_Skład_ObiadColumn" msprop:Generator_UserColumnName="Skład-Obiad" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Podwieczorek" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Podwieczorek" msprop:Generator_ColumnPropNameInRow="_Nazwa_Podwieczorek" msprop:Generator_ColumnPropNameInTable="_Nazwa_PodwieczorekColumn" msprop:Generator_UserColumnName="Nazwa-Podwieczorek" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Podwieczorek" msprop:Generator_ColumnVarNameInTable="_columnSkład_Podwieczorek" msprop:Generator_ColumnPropNameInRow="_Skład_Podwieczorek" msprop:Generator_ColumnPropNameInTable="_Skład_PodwieczorekColumn" msprop:Generator_UserColumnName="Skład-Podwieczorek" type="xs:string" minOccurs="0" />
+              <xs:element name="Nazwa-Kolacja" msprop:Generator_ColumnVarNameInTable="_columnNazwa_Kolacja" msprop:Generator_ColumnPropNameInRow="_Nazwa_Kolacja" msprop:Generator_ColumnPropNameInTable="_Nazwa_KolacjaColumn" msprop:Generator_UserColumnName="Nazwa-Kolacja" type="xs:string" minOccurs="0" />
+              <xs:element name="Skład-Kolacja" msprop:Generator_ColumnVarNameInTable="_columnSkład_Kolacja" msprop:Generator_ColumnPropNameInRow="_Skład_Kolacja" msprop:Generator_ColumnPropNameInTable="_Skład_KolacjaColumn" msprop:Generator_UserColumnName="Skład-Kolacja" type="xs:string" minOccurs="0" />
+              <xs:element name="Dieta" msprop:Generator_ColumnVarNameInTable="columnDieta" msprop:Generator_ColumnPropNameInRow="Dieta" msprop:Generator_ColumnPropNameInTable="DietaColumn" msprop:Generator_UserColumnName="Dieta" type="xs:string" minOccurs="0" />
+              <xs:element name="Identyfikator" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnIdentyfikator" msprop:Generator_ColumnPropNameInRow="Identyfikator" msprop:Generator_ColumnPropNameInTable="IdentyfikatorColumn" msprop:Generator_UserColumnName="Identyfikator" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="JadlsopisDekadowki" msprop:Generator_TableClassName="JadlsopisDekadowkiDataTable" msprop:Generator_TableVarName="tableJadlsopisDekadowki" msprop:Generator_TablePropName="JadlsopisDekadowki" msprop:Generator_RowDeletingName="JadlsopisDekadowkiRowDeleting" msprop:Generator_RowChangingName="JadlsopisDekadowkiRowChanging" msprop:Generator_RowEvHandlerName="JadlsopisDekadowkiRowChangeEventHandler" msprop:Generator_RowDeletedName="JadlsopisDekadowkiRowDeleted" msprop:Generator_UserTableName="JadlsopisDekadowki" msprop:Generator_RowChangedName="JadlsopisDekadowkiRowChanged" msprop:Generator_RowEvArgName="JadlsopisDekadowkiRowChangeEvent" msprop:Generator_RowClassName="JadlsopisDekadowkiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdentyfikatorDekadowki" msprop:Generator_ColumnVarNameInTable="columnIdentyfikatorDekadowki" msprop:Generator_ColumnPropNameInRow="IdentyfikatorDekadowki" msprop:Generator_ColumnPropNameInTable="IdentyfikatorDekadowkiColumn" msprop:Generator_UserColumnName="IdentyfikatorDekadowki" type="xs:string" minOccurs="0" />
+              <xs:element name="IdentyfikatorJadlospisu" msprop:Generator_ColumnVarNameInTable="columnIdentyfikatorJadlospisu" msprop:Generator_ColumnPropNameInRow="IdentyfikatorJadlospisu" msprop:Generator_ColumnPropNameInTable="IdentyfikatorJadlospisuColumn" msprop:Generator_UserColumnName="IdentyfikatorJadlospisu" type="xs:string" minOccurs="0" />
+              <xs:element name="Dzien" msprop:Generator_ColumnVarNameInTable="columnDzien" msprop:Generator_ColumnPropNameInRow="Dzien" msprop:Generator_ColumnPropNameInTable="DzienColumn" msprop:Generator_UserColumnName="Dzien" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Jednostka" msprop:Generator_TableClassName="JednostkaDataTable" msprop:Generator_TableVarName="tableJednostka" msprop:Generator_TablePropName="Jednostka" msprop:Generator_RowDeletingName="JednostkaRowDeleting" msprop:Generator_RowChangingName="JednostkaRowChanging" msprop:Generator_RowEvHandlerName="JednostkaRowChangeEventHandler" msprop:Generator_RowDeletedName="JednostkaRowDeleted" msprop:Generator_UserTableName="Jednostka" msprop:Generator_RowChangedName="JednostkaRowChanged" msprop:Generator_RowEvArgName="JednostkaRowChangeEvent" msprop:Generator_RowClassName="JednostkaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Miasto" msdata:Caption="Nazwa receptury" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
