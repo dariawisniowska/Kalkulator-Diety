@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
             {
                 System.IO.Directory.CreateDirectory("Receptury");
                 string path = @"Receptury/" + receptura.nazwa + ".docx";
+                string test = "Nowy komputer";
 
                 using (DocX document = DocX.Create(path))
                 {
