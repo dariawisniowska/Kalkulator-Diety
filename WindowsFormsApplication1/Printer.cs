@@ -210,13 +210,13 @@ namespace WindowsFormsApplication1
                     //ŚNIADANIE
                     p2.Append("\r\nŚniadanie: " + jadlospis.nazwa_sniadanie + "\r\n")
                    .Font("Times New Roman")
-                   .FontSize(12)
+                   .FontSize(10)
                    .Color(Color.Black);
                         for (int i = 0; i < cl; i++)
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(nag[i])
                                 .Font("Times New Roman")
-                                .FontSize(10)
+                                .FontSize(9)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 2; r++)
@@ -234,7 +234,7 @@ namespace WindowsFormsApplication1
                                 else
                                     t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                         .Font("Times New Roman")
-                                     .FontSize(10)
+                                     .FontSize(9)
                                     .Color(Color.Black);
                                 if (c >= 2)
                                     sum[c - 2] += Convert.ToDouble(dane[c]);
@@ -243,12 +243,12 @@ namespace WindowsFormsApplication1
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                            .Font("Times New Roman")
-                                        .FontSize(10)
+                                        .FontSize(9)
                                        .Color(Color.Black);
                         for (int i = 0; i < cl-2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(sum[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(12)
+                                         .FontSize(9)
                                         .Color(Color.Black);
 
                         p2.InsertTableAfterSelf(t);
@@ -282,7 +282,7 @@ namespace WindowsFormsApplication1
                         t.SetColumnWidth(i, 1000);
                     p2.Append("\r\nII śniadanie: " + jadlospis.nazwa_IIsniadanie + "\r\n")
                        .Font("Times New Roman")
-                       .FontSize(12)
+                       .FontSize(10)
                        .Color(Color.Black);
                         produkty = jadlospis.sklad_IIsniadanie.Split('$');
 
@@ -290,7 +290,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(10)
+                                .FontSize(9)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -308,7 +308,7 @@ namespace WindowsFormsApplication1
                                 else
                                     t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                         .Font("Times New Roman")
-                                     .FontSize(10)
+                                     .FontSize(9)
                                     .Color(Color.Black);
                                 if (c >= 2)
                                 {
@@ -325,7 +325,7 @@ namespace WindowsFormsApplication1
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(12)
+                                         .FontSize(9)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -358,7 +358,7 @@ namespace WindowsFormsApplication1
                         t.SetColumnWidth(i, 1000);
                     p2.Append("\r\nObiad: " + jadlospis.nazwa_obiad + "\r\n")
                        .Font("Times New Roman")
-                       .FontSize(12)
+                       .FontSize(10)
                        .Color(Color.Black);
                         produkty = jadlospis.sklad_obiad.Split('$');
 
@@ -366,7 +366,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(10)
+                                .FontSize(9)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -379,12 +379,12 @@ namespace WindowsFormsApplication1
                                 if (c == 0)
                                     t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                         .Font("Times New Roman")
-                                        .FontSize(10)
+                                        .FontSize(9)
                                         .Color(Color.Black);
                                 else
                                     t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                         .Font("Times New Roman")
-                                     .FontSize(12)
+                                     .FontSize(9)
                                     .Color(Color.Black);
                                 if (c >= 2)
                                 {
@@ -402,7 +402,7 @@ namespace WindowsFormsApplication1
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(10)
+                                         .FontSize(9)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -434,7 +434,7 @@ namespace WindowsFormsApplication1
                         t.SetColumnWidth(i, 1000);
                     p2.Append("\r\nPodwieczorek: " + jadlospis.nazwa_podwieczorek + "\r\n")
                        .Font("Times New Roman")
-                       .FontSize(12)
+                       .FontSize(10)
                        .Color(Color.Black);
                         produkty = jadlospis.sklad_podwieczorek.Split('$');
 
@@ -442,7 +442,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(10)
+                                .FontSize(9)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -460,7 +460,7 @@ namespace WindowsFormsApplication1
                                 else
                                     t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                         .Font("Times New Roman")
-                                     .FontSize(10)
+                                     .FontSize(9)
                                     .Color(Color.Black);
                                 if (c >= 2)
                                 {
@@ -472,12 +472,12 @@ namespace WindowsFormsApplication1
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
-                                       .FontSize(10)
+                                       .FontSize(9)
                                       .Color(Color.Black);
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(12)
+                                         .FontSize(9)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -510,7 +510,7 @@ namespace WindowsFormsApplication1
                         t.SetColumnWidth(i, 1000);
                     p2.Append("\r\nKolacja: " + jadlospis.nazwa_kolacja + "\r\n")
                    .Font("Times New Roman")
-                   .FontSize(12)
+                   .FontSize(10)
                    .Color(Color.Black);
                         produkty = jadlospis.sklad_kolacja.Split('$');
 
@@ -536,7 +536,7 @@ namespace WindowsFormsApplication1
                                 else
                                     t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                         .Font("Times New Roman")
-                                     .FontSize(10)
+                                     .FontSize(9)
                                     .Color(Color.Black);
                                 if (c >= 2)
                                 {
@@ -548,12 +548,12 @@ namespace WindowsFormsApplication1
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
-                                       .FontSize(10)
+                                       .FontSize(9)
                                       .Color(Color.Black);
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(12)
+                                         .FontSize(9)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -581,7 +581,7 @@ namespace WindowsFormsApplication1
                     {
                         t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki2[i + 2])
                             .Font("Times New Roman")
-                            .FontSize(10)
+                            .FontSize(9)
                             .Color(Color.Black);
 
                         string dodatek = "";
@@ -623,11 +623,11 @@ namespace WindowsFormsApplication1
                         }
                         t2.Rows[1].Cells[i].Paragraphs[0].Append(Math.Round(sum[i], 2).ToString() + dodatek)
                                     .Font("Times New Roman")
-                                    .FontSize(12)
+                                    .FontSize(9)
                                     .Color(Color.Black);
                     }
                     p3.Append("\r\nWartości odżywcze:\r\n").Font("Times New Roman")
-                                .FontSize(14)
+                                .FontSize(9)
                                 .Color(Color.Black);
                     p3.InsertTableAfterSelf(t2);
 

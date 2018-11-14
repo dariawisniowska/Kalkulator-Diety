@@ -81,8 +81,8 @@ namespace WindowsFormsApplication1.DAO
                     DataSet.Tables["Dekadowka"].Rows[i].Delete();
                 }
             }
-
-            for (int i = 0; i < DataSet.JadlsopisDekadowki.Rows.Count; i++)
+            DataRowCollection collection = DataSet.JadlsopisDekadowki.Rows;
+            for (int i = collection.Count-1; i >=0; i--)
             {
                 if (DataSet.Tables["JadlsopisDekadowki"].Rows[i]["IdentyfikatorDekadowki"].ToString() == dekadowka.id.ToString())
                 {
