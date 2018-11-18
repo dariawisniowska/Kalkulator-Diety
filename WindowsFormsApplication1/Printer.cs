@@ -659,16 +659,7 @@ namespace WindowsFormsApplication1
                     .Font("Times New Roman")
                     .FontSize(16)
                     .Color(Color.Black)
-                    .Bold();
-
-                    Paragraph pSklad = document.InsertParagraph();
-                    pSklad.Alignment = Alignment.left;
-
-                    pSklad.Append("\r\n" + "Skład: " + "\r\n")
-               .Font("Times New Roman")
-               .FontSize(14)
-               .Color(Color.Black)
-               .Bold();
+                    .Bold();              
 
                     foreach (Jadlospis jadlospis in listaJadlospisow)
                     {

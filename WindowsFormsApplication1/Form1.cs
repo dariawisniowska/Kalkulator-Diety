@@ -2800,7 +2800,6 @@ namespace WindowsFormsApplication1
 
         #endregion
 
-
         #region Dieta
         private void dieta_dieta_SelectedIndexChanged(object sender, EventArgs e)
         {
