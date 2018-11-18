@@ -644,8 +644,10 @@ namespace WindowsFormsApplication1
 
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow)
         {
-           try
-           {
+            try
+            {
+                if (listaJadlospisow.Count > 0)
+            {
                 System.IO.Directory.CreateDirectory("Jadłospisy dzienne/" + listaJadlospisow[0].miasto);
                 string path = @"Jadłospisy dzienne/" + listaJadlospisow[0].miasto + "/" + listaJadlospisow[0].data + ".docx";
 
@@ -659,6 +661,15 @@ namespace WindowsFormsApplication1
                     .Color(Color.Black)
                     .Bold();
 
+                    Paragraph pSklad = document.InsertParagraph();
+                    pSklad.Alignment = Alignment.left;
+
+                    pSklad.Append("\r\n" + "Skład: " + "\r\n")
+               .Font("Times New Roman")
+               .FontSize(14)
+               .Color(Color.Black)
+               .Bold();
+
                     foreach (Jadlospis jadlospis in listaJadlospisow)
                     {
                         Paragraph p2 = document.InsertParagraph();
@@ -666,7 +677,7 @@ namespace WindowsFormsApplication1
 
                         p2.Append("\r\n" + jadlospis.dieta.nazwa + "\r\n")
                    .Font("Times New Roman")
-                   .FontSize(14)
+                   .FontSize(12)
                    .Color(Color.Black)
                    .Bold();
 
@@ -692,8 +703,8 @@ namespace WindowsFormsApplication1
                         t.Alignment = Alignment.center;
                         for (int i = 0; i < columns; i++)
                         {
-                            if(columns<5)
-                            t.SetColumnWidth(i, 3000);
+                            if (columns < 5)
+                                t.SetColumnWidth(i, 3000);
                         }
 
                         for (int i = 0; i < columns; i++)
@@ -734,7 +745,29 @@ namespace WindowsFormsApplication1
                                 .Color(Color.Black);
                         }
                         p2.InsertTableAfterSelf(t);
+                    }
 
+                    Paragraph pWartosci = document.InsertParagraph();
+                    pWartosci.Alignment = Alignment.left;
+
+                    pWartosci.Append("\r\n" + "Wartości odżywcze: " + "\r\n")
+               .Font("Times New Roman")
+               .FontSize(14)
+               .Color(Color.Black)
+               .Bold();
+
+                    foreach (Jadlospis jadlospis in listaJadlospisow)
+                    {
+                        Paragraph p2 = document.InsertParagraph();
+                        p2.Alignment = Alignment.left;
+
+                        p2.Append("\r\n" + jadlospis.dieta.nazwa + "\r\n")
+                   .Font("Times New Roman")
+                   .FontSize(12)
+                   .Color(Color.Black)
+                   .Bold();
+
+                        string[] naglowki = null;
 
                         string[] produkty = jadlospis.sklad_sniadanie.Split('$');
                         int columns2 = produkty[0].Split('|').Length;
@@ -797,14 +830,14 @@ namespace WindowsFormsApplication1
                         p4.Alignment = Alignment.left;
                         Table t2 = document.AddTable(2, columns2 - 2);
                         t2.Alignment = Alignment.center;
-                    t2.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t2.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t2.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t2.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t2.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t2.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t2.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t2.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t2.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t2.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
 
-                    for (int i = 0; i < columns2 - 2; i++)
+                        for (int i = 0; i < columns2 - 2; i++)
                         {
                             t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i + 2])
                                 .Font("Times New Roman")
@@ -816,43 +849,46 @@ namespace WindowsFormsApplication1
                                     .FontSize(10)
                                     .Color(Color.Black);
                         }
-                        p4.Append("\r\nWartości odżywcze:\r\n").Font("Times New Roman")
-                                    .FontSize(12)
-                                    .Color(Color.Black); ;
                         p4.InsertTableAfterSelf(t2);
 
 
 
                     }
+
                     Paragraph p3 = document.InsertParagraph();
                     p3.Alignment = Alignment.left;
 
-                if(document.Footers.Even!=null)
-                document.Footers.Even.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
-                  .Font("Times New Roman")
-                    .FontSize(8)
-                    .Color(Color.Black)
-                    .Bold();
-                if (document.Footers.Odd != null)
-                    document.Footers.Odd.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
-                    .Font("Times New Roman")
-                    .FontSize(8)
-                    .Color(Color.Black)
-                    .Bold();
+                    if (document.Footers.Even != null)
+                        document.Footers.Even.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
+                          .Font("Times New Roman")
+                            .FontSize(8)
+                            .Color(Color.Black)
+                            .Bold();
+                    if (document.Footers.Odd != null)
+                        document.Footers.Odd.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
+                        .Font("Times New Roman")
+                        .FontSize(8)
+                        .Color(Color.Black)
+                        .Bold();
                     document.Save();
 
-                    MessageBox.Show("Zapisano dokument");
+                    MessageBox.Show("Zapisano dokument", "Sukces");
                 }
             }
+            else
+            {
+                MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
+            }
+        }
 
 
             catch
             {
                 MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
             }
-    }
+}
 
-        public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
+public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
         {
             try { 
                 System.IO.Directory.CreateDirectory("Dekadówki/" + miasto);
