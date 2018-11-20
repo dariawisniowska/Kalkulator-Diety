@@ -117,7 +117,8 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Zapisano dokument");
                 }
             }
-            catch {
+            catch
+            {
                 MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
             }
         }
@@ -177,11 +178,11 @@ namespace WindowsFormsApplication1
                     .Color(Color.Black)
                     .Bold();
 
-                                            
+
                     string[] pr = jadlospis.sklad_sniadanie.Split('$');
-                        
-                        int cl = pr[0].Split('|').Length;
-                        double[] sum = new double[cl - 2];
+
+                    int cl = pr[0].Split('|').Length;
+                    double[] sum = new double[cl - 2];
                     //ŚNIADANIE
                     if (jadlospis.sklad_sniadanie != "")
 
@@ -197,21 +198,21 @@ namespace WindowsFormsApplication1
                         p2.Alignment = Alignment.left;
                         Table t = document.AddTable(rows, cl);
                         t.Alignment = Alignment.center;
-                    t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetColumnWidth(0, 2000);
-                    for(int i = 1;i<cl;i++)
-                        t.SetColumnWidth(i, 1000);
+                        t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetColumnWidth(0, 2000);
+                        for (int i = 1; i < cl; i++)
+                            t.SetColumnWidth(i, 1000);
 
-                    //ŚNIADANIE
-                    p2.Append("\r\nŚniadanie: " + jadlospis.nazwa_sniadanie + "\r\n")
-                   .Font("Times New Roman")
-                   .FontSize(10)
-                   .Color(Color.Black);
+                        //ŚNIADANIE
+                        p2.Append("\r\nŚniadanie: " + jadlospis.nazwa_sniadanie + "\r\n")
+                       .Font("Times New Roman")
+                       .FontSize(10)
+                       .Color(Color.Black);
                         for (int i = 0; i < cl; i++)
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(nag[i])
@@ -222,30 +223,31 @@ namespace WindowsFormsApplication1
                         for (int r = 0; r < rows - 2; r++)
                         {
                             string[] dane = pr[r].Split('|');
-                        if (dane[0] != "")
-                            {for (int c = 0; c < cl; c++)
-                        {
-                            
-                                if (c == 0)
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                        .FontSize(9)
+                            if (dane[0] != "")
+                            {
+                                for (int c = 0; c < cl; c++)
+                                {
+
+                                    if (c == 0)
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                            .FontSize(9)
+                                            .Color(Color.Black);
+                                    else
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                         .FontSize(9)
                                         .Color(Color.Black);
-                                else
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                     .FontSize(9)
-                                    .Color(Color.Black);
-                                if (c >= 2)
-                                    sum[c - 2] += Convert.ToDouble(dane[c]);
+                                    if (c >= 2)
+                                        sum[c - 2] += Convert.ToDouble(dane[c]);
+                                }
                             }
-                        }
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                            .Font("Times New Roman")
                                         .FontSize(9)
                                        .Color(Color.Black);
-                        for (int i = 0; i < cl-2; i++)
+                        for (int i = 0; i < cl - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(sum[i].ToString())
                                             .Font("Times New Roman")
                                          .FontSize(9)
@@ -270,20 +272,20 @@ namespace WindowsFormsApplication1
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
                         Table t = document.AddTable(rows, columns);
-                    t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.Alignment = Alignment.center;
-                    t.SetColumnWidth(0, 2000);
-                    for (int i = 1; i < cl; i++)
-                        t.SetColumnWidth(i, 1000);
-                    p2.Append("\r\nII śniadanie: " + jadlospis.nazwa_IIsniadanie + "\r\n")
-                       .Font("Times New Roman")
-                       .FontSize(10)
-                       .Color(Color.Black);
+                        t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.Alignment = Alignment.center;
+                        t.SetColumnWidth(0, 2000);
+                        for (int i = 1; i < cl; i++)
+                            t.SetColumnWidth(i, 1000);
+                        p2.Append("\r\nII śniadanie: " + jadlospis.nazwa_IIsniadanie + "\r\n")
+                           .Font("Times New Roman")
+                           .FontSize(10)
+                           .Color(Color.Black);
                         produkty = jadlospis.sklad_IIsniadanie.Split('$');
 
                         for (int i = 0; i < columns; i++)
@@ -296,27 +298,28 @@ namespace WindowsFormsApplication1
                         for (int r = 0; r < rows - 1; r++)
                         {
                             string[] dane = produkty[r].Split('|');
-                        if (dane[0] != "")
-                            { for (int c = 0; c < columns; c++)
-                        {
-                           
-                                if (c == 0)
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                        .FontSize(9)
-                                        .Color(Color.Black);
-                                else
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                     .FontSize(9)
-                                    .Color(Color.Black);
-                                if (c >= 2)
+                            if (dane[0] != "")
+                            {
+                                for (int c = 0; c < columns; c++)
                                 {
-                                    sum[c - 2] += Convert.ToDouble(dane[c]);
-                                    suma2[c - 2] += Convert.ToDouble(dane[c]);
+
+                                    if (c == 0)
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                            .FontSize(9)
+                                            .Color(Color.Black);
+                                    else
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                         .FontSize(9)
+                                        .Color(Color.Black);
+                                    if (c >= 2)
+                                    {
+                                        sum[c - 2] += Convert.ToDouble(dane[c]);
+                                        suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    }
                                 }
                             }
-                        }
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
@@ -346,20 +349,20 @@ namespace WindowsFormsApplication1
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
                         Table t = document.AddTable(rows, columns);
-                    t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.Alignment = Alignment.center;
-                    t.SetColumnWidth(0, 2000);
-                    for (int i = 1; i < cl; i++)
-                        t.SetColumnWidth(i, 1000);
-                    p2.Append("\r\nObiad: " + jadlospis.nazwa_obiad + "\r\n")
-                       .Font("Times New Roman")
-                       .FontSize(10)
-                       .Color(Color.Black);
+                        t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.Alignment = Alignment.center;
+                        t.SetColumnWidth(0, 2000);
+                        for (int i = 1; i < cl; i++)
+                            t.SetColumnWidth(i, 1000);
+                        p2.Append("\r\nObiad: " + jadlospis.nazwa_obiad + "\r\n")
+                           .Font("Times New Roman")
+                           .FontSize(10)
+                           .Color(Color.Black);
                         produkty = jadlospis.sklad_obiad.Split('$');
 
                         for (int i = 0; i < columns; i++)
@@ -372,27 +375,27 @@ namespace WindowsFormsApplication1
                         for (int r = 0; r < rows - 1; r++)
                         {
                             string[] dane = produkty[r].Split('|');
-                       if (dane[0] != "")
-                        {
-                            for (int c = 0; c < columns; c++)
-                            { 
-                                if (c == 0)
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                        .FontSize(9)
-                                        .Color(Color.Black);
-                                else
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                     .FontSize(9)
-                                    .Color(Color.Black);
-                                if (c >= 2)
+                            if (dane[0] != "")
+                            {
+                                for (int c = 0; c < columns; c++)
                                 {
-                                    sum[c - 2] += Convert.ToDouble(dane[c]);
-                                    suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    if (c == 0)
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                            .FontSize(9)
+                                            .Color(Color.Black);
+                                    else
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                         .FontSize(9)
+                                        .Color(Color.Black);
+                                    if (c >= 2)
+                                    {
+                                        sum[c - 2] += Convert.ToDouble(dane[c]);
+                                        suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    }
                                 }
                             }
-                        }
 
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
@@ -422,20 +425,20 @@ namespace WindowsFormsApplication1
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
                         Table t = document.AddTable(rows, columns);
-                    t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.Alignment = Alignment.center;
-                    t.SetColumnWidth(0, 2000);
-                    for (int i = 1; i < cl; i++)
-                        t.SetColumnWidth(i, 1000);
-                    p2.Append("\r\nPodwieczorek: " + jadlospis.nazwa_podwieczorek + "\r\n")
-                       .Font("Times New Roman")
-                       .FontSize(10)
-                       .Color(Color.Black);
+                        t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.Alignment = Alignment.center;
+                        t.SetColumnWidth(0, 2000);
+                        for (int i = 1; i < cl; i++)
+                            t.SetColumnWidth(i, 1000);
+                        p2.Append("\r\nPodwieczorek: " + jadlospis.nazwa_podwieczorek + "\r\n")
+                           .Font("Times New Roman")
+                           .FontSize(10)
+                           .Color(Color.Black);
                         produkty = jadlospis.sklad_podwieczorek.Split('$');
 
                         for (int i = 0; i < columns; i++)
@@ -448,27 +451,27 @@ namespace WindowsFormsApplication1
                         for (int r = 0; r < rows - 1; r++)
                         {
                             string[] dane = produkty[r].Split('|');
-                       if (dane[0] != "")
-                        {
-                            for (int c = 0; c < columns; c++)
-                            { 
-                                if (c == 0)
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                        .FontSize(9)
-                                        .Color(Color.Black);
-                                else
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                     .FontSize(9)
-                                    .Color(Color.Black);
-                                if (c >= 2)
+                            if (dane[0] != "")
+                            {
+                                for (int c = 0; c < columns; c++)
                                 {
-                                    sum[c - 2] += Convert.ToDouble(dane[c]);
-                                    suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    if (c == 0)
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                            .FontSize(9)
+                                            .Color(Color.Black);
+                                    else
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                         .FontSize(9)
+                                        .Color(Color.Black);
+                                    if (c >= 2)
+                                    {
+                                        sum[c - 2] += Convert.ToDouble(dane[c]);
+                                        suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    }
                                 }
                             }
-                        }
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
@@ -498,20 +501,20 @@ namespace WindowsFormsApplication1
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
                         Table t = document.AddTable(rows, columns);
-                    t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                    t.Alignment = Alignment.center;
-                    t.SetColumnWidth(0, 2000);
-                    for (int i = 1; i < cl; i++)
-                        t.SetColumnWidth(i, 1000);
-                    p2.Append("\r\nKolacja: " + jadlospis.nazwa_kolacja + "\r\n")
-                   .Font("Times New Roman")
-                   .FontSize(10)
-                   .Color(Color.Black);
+                        t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        t.Alignment = Alignment.center;
+                        t.SetColumnWidth(0, 2000);
+                        for (int i = 1; i < cl; i++)
+                            t.SetColumnWidth(i, 1000);
+                        p2.Append("\r\nKolacja: " + jadlospis.nazwa_kolacja + "\r\n")
+                       .Font("Times New Roman")
+                       .FontSize(10)
+                       .Color(Color.Black);
                         produkty = jadlospis.sklad_kolacja.Split('$');
 
                         for (int i = 0; i < columns; i++)
@@ -524,27 +527,27 @@ namespace WindowsFormsApplication1
                         for (int r = 0; r < rows - 1; r++)
                         {
                             string[] dane = produkty[r].Split('|');
-                        if (dane[0] != "")
-                        {
-                            for (int c = 0; c < columns; c++)
+                            if (dane[0] != "")
                             {
-                                if (c == 0)
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                        .FontSize(9)
-                                        .Color(Color.Black);
-                                else
-                                    t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                        .Font("Times New Roman")
-                                     .FontSize(9)
-                                    .Color(Color.Black);
-                                if (c >= 2)
+                                for (int c = 0; c < columns; c++)
                                 {
-                                    sum[c - 2] += Convert.ToDouble(dane[c]);
-                                    suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    if (c == 0)
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                            .FontSize(9)
+                                            .Color(Color.Black);
+                                    else
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                         .FontSize(9)
+                                        .Color(Color.Black);
+                                    if (c >= 2)
+                                    {
+                                        sum[c - 2] += Convert.ToDouble(dane[c]);
+                                        suma2[c - 2] += Convert.ToDouble(dane[c]);
+                                    }
                                 }
                             }
-                        }
                         }
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
@@ -570,14 +573,14 @@ namespace WindowsFormsApplication1
                     p3.Alignment = Alignment.left;
                     Table t2 = document.AddTable(2, columns2 - 2);
                     t2.Alignment = Alignment.center;
-                t2.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                t2.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                t2.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                t2.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                t2.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t2.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t2.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t2.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t2.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t2.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
 
-                for (int i = 0; i < columns2 - 2; i++)
+                    for (int i = 0; i < columns2 - 2; i++)
                     {
                         t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki2[i + 2])
                             .Font("Times New Roman")
@@ -633,20 +636,20 @@ namespace WindowsFormsApplication1
 
                     document.Save();
 
-                  //  MessageBox.Show("Zapisano dokument");
+                    //  MessageBox.Show("Zapisano dokument");
                 }
             }
             catch
             {
                 MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
-          }
+            }
         }
 
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow)
         {
-            try
-            {
-                if (listaJadlospisow.Count > 0)
+            // try
+            //{
+            if (listaJadlospisow.Count > 0)
             {
                 System.IO.Directory.CreateDirectory("Jadłospisy dzienne/" + listaJadlospisow[0].miasto);
                 string path = @"Jadłospisy dzienne/" + listaJadlospisow[0].miasto + "/" + listaJadlospisow[0].data + ".docx";
@@ -659,7 +662,7 @@ namespace WindowsFormsApplication1
                     .Font("Times New Roman")
                     .FontSize(16)
                     .Color(Color.Black)
-                    .Bold();              
+                    .Bold();
 
                     foreach (Jadlospis jadlospis in listaJadlospisow)
                     {
@@ -695,7 +698,9 @@ namespace WindowsFormsApplication1
                         for (int i = 0; i < columns; i++)
                         {
                             if (columns < 5)
-                                t.SetColumnWidth(i, 3000);
+                                t.SetColumnWidth(i, 3500);
+                            else
+                                t.SetColumnWidth(i, 2100);
                         }
 
                         for (int i = 0; i < columns; i++)
@@ -827,12 +832,16 @@ namespace WindowsFormsApplication1
                         t2.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t2.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                        for (int i = 0; i < columns2 - 2; i++)
+                        {
+                            t2.SetColumnWidth(i, 1313);
+                        }
 
                         for (int i = 0; i < columns2 - 2; i++)
                         {
                             t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i + 2])
                                 .Font("Times New Roman")
-                                .FontSize(10)
+                                .FontSize(9)
                                 .Color(Color.Black);
 
                             t2.Rows[1].Cells[i].Paragraphs[0].Append(suma[i].ToString())
@@ -841,26 +850,31 @@ namespace WindowsFormsApplication1
                                     .Color(Color.Black);
                         }
                         p4.InsertTableAfterSelf(t2);
-
-
-
                     }
 
                     Paragraph p3 = document.InsertParagraph();
                     p3.Alignment = Alignment.left;
 
-                    if (document.Footers.Even != null)
-                        document.Footers.Even.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
-                          .Font("Times New Roman")
-                            .FontSize(8)
-                            .Color(Color.Black)
-                            .Bold();
-                    if (document.Footers.Odd != null)
-                        document.Footers.Odd.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
-                        .Font("Times New Roman")
-                        .FontSize(8)
-                        .Color(Color.Black)
-                        .Bold();
+                    //if (document.Footers.Even != null)
+                    //    document.Footers.Even.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
+                    //      .Font("Times New Roman")
+                    //        .FontSize(8)
+                    //        .Color(Color.Black)
+                    //        .Bold();
+                    //if (document.Footers.Odd != null)
+                    //    document.Footers.Odd.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
+                    //    .Font("Times New Roman")
+                    //    .FontSize(8)
+                    //    .Color(Color.Black)
+                    //    .Bold();
+
+                    Paragraph p5 = document.InsertParagraph();
+                    p5.Alignment = Alignment.left;
+                    p5.Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
+               .Font("Times New Roman")
+               .FontSize(10)
+               .Color(Color.Black);
+
                     document.Save();
 
                     MessageBox.Show("Zapisano dokument", "Sukces");
@@ -870,18 +884,19 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
             }
+            //}
+
+
+            //    catch
+            //    {
+            //        MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+            //    }
         }
 
-
-            catch
-            {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
-            }
-}
-
-public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
+        public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
         {
-            try { 
+            try
+            {
                 System.IO.Directory.CreateDirectory("Dekadówki/" + miasto);
                 List<Dieta> listaDiet = DAO.DietaDAO.SelectAll(miasto);
                 DateTime dateFrom = Convert.ToDateTime(dataOd);
@@ -890,38 +905,38 @@ public static void Dekadowka(string miasto, string dataOd, string dataDo, List<J
                 {
                     string path = @"Dekadówki/" + miasto + "/" + dataOd + "-" + dataDo + ", " + d.nazwa + ".docx";
                     List<Jadlospis> listaJadlospisowDlaDiety = listaJadlospisow.Where(x => x.dieta.nazwa == d.nazwa).Cast<Jadlospis>().ToList();
-                if (listaJadlospisowDlaDiety != null && listaJadlospisowDlaDiety.Count>0)
-                {
-                    using (DocX document = DocX.Create(path))
+                    if (listaJadlospisowDlaDiety != null && listaJadlospisowDlaDiety.Count > 0)
                     {
-                        document.PageLayout.Orientation = Xceed.Words.NET.Orientation.Landscape;
+                        using (DocX document = DocX.Create(path))
+                        {
+                            document.PageLayout.Orientation = Xceed.Words.NET.Orientation.Landscape;
                             document.MarginTop = 100;
                             document.MarginHeader = 100;
                             Paragraph p = document.InsertParagraph();
-                        p.Alignment = Alignment.center;
-                        p.Append("Od " + dataOd + " do " + dataDo + ", " + d.nazwa + "\r\n")
-                        .Font("Times New Roman")
-                        .FontSize(14)
-                        .Color(Color.Black)
-                        .Bold();
+                            p.Alignment = Alignment.center;
+                            p.Append("Od " + dataOd + " do " + dataDo + ", " + d.nazwa + "\r\n")
+                            .Font("Times New Roman")
+                            .FontSize(14)
+                            .Color(Color.Black)
+                            .Bold();
 
-                        Paragraph p2 = document.InsertParagraph();
-                        p2.Alignment = Alignment.left;
+                            Paragraph p2 = document.InsertParagraph();
+                            p2.Alignment = Alignment.left;
 
-                        int rows = 4;
-                        if (listaJadlospisowDlaDiety[0].sklad_IIsniadanie != "" && listaJadlospisowDlaDiety[0].sklad_podwieczorek != "")
-                            rows = 6;
-                        int columns = (dateTo - dateFrom).Days + 2;
-                        string[] naglowki = null;
-                        if (rows == 6)
-                            naglowki = new string[6] { "Dzień", "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
-                        else
-                            naglowki = new string[4] { "Dzień", "Śniadanie", "Obiad", "Kolacja" };
+                            int rows = 4;
+                            if (listaJadlospisowDlaDiety[0].sklad_IIsniadanie != "" && listaJadlospisowDlaDiety[0].sklad_podwieczorek != "")
+                                rows = 6;
+                            int columns = (dateTo - dateFrom).Days + 2;
+                            string[] naglowki = null;
+                            if (rows == 6)
+                                naglowki = new string[6] { "Dzień", "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
+                            else
+                                naglowki = new string[4] { "Dzień", "Śniadanie", "Obiad", "Kolacja" };
 
 
-                        Table t = document.AddTable(rows, columns);
-                        t.Alignment = Alignment.center;
-                            t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single,BorderSize.one, 1, Color.Black));
+                            Table t = document.AddTable(rows, columns);
+                            t.Alignment = Alignment.center;
+                            t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                             t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                             t.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                             t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
@@ -931,31 +946,31 @@ public static void Dekadowka(string miasto, string dataOd, string dataDo, List<J
                             for (int i = 1; i < columns; i++)
                                 t.SetColumnWidth(i, 2000);
                             int licz = 0;
-                        foreach (string s in naglowki)
-                        {
-                            t.Rows[licz].Cells[0].Paragraphs[0].Append(s)
-                                    .FontSize(11)
-                        .Color(Color.Black).Bold().Font("Times New Roman");
-                            licz++;
-                        }
-                        int licznik = 1;
-                        for (DateTime data = dateFrom; data <= dateTo; data = data.AddDays(1))
-                        {
-                            string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
-                            Jadlospis j = DAO.JadlospisDAO.SelectAll(dt, miasto, d.nazwa);
-                                string dzien = data.DayOfWeek.ToString();
-                            t.Rows[0].Cells[licznik].Paragraphs[0].Append(dt+"\r\n"+GetDayOfWeek(dzien)).FontSize(11)
-                        .Color(Color.Black).Bold().Font("Times New Roman"); 
-                            if (j != null)
+                            foreach (string s in naglowki)
                             {
-                                if (j.sklad_IIsniadanie != "" && j.sklad_podwieczorek != "")
+                                t.Rows[licz].Cells[0].Paragraphs[0].Append(s)
+                                        .FontSize(11)
+                            .Color(Color.Black).Bold().Font("Times New Roman");
+                                licz++;
+                            }
+                            int licznik = 1;
+                            for (DateTime data = dateFrom; data <= dateTo; data = data.AddDays(1))
+                            {
+                                string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
+                                Jadlospis j = DAO.JadlospisDAO.SelectAll(dt, miasto, d.nazwa);
+                                string dzien = data.DayOfWeek.ToString();
+                                t.Rows[0].Cells[licznik].Paragraphs[0].Append(dt + "\r\n" + GetDayOfWeek(dzien)).FontSize(11)
+                            .Color(Color.Black).Bold().Font("Times New Roman");
+                                if (j != null)
                                 {
-                                    t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
-                        .FontSize(9)
-                        .Color(Color.Black);
-                                    t.Rows[2].Cells[licznik].Paragraphs[0].Append(j.nazwa_IIsniadanie).Font("Times New Roman")
-                        .FontSize(9)
-                        .Color(Color.Black);
+                                    if (j.sklad_IIsniadanie != "" && j.sklad_podwieczorek != "")
+                                    {
+                                        t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
+                            .FontSize(9)
+                            .Color(Color.Black);
+                                        t.Rows[2].Cells[licznik].Paragraphs[0].Append(j.nazwa_IIsniadanie).Font("Times New Roman")
+                            .FontSize(9)
+                            .Color(Color.Black);
                                         t.Rows[3].Cells[licznik].Paragraphs[0].Append(j.nazwa_obiad).Font("Times New Roman")
                         .FontSize(9)
                         .Color(Color.Black);
@@ -966,11 +981,11 @@ public static void Dekadowka(string miasto, string dataOd, string dataDo, List<J
                         .FontSize(9)
                         .Color(Color.Black);
                                     }
-                                else
-                                {
-                                    t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
-                        .FontSize(9)
-                        .Color(Color.Black);
+                                    else
+                                    {
+                                        t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
+                            .FontSize(9)
+                            .Color(Color.Black);
                                         t.Rows[2].Cells[licznik].Paragraphs[0].Append(j.nazwa_obiad).Font("Times New Roman")
                         .FontSize(9)
                         .Color(Color.Black);
@@ -978,21 +993,21 @@ public static void Dekadowka(string miasto, string dataOd, string dataDo, List<J
                         .FontSize(9)
                         .Color(Color.Black);
                                     }
-                                licznik++;
+                                    licznik++;
+                                }
                             }
-                        }
-                        p2.InsertTableAfterSelf(t);
-                        document.Save();
+                            p2.InsertTableAfterSelf(t);
+                            document.Save();
 
-                        MessageBox.Show("Zapisano dokument");
+                            MessageBox.Show("Zapisano dokument");
+                        }
                     }
                 }
-                }
-           }
+            }
             catch
             {
-              MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
-           }
+                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+            }
         }
         private static string GetMonthForDate(int month)
         {

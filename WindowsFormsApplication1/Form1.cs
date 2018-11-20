@@ -585,32 +585,72 @@ namespace WindowsFormsApplication1
             }
             if (suma[5, 0] != 0)
             {
-                procent_sniadanie.Text = Math.Round(((suma[0, 0] * 100.0) / suma[5, 0]), 2).ToString();
-                if (Convert.ToDouble(procent_sniadanie.Text) >= 30.0 && Convert.ToDouble(procent_sniadanie.Text) <= 35.0)
-                    procent_sniadanie.ForeColor = Color.Green;
+                if (lv_podwieczorek.Items.Count != 0 || lv_IIsniadanie.Items.Count != 0)
+                {
+                    procent_sniadanie.Text = Math.Round(((suma[0, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_sniadanie.Text) >= 25.0 && Convert.ToDouble(procent_sniadanie.Text) <= 30.0)
+                        procent_sniadanie.ForeColor = Color.Green;
+                    else
+                        procent_sniadanie.ForeColor = Color.Red;
+                    procent_sniadanie.Text += " %";
+
+                    procent_IIsniadanie.Text = Math.Round(((suma[1, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_IIsniadanie.Text) >= 5.0 && Convert.ToDouble(procent_IIsniadanie.Text) <= 10.0)
+                        procent_IIsniadanie.ForeColor = Color.Green;
+                    else
+                        procent_IIsniadanie.ForeColor = Color.Red;
+                    procent_IIsniadanie.Text += " %";
+
+                    procent_obiad.Text = Math.Round(((suma[2, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_obiad.Text) >= 35.0 && Convert.ToDouble(procent_obiad.Text) <= 40.0)
+                        procent_obiad.ForeColor = Color.Green;
+                    else
+                        procent_obiad.ForeColor = Color.Red;
+                    procent_obiad.Text += " %";
+
+                    procent_podwieczorek.Text = Math.Round(((suma[3, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_podwieczorek.Text) >= 5.0 && Convert.ToDouble(procent_podwieczorek.Text) <= 10.0)
+                        procent_podwieczorek.ForeColor = Color.Green;
+                    else
+                        procent_podwieczorek.ForeColor = Color.Red;
+                    procent_podwieczorek.Text += " %";
+
+                    procent_kolacja.Text = Math.Round(((suma[4, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_kolacja.Text) >= 15.0 && Convert.ToDouble(procent_kolacja.Text) <= 20.0)
+                        procent_kolacja.ForeColor = Color.Green;
+                    else
+                        procent_kolacja.ForeColor = Color.Red;
+                    procent_kolacja.Text += " %";
+                }
                 else
-                    procent_sniadanie.ForeColor = Color.Red;
-                procent_sniadanie.Text += " %";
+                {
+                    procent_sniadanie.Text = Math.Round(((suma[0, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_sniadanie.Text) >= 30.0 && Convert.ToDouble(procent_sniadanie.Text) <= 35.0)
+                        procent_sniadanie.ForeColor = Color.Green;
+                    else
+                        procent_sniadanie.ForeColor = Color.Red;
+                    procent_sniadanie.Text += " %";
 
-                procent_IIsniadanie.Text = Math.Round(((suma[1, 0] * 100.0) / suma[5, 0]), 2).ToString();
-                procent_IIsniadanie.Text += " %";
+                    procent_IIsniadanie.Text = Math.Round(((suma[1, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    procent_IIsniadanie.Text += " %";
 
-                procent_obiad.Text = Math.Round(((suma[2, 0] * 100.0) / suma[5, 0]), 2).ToString();
-                if (Convert.ToDouble(procent_obiad.Text) >= 35.0 && Convert.ToDouble(procent_obiad.Text) <= 40.0)
-                    procent_obiad.ForeColor = Color.Green;
-                else
-                    procent_obiad.ForeColor = Color.Red;
-                procent_obiad.Text += " %";
+                    procent_obiad.Text = Math.Round(((suma[2, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_obiad.Text) >= 35.0 && Convert.ToDouble(procent_obiad.Text) <= 40.0)
+                        procent_obiad.ForeColor = Color.Green;
+                    else
+                        procent_obiad.ForeColor = Color.Red;
+                    procent_obiad.Text += " %";
 
-                procent_podwieczorek.Text = Math.Round(((suma[3, 0] * 100.0) / suma[5, 0]), 2).ToString();
-                procent_podwieczorek.Text += " %";
+                    procent_podwieczorek.Text = Math.Round(((suma[3, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    procent_podwieczorek.Text += " %";
 
-                procent_kolacja.Text = Math.Round(((suma[4, 0] * 100.0) / suma[5, 0]), 2).ToString();
-                if (Convert.ToDouble(procent_kolacja.Text) >= 25.0 && Convert.ToDouble(procent_kolacja.Text) <= 30.0)
-                    procent_kolacja.ForeColor = Color.Green;
-                else
-                    procent_kolacja.ForeColor = Color.Red;
-                procent_kolacja.Text += " %";
+                    procent_kolacja.Text = Math.Round(((suma[4, 0] * 100.0) / suma[5, 0]), 2).ToString();
+                    if (Convert.ToDouble(procent_kolacja.Text) >= 25.0 && Convert.ToDouble(procent_kolacja.Text) <= 30.0)
+                        procent_kolacja.ForeColor = Color.Green;
+                    else
+                        procent_kolacja.ForeColor = Color.Red;
+                    procent_kolacja.Text += " %";
+                }
             }
             else
             {
@@ -5442,6 +5482,12 @@ namespace WindowsFormsApplication1
             {
                 e.Handled = true;
             }
+        }
+
+        private void pictureBox26_Click(object sender, EventArgs e)
+        {
+            this.Width = 45;
+            this.Height = 45;
         }
     }
 }
