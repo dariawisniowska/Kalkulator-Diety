@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-        
+            this.WindowState = FormWindowState.Maximized;
             suma = new double[6, 8];
             procent = new double[6, 8];
 

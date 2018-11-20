@@ -164,6 +164,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
+            if (jadlospis != null)
+            {
                 DateTime data = Convert.ToDateTime(jadlospis.data);
                 System.IO.Directory.CreateDirectory("Jadłospisy/" + jadlospis.miasto + "/" + data.Year + "/" + data.Month + "/" + data.Day);
                 string path = @"Jadłospisy/" + jadlospis.miasto + "/" + data.Year + "/" + data.Month + "/" + data.Day + "/" + jadlospis.data + ", " + jadlospis.dieta.nazwa + ".docx";
@@ -183,16 +185,17 @@ namespace WindowsFormsApplication1
 
                     int cl = pr[0].Split('|').Length;
                     double[] sum = new double[cl - 2];
+                    double[] suma_kalorie = new double[5];
                     //ŚNIADANIE
                     if (jadlospis.sklad_sniadanie != "")
 
                     {
                         int rows = pr.Length + 1;
-                        string[] nag = null;
+                        string[] naglowki = null;
                         if (cl != 10)
-                            nag = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
+                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
                         else
-                            nag = new string[10] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]", "Sód [mg]" };
+                            naglowki = new string[10] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]", "Sód [mg]" };
 
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
@@ -215,7 +218,7 @@ namespace WindowsFormsApplication1
                        .Color(Color.Black);
                         for (int i = 0; i < cl; i++)
                         {
-                            t.Rows[0].Cells[i].Paragraphs[0].Append(nag[i])
+                            t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
                                 .FontSize(9)
                                 .Color(Color.Black);
@@ -243,6 +246,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                         }
+                        suma_kalorie[0] = sum[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                            .Font("Times New Roman")
                                         .FontSize(9)
@@ -321,6 +325,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                         }
+                        suma_kalorie[1] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
                                        .FontSize(9)
@@ -398,6 +403,7 @@ namespace WindowsFormsApplication1
                             }
 
                         }
+                        suma_kalorie[2] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
                                        .FontSize(9)
@@ -473,6 +479,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                         }
+                        suma_kalorie[3] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
                                        .FontSize(9)
@@ -549,6 +556,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                         }
+                        suma_kalorie[4] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
                                        .FontSize(9)
@@ -634,21 +642,96 @@ namespace WindowsFormsApplication1
                                 .Color(Color.Black);
                     p3.InsertTableAfterSelf(t2);
 
+
+
+                    Paragraph p4 = document.InsertParagraph();
+                    p4.Alignment = Alignment.left;
+                    int col = 0;
+                    string[] nag;
+                    if (sum[1] != 0 || sum[3] != 0) { col = 5; nag = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
+                    else { col = 3; nag = new string[3] { "Śniadanie", "Obiad", "Kolacja" }; }
+                    Table t3 = document.AddTable(2, col);
+                    t3.Alignment = Alignment.center;
+                    t3.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t3.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t3.SetBorder(TableBorderType.InsideV, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t3.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t3.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+                    t3.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
+
+                    for (int i = 0; i < col; i++)
+                    {
+                        t3.Rows[0].Cells[i].Paragraphs[0].Append(nag[i])
+                            .Font("Times New Roman")
+                            .FontSize(10)
+                            .Color(Color.Black);
+                        double procent = 0;
+                        if (col == 5)
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    procent = Math.Round(((suma_kalorie[0] * 100.0) / sum[0]), 2);
+                                    break;
+                                case 1:
+                                    procent = Math.Round(((suma_kalorie[1] * 100.0) / sum[0]), 2);
+                                    break;
+                                case 2:
+                                    procent = Math.Round(((suma_kalorie[2] * 100.0) / sum[0]), 2);
+                                    break;
+                                case 3:
+                                    procent = Math.Round(((suma_kalorie[3] * 100.0) / sum[0]), 2);
+                                    break;
+                                case 4:
+                                    procent = Math.Round(((suma_kalorie[4] * 100.0) / sum[0]), 2);
+                                    break;
+
+                            }
+                        }
+                        if (col == 3)
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    procent = Math.Round(((suma_kalorie[0] * 100.0) / sum[0]), 2);
+                                    break;
+                                case 1:
+                                    procent = Math.Round(((suma_kalorie[2] * 100.0) / sum[0]), 2);
+                                    break;
+                                case 2:
+                                    procent = Math.Round(((suma_kalorie[4] * 100.0) / sum[0]), 2);
+                                    break;
+
+                            }
+                        }
+                        t3.Rows[1].Cells[i].Paragraphs[0].Append(procent.ToString() + " %")
+                           .Font("Times New Roman")
+                           .FontSize(10)
+                           .Color(Color.Black);
+
+                    }
+                    p4.InsertTableAfterSelf(t3);
+
                     document.Save();
 
-                    //  MessageBox.Show("Zapisano dokument");
+                    MessageBox.Show("Zapisano dokument");
                 }
             }
-            catch
+            else
+            {
+                MessageBox.Show("Brak jadłospisu");
+            }
+        }
+            catch(Exception ex)
             {
                 MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
             }
-        }
+}
 
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow)
         {
-            // try
-            //{
+           try
+           {
             if (listaJadlospisow.Count > 0)
             {
                 System.IO.Directory.CreateDirectory("Jadłospisy dzienne/" + listaJadlospisow[0].miasto);
@@ -884,13 +967,13 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
             }
-            //}
+            }
 
 
-            //    catch
-            //    {
-            //        MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
-            //    }
+            catch
+            {
+                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+            }
         }
 
         public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
