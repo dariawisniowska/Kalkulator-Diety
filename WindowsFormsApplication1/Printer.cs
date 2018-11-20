@@ -846,7 +846,7 @@ namespace WindowsFormsApplication1
 
                             t2.Rows[1].Cells[i].Paragraphs[0].Append(suma[i].ToString())
                                     .Font("Times New Roman")
-                                    .FontSize(10)
+                                    .FontSize(9)
                                     .Color(Color.Black);
                         }
                         p4.InsertTableAfterSelf(t2);
