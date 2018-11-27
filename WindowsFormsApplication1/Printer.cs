@@ -993,13 +993,15 @@ namespace WindowsFormsApplication1
                         using (DocX document = DocX.Create(path))
                         {
                             document.PageLayout.Orientation = Xceed.Words.NET.Orientation.Landscape;
-                            document.MarginTop = 100;
-                            document.MarginHeader = 100;
+                            document.MarginTop = 5;
+                            document.MarginHeader = 0;
+                            document.MarginBottom = 5;
+                            document.MarginFooter = 0;
                             Paragraph p = document.InsertParagraph();
                             p.Alignment = Alignment.center;
                             p.Append("Od " + dataOd + " do " + dataDo + ", " + d.nazwa + "\r\n")
                             .Font("Times New Roman")
-                            .FontSize(14)
+                            .FontSize(12)
                             .Color(Color.Black)
                             .Bold();
 
