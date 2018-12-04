@@ -714,7 +714,7 @@ namespace WindowsFormsApplication1
 
                     document.Save();
 
-                    MessageBox.Show("Zapisano dokument");
+                   // MessageBox.Show("Zapisano dokument");
                 }
             }
             else
@@ -741,7 +741,7 @@ namespace WindowsFormsApplication1
                 {
                     Paragraph p = document.InsertParagraph();
                     p.Alignment = Alignment.center;
-                    p.Append(listaJadlospisow[0].data + "\r\n")
+                    p.Append(listaJadlospisow[0].data + "\r\n JADŁOSPIS")
                     .Font("Times New Roman")
                     .FontSize(16)
                     .Color(Color.Black)
@@ -953,7 +953,7 @@ namespace WindowsFormsApplication1
 
                     Paragraph p5 = document.InsertParagraph();
                     p5.Alignment = Alignment.left;
-                    p5.Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
+                    p5.Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono pogrubionym drukiem w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")
                .Font("Times New Roman")
                .FontSize(10)
                .Color(Color.Black);
