@@ -741,7 +741,7 @@ namespace WindowsFormsApplication1
                 {
                     Paragraph p = document.InsertParagraph();
                     p.Alignment = Alignment.center;
-                    p.Append(listaJadlospisow[0].data + "\r\n JADŁOSPIS")
+                    p.Append(listaJadlospisow[0].data + "\r\nJADŁOSPIS")
                     .Font("Times New Roman")
                     .FontSize(16)
                     .Color(Color.Black)
