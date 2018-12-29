@@ -3678,10 +3678,10 @@
             this.panel_jadlospis.Controls.Add(this.label89);
             this.panel_jadlospis.Controls.Add(this.tabControl1);
             this.panel_jadlospis.Controls.Add(this.jadlospis_miasto);
-            this.panel_jadlospis.Location = new System.Drawing.Point(999, 255);
+            this.panel_jadlospis.Location = new System.Drawing.Point(529, 240);
             this.panel_jadlospis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_jadlospis.Name = "panel_jadlospis";
-            this.panel_jadlospis.Size = new System.Drawing.Size(280, 383);
+            this.panel_jadlospis.Size = new System.Drawing.Size(620, 108);
             this.panel_jadlospis.TabIndex = 62;
             this.panel_jadlospis.Visible = false;
             // 
@@ -4443,7 +4443,7 @@
             this.label88.AutoSize = true;
             this.label88.BackColor = System.Drawing.Color.Transparent;
             this.label88.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label88.Location = new System.Drawing.Point(766, 140);
+            this.label88.Location = new System.Drawing.Point(862, 136);
             this.label88.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(76, 32);
@@ -4458,7 +4458,7 @@
             this.jadlospis_dieta.Location = new System.Drawing.Point(663, 180);
             this.jadlospis_dieta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.jadlospis_dieta.Name = "jadlospis_dieta";
-            this.jadlospis_dieta.Size = new System.Drawing.Size(296, 40);
+            this.jadlospis_dieta.Size = new System.Drawing.Size(462, 40);
             this.jadlospis_dieta.TabIndex = 5;
             this.jadlospis_dieta.SelectedIndexChanged += new System.EventHandler(this.jadlospis_dieta_SelectedIndexChanged);
             // 
@@ -6083,7 +6083,7 @@
             this.cb_dieta.Location = new System.Drawing.Point(928, 109);
             this.cb_dieta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cb_dieta.Name = "cb_dieta";
-            this.cb_dieta.Size = new System.Drawing.Size(415, 40);
+            this.cb_dieta.Size = new System.Drawing.Size(477, 40);
             this.cb_dieta.TabIndex = 5;
             this.cb_dieta.SelectedIndexChanged += new System.EventHandler(this.cb_dieta_SelectedIndexChanged);
             // 
@@ -6900,10 +6900,10 @@
             this.panel_glowny.Controls.Add(this.pictureBox3);
             this.panel_glowny.Controls.Add(this.pictureBox1);
             this.panel_glowny.Controls.Add(this.pictureBox2);
-            this.panel_glowny.Location = new System.Drawing.Point(1802, 448);
+            this.panel_glowny.Location = new System.Drawing.Point(1168, 232);
             this.panel_glowny.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_glowny.Name = "panel_glowny";
-            this.panel_glowny.Size = new System.Drawing.Size(404, 183);
+            this.panel_glowny.Size = new System.Drawing.Size(774, 289);
             this.panel_glowny.TabIndex = 42;
             this.panel_glowny.Visible = false;
             this.panel_glowny.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);

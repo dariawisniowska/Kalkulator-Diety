@@ -114,7 +114,7 @@ namespace WindowsFormsApplication1
 
                     document.Save();
 
-                    MessageBox.Show("Zapisano dokument");
+                   // MessageBox.Show("Zapisano dokument");
                 }
             }
             catch
@@ -151,7 +151,7 @@ namespace WindowsFormsApplication1
 
                     document.Save();
 
-                    MessageBox.Show("Zapisano dokument");
+                  //  MessageBox.Show("Zapisano dokument");
                 }
             }
             catch
@@ -960,7 +960,7 @@ namespace WindowsFormsApplication1
 
                     document.Save();
 
-                    MessageBox.Show("Zapisano dokument", "Sukces");
+                  //  MessageBox.Show("Zapisano dokument", "Sukces");
                 }
             }
             else
@@ -1084,7 +1084,7 @@ namespace WindowsFormsApplication1
                             p2.InsertTableAfterSelf(t);
                             document.Save();
 
-                            MessageBox.Show("Zapisano dokument");
+                          //  MessageBox.Show("Zapisano dokument");
                         }
                     }
                 }

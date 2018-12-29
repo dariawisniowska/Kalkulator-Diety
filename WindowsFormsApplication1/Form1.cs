@@ -4686,8 +4686,22 @@ namespace WindowsFormsApplication1
                         }
                         listView5.Items.Add(itm);
                     }
-                    
-                }LiczSredniaJadlospisu();
+
+                }
+                else
+                {
+                    textBox7.Text = "";
+                    textBox8.Text = "";
+                    textBox9.Text = "";
+                    textBox10.Text = "";
+                    textBox11.Text = "";
+                    listView1.Items.Clear();
+                    listView2.Items.Clear();
+                    listView3.Items.Clear();
+                    listView4.Items.Clear();
+                    listView5.Items.Clear();
+                }
+                LiczSredniaJadlospisu();
             }
         }
         public void LiczSredniaJadlospisu()
@@ -5001,6 +5015,7 @@ namespace WindowsFormsApplication1
             drukuj_rodzaj_label.Visible = true;
 
             drukuj_rodzaj.SelectedIndex = 0;
+            drukuj_rodzaj_SelectedIndexChanged(null, null);
         }
 
         private void label96_Click(object sender, EventArgs e)
@@ -5026,9 +5041,11 @@ namespace WindowsFormsApplication1
                 {
                     case "Dekadówka":
                     Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text,DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
-                        break;
+                    MessageBox.Show("Wygenerowano dekadowkę");
+                    break;
                     case "Jadłospis":
                     Printer.Jadlospis(DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString()));
+                    MessageBox.Show("Wygenerowano jadłospis");
                     break;
                 case "Jadłospisy w danym okresie":
                     DateTime dateFrom = Convert.ToDateTime(drukuj_od.Text);
@@ -5040,16 +5057,26 @@ namespace WindowsFormsApplication1
                         foreach (Jadlospis j in jad)
                             Printer.Jadlospis(j);
                     }
+                    MessageBox.Show("Wygenerowano jadłospisy w wybranym okresie");
                         break;
                 case "Jadłospis dzienny":
-                    Printer.JadlospisDzienny(DAO.JadlospisDAO.Select(drukuj_data.Text,drukuj_combo.SelectedItem.ToString()));
-                        break;
+                    DateTime dateFrom2 = Convert.ToDateTime(drukuj_od.Text);
+                    DateTime dateTo2 = Convert.ToDateTime(drukuj_do.Text);
+                    for (DateTime data = dateFrom2; data <= dateTo2; data = data.AddDays(1))
+                    {
+                        string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
+                        Printer.JadlospisDzienny(DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString()));
+                    }
+                    MessageBox.Show("Wygenerowano jadłospisy dzienne w wybranym okresie");
+                    break;
                     case "Receptura":
                         Printer.Receptura(listaReceptur[drukuj_combo.SelectedIndex]);
-                        break;
+                    MessageBox.Show("Wygernerowano recepturę");
+                    break;
                     case "Produkt":
                     Printer.Produkt(Lista[drukuj_combo.SelectedIndex]);
-                        break;
+                    MessageBox.Show("Wygernerowano produkt");
+                    break;
                 }
                 glownaClick();
         }
@@ -5123,12 +5150,12 @@ namespace WindowsFormsApplication1
                     break;
                 case "Jadłospis dzienny":
                     label10.Text = "Drukowanie -> Jadłospis dzienny";
-                    drukuj_data.Visible = true;
-                    drukuj_data_label.Visible = true;
-                    drukuj_do.Visible = false;
-                    drukuj_do_label.Visible = false;
-                    drukuj_od.Visible = false;
-                    drukuj_od_label.Visible = false;
+                    drukuj_data.Visible = false;
+                    drukuj_data_label.Visible = false;
+                    drukuj_do.Visible = true;
+                    drukuj_do_label.Visible = true;
+                    drukuj_od.Visible = true;
+                    drukuj_od_label.Visible = true;
                     drukuj_combo.Visible = true;
                     drukuj_combo_label.Visible = true;
                     drukuj_combo_label.Text = "Miasto:";
