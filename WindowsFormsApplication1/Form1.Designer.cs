@@ -636,7 +636,7 @@
             this.menu.MaximumSize = new System.Drawing.Size(450, 0);
             this.menu.MinimumSize = new System.Drawing.Size(450, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(450, 1106);
+            this.menu.Size = new System.Drawing.Size(450, 1046);
             this.menu.TabIndex = 39;
             // 
             // panel11
@@ -1003,7 +1003,7 @@
             this.panel1.MaximumSize = new System.Drawing.Size(0, 77);
             this.panel1.MinimumSize = new System.Drawing.Size(0, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1496, 77);
+            this.panel1.Size = new System.Drawing.Size(1470, 77);
             this.panel1.TabIndex = 40;
             // 
             // pictureBox4
@@ -1031,7 +1031,7 @@
             this.panel2.MaximumSize = new System.Drawing.Size(0, 62);
             this.panel2.MinimumSize = new System.Drawing.Size(0, 62);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1496, 62);
+            this.panel2.Size = new System.Drawing.Size(1470, 62);
             this.panel2.TabIndex = 41;
             // 
             // label10
@@ -3497,7 +3497,7 @@
             this.panel_dekadowka_wczytaj.Location = new System.Drawing.Point(484, 166);
             this.panel_dekadowka_wczytaj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_dekadowka_wczytaj.Name = "panel_dekadowka_wczytaj";
-            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(64, 65);
+            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(1429, 427);
             this.panel_dekadowka_wczytaj.TabIndex = 83;
             // 
             // label54
@@ -3546,6 +3546,7 @@
             this.dekadowka_wczytaj_dieta.Name = "dekadowka_wczytaj_dieta";
             this.dekadowka_wczytaj_dieta.Size = new System.Drawing.Size(622, 35);
             this.dekadowka_wczytaj_dieta.TabIndex = 74;
+            this.dekadowka_wczytaj_dieta.SelectedIndexChanged += new System.EventHandler(this.dekadowka_wczytaj_dieta_SelectedIndexChanged);
             // 
             // pictureBox13
             // 
@@ -7021,7 +7022,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(1946, 1106);
+            this.ClientSize = new System.Drawing.Size(1920, 1046);
             this.Controls.Add(this.panel_drukuj);
             this.Controls.Add(this.panel_receptura);
             this.Controls.Add(this.panel_glowny);

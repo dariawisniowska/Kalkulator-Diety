@@ -70,10 +70,19 @@ namespace WindowsFormsApplication1
             panel_receptura.Dock = DockStyle.Fill;
             panel_drukuj.Dock = DockStyle.Fill;
 
+            dekadowka_panel.AutoScroll = true;
+            dekadowka_panel.FlowDirection = FlowDirection.LeftToRight;
+            dekadowka_panel.VerticalScroll.Visible = false;
+            dekadowka_panel.HorizontalScroll.Visible = false;
+            dekadowka_panel.WrapContents = false; // Vertical rather than horizontal scrolling
+            dekadowka_panel.BackColor = Color.White;
+            dekadowka_panel.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1]);
+
             LiczSrednia();
   }
 
         #region Aplikacja
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -2469,165 +2478,101 @@ namespace WindowsFormsApplication1
         {
             dekadowka_panel.Controls.Clear();
 
-            dekadowka_panel.AutoScroll = true;
-            dekadowka_panel.FlowDirection = FlowDirection.LeftToRight;
-            dekadowka_panel.VerticalScroll.Visible = false;
-            dekadowka_panel.HorizontalScroll.Visible = false;
-            dekadowka_panel.WrapContents = false; // Vertical rather than horizontal scrolling
-            dekadowka_panel.BackColor = Color.White;
-            dekadowka_panel.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1]);
-
             for (int j = 0; j < wybranaDekadowka.dni; j++)
             {
-                FlowLayoutPanel dayOfWeek = new FlowLayoutPanel();
-                dayOfWeek.BackColor = Color.White;
-                dayOfWeek.AutoScroll = true;
-                dayOfWeek.FlowDirection = FlowDirection.TopDown;
+                FlowLayoutPanel dayOfWeek = new FlowLayoutPanel
+                {
+                    BackColor = Color.White,
+                    AutoScroll = true,
+                    FlowDirection = FlowDirection.TopDown,
+                    WrapContents = false, // Vertical rather than horizontal scrolling
+                    Size = new System.Drawing.Size(dzienSize[0], dzienSize[1])
+                };
                 dayOfWeek.VerticalScroll.Visible = false;
                 dayOfWeek.HorizontalScroll.Visible = false;
-                dayOfWeek.WrapContents = false; // Vertical rather than horizontal scrolling
-                dayOfWeek.Size = new System.Drawing.Size(dzienSize[0], dzienSize[1]);
 
-                Label myDay = new Label();
                 string day = GetDay(wybranaDekadowka.dzienStart,j+1);
-                myDay.Text = day;
-                myDay.MaximumSize = new Size(dzienSize[0], 0);
-                myDay.AutoSize = true;
+                Label myDay = new Label
+                {
+                    Text = day,
+                    MaximumSize = new Size(dzienSize[0], 0),
+                    AutoSize = true
+                };
                 dayOfWeek.Controls.Add(myDay);
 
                 List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), j+1);
-
+                
                 foreach(Jadlospis jadlospis in jadlospisyDanegoDnia)
                 {
-                    FlowLayoutPanel myPanel = new FlowLayoutPanel();
-                    myPanel.BackColor = Color.LightBlue;
-                    myPanel.AutoScroll = true;
+                    FlowLayoutPanel myPanel = new FlowLayoutPanel
+                    {
+                        BackColor = Color.LightBlue,
+                        AutoScroll = true,
+                        FlowDirection = FlowDirection.TopDown,
+                        WrapContents = false,
+                        AutoSize = true
+                    };
                     myPanel.VerticalScroll.Visible = false;
                     myPanel.HorizontalScroll.Enabled = false;
-                    myPanel.FlowDirection = FlowDirection.TopDown;
-                    myPanel.WrapContents = false;
-                    myPanel.AutoSize = true;
-                    //myPanel.Size = new System.Drawing.Size(dietaSize[0], dietaSize[1]);
 
-                    Panel divider = new Panel();
-                    divider.BackColor = Color.Gray;
-                    divider.Size = new System.Drawing.Size(dietaSize[0] - 25, 5);
+                    Panel divider = new Panel
+                    {
+                        BackColor = Color.Gray,
+                        Size = new System.Drawing.Size(dietaSize[0] - 25, 5)
+                    };
                     myPanel.Controls.Add(divider);
 
-                    Label diet = new Label();
-                    diet.Text = jadlospis.dieta.nazwa;
-                    diet.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    diet.Font = new System.Drawing.Font("Sagoe UI", 12);
-                    diet.Margin = new Padding(0, 0, 0, 10);
-                    diet.AutoSize = true;
+                    Label diet = new Label
+                    {
+                        Text = jadlospis.dieta.nazwa,
+                        MaximumSize = new Size(dietaSize[0] - 25, 0),
+                        Font = new System.Drawing.Font("Sagoe UI", 12),
+                        Margin = new Padding(0, 0, 0, 10),
+                        AutoSize = true
+                    };
                     myPanel.Controls.Add(diet);
 
-                    Label meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    Label meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
+                    Label meal = new Label
+                    {
+                        MaximumSize = new Size(dietaSize[0] - 25, 0),
+                        AutoSize = true,
+                        Font = new System.Drawing.Font("Sagoe UI", 10),
+                        Text = "Śniadanie:"
+                    };
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal.Text = "Śniadanie:";
                     myPanel.Controls.Add(meal);
 
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_sniadanie != "")
-                        meal_content.Text = jadlospis.nazwa_sniadanie;
-                    else
-                        meal_content.Text = "-";
+                    Label meal_content = new Label
+                    {
+                        MaximumSize = new Size(dietaSize[0] - 25, 0),
+                        Font = new System.Drawing.Font("Sagoe UI", 10),
+                        ForeColor = Color.Gray,
+                        AutoSize = true
+                    };
+                    meal_content.Text = (jadlospis.nazwa_sniadanie != "") ? jadlospis.nazwa_sniadanie : "-";
                     meal_content.Margin = new Padding(10, 0, 0, 5);
                     myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
                     meal.Text = "II śniadanie:";
                     myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_IIsniadanie != "")
-                        meal_content.Text = jadlospis.nazwa_IIsniadanie;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
+                    meal_content.Text = (jadlospis.nazwa_IIsniadanie != "") ? jadlospis.nazwa_IIsniadanie : "-";
                     myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
                     meal.Text = "Obiad:";
                     myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_obiad != "")
-                        meal_content.Text = jadlospis.nazwa_obiad;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
+                    meal_content.Text = (jadlospis.nazwa_obiad != "") ? jadlospis.nazwa_obiad : "-";
                     myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
                     meal.Text = "Podwieczorek:";
                     myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_podwieczorek != "")
-                        meal_content.Text = jadlospis.nazwa_podwieczorek;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
+                    meal_content.Text = (jadlospis.nazwa_podwieczorek != "") ? jadlospis.nazwa_podwieczorek : "-";
                     myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
                     meal.Text = "Kolacja:";
                     myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_kolacja != "")
-                        meal_content.Text = jadlospis.nazwa_kolacja;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
+                    meal_content.Text = (jadlospis.nazwa_kolacja != "") ? jadlospis.nazwa_kolacja : "-";
                     myPanel.Controls.Add(meal_content);
-
+                    
                     dayOfWeek.Controls.Add(myPanel);
                 }
 
@@ -2684,8 +2629,19 @@ namespace WindowsFormsApplication1
 
         private void dekadowka_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            wybranaDekadowka = listaDekadowek[dekadowka_dekadowka.SelectedIndex];
-            GenerateCards();
+            if (wybranaDekadowka != null)
+            {
+                if (wybranaDekadowka.nazwa != listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa || wybranaDekadowka.miasto != listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto)
+                {
+                    wybranaDekadowka = listaDekadowek[dekadowka_dekadowka.SelectedIndex];
+                    GenerateCards();
+                }
+            }
+            else
+            {
+                wybranaDekadowka = listaDekadowek[dekadowka_dekadowka.SelectedIndex];
+                GenerateCards();
+            }
         }
 
         private void dekadowka_panel_Paint(object sender, PaintEventArgs e)
@@ -4011,7 +3967,7 @@ namespace WindowsFormsApplication1
                     if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex)
                     {
                         dekadowka_wczytaj_dieta.Items.Add(d.dieta.nazwa);
-                        jadlospisDekadowkiDoWczytania = d;
+                    //    jadlospisDekadowkiDoWczytania = d;
                     }
                 }
 
@@ -4335,7 +4291,7 @@ namespace WindowsFormsApplication1
                 lv_kolacja.Items.Add(itm);
             }
 
-            cb_miasto.SelectedItem = jadlospisDekadowkiDoWczytania.miasto;
+            cb_miasto.SelectedItem = jadlospisDekadowkiDoWczytania.dieta.miasto;
             cb_dieta.SelectedItem = jadlospisDekadowkiDoWczytania.dieta.nazwa;
 
             LiczSrednia();
@@ -5515,6 +5471,23 @@ namespace WindowsFormsApplication1
         {
             this.Width = 45;
             this.Height = 45;
+        }
+
+        private void dekadowka_wczytaj_dieta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (wybranaDekadowkaDoWczytania != null)
+            {
+                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), dekadowka_wczytaj_dzien.SelectedIndex + 1);
+                foreach (Jadlospis d in jadlospisyDanegoDnia)
+                {
+                    if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex && d.dieta.nazwa == dekadowka_wczytaj_dieta.SelectedItem.ToString())
+                    {
+                        dekadowka_wczytaj_dieta.Items.Add(d.dieta.nazwa);
+                        jadlospisDekadowkiDoWczytania = d;
+                    }
+                }
+            }
         }
     }
 }
