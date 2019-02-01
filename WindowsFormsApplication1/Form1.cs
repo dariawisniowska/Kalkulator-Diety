@@ -1856,7 +1856,7 @@ namespace WindowsFormsApplication1
             label11.BackColor = primaryColor;
             panel10.BackColor = primaryColor;
             panel11.BackColor = primaryColor;
-            label10.Text = "Dekadówki";
+            label10.Text = "Szablony";
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = true;
             panel_dekadowka.BringToFront();
@@ -2712,7 +2712,7 @@ namespace WindowsFormsApplication1
         private void dekadowka_usun_Click(object sender, EventArgs e)
         {
             //dodaj
-            label10.Text = "Dekadówki -> Dodaj";
+            label10.Text = "Szablony -> Dodaj";
 
             dekadowka_miasto.Visible = false;
             dekadowka_panel.Visible = false;
@@ -2747,7 +2747,7 @@ namespace WindowsFormsApplication1
 
         private void dekadowka_nope_Click(object sender, EventArgs e)
         {
-            label10.Text = "Dekadówki";
+            label10.Text = "Szablony";
             dekadowka_miasto.Visible = true;
             dekadowka_panel.Visible = true;
             dekadowka_usun.Visible = true;
@@ -2779,7 +2779,7 @@ namespace WindowsFormsApplication1
         Dekadowka wybranaDekadowkaDoZapisania;
         private void zapiszJadłospisDekadówkiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label10.Text = "Dekadówka -> Dodaj jadłospis";
+            label10.Text = "Szablon -> Dodaj jadłospis";
             panel_dekadowka_zapisz.Visible = true;
             panel_dekadowka_zapisz.BringToFront();
             dekadowka_zapisz_miasto.Items.Clear();
@@ -2819,7 +2819,7 @@ namespace WindowsFormsApplication1
 
             DAO.JadlospisDekadowkiDAO.Insert(Convert.ToInt32(wybranaDekadowkaDoZapisania.id), dekadowka_zapisz_dzien.SelectedIndex + 1, DAO.DietaDAO.Select(dekadowka_zapisz_dieta.SelectedItem.ToString(),dekadowka_zapisz_miasto.Text), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
 
-            MessageBox.Show("Zapisano jadłospis dekadówki","Zapisz");
+            MessageBox.Show("Zapisano jadłospis szablonu","Zapisz");
             dekadowka_zapisz_wstec_Click(null, null);
         }
 
@@ -3188,13 +3188,13 @@ namespace WindowsFormsApplication1
 
         private void dekadowka_usun_Click_1(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę dekadówkę?", "Usuwanie dekadówki", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę szablon?", "Usuwanie szablonu", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
                     DAO.DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
-                    MessageBox.Show("Usunięto dekadówkę: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa+" z: "+ listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
+                    MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa+" z: "+ listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
                     dekadowkaClick();
                     break;
                 default:
@@ -3206,17 +3206,17 @@ namespace WindowsFormsApplication1
         {
             switch (label10.Text)
             {
-                case "Dekadówki -> Dodaj":
+                case "Szablony -> Dodaj":
                     if (dekadowka_dodaj_nazwa.Text!=""&& dekadowka_dodaj_dni.Text!="")
                     {
                         try
                         {
                             DAO.DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
-                            MessageBox.Show("Dodano dekadówkę: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie dekadówki");
+                            MessageBox.Show("Dodano szablon: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie szablonu");
                             dekadowkaClick();
                         }
                         catch {
-                            MessageBox.Show("Błąd dodawania dekadówki","Błąd");
+                            MessageBox.Show("Błąd dodawania szablonu","Błąd");
 
                         }
 
@@ -3226,7 +3226,7 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Nie wprowadzono wszystkich danych","Błąd");
                     }
                     break;
-                case "Dekadówki -> Generuj jadłospisy":
+                case "Szablony -> Generuj jadłospisy":
                     List<string> daty = new List<string>();
                     int dni = (Convert.ToDateTime(dekadowka_generuj_data2.Text) - Convert.ToDateTime(dekadowka_generuj_data1.Text)).Days + 1;
                     if (dni == wybranaDekadowka.dni) { 
@@ -3242,11 +3242,11 @@ namespace WindowsFormsApplication1
                         }
                         data = data.AddDays(1);                          
                     }
-                    MessageBox.Show("Dodano jadłospisy według dekadówki", "Generowanie jadłospisów");
+                    MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
             }
                     else
                     {
-                        MessageBox.Show("Wpisano inną ilość dni niż wybranej dekadówki");
+                        MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu");
                    }
                     break;
             }
@@ -3971,7 +3971,7 @@ namespace WindowsFormsApplication1
 
         private void wczytajJadłospisDekadówkiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            label10.Text = "Dekadówki -> Wczytaj";
+            label10.Text = "Szablony -> Wczytaj";
             panel_dekadowka_wczytaj.Visible = true;
             panel_dekadowka_wczytaj.BringToFront();
 
@@ -4984,7 +4984,7 @@ namespace WindowsFormsApplication1
 
         private void dekadowka_generuj_Click(object sender, EventArgs e)
         {
-            label10.Text = "Dekadówki -> Generuj jadłospisy";
+            label10.Text = "Szablony -> Generuj jadłospisy";
             dekadowka_generuj_label1.Visible = true;
             dekadowka_generuj_label2.Visible = true;
             dekadowka_generuj_data1.Visible = true;
@@ -5072,9 +5072,9 @@ namespace WindowsFormsApplication1
                 //drukuj
                 switch (drukuj_rodzaj.SelectedItem.ToString())
                 {
-                    case "Dekadówka":
+                    case "Szablon":
                     Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text,DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
-                    MessageBox.Show("Wygenerowano dekadowkę");
+                    MessageBox.Show("Wygenerowano szablon");
                     break;
                     case "Jadłospis":
                     Printer.Jadlospis(DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString()));
@@ -5123,8 +5123,8 @@ namespace WindowsFormsApplication1
         {
             switch (drukuj_rodzaj.SelectedItem.ToString())
             {
-                case "Dekadówka":
-                    label10.Text = "Drukowanie -> Dekadówka";
+                case "Szablon":
+                    label10.Text = "Drukowanie -> Szablon";
                     drukuj_do.Visible = true;
                     drukuj_do_label.Visible = true;
                     drukuj_od.Visible = true;
@@ -5247,7 +5247,7 @@ namespace WindowsFormsApplication1
         {
             switch(label10.Text)
             {
-                case "Drukowanie -> Dekadówka":
+                case "Drukowanie -> Szablon":
                     break;
                 case "Drukowanie -> Jadłospis":
                     drukuj_dieta.Items.Clear();

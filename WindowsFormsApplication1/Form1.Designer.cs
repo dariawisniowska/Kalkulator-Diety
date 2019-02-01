@@ -830,9 +830,9 @@
             this.label14.Location = new System.Drawing.Point(81, 14);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 41);
+            this.label14.Size = new System.Drawing.Size(137, 41);
             this.label14.TabIndex = 2;
-            this.label14.Text = "Dekadówki";
+            this.label14.Text = "Szablony";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // panel6
@@ -6923,7 +6923,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(533, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(673, 42);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -6935,21 +6935,21 @@
             this.wczytajJadłospisDekadówkiToolStripMenuItem});
             this.dekadówkaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dekadówkaToolStripMenuItem.Name = "dekadówkaToolStripMenuItem";
-            this.dekadówkaToolStripMenuItem.Size = new System.Drawing.Size(150, 36);
-            this.dekadówkaToolStripMenuItem.Text = "Dekadówka";
+            this.dekadówkaToolStripMenuItem.Size = new System.Drawing.Size(110, 36);
+            this.dekadówkaToolStripMenuItem.Text = "Szablon";
             // 
             // zapiszJadłospisDekadówkiToolStripMenuItem
             // 
             this.zapiszJadłospisDekadówkiToolStripMenuItem.Name = "zapiszJadłospisDekadówkiToolStripMenuItem";
-            this.zapiszJadłospisDekadówkiToolStripMenuItem.Size = new System.Drawing.Size(404, 36);
-            this.zapiszJadłospisDekadówkiToolStripMenuItem.Text = "Zapisz jadłospis dekadówki";
+            this.zapiszJadłospisDekadówkiToolStripMenuItem.Size = new System.Drawing.Size(385, 36);
+            this.zapiszJadłospisDekadówkiToolStripMenuItem.Text = "Zapisz jadłospis szablonu";
             this.zapiszJadłospisDekadówkiToolStripMenuItem.Click += new System.EventHandler(this.zapiszJadłospisDekadówkiToolStripMenuItem_Click);
             // 
             // wczytajJadłospisDekadówkiToolStripMenuItem
             // 
             this.wczytajJadłospisDekadówkiToolStripMenuItem.Name = "wczytajJadłospisDekadówkiToolStripMenuItem";
-            this.wczytajJadłospisDekadówkiToolStripMenuItem.Size = new System.Drawing.Size(404, 36);
-            this.wczytajJadłospisDekadówkiToolStripMenuItem.Text = "Wczytaj jadłospis dekadówki";
+            this.wczytajJadłospisDekadówkiToolStripMenuItem.Size = new System.Drawing.Size(385, 36);
+            this.wczytajJadłospisDekadówkiToolStripMenuItem.Text = "Wczytaj jadłospis szablonu";
             this.wczytajJadłospisDekadówkiToolStripMenuItem.Click += new System.EventHandler(this.wczytajJadłospisDekadówkiToolStripMenuItem_Click);
             // 
             // zapiszPosiłekToolStripMenuItem
