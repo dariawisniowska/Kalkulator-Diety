@@ -648,8 +648,9 @@ namespace WindowsFormsApplication1
                     p4.Alignment = Alignment.left;
                     int col = 0;
                     string[] nag;
-                    if (sum[1] != 0 || sum[3] != 0) { col = 5; nag = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
-                    else { col = 3; nag = new string[3] { "Śniadanie", "Obiad", "Kolacja" }; }
+                    if (suma_kalorie[1] != 0 || suma_kalorie[3] != 0) { col = 5; nag = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
+                        if (suma_kalorie[1] == 0 && suma_kalorie[3] != 0) { col = 4; nag = new string[4] { "Śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
+                        else { col = 3; nag = new string[3] { "Śniadanie", "Obiad", "Kolacja" }; }
                     Table t3 = document.AddTable(2, col);
                     t3.Alignment = Alignment.center;
                     t3.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
@@ -688,7 +689,26 @@ namespace WindowsFormsApplication1
 
                             }
                         }
-                        if (col == 3)
+                            if (col == 4)
+                            {
+                                switch (i)
+                                {
+                                    case 0:
+                                        procent = Math.Round(((suma_kalorie[0] * 100.0) / sum[0]), 2);
+                                        break;
+                                    case 1:
+                                        procent = Math.Round(((suma_kalorie[2] * 100.0) / sum[0]), 2);
+                                        break;
+                                    case 2:
+                                        procent = Math.Round(((suma_kalorie[3] * 100.0) / sum[0]), 2);
+                                        break;
+                                    case 3:
+                                        procent = Math.Round(((suma_kalorie[4] * 100.0) / sum[0]), 2);
+                                        break;
+
+                                }
+                            }
+                            if (col == 3)
                         {
                             switch (i)
                             {
@@ -762,10 +782,14 @@ namespace WindowsFormsApplication1
                         int columns = 3;
                         if (jadlospis.sklad_IIsniadanie != "" && jadlospis.sklad_podwieczorek != "")
                             columns = 5;
-                        string[] naglowki = null;
-                        if (columns != 5)
+                        if (jadlospis.sklad_IIsniadanie == "" && jadlospis.sklad_podwieczorek != "")
+                                columns = 4;
+                            string[] naglowki = null;
+                        if (columns == 3)
                             naglowki = new string[3] { "Śniadanie", "Obiad", "Kolacja" };
-                        else
+                            if (columns == 4)
+                                naglowki = new string[4] { "Śniadanie", "Obiad","Podwieczorek", "Kolacja" };
+                            if (columns == 5)
                             naglowki = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
 
 
@@ -780,10 +804,12 @@ namespace WindowsFormsApplication1
                         t.Alignment = Alignment.center;
                         for (int i = 0; i < columns; i++)
                         {
-                            if (columns < 5)
-                                t.SetColumnWidth(i, 3500);
-                            else
+                            if (columns == 5)
                                 t.SetColumnWidth(i, 2100);
+                            if (columns == 4)
+                                t.SetColumnWidth(i, 2600);
+                            else
+                                t.SetColumnWidth(i, 3500);
                         }
 
                         for (int i = 0; i < columns; i++)
@@ -805,7 +831,22 @@ namespace WindowsFormsApplication1
                                 .FontSize(10)
                                 .Color(Color.Black);
                         }
-                        else
+                            if (naglowki.Length == 4)
+                            {
+                                t.Rows[1].Cells[0].Paragraphs[0].Append(jadlospis.nazwa_sniadanie).Font("Times New Roman")
+                                    .FontSize(10)
+                                    .Color(Color.Black);
+                                t.Rows[1].Cells[1].Paragraphs[0].Append(jadlospis.nazwa_obiad).Font("Times New Roman")
+                                    .FontSize(10)
+                                    .Color(Color.Black);
+                                t.Rows[1].Cells[2].Paragraphs[0].Append(jadlospis.nazwa_podwieczorek).Font("Times New Roman")
+                                   .FontSize(10)
+                                   .Color(Color.Black);
+                                t.Rows[1].Cells[3].Paragraphs[0].Append(jadlospis.nazwa_kolacja).Font("Times New Roman")
+                                    .FontSize(10)
+                                    .Color(Color.Black);
+                            }
+                            else
                         {
                             t.Rows[1].Cells[0].Paragraphs[0].Append(jadlospis.nazwa_sniadanie).Font("Times New Roman")
                                 .FontSize(10)
@@ -1011,10 +1052,14 @@ namespace WindowsFormsApplication1
                             int rows = 4;
                             if (listaJadlospisowDlaDiety[0].sklad_IIsniadanie != "" && listaJadlospisowDlaDiety[0].sklad_podwieczorek != "")
                                 rows = 6;
+                            if (listaJadlospisowDlaDiety[0].sklad_IIsniadanie == "" && listaJadlospisowDlaDiety[0].sklad_podwieczorek != "")
+                                rows = 5;
                             int columns = (dateTo - dateFrom).Days + 2;
                             string[] naglowki = null;
                             if (rows == 6)
                                 naglowki = new string[6] { "Dzień", "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
+                            if (rows == 5)
+                                naglowki = new string[5] { "Dzień", "Śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
                             else
                                 naglowki = new string[4] { "Dzień", "Śniadanie", "Obiad", "Kolacja" };
 
@@ -1048,7 +1093,7 @@ namespace WindowsFormsApplication1
                             .Color(Color.Black).Bold().Font("Times New Roman");
                                 if (j != null)
                                 {
-                                    if (j.sklad_IIsniadanie != "" && j.sklad_podwieczorek != "")
+                                    if (rows==6)
                                     {
                                         t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
                             .FontSize(9)
@@ -1063,6 +1108,21 @@ namespace WindowsFormsApplication1
                         .FontSize(9)
                         .Color(Color.Black);
                                         t.Rows[5].Cells[licznik].Paragraphs[0].Append(j.nazwa_kolacja).Font("Times New Roman")
+                        .FontSize(9)
+                        .Color(Color.Black);
+                                    }
+                                    if (rows == 5)
+                                    {
+                                        t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
+                            .FontSize(9)
+                            .Color(Color.Black);
+                                        t.Rows[2].Cells[licznik].Paragraphs[0].Append(j.nazwa_obiad).Font("Times New Roman")
+                        .FontSize(9)
+                        .Color(Color.Black);
+                                        t.Rows[3].Cells[licznik].Paragraphs[0].Append(j.nazwa_podwieczorek).Font("Times New Roman")
+                        .FontSize(9)
+                        .Color(Color.Black);
+                                        t.Rows[4].Cells[licznik].Paragraphs[0].Append(j.nazwa_kolacja).Font("Times New Roman")
                         .FontSize(9)
                         .Color(Color.Black);
                                     }
