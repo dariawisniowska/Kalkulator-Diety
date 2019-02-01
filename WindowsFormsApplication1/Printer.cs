@@ -648,7 +648,7 @@ namespace WindowsFormsApplication1
                     p4.Alignment = Alignment.left;
                     int col = 0;
                     string[] nag;
-                    if (suma_kalorie[1] != 0 || suma_kalorie[3] != 0) { col = 5; nag = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
+                    if (suma_kalorie[1] != 0 && suma_kalorie[3] != 0) { col = 5; nag = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
                         if (suma_kalorie[1] == 0 && suma_kalorie[3] != 0) { col = 4; nag = new string[4] { "Śniadanie", "Obiad", "Podwieczorek", "Kolacja" }; }
                         else { col = 3; nag = new string[3] { "Śniadanie", "Obiad", "Kolacja" }; }
                     Table t3 = document.AddTable(2, col);
@@ -751,7 +751,7 @@ namespace WindowsFormsApplication1
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow)
         {
            try
-           {
+          {
             if (listaJadlospisow.Count > 0)
             {
                 System.IO.Directory.CreateDirectory("Jadłospisy dzienne/" + listaJadlospisow[0].miasto);
@@ -784,7 +784,8 @@ namespace WindowsFormsApplication1
                             columns = 5;
                         if (jadlospis.sklad_IIsniadanie == "" && jadlospis.sklad_podwieczorek != "")
                                 columns = 4;
-                            string[] naglowki = null;
+                       string[] naglowki = null;
+
                         if (columns == 3)
                             naglowki = new string[3] { "Śniadanie", "Obiad", "Kolacja" };
                             if (columns == 4)
@@ -806,7 +807,7 @@ namespace WindowsFormsApplication1
                         {
                             if (columns == 5)
                                 t.SetColumnWidth(i, 2100);
-                            if (columns == 4)
+                            else if (columns == 4)
                                 t.SetColumnWidth(i, 2600);
                             else
                                 t.SetColumnWidth(i, 3500);
@@ -831,7 +832,7 @@ namespace WindowsFormsApplication1
                                 .FontSize(10)
                                 .Color(Color.Black);
                         }
-                            if (naglowki.Length == 4)
+                           else if (naglowki.Length == 4)
                             {
                                 t.Rows[1].Cells[0].Paragraphs[0].Append(jadlospis.nazwa_sniadanie).Font("Times New Roman")
                                     .FontSize(10)
@@ -1007,7 +1008,7 @@ namespace WindowsFormsApplication1
             else
             {
                 MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
-            }
+                }
             }
 
 
@@ -1058,7 +1059,7 @@ namespace WindowsFormsApplication1
                             string[] naglowki = null;
                             if (rows == 6)
                                 naglowki = new string[6] { "Dzień", "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
-                            if (rows == 5)
+                           else if (rows == 5)
                                 naglowki = new string[5] { "Dzień", "Śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
                             else
                                 naglowki = new string[4] { "Dzień", "Śniadanie", "Obiad", "Kolacja" };
@@ -1111,7 +1112,7 @@ namespace WindowsFormsApplication1
                         .FontSize(9)
                         .Color(Color.Black);
                                     }
-                                    if (rows == 5)
+                                    else if (rows == 5)
                                     {
                                         t.Rows[1].Cells[licznik].Paragraphs[0].Append(j.nazwa_sniadanie).Font("Times New Roman")
                             .FontSize(9)
