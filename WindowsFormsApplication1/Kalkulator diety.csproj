@@ -118,9 +118,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\DekadowkaDAO.cs" />
     <Compile Include="DAO\DietaDAO.cs" />
     <Compile Include="DAO\JadlospisDAO.cs" />
+    <Compile Include="DAO\JadlospisDekadowki.cs" />
     <Compile Include="DAO\JednostkaDAO.cs" />
     <Compile Include="DAO\ProduktDAO.cs" />
     <Compile Include="DAO\RecepturaDAO.cs" />

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using WindowsFormsApplication1.DAO;
 
 namespace WindowsFormsApplication1
 {
@@ -51,6 +52,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+            DAO.DAO.ReloadDatabase();
             this.WindowState = FormWindowState.Maximized;
             suma = new double[6, 8];
             procent = new double[6, 8];
@@ -1862,14 +1864,14 @@ namespace WindowsFormsApplication1
             panel_dekadowka.BringToFront();
 
             dekadowka_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
                 dekadowka_miasto.Items.Add(j.miasto);
 
             if(dekadowka_miasto.Items.Count>0)
                 dekadowka_miasto.SelectedIndex = 0;
             dekadowka_dekadowka.Items.Clear();
-            listaDekadowek =  DAO.DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
+            listaDekadowek =  DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
             if(dekadowka_dekadowka.Items.Count > 0)
@@ -2478,6 +2480,8 @@ namespace WindowsFormsApplication1
         {
             dekadowka_panel.Controls.Clear();
 
+            Dekadowka[] jadlospisyDanejDekadowki = DAO.JadlospisDekadowkiDAO.SelectForAllDays(wybranaDekadowka);
+
             for (int j = 0; j < wybranaDekadowka.dni; j++)
             {
                 FlowLayoutPanel dayOfWeek = new FlowLayoutPanel
@@ -2500,9 +2504,7 @@ namespace WindowsFormsApplication1
                 };
                 dayOfWeek.Controls.Add(myDay);
 
-                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), j+1);
-
-                foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
+                foreach (Jadlospis jadlospis in jadlospisyDanejDekadowki[j].listaJadlospisow)
                 {
                     FlowLayoutPanel myPanel = new FlowLayoutPanel();
                     myPanel.BackColor = Color.LightBlue;
@@ -2680,7 +2682,7 @@ namespace WindowsFormsApplication1
         private void dekadowka_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
             dekadowka_dekadowka.Items.Clear();
-            listaDekadowek = DAO.DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
+            listaDekadowek = DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
             if(dekadowka_dekadowka.Items.Count>0)
@@ -2834,7 +2836,7 @@ namespace WindowsFormsApplication1
                 dekadowka_zapisz_dieta.SelectedIndex = 0;
 
             dekadowka_zapisz_dekadowka.Items.Clear();
-            listaDekadowekDoZapisania = DAO.DekadowkaDAO.Select(dekadowka_zapisz_miasto.SelectedItem.ToString());
+            listaDekadowekDoZapisania = DekadowkaDAO.Select(dekadowka_zapisz_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoZapisania)
                 dekadowka_zapisz_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_zapisz_dekadowka.Items.Count > 0)
@@ -3193,7 +3195,7 @@ namespace WindowsFormsApplication1
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
-                    DAO.DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
+                    DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
                     MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa+" z: "+ listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
                     dekadowkaClick();
                     break;
@@ -3211,7 +3213,7 @@ namespace WindowsFormsApplication1
                     {
                         try
                         {
-                            DAO.DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
+                            DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
                             MessageBox.Show("Dodano szablon: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie szablonu");
                             dekadowkaClick();
                         }
@@ -3982,7 +3984,7 @@ namespace WindowsFormsApplication1
             dekadowka_wczytaj_miasto.SelectedIndex = 0;
 
             dekadowka_wczytaj_dekadowka.Items.Clear();
-            listaDekadowekDoWczytania = DAO.DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
+            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoWczytania)
                 dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
@@ -4027,7 +4029,7 @@ namespace WindowsFormsApplication1
         private void dekadowka_wczytaj_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
             dekadowka_wczytaj_dekadowka.Items.Clear();
-            listaDekadowekDoWczytania = DAO.DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
+            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoWczytania)
                 dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_wczytaj_dekadowka.Items.Count > 0)

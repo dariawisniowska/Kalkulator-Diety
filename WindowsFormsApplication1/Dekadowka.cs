@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,8 @@ namespace WindowsFormsApplication1
         public int dni;
         public string dzienStart;
         public List<Jadlospis> listaJadlospisow;
-        
+        public List<String> listaIdentyfikatorówJadlospisow;
+
         public Dekadowka(int? id, string nazwa, string miasto, int dni, string dzienStart, List<Jadlospis> listaJadlospisow)
         {
             this.id = id;
@@ -23,7 +25,12 @@ namespace WindowsFormsApplication1
             this.dni = dni;
             this.dzienStart = dzienStart;
             this.listaJadlospisow = listaJadlospisow;
+        }
 
+        public Dekadowka(List<String> listaIdentyfikatorówJadlospisow, List<Jadlospis> listaJadlospisow)
+        {
+            this.listaIdentyfikatorówJadlospisow = listaIdentyfikatorówJadlospisow;
+            this.listaJadlospisow = listaJadlospisow;
         }
     }
 }
