@@ -12,6 +12,13 @@ namespace WindowsFormsApplication1
         public char kategoria;
         public WartosciOdzywcze wartosciOdzywcze;
 
+        public Produkt(char kategoria, string nazwa, WartosciOdzywcze wartosciOdzywcze)
+        {
+            this.kategoria = kategoria;
+            this.nazwa = nazwa;
+            this.wartosciOdzywcze = wartosciOdzywcze;
+        }
+
         public Produkt(char kategoria, string nazwa, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
         {
             this.kategoria = kategoria;

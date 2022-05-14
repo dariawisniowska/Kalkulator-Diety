@@ -83,6 +83,44 @@ namespace WindowsFormsApplication1
             this.potas = potas;
         }
 
+        public WartosciOdzywcze(double energia, double bialko, double tluszcze, double tluszcze_nn, double weglowodany, double cukry, double blonnik,
+    double sod, double witA, double witB1, double witB2, double witB6, double witB12, double niacyna, double witC, double witD, double witE, double witK,
+    double foliany, double fosfor, double magnez, double zelazo, double cynk, double selen, double miedz, double cholina, double kwasPantotenowy,
+    double biotyna, double mangan, double fluor, double potas)
+        {
+            this.energia = energia;
+            this.bialko = bialko;
+            this.weglowodany = weglowodany;
+            this.sod = sod;
+            this.tluszcze = tluszcze;
+            this.tluszcze_nn = tluszcze_nn;
+            this.blonnik = blonnik;
+            this.cukry = cukry;
+            this.witA = witA;
+            this.witB1 = witB1;
+            this.witB2 = witB2;
+            this.witB6 = witB6;
+            this.witB12 = witB12;
+            this.niacyna = niacyna;
+            this.witC = witC;
+            this.witD = witD;
+            this.witE = witE;
+            this.witK = witK;
+            this.foliany = foliany;
+            this.fosfor = fosfor;
+            this.magnez = magnez;
+            this.zelazo = zelazo;
+            this.cynk = cynk;
+            this.selen = selen;
+            this.miedz = miedz;
+            this.cholina = cholina;
+            this.kwasPantotenowy = kwasPantotenowy;
+            this.biotyna = biotyna;
+            this.mangan = mangan;
+            this.fluor = fluor;
+            this.potas = potas;
+        }
+
         public WartosciOdzywcze(double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
         {
             this.energia = energia;
