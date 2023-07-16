@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace KalkulatorDiety
 {
     partial class Form1
     {
@@ -5045,7 +5045,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.Gora_Click);
             // 
             // pictureBox1
             // 
@@ -5058,7 +5058,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.btn_usun_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.Usun_Click);
             // 
             // pictureBox3
             // 
@@ -5071,7 +5071,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 30;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.button3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.Dol_Click);
             // 
             // button1
             // 
@@ -5085,7 +5085,7 @@
             this.button1.TabIndex = 25;
             this.button1.Text = "Edytuj";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Edytuj_Click);
             // 
             // cb_miasto
             // 
@@ -5182,7 +5182,7 @@
             this.lv_sniadanie.TabIndex = 29;
             this.lv_sniadanie.UseCompatibleStateImageBehavior = false;
             this.lv_sniadanie.View = System.Windows.Forms.View.Details;
-            this.lv_sniadanie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lv_sniadanie_KeyPress);
+            this.lv_sniadanie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Produkt_KeyPress);
             // 
             // c_nazwa
             // 
@@ -5795,7 +5795,7 @@
             this.btn_dodaj.TabIndex = 10;
             this.btn_dodaj.Text = "Dodaj";
             this.btn_dodaj.UseVisualStyleBackColor = false;
-            this.btn_dodaj.Click += new System.EventHandler(this.btn_dodaj_Click);
+            this.btn_dodaj.Click += new System.EventHandler(this.Dodaj_Click);
             // 
             // pb_Energia
             // 
@@ -5836,7 +5836,7 @@
             this.tb_masa.Size = new System.Drawing.Size(101, 29);
             this.tb_masa.TabIndex = 9;
             this.tb_masa.TextChanged += new System.EventHandler(this.tb_masa_TextChanged);
-            this.tb_masa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_masa_KeyPress);
+            this.tb_masa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Masa_KeyPress);
             // 
             // lbl_data
             // 
@@ -5913,7 +5913,7 @@
             this.cb_kategorie.Name = "cb_kategorie";
             this.cb_kategorie.Size = new System.Drawing.Size(183, 29);
             this.cb_kategorie.TabIndex = 1;
-            this.cb_kategorie.SelectedIndexChanged += new System.EventHandler(this.cb_kategorie_SelectedIndexChanged);
+            this.cb_kategorie.SelectedIndexChanged += new System.EventHandler(this.Kategoria_SelectedIndexChanged);
             // 
             // lb_produkty
             // 
@@ -6798,7 +6798,7 @@
             this.panel_kontrola.Controls.Add(this.pictureBox28);
             this.panel_kontrola.Location = new System.Drawing.Point(303, 99);
             this.panel_kontrola.Name = "panel_kontrola";
-            this.panel_kontrola.Size = new System.Drawing.Size(937, 529);
+            this.panel_kontrola.Size = new System.Drawing.Size(27, 24);
             this.panel_kontrola.TabIndex = 96;
             this.panel_kontrola.Visible = false;
             // 

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-
-namespace WindowsFormsApplication1.DAO
+﻿namespace KalkulatorDiety.DAO
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+
     public class DietaDAO
     {
         public static void Insert(string nazwa, string miasto, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)

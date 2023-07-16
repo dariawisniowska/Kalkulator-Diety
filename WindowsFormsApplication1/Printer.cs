@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Windows.Forms;
-using Xceed.Words.NET;
-namespace WindowsFormsApplication1
+﻿namespace KalkulatorDiety
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Drawing;
+    using System.Linq;
+    using System.Windows.Forms;
+    using Xceed.Words.NET;
+
     public class Printer
     {
+        public static string dieta_z_kwasami = "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów i nasyconych kwasów tłuszczowych";
+
         public static void Receptura(Receptura receptura)
         {
             try
@@ -115,7 +118,7 @@ namespace WindowsFormsApplication1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n {ex.Message}", "Błąd");
             }
         }
 
@@ -152,9 +155,9 @@ namespace WindowsFormsApplication1
                     document.Save();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n {ex.Message}", "Błąd");
             }
         }
 
@@ -960,10 +963,9 @@ namespace WindowsFormsApplication1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n {ex.Message}", "Błąd");
             }
         }
-        public static string dieta_z_kwasami = "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów i nasyconych kwasów tłuszczowych";
 
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow)
         {

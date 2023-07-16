@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace KalkulatorDiety
 {
 
 
@@ -6,7 +6,7 @@
     {
     }
 }
-namespace WindowsFormsApplication1 {
+namespace KalkulatorDiety {
     
     
     public partial class KalkulatorDietyDatabase {

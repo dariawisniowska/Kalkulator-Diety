@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Data;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WindowsFormsApplication1.DAO
+﻿namespace KalkulatorDiety.DAO
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+
     class ProduktDAO
     {
         public static void Insert(string nazwa, char kategoria, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double przyswajalne, double blonnik)

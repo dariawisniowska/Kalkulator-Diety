@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WindowsFormsApplication1
+﻿namespace KalkulatorDiety
 {
     public class Produkt
     {
@@ -25,6 +19,7 @@ namespace WindowsFormsApplication1
             this.wartosciOdzywcze = new WartosciOdzywcze(energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn);
         }
     }
+
     public enum TypyProduktow
     {
         B,

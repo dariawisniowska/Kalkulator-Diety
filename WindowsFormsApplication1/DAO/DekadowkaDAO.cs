@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-
-namespace WindowsFormsApplication1.DAO
+﻿namespace KalkulatorDiety.DAO
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+
     public static class DekadowkaDAO
     {
         public static void Insert(string nazwa, string miasto, int dni, string dzienStart, List<Jadlospis> listaJadlospisow)

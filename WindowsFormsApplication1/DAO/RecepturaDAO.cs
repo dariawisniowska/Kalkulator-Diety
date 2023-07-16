@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WindowsFormsApplication1.DAO
+﻿namespace KalkulatorDiety.DAO
 {
-     public class RecepturaDAO
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    
+    public class RecepturaDAO
     {
         public static void Insert(string nazwa,string sklad)
         {

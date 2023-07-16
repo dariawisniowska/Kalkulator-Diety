@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace WindowsFormsApplication1
+namespace KalkulatorDiety
 {
     public partial class WczytajDzien : Form
     {

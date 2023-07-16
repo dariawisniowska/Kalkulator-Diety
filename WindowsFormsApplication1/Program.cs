@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace WindowsFormsApplication1
+﻿namespace KalkulatorDiety
 {
+    using System;
+    using System.Windows.Forms;
+
     static class Program
     {
         /// <summary>

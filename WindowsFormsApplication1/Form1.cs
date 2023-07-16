@@ -1,30 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using WindowsFormsApplication1.DAO;
-
-namespace WindowsFormsApplication1
+﻿namespace KalkulatorDiety
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+    using KalkulatorDiety.DAO;
+
     public partial class Form1 : Form
     {
-        int wybranaDieta;
-        int wybraneMiasto;
-        string kategoria;
+        #region Zmienne 
+
+        private int wybranaDieta;
+        private int wybraneMiasto;
+        private string kategoria;
 
         public static double przelicznik_Bialko = 4; //kcal na 1g
         public static double przelicznik_Weglowodany = 4; //kcal na 1g
         public static double przelicznik_Tluszcze = 9; //kcal na 1g
 
-        Color highlightColor = Color.LightBlue;
-        Color primaryColor = Color.FromArgb(44, 57, 64);
+        private readonly Color highlightColor = Color.LightBlue;
+        private readonly Color primaryColor = Color.FromArgb(44, 57, 64);
 
-        public double[,] suma;
-        public double[,] procent;
-        public int[] last;
+        private double[,] suma;
+        private double[,] procent;
 
         private List<Receptura> listaReceptur;
         private List<Dekadowka> listaDekadowekDoWczytania;
@@ -43,10 +44,20 @@ namespace WindowsFormsApplication1
         private List<Produkt> Nabial = new List<Produkt>();
         private List<Produkt> Tluszcze = new List<Produkt>();
         private List<Produkt> Slodycze = new List<Produkt>();
-        Encoding enc = Encoding.GetEncoding("Windows-1250");
 
-        KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-        String XML_Location = @"DataBase.xml";
+        private List<Dekadowka> listaDekadowek;
+        private Dekadowka wybranaDekadowka;
+
+        private readonly int[] dekadowkaSize = new int[] { 900, 470 };
+        private readonly int[] dzienSize = new int[] { 150, 400 };
+        private readonly int[] dietaSize = new int[] { 140, 200 };
+
+        private readonly KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
+        private readonly String XML_Location = @"DataBase.xml";
+
+        #endregion
+
+        #region Obsługa aplikacji
 
         public Form1()
         {
@@ -76,14 +87,12 @@ namespace WindowsFormsApplication1
             dekadowka_panel.FlowDirection = FlowDirection.LeftToRight;
             dekadowka_panel.VerticalScroll.Visible = false;
             dekadowka_panel.HorizontalScroll.Visible = false;
-            dekadowka_panel.WrapContents = false; // Vertical rather than horizontal scrolling
+            dekadowka_panel.WrapContents = false;
             dekadowka_panel.BackColor = Color.White;
-            dekadowka_panel.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1]);
+            dekadowka_panel.Size = new Size(dekadowkaSize[0], dekadowkaSize[1]);
 
             LiczSrednia();
         }
-
-        #region Aplikacja
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -104,110 +113,44 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void tb_masa_KeyPress(object sender, KeyPressEventArgs e)
+        private void Masa_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == 8 || e.KeyChar == ',' || (Keys)e.KeyChar == Keys.Enter)
             {
                 if ((Keys)e.KeyChar == Keys.Enter)
                 {
-                    btn_dodaj_Click(sender, e);
+                    Dodaj_Click(sender, e);
                     e.Handled = true;
 
                 }
                 else
+                {
                     e.Handled = false;
+                }
             }
-
             else
             {
                 e.Handled = true;
             }
         }
 
-        private void lv_sniadanie_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if ((Keys)e.KeyChar == Keys.Back)
-            {
-                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    btn_usun_Click(sender, e);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-        }
-
-        private void lv_IIsniadanie_KeyPress(object sender, KeyPressEventArgs e)
+        private void Produkt_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((Keys)e.KeyChar == Keys.Back)
             {
                 DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    btn_usun_Click(sender, e);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
+                    Usun_Click(sender, e);
                 }
             }
         }
 
-        private void lv_obiad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Back)
-            {
-                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    btn_usun_Click(sender, e);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-        }
-
-        private void lv_podwieczorek_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Back)
-            {
-                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    btn_usun_Click(sender, e);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-        }
-
-        private void lv_kolacja_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Back)
-            {
-                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    btn_usun_Click(sender, e);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-
-                }
-            }
-        }
         #endregion
 
         #region Strona Główna
-        private void btn_dodaj_Click(object sender, EventArgs e)
+
+        private void Dodaj_Click(object sender, EventArgs e)
         {
             if (lb_produkty.SelectedIndex != -1)
             {
@@ -413,11 +356,11 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void btn_usun_Click(object sender, EventArgs e)
+        private void Usun_Click(object sender, EventArgs e)
         {
             int posilek = tc_posilki.SelectedIndex;
             string produkt = "";
-            List<int> ktory = new List<int>();
+            List<int> ktory;
             switch (posilek)
             {
                 case 0:
@@ -515,9 +458,13 @@ namespace WindowsFormsApplication1
 
             string[] arr = new string[8];
             for (int i = 0; i < 8; i++)
+            {
                 arr[i] = "0";
-            ListViewItem itm = new ListViewItem(arr);
-            itm.UseItemStyleForSubItems = false;
+            }
+            ListViewItem itm = new ListViewItem(arr)
+            {
+                UseItemStyleForSubItems = false
+            };
 
             for (int k = 0; k < 8; k++)
             {
@@ -701,7 +648,7 @@ namespace WindowsFormsApplication1
                         if (k == 4)
                             przelicznik = przelicznik_Weglowodany;
                         if (k == 7)
-                            wartosc_odzywcza = wartosc_odzywcza / 1000;
+                            wartosc_odzywcza /= 1000;
 
                         procent[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma[i, 0];
                     }
@@ -840,7 +787,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void cb_kategorie_SelectedIndexChanged(object sender, EventArgs e)
+        private void Kategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             int wybor = cb_kategorie.SelectedIndex;
 
@@ -945,38 +892,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private string GetMonth(int month)
-        {
-            switch (month)
-            {
-                case 1:
-                    return "Styczeń";
-                case 2:
-                    return "Luty";
-                case 3:
-                    return "Marzec";
-                case 4:
-                    return "Kwiecień";
-                case 5:
-                    return "Maj";
-                case 6:
-                    return "Czerwiec";
-                case 7:
-                    return "Lipiec";
-                case 8:
-                    return "Sierpień";
-                case 9:
-                    return "Wrzesień";
-                case 10:
-                    return "Październik";
-                case 11:
-                    return "Listopad";
-                case 12:
-                    return "Grudzień";
-            }
-            return "";
-        }
-
         private string GetMonthForDate(int month)
         {
             switch (month)
@@ -1009,7 +924,7 @@ namespace WindowsFormsApplication1
             return "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Edytuj_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1130,7 +1045,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Gora_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1196,7 +1111,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Dol_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1265,6 +1180,7 @@ namespace WindowsFormsApplication1
         #endregion
 
         #region Menu
+
         private void posiłekToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             switch (tc_posilki.SelectedIndex)
@@ -1465,7 +1381,7 @@ namespace WindowsFormsApplication1
 
 
 
-        private void kontrolaClick()
+        private void KontrolaClick()
         {
             panel14.BackColor = highlightColor;
             panel3.BackColor = primaryColor;
@@ -2005,7 +1921,7 @@ namespace WindowsFormsApplication1
 
         private void produkt_zapisz_Click(object sender, EventArgs e)
         {
-            char kategoria = 'A';
+            char kategoria;
             switch (label10.Text)
             {
                 case "Produkty -> Dodaj":
@@ -2197,13 +2113,6 @@ namespace WindowsFormsApplication1
 
         #region Dekadowka
 
-        List<Dekadowka> listaDekadowek;
-        Dekadowka wybranaDekadowka;
-
-        int[] dekadowkaSize = new int[] { 900, 470 };
-        int[] dzienSize = new int[] { 150, 400 };
-        int[] dietaSize = new int[] { 140, 200 };
-
         public void GenerateCards()
         {
             dekadowka_panel.Controls.Clear();
@@ -2218,7 +2127,7 @@ namespace WindowsFormsApplication1
                     AutoScroll = true,
                     FlowDirection = FlowDirection.TopDown,
                     WrapContents = false, // Vertical rather than horizontal scrolling
-                    Size = new System.Drawing.Size(dzienSize[0], dzienSize[1])
+                    Size = new Size(dzienSize[0], dzienSize[1])
                 };
                 dayOfWeek.VerticalScroll.Visible = false;
                 dayOfWeek.HorizontalScroll.Visible = false;
@@ -4426,7 +4335,7 @@ namespace WindowsFormsApplication1
                     {
                         string[] arg = new string[10];
                         string[] arr = produkty[j].Split('|');
-                        ListViewItem itm = null;
+                        ListViewItem itm;
                         if (arr.Length != 10)
                         {
                             arg[0] = arr[0];
@@ -4566,7 +4475,7 @@ namespace WindowsFormsApplication1
                         if (k == 4)
                             przelicznik = przelicznik_Weglowodany;
                         if (k == 7)
-                            wartosc_odzywcza = wartosc_odzywcza / 1000;
+                            wartosc_odzywcza /= 1000;
 
                         proc_jad[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma_jad[i, 0];
                     }
@@ -5294,17 +5203,17 @@ namespace WindowsFormsApplication1
 
         private void label58_Click(object sender, EventArgs e)
         {
-            kontrolaClick();
+            KontrolaClick();
         }
 
         private void pictureBox26_Click_1(object sender, EventArgs e)
         {
-            kontrolaClick();
+            KontrolaClick();
         }
 
         private void panel14_Click(object sender, EventArgs e)
         {
-            kontrolaClick();
+            KontrolaClick();
         }
 
         private void pictureBox28_Click(object sender, EventArgs e)
@@ -5339,7 +5248,7 @@ namespace WindowsFormsApplication1
                 {
                     string[] arg = new string[10];
                     string[] arr = produkty[j].Split('|');
-                    ListViewItem itm = null;
+                    ListViewItem itm;
                     if (arr.Length != 10)
                     {
                         arg[0] = arr[0];
@@ -5376,7 +5285,7 @@ namespace WindowsFormsApplication1
                 {
                     string[] arg = new string[10];
                     string[] arr = produkty[j].Split('|');
-                    ListViewItem itm = null;
+                    ListViewItem itm;
                     if (arr.Length != 10)
                     {
                         arg[0] = arr[0];
@@ -5413,7 +5322,7 @@ namespace WindowsFormsApplication1
                 {
                     string[] arg = new string[10];
                     string[] arr = produkty[j].Split('|');
-                    ListViewItem itm = null;
+                    ListViewItem itm;
                     if (arr.Length != 10)
                     {
                         arg[0] = arr[0];
@@ -5450,7 +5359,7 @@ namespace WindowsFormsApplication1
                 {
                     string[] arg = new string[10];
                     string[] arr = produkty[j].Split('|');
-                    ListViewItem itm = null;
+                    ListViewItem itm;
                     if (arr.Length != 10)
                     {
                         arg[0] = arr[0];
@@ -5487,7 +5396,7 @@ namespace WindowsFormsApplication1
                 {
                     string[] arg = new string[10];
                     string[] arr = produkty[j].Split('|');
-                    ListViewItem itm = null;
+                    ListViewItem itm;
                     if (arr.Length != 10)
                     {
                         arg[0] = arr[0];
@@ -5559,7 +5468,7 @@ namespace WindowsFormsApplication1
                         if (k == 4)
                             przelicznik = przelicznik_Weglowodany;
                         if (k == 7)
-                            wartosc_odzywcza = wartosc_odzywcza / 1000;
+                            wartosc_odzywcza /= 1000;
 
                         procent[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma[i, 0];
                     }

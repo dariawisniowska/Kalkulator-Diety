@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-
-namespace WindowsFormsApplication1.DAO
+﻿namespace KalkulatorDiety.DAO
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Linq;
+
     public class JadlospisDAO
     {
         public static void Insert(string data, string dieta, string miasto, string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad, string nazwa_podwieczorek, string nazwa_kolacja, string sklad_sniadanie, string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek, string sklad_kolacja)
@@ -30,12 +30,6 @@ namespace WindowsFormsApplication1.DAO
             dataTable.Rows.Add(dataRow);
             DataSet.WriteXml(XML_Location);
 
-        }
-
-        public static void Update(Jadlospis jadlospis, string data, string dieta, string miasto, string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad, string nazwa_podwieczorek, string nazwa_kolacja, string sklad_sniadanie, string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek, string sklad_kolacja)
-        {
-            Delete(data, dieta, miasto);
-            Insert(data, dieta, miasto, nazwa_sniadanie, nazwa_IIsniadanie, nazwa_obiad, nazwa_podwieczorek, nazwa_kolacja, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
         }
 
         public static void Delete(string data, string miasto, string dieta)
@@ -192,7 +186,6 @@ namespace WindowsFormsApplication1.DAO
 
         public static void Check(int identyfikatorDekadowki, int dzien, string dieta)
         {
-            Jadlospis listaJadlospisow = null;
             List<int> listaIdentyfikatorowJadlospisowDekadowki = new List<int>();
             KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
             String XML_Location = @"DataBase.xml";
