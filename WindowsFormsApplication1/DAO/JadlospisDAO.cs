@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1.DAO
 {
@@ -68,7 +66,7 @@ namespace WindowsFormsApplication1.DAO
                 for (int i = 0; i < DataSet.Jadłospisy.Rows.Count; i++)
                 {
                     if(DataSet.Jadłospisy.Rows[i]["Data"].ToString()==data&& DataSet.Jadłospisy.Rows[i]["Dieta"].ToString()==dieta && DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()==miasto )
-                        jadlospis = new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DAO.DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString());
+                        jadlospis = new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString());
                 }
             }
 
@@ -86,14 +84,32 @@ namespace WindowsFormsApplication1.DAO
                 for (int i = 0; i < DataSet.Jadłospisy.Rows.Count; i++)
                 {
                     if (Convert.ToDateTime(DataSet.Jadłospisy.Rows[i]["Data"].ToString())>=Convert.ToDateTime(dataOd)&& Convert.ToDateTime(DataSet.Jadłospisy.Rows[i]["Data"].ToString())<=Convert.ToDateTime(dataDo))
-                        jadlospis.Add(new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DAO.DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString()));
+                        jadlospis.Add(new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString()));
                 }
             }
 
             return jadlospis;
         }
 
-      public static List<Jadlospis> Select(string data, string miasto)
+        public static List<Jadlospis> SelectAll(string dataOd, string dataDo, string miasto, string dieta)
+        {
+            List<Jadlospis> jadlospis = new List<Jadlospis>();
+            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
+            String XML_Location = @"DataBase.xml";
+            DataSet.ReadXml(XML_Location);
+            if (DataSet.Jadłospisy.Rows.Count > 0)
+            {
+                for (int i = 0; i < DataSet.Jadłospisy.Rows.Count; i++)
+                {
+                    if (Convert.ToDateTime(DataSet.Jadłospisy.Rows[i]["Data"].ToString()) >= Convert.ToDateTime(dataOd) && Convert.ToDateTime(DataSet.Jadłospisy.Rows[i]["Data"].ToString()) <= Convert.ToDateTime(dataDo) && DataSet.Jadłospisy.Rows[i]["Dieta"].ToString() == dieta && DataSet.Jadłospisy.Rows[i]["Miasto"].ToString() == miasto)
+                        jadlospis.Add(new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString()));
+                }
+            }
+
+            return jadlospis;
+        }
+
+        public static List<Jadlospis> Select(string data, string miasto)
         {
             List<Jadlospis> jadlospis = new List<Jadlospis>();
             KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
@@ -109,7 +125,7 @@ namespace WindowsFormsApplication1.DAO
                         if (j != null) {
                             jadlospis.RemoveAt(Convert.ToInt32(j));
                         }
-                        jadlospis.Add(new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DAO.DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString()));
+                        jadlospis.Add(new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString()));
                     }
                 }
             }
@@ -259,13 +275,26 @@ namespace WindowsFormsApplication1.DAO
             KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
             String XML_Location = @"DataBase.xml";
             DataSet.ReadXml(XML_Location);
-            for (int i = 0; i < DataSet.Jadlospis.Rows.Count; i++)
+            //for (int i = 0; i < DataSet.Jadlospis.Rows.Count; i++)
+            //{
+            //    if (DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"].ToString() == id.ToString())
+            //    {
+            //        jadlospis = new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DAO.DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString());
+            //    }
+            //}
+
+            DataTable orders = DataSet.Tables["Jadlospis"];
+            EnumerableRowCollection<DataRow> query = from order in orders.AsEnumerable()
+                                                     where order.Field<String>("Identyfikator") == id.ToString()
+                                                     select order;
+
+            foreach (DataRow prod in query)
             {
-                if (DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"].ToString() == id.ToString())
-                {
-                    jadlospis = new Jadlospis(DataSet.Jadłospisy.Rows[i]["Data"].ToString(), DAO.DietaDAO.Select(DataSet.Jadłospisy.Rows[i]["Dieta"].ToString(), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString()), DataSet.Jadłospisy.Rows[i]["Miasto"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Obiad"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Jadłospisy.Rows[i]["Skład-Kolacja"].ToString());
-                }
+                jadlospis = new Jadlospis(prod.Field<String>("Data").ToString(), DietaDAO.Select(prod.Field<String>("Dieta").ToString(), prod.Field<String>("Miasto").ToString()), prod.Field<String>("Miasto").ToString(), prod.Field<String>("Nazwa-Śniadanie").ToString(), prod.Field<String>("Nazwa-IIŚniadanie").ToString(), prod.Field<String>("Nazwa-Obiad").ToString(), prod.Field<String>("Nazwa-Podwieczorek").ToString(), prod.Field<String>("Nazwa-Kolacja").ToString(), prod.Field<String>("Skład-Śniadanie").ToString(), prod.Field<String>("Skład-IIŚniadanie").ToString(), prod.Field<String>("Skład-Obiad").ToString(), prod.Field<String>("Skład-Podwieczorek").ToString(), prod.Field<String>("Skład-Kolacja").ToString());
             }
+
+
+
             return jadlospis;
         }
 
@@ -273,29 +302,100 @@ namespace WindowsFormsApplication1.DAO
         {
             List<Jadlospis> listaJadlospisow = new List<Jadlospis>();
             List<int> listaIdentyfikatorowJadlospisowDekadowki = new List<int>();
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-
-            for (int i = 0; i < DataSet.JadlsopisDekadowki.Rows.Count; i++)
+            //for (int i = 0; i < DataSet.JadlsopisDekadowki.Rows.Count; i++)
+            //{
+            //    if (DataSet.Tables["JadlsopisDekadowki"].Rows[i]["IdentyfikatorDekadowki"].ToString() == identyfikatorDekadowki.ToString() && DataSet.Tables["JadlsopisDekadowki"].Rows[i]["Dzien"].ToString() == dzien.ToString())
+            //    {
+            //        listaIdentyfikatorowJadlospisowDekadowki.Add(Convert.ToInt32(DataSet.Tables["JadlsopisDekadowki"].Rows[i]["IdentyfikatorJadlospisu"]));
+            //    }
+            //}
+            EnumerableRowCollection<DataRow> listaIdentyfikatorow = from order in DAO.DataSet.Tables["JadlsopisDekadowki"].AsEnumerable()
+                                                     where order.Field<String>("IdentyfikatorDekadowki") == identyfikatorDekadowki.ToString() 
+                                                      && order.Field<String>("Dzien") == dzien.ToString()
+                                                     select order;
+            foreach (DataRow jadlospis in listaIdentyfikatorow)
             {
-                if (DataSet.Tables["JadlsopisDekadowki"].Rows[i]["IdentyfikatorDekadowki"].ToString() == identyfikatorDekadowki.ToString() && DataSet.Tables["JadlsopisDekadowki"].Rows[i]["Dzien"].ToString() == dzien.ToString())
-                {
-                    listaIdentyfikatorowJadlospisowDekadowki.Add(Convert.ToInt32(DataSet.Tables["JadlsopisDekadowki"].Rows[i]["IdentyfikatorJadlospisu"]));
-                }
-            }
-
+                listaIdentyfikatorowJadlospisowDekadowki.Add(Convert.ToInt32(jadlospis.Field<String>("IdentyfikatorJadlospisu")));
+            }                  
             Dekadowka dekadowka = DekadowkaDAO.SelectFromId(identyfikatorDekadowki);
-            for (int i = 0; i < DataSet.Jadlospis.Rows.Count; i++)
+
+            //EnumerableRowCollection<DataRow> listaJadlospisow2 = from order in DAO.DataSet.Tables["Jadlospis"].AsEnumerable()
+            //                                         where listaIdentyfikatorowJadlospisowDekadowki.Contains(order.Field<Int32>("Identyfikator"))
+            //                                         select order;
+            //foreach (DataRow row in listaJadlospisow2)
+            //{
+            //    listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(row["Identyfikator"]), dzien, DietaDAO.Select(row["Dieta"].ToString(), dekadowka.miasto), row["Nazwa-Śniadanie"].ToString(), row["Nazwa-IIŚniadanie"].ToString(), row["Nazwa-Obiad"].ToString(), row["Nazwa-Podwieczorek"].ToString(), row["Nazwa-Kolacja"].ToString(), row["Skład-Śniadanie"].ToString(), row["Skład-IIŚniadanie"].ToString(), row["Skład-Obiad"].ToString(), row["Skład-Podwieczorek"].ToString(), row["Skład-Kolacja"].ToString()));
+            //}
+
+
+            int end = 0;
+            for (int i = 0; i < DAO.DataSet.Jadlospis.Rows.Count; i++)
             {
-                if (listaIdentyfikatorowJadlospisowDekadowki.Contains(Convert.ToInt32(DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"].ToString())))
+                if (end == listaIdentyfikatorowJadlospisowDekadowki.Count)
+                    return listaJadlospisow;
+                if (listaIdentyfikatorowJadlospisowDekadowki.Contains(Convert.ToInt32(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"].ToString())))
                 {
-                    listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"]), dzien,DietaDAO.Select(DataSet.Tables["Jadlospis"].Rows[i]["Dieta"].ToString(), dekadowka.miasto), DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Śniadanie"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-IIŚniadanie"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Obiad"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Podwieczorek"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Kolacja"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Skład-Śniadanie"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Skład-IIŚniadanie"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Skład-Obiad"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Skład-Podwieczorek"].ToString(), DataSet.Tables["Jadlospis"].Rows[i]["Skład-Kolacja"].ToString()));
+                    listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"]), dzien, DietaDAO.Select(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Dieta"].ToString(), dekadowka.miasto), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Kolacja"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Kolacja"].ToString()));
+                    end++;
                 }
             }
+            //DataTable dekad = DataSet.Tables["Jadlospis"];
+            //EnumerableRowCollection<DataRow> query2 = from order in orders.AsEnumerable()
+            //                                         where order.Field<String>("Identyfikator")
+            //                                          && order.Field<String>("Dzien") == dzien.ToString()
+            //                                         select order;
+            //foreach (DataRow dek in query2)
+            //{
+            //    listaIdentyfikatorowJadlospisowDekadowki.Add(Convert.ToInt32(dek.Field<String>("IdentyfikatorJadlospisu")));
+            //}
 
             return listaJadlospisow;
         }
 
+        public static Dekadowka[] SelectForAllDays(Dekadowka dekadowka)
+        {
+            Dekadowka[] allDaysJadlospisy = new Dekadowka[dekadowka.dni];
+            List<String> allIds = new List<string>();
+
+            for (int j = 0; j < dekadowka.dni; j++)
+            {
+                List<Jadlospis> listaJadlospisow = new List<Jadlospis>();
+                EnumerableRowCollection<String> listaIdentyfikatorowJadlospisowDekadowki = from order in DAO.DataSet.Tables["JadlsopisDekadowki"].AsEnumerable()
+                                                                                           where order.Field<String>("IdentyfikatorDekadowki") == dekadowka.id.ToString()
+                                                                                            && order.Field<String>("Dzien") == (j+1).ToString()
+                                                                                           select order.Field<String>("IdentyfikatorJadlospisu");
+                allDaysJadlospisy[j] = new Dekadowka(listaIdentyfikatorowJadlospisowDekadowki.ToList(), new List<Jadlospis>());
+                allIds.AddRange(listaIdentyfikatorowJadlospisowDekadowki.ToList());
+            }
+
+            //for (int i = 0; i < DAO.DataSet.Jadlospis.Rows.Count; i++)
+            //{
+            //    string id = DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"].ToString();
+            //    for (int j = 0; j < dekadowka.dni; j++)
+            //     {
+            //        if (allDaysJadlospisy[j].listaIdentyfikatorówJadlospisow.Contains(id))
+            //        {
+            //            allDaysJadlospisy[j].listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"]), j, DietaDAO.Select(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Dieta"].ToString(), dekadowka.miasto), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Kolacja"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Kolacja"].ToString()));
+            //        }
+            //    }
+            //}  
+            EnumerableRowCollection<DataRow> jadlospisy = from order in DAO.DataSet.Tables["Jadlospis"].AsEnumerable()
+                                                                 where allIds.Contains(order.Field<Int32>("Identyfikator").ToString())
+                                                                 select order;
+            DataRow[] rows = jadlospisy.ToArray();
+            for (int i = 0; i < jadlospisy.Count(); i++)
+            {
+                string id = rows[i]["Identyfikator"].ToString();
+                for (int j = 0; j < dekadowka.dni; j++)
+                 {
+                    if (allDaysJadlospisy[j].listaIdentyfikatorówJadlospisow.Contains(id))
+                    {
+                        allDaysJadlospisy[j].listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(rows[i]["Identyfikator"]), j, DietaDAO.Select(rows[i]["Dieta"].ToString(), dekadowka.miasto), rows[i]["Nazwa-Śniadanie"].ToString(), rows[i]["Nazwa-IIŚniadanie"].ToString(), rows[i]["Nazwa-Obiad"].ToString(), rows[i]["Nazwa-Podwieczorek"].ToString(), rows[i]["Nazwa-Kolacja"].ToString(), rows[i]["Skład-Śniadanie"].ToString(), rows[i]["Skład-IIŚniadanie"].ToString(), rows[i]["Skład-Obiad"].ToString(), rows[i]["Skład-Podwieczorek"].ToString(), rows[i]["Skład-Kolacja"].ToString()));
+                    }
+                }
+            }  
+
+            return allDaysJadlospisy;
+        }
     }
 }

@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+using WindowsFormsApplication1.DAO;
 
 namespace WindowsFormsApplication1
 {
@@ -17,8 +13,8 @@ namespace WindowsFormsApplication1
     {
         int wybranaDieta;
         int wybraneMiasto;
-        string kategoria; 
-        
+        string kategoria;
+
         public static double przelicznik_Bialko = 4; //kcal na 1g
         public static double przelicznik_Weglowodany = 4; //kcal na 1g
         public static double przelicznik_Tluszcze = 9; //kcal na 1g
@@ -30,6 +26,10 @@ namespace WindowsFormsApplication1
         public double[,] procent;
         public int[] last;
 
+        private List<Receptura> listaReceptur;
+        private List<Dekadowka> listaDekadowekDoWczytania;
+        private Dekadowka wybranaDekadowkaDoWczytania;
+        private Jadlospis jadlospisDekadowkiDoWczytania;
         private List<Produkt> Lista;
         private List<Dieta> Diety = new List<Dieta>();
         private List<Produkt> Bakalie = new List<Produkt>();
@@ -44,19 +44,20 @@ namespace WindowsFormsApplication1
         private List<Produkt> Tluszcze = new List<Produkt>();
         private List<Produkt> Slodycze = new List<Produkt>();
         Encoding enc = Encoding.GetEncoding("Windows-1250");
-        
+
         KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
         String XML_Location = @"DataBase.xml";
 
         public Form1()
         {
             InitializeComponent();
+            DAO.DAO.ReloadDatabase();
             this.WindowState = FormWindowState.Maximized;
             suma = new double[6, 8];
             procent = new double[6, 8];
 
             glownaClick();
-           
+
             cb_kategorie.SelectedItem = "Wszystkie kategorie";
 
             panel_produkty.Dock = DockStyle.Fill;
@@ -69,6 +70,7 @@ namespace WindowsFormsApplication1
             panel_jadlospis.Dock = DockStyle.Fill;
             panel_receptura.Dock = DockStyle.Fill;
             panel_drukuj.Dock = DockStyle.Fill;
+            panel_kontrola.Dock = DockStyle.Fill;
 
             dekadowka_panel.AutoScroll = true;
             dekadowka_panel.FlowDirection = FlowDirection.LeftToRight;
@@ -79,7 +81,7 @@ namespace WindowsFormsApplication1
             dekadowka_panel.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1]);
 
             LiczSrednia();
-  }
+        }
 
         #region Aplikacja
 
@@ -207,13 +209,13 @@ namespace WindowsFormsApplication1
         #region Strona Główna
         private void btn_dodaj_Click(object sender, EventArgs e)
         {
-            if(lb_produkty.SelectedIndex!=-1)
+            if (lb_produkty.SelectedIndex != -1)
             {
                 if (tb_masa.Text != "")
                 {
                     try
                     {
-                        double masa = Math.Round(double.Parse(tb_masa.Text),2);
+                        double masa = Math.Round(double.Parse(tb_masa.Text), 2);
                         int posilek = Int32.Parse(tc_posilki.SelectedIndex.ToString());
                         int ktory = lb_produkty.SelectedIndex;
                         string[] arr = new string[10];
@@ -392,11 +394,13 @@ namespace WindowsFormsApplication1
 
                                 break;
                         }
-                    } catch {
-                     MessageBox.Show("Nieprawidłowa wartość","Błąd");
-                   }
-                        LiczSrednia();
                     }
+                    catch
+                    {
+                        MessageBox.Show("Nieprawidłowa wartość", "Błąd");
+                    }
+                    LiczSrednia();
+                }
                 else
                 {
                     MessageBox.Show("Nie wpisano masy produktu", "Błąd");
@@ -411,89 +415,89 @@ namespace WindowsFormsApplication1
 
         private void btn_usun_Click(object sender, EventArgs e)
         {
-            int posilek = tc_posilki.SelectedIndex; 
-            string produkt="";
+            int posilek = tc_posilki.SelectedIndex;
+            string produkt = "";
             List<int> ktory = new List<int>();
             switch (posilek)
             {
                 case 0:
                     ktory = new List<int>();
-                         for (int k = 0; k < lv_sniadanie.SelectedIndices.Count; k++)
-                             ktory.Add(Int32.Parse(lv_sniadanie.SelectedIndices[k].ToString()));
-                         if(ktory.Count>0)
-                             produkt = lv_sniadanie.Items[ktory[0]].Text;
+                    for (int k = 0; k < lv_sniadanie.SelectedIndices.Count; k++)
+                        ktory.Add(Int32.Parse(lv_sniadanie.SelectedIndices[k].ToString()));
+                    if (ktory.Count > 0)
+                        produkt = lv_sniadanie.Items[ktory[0]].Text;
                     break;
                 case 1:
-                   ktory = new List<int>();
-                         for (int k = 0; k < lv_IIsniadanie.SelectedIndices.Count; k++)
-                             ktory.Add(Int32.Parse(lv_IIsniadanie.SelectedIndices[k].ToString()));
+                    ktory = new List<int>();
+                    for (int k = 0; k < lv_IIsniadanie.SelectedIndices.Count; k++)
+                        ktory.Add(Int32.Parse(lv_IIsniadanie.SelectedIndices[k].ToString()));
                     if (ktory.Count > 0)
                         produkt = lv_IIsniadanie.Items[ktory[0]].Text;
                     break;
 
                 case 2:
                     ktory = new List<int>();
-                         for (int k = 0; k < lv_obiad.SelectedIndices.Count; k++)
-                             ktory.Add(Int32.Parse(lv_obiad.SelectedIndices[k].ToString()));
+                    for (int k = 0; k < lv_obiad.SelectedIndices.Count; k++)
+                        ktory.Add(Int32.Parse(lv_obiad.SelectedIndices[k].ToString()));
                     if (ktory.Count > 0)
                         produkt = lv_obiad.Items[ktory[0]].Text;
                     break;
                 case 3:
-                   ktory = new List<int>();
-                         for (int k = 0; k < lv_podwieczorek.SelectedIndices.Count; k++)
-                             ktory.Add(Int32.Parse(lv_podwieczorek.SelectedIndices[k].ToString()));
+                    ktory = new List<int>();
+                    for (int k = 0; k < lv_podwieczorek.SelectedIndices.Count; k++)
+                        ktory.Add(Int32.Parse(lv_podwieczorek.SelectedIndices[k].ToString()));
                     if (ktory.Count > 0)
                         produkt = lv_podwieczorek.Items[ktory[0]].Text;
                     break;
 
                 case 4:
-                     ktory = new List<int>();
-                         for (int k = 0; k < lv_kolacja.SelectedIndices.Count; k++)
-                             ktory.Add(Int32.Parse(lv_kolacja.SelectedIndices[k].ToString()));
+                    ktory = new List<int>();
+                    for (int k = 0; k < lv_kolacja.SelectedIndices.Count; k++)
+                        ktory.Add(Int32.Parse(lv_kolacja.SelectedIndices[k].ToString()));
                     if (ktory.Count > 0)
                         produkt = lv_kolacja.Items[ktory[0]].Text;
                     break;
             }
             if (produkt != "")
             {
-                    switch (posilek)
-                    {
-                        case 0:
-                            ktory = new List<int>();
-                            for (int k = 0; k < lv_sniadanie.SelectedIndices.Count; k++)
-                                ktory.Add(Int32.Parse(lv_sniadanie.SelectedIndices[k].ToString()));
-                            lv_sniadanie.Items.RemoveAt(ktory[0]);
-                            break;
-                        case 1:
-                            ktory = new List<int>();
-                            for (int k = 0; k < lv_IIsniadanie.SelectedIndices.Count; k++)
-                                ktory.Add(Int32.Parse(lv_IIsniadanie.SelectedIndices[k].ToString()));
-                            lv_IIsniadanie.Items.RemoveAt(ktory[0]);
-                            break;
-                        case 2:
-                            ktory = new List<int>();
-                            for (int k = 0; k < lv_obiad.SelectedIndices.Count; k++)
-                                ktory.Add(Int32.Parse(lv_obiad.SelectedIndices[k].ToString()));
-                            lv_obiad.Items.RemoveAt(ktory[0]);
-                            break;
-                        case 3:
-                            ktory = new List<int>();
-                            for (int k = 0; k < lv_podwieczorek.SelectedIndices.Count; k++)
-                                ktory.Add(Int32.Parse(lv_podwieczorek.SelectedIndices[k].ToString()));
-                            lv_podwieczorek.Items.RemoveAt(ktory[0]);
-                            break;
-                        case 4:
-                            ktory = new List<int>();
-                            for (int k = 0; k < lv_kolacja.SelectedIndices.Count; k++)
-                                ktory.Add(Int32.Parse(lv_kolacja.SelectedIndices[k].ToString()));
-                            lv_kolacja.Items.RemoveAt(ktory[0]);
-                            break;
-                    }
-                    LiczSrednia();
+                switch (posilek)
+                {
+                    case 0:
+                        ktory = new List<int>();
+                        for (int k = 0; k < lv_sniadanie.SelectedIndices.Count; k++)
+                            ktory.Add(Int32.Parse(lv_sniadanie.SelectedIndices[k].ToString()));
+                        lv_sniadanie.Items.RemoveAt(ktory[0]);
+                        break;
+                    case 1:
+                        ktory = new List<int>();
+                        for (int k = 0; k < lv_IIsniadanie.SelectedIndices.Count; k++)
+                            ktory.Add(Int32.Parse(lv_IIsniadanie.SelectedIndices[k].ToString()));
+                        lv_IIsniadanie.Items.RemoveAt(ktory[0]);
+                        break;
+                    case 2:
+                        ktory = new List<int>();
+                        for (int k = 0; k < lv_obiad.SelectedIndices.Count; k++)
+                            ktory.Add(Int32.Parse(lv_obiad.SelectedIndices[k].ToString()));
+                        lv_obiad.Items.RemoveAt(ktory[0]);
+                        break;
+                    case 3:
+                        ktory = new List<int>();
+                        for (int k = 0; k < lv_podwieczorek.SelectedIndices.Count; k++)
+                            ktory.Add(Int32.Parse(lv_podwieczorek.SelectedIndices[k].ToString()));
+                        lv_podwieczorek.Items.RemoveAt(ktory[0]);
+                        break;
+                    case 4:
+                        ktory = new List<int>();
+                        for (int k = 0; k < lv_kolacja.SelectedIndices.Count; k++)
+                            ktory.Add(Int32.Parse(lv_kolacja.SelectedIndices[k].ToString()));
+                        lv_kolacja.Items.RemoveAt(ktory[0]);
+                        break;
+                }
+                LiczSrednia();
             }
             else
             {
-                MessageBox.Show("Nie wybrano produktu","Błąd");
+                MessageBox.Show("Nie wybrano produktu", "Błąd");
             }
         }
 
@@ -508,7 +512,7 @@ namespace WindowsFormsApplication1
                 }
 
             }
-            
+
             string[] arr = new string[8];
             for (int i = 0; i < 8; i++)
                 arr[i] = "0";
@@ -586,7 +590,7 @@ namespace WindowsFormsApplication1
             }
 
             for (int k = 0; k < 8; k++)
-            {             
+            {
                 for (int i = 0; i < 5; i++)
                 {
                     suma[5, k] += suma[i, k];
@@ -674,13 +678,13 @@ namespace WindowsFormsApplication1
             //WARTOŚCI
             e_text.Text = Math.Round(suma[5, 0], 2).ToString() + " kcal";
             b_text.Text = Math.Round(suma[5, 1], 2).ToString() + " g";
-           t_text.Text = Math.Round(suma[5, 2], 2).ToString() + " g";
+            t_text.Text = Math.Round(suma[5, 2], 2).ToString() + " g";
             k_text.Text = Math.Round(suma[5, 3], 2).ToString() + " g";
             w_text.Text = Math.Round(suma[5, 4], 2).ToString() + " g";
             wp_text.Text = Math.Round(suma[5, 5], 2).ToString() + " g";
             bp_text.Text = Math.Round(suma[5, 6], 2).ToString() + " g";
             s_text.Text = Math.Round(suma[5, 7], 2).ToString() + " mg";
-           
+
 
             for (int k = 0; k < 8; k++)
             {
@@ -696,7 +700,7 @@ namespace WindowsFormsApplication1
                             przelicznik = przelicznik_Tluszcze;
                         if (k == 4)
                             przelicznik = przelicznik_Weglowodany;
-                        if (k ==7)
+                        if (k == 7)
                             wartosc_odzywcza = wartosc_odzywcza / 1000;
 
                         procent[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma[i, 0];
@@ -706,7 +710,7 @@ namespace WindowsFormsApplication1
 
             //PROCENTY
             //pb_Energia.SuperscriptText = Math.Round(procent[5, 0], 2).ToString() + " % kalorii";
-           b_subtext.Text = Math.Round(procent[5, 1], 2).ToString();
+            b_subtext.Text = Math.Round(procent[5, 1], 2).ToString();
             t_subtext.Text = Math.Round(procent[5, 2], 2).ToString();
             w_subtext.Text = Math.Round(procent[5, 4], 2).ToString();
             //pb_Sod.SuperscriptText = Math.Round(procent[5, 4], 2).ToString() + " % kalorii";
@@ -832,7 +836,7 @@ namespace WindowsFormsApplication1
             }
             catch
             {
-                MessageBox.Show("Nie można przeliczyć wartości, o które przekroczono limity diety","Błąd");
+                MessageBox.Show("Nie można przeliczyć wartości, o które przekroczono limity diety", "Błąd");
             }
         }
 
@@ -851,11 +855,11 @@ namespace WindowsFormsApplication1
                     kategoria = "Wszystkie";
                     break;
                 case 1:
-                        Bakalie = Lista.Where(x => x.kategoria == 'B').OrderBy(x => x.nazwa).Cast<Produkt>().ToList();
-                        foreach (var v in Bakalie)
-                        {
-                            lb_produkty.Items.Add(v.nazwa);
-                        }                    
+                    Bakalie = Lista.Where(x => x.kategoria == 'B').OrderBy(x => x.nazwa).Cast<Produkt>().ToList();
+                    foreach (var v in Bakalie)
+                    {
+                        lb_produkty.Items.Add(v.nazwa);
+                    }
                     kategoria = "B";
                     break;
                 case 2:
@@ -940,7 +944,7 @@ namespace WindowsFormsApplication1
                     break;
             }
         }
-              
+
         private string GetMonth(int month)
         {
             switch (month)
@@ -1007,122 +1011,123 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 int tab = tc_posilki.SelectedIndex;
                 switch (tab)
                 {
                     case 0:
                         int liczba = lv_sniadanie.Items.Count;
                         int wybrany = lv_sniadanie.SelectedIndices[0];
-                            string[] arr = new string[10];
-                            double masa = double.Parse(tb_masa.Text);
-                            arr[0] = lv_sniadanie.Items[wybrany].SubItems[0].Text;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[2].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text),2).ToString();
-                            arr[3] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[3].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[4] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[4].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[5] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[5].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[6] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[6].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[7] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[7].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        string[] arr = new string[10];
+                        double masa = double.Parse(tb_masa.Text);
+                        arr[0] = lv_sniadanie.Items[wybrany].SubItems[0].Text;
+                        arr[1] = masa.ToString();
+                        arr[2] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[2].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[3] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[3].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[4] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[4].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[5] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[5].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[6] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[6].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[7] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[7].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[8] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[8].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[9] = Math.Round(masa * double.Parse(lv_sniadanie.Items[wybrany].SubItems[9].Text) / double.Parse(lv_sniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
                         ListViewItem itm = new ListViewItem(arr);
 
-                            lv_sniadanie.Items.Remove(lv_sniadanie.Items[wybrany]);
-                            lv_sniadanie.Items.Insert(wybrany, itm);
-                            LiczSrednia();
+                        lv_sniadanie.Items.Remove(lv_sniadanie.Items[wybrany]);
+                        lv_sniadanie.Items.Insert(wybrany, itm);
+                        LiczSrednia();
                         break;
                     case 1:
-                      liczba = lv_IIsniadanie.Items.Count;
+                        liczba = lv_IIsniadanie.Items.Count;
                         wybrany = lv_IIsniadanie.SelectedIndices[0];
-                            arr = new string[10];
-                            masa = double.Parse(tb_masa.Text);
-                            arr[0] = lv_IIsniadanie.Items[wybrany].SubItems[0].Text;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[2].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[3] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[3].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[4] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[4].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[5] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[5].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[6] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[6].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[7] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[7].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr = new string[10];
+                        masa = double.Parse(tb_masa.Text);
+                        arr[0] = lv_IIsniadanie.Items[wybrany].SubItems[0].Text;
+                        arr[1] = masa.ToString();
+                        arr[2] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[2].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[3] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[3].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[4] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[4].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[5] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[5].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[6] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[6].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[7] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[7].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[8] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[8].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[9] = Math.Round(masa * double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[9].Text) / double.Parse(lv_IIsniadanie.Items[wybrany].SubItems[1].Text), 2).ToString();
                         itm = new ListViewItem(arr);
 
-                            lv_IIsniadanie.Items.Remove(lv_IIsniadanie.Items[wybrany]);
-                            lv_IIsniadanie.Items.Insert(wybrany, itm);
-                            LiczSrednia();
+                        lv_IIsniadanie.Items.Remove(lv_IIsniadanie.Items[wybrany]);
+                        lv_IIsniadanie.Items.Insert(wybrany, itm);
+                        LiczSrednia();
                         break;
                     case 2:
-                                            liczba = lv_obiad.Items.Count;
+                        liczba = lv_obiad.Items.Count;
                         wybrany = lv_obiad.SelectedIndices[0];
-                            arr = new string[10];
-                            masa = double.Parse(tb_masa.Text);
-                            arr[0] = lv_obiad.Items[wybrany].SubItems[0].Text;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[2].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[3] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[3].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[4] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[4].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[5] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[5].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[6] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[6].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[7] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[7].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr = new string[10];
+                        masa = double.Parse(tb_masa.Text);
+                        arr[0] = lv_obiad.Items[wybrany].SubItems[0].Text;
+                        arr[1] = masa.ToString();
+                        arr[2] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[2].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[3] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[3].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[4] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[4].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[5] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[5].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[6] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[6].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[7] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[7].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[8] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[8].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[9] = Math.Round(masa * double.Parse(lv_obiad.Items[wybrany].SubItems[9].Text) / double.Parse(lv_obiad.Items[wybrany].SubItems[1].Text), 2).ToString();
                         itm = new ListViewItem(arr);
 
-                            lv_obiad.Items.Remove(lv_obiad.Items[wybrany]);
-                            lv_obiad.Items.Insert(wybrany, itm);
-                            LiczSrednia();
+                        lv_obiad.Items.Remove(lv_obiad.Items[wybrany]);
+                        lv_obiad.Items.Insert(wybrany, itm);
+                        LiczSrednia();
                         break;
                     case 3:
-                                              liczba = lv_podwieczorek.Items.Count;
+                        liczba = lv_podwieczorek.Items.Count;
                         wybrany = lv_podwieczorek.SelectedIndices[0];
-                            arr = new string[10];
-                            masa = double.Parse(tb_masa.Text);
-                            arr[0] = lv_podwieczorek.Items[wybrany].SubItems[0].Text;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[2].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[3] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[3].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[4] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[4].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[5] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[5].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[6] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[6].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[7] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[7].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr = new string[10];
+                        masa = double.Parse(tb_masa.Text);
+                        arr[0] = lv_podwieczorek.Items[wybrany].SubItems[0].Text;
+                        arr[1] = masa.ToString();
+                        arr[2] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[2].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[3] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[3].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[4] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[4].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[5] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[5].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[6] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[6].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[7] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[7].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[8] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[8].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[9] = Math.Round(masa * double.Parse(lv_podwieczorek.Items[wybrany].SubItems[9].Text) / double.Parse(lv_podwieczorek.Items[wybrany].SubItems[1].Text), 2).ToString();
                         itm = new ListViewItem(arr);
 
-                            lv_podwieczorek.Items.Remove(lv_podwieczorek.Items[wybrany]);
-                            lv_podwieczorek.Items.Insert(wybrany, itm);
-                            LiczSrednia();
+                        lv_podwieczorek.Items.Remove(lv_podwieczorek.Items[wybrany]);
+                        lv_podwieczorek.Items.Insert(wybrany, itm);
+                        LiczSrednia();
                         break;
                     case 4:
-                                            liczba = lv_kolacja.Items.Count;
+                        liczba = lv_kolacja.Items.Count;
                         wybrany = lv_kolacja.SelectedIndices[0];
-                            arr = new string[10];
-                            masa = double.Parse(tb_masa.Text);
-                            arr[0] = lv_kolacja.Items[wybrany].SubItems[0].Text;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[2].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[3] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[3].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[4] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[4].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[5] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[5].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[6] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[6].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
-                            arr[7] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[7].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr = new string[10];
+                        masa = double.Parse(tb_masa.Text);
+                        arr[0] = lv_kolacja.Items[wybrany].SubItems[0].Text;
+                        arr[1] = masa.ToString();
+                        arr[2] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[2].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[3] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[3].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[4] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[4].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[5] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[5].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[6] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[6].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
+                        arr[7] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[7].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[8] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[8].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
                         arr[9] = Math.Round(masa * double.Parse(lv_kolacja.Items[wybrany].SubItems[9].Text) / double.Parse(lv_kolacja.Items[wybrany].SubItems[1].Text), 2).ToString();
                         itm = new ListViewItem(arr);
 
-                            lv_kolacja.Items.Remove(lv_kolacja.Items[wybrany]);
-                            lv_kolacja.Items.Insert(wybrany, itm);
-                            LiczSrednia();
+                        lv_kolacja.Items.Remove(lv_kolacja.Items[wybrany]);
+                        lv_kolacja.Items.Insert(wybrany, itm);
+                        LiczSrednia();
                         break;
 
                 }
             }
             catch
             {
-             MessageBox.Show("Nie można edytować","Błąd");
-           }
+                MessageBox.Show("Nie można edytować", "Błąd");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1315,7 +1320,7 @@ namespace WindowsFormsApplication1
 
                 string sklad_sniadanie = "";
                 for (int i = 0; i < lv_sniadanie.Items.Count; i++)
-                   sklad_sniadanie += lv_sniadanie.Items[i].SubItems[0].Text + "|" + lv_sniadanie.Items[i].SubItems[1].Text + "|" + lv_sniadanie.Items[i].SubItems[2].Text + "|" + lv_sniadanie.Items[i].SubItems[3].Text + "|" + lv_sniadanie.Items[i].SubItems[4].Text + "|" + lv_sniadanie.Items[i].SubItems[5].Text + "|" + lv_sniadanie.Items[i].SubItems[6].Text + "|" + lv_sniadanie.Items[i].SubItems[7].Text + "|" + lv_sniadanie.Items[i].SubItems[8].Text + "|" + lv_sniadanie.Items[i].SubItems[9].Text + "$";
+                    sklad_sniadanie += lv_sniadanie.Items[i].SubItems[0].Text + "|" + lv_sniadanie.Items[i].SubItems[1].Text + "|" + lv_sniadanie.Items[i].SubItems[2].Text + "|" + lv_sniadanie.Items[i].SubItems[3].Text + "|" + lv_sniadanie.Items[i].SubItems[4].Text + "|" + lv_sniadanie.Items[i].SubItems[5].Text + "|" + lv_sniadanie.Items[i].SubItems[6].Text + "|" + lv_sniadanie.Items[i].SubItems[7].Text + "|" + lv_sniadanie.Items[i].SubItems[8].Text + "|" + lv_sniadanie.Items[i].SubItems[9].Text + "$";
 
                 string sklad_IIsniadanie = "";
                 for (int i = 0; i < lv_IIsniadanie.Items.Count; i++)
@@ -1334,7 +1339,7 @@ namespace WindowsFormsApplication1
                     sklad_kolacja += lv_kolacja.Items[i].SubItems[0].Text + "|" + lv_kolacja.Items[i].SubItems[1].Text + "|" + lv_kolacja.Items[i].SubItems[2].Text + "|" + lv_kolacja.Items[i].SubItems[3].Text + "|" + lv_kolacja.Items[i].SubItems[4].Text + "|" + lv_kolacja.Items[i].SubItems[5].Text + "|" + lv_kolacja.Items[i].SubItems[6].Text + "|" + lv_kolacja.Items[i].SubItems[7].Text + "|" + lv_kolacja.Items[i].SubItems[8].Text + "|" + lv_kolacja.Items[i].SubItems[9].Text + "$";
 
 
-                DAO.JadlospisDAO.Insert(dateTimePicker1.Text, cb_dieta.Text, cb_miasto.SelectedItem.ToString(), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie,sklad_IIsniadanie,sklad_obiad,sklad_podwieczorek,sklad_kolacja);
+                DAO.JadlospisDAO.Insert(dateTimePicker1.Text, cb_dieta.Text, cb_miasto.SelectedItem.ToString(), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
 
                 MessageBox.Show("Zapisano dzień:" + '\n' + dateTimePicker1.Text + '\n' + cb_dieta.Text + '\n' + cb_miasto.Text, "Zapisano");
 
@@ -1358,331 +1363,11 @@ namespace WindowsFormsApplication1
             receptura_posilek.SelectedIndex = 0;
             label53.Visible = true;
         }
-        private void utwórzToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void wartościOdżywczeDietyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Czy na pewno utworzyć dokument z wartościami odżywczymi stworzonej diety?", "Tworzenie dokumentu", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Encoding enc = Encoding.GetEncoding("Windows-1250");
-                string path = "Jadłospisy PDF\\" + cb_miasto.SelectedItem + "\\" + dateTimePicker1.Value.Year + "\\" + GetMonth(dateTimePicker1.Value.Month) + "\\" + dateTimePicker1.Value.Day + "\\";
-                string nazwa = path + dateTimePicker1.Text + ", " + cb_dieta.Text + ".pdf";
-                iTextSharp.text.Document doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-                System.IO.Directory.CreateDirectory(path);
-                PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(nazwa, FileMode.Create));
-                var Calibri16 = FontFactory.GetFont(BaseFont.TIMES_ROMAN, BaseFont.CP1257, 11);
-                var Calibri12 = FontFactory.GetFont(BaseFont.TIMES_ROMAN, BaseFont.CP1257, 9);
-                doc.Open();
-                string naglowek = dateTimePicker1.Text + "\n\n" + cb_dieta.Text + "\n";
-                iTextSharp.text.Paragraph paragraph = new iTextSharp.text.Paragraph(naglowek, Calibri16);
-                paragraph.Alignment = 1;
-                doc.Add(paragraph);
-                iTextSharp.text.Paragraph p = new iTextSharp.text.Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100.0F, BaseColor.DARK_GRAY, Element.ALIGN_CENTER, 1)));
-                doc.Add(p);
-                string[] kolumny = new string[8];
-                kolumny[0] = "Nazwa produktu";
-                kolumny[1] = "Masa [g]";
-                kolumny[2] = "Energia [kcal]";
-                kolumny[3] = "Białko [g]";
-                kolumny[5] = "Węglowodany [g]";
-                kolumny[4] = " Tłuszcze[g]";
-                kolumny[7] = "NKT[g]";
-                kolumny[6] = "Sód [mg]";
-
-
-                if (suma[0, 0] != 0)
-                {
-                    string s;
-                    string naglowek2 = "\n\n";
-                    iTextSharp.text.Paragraph paragraph2 = new iTextSharp.text.Paragraph(naglowek2, Calibri12);
-                    doc.Add(paragraph2);
-                    PdfPTable table = new PdfPTable(8);
-
-                    PdfPCell cell = new PdfPCell(new Phrase("Śniadanie", Calibri16));
-                    cell.Colspan = 8;
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                    if (textBox1.Text != "")
-                    {
-                        PdfPCell cel = new PdfPCell(new Phrase(textBox1.Text, Calibri16));
-                        cel.Colspan = 8;
-                        cel.HorizontalAlignment = 1;
-                        table.AddCell(cel);
-                    }
-                    for (int i = 0; i < 8; i++)
-                    {
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(kolumny[i], Calibri12));
-                        table.AddCell(left);
-                    }
-
-                    for (int k = 0; k < lv_sniadanie.Items.Count; k++)
-                    {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            s = lv_sniadanie.Items[k].SubItems[i].ToString();
-                            s = s.Remove(0, 18);
-                            s = s.Replace('}', ' ');
-                            PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                            table.AddCell(left);
-                        }
-                    }
-                    PdfPCell ce = new PdfPCell(new Phrase("Razem", Calibri16));
-                    ce.Colspan = 2;
-                    table.AddCell(ce);
-                    ce.HorizontalAlignment = 1;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        s = suma[0, i].ToString();
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                        table.AddCell(left);
-                    }
-                    doc.Add(table);
-                }
-                if (suma[1, 0] != 0)
-                {
-                    string s = "";
-                    string naglowek2 = "\n\n";
-                    iTextSharp.text.Paragraph paragraph2 = new iTextSharp.text.Paragraph(naglowek2, Calibri12);
-                    doc.Add(paragraph2);
-                    PdfPTable table = new PdfPTable(8);
-
-                    PdfPCell cell = new PdfPCell(new Phrase("Drugie śniadanie", Calibri16));
-                    cell.Colspan = 8;
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                    if (textBox2.Text != "")
-                    {
-                        PdfPCell cel = new PdfPCell(new Phrase(textBox2.Text, Calibri16));
-                        cel.Colspan = 8;
-                        cel.HorizontalAlignment = 1;
-                        table.AddCell(cel);
-                    }
-                    for (int i = 0; i < 8; i++)
-                    {
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(kolumny[i], Calibri12));
-                        table.AddCell(left);
-                    }
-
-                    for (int k = 0; k < lv_IIsniadanie.Items.Count; k++)
-                    {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            s = lv_IIsniadanie.Items[k].SubItems[i].ToString();
-                            s = s.Remove(0, 18);
-                            s = s.Replace('}', ' ');
-                            PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                            table.AddCell(left);
-                        }
-                    }
-
-                    PdfPCell ce = new PdfPCell(new Phrase("Razem", Calibri16));
-                    ce.Colspan = 2;
-                    table.AddCell(ce);
-                    ce.HorizontalAlignment = 1;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        s = suma[1, i].ToString();
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                        table.AddCell(left);
-                    }
-                    doc.Add(table);
-                }
-                if (suma[2, 0] != 0)
-                {
-                    string s = "";
-                    string naglowek2 = "\n\n";
-                    iTextSharp.text.Paragraph paragraph2 = new iTextSharp.text.Paragraph(naglowek2, Calibri16);
-                    doc.Add(paragraph2);
-                    PdfPTable table = new PdfPTable(8);
-
-                    PdfPCell cell = new PdfPCell(new Phrase("Obiad", Calibri16));
-                    cell.Colspan = 8;
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                    if (textBox3.Text != "")
-                    {
-                        PdfPCell cel = new PdfPCell(new Phrase(textBox3.Text, Calibri16));
-                        cel.Colspan = 8;
-                        cel.HorizontalAlignment = 1;
-                        table.AddCell(cel);
-                    }
-                    for (int i = 0; i < 8; i++)
-                    {
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(kolumny[i], Calibri12));
-                        table.AddCell(left);
-                    }
-
-                    for (int k = 0; k < lv_obiad.Items.Count; k++)
-                    {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            s = lv_obiad.Items[k].SubItems[i].ToString();
-                            s = s.Remove(0, 18);
-                            s = s.Replace('}', ' ');
-                            PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                            table.AddCell(left);
-                        }
-                    }
-                    PdfPCell ce = new PdfPCell(new Phrase("Razem", Calibri16));
-                    ce.Colspan = 2;
-                    table.AddCell(ce);
-                    ce.HorizontalAlignment = 1;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        s = suma[2, i].ToString();
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                        table.AddCell(left);
-                    }
-                    doc.Add(table);
-
-                }
-                if (suma[3, 0] != 0)
-                {
-                    string naglowek2 = "\n\n";
-                    iTextSharp.text.Paragraph paragraph2 = new iTextSharp.text.Paragraph(naglowek2, Calibri16);
-                    doc.Add(paragraph2);
-                    PdfPTable table = new PdfPTable(8);
-
-
-                    PdfPCell cell = new PdfPCell(new Phrase("Podwieczorek", Calibri16));
-                    cell.Colspan = 8;
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                    if (textBox4.Text != "")
-                    {
-                        PdfPCell cel = new PdfPCell(new Phrase(textBox4.Text, Calibri16));
-                        cel.Colspan = 8;
-                        cel.HorizontalAlignment = 1;
-                        table.AddCell(cel);
-                    }
-                    for (int i = 0; i < 8; i++)
-                    {
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(kolumny[i], Calibri12));
-                        table.AddCell(left);
-                    }
-                    string s = "";
-                    for (int k = 0; k < lv_podwieczorek.Items.Count; k++)
-                    {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            s = lv_podwieczorek.Items[k].SubItems[i].ToString();
-                            s = s.Remove(0, 18);
-                            s = s.Replace('}', ' ');
-                            PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                            table.AddCell(left);
-                        }
-                    }
-                    PdfPCell ce = new PdfPCell(new Phrase("Razem", Calibri16));
-                    ce.Colspan = 2;
-                    table.AddCell(ce);
-                    ce.HorizontalAlignment = 1;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        s = suma[3, i].ToString();
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                        table.AddCell(left);
-                    }
-                    doc.Add(table);
-
-                }
-
-
-                if (suma[4, 0] != 0)
-                {
-                    string naglowek2 = "\n\n";
-                    iTextSharp.text.Paragraph paragraph2 = new iTextSharp.text.Paragraph(naglowek2, Calibri16);
-                    doc.Add(paragraph2);
-                    PdfPTable table = new PdfPTable(8);
-
-                    PdfPCell cell = new PdfPCell(new Phrase("Kolacja", Calibri16));
-                    cell.Colspan = 8;
-                    cell.HorizontalAlignment = 1;
-                    table.AddCell(cell);
-                    if (textBox5.Text != "")
-                    {
-                        PdfPCell cel = new PdfPCell(new Phrase(textBox5.Text, Calibri16));
-                        cel.Colspan = 8;
-                        cel.HorizontalAlignment = 1;
-                        table.AddCell(cel);
-                    }
-                    for (int i = 0; i < 8; i++)
-                    {
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(kolumny[i], Calibri12));
-                        table.AddCell(left);
-                    }
-                    string s = "";
-                    for (int k = 0; k < lv_kolacja.Items.Count; k++)
-                    {
-                        for (int i = 0; i < 8; i++)
-                        {
-                            s = lv_kolacja.Items[k].SubItems[i].ToString();
-                            s = s.Remove(0, 18);
-                            s = s.Replace('}', ' ');
-                            PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                            table.AddCell(left);
-                        }
-                    }
-                    PdfPCell ce = new PdfPCell(new Phrase("Razem", Calibri16));
-                    ce.Colspan = 2;
-                    table.AddCell(ce);
-                    ce.HorizontalAlignment = 1;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        s = suma[4, i].ToString();
-                        PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                        table.AddCell(left);
-                    }
-                    doc.Add(table);
-
-                }
-                PdfPTable table2 = new PdfPTable(6);
-                string naglowek3 = "\n\n";
-                iTextSharp.text.Paragraph paragraph3 = new iTextSharp.text.Paragraph(naglowek3, Calibri16);
-                doc.Add(paragraph3);
-                PdfPCell cell2 = new PdfPCell(new Phrase("Razem", Calibri16));
-                cell2.Colspan = 6;
-                cell2.HorizontalAlignment = 1;
-                table2.AddCell(cell2);
-                for (int i = 2; i < 8; i++)
-                {
-                    PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(kolumny[i], Calibri12));
-                    table2.AddCell(left);
-                }
-
-                for (int i = 0; i < 6; i++)
-                {
-
-                    string s = suma[5, i].ToString();
-                    //s = s.Remove(0, 18);
-                    //s = s.Replace(':', ' ');
-                    PdfPCell left = new PdfPCell(new iTextSharp.text.Paragraph(s, Calibri12));
-                    table2.AddCell(left);
-                }
-                doc.Add(table2);
-
-                doc.Close();
-                MessageBox.Show("Utworzono dokument z wartościami odżywczymi dla diety:\n" + cb_dieta.SelectedItem + " " + dateTimePicker1.Value.Day + " " + GetMonth(dateTimePicker1.Value.Month) + " " + dateTimePicker1.Value.Year, "Tworzenie dokumentu");
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                //do something else
-            }
-
-        }
-        
-        private void jadłospisDziennyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
 
         private void dzieńToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             label10.Text = "Jadłospisy -> Wczytaj";
-            
+
             pictureBox23.Visible = true;
             pictureBox24.Visible = true;
             pictureBox25.Visible = false;
@@ -1777,6 +1462,42 @@ namespace WindowsFormsApplication1
 
             }
         }
+
+
+
+        private void kontrolaClick()
+        {
+            panel14.BackColor = highlightColor;
+            panel3.BackColor = primaryColor;
+            panel5.BackColor = primaryColor;
+            panel6.BackColor = primaryColor;
+            panel7.BackColor = primaryColor;
+            panel8.BackColor = primaryColor;
+            panel9.BackColor = primaryColor;
+            panel10.BackColor = primaryColor;
+            panel11.BackColor = primaryColor;
+
+            panel_kontrola.Visible = true;
+            panel_kontrola.BringToFront();
+
+            label10.Text = "Kontrola";
+            if (k_miasto.Items.Count == 0)
+            {
+                listaJednostek = DAO.JednostkaDAO.SelectAll();
+                foreach (DAO.Jednostka r in listaJednostek)
+                    k_miasto.Items.Add(r.miasto);
+            }
+            k_miasto.SelectedIndex = 0;
+
+            if (k_dieta.Items.Count == 0)
+            {
+                Diety = DAO.DietaDAO.SelectAll(k_miasto.SelectedItem.ToString());
+                foreach (Dieta d in Diety)
+                    k_dieta.Items.Add(d.nazwa);
+            }
+            k_dieta.SelectedIndex = 0;
+        }
+
         private void produktClick()
         {
             panel3.BackColor = highlightColor;
@@ -1789,6 +1510,7 @@ namespace WindowsFormsApplication1
             panel9.BackColor = primaryColor;
             panel10.BackColor = primaryColor;
             panel11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
 
             panel_produkty.Visible = true;
             panel_produkty.BringToFront();
@@ -1808,11 +1530,12 @@ namespace WindowsFormsApplication1
             panel9.BackColor = primaryColor;
             panel10.BackColor = primaryColor;
             panel11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
 
             panel_receptura.Visible = true;
             panel_receptura.BringToFront();
 
-            pictureBox14_Click(null,null);
+            pictureBox14_Click(null, null);
 
         }
 
@@ -1828,6 +1551,7 @@ namespace WindowsFormsApplication1
             panel11.BackColor = primaryColor;
             pictureBox6.BackColor = primaryColor;
             label11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
             label10.Text = "Jadłospisy";
 
             panel_jadlospis.Visible = true;
@@ -1839,8 +1563,8 @@ namespace WindowsFormsApplication1
 
             wczytajJadlospis();
 
-            if(jadlospis_miasto.Items.Count>0)
-            jadlospis_miasto.SelectedIndex = 0;
+            if (jadlospis_miasto.Items.Count > 0)
+                jadlospis_miasto.SelectedIndex = 0;
 
         }
 
@@ -1856,24 +1580,25 @@ namespace WindowsFormsApplication1
             label11.BackColor = primaryColor;
             panel10.BackColor = primaryColor;
             panel11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
             label10.Text = "Szablony";
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = true;
             panel_dekadowka.BringToFront();
 
             dekadowka_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
                 dekadowka_miasto.Items.Add(j.miasto);
 
-            if(dekadowka_miasto.Items.Count>0)
+            if (dekadowka_miasto.Items.Count > 0)
                 dekadowka_miasto.SelectedIndex = 0;
             dekadowka_dekadowka.Items.Clear();
-            listaDekadowek =  DAO.DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
+            listaDekadowek = DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
-            if(dekadowka_dekadowka.Items.Count > 0)
-            dekadowka_dekadowka.SelectedIndex = 0;
+            if (dekadowka_dekadowka.Items.Count > 0)
+                dekadowka_dekadowka.SelectedIndex = 0;
 
             dekadowka_nope_Click(null, null);
         }
@@ -1889,9 +1614,10 @@ namespace WindowsFormsApplication1
             panel11.BackColor = primaryColor;
             pictureBox6.BackColor = primaryColor;
             label11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
             panel_dieta.Visible = true;
             panel_dieta.BringToFront();
-           
+
             dieta_wstecz_Click(null, null);
 
         }
@@ -1908,19 +1634,21 @@ namespace WindowsFormsApplication1
             panel11.BackColor = primaryColor;
             pictureBox6.BackColor = primaryColor;
             label11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
             panel_glowny.Visible = true;
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = false;
+            panel_kontrola.Visible = false;
             panel_dekadowka_zapisz.Visible = false;
             panel_dieta.Visible = false;
             panel_glowny.BringToFront();
             label10.Text = "Strona Główna";
 
-            
+
 
             lb_produkty.Items.Clear();
             Lista = DAO.ProduktDAO.SelectAll();
-            Lista = Lista.OrderBy(x=>x.nazwa).Cast<Produkt>().ToList();
+            Lista = Lista.OrderBy(x => x.nazwa).Cast<Produkt>().ToList();
 
             foreach (Produkt p in Lista)
                 lb_produkty.Items.Add(p.nazwa);
@@ -1942,8 +1670,8 @@ namespace WindowsFormsApplication1
                     cb_miasto.SelectedIndex = 0;
             }
             LiczSrednia();
-            }
-            private void jednostkaClick()
+        }
+        private void jednostkaClick()
         {
             panel9.BackColor = highlightColor;
             panel5.BackColor = primaryColor;
@@ -1956,6 +1684,7 @@ namespace WindowsFormsApplication1
             panel11.BackColor = primaryColor;
             pictureBox6.BackColor = primaryColor;
             label11.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
 
             panel_jednostka.Visible = true;
             panel_jednostka.BringToFront();
@@ -1987,7 +1716,7 @@ namespace WindowsFormsApplication1
         {
             produktClick();
         }
-        
+
         private void label12_Click(object sender, EventArgs e)
         {
             recepturaClick();
@@ -2055,7 +1784,7 @@ namespace WindowsFormsApplication1
         private void pictureBox11_Click(object sender, EventArgs e)
         {
             jednostkaClick();
-        }     
+        }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -2076,7 +1805,7 @@ namespace WindowsFormsApplication1
             glownaClick();
         }
 
-    
+
         private void panel_produkty_Paint(object sender, PaintEventArgs e)
         {
 
@@ -2161,7 +1890,7 @@ namespace WindowsFormsApplication1
                 default:
                     break;
             }
-          
+
         }
 
         private void produkt_wstecz_Click(object sender, EventArgs e)
@@ -2330,8 +2059,9 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
                         }
                     }
-                    catch {
-                        MessageBox.Show("Błąd dodawania produktu","Błąd");
+                    catch
+                    {
+                        MessageBox.Show("Błąd dodawania produktu", "Błąd");
                     }
                     break;
                 case "Produkty -> Edytuj":
@@ -2340,44 +2070,44 @@ namespace WindowsFormsApplication1
                         if (produkt_kategoria.SelectedIndex != -1 && produkt_nazwa.Text != "" && produkt_energia.Text != "" && produkt_bialko.Text != "" && produkt_tluszcze_nn.Text != "" && produkt_tluszcze.Text != "" && produkt_weglowodany.Text != "" && produkty_przyswajalne.Text != "" && produkty_blonnik.Text != "" && produkt_sod.Text != "")
                         {
                             kategoria = 'A';
-                    switch (produkt_kategoria.SelectedIndex)
-                    {
-                        case 0:
-                            kategoria = 'B';
-                            break;
-                        case 1:
-                            kategoria = 'M';
-                            break;
-                        case 2:
-                            kategoria = 'P';
-                            break;
-                        case 3:
-                            kategoria = 'N';
-                            break;
-                        case 4:
-                            kategoria = 'O';
-                            break;
-                        case 5:
-                            kategoria = 'W';
-                            break;
-                        case 6:
-                            kategoria = 'R';
-                            break;
-                        case 7:
-                            kategoria = 'T';
-                            break;
-                        case 8:
-                            kategoria = 'S';
-                            break;
-                        case 9:
-                            kategoria = 'D';
-                            break;
-                        case 10:
-                            kategoria = 'Z';
-                            break;
-                    }
-                    DAO.ProduktDAO.Update(Lista[produkt_wczytaj.SelectedIndex], produkt_nazwa.Text, kategoria, Convert.ToDouble(produkt_energia.Text), Convert.ToDouble(produkt_bialko.Text), Convert.ToDouble(produkt_tluszcze.Text), Convert.ToDouble(produkt_weglowodany.Text), Convert.ToDouble(produkt_sod.Text), Convert.ToDouble(produkt_tluszcze_nn.Text), Convert.ToDouble(produkty_przyswajalne.Text), Convert.ToDouble(produkty_blonnik.Text));
-                    MessageBox.Show("Edytowano: "+produkt_nazwa.Text);
+                            switch (produkt_kategoria.SelectedIndex)
+                            {
+                                case 0:
+                                    kategoria = 'B';
+                                    break;
+                                case 1:
+                                    kategoria = 'M';
+                                    break;
+                                case 2:
+                                    kategoria = 'P';
+                                    break;
+                                case 3:
+                                    kategoria = 'N';
+                                    break;
+                                case 4:
+                                    kategoria = 'O';
+                                    break;
+                                case 5:
+                                    kategoria = 'W';
+                                    break;
+                                case 6:
+                                    kategoria = 'R';
+                                    break;
+                                case 7:
+                                    kategoria = 'T';
+                                    break;
+                                case 8:
+                                    kategoria = 'S';
+                                    break;
+                                case 9:
+                                    kategoria = 'D';
+                                    break;
+                                case 10:
+                                    kategoria = 'Z';
+                                    break;
+                            }
+                            DAO.ProduktDAO.Update(Lista[produkt_wczytaj.SelectedIndex], produkt_nazwa.Text, kategoria, Convert.ToDouble(produkt_energia.Text), Convert.ToDouble(produkt_bialko.Text), Convert.ToDouble(produkt_tluszcze.Text), Convert.ToDouble(produkt_weglowodany.Text), Convert.ToDouble(produkt_sod.Text), Convert.ToDouble(produkt_tluszcze_nn.Text), Convert.ToDouble(produkty_przyswajalne.Text), Convert.ToDouble(produkty_blonnik.Text));
+                            MessageBox.Show("Edytowano: " + produkt_nazwa.Text);
                             produktClick();
                         }
                         else
@@ -2392,7 +2122,7 @@ namespace WindowsFormsApplication1
                     break;
             }
 
-         
+
         }
 
         private void produkt_wczytaj_SelectedIndexChanged(object sender, EventArgs e)
@@ -2478,6 +2208,8 @@ namespace WindowsFormsApplication1
         {
             dekadowka_panel.Controls.Clear();
 
+            Dekadowka[] jadlospisyDanejDekadowki = DAO.JadlospisDekadowkiDAO.SelectForAllDays(wybranaDekadowka);
+
             for (int j = 0; j < wybranaDekadowka.dni; j++)
             {
                 FlowLayoutPanel dayOfWeek = new FlowLayoutPanel
@@ -2491,7 +2223,7 @@ namespace WindowsFormsApplication1
                 dayOfWeek.VerticalScroll.Visible = false;
                 dayOfWeek.HorizontalScroll.Visible = false;
 
-                string day = GetDay(wybranaDekadowka.dzienStart,j+1);
+                string day = GetDay(wybranaDekadowka.dzienStart, j + 1);
                 Label myDay = new Label
                 {
                     Text = day,
@@ -2500,9 +2232,7 @@ namespace WindowsFormsApplication1
                 };
                 dayOfWeek.Controls.Add(myDay);
 
-                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), j+1);
-
-                foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
+                foreach (Jadlospis jadlospis in jadlospisyDanejDekadowki[j].listaJadlospisow)
                 {
                     FlowLayoutPanel myPanel = new FlowLayoutPanel();
                     myPanel.BackColor = Color.LightBlue;
@@ -2635,12 +2365,12 @@ namespace WindowsFormsApplication1
 
                     dayOfWeek.Controls.Add(myPanel);
                 }
-                
-            dekadowka_panel.Controls.Add(dayOfWeek);
+
+                dekadowka_panel.Controls.Add(dayOfWeek);
             }
         }
 
-      
+
         public string GetDay(string dzien, int licznik)
         {
             if (licznik > 1)
@@ -2680,10 +2410,10 @@ namespace WindowsFormsApplication1
         private void dekadowka_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
             dekadowka_dekadowka.Items.Clear();
-            listaDekadowek = DAO.DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
+            listaDekadowek = DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
-            if(dekadowka_dekadowka.Items.Count>0)
+            if (dekadowka_dekadowka.Items.Count > 0)
                 dekadowka_dekadowka.SelectedIndex = 0;
         }
 
@@ -2813,13 +2543,13 @@ namespace WindowsFormsApplication1
             for (int i = 0; i < lv_podwieczorek.Items.Count; i++)
                 sklad_podwieczorek += lv_podwieczorek.Items[i].SubItems[0].Text + "|" + lv_podwieczorek.Items[i].SubItems[1].Text + "|" + lv_podwieczorek.Items[i].SubItems[2].Text + "|" + lv_podwieczorek.Items[i].SubItems[3].Text + "|" + lv_podwieczorek.Items[i].SubItems[4].Text + "|" + lv_podwieczorek.Items[i].SubItems[5].Text + "|" + lv_podwieczorek.Items[i].SubItems[6].Text + "|" + lv_podwieczorek.Items[i].SubItems[7].Text + "|" + lv_podwieczorek.Items[i].SubItems[8].Text + "|" + lv_podwieczorek.Items[i].SubItems[9].Text + "$";
 
-            string sklad_kolacja= "";
+            string sklad_kolacja = "";
             for (int i = 0; i < lv_kolacja.Items.Count; i++)
                 sklad_kolacja += lv_kolacja.Items[i].SubItems[0].Text + "|" + lv_kolacja.Items[i].SubItems[1].Text + "|" + lv_kolacja.Items[i].SubItems[2].Text + "|" + lv_kolacja.Items[i].SubItems[3].Text + "|" + lv_kolacja.Items[i].SubItems[4].Text + "|" + lv_kolacja.Items[i].SubItems[5].Text + "|" + lv_kolacja.Items[i].SubItems[6].Text + "|" + lv_kolacja.Items[i].SubItems[7].Text + "|" + lv_kolacja.Items[i].SubItems[8].Text + "|" + lv_kolacja.Items[i].SubItems[9].Text + "$";
 
-            DAO.JadlospisDekadowkiDAO.Insert(Convert.ToInt32(wybranaDekadowkaDoZapisania.id), dekadowka_zapisz_dzien.SelectedIndex + 1, DAO.DietaDAO.Select(dekadowka_zapisz_dieta.SelectedItem.ToString(),dekadowka_zapisz_miasto.Text), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
+            DAO.JadlospisDekadowkiDAO.Insert(Convert.ToInt32(wybranaDekadowkaDoZapisania.id), dekadowka_zapisz_dzien.SelectedIndex + 1, DAO.DietaDAO.Select(dekadowka_zapisz_dieta.SelectedItem.ToString(), dekadowka_zapisz_miasto.Text), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
 
-            MessageBox.Show("Zapisano jadłospis szablonu","Zapisz");
+            MessageBox.Show("Zapisano jadłospis szablonu", "Zapisz");
             dekadowka_zapisz_wstec_Click(null, null);
         }
 
@@ -2834,7 +2564,7 @@ namespace WindowsFormsApplication1
                 dekadowka_zapisz_dieta.SelectedIndex = 0;
 
             dekadowka_zapisz_dekadowka.Items.Clear();
-            listaDekadowekDoZapisania = DAO.DekadowkaDAO.Select(dekadowka_zapisz_miasto.SelectedItem.ToString());
+            listaDekadowekDoZapisania = DekadowkaDAO.Select(dekadowka_zapisz_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoZapisania)
                 dekadowka_zapisz_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_zapisz_dekadowka.Items.Count > 0)
@@ -2846,7 +2576,7 @@ namespace WindowsFormsApplication1
             wybranaDekadowkaDoZapisania = listaDekadowekDoZapisania[dekadowka_zapisz_dekadowka.SelectedIndex];
             dekadowka_zapisz_dzien.Items.Clear();
             for (int j = 0; j < wybranaDekadowkaDoZapisania.dni; j++)
-            {            
+            {
                 dekadowka_zapisz_dzien.Items.Add(GetDay(wybranaDekadowkaDoZapisania.dzienStart, j + 1));
             }
             if (dekadowka_zapisz_dzien.Items.Count > 0)
@@ -2866,7 +2596,7 @@ namespace WindowsFormsApplication1
             dieta_weglowodany.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.weglowodany.ToString();
             dieta_blonnik.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.blonnik.ToString();
             dieta_przyswajalne.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne.ToString();
-            dieta_ktn.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn.ToString() ;
+            dieta_ktn.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn.ToString();
             dieta_sod.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.sod.ToString();
         }
 
@@ -2875,7 +2605,7 @@ namespace WindowsFormsApplication1
             switch (label10.Text)
             {
                 case "Diety -> Dodaj":
-                    if (dieta_nazwa.Text!=""&&dieta_miasto.Text!=""&& dieta_energia.Text!=""&& dieta_bialko.Text!=""&& dieta_tluszcze.Text!=""&& dieta_weglowodany.Text!=""&&dieta_sod.Text!=""&&dieta_ktn.Text!=""&&dieta_przyswajalne.Text!="" &&dieta_blonnik.Text!="")
+                    if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_energia.Text != "" && dieta_bialko.Text != "" && dieta_tluszcze.Text != "" && dieta_weglowodany.Text != "" && dieta_sod.Text != "" && dieta_ktn.Text != "" && dieta_przyswajalne.Text != "" && dieta_blonnik.Text != "")
                     {
                         try
                         {
@@ -2883,13 +2613,14 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Dodano: " + dieta_nazwa.Text);
                             dietaClick();
                         }
-                        catch {
-                            MessageBox.Show("Błąd dodawania diety","Błąd");
+                        catch
+                        {
+                            MessageBox.Show("Błąd dodawania diety", "Błąd");
 
                         }
                     }
                     else
-                        MessageBox.Show("Nie uzupełniono wszystkich danych","Błąd");
+                        MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
                     break;
                 case "Diety -> Edytuj":
                     if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_energia.Text != "" && dieta_bialko.Text != "" && dieta_tluszcze.Text != "" && dieta_weglowodany.Text != "" && dieta_sod.Text != "" && dieta_ktn.Text != "" && dieta_przyswajalne.Text != "" && dieta_blonnik.Text != "")
@@ -2911,7 +2642,7 @@ namespace WindowsFormsApplication1
                     break;
             }
 
-      
+
         }
 
         private void dieta_wstecz_Click(object sender, EventArgs e)
@@ -3087,8 +2818,8 @@ namespace WindowsFormsApplication1
             foreach (DAO.Jednostka j in listaJednostek)
                 jednostka_jednostka.Items.Add(j.miasto);
 
-            if(jednostka_jednostka.Items.Count>0)
-            jednostka_jednostka.SelectedIndex = 0;
+            if (jednostka_jednostka.Items.Count > 0)
+                jednostka_jednostka.SelectedIndex = 0;
 
 
         }
@@ -3163,9 +2894,9 @@ namespace WindowsFormsApplication1
                     if (jednostka_miasto.Text != "")
                     {
                         DAO.JednostkaDAO.Update(listaJednostek[jednostka_jednostka.SelectedIndex], jednostka_miasto.Text);
-                    MessageBox.Show("Edytowano: " + jednostka_miasto.Text);
+                        MessageBox.Show("Edytowano: " + jednostka_miasto.Text);
 
-                    jednostkaClick();
+                        jednostkaClick();
                     }
                     else
                     {
@@ -3173,7 +2904,7 @@ namespace WindowsFormsApplication1
                     }
                     break;
             }
-            
+
         }
 
         private void jednostka_jednostka_SelectedIndexChanged(object sender, EventArgs e)
@@ -3193,8 +2924,8 @@ namespace WindowsFormsApplication1
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
-                    DAO.DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
-                    MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa+" z: "+ listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
+                    DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
+                    MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa + " z: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
                     dekadowkaClick();
                     break;
                 default:
@@ -3207,52 +2938,53 @@ namespace WindowsFormsApplication1
             switch (label10.Text)
             {
                 case "Szablony -> Dodaj":
-                    if (dekadowka_dodaj_nazwa.Text!=""&& dekadowka_dodaj_dni.Text!="")
+                    if (dekadowka_dodaj_nazwa.Text != "" && dekadowka_dodaj_dni.Text != "")
                     {
                         try
                         {
-                            DAO.DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
+                            DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
                             MessageBox.Show("Dodano szablon: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie szablonu");
                             dekadowkaClick();
                         }
-                        catch {
-                            MessageBox.Show("Błąd dodawania szablonu","Błąd");
+                        catch
+                        {
+                            MessageBox.Show("Błąd dodawania szablonu", "Błąd");
 
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych","Błąd");
+                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąd");
                     }
                     break;
                 case "Szablony -> Generuj jadłospisy":
                     List<string> daty = new List<string>();
                     int dni = (Convert.ToDateTime(dekadowka_generuj_data2.Text) - Convert.ToDateTime(dekadowka_generuj_data1.Text)).Days + 1;
-                    if (dni == wybranaDekadowka.dni) { 
-                        DateTime data = Convert.ToDateTime(dekadowka_generuj_data1.Text);
-                    for (int i = 0; i < dni; i++)
+                    if (dni == wybranaDekadowka.dni)
                     {
-                        string aktualna_data = data.Day+" "+GetMonthForDate(data.Month)+" "+ data.Year;
-                        List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id),i+ 1);
-                        foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
+                        DateTime data = Convert.ToDateTime(dekadowka_generuj_data1.Text);
+                        for (int i = 0; i < dni; i++)
                         {
-                            if(jadlospis.dzien == i+1)
-                                DAO.JadlospisDAO.Insert(aktualna_data, jadlospis.dieta.nazwa, wybranaDekadowka.miasto, jadlospis.nazwa_sniadanie, jadlospis.nazwa_IIsniadanie, jadlospis.nazwa_obiad, jadlospis.nazwa_podwieczorek, jadlospis.nazwa_kolacja, jadlospis.sklad_sniadanie, jadlospis.sklad_IIsniadanie, jadlospis.sklad_obiad, jadlospis.sklad_podwieczorek, jadlospis.sklad_kolacja);
+                            string aktualna_data = data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year;
+                            List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), i + 1);
+                            foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
+                            {
+                                if (jadlospis.dzien == i + 1)
+                                    DAO.JadlospisDAO.Insert(aktualna_data, jadlospis.dieta.nazwa, wybranaDekadowka.miasto, jadlospis.nazwa_sniadanie, jadlospis.nazwa_IIsniadanie, jadlospis.nazwa_obiad, jadlospis.nazwa_podwieczorek, jadlospis.nazwa_kolacja, jadlospis.sklad_sniadanie, jadlospis.sklad_IIsniadanie, jadlospis.sklad_obiad, jadlospis.sklad_podwieczorek, jadlospis.sklad_kolacja);
+                            }
+                            data = data.AddDays(1);
                         }
-                        data = data.AddDays(1);                          
+                        MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
                     }
-                    MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
-            }
                     else
                     {
                         MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu");
-                   }
+                    }
                     break;
             }
         }
 
-        List<Receptura> listaReceptur;
         private void pictureBox14_Click(object sender, EventArgs e)
         {
             switch (label10.Text)
@@ -3296,7 +3028,7 @@ namespace WindowsFormsApplication1
                     label61.Location = new Point(40, 125);
                     receptura_wczytaj.Location = new Point(210, 120);
 
-                        break;
+                    break;
                 case "Receptury -> Wczytaj":
                     glownaClick();
                     break;
@@ -3363,8 +3095,8 @@ namespace WindowsFormsApplication1
             label50.Location = new Point(40 + 185, label50.Location.Y);
             receptura_nazwa.Location = new Point(210 + 185, receptura_nazwa.Location.Y);
             receptura_sklad.Location = new Point(45 + 185, receptura_sklad.Location.Y);
-            label61.Location = new Point(40+185, label61.Location.Y);
-            receptura_wczytaj.Location = new Point(210+185, receptura_wczytaj.Location.Y);
+            label61.Location = new Point(40 + 185, label61.Location.Y);
+            receptura_wczytaj.Location = new Point(210 + 185, receptura_wczytaj.Location.Y);
 
             receptura_kategoria.Visible = true;
             receptura_produkty.Visible = true;
@@ -3384,11 +3116,6 @@ namespace WindowsFormsApplication1
 
             receptura_nazwa.Enabled = true;
             receptura_nazwa.BackColor = Color.White;
-        }
-
-        private void receptura_sklad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)
@@ -3431,7 +3158,7 @@ namespace WindowsFormsApplication1
         public void LiczSredniaDlaReceptur()
         {
             double[] suma_receptura = new double[8];
-            
+
             for (int i = 0; i < 8; i++)
             {
                 suma_receptura[i] = 0;
@@ -3568,206 +3295,207 @@ namespace WindowsFormsApplication1
 
         private void receptura_produkt_dodaj_Click(object sender, EventArgs e)
         {
-            if(receptura_produkty.SelectedIndex!=-1)
-            { 
-               if (receptura_masa.Text != "")
-                {
-                try
+            if (receptura_produkty.SelectedIndex != -1)
             {
-                    double masa = Math.Round(double.Parse(receptura_masa.Text),2);
-                    int ktory = receptura_produkty.SelectedIndex;
-                    string[] arr = new string[10];
-                    ListViewItem itm;
-
-                    switch (kategoria)
+                if (receptura_masa.Text != "")
+                {
+                    try
                     {
-                        case "Wszystkie":
-                            arr[0] = Lista[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Lista[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Lista[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Lista[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Lista[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Lista[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Lista[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Lista[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Lista[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                        double masa = Math.Round(double.Parse(receptura_masa.Text), 2);
+                        int ktory = receptura_produkty.SelectedIndex;
+                        string[] arr = new string[10];
+                        ListViewItem itm;
 
-                            break;
-                        case "M":
-                            arr[0] = Mieso[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Mieso[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Mieso[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Mieso[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Mieso[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Mieso[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Mieso[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Mieso[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Mieso[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "W":
-                            arr[0] = Warzywa[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Warzywa[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Warzywa[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Warzywa[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Warzywa[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Warzywa[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Warzywa[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Warzywa[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Warzywa[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "O":
-                            arr[0] = Owoce[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Owoce[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Owoce[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Owoce[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Owoce[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Owoce[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Owoce[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Owoce[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Owoce[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "S":
-                            arr[0] = Slodycze[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Slodycze[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Slodycze[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Slodycze[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Slodycze[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Slodycze[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Slodycze[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Slodycze[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Slodycze[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "R":
-                            arr[0] = Ryby[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Ryby[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Ryby[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Ryby[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Ryby[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Ryby[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Ryby[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Ryby[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Ryby[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "D":
-                            arr[0] = Napoje[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Napoje[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Napoje[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Napoje[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Napoje[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Napoje[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Napoje[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Napoje[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Napoje[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "Z":
-                            arr[0] = Zboza[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Zboza[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Zboza[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Zboza[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Zboza[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Zboza[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Zboza[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Zboza[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Zboza[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "P":
-                            arr[0] = Przyprawy[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "N":
-                            arr[0] = Nabial[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Nabial[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Nabial[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Nabial[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Nabial[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Nabial[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Nabial[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Nabial[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Nabial[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "B":
-                            arr[0] = Bakalie[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Bakalie[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Bakalie[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Bakalie[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Bakalie[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Bakalie[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Bakalie[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Bakalie[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Bakalie[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
-                        case "T":
-                            arr[0] = Tluszcze[ktory].nazwa;
-                            arr[1] = masa.ToString();
-                            arr[2] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
-                            arr[3] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
-                            arr[4] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
-                            arr[5] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
-                            arr[6] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
-                            arr[7] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
-                            arr[8] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
-                            arr[9] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
-                            break;
+                        switch (kategoria)
+                        {
+                            case "Wszystkie":
+                                arr[0] = Lista[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Lista[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Lista[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Lista[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Lista[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Lista[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Lista[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Lista[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Lista[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+
+                                break;
+                            case "M":
+                                arr[0] = Mieso[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Mieso[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Mieso[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Mieso[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Mieso[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Mieso[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Mieso[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Mieso[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Mieso[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "W":
+                                arr[0] = Warzywa[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Warzywa[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Warzywa[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Warzywa[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Warzywa[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Warzywa[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Warzywa[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Warzywa[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Warzywa[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "O":
+                                arr[0] = Owoce[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Owoce[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Owoce[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Owoce[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Owoce[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Owoce[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Owoce[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Owoce[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Owoce[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "S":
+                                arr[0] = Slodycze[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Slodycze[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Slodycze[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Slodycze[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Slodycze[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Slodycze[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Slodycze[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Slodycze[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Slodycze[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "R":
+                                arr[0] = Ryby[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Ryby[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Ryby[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Ryby[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Ryby[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Ryby[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Ryby[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Ryby[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Ryby[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "D":
+                                arr[0] = Napoje[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Napoje[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Napoje[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Napoje[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Napoje[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Napoje[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Napoje[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Napoje[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Napoje[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "Z":
+                                arr[0] = Zboza[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Zboza[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Zboza[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Zboza[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Zboza[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Zboza[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Zboza[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Zboza[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Zboza[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "P":
+                                arr[0] = Przyprawy[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Przyprawy[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "N":
+                                arr[0] = Nabial[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Nabial[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Nabial[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Nabial[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Nabial[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Nabial[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Nabial[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Nabial[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Nabial[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "B":
+                                arr[0] = Bakalie[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Bakalie[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Bakalie[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Bakalie[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Bakalie[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Bakalie[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Bakalie[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Bakalie[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Bakalie[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                            case "T":
+                                arr[0] = Tluszcze[ktory].nazwa;
+                                arr[1] = masa.ToString();
+                                arr[2] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
+                                arr[3] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
+                                arr[4] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.tluszcze * masa / 100.0, 2).ToString();
+                                arr[5] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.tluszcze_nn * masa / 100.0, 2).ToString();
+                                arr[6] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.weglowodany * masa / 100.0, 2).ToString();
+                                arr[7] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.weglowodany_przyswajalne * masa / 100.0, 2).ToString();
+                                arr[8] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.blonnik * masa / 100.0, 2).ToString();
+                                arr[9] = Math.Round(Tluszcze[ktory].wartosciOdzywcze.sod * masa / 100.0, 2).ToString();
+                                break;
+                        }
+
+                        itm = new ListViewItem(arr);
+
+                        receptura_sklad.Items.Add(itm);
+
                     }
-
-                    itm = new ListViewItem(arr);
-
-                    receptura_sklad.Items.Add(itm);
-
-                    } catch
-                {
-                    MessageBox.Show("Nieprawidłowa wartość", "Błąd");
+                    catch
+                    {
+                        MessageBox.Show("Nieprawidłowa wartość", "Błąd");
+                    }
+                    LiczSredniaDlaReceptur();
                 }
-                   LiczSredniaDlaReceptur();
+                else
+                {
+                    MessageBox.Show("Nie wpisano masy produktu", "Błąd");
+                }
             }
-            else
-            {
-                MessageBox.Show("Nie wpisano masy produktu", "Błąd");
-            }
-        }
             else
             {
                 MessageBox.Show("Nie wybrano produktu", "Błąd");
             }
- 
+
         }
 
         private void receptura_del_Click(object sender, EventArgs e)
         {
             string produkt = "";
             List<int> ktory = new List<int>();
-        
-                    ktory = new List<int>();
-                    for (int k = 0; k < receptura_sklad.SelectedIndices.Count; k++)
-                        ktory.Add(Int32.Parse(receptura_sklad.SelectedIndices[k].ToString()));
-                    if (ktory.Count > 0)
-                        produkt = receptura_sklad.Items[ktory[0]].Text;
-               
+
+            ktory = new List<int>();
+            for (int k = 0; k < receptura_sklad.SelectedIndices.Count; k++)
+                ktory.Add(Int32.Parse(receptura_sklad.SelectedIndices[k].ToString()));
+            if (ktory.Count > 0)
+                produkt = receptura_sklad.Items[ktory[0]].Text;
+
             DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć " + produkt + "?", "Usuwanie produktu z receptury", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-               
-                        ktory = new List<int>();
-                        for (int k = 0; k < receptura_sklad.SelectedIndices.Count; k++)
-                            ktory.Add(Int32.Parse(receptura_sklad.SelectedIndices[k].ToString()));
+
+                ktory = new List<int>();
+                for (int k = 0; k < receptura_sklad.SelectedIndices.Count; k++)
+                    ktory.Add(Int32.Parse(receptura_sklad.SelectedIndices[k].ToString()));
                 receptura_sklad.Items.RemoveAt(ktory[0]);
                 LiczSredniaDlaReceptur();
             }
@@ -3779,29 +3507,29 @@ namespace WindowsFormsApplication1
 
         private void receptura_dodaj_edytuj_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
-                        int liczba = receptura_sklad.Items.Count;
-                        int wybrany = receptura_sklad.SelectedIndices[0];
-                        string[] arr = new string[10];
-                        double masa = double.Parse(receptura_masa.Text);
-                        arr[0] = receptura_sklad.Items[wybrany].SubItems[0].Text;
-                        arr[1] = masa.ToString();
-                        arr[2] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[2].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                        arr[3] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[3].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                        arr[4] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[4].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                        arr[5] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[5].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                        arr[6] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[6].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
-                        arr[7] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[7].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                int liczba = receptura_sklad.Items.Count;
+                int wybrany = receptura_sklad.SelectedIndices[0];
+                string[] arr = new string[10];
+                double masa = double.Parse(receptura_masa.Text);
+                arr[0] = receptura_sklad.Items[wybrany].SubItems[0].Text;
+                arr[1] = masa.ToString();
+                arr[2] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[2].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                arr[3] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[3].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                arr[4] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[4].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                arr[5] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[5].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                arr[6] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[6].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
+                arr[7] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[7].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
                 arr[8] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[8].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
                 arr[9] = Math.Round(masa * double.Parse(receptura_sklad.Items[wybrany].SubItems[9].Text) / double.Parse(receptura_sklad.Items[wybrany].SubItems[1].Text), 2).ToString();
                 ListViewItem itm = new ListViewItem(arr);
 
-                        receptura_sklad.Items.Remove(receptura_sklad.Items[wybrany]);
-                        receptura_sklad.Items.Insert(wybrany, itm);
-                        LiczSredniaDlaReceptur();
-                     
+                receptura_sklad.Items.Remove(receptura_sklad.Items[wybrany]);
+                receptura_sklad.Items.Insert(wybrany, itm);
+                LiczSredniaDlaReceptur();
+
             }
             catch
             {
@@ -3814,16 +3542,16 @@ namespace WindowsFormsApplication1
 
             try
             {
-              
-                        int liczba = receptura_sklad.Items.Count;
-                        int wybrany = receptura_sklad.SelectedIndices[0];
-                        if (wybrany > 0)
-                        {
-                            ListViewItem itm = receptura_sklad.Items[wybrany];
-                            receptura_sklad.Items.Remove(itm);
-                            receptura_sklad.Items.Insert(wybrany - 1, itm);
-                        }
-                       
+
+                int liczba = receptura_sklad.Items.Count;
+                int wybrany = receptura_sklad.SelectedIndices[0];
+                if (wybrany > 0)
+                {
+                    ListViewItem itm = receptura_sklad.Items[wybrany];
+                    receptura_sklad.Items.Remove(itm);
+                    receptura_sklad.Items.Insert(wybrany - 1, itm);
+                }
+
             }
             catch
             {
@@ -3839,7 +3567,7 @@ namespace WindowsFormsApplication1
 
                 int liczba = receptura_sklad.Items.Count;
                 int wybrany = receptura_sklad.SelectedIndices[0];
-                if (wybrany < liczba-1)
+                if (wybrany < liczba - 1)
                 {
                     ListViewItem itm = receptura_sklad.Items[wybrany];
                     receptura_sklad.Items.Remove(itm);
@@ -3855,7 +3583,7 @@ namespace WindowsFormsApplication1
 
         private void pictureBox16_Click(object sender, EventArgs e)
         {
-            string sklad="";
+            string sklad = "";
             for (int i = 0; i < receptura_sklad.Items.Count; i++)
                 sklad += receptura_sklad.Items[i].SubItems[0].Text + "|" + receptura_sklad.Items[i].SubItems[1].Text + "|" + receptura_sklad.Items[i].SubItems[2].Text + "|" + receptura_sklad.Items[i].SubItems[3].Text + "|" + receptura_sklad.Items[i].SubItems[4].Text + "|" + receptura_sklad.Items[i].SubItems[5].Text + "|" + receptura_sklad.Items[i].SubItems[6].Text + "|" + receptura_sklad.Items[i].SubItems[7].Text + "|" + receptura_sklad.Items[i].SubItems[8].Text + "|" + receptura_sklad.Items[i].SubItems[9].Text + "$";
 
@@ -3866,7 +3594,7 @@ namespace WindowsFormsApplication1
                     {
                         DAO.RecepturaDAO.Insert(receptura_nazwa.Text, sklad);
                         MessageBox.Show("Dodano: " + receptura_nazwa.Text);
-                            recepturaClick();
+                        recepturaClick();
                     }
                     else
                     {
@@ -3876,9 +3604,9 @@ namespace WindowsFormsApplication1
                 case "Receptury -> Edytuj":
                     if (sklad != "" && receptura_nazwa.Text != "")
                     {
-                        DAO.RecepturaDAO.Update(listaReceptur[receptura_wczytaj.SelectedIndex], receptura_nazwa.Text,sklad);
-                    MessageBox.Show("Edytowano: " + receptura_nazwa.Text);
-                    recepturaClick();
+                        DAO.RecepturaDAO.Update(listaReceptur[receptura_wczytaj.SelectedIndex], receptura_nazwa.Text, sklad);
+                        MessageBox.Show("Edytowano: " + receptura_nazwa.Text);
+                        recepturaClick();
                     }
                     else
                     {
@@ -3887,7 +3615,8 @@ namespace WindowsFormsApplication1
                     break;
                 case "Receptury -> Wczytaj":
                     glownaClick();
-                    for (int i = 0; i < receptura_sklad.Items.Count; i++) {
+                    for (int i = 0; i < receptura_sklad.Items.Count; i++)
+                    {
                         string[] arr = new string[10];
                         ListViewItem itm = null;
                         if (receptura_sklad.Items[i].SubItems.Count != 10)
@@ -3914,7 +3643,7 @@ namespace WindowsFormsApplication1
                             arr[6] = receptura_sklad.Items[i].SubItems[6].Text;
                             arr[7] = receptura_sklad.Items[i].SubItems[7].Text;
                             arr[8] = receptura_sklad.Items[i].SubItems[8].Text;
-                            arr[9] = receptura_sklad.Items[i].SubItems[9].Text;                          
+                            arr[9] = receptura_sklad.Items[i].SubItems[9].Text;
                         }
                         itm = new ListViewItem(arr);
                         switch (receptura_posilek.SelectedItem)
@@ -3939,7 +3668,7 @@ namespace WindowsFormsApplication1
                     switch (receptura_posilek.SelectedItem)
                     {
                         case "Śniadanie":
-                            textBox1.Text += " "+receptura_nazwa.Text;
+                            textBox1.Text += " " + receptura_nazwa.Text;
                             break;
                         case "II Śniadanie":
                             textBox2.Text += " " + receptura_nazwa.Text;
@@ -3982,7 +3711,7 @@ namespace WindowsFormsApplication1
             dekadowka_wczytaj_miasto.SelectedIndex = 0;
 
             dekadowka_wczytaj_dekadowka.Items.Clear();
-            listaDekadowekDoWczytania = DAO.DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
+            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoWczytania)
                 dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
@@ -3990,8 +3719,7 @@ namespace WindowsFormsApplication1
 
 
         }
-        List<Dekadowka> listaDekadowekDoWczytania;
-        Dekadowka wybranaDekadowkaDoWczytania;
+
         private void dekadowka_wczytaj_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (wybranaDekadowkaDoWczytania != null)
@@ -4027,13 +3755,13 @@ namespace WindowsFormsApplication1
         private void dekadowka_wczytaj_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
             dekadowka_wczytaj_dekadowka.Items.Clear();
-            listaDekadowekDoWczytania = DAO.DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
+            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoWczytania)
                 dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
                 dekadowka_wczytaj_dekadowka.SelectedIndex = 0;
         }
-        Jadlospis jadlospisDekadowkiDoWczytania;
+
         private void dekadowka_wczytaj_dzien_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (wybranaDekadowkaDoWczytania != null)
@@ -4045,7 +3773,7 @@ namespace WindowsFormsApplication1
                     if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex)
                     {
                         dekadowka_wczytaj_dieta.Items.Add(d.dieta.nazwa);
-                    //    jadlospisDekadowkiDoWczytania = d;
+                        //    jadlospisDekadowkiDoWczytania = d;
                     }
                 }
 
@@ -4064,7 +3792,7 @@ namespace WindowsFormsApplication1
             flowLayoutPanel1.HorizontalScroll.Visible = false;
             flowLayoutPanel1.WrapContents = false; // Vertical rather than horizontal scrolling
             flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1]-75);
+            flowLayoutPanel1.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1] - 75);
 
             for (int j = 0; j < wybranaDekadowkaDoWczytania.dni; j++)
             {
@@ -4075,7 +3803,7 @@ namespace WindowsFormsApplication1
                 dayOfWeek.VerticalScroll.Visible = false;
                 dayOfWeek.HorizontalScroll.Visible = false;
                 dayOfWeek.WrapContents = false; // Vertical rather than horizontal scrolling
-                dayOfWeek.Size = new System.Drawing.Size(dzienSize[0], dzienSize[1]-60);
+                dayOfWeek.Size = new System.Drawing.Size(dzienSize[0], dzienSize[1] - 60);
 
                 Label myDay = new Label();
                 string day = GetDay(wybranaDekadowkaDoWczytania.dzienStart, j + 1);
@@ -4259,15 +3987,15 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    itm = new ListViewItem(arr);                    
+                    itm = new ListViewItem(arr);
                 }
-                lv_sniadanie.Items.Add(itm);              
+                lv_sniadanie.Items.Add(itm);
             }
             produkty = jadlospisDekadowkiDoWczytania.sklad_IIsniadanie.Split('$');
             for (int j = 0; j < produkty.Length - 1; j++)
             {
                 string[] arg = new string[10];
-               string[] arr = produkty[j].Split('|');
+                string[] arr = produkty[j].Split('|');
                 ListViewItem itm = null;
                 if (arr.Length != 10)
                 {
@@ -4319,7 +4047,7 @@ namespace WindowsFormsApplication1
             for (int j = 0; j < produkty.Length - 1; j++)
             {
                 string[] arg = new string[10];
-               string[] arr = produkty[j].Split('|');
+                string[] arr = produkty[j].Split('|');
                 ListViewItem itm = null;
                 if (arr.Length != 10)
                 {
@@ -4544,9 +4272,9 @@ namespace WindowsFormsApplication1
 
         public void wczytajJadlospis()
         {
-           
+
             jadlospis_miasto.Items.Clear();
-            listaJednostek= DAO.JednostkaDAO.SelectAll();
+            listaJednostek = DAO.JednostkaDAO.SelectAll();
             foreach (DAO.Jednostka d in listaJednostek)
                 jadlospis_miasto.Items.Add(d.miasto);
 
@@ -4737,6 +4465,7 @@ namespace WindowsFormsApplication1
                 LiczSredniaJadlospisu();
             }
         }
+
         public void LiczSredniaJadlospisu()
         {
             double[,] suma_jad = new double[6, 8];
@@ -4917,7 +4646,7 @@ namespace WindowsFormsApplication1
             }
             else
                 jadlospis_cb_sod.Value = 99;
-            
+
         }
 
         private void ja_ValueChanged(object sender, EventArgs e)
@@ -4952,14 +4681,14 @@ namespace WindowsFormsApplication1
                 string data = ja.Text;
 
                 DAO.JadlospisDAO.Delete(data, miasto, dieta);
-                MessageBox.Show("Usunięto wybrany jadłospis","Usuwanie jadłospisu");
+                MessageBox.Show("Usunięto wybrany jadłospis", "Usuwanie jadłospisu");
             }
-            }
+        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(label10.Text!="Diety -> Dodaj")
-                {
+            if (label10.Text != "Diety -> Dodaj")
+            {
                 dieta_dieta.Items.Clear();
                 Diety = DAO.DietaDAO.SelectAll(dieta_miasto.SelectedItem.ToString());
                 foreach (Dieta d in Diety)
@@ -5011,6 +4740,7 @@ namespace WindowsFormsApplication1
             dekadowka_dodaj_dzienStart.Visible = false;
 
         }
+        
         private void panel11_Click(object sender, EventArgs e)
         {
             drukujClick();
@@ -5018,7 +4748,7 @@ namespace WindowsFormsApplication1
 
         private void panel11_Paint_1(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         public void drukujClick()
@@ -5032,6 +4762,7 @@ namespace WindowsFormsApplication1
             panel9.BackColor = primaryColor;
             panel10.BackColor = primaryColor;
             panel3.BackColor = primaryColor;
+            panel14.BackColor = primaryColor;
 
             panel_drukuj.Visible = true;
             panel_drukuj.BringToFront();
@@ -5068,15 +4799,13 @@ namespace WindowsFormsApplication1
 
         private void pictureBox22_Click(object sender, EventArgs e)
         {
-            
-                //drukuj
-                switch (drukuj_rodzaj.SelectedItem.ToString())
-                {
-                    case "Szablon":
-                    Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text,DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
+            switch (drukuj_rodzaj.SelectedItem.ToString())
+            {
+                case "Szablon":
+                    Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
                     MessageBox.Show("Wygenerowano szablon");
                     break;
-                    case "Jadłospis":
+                case "Jadłospis":
                     Printer.Jadlospis(DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString()));
                     MessageBox.Show("Wygenerowano jadłospis");
                     break;
@@ -5091,7 +4820,7 @@ namespace WindowsFormsApplication1
                             Printer.Jadlospis(j);
                     }
                     MessageBox.Show("Wygenerowano jadłospisy w wybranym okresie");
-                        break;
+                    break;
                 case "Jadłospis dzienny":
                     DateTime dateFrom2 = Convert.ToDateTime(drukuj_od.Text);
                     DateTime dateTo2 = Convert.ToDateTime(drukuj_do.Text);
@@ -5102,16 +4831,16 @@ namespace WindowsFormsApplication1
                     }
                     MessageBox.Show("Wygenerowano jadłospisy dzienne w wybranym okresie");
                     break;
-                    case "Receptura":
-                        Printer.Receptura(listaReceptur[drukuj_combo.SelectedIndex]);
+                case "Receptura":
+                    Printer.Receptura(listaReceptur[drukuj_combo.SelectedIndex]);
                     MessageBox.Show("Wygernerowano recepturę");
                     break;
-                    case "Produkt":
+                case "Produkt":
                     Printer.Produkt(Lista[drukuj_combo.SelectedIndex]);
                     MessageBox.Show("Wygernerowano produkt");
                     break;
-                }
-                glownaClick();
+            }
+            //glownaClick();
         }
 
         private void label29_Click(object sender, EventArgs e)
@@ -5245,7 +4974,7 @@ namespace WindowsFormsApplication1
 
         private void drukuj_combo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(label10.Text)
+            switch (label10.Text)
             {
                 case "Drukowanie -> Szablon":
                     break;
@@ -5294,14 +5023,14 @@ namespace WindowsFormsApplication1
 
         private void produkt_nazwa_KeyPress(object sender, KeyPressEventArgs e)
         {
-                    e.Handled = false;
+            e.Handled = false;
         }
 
         private void produkt_energia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == 8 || e.KeyChar == ',' || (Keys)e.KeyChar == Keys.Enter)
             {
-                 e.Handled = false;
+                e.Handled = false;
             }
 
             else
@@ -5544,12 +5273,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void pictureBox26_Click(object sender, EventArgs e)
-        {
-            this.Width = 45;
-            this.Height = 45;
-        }
-
         private void dekadowka_wczytaj_dieta_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -5566,5 +5289,413 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
+        #region Kontrola
+
+        private void label58_Click(object sender, EventArgs e)
+        {
+            kontrolaClick();
+        }
+
+        private void pictureBox26_Click_1(object sender, EventArgs e)
+        {
+            kontrolaClick();
+        }
+
+        private void panel14_Click(object sender, EventArgs e)
+        {
+            kontrolaClick();
+        }
+
+        private void pictureBox28_Click(object sender, EventArgs e)
+        {
+            if (k_miasto.SelectedIndex != -1 && k_dieta.SelectedIndex != -1)
+            {
+                string miasto = k_miasto.SelectedItem.ToString();
+                string dieta = k_dieta.SelectedItem.ToString();
+                string data_od = dateTimePicker4.Text;
+                string data_do = dateTimePicker3.Text;
+
+                List<Jadlospis> jadlospisy = DAO.JadlospisDAO.SelectAll(data_od, data_do, miasto, dieta);
+                LiczSredniaKontrola(jadlospisy);
+            }
+        }
+
+        public void LiczSredniaKontrola(List<Jadlospis> jadlospisy)
+        {
+            for (int k = 0; k < 8; k++)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    suma[i, k] = 0;
+                    procent[i, k] = 0;
+                }
+            }
+
+            foreach (Jadlospis jadlospis in jadlospisy)
+            {
+                string[] produkty = jadlospis.sklad_sniadanie.Split('$');
+                for (int j = 0; j < produkty.Length - 1; j++)
+                {
+                    string[] arg = new string[10];
+                    string[] arr = produkty[j].Split('|');
+                    ListViewItem itm = null;
+                    if (arr.Length != 10)
+                    {
+                        arg[0] = arr[0];
+                        arg[1] = arr[1];
+                        arg[2] = arr[2];
+                        arg[3] = arr[3];
+                        arg[4] = arr[4];
+                        arg[5] = arr[7];
+                        arg[6] = arr[5];
+                        arg[7] = "0";
+                        arg[8] = "0";
+                        arg[9] = arr[6];
+                        itm = new ListViewItem(arg);
+                    }
+                    else
+                    {
+                        itm = new ListViewItem(arr);
+                    }
+
+                    for (int k = 0; k < 8; k++)
+                    {
+                        double a = 0;
+                        try
+                        {
+                            a = double.Parse(itm.SubItems[k + 2].Text);
+                        }
+                        catch { }
+                        suma[0, k] += a;
+                    }
+                }
+
+                produkty = jadlospis.sklad_IIsniadanie.Split('$');
+                for (int j = 0; j < produkty.Length - 1; j++)
+                {
+                    string[] arg = new string[10];
+                    string[] arr = produkty[j].Split('|');
+                    ListViewItem itm = null;
+                    if (arr.Length != 10)
+                    {
+                        arg[0] = arr[0];
+                        arg[1] = arr[1];
+                        arg[2] = arr[2];
+                        arg[3] = arr[3];
+                        arg[4] = arr[4];
+                        arg[5] = arr[7];
+                        arg[6] = arr[5];
+                        arg[7] = "0";
+                        arg[8] = "0";
+                        arg[9] = arr[6];
+                        itm = new ListViewItem(arg);
+                    }
+                    else
+                    {
+                        itm = new ListViewItem(arr);
+                    }
+
+                    for (int k = 0; k < 8; k++)
+                    {
+                        double a = 0;
+                        try
+                        {
+                            a = double.Parse(itm.SubItems[k + 2].Text);
+                        }
+                        catch { }
+                        suma[0, k] += a;
+                    }
+                }
+
+                produkty = jadlospis.sklad_obiad.Split('$');
+                for (int j = 0; j < produkty.Length - 1; j++)
+                {
+                    string[] arg = new string[10];
+                    string[] arr = produkty[j].Split('|');
+                    ListViewItem itm = null;
+                    if (arr.Length != 10)
+                    {
+                        arg[0] = arr[0];
+                        arg[1] = arr[1];
+                        arg[2] = arr[2];
+                        arg[3] = arr[3];
+                        arg[4] = arr[4];
+                        arg[5] = arr[7];
+                        arg[6] = arr[5];
+                        arg[7] = "0";
+                        arg[8] = "0";
+                        arg[9] = arr[6];
+                        itm = new ListViewItem(arg);
+                    }
+                    else
+                    {
+                        itm = new ListViewItem(arr);
+                    }
+
+                    for (int k = 0; k < 8; k++)
+                    {
+                        double a = 0;
+                        try
+                        {
+                            a = double.Parse(itm.SubItems[k + 2].Text);
+                        }
+                        catch { }
+                        suma[0, k] += a;
+                    }
+                }
+
+                produkty = jadlospis.sklad_podwieczorek.Split('$');
+                for (int j = 0; j < produkty.Length - 1; j++)
+                {
+                    string[] arg = new string[10];
+                    string[] arr = produkty[j].Split('|');
+                    ListViewItem itm = null;
+                    if (arr.Length != 10)
+                    {
+                        arg[0] = arr[0];
+                        arg[1] = arr[1];
+                        arg[2] = arr[2];
+                        arg[3] = arr[3];
+                        arg[4] = arr[4];
+                        arg[5] = arr[7];
+                        arg[6] = arr[5];
+                        arg[7] = "0";
+                        arg[8] = "0";
+                        arg[9] = arr[6];
+                        itm = new ListViewItem(arg);
+                    }
+                    else
+                    {
+                        itm = new ListViewItem(arr);
+                    }
+
+                    for (int k = 0; k < 8; k++)
+                    {
+                        double a = 0;
+                        try
+                        {
+                            a = double.Parse(itm.SubItems[k + 2].Text);
+                        }
+                        catch { }
+                        suma[0, k] += a;
+                    }
+                }
+
+                produkty = jadlospis.sklad_kolacja.Split('$');
+                for (int j = 0; j < produkty.Length - 1; j++)
+                {
+                    string[] arg = new string[10];
+                    string[] arr = produkty[j].Split('|');
+                    ListViewItem itm = null;
+                    if (arr.Length != 10)
+                    {
+                        arg[0] = arr[0];
+                        arg[1] = arr[1];
+                        arg[2] = arr[2];
+                        arg[3] = arr[3];
+                        arg[4] = arr[4];
+                        arg[5] = arr[7];
+                        arg[6] = arr[5];
+                        arg[7] = "0";
+                        arg[8] = "0";
+                        arg[9] = arr[6];
+                        itm = new ListViewItem(arg);
+                    }
+                    else
+                    {
+                        itm = new ListViewItem(arr);
+                    }
+
+                    for (int k = 0; k < 8; k++)
+                    {
+                        double a = 0;
+                        try
+                        {
+                            a = double.Parse(itm.SubItems[k + 2].Text);
+                        }
+                        catch { }
+                        suma[0, k] += a;
+                    }
+                }
+            }
+
+            for (int k = 0; k < 8; k++)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    suma[5, k] += suma[i, k];
+                }
+            }
+
+            for (int k = 0; k < 8; k++)
+            {
+                suma[5, k] = suma[5, k] / jadlospisy.Count;
+            }
+
+            //WARTOŚCI
+            label139.Text = Math.Round(suma[5, 0], 2).ToString() + " kcal";
+            label137.Text = Math.Round(suma[5, 1], 2).ToString() + " g";
+            label134.Text = Math.Round(suma[5, 2], 2).ToString() + " g";
+            label124.Text = Math.Round(suma[5, 3], 2).ToString() + " g";
+            label131.Text = Math.Round(suma[5, 4], 2).ToString() + " g";
+            label81.Text = Math.Round(suma[5, 5], 2).ToString() + " g";
+            label113.Text = Math.Round(suma[5, 6], 2).ToString() + " g";
+            label128.Text = Math.Round(suma[5, 7], 2).ToString() + " mg";
+
+
+            for (int k = 0; k < 8; k++)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    if (suma[i, 0] != 0)
+                    {
+                        double wartosc_odzywcza = suma[i, k];
+                        double przelicznik = 0;
+                        if (k == 1)
+                            przelicznik = przelicznik_Bialko;
+                        if (k == 2)
+                            przelicznik = przelicznik_Tluszcze;
+                        if (k == 4)
+                            przelicznik = przelicznik_Weglowodany;
+                        if (k == 7)
+                            wartosc_odzywcza = wartosc_odzywcza / 1000;
+
+                        procent[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma[i, 0];
+                    }
+                }
+            }
+
+            //PROCENTY
+            label136.Text = Math.Round(procent[5, 1], 2).ToString();
+            label133.Text = Math.Round(procent[5, 2], 2).ToString();
+            label130.Text = Math.Round(procent[5, 4], 2).ToString();
+
+            //ZAWARTOSC
+            try
+            {
+                if (k_dieta.SelectedIndex != -1)
+                {
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 0] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia) > 100)
+                        {
+                            circularProgressBar5.Value = 100;
+                            label148.Text = "+ " + Math.Round(suma[5, 0] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia, 2) + " kalorii";
+                        }
+                        else
+                        {
+                            label148.Text = "";
+                            circularProgressBar5.Value = Convert.ToInt32(suma[5, 0] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia);
+                        }
+                    }
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 1] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko) > 100)
+                        {
+                            circularProgressBar16.Value = 100;
+                            label147.Text = "+ " + Math.Round(suma[5, 1] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko, 2) + " g";
+                        }
+                        else
+                        {
+                            label147.Text = "";
+                            circularProgressBar16.Value = Convert.ToInt32(suma[5, 1] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko);
+                        }
+                    }
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 2] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze) > 100)
+                        {
+                            circularProgressBar15.Value = 100;
+                            label146.Text = "+ " + Math.Round(suma[5, 2] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze, 2) + " g";
+                        }
+                        else
+                        {
+                            label146.Text = "";
+                            circularProgressBar15.Value = Convert.ToInt32(suma[5, 2] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze);
+                        }
+                    }
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 4] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany) > 100)
+                        {
+                            circularProgressBar6.Value = 100;
+                            label145.Text = "+ " + Math.Round(suma[5, 4] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany, 2) + " g";
+                        }
+                        else
+                        {
+                            label145.Text = "";
+                            circularProgressBar6.Value = Convert.ToInt32(suma[5, 4] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany);
+                        }
+                    }
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 5] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne) > 100)
+                        {
+                            circularProgressBar1.Value = 100;
+                            label141.Text = "+ " + Math.Round(suma[5, 5] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne, 2) + " g";
+                        }
+                        else
+                        {
+                            label141.Text = "";
+                            circularProgressBar1.Value = Convert.ToInt32(suma[5, 5] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne);
+                        }
+                    }
+                    else
+                        circularProgressBar1.Value = 99;
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 6] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik) > 100)
+                        {
+                            circularProgressBar2.Value = 100;
+                            label142.Text = "+ " + Math.Round(suma[5, 6] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik, 2) + " g";
+                        }
+                        else
+                        {
+                            label142.Text = "";
+                            circularProgressBar2.Value = Convert.ToInt32(suma[5, 6] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik);
+                        }
+                    }
+                    else
+                        circularProgressBar2.Value = 99;
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 7] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod) > 100)
+                        {
+                            circularProgressBar4.Value = 100;
+                            label144.Text = "+ " + Math.Round(suma[5, 7] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod, 2) + " mg";
+                        }
+                        else
+                        {
+                            label144.Text = "";
+                            circularProgressBar4.Value = Convert.ToInt32(suma[5, 7] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod);
+                        }
+                    }
+                    else
+                        circularProgressBar4.Value = 99;
+                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn != 0)
+                    {
+                        if (Convert.ToInt32(suma[5, 3] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn) > 100)
+                        {
+                            circularProgressBar3.Value = 100;
+                            label143.Text = "+ " + Math.Round(suma[5, 3] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn, 2) + " g";
+                        }
+                        else
+                        {
+                            label143.Text = "";
+                            circularProgressBar3.Value = Convert.ToInt32(suma[5, 3] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn);
+                        }
+                    }
+                    else
+                        circularProgressBar3.Value = 99;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Nie można przeliczyć wartości, o które przekroczono limity diety", "Błąd");
+            }
+        }
+
+        #endregion
     }
 }
