@@ -12,9 +12,15 @@ namespace WindowsFormsApplication1
         public double energiaOd;
         public double energiaDo;
         public double bialko;
+        public double bialkoOd;
+        public double bialkoDo;
         public double weglowodany;
+        public double weglowodanyOd;
+        public double weglowodanyDo;
         public double cukry;
         public double tluszcze;
+        public double tluszczeOd;
+        public double tluszczeDo;
         public double tluszcze_nn;
         public double sod;
         public double weglowodany_przyswajalne;
@@ -34,6 +40,7 @@ namespace WindowsFormsApplication1
         public double magnez;
         public double zelazo;
         public double cynk;
+        public double jod;
         public double selen;
         public double miedz;
         public double cholina;
@@ -44,17 +51,20 @@ namespace WindowsFormsApplication1
         public double potas;
 
 
-        public WartosciOdzywcze(double energiaOd, double energiaDo, double bialko, double tluszcze, double tluszcze_nn, double weglowodany, double cukry, double blonnik, 
+        public WartosciOdzywcze(double energiaOd, double energiaDo, double bialkoOd, double bialkoDo, double tluszczeOd, double tluszczeDo, double tluszcze_nn, double weglowodanyOd, double weglowodanyDo, double cukry, double blonnik, 
             double sod, double witA, double witB1, double witB2, double witB6, double witB12, double niacyna, double witC, double witD, double witE, double witK,
-            double foliany, double fosfor, double magnez, double zelazo, double cynk, double selen, double miedz, double cholina, double kwasPantotenowy,
+            double foliany, double fosfor, double magnez, double zelazo, double cynk, double jod, double selen, double miedz, double cholina, double kwasPantotenowy,
             double biotyna, double mangan, double fluor, double potas)
         {
             this.energiaOd = energiaOd;
             this.energiaDo = energiaDo;
-            this.bialko = bialko;
-            this.weglowodany = weglowodany;
+            this.bialkoOd = bialkoOd;
+            this.bialkoDo = bialkoDo;
+            this.weglowodanyOd = weglowodanyOd;
+            this.weglowodanyDo = weglowodanyDo;
             this.sod = sod;
-            this.tluszcze = tluszcze;
+            this.tluszczeOd = tluszczeOd;
+            this.tluszczeDo = tluszczeDo;
             this.tluszcze_nn = tluszcze_nn;
             this.blonnik = blonnik;
             this.cukry = cukry;
@@ -73,6 +83,7 @@ namespace WindowsFormsApplication1
             this.magnez = magnez;
             this.zelazo = zelazo;
             this.cynk = cynk;
+            this.jod = jod;
             this.selen = selen;
             this.miedz = miedz;
             this.cholina = cholina;
@@ -85,7 +96,7 @@ namespace WindowsFormsApplication1
 
         public WartosciOdzywcze(double energia, double bialko, double tluszcze, double tluszcze_nn, double weglowodany, double cukry, double blonnik,
     double sod, double witA, double witB1, double witB2, double witB6, double witB12, double niacyna, double witC, double witD, double witE, double witK,
-    double foliany, double fosfor, double magnez, double zelazo, double cynk, double selen, double miedz, double cholina, double kwasPantotenowy,
+    double foliany, double fosfor, double magnez, double zelazo, double cynk, double jod, double selen, double miedz, double cholina, double kwasPantotenowy,
     double biotyna, double mangan, double fluor, double potas)
         {
             this.energia = energia;
@@ -111,6 +122,7 @@ namespace WindowsFormsApplication1
             this.magnez = magnez;
             this.zelazo = zelazo;
             this.cynk = cynk;
+            this.jod = jod;
             this.selen = selen;
             this.miedz = miedz;
             this.cholina = cholina;
@@ -119,39 +131,6 @@ namespace WindowsFormsApplication1
             this.mangan = mangan;
             this.fluor = fluor;
             this.potas = potas;
-        }
-
-        public WartosciOdzywcze(double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
-        {
-            this.energia = energia;
-            this.bialko = bialko;
-            this.weglowodany = weglowodany;
-            this.sod = sod;
-            this.tluszcze = tluszcze;
-            this.tluszcze_nn = tluszcze_nn;
-            this.blonnik = blonnik;
-            this.weglowodany_przyswajalne = weglowodany_przyswajalne;
-        }
-        public WartosciOdzywcze(double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn)
-        {
-            this.energia = energia;
-            this.bialko = bialko;
-            this.weglowodany = weglowodany;
-            this.sod = sod;
-            this.tluszcze = tluszcze;
-            this.tluszcze_nn = tluszcze_nn;
-        }
-
-        public WartosciOdzywcze()
-        {
-            this.energia = 0;
-            this.bialko = 0;
-            this.weglowodany = 0;
-            this.sod = 0;
-            this.tluszcze = 0;
-            this.tluszcze_nn = 0;
-            this.blonnik = 0;
-            this.weglowodany_przyswajalne = 0;
         }
     }
 }

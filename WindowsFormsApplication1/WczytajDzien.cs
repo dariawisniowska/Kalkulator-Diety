@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using WindowsFormsApplication1.DAO;
 
 namespace WindowsFormsApplication1
 {
@@ -16,25 +17,22 @@ namespace WindowsFormsApplication1
         public double[,] suma = new double[6, 6];
         Encoding enc = Encoding.GetEncoding("Windows-1250");
         List<string> lista = new List<string>();
-        KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-        String XML_Location = @"DataBase.xml";
 
         public WczytajDzien()
         {
             InitializeComponent();
 
-            DataSet.ReadXml(XML_Location);
-
-            if (DataSet.Diety.Rows.Count > 0)
+            List<Dieta> diety = DietaDAO.SelectAllSQL();
+            if (diety.Count > 0)
             {
-                for (int i = 0; i < DataSet.Diety.Rows.Count; i++)
+                foreach(Dieta d in diety)
                 {
-                    cb_dieta.Items.Add(DataSet.Diety.Rows[i]["Nazwa diety"]);
+                    cb_dieta.Items.Add(d.nazwa);
                 }
                 cb_dieta.SelectedIndex = 0;
             }
-
-            if (DataSet.Tables["Jadłospisy"].Rows.Count > 0)
+                        
+            if (JadlospisDAO.CountSQL() > 0)
             {
                 Wyswietl();
             }
@@ -96,17 +94,10 @@ namespace WindowsFormsApplication1
                         suma[j, k] = 0;
                     }
 
-                int wybrana = -1;
-                for (int i = 0; i < DataSet.Tables["Jadłospisy"].Rows.Count; i++)
-                {
-                    if (DataSet.Tables["Jadłospisy"].Rows[i]["Data"] + "," + DataSet.Tables["Jadłospisy"].Rows[i]["Dieta"] + "," + DataSet.Tables["Jadłospisy"].Rows[i]["Miasto"] == dateTimePicker1.Text + "," + cb_dieta.SelectedItem+","+cb_miasto.SelectedItem)
-                    {
-                        wybrana = i;
-                    }
-                }
+                Jadlospis wybrany = JadlospisDAO.SelectSQL(dateTimePicker1.Text, cb_dieta.SelectedItem.ToString().Split('/')[0], cb_miasto.SelectedItem.ToString(), cb_dieta.SelectedItem.ToString().Split('/')[1]);
 
-                textBox6.Text = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Nazwa-Śniadanie"].ToString();
-                string[] sniadanie_produkty = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Skład-Śniadanie"].ToString().Split('$');
+                textBox6.Text = wybrany.nazwa_sniadanie;
+                string[] sniadanie_produkty = wybrany.sklad_sniadanie.Split('$');
                 for (int j = 0; j < sniadanie_produkty.Length - 1; j++)
                 {
                     string[] arr = sniadanie_produkty[j].Split('|');
@@ -115,8 +106,8 @@ namespace WindowsFormsApplication1
                 }
 
 
-                textBox7.Text = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Nazwa-IIŚniadanie"].ToString();
-                sniadanie_produkty = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Skład-IIŚniadanie"].ToString().Split('$');
+                textBox7.Text = wybrany.nazwa_IIsniadanie.ToString();
+                sniadanie_produkty = wybrany.sklad_IIsniadanie.Split('$');
                 for (int j = 0; j < sniadanie_produkty.Length - 1; j++)
                 {
                     string[] arr = sniadanie_produkty[j].Split('|');
@@ -124,8 +115,8 @@ namespace WindowsFormsApplication1
                     listView2.Items.Add(itm);
                 }
 
-                textBox8.Text = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Nazwa-Obiad"].ToString();
-                sniadanie_produkty = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Skład-Obiad"].ToString().Split('$');
+                textBox8.Text = wybrany.nazwa_obiad.ToString();
+                sniadanie_produkty = wybrany.sklad_obiad.Split('$');
                 for (int j = 0; j < sniadanie_produkty.Length - 1; j++)
                 {
                     string[] arr = sniadanie_produkty[j].Split('|');
@@ -133,8 +124,8 @@ namespace WindowsFormsApplication1
                     listView3.Items.Add(itm);
                 }
 
-                textBox9.Text = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Nazwa-Podwieczorek"].ToString();
-                sniadanie_produkty = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Skład-Podwieczorek"].ToString().Split('$');
+                textBox9.Text = wybrany.nazwa_podwieczorek;
+                sniadanie_produkty = wybrany.sklad_podwieczorek.Split('$');
                 for (int j = 0; j < sniadanie_produkty.Length - 1; j++)
                 {
                     string[] arr = sniadanie_produkty[j].Split('|');
@@ -142,8 +133,8 @@ namespace WindowsFormsApplication1
                     listView4.Items.Add(itm);
                 }
 
-                textBox10.Text = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Nazwa-Kolacja"].ToString();
-                sniadanie_produkty = DataSet.Tables["Jadłospisy"].Rows[wybrana]["Skład-Kolacja"].ToString().Split('$');
+                textBox10.Text = wybrany.nazwa_kolacja;
+                sniadanie_produkty = wybrany.sklad_kolacja.Split('$');
                 for (int j = 0; j < sniadanie_produkty.Length - 1; j++)
                 {
                     string[] arr = sniadanie_produkty[j].Split('|');
@@ -253,17 +244,7 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int wybrana = -1;
-            for (int i = 0; i < DataSet.Tables["Jadłospisy"].Rows.Count; i++)
-            {
-                if (DataSet.Tables["Jadłospisy"].Rows[i]["Data"] + "," + DataSet.Tables["Jadłospisy"].Rows[i]["Dieta"] + "," + DataSet.Tables["Jadłospisy"].Rows[i]["Miasto"] == dateTimePicker1.Text + "," + cb_dieta.SelectedItem+","+cb_miasto.SelectedText)
-                {
-                    wybrana = i;
-                }
-            }
-
-            DataSet.Tables["Jadłospisy"].Rows[wybrana].Delete();
-            DataSet.WriteXml(XML_Location);
+            JadlospisDAO.DeleteSQL(dateTimePicker1.Text, cb_dieta.SelectedItem.ToString().Split('/')[0], cb_miasto.SelectedText.ToString(), cb_dieta.SelectedItem.ToString().Split('/')[1]);
 
             Form1 f = new Form1();
             this.Close();

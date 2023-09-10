@@ -18,19 +18,6 @@ namespace WindowsFormsApplication1
             this.nazwa = nazwa;
             this.wartosciOdzywcze = wartosciOdzywcze;
         }
-
-        public Produkt(char kategoria, string nazwa, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
-        {
-            this.kategoria = kategoria;
-            this.nazwa = nazwa;
-            this.wartosciOdzywcze = new WartosciOdzywcze(energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn, weglowodany_przyswajalne,blonnik);
-        }
-        public Produkt(char kategoria, string nazwa, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn)
-        {
-            this.kategoria = kategoria;
-            this.nazwa = nazwa;
-            this.wartosciOdzywcze = new WartosciOdzywcze(energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn);
-        }
     }
     public enum TypyProduktow
     {

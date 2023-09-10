@@ -10,6 +10,10 @@ namespace WindowsFormsApplication1
 {
     public class Printer
     {
+        public static string[] naglowki =  new string[34] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany [g]", "Cukry [mg]", "Błonnik [mg]",
+            "Sód [mg]", "Witamina A [μg]", "Witamina B1 [mg]", "Witamina B2 [mg]", "Niacyna [mg]", "Witamina B6 [mg]", "Witamina B12 [μg]", "Witamina C [mg]", "Foliany [μg]", "Fosfor [mg]", "Magnez [mg]", "Żelazo [mg]", "Cynk [mg]", "Jod [μg]", "Selen [μg]",
+            "Miedź [mg]", "Cholina [mg]", "Kwas pantotenowy [mg]", "Biotyna [μg]", "Witamina D [μg]", "Witamina E [mg]", "Witamina K [μg]", "Mangan [mg]", "Fluor [mg]", "Potas [mg]"};
+
         public static void Receptura(Receptura receptura)
         {
             try
@@ -38,13 +42,6 @@ namespace WindowsFormsApplication1
                     int rows = produkty.Length;
                     int columns = produkty[0].Split('|').Length;
                     double[] suma = new double[columns - 2];
-                    string[] naglowki = null;
-                    if (columns != 10)
-                        naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                    else
-                        naglowki = new string[10] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]", "Sód [mg]" };
-
-
                     Table t = document.AddTable(rows, columns);
                     t.SetBorder(TableBorderType.Bottom, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                     t.SetBorder(TableBorderType.InsideH, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
@@ -147,8 +144,6 @@ namespace WindowsFormsApplication1
                     .FontSize(12)
                     .Color(Color.Black);
 
-
-
                     document.Save();
 
                   //  MessageBox.Show("Zapisano dokument");
@@ -168,13 +163,18 @@ namespace WindowsFormsApplication1
                 {
                 DateTime data = Convert.ToDateTime(jadlospis.data);
                 System.IO.Directory.CreateDirectory("Jadłospisy/" + jadlospis.miasto + "/" + data.Year + "/" + data.Month + "/" + data.Day);
-                string path = @"Jadłospisy/" + jadlospis.miasto + "/" + data.Year + "/" + data.Month + "/" + data.Day + "/" + jadlospis.data + ", " + jadlospis.dieta.nazwa + ".docx";
+                string path = @"Jadłospisy/" + jadlospis.miasto + "/" + data.Year + "/" + data.Month + "/" + data.Day + "/" + jadlospis.data + ", " + jadlospis.dieta.nazwa + " " + jadlospis.dieta.plec + ".docx";
 
                 using (DocX document = DocX.Create(path))
                 {
+                    document.MarginTop = 10;
+                    document.MarginHeader = 0;
+                    document.MarginBottom = 10;
+                    document.MarginFooter = 0;
+                    document.PageLayout.Orientation = Xceed.Words.NET.Orientation.Landscape;
                     Paragraph p = document.InsertParagraph();
                     p.Alignment = Alignment.center;
-                    p.Append(jadlospis.data + ", \r\n" + jadlospis.dieta.nazwa + "\r\n")
+                    p.Append(jadlospis.data + ", \r\n" + jadlospis.dieta.nazwa + " " + jadlospis.dieta.plec + " (" + jadlospis.dieta.kod + ")" + "\r\n")
                     .Font("Times New Roman")
                     .FontSize(12)
                     .Color(Color.Black)
@@ -191,22 +191,7 @@ namespace WindowsFormsApplication1
 
                     {
                         int rows = pr.Length + 1;
-                        string[] naglowki = null;
-                        if (cl != 10)
-                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                        else
-                        {
-                            if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                            {
-                                naglowki = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                            }
-                            else
-                            {
-                                naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                cl--;
-                            }
-                            cl--;
-                        }
+
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
                         Table t = document.AddTable(rows, cl);
@@ -217,9 +202,9 @@ namespace WindowsFormsApplication1
                         t.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-                        t.SetColumnWidth(0, 2000);
+                        t.SetColumnWidth(0, 800);
                         for (int i = 1; i < cl; i++)
-                            t.SetColumnWidth(i, 1000);
+                            t.SetColumnWidth(i, 455);
 
                         //ŚNIADANIE
                         p2.Append("\r\nŚniadanie: " + jadlospis.nazwa_sniadanie + "\r\n")
@@ -230,7 +215,7 @@ namespace WindowsFormsApplication1
                         {
                                 t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                  .Font("Times New Roman")
-                                 .FontSize(9)
+                                 .FontSize(5)
                                  .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 2; r++)
@@ -241,50 +226,30 @@ namespace WindowsFormsApplication1
                                 int licznik = 0;
                                 for (int c = 0; c < cl; c++)
                                 {
-                                    if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                                    {
-                                        if (c == 0)
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                                .FontSize(9)
-                                                .Color(Color.Black);
-                                        else
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                             .FontSize(9)
+                                    if (c == 0)
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                            .FontSize(6)
                                             .Color(Color.Black);
-                                        if (c >= 2)
-                                            sum[c - 2] += Convert.ToDouble(dane[c]);
-                                    }
                                     else
-                                    {
-                                        if (c == 5)
-                                            licznik = 1;
-                                        if (c == 0)
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                                .FontSize(9)
-                                                .Color(Color.Black);
-                                        else
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c+licznik])
-                                                .Font("Times New Roman")
-                                             .FontSize(9)
-                                            .Color(Color.Black);
-                                        if (c >= 2)
-                                            sum[c - 2] += Convert.ToDouble(dane[c+licznik]);
-                                    }
-                                    }
+                                        t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
+                                            .Font("Times New Roman")
+                                         .FontSize(6)
+                                        .Color(Color.Black);
+                                    if (c >= 2)
+                                        sum[c - 2] += Convert.ToDouble(dane[c]);
+                                }
                             }
                         }
                         suma_kalorie[0] = sum[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                            .Font("Times New Roman")
-                                        .FontSize(9)
+                                        .FontSize(5)
                                        .Color(Color.Black);
                         for (int i = 0; i < cl - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(sum[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(9)
+                                         .FontSize(6)
                                         .Color(Color.Black);
 
                         p2.InsertTableAfterSelf(t);
@@ -296,22 +261,6 @@ namespace WindowsFormsApplication1
                         string[] produkty = jadlospis.sklad_IIsniadanie.Split('$');
                         int rows = produkty.Length + 1;
                         int columns = produkty[0].Split('|').Length;
-                        string[] naglowki = null;
-                        if (columns != 10)
-                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                        else
-                        {
-                            if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                            {
-                                naglowki = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                            }
-                            else
-                            {
-                                naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                columns--;
-                            }
-                            columns--;
-                        }
                         double[] suma2 = new double[columns - 2];
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
@@ -323,9 +272,9 @@ namespace WindowsFormsApplication1
                         t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.Alignment = Alignment.center;
-                        t.SetColumnWidth(0, 2000);
+                        t.SetColumnWidth(0, 800);
                         for (int i = 1; i < cl; i++)
-                            t.SetColumnWidth(i, 1000);
+                            t.SetColumnWidth(i, 455);
                         p2.Append("\r\nII śniadanie: " + jadlospis.nazwa_IIsniadanie + "\r\n")
                            .Font("Times New Roman")
                            .FontSize(10)
@@ -336,7 +285,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(9)
+                                .FontSize(5)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -347,56 +296,33 @@ namespace WindowsFormsApplication1
                                 int licznik = 0;
                                 for (int c = 0; c < columns; c++)
                                 {
-                                    if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                                    {
                                         if (c == 0)
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                                .FontSize(9)
+                                                .FontSize(6)
                                                 .Color(Color.Black);
                                         else
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                             .FontSize(9)
+                                             .FontSize(6)
                                             .Color(Color.Black);
                                         if (c >= 2)
                                         {
                                             sum[c - 2] += Convert.ToDouble(dane[c]);
                                             suma2[c - 2] += Convert.ToDouble(dane[c]);
                                         }
-                                    }
-                                    else
-                                    {
-                                        if (c == 5)
-                                            licznik = 1;
-                                        if (c == 0)
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                                .FontSize(9)
-                                                .Color(Color.Black);
-                                        else
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c + licznik])
-                                                .Font("Times New Roman")
-                                             .FontSize(9)
-                                            .Color(Color.Black);
-                                        if (c >= 2)
-                                        {
-                                            sum[c - 2] += Convert.ToDouble(dane[c+licznik]);
-                                            suma2[c - 2] += Convert.ToDouble(dane[c+licznik]);
-                                        }
-                                    }
                                 }
                             }
                         }
                         suma_kalorie[1] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
-                                       .FontSize(9)
+                                       .FontSize(5)
                                       .Color(Color.Black);
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(9)
+                                         .FontSize(6)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -407,23 +333,6 @@ namespace WindowsFormsApplication1
                         string[] produkty = jadlospis.sklad_obiad.Split('$');
                         int rows = produkty.Length + 1;
                         int columns = produkty[0].Split('|').Length;
-                        string[] naglowki = null;
-                        if (columns != 10)
-                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                        else
-                        {
-                            if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                            {
-                                naglowki = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                            }
-                            else
-                            {
-                                naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                columns--;
-                            }
-                            columns--;
-                        }
-
                         double[] suma2 = new double[columns - 2];
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
@@ -435,9 +344,9 @@ namespace WindowsFormsApplication1
                         t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.Alignment = Alignment.center;
-                        t.SetColumnWidth(0, 2000);
+                        t.SetColumnWidth(0, 800);
                         for (int i = 1; i < cl; i++)
-                            t.SetColumnWidth(i, 1000);
+                            t.SetColumnWidth(i, 455);
                         p2.Append("\r\nObiad: " + jadlospis.nazwa_obiad + "\r\n")
                            .Font("Times New Roman")
                            .FontSize(10)
@@ -448,7 +357,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(9)
+                                .FontSize(5)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -459,44 +368,21 @@ namespace WindowsFormsApplication1
                                 int licznik = 0;
                                 for (int c = 0; c < columns; c++)
                                 {
-                                    if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                                    {
                                         if (c == 0)
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                                .FontSize(9)
+                                                .FontSize(5)
                                                 .Color(Color.Black);
                                         else
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                             .FontSize(9)
+                                             .FontSize(6)
                                             .Color(Color.Black);
                                         if (c >= 2)
                                         {
                                             sum[c - 2] += Convert.ToDouble(dane[c]);
                                             suma2[c - 2] += Convert.ToDouble(dane[c]);
                                         }
-                                    }
-                                    else
-                                    {
-                                        if (c == 5)
-                                            licznik = 1;
-                                        if (c == 0)
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                                .FontSize(9)
-                                                .Color(Color.Black);
-                                        else
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c + licznik])
-                                                .Font("Times New Roman")
-                                             .FontSize(9)
-                                            .Color(Color.Black);
-                                        if (c >= 2)
-                                        {
-                                            sum[c - 2] += Convert.ToDouble(dane[c + licznik]);
-                                            suma2[c - 2] += Convert.ToDouble(dane[c + licznik]);
-                                        }
-                                    }
                                 }
                             }
 
@@ -504,12 +390,12 @@ namespace WindowsFormsApplication1
                         suma_kalorie[2] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
-                                       .FontSize(9)
+                                       .FontSize(5)
                                       .Color(Color.Black);
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(9)
+                                         .FontSize(6)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -519,22 +405,7 @@ namespace WindowsFormsApplication1
                         string[] produkty = jadlospis.sklad_podwieczorek.Split('$');
                         int rows = produkty.Length + 1;
                         int columns = produkty[0].Split('|').Length;
-                        string[] naglowki = null;
-                        if (columns != 10)
-                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                        else
-                        {
-                            if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                            {
-                                naglowki = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                            }
-                            else
-                            {
-                                naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                columns--;
-                            }
-                            columns--;
-                        }
+
 
                         double[] suma2 = new double[columns - 2];
                         Paragraph p2 = document.InsertParagraph();
@@ -547,9 +418,9 @@ namespace WindowsFormsApplication1
                         t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.Alignment = Alignment.center;
-                        t.SetColumnWidth(0, 2000);
+                        t.SetColumnWidth(0, 800);
                         for (int i = 1; i < cl; i++)
-                            t.SetColumnWidth(i, 1000);
+                            t.SetColumnWidth(i, 455);
                         p2.Append("\r\nPodwieczorek: " + jadlospis.nazwa_podwieczorek + "\r\n")
                            .Font("Times New Roman")
                            .FontSize(10)
@@ -560,7 +431,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(9)
+                                .FontSize(5)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -571,57 +442,33 @@ namespace WindowsFormsApplication1
                                 int licznik = 0;
                                 for (int c = 0; c < columns; c++)
                                 {
-                                    if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                                    {
                                         if (c == 0)
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                                .FontSize(9)
+                                                .FontSize(6)
                                                 .Color(Color.Black);
                                         else
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                             .FontSize(9)
+                                             .FontSize(6)
                                             .Color(Color.Black);
                                         if (c >= 2)
                                         {
                                             sum[c - 2] += Convert.ToDouble(dane[c]);
                                             suma2[c - 2] += Convert.ToDouble(dane[c]);
                                         }
-                                    }
-                                    else
-                                    {
-                                        if (c == 5)
-                                            licznik = 1;
-                                        if (c == 0)
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                                .FontSize(9)
-                                                .Color(Color.Black);
-                                        else
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c + licznik])
-                                                .Font("Times New Roman")
-                                             .FontSize(9)
-                                            .Color(Color.Black);
-                                        if (c >= 2)
-                                            if (c >= 2)
-                                            {
-                                                sum[c - 2] += Convert.ToDouble(dane[c + licznik]);
-                                                suma2[c - 2] += Convert.ToDouble(dane[c + licznik]);
-                                            }
-                                    }
                                 }
                             }
                         }
                         suma_kalorie[3] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
-                                       .FontSize(9)
+                                       .FontSize(5)
                                       .Color(Color.Black);
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(9)
+                                         .FontSize(6)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
@@ -632,22 +479,6 @@ namespace WindowsFormsApplication1
                         string[] produkty = jadlospis.sklad_kolacja.Split('$');
                         int rows = produkty.Length + 1;
                         int columns = produkty[0].Split('|').Length;
-                        string[] naglowki = null;
-                        if (columns != 10)
-                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                        else
-                        {
-                            if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                            {
-                                naglowki = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                            }
-                            else
-                            {
-                                naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                columns--;
-                            }
-                            columns--;
-                        }
 
                         double[] suma2 = new double[columns - 2];
                         Paragraph p2 = document.InsertParagraph();
@@ -660,9 +491,9 @@ namespace WindowsFormsApplication1
                         t.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         t.Alignment = Alignment.center;
-                        t.SetColumnWidth(0, 2000);
+                        t.SetColumnWidth(0, 800);
                         for (int i = 1; i < cl; i++)
-                            t.SetColumnWidth(i, 1000);
+                            t.SetColumnWidth(i, 455);
                         p2.Append("\r\nKolacja: " + jadlospis.nazwa_kolacja + "\r\n")
                        .Font("Times New Roman")
                        .FontSize(10)
@@ -673,7 +504,7 @@ namespace WindowsFormsApplication1
                         {
                             t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
                                 .Font("Times New Roman")
-                                .FontSize(10)
+                                .FontSize(5)
                                 .Color(Color.Black);
                         }
                         for (int r = 0; r < rows - 1; r++)
@@ -684,78 +515,39 @@ namespace WindowsFormsApplication1
                                 int licznik = 0;
                                 for (int c = 0; c < columns; c++)
                                 {
-                                    if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                                    {
                                         if (c == 0)
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                                .FontSize(9)
+                                                .FontSize(6)
                                                 .Color(Color.Black);
                                         else
                                             t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
                                                 .Font("Times New Roman")
-                                             .FontSize(9)
+                                             .FontSize(6)
                                             .Color(Color.Black);
                                         if (c >= 2)
                                         {
                                             sum[c - 2] += Convert.ToDouble(dane[c]);
                                             suma2[c - 2] += Convert.ToDouble(dane[c]);
                                         }
-                                    }
-                                    else
-                                    {
-                                        if (c == 5)
-                                            licznik = 1;
-                                        if (c == 0)
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c])
-                                                .Font("Times New Roman")
-                                                .FontSize(9)
-                                                .Color(Color.Black);
-                                        else
-                                            t.Rows[r + 1].Cells[c].Paragraphs[0].Append(dane[c + licznik])
-                                                .Font("Times New Roman")
-                                             .FontSize(9)
-                                            .Color(Color.Black);
-                                        if (c >= 2)
-                                        {
-                                            sum[c - 2] += Convert.ToDouble(dane[c + licznik]);
-                                            suma2[c - 2] += Convert.ToDouble(dane[c + licznik]);
-                                        }
-                                    }
                                 }
                             }
                         }
                         suma_kalorie[4] = suma2[0];
                         t.Rows[rows - 1].Cells[1].Paragraphs[0].Append("Suma: ")
                                           .Font("Times New Roman")
-                                       .FontSize(9)
+                                       .FontSize(5)
                                       .Color(Color.Black);
                         for (int i = 0; i < columns - 2; i++)
                             t.Rows[rows - 1].Cells[i + 2].Paragraphs[0].Append(suma2[i].ToString())
                                             .Font("Times New Roman")
-                                         .FontSize(9)
+                                         .FontSize(6)
                                         .Color(Color.Black);
                         p2.InsertTableAfterSelf(t);
                     }
 
                     string[] produkty2 = jadlospis.sklad_sniadanie.Split('$');
                     int columns2 = produkty2[0].Split('|').Length;
-                    string[] naglowki2 = null;
-                    if (columns2 != 10)
-                        naglowki2 = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                    else
-                    {
-                        if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                        {
-                            naglowki2 = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                        }
-                        else
-                        {
-                            naglowki2 = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                            columns2--;
-                        }
-                        columns2--;
-                    }
                     Paragraph p3 = document.InsertParagraph();
                     p3.Alignment = Alignment.left;
                     Table t2 = document.AddTable(2, columns2 - 2);
@@ -766,15 +558,14 @@ namespace WindowsFormsApplication1
                     t2.SetBorder(TableBorderType.Left, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                     t2.SetBorder(TableBorderType.Right, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                     t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
-
+                    for (int i = 0; i < columns2-2; i++)
+                        t2.SetColumnWidth(i, 520);
                     int licznik2 = 0;
                     for (int i = 0; i < columns2 - 2; i++)
                     {
-                        if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                        {
-                            t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki2[i + 2])
+                            t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i + 2])
                             .Font("Times New Roman")
-                            .FontSize(9)
+                            .FontSize(6)
                             .Color(Color.Black);
 
                             string dodatek = "";
@@ -816,41 +607,8 @@ namespace WindowsFormsApplication1
                             }
                             t2.Rows[1].Cells[i].Paragraphs[0].Append(Math.Round(sum[i], 2).ToString() + dodatek)
                                         .Font("Times New Roman")
-                                        .FontSize(9)
-                                        .Color(Color.Black);
-                        }
-                        else
-                        {
-                            //if (i == 5)
-                             //   licznik2 = 1;
-
-                            t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki2[i + 2])
-                            .Font("Times New Roman")
-                            .FontSize(9)
-                            .Color(Color.Black);
-
-                            string dodatek = "";
-                                if (i == 1)
-                                {
-                                    dodatek = (Math.Round((sum[i] * Form1.przelicznik_Bialko * 100.0) / sum[0], 2)).ToString();
-                                    dodatek = "\r\n(" + dodatek + " %)";
-                                }
-                                if (i == 2)
-                                {
-                                    dodatek = (Math.Round((sum[i] * Form1.przelicznik_Tluszcze * 100.0) / sum[0], 2)).ToString();
-                                    dodatek = "\r\n(" + dodatek + " %)";
-                                }
-                                if (i == 3)
-                                {
-                                    dodatek = (Math.Round((sum[i] * Form1.przelicznik_Weglowodany * 100.0) / sum[0], 2)).ToString();
-                                    dodatek = "\r\n(" + dodatek + " %)";
-                                }
-                            t2.Rows[1].Cells[i].Paragraphs[0].Append(Math.Round(sum[i+licznik2], 2).ToString() + dodatek)
-                                        .Font("Times New Roman")
-                                        .FontSize(9)
-                                        .Color(Color.Black);
-                        }
-
+                                        .FontSize(6)
+                                        .Color(Color.Black);                        
                         }   
                     p3.Append("\r\nWartości odżywcze:\r\n").Font("Times New Roman")
                                 .FontSize(9)
@@ -961,13 +719,12 @@ namespace WindowsFormsApplication1
         //    {
         //        MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
         //    }
-}
-        public static string dieta_z_kwasami = "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów i nasyconych kwasów tłuszczowych";
+}              
 
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow)
         {
-    try
-    {
+    //try
+    //{
         if (listaJadlospisow.Count > 0)
             {
                 System.IO.Directory.CreateDirectory("Jadłospisy dzienne/" + listaJadlospisow[0].miasto);
@@ -975,6 +732,11 @@ namespace WindowsFormsApplication1
 
                 using (DocX document = DocX.Create(path))
                 {
+                    document.MarginTop = 10;
+                    document.MarginHeader = 0;
+                    document.MarginBottom = 10;
+                    document.MarginFooter = 0;
+                    document.PageLayout.Orientation = Xceed.Words.NET.Orientation.Landscape;
                     Paragraph p = document.InsertParagraph();
                     p.Alignment = Alignment.center;
                     p.Append(listaJadlospisow[0].data + "\r\nJADŁOSPIS")
@@ -988,7 +750,7 @@ namespace WindowsFormsApplication1
                         Paragraph p2 = document.InsertParagraph();
                         p2.Alignment = Alignment.left;
 
-                        p2.Append("\r\n" + jadlospis.dieta.nazwa + "\r\n")
+                        p2.Append("\r\n" + jadlospis.dieta.nazwa +  " " + jadlospis.dieta.plec + " (" + jadlospis.dieta.kod + ")" + "\r\n")
                    .Font("Times New Roman")
                    .FontSize(10)
                    .Color(Color.Black)
@@ -1000,14 +762,14 @@ namespace WindowsFormsApplication1
                             columns = 5;
                         if (jadlospis.sklad_IIsniadanie == "" && jadlospis.sklad_podwieczorek != "")
                                 columns = 4;
-                       string[] naglowki = null;
+                       string[] naglowki_posilki = null;
 
                         if (columns == 3)
-                            naglowki = new string[3] { "Śniadanie", "Obiad", "Kolacja" };
+                                naglowki_posilki = new string[3] { "Śniadanie", "Obiad", "Kolacja" };
                             if (columns == 4)
-                                naglowki = new string[4] { "Śniadanie", "Obiad","Podwieczorek", "Kolacja" };
+                                naglowki_posilki = new string[4] { "Śniadanie", "Obiad","Podwieczorek", "Kolacja" };
                             if (columns == 5)
-                            naglowki = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
+                                naglowki_posilki = new string[5] { "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
 
 
 
@@ -1031,12 +793,12 @@ namespace WindowsFormsApplication1
 
                         for (int i = 0; i < columns; i++)
                         {
-                            t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i])
+                            t.Rows[0].Cells[i].Paragraphs[0].Append(naglowki_posilki[i])
                                 .Font("Times New Roman")
                                 .FontSize(10)
                                 .Color(Color.Black).Bold();
                         }
-                        if (naglowki.Length == 3)
+                        if (naglowki_posilki.Length == 3)
                         {
                             t.Rows[1].Cells[0].Paragraphs[0].Append(jadlospis.nazwa_sniadanie).Font("Times New Roman")
                                 .FontSize(9)
@@ -1048,7 +810,7 @@ namespace WindowsFormsApplication1
                                 .FontSize(9)
                                 .Color(Color.Black);
                         }
-                           else if (naglowki.Length == 4)
+                           else if (naglowki_posilki.Length == 4)
                             {
                                 t.Rows[1].Cells[0].Paragraphs[0].Append(jadlospis.nazwa_sniadanie).Font("Times New Roman")
                                     .FontSize(9)
@@ -1103,28 +865,10 @@ namespace WindowsFormsApplication1
                    .FontSize(10)
                    .Color(Color.Black)
                    .Bold();
-
-                        string[] naglowki = null;
-
+                            
                         string[] produkty = jadlospis.sklad_sniadanie.Split('$');
                         int columns2 = produkty[0].Split('|').Length;
                         double[] suma = new double[columns2 - 2];
-                        if (columns2 != 10)
-                            naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany [g]", "Sód [mg]", "Kwasy tłuszczowe nasycone [g]" };
-                            else
-                            {
-                                if(jadlospis.dieta.nazwa== dieta_z_kwasami)
-                                {
-                                    naglowki = new string[9] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Kwasy tłuszczowe nasycone [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                }
-                                else
-                                {
-                                    naglowki = new string[8] { "Nazwa produktu", "Masa [g]", "Energia [kcal]", "Białko [g]", "Tłuszcze [g]", "Węglowodany ogółem [g]", "Węglowodany przyswajalne [g]", "Błonnik pokarmowy [g]" };
-                                    columns2--;
-                                }
-                                columns2--;
-                            }
-
                             foreach (string sklad in jadlospis.sklad_sniadanie.Split('$'))
                         {
                             string[] dane = sklad.Split('|');
@@ -1185,38 +929,21 @@ namespace WindowsFormsApplication1
                         t2.SetBorder(TableBorderType.Top, new Border(Xceed.Words.NET.BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black));
                         for (int i = 0; i < columns2 - 2; i++)
                         {
-                            t2.SetColumnWidth(i, 1313);
+                            t2.SetColumnWidth(i, 52);
                         }
 
                             int licznik = 0;
                         for (int i = 0; i < columns2 - 2; i++)
                         {
-                                if (jadlospis.dieta.nazwa == dieta_z_kwasami)
-                                {
                                     t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i + 2])
                                         .Font("Times New Roman")
-                                        .FontSize(9)
+                                        .FontSize(6)
                                         .Color(Color.Black);
 
                                     t2.Rows[1].Cells[i].Paragraphs[0].Append(suma[i].ToString())
                                             .Font("Times New Roman")
-                                            .FontSize(9)
-                                            .Color(Color.Black);
-                                }
-                                else
-                                {
-                                    if (i == 3)
-                                        licznik = 1;
-                                    t2.Rows[0].Cells[i].Paragraphs[0].Append(naglowki[i + 2])
-                                       .Font("Times New Roman")
-                                       .FontSize(9)
-                                       .Color(Color.Black);
-
-                                    t2.Rows[1].Cells[i].Paragraphs[0].Append(suma[i+licznik].ToString())
-                                            .Font("Times New Roman")
-                                            .FontSize(9)
-                                            .Color(Color.Black);
-                                }
+                                            .FontSize(6)
+                                            .Color(Color.Black);                                
                         }
                         p4.InsertTableAfterSelf(t2);
                     }
@@ -1253,26 +980,26 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
             }
-            }
+            //}
 
 
-            catch
-            {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
-            }
+            //catch
+            //{
+               // MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+            //}
         }
 
         public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
         {
-            try
-            {
+           // try
+            //{
                 System.IO.Directory.CreateDirectory("Dekadówki/" + miasto);
-                List<Dieta> listaDiet = DAO.DietaDAO.SelectAll(miasto);
+                List<Dieta> listaDiet = DAO.DietaDAO.SelectAllSQL(miasto);
                 DateTime dateFrom = Convert.ToDateTime(dataOd);
                 DateTime dateTo = Convert.ToDateTime(dataDo);
                 foreach (Dieta d in listaDiet)
                 {
-                    string path = @"Dekadówki/" + miasto + "/" + dataOd + "-" + dataDo + ", " + d.nazwa + ".docx";
+                    string path = @"Dekadówki/" + miasto + "/" + dataOd + "-" + dataDo + ", " + d.nazwa + " " + d.plec + ".docx";
                     List<Jadlospis> listaJadlospisowDlaDiety = listaJadlospisow.Where(x => x.dieta.nazwa == d.nazwa && x.dieta.miasto == d.miasto).Cast<Jadlospis>().ToList();
                     if (listaJadlospisowDlaDiety != null && listaJadlospisowDlaDiety.Count > 0)
                     {
@@ -1285,7 +1012,7 @@ namespace WindowsFormsApplication1
                             document.MarginFooter = 0;
                             Paragraph p = document.InsertParagraph();
                             p.Alignment = Alignment.center;
-                            p.Append("Od " + dataOd + " do " + dataDo + ", " + d.nazwa )
+                            p.Append("Od " + dataOd + " do " + dataDo + ", " + d.nazwa + " "+d.plec + " ("+d.kod+")" )
                             .Font("Times New Roman")
                             .FontSize(12)
                             .Color(Color.Black)
@@ -1300,13 +1027,13 @@ namespace WindowsFormsApplication1
                             if (listaJadlospisowDlaDiety[listaJadlospisowDlaDiety.Count - 1].sklad_IIsniadanie == "" && listaJadlospisowDlaDiety[listaJadlospisowDlaDiety.Count - 1].sklad_podwieczorek != "")
                                 rows = 5;
                             int columns = (dateTo - dateFrom).Days + 2;
-                            string[] naglowki = null;
+                            string[] naglowki_posilki = null;
                             if (rows == 6)
-                                naglowki = new string[6] { "Dzień", "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
+                                naglowki_posilki = new string[6] { "Dzień", "Śniadanie", "II śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
                            else if (rows == 5)
-                                naglowki = new string[5] { "Dzień", "Śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
+                                naglowki_posilki = new string[5] { "Dzień", "Śniadanie", "Obiad", "Podwieczorek", "Kolacja" };
                             else
-                                naglowki = new string[4] { "Dzień", "Śniadanie", "Obiad", "Kolacja" };
+                                naglowki_posilki = new string[4] { "Dzień", "Śniadanie", "Obiad", "Kolacja" };
 
 
                             Table t = document.AddTable(rows, columns);
@@ -1329,7 +1056,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
                             int licz = 0;
-                            foreach (string s in naglowki)
+                            foreach (string s in naglowki_posilki)
                             {
                                 t.Rows[licz].Cells[0].Paragraphs[0].Append(s)
                                         .FontSize(9)
@@ -1340,7 +1067,7 @@ namespace WindowsFormsApplication1
                             for (DateTime data = dateFrom; data <= dateTo; data = data.AddDays(1))
                             {
                                 string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
-                                Jadlospis j = DAO.JadlospisDAO.SelectAll(dt, miasto, d.nazwa);
+                                Jadlospis j = DAO.JadlospisDAO.SelectAllSQL(dt, miasto, d.nazwa, d.plec);
                                 string dzien = data.DayOfWeek.ToString();
                                 t.Rows[0].Cells[licznik].Paragraphs[0].Append(dt + "\r\n" + GetDayOfWeek(dzien)).FontSize(9)
                             .Color(Color.Black).Bold().Font("Times New Roman");
@@ -1401,12 +1128,13 @@ namespace WindowsFormsApplication1
                         }
                     }
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+            //}
         }
+
         private static string GetMonthForDate(int month)
         {
             switch (month)

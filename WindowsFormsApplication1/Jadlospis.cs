@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
         public string sklad_podwieczorek;
         public string sklad_kolacja;
 
-        public Jadlospis(string data, Dieta dieta, string miasto,  string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad,string nazwa_podwieczorek, string nazwa_kolacja,string sklad_sniadanie,string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek,string sklad_kolacja)
+        public Jadlospis(string data, Dieta dieta, string miasto, string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad,string nazwa_podwieczorek, string nazwa_kolacja,string sklad_sniadanie,string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek,string sklad_kolacja)
         {
             this.data = data;
             this.dieta = dieta;
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
             this.sklad_kolacja = sklad_kolacja;
         }
 
-        public Jadlospis(int? identyfikator, int dzien, Dieta dieta,  string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad, string nazwa_podwieczorek, string nazwa_kolacja, string sklad_sniadanie, string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek, string sklad_kolacja)
+        public Jadlospis(int? identyfikator, int dzien, Dieta dieta, string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad, string nazwa_podwieczorek, string nazwa_kolacja, string sklad_sniadanie, string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek, string sklad_kolacja)
         {
             this.identyfikator = identyfikator;
             this.dzien = dzien;
