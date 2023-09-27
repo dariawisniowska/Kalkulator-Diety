@@ -9,27 +9,20 @@
         public double tluszcze_nn;
         public double sod;
         public double weglowodany_przyswajalne;
+        public double cukry;
         public double blonnik;
 
-        public WartosciOdzywcze(double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
+        public WartosciOdzywcze(double energia, double bialko, double tluszcze, double tluszcze_nn, double weglowodany, double weglowodany_przyswajalne, double cukry, double blonnik, double sod)
         {
             this.energia = energia;
             this.bialko = bialko;
+            this.cukry = cukry;
             this.weglowodany = weglowodany;
             this.sod = sod;
             this.tluszcze = tluszcze;
             this.tluszcze_nn = tluszcze_nn;
             this.blonnik = blonnik;
             this.weglowodany_przyswajalne = weglowodany_przyswajalne;
-        }
-        public WartosciOdzywcze(double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn)
-        {
-            this.energia = energia;
-            this.bialko = bialko;
-            this.weglowodany = weglowodany;
-            this.sod = sod;
-            this.tluszcze = tluszcze;
-            this.tluszcze_nn = tluszcze_nn;
         }
 
         public WartosciOdzywcze()
@@ -42,6 +35,7 @@
             this.tluszcze_nn = 0;
             this.blonnik = 0;
             this.weglowodany_przyswajalne = 0;
+            this.cukry = 0;
         }
     }
 }

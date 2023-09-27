@@ -6,17 +6,11 @@
         public char kategoria;
         public WartosciOdzywcze wartosciOdzywcze;
 
-        public Produkt(char kategoria, string nazwa, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
+        public Produkt(char kategoria, string nazwa, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik, double cukry)
         {
             this.kategoria = kategoria;
             this.nazwa = nazwa;
-            this.wartosciOdzywcze = new WartosciOdzywcze(energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn, weglowodany_przyswajalne,blonnik);
-        }
-        public Produkt(char kategoria, string nazwa, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn)
-        {
-            this.kategoria = kategoria;
-            this.nazwa = nazwa;
-            this.wartosciOdzywcze = new WartosciOdzywcze(energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn);
+            this.wartosciOdzywcze = new WartosciOdzywcze(energia, bialko, tluszcze, tluszcze_nn, weglowodany, weglowodany_przyswajalne, cukry, blonnik, sod);
         }
     }
 

@@ -10,8 +10,8 @@
 
 #pragma warning disable 1591
 
-namespace KalkulatorDiety {
-    
+namespace KalkulatorDiety
+{   
     
     /// <summary>
     ///Represents a strongly typed in-memory cache of data.
@@ -544,6 +544,8 @@ namespace KalkulatorDiety {
             
             private global::System.Data.DataColumn columnBłonnik;
             
+            private global::System.Data.DataColumn columnCukry;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ProduktDataTable() {
@@ -659,6 +661,14 @@ namespace KalkulatorDiety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryColumn {
+                get {
+                    return this.columnCukry;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -694,7 +704,7 @@ namespace KalkulatorDiety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProduktRow AddProduktRow(string Nazwa_produktu, char Kategoria, double Energia, double Białko, double Tłuszcze, double Węglowodany, double Sód, double Kwasy_tłuszczowe_nasycone, string Węglowodany_przyswajalne, string Błonnik) {
+            public ProduktRow AddProduktRow(string Nazwa_produktu, char Kategoria, double Energia, double Białko, double Tłuszcze, double Węglowodany, double Sód, double Kwasy_tłuszczowe_nasycone, string Węglowodany_przyswajalne, string Błonnik, string Cukry) {
                 ProduktRow rowProduktRow = ((ProduktRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nazwa_produktu,
@@ -706,7 +716,8 @@ namespace KalkulatorDiety {
                         Sód,
                         Kwasy_tłuszczowe_nasycone,
                         Węglowodany_przyswajalne,
-                        Błonnik};
+                        Błonnik,
+                        Cukry};
                 rowProduktRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProduktRow);
                 return rowProduktRow;
@@ -739,6 +750,7 @@ namespace KalkulatorDiety {
                 this.columnKwasy_tłuszczowe_nasycone = base.Columns["Kwasy tłuszczowe nasycone"];
                 this.columnWęglowodany_przyswajalne = base.Columns["Węglowodany przyswajalne"];
                 this.columnBłonnik = base.Columns["Błonnik"];
+                this.columnCukry = base.Columns["Cukry"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -764,6 +776,8 @@ namespace KalkulatorDiety {
                 base.Columns.Add(this.columnWęglowodany_przyswajalne);
                 this.columnBłonnik = new global::System.Data.DataColumn("Błonnik", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBłonnik);
+                this.columnCukry = new global::System.Data.DataColumn("Cukry", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukry);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1613,6 +1627,8 @@ namespace KalkulatorDiety {
             
             private global::System.Data.DataColumn columnMiasto;
             
+            private global::System.Data.DataColumn columnCukry;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DietyDataTable() {
@@ -1728,6 +1744,14 @@ namespace KalkulatorDiety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryColumn {
+                get {
+                    return this.columnCukry;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1763,7 +1787,7 @@ namespace KalkulatorDiety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DietyRow AddDietyRow(string Nazwa_diety, string Energia, string Białko, string Węglowodany, string Tłuszcze, string Sód, string Węglowodany_przyswajalne, string Błonnik, string Kwasy_tłuszczowe_nasycone, string Miasto) {
+            public DietyRow AddDietyRow(string Nazwa_diety, string Energia, string Białko, string Węglowodany, string Tłuszcze, string Sód, string Węglowodany_przyswajalne, string Błonnik, string Kwasy_tłuszczowe_nasycone, string Miasto, string Cukry) {
                 DietyRow rowDietyRow = ((DietyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nazwa_diety,
@@ -1775,7 +1799,8 @@ namespace KalkulatorDiety {
                         Węglowodany_przyswajalne,
                         Błonnik,
                         Kwasy_tłuszczowe_nasycone,
-                        Miasto};
+                        Miasto,
+                        Cukry};
                 rowDietyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDietyRow);
                 return rowDietyRow;
@@ -1808,6 +1833,7 @@ namespace KalkulatorDiety {
                 this.columnBłonnik = base.Columns["Błonnik"];
                 this.columnKwasy_tłuszczowe_nasycone = base.Columns["Kwasy tłuszczowe nasycone"];
                 this.columnMiasto = base.Columns["Miasto"];
+                this.columnCukry = base.Columns["Cukry"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1833,6 +1859,8 @@ namespace KalkulatorDiety {
                 base.Columns.Add(this.columnKwasy_tłuszczowe_nasycone);
                 this.columnMiasto = new global::System.Data.DataColumn("Miasto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMiasto);
+                this.columnCukry = new global::System.Data.DataColumn("Cukry", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukry);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3394,6 +3422,22 @@ namespace KalkulatorDiety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Cukry {
+                get {
+                    try {
+                        return ((string)(this[this.tableProdukt.CukryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Cukry\' w tabeli \'Produkt\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableProdukt.CukryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNazwa_produktuNull() {
                 return this.IsNull(this.tableProdukt.Nazwa_produktuColumn);
             }
@@ -3510,6 +3554,18 @@ namespace KalkulatorDiety {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetBłonnikNull() {
                 this[this.tableProdukt.BłonnikColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryNull() {
+                return this.IsNull(this.tableProdukt.CukryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryNull() {
+                this[this.tableProdukt.CukryColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4139,6 +4195,22 @@ namespace KalkulatorDiety {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Cukry {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.CukryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Cukry\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.CukryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNazwa_dietyNull() {
                 return this.IsNull(this.tableDiety.Nazwa_dietyColumn);
             }
@@ -4255,6 +4327,18 @@ namespace KalkulatorDiety {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetMiastoNull() {
                 this[this.tableDiety.MiastoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryNull() {
+                return this.IsNull(this.tableDiety.CukryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryNull() {
+                this[this.tableDiety.CukryColumn] = global::System.Convert.DBNull;
             }
         }
         

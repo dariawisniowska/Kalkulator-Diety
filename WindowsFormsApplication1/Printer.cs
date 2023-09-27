@@ -175,7 +175,7 @@
                     {
                         Paragraph p = document.InsertParagraph();
                         p.Alignment = Alignment.center;
-                        p.Append(jadlospis.data + ", \r\n" + jadlospis.dieta.nazwa + "\r\n")
+                        p.Append($"{jadlospis.data}, {GetDayOfWeek(Convert.ToDateTime(jadlospis.data).DayOfWeek.ToString()).ToLower()}\r\n{jadlospis.dieta.nazwa}\r\n{jadlospis.miasto}")
                         .Font("Times New Roman")
                         .FontSize(12)
                         .Color(Color.Black)
@@ -223,7 +223,7 @@
                                 t.SetColumnWidth(i, 1000);
 
                             //ŚNIADANIE
-                            p2.Append("\r\nŚniadanie: " + jadlospis.nazwa_sniadanie + "\r\n")
+                            p2.Append("\r\nŚniadanie: " + jadlospis.nazwa_sniadanie)
                            .Font("Times New Roman")
                            .FontSize(10)
                            .Color(Color.Black);
@@ -327,7 +327,7 @@
                             t.SetColumnWidth(0, 2000);
                             for (int i = 1; i < cl; i++)
                                 t.SetColumnWidth(i, 1000);
-                            p2.Append("\r\nII śniadanie: " + jadlospis.nazwa_IIsniadanie + "\r\n")
+                            p2.Append("\r\nII śniadanie: " + jadlospis.nazwa_IIsniadanie)
                                .Font("Times New Roman")
                                .FontSize(10)
                                .Color(Color.Black);
@@ -439,7 +439,7 @@
                             t.SetColumnWidth(0, 2000);
                             for (int i = 1; i < cl; i++)
                                 t.SetColumnWidth(i, 1000);
-                            p2.Append("\r\nObiad: " + jadlospis.nazwa_obiad + "\r\n")
+                            p2.Append("\r\nObiad: " + jadlospis.nazwa_obiad )
                                .Font("Times New Roman")
                                .FontSize(10)
                                .Color(Color.Black);
@@ -551,7 +551,7 @@
                             t.SetColumnWidth(0, 2000);
                             for (int i = 1; i < cl; i++)
                                 t.SetColumnWidth(i, 1000);
-                            p2.Append("\r\nPodwieczorek: " + jadlospis.nazwa_podwieczorek + "\r\n")
+                            p2.Append("\r\nPodwieczorek: " + jadlospis.nazwa_podwieczorek )
                                .Font("Times New Roman")
                                .FontSize(10)
                                .Color(Color.Black);
@@ -664,7 +664,7 @@
                             t.SetColumnWidth(0, 2000);
                             for (int i = 1; i < cl; i++)
                                 t.SetColumnWidth(i, 1000);
-                            p2.Append("\r\nKolacja: " + jadlospis.nazwa_kolacja + "\r\n")
+                            p2.Append("\r\nKolacja: " + jadlospis.nazwa_kolacja )
                            .Font("Times New Roman")
                            .FontSize(10)
                            .Color(Color.Black);
@@ -853,7 +853,7 @@
                             }
 
                         }
-                        p3.Append("\r\nWartości odżywcze:\r\n").Font("Times New Roman")
+                        p3.Append("\r\nWartości odżywcze:").Font("Times New Roman")
                                     .FontSize(9)
                                     .Color(Color.Black);
                         p3.InsertTableAfterSelf(t2);
@@ -996,7 +996,7 @@
                         t0.SetColumnWidth(2, 2000);
                         t0.Rows[0].Cells[0].Paragraphs[0].AppendPicture(picture);
                         t0.Rows[0].Cells[0].Paragraphs[0].Alignment = Alignment.center;
-                        t0.Rows[0].Cells[1].Paragraphs[0].Append(listaJadlospisow[0].data + "\r\nJADŁOSPIS")
+                        t0.Rows[0].Cells[1].Paragraphs[0].Append($"JADŁOSPIS\r\n{listaJadlospisow[0].data}\r\n{GetDayOfWeek(Convert.ToDateTime(listaJadlospisow[0].data).DayOfWeek.ToString()).ToLower()}\r\n{listaJadlospisow[0].miasto}")
                             .Font("Times New Roman")
                             .FontSize(12)
                             .Color(Color.Black)
@@ -1010,7 +1010,7 @@
                             Paragraph p2 = document.InsertParagraph();
                             p2.Alignment = Alignment.left;
 
-                            p2.Append("\r\n" + jadlospis.dieta.nazwa + "\r\n")
+                            p2.Append("\r\n" + jadlospis.dieta.nazwa)
                        .Font("Times New Roman")
                        .FontSize(10)
                        .Color(Color.Black)
@@ -1109,7 +1109,7 @@
                         Paragraph pWartosci = document.InsertParagraph();
                         pWartosci.Alignment = Alignment.left;
 
-                        pWartosci.Append("\r\n" + "Wartości odżywcze: " + "\r\n")
+                        pWartosci.Append("\r\n" + "Wartości odżywcze: ")
                    .Font("Times New Roman")
                    .FontSize(12)
                    .Color(Color.Black)
@@ -1120,7 +1120,7 @@
                             Paragraph p2 = document.InsertParagraph();
                             p2.Alignment = Alignment.left;
 
-                            p2.Append("\r\n" + jadlospis.dieta.nazwa + "\r\n")
+                            p2.Append("\r\n" + jadlospis.dieta.nazwa)
                        .Font("Times New Roman")
                        .FontSize(10)
                        .Color(Color.Black)
@@ -1242,9 +1242,6 @@
                             }
                             p4.InsertTableAfterSelf(t2);
                         }
-
-                        Paragraph p3 = document.InsertParagraph();
-                        p3.Alignment = Alignment.left;
 
                         //if (document.Footers.Even != null)
                         //    document.Footers.Even.Paragraphs[0].Append("\r\n* substancje lub produkty powodujące alergie lub rekacje nietolerancji zaznaczono numerkami w odniesieniu do załącznika \r\n* możliwe odchylenia +/- 10 %")

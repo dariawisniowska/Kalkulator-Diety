@@ -6,7 +6,7 @@
 
     class ProduktDAO
     {
-        public static void Insert(string nazwa, char kategoria, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double przyswajalne, double blonnik)
+        public static void Insert(string nazwa, char kategoria, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double przyswajalne, double blonnik, double cukry)
         {
             KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
             String XML_Location = @"DataBase.xml";
@@ -20,6 +20,7 @@
             drProdukty["Tłuszcze"] = tluszcze;
             drProdukty["Węglowodany"] = weglowodany;
             drProdukty["Węglowodany przyswajalne"] = przyswajalne;
+            drProdukty["Cukry"] = cukry;
             drProdukty["Błonnik"] = blonnik;
             drProdukty["Sód"] = sod;
             drProdukty["Kwasy tłuszczowe nasycone"] = tluszcze_nn;
@@ -27,10 +28,10 @@
             DataSet.WriteXml(XML_Location);
         }
 
-        public static void Update(Produkt produkt, string nazwa, char kategoria, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double przyswajalne, double blonnik)
+        public static void Update(Produkt produkt, string nazwa, char kategoria, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double przyswajalne, double blonnik, double cukry)
         {
             Delete(produkt);
-            Insert(nazwa, kategoria, energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn, przyswajalne, blonnik);
+            Insert(nazwa, kategoria, energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn, przyswajalne, blonnik, cukry);
         }
 
         public static void Delete(Produkt produkt)
@@ -62,11 +63,11 @@
                 {
                     try
                     {
-                        listaProduktow.Add(new Produkt(Convert.ToChar(DataSet.Produkt.Rows[i]["Kategoria"]), DataSet.Produkt.Rows[i]["Nazwa produktu"].ToString(), Convert.ToDouble(DataSet.Produkt.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Błonnik"])));
+                        listaProduktow.Add(new Produkt(Convert.ToChar(DataSet.Produkt.Rows[i]["Kategoria"]), DataSet.Produkt.Rows[i]["Nazwa produktu"].ToString(), Convert.ToDouble(DataSet.Produkt.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Błonnik"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Cukry"])));
                     }
                     catch
                     {
-                        Produkt p = new Produkt(Convert.ToChar(DataSet.Produkt.Rows[i]["Kategoria"]), DataSet.Produkt.Rows[i]["Nazwa produktu"].ToString(), Convert.ToDouble(DataSet.Produkt.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Kwasy tłuszczowe nasycone"]),0,0);
+                        Produkt p = new Produkt(Convert.ToChar(DataSet.Produkt.Rows[i]["Kategoria"]), DataSet.Produkt.Rows[i]["Nazwa produktu"].ToString(), Convert.ToDouble(DataSet.Produkt.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Produkt.Rows[i]["Błonnik"]),0);
                         listaProduktow.Add(p);
                     }
                 }

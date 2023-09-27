@@ -1,12 +1,13 @@
 ﻿namespace KalkulatorDiety.DAO
 {
+    using iTextSharp.text;
     using System;
     using System.Collections.Generic;
     using System.Data;
 
     public class DietaDAO
     {
-        public static void Insert(string nazwa, string miasto, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
+        public static void Insert(string nazwa, string miasto, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik, double cukry)
         {
             KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
             String XML_Location = @"DataBase.xml";
@@ -20,6 +21,7 @@
             drProdukty["Tłuszcze"] = tluszcze;
             drProdukty["Węglowodany"] = weglowodany;
             drProdukty["Węglowodany przyswajalne"] = weglowodany_przyswajalne;
+            drProdukty["Cukry"] = cukry;
             drProdukty["Błonnik"] = blonnik;
             drProdukty["Sód"] = sod;
             drProdukty["Kwasy tłuszczowe nasycone"] = tluszcze_nn;
@@ -27,10 +29,10 @@
             DataSet.WriteXml(XML_Location);
         }
 
-        public static void Update(Dieta dieta, string nazwa, string miasto, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik)
+        public static void Update(Dieta dieta, string nazwa, string miasto, double energia, double bialko, double tluszcze, double weglowodany, double sod, double tluszcze_nn, double weglowodany_przyswajalne, double blonnik, double cukry)
         {
             Delete(dieta);
-            Insert(nazwa, miasto, energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn, weglowodany_przyswajalne,blonnik);
+            Insert(nazwa, miasto, energia, bialko, tluszcze, weglowodany, sod, tluszcze_nn, weglowodany_przyswajalne,blonnik, cukry);
         }
 
         public static void Delete(Dieta dieta)
@@ -59,8 +61,17 @@
             {
                 for (int i = 0; i < DataSet.Diety.Rows.Count; i++)
                 {
-                    if (DataSet.Diety.Rows[i]["Miasto"].ToString()==miasto)
-                        listaDiet.Add(new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Błonnik"])));
+                    if (DataSet.Diety.Rows[i]["Miasto"].ToString() == miasto)
+                    {
+                        try
+                        {
+                            listaDiet.Add(new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Błonnik"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Cukry"])));
+                        }
+                        catch
+                        {
+                            listaDiet.Add(new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Błonnik"]), 0));
+                        }
+                    }
                 }
             }
 
@@ -81,13 +92,13 @@
                     {
                         try
                         {
-                            dieta = new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Błonnik"]));
+                            dieta = new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Błonnik"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Cukry"]));
                         }
                         catch
                         {
-                            dieta = new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]),0,0);
+                            dieta = new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), Convert.ToDouble(DataSet.Diety.Rows[i]["Energia"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Białko"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Tłuszcze"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Sód"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Kwasy tłuszczowe nasycone"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Węglowodany przyswajalne"]), Convert.ToDouble(DataSet.Diety.Rows[i]["Błonnik"]), 0);
                         }
-                        }
+                    }
                 }
             }
 
