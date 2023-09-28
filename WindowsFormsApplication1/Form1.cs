@@ -843,9 +843,8 @@
                 switch (tab)
                 {
                     case 0:
-                        int liczba = lv_sniadanie.Items.Count;
                         int wybrany = lv_sniadanie.SelectedIndices[0];
-                        string[] arr = new string[10];
+                        string[] arr = new string[11];
                         double masa = double.Parse(tb_masa.Text);
                         arr[0] = lv_sniadanie.Items[wybrany].SubItems[0].Text;
                         arr[1] = masa.ToString();
@@ -865,9 +864,8 @@
                         LiczSrednia();
                         break;
                     case 1:
-                        liczba = lv_IIsniadanie.Items.Count;
                         wybrany = lv_IIsniadanie.SelectedIndices[0];
-                        arr = new string[10];
+                        arr = new string[11];
                         masa = double.Parse(tb_masa.Text);
                         arr[0] = lv_IIsniadanie.Items[wybrany].SubItems[0].Text;
                         arr[1] = masa.ToString();
@@ -887,9 +885,8 @@
                         LiczSrednia();
                         break;
                     case 2:
-                        liczba = lv_obiad.Items.Count;
                         wybrany = lv_obiad.SelectedIndices[0];
-                        arr = new string[10];
+                        arr = new string[11];
                         masa = double.Parse(tb_masa.Text);
                         arr[0] = lv_obiad.Items[wybrany].SubItems[0].Text;
                         arr[1] = masa.ToString();
@@ -909,9 +906,8 @@
                         LiczSrednia();
                         break;
                     case 3:
-                        liczba = lv_podwieczorek.Items.Count;
                         wybrany = lv_podwieczorek.SelectedIndices[0];
-                        arr = new string[10];
+                        arr = new string[11];
                         masa = double.Parse(tb_masa.Text);
                         arr[0] = lv_podwieczorek.Items[wybrany].SubItems[0].Text;
                         arr[1] = masa.ToString();
@@ -931,9 +927,8 @@
                         LiczSrednia();
                         break;
                     case 4:
-                        liczba = lv_kolacja.Items.Count;
                         wybrany = lv_kolacja.SelectedIndices[0];
-                        arr = new string[10];
+                        arr = new string[11];
                         masa = double.Parse(tb_masa.Text);
                         arr[0] = lv_kolacja.Items[wybrany].SubItems[0].Text;
                         arr[1] = masa.ToString();
@@ -955,9 +950,9 @@
 
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można edytować", "Błąd");
+                MessageBox.Show($"Nie można edytować.{ex.Message}", "Błąd");
             }
         }
 
@@ -2897,8 +2892,8 @@
                     arg[6] = arr[6];
                     arg[7] = arr[7];
                     arg[8] = "0";
-                    arg[9] = arr[9];
-                    arg[10] = arr[10];
+                    arg[9] = arr[8];
+                    arg[10] = arr[9];
                     itm = new ListViewItem(arg);
                 }
                 else
@@ -3028,6 +3023,7 @@
             receptura_cukry.Text = Math.Round(suma_receptura[6], 2).ToString() + " g";
             receptura_blonnik.Text = Math.Round(suma_receptura[7], 2).ToString() + " mg";
             receptura_ktn.Text = Math.Round(suma_receptura[3], 2).ToString() + " g";
+            receptura_sol.Text = Math.Round(suma_receptura[8] * 0.0025, 2).ToString() + " g";
         }
 
         private void receptura_kategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -3188,6 +3184,7 @@
                                 break;
                         }
 
+                        arr[0] = Lista[ktory].nazwa;
                         arr[1] = masa.ToString();
                         arr[2] = Math.Round(Lista[ktory].wartosciOdzywcze.energia * masa / 100.0, 2).ToString();
                         arr[3] = Math.Round(Lista[ktory].wartosciOdzywcze.bialko * masa / 100.0, 2).ToString();
@@ -3251,12 +3248,11 @@
 
         private void receptura_dodaj_edytuj_Click(object sender, EventArgs e)
         {
-
             try
             {
                 int liczba = receptura_sklad.Items.Count;
                 int wybrany = receptura_sklad.SelectedIndices[0];
-                string[] arr = new string[10];
+                string[] arr = new string[11];
                 double masa = double.Parse(receptura_masa.Text);
                 arr[0] = receptura_sklad.Items[wybrany].SubItems[0].Text;
                 arr[1] = masa.ToString();
@@ -3274,17 +3270,15 @@
                 receptura_sklad.Items.Remove(receptura_sklad.Items[wybrany]);
                 receptura_sklad.Items.Insert(wybrany, itm);
                 LiczSredniaDlaReceptur();
-
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show($"Nie można edytować. {ex.Message}", "Błąd");
             }
         }
 
         private void receptura_up_Click(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -3306,7 +3300,6 @@
 
         private void receptura_down_Click(object sender, EventArgs e)
         {
-
             try
             {
 
@@ -3729,8 +3722,8 @@
                     arg[6] = arr[6];
                     arg[7] = arr[7];
                     arg[8] = "0";
-                    arg[9] = arr[9];
-                    arg[10] = arr[10];
+                    arg[9] = arr[8];
+                    arg[10] = arr[9];
                     itm = new ListViewItem(arg);
                 }
                 else
@@ -3756,8 +3749,8 @@
                     arg[6] = arr[6];
                     arg[7] = arr[7];
                     arg[8] = "0";
-                    arg[9] = arr[9];
-                    arg[10] = arr[10];
+                    arg[9] = arr[8];
+                    arg[10] = arr[9];
                     itm = new ListViewItem(arg);
                 }
                 else
@@ -3783,8 +3776,8 @@
                     arg[6] = arr[6];
                     arg[7] = arr[7];
                     arg[8] = "0";
-                    arg[9] = arr[9];
-                    arg[10] = arr[10];
+                    arg[9] = arr[8];
+                    arg[10] = arr[9];
                     itm = new ListViewItem(arg);
                 }
                 else
@@ -3810,8 +3803,8 @@
                     arg[6] = arr[6];
                     arg[7] = arr[7];
                     arg[8] = "0";
-                    arg[9] = arr[9];
-                    arg[10] = arr[10];
+                    arg[9] = arr[8];
+                    arg[10] = arr[9];
                     itm = new ListViewItem(arg);
                 }
                 else
@@ -3837,8 +3830,8 @@
                     arg[6] = arr[6];
                     arg[7] = arr[7];
                     arg[8] = "0";
-                    arg[9] = arr[9];
-                    arg[10] = arr[10];
+                    arg[9] = arr[8];
+                    arg[10] = arr[9];
                     itm = new ListViewItem(arg);
                 }
                 else
@@ -3902,8 +3895,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -3929,8 +3922,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -3956,8 +3949,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -3983,8 +3976,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -4091,8 +4084,8 @@
                             arg[6] = arr[6];
                             arg[7] = arr[7];
                             arg[8] = "0";
-                            arg[9] = arr[9];
-                            arg[10] = arr[10];
+                            arg[9] = arr[8];
+                            arg[10] = arr[9];
                             itm = new ListViewItem(arg);
                         }
                         else
@@ -4118,8 +4111,8 @@
                             arg[6] = arr[6];
                             arg[7] = arr[7];
                             arg[8] = "0";
-                            arg[9] = arr[9];
-                            arg[10] = arr[10];
+                            arg[9] = arr[8];
+                            arg[10] = arr[9];
                             itm = new ListViewItem(arg);
                         }
                         else
@@ -4145,8 +4138,8 @@
                             arg[6] = arr[6];
                             arg[7] = arr[7];
                             arg[8] = "0";
-                            arg[9] = arr[9];
-                            arg[10] = arr[10];
+                            arg[9] = arr[8];
+                            arg[10] = arr[9];
                             itm = new ListViewItem(arg);
                         }
                         else
@@ -4172,8 +4165,8 @@
                             arg[6] = arr[6];
                             arg[7] = arr[7];
                             arg[8] = "0";
-                            arg[9] = arr[9];
-                            arg[10] = arr[10];
+                            arg[9] = arr[8];
+                            arg[10] = arr[9];
                             itm = new ListViewItem(arg);
                         }
                         else
@@ -4199,8 +4192,8 @@
                             arg[6] = arr[6];
                             arg[7] = arr[7];
                             arg[8] = "0";
-                            arg[9] = arr[9];
-                            arg[10] = arr[10];
+                            arg[9] = arr[8];
+                            arg[10] = arr[9];
                             itm = new ListViewItem(arg);
                         }
                         else
@@ -4308,11 +4301,12 @@
             jadlospis_bialko.Text = Math.Round(suma_jad[5, 1], 2).ToString() + " g";
             jadlospis_tluszcze.Text = Math.Round(suma_jad[5, 2], 2).ToString() + " g";
             jadlospis_ktn.Text = Math.Round(suma_jad[5, 3], 2).ToString() + " g";
-            jadlospis_weglowodany.Text = Math.Round(suma_jad[5, 4], 2).ToString() + " mg";
+            jadlospis_weglowodany.Text = Math.Round(suma_jad[5, 4], 2).ToString() + " g";
             jadlospis_przyswajalne.Text = Math.Round(suma_jad[5, 5], 2).ToString() + " g";
             jadlospis_cukry.Text = Math.Round(suma_jad[5, 6], 2).ToString() + " g";
             jadlospis_blonnik.Text = Math.Round(suma_jad[5, 7], 2).ToString() + " g";
-            jadlospis_sod.Text = Math.Round(suma_jad[5, 8], 2).ToString() + " g";
+            jadlospis_sod.Text = Math.Round(suma_jad[5, 8], 2).ToString() + " mg";
+            jadlospis_sol.Text = Math.Round(suma_jad[5, 8]*0.0025, 2).ToString() + " g";
 
             for (int k = 0; k < 9; k++)
             {
@@ -5123,8 +5117,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -5161,8 +5155,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -5199,8 +5193,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -5237,8 +5231,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -5275,8 +5269,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -5320,7 +5314,7 @@
             kontrola_cukry.Text = Math.Round(suma[5, 6], 2).ToString() + " g";
             label113.Text = Math.Round(suma[5, 7], 2).ToString() + " g";
             label128.Text = Math.Round(suma[5, 8], 2).ToString() + " mg";
-
+            kontrola_sol.Text = Math.Round(suma[5, 8]*0.0025, 2).ToString() + " g";
 
             for (int k = 0; k < 9; k++)
             {
@@ -5420,7 +5414,7 @@
                         }
                     }
                     else
-                        circularProgressBar1.Value = 99;
+                        circularProgressBar1.Value = 0;
                     if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.cukry != 0)
                     {
                         if (Convert.ToInt32(suma[5, 6] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.cukry) > 100)
@@ -5435,7 +5429,7 @@
                         }
                     }
                     else
-                        pb_kontrola_cukry.Value = 99;
+                        pb_kontrola_cukry.Value = 0;
                     if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik != 0)
                     {
                         if (Convert.ToInt32(suma[5, 7] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik) > 100)
@@ -5450,7 +5444,7 @@
                         }
                     }
                     else
-                        circularProgressBar2.Value = 99;
+                        circularProgressBar2.Value = 0;
                     if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod != 0)
                     {
                         if (Convert.ToInt32(suma[5, 8] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod) > 100)
@@ -5465,7 +5459,7 @@
                         }
                     }
                     else
-                        circularProgressBar4.Value = 99;
+                        circularProgressBar4.Value = 0;
                     if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn != 0)
                     {
                         if (Convert.ToInt32(suma[5, 3] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn) > 100)
@@ -5480,7 +5474,7 @@
                         }
                     }
                     else
-                        circularProgressBar3.Value = 99;
+                        circularProgressBar3.Value = 0;
                 }
             }
             catch

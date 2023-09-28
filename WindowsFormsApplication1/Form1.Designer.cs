@@ -88,6 +88,8 @@
             this.dekadowka_dekadowka = new System.Windows.Forms.ComboBox();
             this.panel_produkty = new System.Windows.Forms.Panel();
             this.produkt_przegladaj = new System.Windows.Forms.Panel();
+            this.label150 = new System.Windows.Forms.Label();
+            this.produkty_cukry = new System.Windows.Forms.TextBox();
             this.label102 = new System.Windows.Forms.Label();
             this.label104 = new System.Windows.Forms.Label();
             this.produkty_blonnik = new System.Windows.Forms.TextBox();
@@ -135,6 +137,8 @@
             this.dieta_miasto = new System.Windows.Forms.ComboBox();
             this.label90 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label119 = new System.Windows.Forms.Label();
+            this.dieta_cukry = new System.Windows.Forms.TextBox();
             this.label101 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
             this.dieta_blonnik = new System.Windows.Forms.TextBox();
@@ -177,6 +181,16 @@
             this.jednostka_jednostka = new System.Windows.Forms.ComboBox();
             this.jednostka_label = new System.Windows.Forms.Label();
             this.panel_receptura = new System.Windows.Forms.Panel();
+            this.receptura_cukry = new System.Windows.Forms.Label();
+            this.label155 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.receptura_ktn = new System.Windows.Forms.Label();
+            this.receptura_weglowodany = new System.Windows.Forms.Label();
+            this.label153 = new System.Windows.Forms.Label();
+            this.receptura_sol = new System.Windows.Forms.Label();
+            this.label151 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.receptura_przyswajalne = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -201,6 +215,7 @@
             this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader107 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader101 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader102 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.receptura_posilek = new System.Windows.Forms.ComboBox();
@@ -236,6 +251,14 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dekadowka_wczytaj_dekadowka = new System.Windows.Forms.ComboBox();
             this.panel_jadlospis = new System.Windows.Forms.Panel();
+            this.jadlospis_sol = new System.Windows.Forms.Label();
+            this.label158 = new System.Windows.Forms.Label();
+            this.jadlospis_cukry = new System.Windows.Forms.Label();
+            this.label156 = new System.Windows.Forms.Label();
+            this.jadlospis_cb_cukry = new CircularProgressBar.CircularProgressBar();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.label86 = new System.Windows.Forms.Label();
             this.label107 = new System.Windows.Forms.Label();
@@ -287,6 +310,7 @@
             this.columnHeader46 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader47 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader48 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader108 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader91 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader92 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -301,6 +325,7 @@
             this.columnHeader54 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader55 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader56 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader109 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader93 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader94 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -315,6 +340,7 @@
             this.columnHeader62 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader63 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader64 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader110 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader95 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader96 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -329,6 +355,7 @@
             this.columnHeader70 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader71 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader72 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader111 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader97 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader98 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -343,6 +370,7 @@
             this.columnHeader78 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader79 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader80 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader112 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader99 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader100 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -382,6 +410,7 @@
             this.c_tluszcze_nn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.c_weglowodany = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader81 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.c_cukry = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader82 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.c_sod = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -394,6 +423,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader103 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader83 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader84 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_IIsniadanie = new System.Windows.Forms.Label();
@@ -409,6 +439,7 @@
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader104 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader85 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader86 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_obiad = new System.Windows.Forms.Label();
@@ -424,6 +455,7 @@
             this.columnHeader22 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader105 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader87 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader88 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_podwieczorek = new System.Windows.Forms.Label();
@@ -439,6 +471,7 @@
             this.columnHeader30 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader31 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader32 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader106 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader89 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader90 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_kolacja = new System.Windows.Forms.Label();
@@ -493,6 +526,17 @@
             this.label98 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
             this.panel_glowny = new System.Windows.Forms.Panel();
+            this.sol_text = new System.Windows.Forms.Label();
+            this.label149 = new System.Windows.Forms.Label();
+            this.plus_cukry = new System.Windows.Forms.Label();
+            this.c_text = new System.Windows.Forms.Label();
+            this.label152 = new System.Windows.Forms.Label();
+            this.pb_cukry = new CircularProgressBar.CircularProgressBar();
+            this.label106 = new System.Windows.Forms.Label();
+            this.plus_przyswajalne = new System.Windows.Forms.Label();
+            this.wp_text = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.pb_przyswajalne = new CircularProgressBar.CircularProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dekadówkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszJadłospisDekadówkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -506,6 +550,12 @@
             this.posiłekToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dzieńToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_kontrola = new System.Windows.Forms.Panel();
+            this.label160 = new System.Windows.Forms.Label();
+            this.kontrola_plus_cukry = new System.Windows.Forms.Label();
+            this.kontrola_cukry = new System.Windows.Forms.Label();
+            this.pb_kontrola_cukry = new CircularProgressBar.CircularProgressBar();
+            this.kontrola_sol = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
             this.label141 = new System.Windows.Forms.Label();
             this.label142 = new System.Windows.Forms.Label();
             this.label143 = new System.Windows.Forms.Label();
@@ -558,56 +608,6 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label79 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.plus_przyswajalne = new System.Windows.Forms.Label();
-            this.pb_przyswajalne = new CircularProgressBar.CircularProgressBar();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
-            this.wp_text = new System.Windows.Forms.Label();
-            this.plus_cukry = new System.Windows.Forms.Label();
-            this.c_text = new System.Windows.Forms.Label();
-            this.label152 = new System.Windows.Forms.Label();
-            this.pb_cukry = new CircularProgressBar.CircularProgressBar();
-            this.label149 = new System.Windows.Forms.Label();
-            this.sol_text = new System.Windows.Forms.Label();
-            this.c_cukry = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader103 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader104 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader105 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader106 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.receptura_sol = new System.Windows.Forms.Label();
-            this.label151 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.receptura_ktn = new System.Windows.Forms.Label();
-            this.receptura_weglowodany = new System.Windows.Forms.Label();
-            this.label153 = new System.Windows.Forms.Label();
-            this.receptura_cukry = new System.Windows.Forms.Label();
-            this.label155 = new System.Windows.Forms.Label();
-            this.columnHeader107 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label119 = new System.Windows.Forms.Label();
-            this.dieta_cukry = new System.Windows.Forms.TextBox();
-            this.label150 = new System.Windows.Forms.Label();
-            this.produkty_cukry = new System.Windows.Forms.TextBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.jadlospis_cukry = new System.Windows.Forms.Label();
-            this.label156 = new System.Windows.Forms.Label();
-            this.jadlospis_cb_cukry = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_sol = new System.Windows.Forms.Label();
-            this.label158 = new System.Windows.Forms.Label();
-            this.label154 = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
-            this.kontrola_plus_cukry = new System.Windows.Forms.Label();
-            this.kontrola_cukry = new System.Windows.Forms.Label();
-            this.pb_kontrola_cukry = new CircularProgressBar.CircularProgressBar();
-            this.label160 = new System.Windows.Forms.Label();
-            this.columnHeader108 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader109 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader110 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader111 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader112 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menu.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
@@ -1461,6 +1461,26 @@
             this.produkt_przegladaj.Size = new System.Drawing.Size(924, 434);
             this.produkt_przegladaj.TabIndex = 70;
             // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label150.Location = new System.Drawing.Point(479, 190);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(77, 21);
+            this.label150.TabIndex = 79;
+            this.label150.Text = "Cukry [g]:";
+            // 
+            // produkty_cukry
+            // 
+            this.produkty_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkty_cukry.Enabled = false;
+            this.produkty_cukry.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkty_cukry.Location = new System.Drawing.Point(648, 187);
+            this.produkty_cukry.Name = "produkty_cukry";
+            this.produkty_cukry.Size = new System.Drawing.Size(203, 29);
+            this.produkty_cukry.TabIndex = 80;
+            // 
             // label102
             // 
             this.label102.AutoSize = true;
@@ -2010,6 +2030,26 @@
             this.panel12.Size = new System.Drawing.Size(887, 494);
             this.panel12.TabIndex = 70;
             // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label119.Location = new System.Drawing.Point(469, 161);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(77, 21);
+            this.label119.TabIndex = 74;
+            this.label119.Text = "Cukry [g]:";
+            // 
+            // dieta_cukry
+            // 
+            this.dieta_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dieta_cukry.Enabled = false;
+            this.dieta_cukry.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dieta_cukry.Location = new System.Drawing.Point(638, 158);
+            this.dieta_cukry.Name = "dieta_cukry";
+            this.dieta_cukry.Size = new System.Drawing.Size(203, 29);
+            this.dieta_cukry.TabIndex = 75;
+            // 
             // label101
             // 
             this.label101.AutoSize = true;
@@ -2512,11 +2552,161 @@
             this.panel_receptura.Controls.Add(this.pictureBox18);
             this.panel_receptura.Controls.Add(this.receptura_wczytaj);
             this.panel_receptura.Controls.Add(this.label61);
-            this.panel_receptura.Location = new System.Drawing.Point(512, 265);
+            this.panel_receptura.Location = new System.Drawing.Point(320, 253);
             this.panel_receptura.Name = "panel_receptura";
-            this.panel_receptura.Size = new System.Drawing.Size(867, 356);
+            this.panel_receptura.Size = new System.Drawing.Size(40, 41);
             this.panel_receptura.TabIndex = 72;
             this.panel_receptura.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_receptura_Paint);
+            // 
+            // receptura_cukry
+            // 
+            this.receptura_cukry.AutoSize = true;
+            this.receptura_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.receptura_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.receptura_cukry.Location = new System.Drawing.Point(668, 583);
+            this.receptura_cukry.MaximumSize = new System.Drawing.Size(80, 0);
+            this.receptura_cukry.MinimumSize = new System.Drawing.Size(80, 0);
+            this.receptura_cukry.Name = "receptura_cukry";
+            this.receptura_cukry.Size = new System.Drawing.Size(80, 20);
+            this.receptura_cukry.TabIndex = 146;
+            this.receptura_cukry.Text = "0 kcal";
+            this.receptura_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label155.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label155.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label155.Location = new System.Drawing.Point(676, 563);
+            this.label155.MaximumSize = new System.Drawing.Size(60, 0);
+            this.label155.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(60, 20);
+            this.label155.TabIndex = 145;
+            this.label155.Text = "Cukry";
+            this.label155.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.label65.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label65.Location = new System.Drawing.Point(465, 570);
+            this.label65.MaximumSize = new System.Drawing.Size(80, 0);
+            this.label65.MinimumSize = new System.Drawing.Size(80, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(80, 13);
+            this.label65.TabIndex = 144;
+            this.label65.Text = "ogółem";
+            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label110.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label110.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label110.Location = new System.Drawing.Point(362, 577);
+            this.label110.MaximumSize = new System.Drawing.Size(75, 0);
+            this.label110.MinimumSize = new System.Drawing.Size(75, 0);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(75, 15);
+            this.label110.TabIndex = 143;
+            this.label110.Text = "nasycone";
+            this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label112.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label112.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label112.Location = new System.Drawing.Point(362, 562);
+            this.label112.MaximumSize = new System.Drawing.Size(75, 0);
+            this.label112.MinimumSize = new System.Drawing.Size(75, 0);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(75, 15);
+            this.label112.TabIndex = 142;
+            this.label112.Text = "tłuszczowe";
+            this.label112.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // receptura_ktn
+            // 
+            this.receptura_ktn.AutoSize = true;
+            this.receptura_ktn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_ktn.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.receptura_ktn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.receptura_ktn.Location = new System.Drawing.Point(359, 594);
+            this.receptura_ktn.MaximumSize = new System.Drawing.Size(80, 0);
+            this.receptura_ktn.MinimumSize = new System.Drawing.Size(80, 0);
+            this.receptura_ktn.Name = "receptura_ktn";
+            this.receptura_ktn.Size = new System.Drawing.Size(80, 20);
+            this.receptura_ktn.TabIndex = 141;
+            this.receptura_ktn.Text = "0 kcal";
+            this.receptura_ktn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // receptura_weglowodany
+            // 
+            this.receptura_weglowodany.AutoSize = true;
+            this.receptura_weglowodany.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_weglowodany.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.receptura_weglowodany.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.receptura_weglowodany.Location = new System.Drawing.Point(467, 583);
+            this.receptura_weglowodany.MaximumSize = new System.Drawing.Size(80, 0);
+            this.receptura_weglowodany.MinimumSize = new System.Drawing.Size(80, 0);
+            this.receptura_weglowodany.Name = "receptura_weglowodany";
+            this.receptura_weglowodany.Size = new System.Drawing.Size(80, 20);
+            this.receptura_weglowodany.TabIndex = 140;
+            this.receptura_weglowodany.Text = "0 kcal";
+            this.receptura_weglowodany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label153
+            // 
+            this.label153.AutoSize = true;
+            this.label153.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
+            this.label153.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label153.Location = new System.Drawing.Point(475, 561);
+            this.label153.MaximumSize = new System.Drawing.Size(65, 0);
+            this.label153.MinimumSize = new System.Drawing.Size(65, 0);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(65, 9);
+            this.label153.TabIndex = 139;
+            this.label153.Text = "Węglowodany";
+            this.label153.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // receptura_sol
+            // 
+            this.receptura_sol.AutoSize = true;
+            this.receptura_sol.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.receptura_sol.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.receptura_sol.Location = new System.Drawing.Point(868, 644);
+            this.receptura_sol.MaximumSize = new System.Drawing.Size(80, 0);
+            this.receptura_sol.MinimumSize = new System.Drawing.Size(80, 0);
+            this.receptura_sol.Name = "receptura_sol";
+            this.receptura_sol.Size = new System.Drawing.Size(80, 20);
+            this.receptura_sol.TabIndex = 138;
+            this.receptura_sol.Text = "0 kcal";
+            this.receptura_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label151
+            // 
+            this.label151.AutoSize = true;
+            this.label151.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label151.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label151.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label151.Location = new System.Drawing.Point(876, 624);
+            this.label151.MaximumSize = new System.Drawing.Size(60, 0);
+            this.label151.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(60, 20);
+            this.label151.TabIndex = 137;
+            this.label151.Text = "Sól";
+            this.label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label56
             // 
@@ -2809,15 +2999,18 @@
             this.columnHeader40.Text = "Węgl. przyswajalne [g]";
             this.columnHeader40.Width = 100;
             // 
+            // columnHeader107
+            // 
+            this.columnHeader107.Text = "Cukry [g]";
+            this.columnHeader107.Width = 49;
+            // 
             // columnHeader101
             // 
-            this.columnHeader101.DisplayIndex = 9;
             this.columnHeader101.Text = "Błonnik [g]";
             this.columnHeader101.Width = 57;
             // 
             // columnHeader102
             // 
-            this.columnHeader102.DisplayIndex = 10;
             this.columnHeader102.Text = "Sód [mg]";
             this.columnHeader102.Width = 55;
             // 
@@ -3268,6 +3461,143 @@
             this.panel_jadlospis.Size = new System.Drawing.Size(36, 56);
             this.panel_jadlospis.TabIndex = 62;
             this.panel_jadlospis.Visible = false;
+            // 
+            // jadlospis_sol
+            // 
+            this.jadlospis_sol.AutoSize = true;
+            this.jadlospis_sol.BackColor = System.Drawing.Color.Transparent;
+            this.jadlospis_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.jadlospis_sol.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.jadlospis_sol.Location = new System.Drawing.Point(861, 679);
+            this.jadlospis_sol.MaximumSize = new System.Drawing.Size(95, 0);
+            this.jadlospis_sol.MinimumSize = new System.Drawing.Size(95, 0);
+            this.jadlospis_sol.Name = "jadlospis_sol";
+            this.jadlospis_sol.Size = new System.Drawing.Size(95, 20);
+            this.jadlospis_sol.TabIndex = 179;
+            this.jadlospis_sol.Text = "0 g";
+            this.jadlospis_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.BackColor = System.Drawing.Color.Transparent;
+            this.label158.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label158.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label158.Location = new System.Drawing.Point(860, 660);
+            this.label158.MaximumSize = new System.Drawing.Size(95, 0);
+            this.label158.MinimumSize = new System.Drawing.Size(95, 0);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(95, 20);
+            this.label158.TabIndex = 178;
+            this.label158.Text = "Sól";
+            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // jadlospis_cukry
+            // 
+            this.jadlospis_cukry.AutoSize = true;
+            this.jadlospis_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.jadlospis_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.jadlospis_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.jadlospis_cukry.Location = new System.Drawing.Point(666, 669);
+            this.jadlospis_cukry.MaximumSize = new System.Drawing.Size(55, 0);
+            this.jadlospis_cukry.MinimumSize = new System.Drawing.Size(55, 0);
+            this.jadlospis_cukry.Name = "jadlospis_cukry";
+            this.jadlospis_cukry.Size = new System.Drawing.Size(55, 20);
+            this.jadlospis_cukry.TabIndex = 177;
+            this.jadlospis_cukry.Text = "0 kcal";
+            this.jadlospis_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label156.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label156.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label156.Location = new System.Drawing.Point(667, 653);
+            this.label156.MaximumSize = new System.Drawing.Size(55, 0);
+            this.label156.MinimumSize = new System.Drawing.Size(55, 0);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(55, 15);
+            this.label156.TabIndex = 176;
+            this.label156.Text = "Cukry";
+            this.label156.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // jadlospis_cb_cukry
+            // 
+            this.jadlospis_cb_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.jadlospis_cb_cukry.AnimationSpeed = 500;
+            this.jadlospis_cb_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.jadlospis_cb_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.jadlospis_cb_cukry.ForeColor = System.Drawing.Color.Gray;
+            this.jadlospis_cb_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.jadlospis_cb_cukry.InnerMargin = 2;
+            this.jadlospis_cb_cukry.InnerWidth = -1;
+            this.jadlospis_cb_cukry.Location = new System.Drawing.Point(648, 625);
+            this.jadlospis_cb_cukry.MarqueeAnimationSpeed = 2000;
+            this.jadlospis_cb_cukry.Name = "jadlospis_cb_cukry";
+            this.jadlospis_cb_cukry.OuterColor = System.Drawing.Color.White;
+            this.jadlospis_cb_cukry.OuterMargin = -25;
+            this.jadlospis_cb_cukry.OuterWidth = 26;
+            this.jadlospis_cb_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
+            this.jadlospis_cb_cukry.ProgressWidth = 10;
+            this.jadlospis_cb_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.jadlospis_cb_cukry.Size = new System.Drawing.Size(90, 92);
+            this.jadlospis_cb_cukry.StartAngle = 270;
+            this.jadlospis_cb_cukry.SubscriptColor = System.Drawing.Color.Gray;
+            this.jadlospis_cb_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
+            this.jadlospis_cb_cukry.SubscriptText = "";
+            this.jadlospis_cb_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.jadlospis_cb_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
+            this.jadlospis_cb_cukry.SuperscriptText = "";
+            this.jadlospis_cb_cukry.TabIndex = 175;
+            this.jadlospis_cb_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
+            this.jadlospis_cb_cukry.Value = 15;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label70.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.label70.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label70.Location = new System.Drawing.Point(378, 665);
+            this.label70.MaximumSize = new System.Drawing.Size(55, 0);
+            this.label70.MinimumSize = new System.Drawing.Size(55, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(55, 12);
+            this.label70.TabIndex = 174;
+            this.label70.Text = "nasycone";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label71.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.label71.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label71.Location = new System.Drawing.Point(376, 654);
+            this.label71.MaximumSize = new System.Drawing.Size(60, 0);
+            this.label71.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(60, 12);
+            this.label71.TabIndex = 173;
+            this.label71.Text = "tłuszczowe";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label74.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.label74.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label74.Location = new System.Drawing.Point(386, 644);
+            this.label74.MaximumSize = new System.Drawing.Size(40, 0);
+            this.label74.MinimumSize = new System.Drawing.Size(42, 0);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(42, 12);
+            this.label74.TabIndex = 172;
+            this.label74.Text = "Kwasy";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label85
             // 
@@ -4064,14 +4394,17 @@
             this.columnHeader48.Text = "Węgl. przyswajalne [g]";
             this.columnHeader48.Width = 100;
             // 
+            // columnHeader108
+            // 
+            this.columnHeader108.Text = "Cukry [g]";
+            this.columnHeader108.Width = 49;
+            // 
             // columnHeader91
             // 
-            this.columnHeader91.DisplayIndex = 9;
             this.columnHeader91.Text = "Błonnik [g]";
             // 
             // columnHeader92
             // 
-            this.columnHeader92.DisplayIndex = 10;
             this.columnHeader92.Text = "Sód [mg]";
             this.columnHeader92.Width = 55;
             // 
@@ -4170,6 +4503,10 @@
             // 
             this.columnHeader56.Text = "Węgl. przyswajalne [g]";
             this.columnHeader56.Width = 100;
+            // 
+            // columnHeader109
+            // 
+            this.columnHeader109.Text = "Cukry [g]";
             // 
             // columnHeader93
             // 
@@ -4274,6 +4611,10 @@
             this.columnHeader64.Text = "Węgl. przyswajalne [g]";
             this.columnHeader64.Width = 100;
             // 
+            // columnHeader110
+            // 
+            this.columnHeader110.Text = "Cukry [g]";
+            // 
             // columnHeader95
             // 
             this.columnHeader95.Text = "Błonnik [g]";
@@ -4377,6 +4718,10 @@
             this.columnHeader72.Text = "Węgl. przyswajalne [g]";
             this.columnHeader72.Width = 100;
             // 
+            // columnHeader111
+            // 
+            this.columnHeader111.Text = "Cukry [g]";
+            // 
             // columnHeader97
             // 
             this.columnHeader97.Text = "Błonnik [g]";
@@ -4479,6 +4824,10 @@
             // 
             this.columnHeader80.Text = "Węgl. przyswajalne [g]";
             this.columnHeader80.Width = 100;
+            // 
+            // columnHeader112
+            // 
+            this.columnHeader112.Text = "Cukry [g]";
             // 
             // columnHeader99
             // 
@@ -4890,6 +5239,11 @@
             this.columnHeader81.Text = "Węgl. przyswajalne [g]";
             this.columnHeader81.Width = 100;
             // 
+            // c_cukry
+            // 
+            this.c_cukry.Text = "Cukry [g]";
+            this.c_cukry.Width = 48;
+            // 
             // columnHeader82
             // 
             this.columnHeader82.Text = "Błonnik [g]";
@@ -4980,14 +5334,17 @@
             this.columnHeader8.Text = "Węgl. przyswajalne [g]";
             this.columnHeader8.Width = 100;
             // 
+            // columnHeader103
+            // 
+            this.columnHeader103.Text = "Cukry [g]";
+            this.columnHeader103.Width = 50;
+            // 
             // columnHeader83
             // 
-            this.columnHeader83.DisplayIndex = 9;
             this.columnHeader83.Text = "Błonnik [g]";
             // 
             // columnHeader84
             // 
-            this.columnHeader84.DisplayIndex = 10;
             this.columnHeader84.Text = "Sód [mg]";
             this.columnHeader84.Width = 55;
             // 
@@ -5097,15 +5454,18 @@
             this.columnHeader16.Text = "Węgl. przyswajalne [g]";
             this.columnHeader16.Width = 100;
             // 
+            // columnHeader104
+            // 
+            this.columnHeader104.Text = "Cukry [g]";
+            this.columnHeader104.Width = 48;
+            // 
             // columnHeader85
             // 
-            this.columnHeader85.DisplayIndex = 9;
             this.columnHeader85.Text = "Błonnik [g]";
             this.columnHeader85.Width = 55;
             // 
             // columnHeader86
             // 
-            this.columnHeader86.DisplayIndex = 10;
             this.columnHeader86.Text = "Sód [mg]";
             this.columnHeader86.Width = 55;
             // 
@@ -5215,14 +5575,17 @@
             this.columnHeader24.Text = "Węgl. przyswajalne [g]";
             this.columnHeader24.Width = 100;
             // 
+            // columnHeader105
+            // 
+            this.columnHeader105.Text = "Cukry [g]";
+            this.columnHeader105.Width = 50;
+            // 
             // columnHeader87
             // 
-            this.columnHeader87.DisplayIndex = 9;
             this.columnHeader87.Text = "Błonnik [g]";
             // 
             // columnHeader88
             // 
-            this.columnHeader88.DisplayIndex = 10;
             this.columnHeader88.Text = "Sód [mg]";
             this.columnHeader88.Width = 55;
             // 
@@ -5332,15 +5695,18 @@
             this.columnHeader32.Text = "Węgl. przyswajalne [g]";
             this.columnHeader32.Width = 100;
             // 
+            // columnHeader106
+            // 
+            this.columnHeader106.Text = "Cukry [g]";
+            this.columnHeader106.Width = 51;
+            // 
             // columnHeader89
             // 
-            this.columnHeader89.DisplayIndex = 9;
             this.columnHeader89.Text = "Błonnik [g]";
             this.columnHeader89.Width = 54;
             // 
             // columnHeader90
             // 
-            this.columnHeader90.DisplayIndex = 10;
             this.columnHeader90.Text = "Sód [mg]";
             this.columnHeader90.Width = 55;
             // 
@@ -6239,10 +6605,205 @@
             this.panel_glowny.Controls.Add(this.pictureBox2);
             this.panel_glowny.Location = new System.Drawing.Point(416, 96);
             this.panel_glowny.Name = "panel_glowny";
-            this.panel_glowny.Size = new System.Drawing.Size(52, 54);
+            this.panel_glowny.Size = new System.Drawing.Size(66, 67);
             this.panel_glowny.TabIndex = 42;
             this.panel_glowny.Visible = false;
             this.panel_glowny.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+            // 
+            // sol_text
+            // 
+            this.sol_text.AutoSize = true;
+            this.sol_text.BackColor = System.Drawing.Color.Transparent;
+            this.sol_text.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.sol_text.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.sol_text.Location = new System.Drawing.Point(841, 632);
+            this.sol_text.MaximumSize = new System.Drawing.Size(95, 0);
+            this.sol_text.MinimumSize = new System.Drawing.Size(95, 0);
+            this.sol_text.Name = "sol_text";
+            this.sol_text.Size = new System.Drawing.Size(95, 20);
+            this.sol_text.TabIndex = 92;
+            this.sol_text.Text = "0 g";
+            this.sol_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.BackColor = System.Drawing.Color.Transparent;
+            this.label149.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label149.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label149.Location = new System.Drawing.Point(840, 613);
+            this.label149.MaximumSize = new System.Drawing.Size(95, 0);
+            this.label149.MinimumSize = new System.Drawing.Size(95, 0);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(95, 20);
+            this.label149.TabIndex = 91;
+            this.label149.Text = "Sól";
+            this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_cukry
+            // 
+            this.plus_cukry.AutoSize = true;
+            this.plus_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.plus_cukry.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.plus_cukry.ForeColor = System.Drawing.Color.Red;
+            this.plus_cukry.Location = new System.Drawing.Point(638, 652);
+            this.plus_cukry.MaximumSize = new System.Drawing.Size(75, 0);
+            this.plus_cukry.MinimumSize = new System.Drawing.Size(75, 0);
+            this.plus_cukry.Name = "plus_cukry";
+            this.plus_cukry.Size = new System.Drawing.Size(75, 15);
+            this.plus_cukry.TabIndex = 90;
+            this.plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // c_text
+            // 
+            this.c_text.AutoSize = true;
+            this.c_text.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.c_text.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.c_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.c_text.Location = new System.Drawing.Point(647, 609);
+            this.c_text.MaximumSize = new System.Drawing.Size(55, 0);
+            this.c_text.MinimumSize = new System.Drawing.Size(55, 0);
+            this.c_text.Name = "c_text";
+            this.c_text.Size = new System.Drawing.Size(55, 15);
+            this.c_text.TabIndex = 89;
+            this.c_text.Text = "0 kcal";
+            this.c_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label152.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label152.Location = new System.Drawing.Point(647, 586);
+            this.label152.MaximumSize = new System.Drawing.Size(55, 0);
+            this.label152.MinimumSize = new System.Drawing.Size(55, 0);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(55, 15);
+            this.label152.TabIndex = 88;
+            this.label152.Text = "Cukry";
+            this.label152.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pb_cukry
+            // 
+            this.pb_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.pb_cukry.AnimationSpeed = 500;
+            this.pb_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.pb_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.pb_cukry.ForeColor = System.Drawing.Color.Gray;
+            this.pb_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pb_cukry.InnerMargin = 2;
+            this.pb_cukry.InnerWidth = -1;
+            this.pb_cukry.Location = new System.Drawing.Point(626, 556);
+            this.pb_cukry.MarqueeAnimationSpeed = 2000;
+            this.pb_cukry.Name = "pb_cukry";
+            this.pb_cukry.OuterColor = System.Drawing.Color.White;
+            this.pb_cukry.OuterMargin = -25;
+            this.pb_cukry.OuterWidth = 26;
+            this.pb_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
+            this.pb_cukry.ProgressWidth = 10;
+            this.pb_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.pb_cukry.Size = new System.Drawing.Size(94, 98);
+            this.pb_cukry.StartAngle = 270;
+            this.pb_cukry.SubscriptColor = System.Drawing.Color.Gray;
+            this.pb_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
+            this.pb_cukry.SubscriptText = "";
+            this.pb_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.pb_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
+            this.pb_cukry.SuperscriptText = "";
+            this.pb_cukry.TabIndex = 87;
+            this.pb_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
+            this.pb_cukry.Value = 15;
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
+            this.label106.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label106.Location = new System.Drawing.Point(553, 600);
+            this.label106.MaximumSize = new System.Drawing.Size(60, 0);
+            this.label106.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(60, 7);
+            this.label106.TabIndex = 86;
+            this.label106.Text = "przyswajalne";
+            this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_przyswajalne
+            // 
+            this.plus_przyswajalne.AutoSize = true;
+            this.plus_przyswajalne.BackColor = System.Drawing.Color.Transparent;
+            this.plus_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.plus_przyswajalne.ForeColor = System.Drawing.Color.Red;
+            this.plus_przyswajalne.Location = new System.Drawing.Point(544, 650);
+            this.plus_przyswajalne.MaximumSize = new System.Drawing.Size(75, 0);
+            this.plus_przyswajalne.MinimumSize = new System.Drawing.Size(75, 0);
+            this.plus_przyswajalne.Name = "plus_przyswajalne";
+            this.plus_przyswajalne.Size = new System.Drawing.Size(75, 15);
+            this.plus_przyswajalne.TabIndex = 85;
+            this.plus_przyswajalne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wp_text
+            // 
+            this.wp_text.AutoSize = true;
+            this.wp_text.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wp_text.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.wp_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.wp_text.Location = new System.Drawing.Point(553, 609);
+            this.wp_text.MaximumSize = new System.Drawing.Size(55, 0);
+            this.wp_text.MinimumSize = new System.Drawing.Size(55, 0);
+            this.wp_text.Name = "wp_text";
+            this.wp_text.Size = new System.Drawing.Size(55, 15);
+            this.wp_text.TabIndex = 82;
+            this.wp_text.Text = "0 kcal";
+            this.wp_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
+            this.label111.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label111.Location = new System.Drawing.Point(549, 589);
+            this.label111.MaximumSize = new System.Drawing.Size(65, 0);
+            this.label111.MinimumSize = new System.Drawing.Size(65, 0);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(65, 9);
+            this.label111.TabIndex = 81;
+            this.label111.Text = "Węglowodany";
+            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pb_przyswajalne
+            // 
+            this.pb_przyswajalne.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.pb_przyswajalne.AnimationSpeed = 500;
+            this.pb_przyswajalne.BackColor = System.Drawing.Color.Transparent;
+            this.pb_przyswajalne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.pb_przyswajalne.ForeColor = System.Drawing.Color.Gray;
+            this.pb_przyswajalne.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pb_przyswajalne.InnerMargin = 2;
+            this.pb_przyswajalne.InnerWidth = -1;
+            this.pb_przyswajalne.Location = new System.Drawing.Point(533, 554);
+            this.pb_przyswajalne.MarqueeAnimationSpeed = 2000;
+            this.pb_przyswajalne.Name = "pb_przyswajalne";
+            this.pb_przyswajalne.OuterColor = System.Drawing.Color.White;
+            this.pb_przyswajalne.OuterMargin = -25;
+            this.pb_przyswajalne.OuterWidth = 26;
+            this.pb_przyswajalne.ProgressColor = System.Drawing.Color.PaleGreen;
+            this.pb_przyswajalne.ProgressWidth = 10;
+            this.pb_przyswajalne.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.pb_przyswajalne.Size = new System.Drawing.Size(94, 98);
+            this.pb_przyswajalne.StartAngle = 270;
+            this.pb_przyswajalne.SubscriptColor = System.Drawing.Color.Gray;
+            this.pb_przyswajalne.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
+            this.pb_przyswajalne.SubscriptText = "";
+            this.pb_przyswajalne.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.pb_przyswajalne.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
+            this.pb_przyswajalne.SuperscriptText = "";
+            this.pb_przyswajalne.TabIndex = 80;
+            this.pb_przyswajalne.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
+            this.pb_przyswajalne.Value = 15;
             // 
             // menuStrip1
             // 
@@ -6356,7 +6917,7 @@
             this.panel_kontrola.Controls.Add(this.kontrola_plus_cukry);
             this.panel_kontrola.Controls.Add(this.kontrola_cukry);
             this.panel_kontrola.Controls.Add(this.pb_kontrola_cukry);
-            this.panel_kontrola.Controls.Add(this.label154);
+            this.panel_kontrola.Controls.Add(this.kontrola_sol);
             this.panel_kontrola.Controls.Add(this.label157);
             this.panel_kontrola.Controls.Add(this.label141);
             this.panel_kontrola.Controls.Add(this.label142);
@@ -6410,11 +6971,116 @@
             this.panel_kontrola.Controls.Add(this.dateTimePicker4);
             this.panel_kontrola.Controls.Add(this.label79);
             this.panel_kontrola.Controls.Add(this.pictureBox28);
-            this.panel_kontrola.Location = new System.Drawing.Point(1210, 105);
+            this.panel_kontrola.Location = new System.Drawing.Point(303, 105);
             this.panel_kontrola.Name = "panel_kontrola";
-            this.panel_kontrola.Size = new System.Drawing.Size(174, 72);
+            this.panel_kontrola.Size = new System.Drawing.Size(1081, 557);
             this.panel_kontrola.TabIndex = 96;
             this.panel_kontrola.Visible = false;
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label160.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.label160.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label160.Location = new System.Drawing.Point(683, 492);
+            this.label160.MaximumSize = new System.Drawing.Size(60, 0);
+            this.label160.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(60, 17);
+            this.label160.TabIndex = 187;
+            this.label160.Text = "Cukry";
+            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kontrola_plus_cukry
+            // 
+            this.kontrola_plus_cukry.AutoSize = true;
+            this.kontrola_plus_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.kontrola_plus_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.kontrola_plus_cukry.ForeColor = System.Drawing.Color.Red;
+            this.kontrola_plus_cukry.Location = new System.Drawing.Point(667, 561);
+            this.kontrola_plus_cukry.MaximumSize = new System.Drawing.Size(95, 0);
+            this.kontrola_plus_cukry.MinimumSize = new System.Drawing.Size(95, 0);
+            this.kontrola_plus_cukry.Name = "kontrola_plus_cukry";
+            this.kontrola_plus_cukry.Size = new System.Drawing.Size(95, 20);
+            this.kontrola_plus_cukry.TabIndex = 186;
+            this.kontrola_plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kontrola_cukry
+            // 
+            this.kontrola_cukry.AutoSize = true;
+            this.kontrola_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kontrola_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.kontrola_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.kontrola_cukry.Location = new System.Drawing.Point(688, 515);
+            this.kontrola_cukry.MaximumSize = new System.Drawing.Size(50, 0);
+            this.kontrola_cukry.MinimumSize = new System.Drawing.Size(50, 0);
+            this.kontrola_cukry.Name = "kontrola_cukry";
+            this.kontrola_cukry.Size = new System.Drawing.Size(50, 20);
+            this.kontrola_cukry.TabIndex = 184;
+            this.kontrola_cukry.Text = "0 kcal";
+            this.kontrola_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pb_kontrola_cukry
+            // 
+            this.pb_kontrola_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.pb_kontrola_cukry.AnimationSpeed = 500;
+            this.pb_kontrola_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.pb_kontrola_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.pb_kontrola_cukry.ForeColor = System.Drawing.Color.Gray;
+            this.pb_kontrola_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pb_kontrola_cukry.InnerMargin = 2;
+            this.pb_kontrola_cukry.InnerWidth = -1;
+            this.pb_kontrola_cukry.Location = new System.Drawing.Point(663, 462);
+            this.pb_kontrola_cukry.MarqueeAnimationSpeed = 2000;
+            this.pb_kontrola_cukry.Name = "pb_kontrola_cukry";
+            this.pb_kontrola_cukry.OuterColor = System.Drawing.Color.White;
+            this.pb_kontrola_cukry.OuterMargin = -25;
+            this.pb_kontrola_cukry.OuterWidth = 26;
+            this.pb_kontrola_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
+            this.pb_kontrola_cukry.ProgressWidth = 10;
+            this.pb_kontrola_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.pb_kontrola_cukry.Size = new System.Drawing.Size(97, 97);
+            this.pb_kontrola_cukry.StartAngle = 270;
+            this.pb_kontrola_cukry.SubscriptColor = System.Drawing.Color.Gray;
+            this.pb_kontrola_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
+            this.pb_kontrola_cukry.SubscriptText = "";
+            this.pb_kontrola_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.pb_kontrola_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
+            this.pb_kontrola_cukry.SuperscriptText = "";
+            this.pb_kontrola_cukry.TabIndex = 182;
+            this.pb_kontrola_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
+            this.pb_kontrola_cukry.Value = 15;
+            // 
+            // kontrola_sol
+            // 
+            this.kontrola_sol.AutoSize = true;
+            this.kontrola_sol.BackColor = System.Drawing.Color.Transparent;
+            this.kontrola_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.kontrola_sol.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kontrola_sol.Location = new System.Drawing.Point(897, 523);
+            this.kontrola_sol.MaximumSize = new System.Drawing.Size(95, 0);
+            this.kontrola_sol.MinimumSize = new System.Drawing.Size(95, 0);
+            this.kontrola_sol.Name = "kontrola_sol";
+            this.kontrola_sol.Size = new System.Drawing.Size(95, 20);
+            this.kontrola_sol.TabIndex = 181;
+            this.kontrola_sol.Text = "0 g";
+            this.kontrola_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label157
+            // 
+            this.label157.AutoSize = true;
+            this.label157.BackColor = System.Drawing.Color.Transparent;
+            this.label157.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label157.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label157.Location = new System.Drawing.Point(896, 504);
+            this.label157.MaximumSize = new System.Drawing.Size(95, 0);
+            this.label157.MinimumSize = new System.Drawing.Size(95, 0);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(95, 20);
+            this.label157.TabIndex = 180;
+            this.label157.Text = "Sól";
+            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label141
             // 
@@ -7276,690 +7942,6 @@
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
             // 
-            // plus_przyswajalne
-            // 
-            this.plus_przyswajalne.AutoSize = true;
-            this.plus_przyswajalne.BackColor = System.Drawing.Color.Transparent;
-            this.plus_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.plus_przyswajalne.ForeColor = System.Drawing.Color.Red;
-            this.plus_przyswajalne.Location = new System.Drawing.Point(544, 650);
-            this.plus_przyswajalne.MaximumSize = new System.Drawing.Size(75, 0);
-            this.plus_przyswajalne.MinimumSize = new System.Drawing.Size(75, 0);
-            this.plus_przyswajalne.Name = "plus_przyswajalne";
-            this.plus_przyswajalne.Size = new System.Drawing.Size(75, 15);
-            this.plus_przyswajalne.TabIndex = 85;
-            this.plus_przyswajalne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_przyswajalne
-            // 
-            this.pb_przyswajalne.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_przyswajalne.AnimationSpeed = 500;
-            this.pb_przyswajalne.BackColor = System.Drawing.Color.Transparent;
-            this.pb_przyswajalne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_przyswajalne.ForeColor = System.Drawing.Color.Gray;
-            this.pb_przyswajalne.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_przyswajalne.InnerMargin = 2;
-            this.pb_przyswajalne.InnerWidth = -1;
-            this.pb_przyswajalne.Location = new System.Drawing.Point(533, 554);
-            this.pb_przyswajalne.MarqueeAnimationSpeed = 2000;
-            this.pb_przyswajalne.Name = "pb_przyswajalne";
-            this.pb_przyswajalne.OuterColor = System.Drawing.Color.White;
-            this.pb_przyswajalne.OuterMargin = -25;
-            this.pb_przyswajalne.OuterWidth = 26;
-            this.pb_przyswajalne.ProgressColor = System.Drawing.Color.PaleGreen;
-            this.pb_przyswajalne.ProgressWidth = 10;
-            this.pb_przyswajalne.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_przyswajalne.Size = new System.Drawing.Size(94, 98);
-            this.pb_przyswajalne.StartAngle = 270;
-            this.pb_przyswajalne.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_przyswajalne.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_przyswajalne.SubscriptText = "";
-            this.pb_przyswajalne.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_przyswajalne.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_przyswajalne.SuperscriptText = "";
-            this.pb_przyswajalne.TabIndex = 80;
-            this.pb_przyswajalne.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_przyswajalne.Value = 15;
-            // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
-            this.label111.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label111.Location = new System.Drawing.Point(549, 589);
-            this.label111.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label111.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(65, 9);
-            this.label111.TabIndex = 81;
-            this.label111.Text = "Węglowodany";
-            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
-            this.label106.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label106.Location = new System.Drawing.Point(553, 600);
-            this.label106.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label106.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(60, 7);
-            this.label106.TabIndex = 86;
-            this.label106.Text = "przyswajalne";
-            this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // wp_text
-            // 
-            this.wp_text.AutoSize = true;
-            this.wp_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.wp_text.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.wp_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.wp_text.Location = new System.Drawing.Point(553, 609);
-            this.wp_text.MaximumSize = new System.Drawing.Size(55, 0);
-            this.wp_text.MinimumSize = new System.Drawing.Size(55, 0);
-            this.wp_text.Name = "wp_text";
-            this.wp_text.Size = new System.Drawing.Size(55, 15);
-            this.wp_text.TabIndex = 82;
-            this.wp_text.Text = "0 kcal";
-            this.wp_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // plus_cukry
-            // 
-            this.plus_cukry.AutoSize = true;
-            this.plus_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.plus_cukry.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.plus_cukry.ForeColor = System.Drawing.Color.Red;
-            this.plus_cukry.Location = new System.Drawing.Point(638, 652);
-            this.plus_cukry.MaximumSize = new System.Drawing.Size(75, 0);
-            this.plus_cukry.MinimumSize = new System.Drawing.Size(75, 0);
-            this.plus_cukry.Name = "plus_cukry";
-            this.plus_cukry.Size = new System.Drawing.Size(75, 15);
-            this.plus_cukry.TabIndex = 90;
-            this.plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // c_text
-            // 
-            this.c_text.AutoSize = true;
-            this.c_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.c_text.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.c_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.c_text.Location = new System.Drawing.Point(647, 609);
-            this.c_text.MaximumSize = new System.Drawing.Size(55, 0);
-            this.c_text.MinimumSize = new System.Drawing.Size(55, 0);
-            this.c_text.Name = "c_text";
-            this.c_text.Size = new System.Drawing.Size(55, 15);
-            this.c_text.TabIndex = 89;
-            this.c_text.Text = "0 kcal";
-            this.c_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label152
-            // 
-            this.label152.AutoSize = true;
-            this.label152.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label152.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label152.Location = new System.Drawing.Point(647, 586);
-            this.label152.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label152.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(55, 15);
-            this.label152.TabIndex = 88;
-            this.label152.Text = "Cukry";
-            this.label152.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_cukry
-            // 
-            this.pb_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_cukry.AnimationSpeed = 500;
-            this.pb_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.pb_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_cukry.ForeColor = System.Drawing.Color.Gray;
-            this.pb_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_cukry.InnerMargin = 2;
-            this.pb_cukry.InnerWidth = -1;
-            this.pb_cukry.Location = new System.Drawing.Point(626, 556);
-            this.pb_cukry.MarqueeAnimationSpeed = 2000;
-            this.pb_cukry.Name = "pb_cukry";
-            this.pb_cukry.OuterColor = System.Drawing.Color.White;
-            this.pb_cukry.OuterMargin = -25;
-            this.pb_cukry.OuterWidth = 26;
-            this.pb_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.pb_cukry.ProgressWidth = 10;
-            this.pb_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_cukry.Size = new System.Drawing.Size(94, 98);
-            this.pb_cukry.StartAngle = 270;
-            this.pb_cukry.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_cukry.SubscriptText = "";
-            this.pb_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_cukry.SuperscriptText = "";
-            this.pb_cukry.TabIndex = 87;
-            this.pb_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_cukry.Value = 15;
-            // 
-            // label149
-            // 
-            this.label149.AutoSize = true;
-            this.label149.BackColor = System.Drawing.Color.Transparent;
-            this.label149.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label149.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label149.Location = new System.Drawing.Point(840, 613);
-            this.label149.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label149.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(95, 20);
-            this.label149.TabIndex = 91;
-            this.label149.Text = "Sól";
-            this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // sol_text
-            // 
-            this.sol_text.AutoSize = true;
-            this.sol_text.BackColor = System.Drawing.Color.Transparent;
-            this.sol_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.sol_text.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.sol_text.Location = new System.Drawing.Point(841, 632);
-            this.sol_text.MaximumSize = new System.Drawing.Size(95, 0);
-            this.sol_text.MinimumSize = new System.Drawing.Size(95, 0);
-            this.sol_text.Name = "sol_text";
-            this.sol_text.Size = new System.Drawing.Size(95, 20);
-            this.sol_text.TabIndex = 92;
-            this.sol_text.Text = "0 g";
-            this.sol_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // c_cukry
-            // 
-            this.c_cukry.Text = "Cukry [g]";
-            this.c_cukry.Width = 48;
-            // 
-            // columnHeader103
-            // 
-            this.columnHeader103.DisplayIndex = 8;
-            this.columnHeader103.Text = "Cukry [g]";
-            this.columnHeader103.Width = 50;
-            // 
-            // columnHeader104
-            // 
-            this.columnHeader104.DisplayIndex = 8;
-            this.columnHeader104.Text = "Cukry [g]";
-            this.columnHeader104.Width = 48;
-            // 
-            // columnHeader105
-            // 
-            this.columnHeader105.DisplayIndex = 8;
-            this.columnHeader105.Text = "Cukry [g]";
-            this.columnHeader105.Width = 50;
-            // 
-            // columnHeader106
-            // 
-            this.columnHeader106.DisplayIndex = 8;
-            this.columnHeader106.Text = "Cukry [g]";
-            this.columnHeader106.Width = 51;
-            // 
-            // receptura_sol
-            // 
-            this.receptura_sol.AutoSize = true;
-            this.receptura_sol.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.receptura_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.receptura_sol.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_sol.Location = new System.Drawing.Point(868, 644);
-            this.receptura_sol.MaximumSize = new System.Drawing.Size(80, 0);
-            this.receptura_sol.MinimumSize = new System.Drawing.Size(80, 0);
-            this.receptura_sol.Name = "receptura_sol";
-            this.receptura_sol.Size = new System.Drawing.Size(80, 20);
-            this.receptura_sol.TabIndex = 138;
-            this.receptura_sol.Text = "0 kcal";
-            this.receptura_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label151
-            // 
-            this.label151.AutoSize = true;
-            this.label151.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label151.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label151.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label151.Location = new System.Drawing.Point(876, 624);
-            this.label151.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label151.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label151.Name = "label151";
-            this.label151.Size = new System.Drawing.Size(60, 20);
-            this.label151.TabIndex = 137;
-            this.label151.Text = "Sól";
-            this.label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
-            this.label65.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label65.Location = new System.Drawing.Point(465, 570);
-            this.label65.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label65.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(80, 13);
-            this.label65.TabIndex = 144;
-            this.label65.Text = "ogółem";
-            this.label65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label110
-            // 
-            this.label110.AutoSize = true;
-            this.label110.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label110.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label110.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label110.Location = new System.Drawing.Point(362, 577);
-            this.label110.MaximumSize = new System.Drawing.Size(75, 0);
-            this.label110.MinimumSize = new System.Drawing.Size(75, 0);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(75, 15);
-            this.label110.TabIndex = 143;
-            this.label110.Text = "nasycone";
-            this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label112.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label112.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label112.Location = new System.Drawing.Point(362, 562);
-            this.label112.MaximumSize = new System.Drawing.Size(75, 0);
-            this.label112.MinimumSize = new System.Drawing.Size(75, 0);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(75, 15);
-            this.label112.TabIndex = 142;
-            this.label112.Text = "tłuszczowe";
-            this.label112.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // receptura_ktn
-            // 
-            this.receptura_ktn.AutoSize = true;
-            this.receptura_ktn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.receptura_ktn.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.receptura_ktn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_ktn.Location = new System.Drawing.Point(359, 594);
-            this.receptura_ktn.MaximumSize = new System.Drawing.Size(80, 0);
-            this.receptura_ktn.MinimumSize = new System.Drawing.Size(80, 0);
-            this.receptura_ktn.Name = "receptura_ktn";
-            this.receptura_ktn.Size = new System.Drawing.Size(80, 20);
-            this.receptura_ktn.TabIndex = 141;
-            this.receptura_ktn.Text = "0 kcal";
-            this.receptura_ktn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // receptura_weglowodany
-            // 
-            this.receptura_weglowodany.AutoSize = true;
-            this.receptura_weglowodany.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.receptura_weglowodany.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.receptura_weglowodany.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_weglowodany.Location = new System.Drawing.Point(467, 583);
-            this.receptura_weglowodany.MaximumSize = new System.Drawing.Size(80, 0);
-            this.receptura_weglowodany.MinimumSize = new System.Drawing.Size(80, 0);
-            this.receptura_weglowodany.Name = "receptura_weglowodany";
-            this.receptura_weglowodany.Size = new System.Drawing.Size(80, 20);
-            this.receptura_weglowodany.TabIndex = 140;
-            this.receptura_weglowodany.Text = "0 kcal";
-            this.receptura_weglowodany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label153
-            // 
-            this.label153.AutoSize = true;
-            this.label153.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
-            this.label153.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label153.Location = new System.Drawing.Point(475, 561);
-            this.label153.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label153.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(65, 9);
-            this.label153.TabIndex = 139;
-            this.label153.Text = "Węglowodany";
-            this.label153.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // receptura_cukry
-            // 
-            this.receptura_cukry.AutoSize = true;
-            this.receptura_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.receptura_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.receptura_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_cukry.Location = new System.Drawing.Point(668, 583);
-            this.receptura_cukry.MaximumSize = new System.Drawing.Size(80, 0);
-            this.receptura_cukry.MinimumSize = new System.Drawing.Size(80, 0);
-            this.receptura_cukry.Name = "receptura_cukry";
-            this.receptura_cukry.Size = new System.Drawing.Size(80, 20);
-            this.receptura_cukry.TabIndex = 146;
-            this.receptura_cukry.Text = "0 kcal";
-            this.receptura_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label155
-            // 
-            this.label155.AutoSize = true;
-            this.label155.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label155.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label155.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label155.Location = new System.Drawing.Point(676, 563);
-            this.label155.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label155.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(60, 20);
-            this.label155.TabIndex = 145;
-            this.label155.Text = "Cukry";
-            this.label155.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // columnHeader107
-            // 
-            this.columnHeader107.DisplayIndex = 8;
-            this.columnHeader107.Text = "Cukry [g]";
-            this.columnHeader107.Width = 49;
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label119.Location = new System.Drawing.Point(469, 161);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(77, 21);
-            this.label119.TabIndex = 74;
-            this.label119.Text = "Cukry [g]:";
-            // 
-            // dieta_cukry
-            // 
-            this.dieta_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_cukry.Enabled = false;
-            this.dieta_cukry.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_cukry.Location = new System.Drawing.Point(638, 158);
-            this.dieta_cukry.Name = "dieta_cukry";
-            this.dieta_cukry.Size = new System.Drawing.Size(203, 29);
-            this.dieta_cukry.TabIndex = 75;
-            // 
-            // label150
-            // 
-            this.label150.AutoSize = true;
-            this.label150.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label150.Location = new System.Drawing.Point(479, 190);
-            this.label150.Name = "label150";
-            this.label150.Size = new System.Drawing.Size(77, 21);
-            this.label150.TabIndex = 79;
-            this.label150.Text = "Cukry [g]:";
-            // 
-            // produkty_cukry
-            // 
-            this.produkty_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.produkty_cukry.Enabled = false;
-            this.produkty_cukry.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.produkty_cukry.Location = new System.Drawing.Point(648, 187);
-            this.produkty_cukry.Name = "produkty_cukry";
-            this.produkty_cukry.Size = new System.Drawing.Size(203, 29);
-            this.produkty_cukry.TabIndex = 80;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label70.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.label70.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label70.Location = new System.Drawing.Point(378, 665);
-            this.label70.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label70.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(55, 12);
-            this.label70.TabIndex = 174;
-            this.label70.Text = "nasycone";
-            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label71.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.label71.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label71.Location = new System.Drawing.Point(376, 654);
-            this.label71.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label71.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(60, 12);
-            this.label71.TabIndex = 173;
-            this.label71.Text = "tłuszczowe";
-            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label74.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.label74.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label74.Location = new System.Drawing.Point(386, 644);
-            this.label74.MaximumSize = new System.Drawing.Size(40, 0);
-            this.label74.MinimumSize = new System.Drawing.Size(42, 0);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(42, 12);
-            this.label74.TabIndex = 172;
-            this.label74.Text = "Kwasy";
-            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cukry
-            // 
-            this.jadlospis_cukry.AutoSize = true;
-            this.jadlospis_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_cukry.Location = new System.Drawing.Point(666, 669);
-            this.jadlospis_cukry.MaximumSize = new System.Drawing.Size(55, 0);
-            this.jadlospis_cukry.MinimumSize = new System.Drawing.Size(55, 0);
-            this.jadlospis_cukry.Name = "jadlospis_cukry";
-            this.jadlospis_cukry.Size = new System.Drawing.Size(55, 20);
-            this.jadlospis_cukry.TabIndex = 177;
-            this.jadlospis_cukry.Text = "0 kcal";
-            this.jadlospis_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label156.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label156.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label156.Location = new System.Drawing.Point(667, 653);
-            this.label156.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label156.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(55, 15);
-            this.label156.TabIndex = 176;
-            this.label156.Text = "Cukry";
-            this.label156.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cb_cukry
-            // 
-            this.jadlospis_cb_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_cukry.AnimationSpeed = 500;
-            this.jadlospis_cb_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_cukry.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_cukry.InnerMargin = 2;
-            this.jadlospis_cb_cukry.InnerWidth = -1;
-            this.jadlospis_cb_cukry.Location = new System.Drawing.Point(648, 625);
-            this.jadlospis_cb_cukry.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_cukry.Name = "jadlospis_cb_cukry";
-            this.jadlospis_cb_cukry.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_cukry.OuterMargin = -25;
-            this.jadlospis_cb_cukry.OuterWidth = 26;
-            this.jadlospis_cb_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.jadlospis_cb_cukry.ProgressWidth = 10;
-            this.jadlospis_cb_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_cukry.Size = new System.Drawing.Size(90, 92);
-            this.jadlospis_cb_cukry.StartAngle = 270;
-            this.jadlospis_cb_cukry.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.jadlospis_cb_cukry.SubscriptText = "";
-            this.jadlospis_cb_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.jadlospis_cb_cukry.SuperscriptText = "";
-            this.jadlospis_cb_cukry.TabIndex = 175;
-            this.jadlospis_cb_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.jadlospis_cb_cukry.Value = 15;
-            // 
-            // jadlospis_sol
-            // 
-            this.jadlospis_sol.AutoSize = true;
-            this.jadlospis_sol.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_sol.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jadlospis_sol.Location = new System.Drawing.Point(861, 679);
-            this.jadlospis_sol.MaximumSize = new System.Drawing.Size(95, 0);
-            this.jadlospis_sol.MinimumSize = new System.Drawing.Size(95, 0);
-            this.jadlospis_sol.Name = "jadlospis_sol";
-            this.jadlospis_sol.Size = new System.Drawing.Size(95, 20);
-            this.jadlospis_sol.TabIndex = 179;
-            this.jadlospis_sol.Text = "0 g";
-            this.jadlospis_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label158
-            // 
-            this.label158.AutoSize = true;
-            this.label158.BackColor = System.Drawing.Color.Transparent;
-            this.label158.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label158.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label158.Location = new System.Drawing.Point(860, 660);
-            this.label158.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label158.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(95, 20);
-            this.label158.TabIndex = 178;
-            this.label158.Text = "Sól";
-            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label154
-            // 
-            this.label154.AutoSize = true;
-            this.label154.BackColor = System.Drawing.Color.Transparent;
-            this.label154.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label154.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label154.Location = new System.Drawing.Point(897, 523);
-            this.label154.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label154.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label154.Name = "label154";
-            this.label154.Size = new System.Drawing.Size(95, 20);
-            this.label154.TabIndex = 181;
-            this.label154.Text = "0 g";
-            this.label154.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label157
-            // 
-            this.label157.AutoSize = true;
-            this.label157.BackColor = System.Drawing.Color.Transparent;
-            this.label157.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label157.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label157.Location = new System.Drawing.Point(896, 504);
-            this.label157.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label157.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(95, 20);
-            this.label157.TabIndex = 180;
-            this.label157.Text = "Sól";
-            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // kontrola_plus_cukry
-            // 
-            this.kontrola_plus_cukry.AutoSize = true;
-            this.kontrola_plus_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.kontrola_plus_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.kontrola_plus_cukry.ForeColor = System.Drawing.Color.Red;
-            this.kontrola_plus_cukry.Location = new System.Drawing.Point(667, 561);
-            this.kontrola_plus_cukry.MaximumSize = new System.Drawing.Size(95, 0);
-            this.kontrola_plus_cukry.MinimumSize = new System.Drawing.Size(95, 0);
-            this.kontrola_plus_cukry.Name = "kontrola_plus_cukry";
-            this.kontrola_plus_cukry.Size = new System.Drawing.Size(95, 20);
-            this.kontrola_plus_cukry.TabIndex = 186;
-            this.kontrola_plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // kontrola_cukry
-            // 
-            this.kontrola_cukry.AutoSize = true;
-            this.kontrola_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.kontrola_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.kontrola_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.kontrola_cukry.Location = new System.Drawing.Point(688, 515);
-            this.kontrola_cukry.MaximumSize = new System.Drawing.Size(50, 0);
-            this.kontrola_cukry.MinimumSize = new System.Drawing.Size(50, 0);
-            this.kontrola_cukry.Name = "kontrola_cukry";
-            this.kontrola_cukry.Size = new System.Drawing.Size(50, 20);
-            this.kontrola_cukry.TabIndex = 184;
-            this.kontrola_cukry.Text = "0 kcal";
-            this.kontrola_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_kontrola_cukry
-            // 
-            this.pb_kontrola_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_kontrola_cukry.AnimationSpeed = 500;
-            this.pb_kontrola_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.pb_kontrola_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_kontrola_cukry.ForeColor = System.Drawing.Color.Gray;
-            this.pb_kontrola_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_kontrola_cukry.InnerMargin = 2;
-            this.pb_kontrola_cukry.InnerWidth = -1;
-            this.pb_kontrola_cukry.Location = new System.Drawing.Point(663, 462);
-            this.pb_kontrola_cukry.MarqueeAnimationSpeed = 2000;
-            this.pb_kontrola_cukry.Name = "pb_kontrola_cukry";
-            this.pb_kontrola_cukry.OuterColor = System.Drawing.Color.White;
-            this.pb_kontrola_cukry.OuterMargin = -25;
-            this.pb_kontrola_cukry.OuterWidth = 26;
-            this.pb_kontrola_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.pb_kontrola_cukry.ProgressWidth = 10;
-            this.pb_kontrola_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_kontrola_cukry.Size = new System.Drawing.Size(97, 97);
-            this.pb_kontrola_cukry.StartAngle = 270;
-            this.pb_kontrola_cukry.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_kontrola_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_kontrola_cukry.SubscriptText = "";
-            this.pb_kontrola_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_kontrola_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_kontrola_cukry.SuperscriptText = "";
-            this.pb_kontrola_cukry.TabIndex = 182;
-            this.pb_kontrola_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_kontrola_cukry.Value = 15;
-            // 
-            // label160
-            // 
-            this.label160.AutoSize = true;
-            this.label160.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label160.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.label160.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label160.Location = new System.Drawing.Point(683, 492);
-            this.label160.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label160.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label160.Name = "label160";
-            this.label160.Size = new System.Drawing.Size(60, 17);
-            this.label160.TabIndex = 187;
-            this.label160.Text = "Cukry";
-            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // columnHeader108
-            // 
-            this.columnHeader108.DisplayIndex = 8;
-            this.columnHeader108.Text = "Cukry [g]";
-            this.columnHeader108.Width = 49;
-            // 
-            // columnHeader109
-            // 
-            this.columnHeader109.Text = "Cukry [g]";
-            // 
-            // columnHeader110
-            // 
-            this.columnHeader110.Text = "Cukry [g]";
-            // 
-            // columnHeader111
-            // 
-            this.columnHeader111.Text = "Cukry [g]";
-            // 
-            // columnHeader112
-            // 
-            this.columnHeader112.Text = "Cukry [g]";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8699,7 +8681,7 @@
         private System.Windows.Forms.Label kontrola_plus_cukry;
         private System.Windows.Forms.Label kontrola_cukry;
         private CircularProgressBar.CircularProgressBar pb_kontrola_cukry;
-        private System.Windows.Forms.Label label154;
+        private System.Windows.Forms.Label kontrola_sol;
         private System.Windows.Forms.Label label157;
         private System.Windows.Forms.ColumnHeader columnHeader109;
         private System.Windows.Forms.ColumnHeader columnHeader110;
