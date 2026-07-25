@@ -1,5 +1,8 @@
-﻿namespace KalkulatorDiety
+﻿using System;
+
+namespace KalkulatorDiety
 {
+    [Serializable]
     public class Jadlospis
     {
         public int? identyfikator;
@@ -18,6 +21,8 @@
         public string sklad_podwieczorek;
         public string sklad_kolacja;
 
+        public Jadlospis() { }
+
         public Jadlospis(string data, Dieta dieta, string miasto,  string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad,string nazwa_podwieczorek, string nazwa_kolacja,string sklad_sniadanie,string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek,string sklad_kolacja)
         {
             this.data = data;
@@ -33,6 +38,23 @@
             this.sklad_obiad = sklad_obiad;
             this.sklad_podwieczorek = sklad_podwieczorek;
             this.sklad_kolacja = sklad_kolacja;
+        }
+
+        public Jadlospis(Jadlospis j)
+        {
+            this.data = j.data;
+            this.dieta = j.dieta;
+            this.miasto = j.miasto;
+            this.nazwa_IIsniadanie = j.nazwa_IIsniadanie;
+            this.nazwa_sniadanie = j.nazwa_sniadanie;
+            this.nazwa_obiad = j.nazwa_obiad;
+            this.nazwa_podwieczorek = j.nazwa_podwieczorek;
+            this.nazwa_kolacja = j.nazwa_kolacja;
+            this.sklad_IIsniadanie = j.sklad_IIsniadanie;
+            this.sklad_sniadanie = j.sklad_sniadanie;
+            this.sklad_obiad = j.sklad_obiad;
+            this.sklad_podwieczorek = j.sklad_podwieczorek;
+            this.sklad_kolacja = j.sklad_kolacja;
         }
 
         public Jadlospis(int? identyfikator, int dzien, Dieta dieta,  string nazwa_sniadanie, string nazwa_IIsniadanie, string nazwa_obiad, string nazwa_podwieczorek, string nazwa_kolacja, string sklad_sniadanie, string sklad_IIsniadanie, string sklad_obiad, string sklad_podwieczorek, string sklad_kolacja)
@@ -51,6 +73,27 @@
             this.sklad_podwieczorek = sklad_podwieczorek;
             this.sklad_kolacja = sklad_kolacja;
 
+        }
+
+        public Jadlospis DeepCopy()
+        {
+            Jadlospis clone = new Jadlospis
+            {
+                data = this.data,
+                dieta = this.dieta,
+                miasto = this.miasto,
+                nazwa_IIsniadanie = this.nazwa_IIsniadanie,
+                nazwa_sniadanie = this.nazwa_sniadanie,
+                nazwa_obiad = this.nazwa_obiad,
+                nazwa_podwieczorek = this.nazwa_podwieczorek,
+                nazwa_kolacja = this.nazwa_kolacja,
+                sklad_IIsniadanie = this.sklad_IIsniadanie,
+                sklad_sniadanie = this.sklad_sniadanie,
+                sklad_obiad = this.sklad_obiad,
+                sklad_podwieczorek = this.sklad_podwieczorek,
+                sklad_kolacja = this.sklad_kolacja
+            };
+            return clone;
         }
     }
 }

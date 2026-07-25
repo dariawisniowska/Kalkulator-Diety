@@ -4,8 +4,10 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Drawing;
+    using System.IO;
     using System.Linq;
-    using System.Text;
+    using System.Runtime.Serialization;
+    using System.Runtime.Serialization.Formatters.Binary;
     using System.Windows.Forms;
     using KalkulatorDiety.DAO;
 
@@ -64,8 +66,8 @@
             InitializeComponent();
             DAO.DAO.ReloadDatabase();
             this.WindowState = FormWindowState.Maximized;
-            suma = new double[6, 9];
-            procent = new double[6, 9];
+            suma = new double[6, 10];
+            procent = new double[6, 10];
 
             glownaClick();
 
@@ -341,7 +343,7 @@
 
         public void LiczSrednia()
         {
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -351,8 +353,8 @@
 
             }
 
-            string[] arr = new string[9];
-            for (int i = 0; i < 9; i++)
+            string[] arr = new string[10];
+            for (int i = 0; i < 10; i++)
             {
                 arr[i] = "0";
             }
@@ -361,7 +363,7 @@
                 UseItemStyleForSubItems = false
             };
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < lv_sniadanie.Items.Count; i++)
                 {
@@ -375,7 +377,7 @@
                 }
             }
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < lv_IIsniadanie.Items.Count; i++)
                 {
@@ -389,7 +391,7 @@
                 }
             }
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < lv_obiad.Items.Count; i++)
                 {
@@ -402,7 +404,7 @@
                     suma[2, k] += a;
                 }
             }
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < lv_podwieczorek.Items.Count; i++)
                 {
@@ -417,7 +419,7 @@
             }
 
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < lv_kolacja.Items.Count; i++)
                 {
@@ -431,7 +433,7 @@
                 }
             }
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -518,19 +520,19 @@
 
 
             //WARTOŚCI
-            e_text.Text = Math.Round(suma[5, 0], 2).ToString() + " kcal";
-            b_text.Text = Math.Round(suma[5, 1], 2).ToString() + " g";
-            t_text.Text = Math.Round(suma[5, 2], 2).ToString() + " g";
-            k_text.Text = Math.Round(suma[5, 3], 2).ToString() + " g";
-            w_text.Text = Math.Round(suma[5, 4], 2).ToString() + " g";
-            wp_text.Text = Math.Round(suma[5, 5], 2).ToString() + " g";
-            c_text.Text = Math.Round(suma[5, 6], 2).ToString() + " g";
-            bp_text.Text = Math.Round(suma[5, 7], 2).ToString() + " g";
-            s_text.Text = Math.Round(suma[5, 8], 2).ToString() + " mg";
-            sol_text.Text = (Math.Round(suma[5, 8] * 0.0025, 2)).ToString() + " g";
+            e_text.Text = Math.Round(suma[5, 0], 2).ToString();
+            b_text.Text = Math.Round(suma[5, 1], 2).ToString();
+            t_text.Text = Math.Round(suma[5, 2], 2).ToString();
+            k_text.Text = Math.Round(suma[5, 3], 2).ToString();
+            w_text.Text = Math.Round(suma[5, 4], 2).ToString();
+            wp_text.Text = Math.Round(suma[5, 5], 2).ToString();
+            c_text.Text = Math.Round(suma[5, 6], 2).ToString();
+            bp_text.Text = Math.Round(suma[5, 7], 2).ToString();
+            s_text.Text = Math.Round(suma[5, 8], 2).ToString();
+            sol_text.Text = (Math.Round(suma[5, 8] * 0.0025, 2)).ToString();
 
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -540,156 +542,682 @@
                         double przelicznik = 0;
                         if (k == 1)
                             przelicznik = przelicznik_Bialko;
-                        if (k == 2)
+                        if (k == 2 || k == 3)
                             przelicznik = przelicznik_Tluszcze;
-                        if (k == 4)
+                        if (k == 4 || k == 5 || k == 6 || k == 7)
                             przelicznik = przelicznik_Weglowodany;
-                        if (k == 7)
-                            wartosc_odzywcza /= 1000;
 
                         procent[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma[i, 0];
                     }
                 }
             }
 
+
             //PROCENTY
-            //pb_Energia.SuperscriptText = Math.Round(procent[5, 0], 2).ToString() + " % kalorii";
-            b_subtext.Text = Math.Round(procent[5, 1], 2).ToString();
-            t_subtext.Text = Math.Round(procent[5, 2], 2).ToString();
-            w_subtext.Text = Math.Round(procent[5, 4], 2).ToString();
-            //pb_Sod.SuperscriptText = Math.Round(procent[5, 4], 2).ToString() + " % kalorii";
-            //pb_TluszczeNN.SuperscriptText = Math.Round(procent[5, 5], 2).ToString() + " % kalorii";
+            double bialkoProcent = Math.Round(procent[5, 1], 2);
+            bialko_procent.Text = bialkoProcent.ToString();
+            bialko_procent.ForeColor = Color.DarkGray;
+
+            double tluszczeProcent = Math.Round(procent[5, 2], 2);
+            tluszcze_procent.Text = tluszczeProcent.ToString();
+            tluszcze_procent.ForeColor = Color.DarkGray;
+
+            double kwasyProcent = Math.Round(procent[5, 3], 2);
+            kwasy_procent.Text = kwasyProcent.ToString();
+            kwasy_procent.ForeColor = Color.DarkGray;
+
+            double wegleProcent = Math.Round(procent[5, 4], 2);
+            wegle_procent.Text = wegleProcent.ToString();
+            wegle_procent.ForeColor = Color.DarkGray;
+
+            double przyswajalneProcent = Math.Round(procent[5, 5], 2);
+            przyswajalne_procent.Text = przyswajalneProcent.ToString();
+            przyswajalne_procent.ForeColor = Color.DarkGray;
+
+            double cukryProcent = Math.Round(procent[5, 6], 2);
+            cukry_procent.Text = cukryProcent.ToString();
+            cukry_procent.ForeColor = Color.DarkGray;
+
+            double blonnikProcent = Math.Round(procent[5, 7], 2);
+            blonnik_procent.Text = blonnikProcent.ToString();
+            blonnik_procent.ForeColor = Color.DarkGray;
+
+
+            //NA TYSIAC
+            double bialkoNaTysiac = Math.Round(suma[5, 1] * 1000.0 / suma[5, 0], 2);
+            bialko_tysiac.Text = bialkoNaTysiac.ToString();
+            bialko_tysiac.ForeColor = Color.DarkGray;
+
+            double tluszczeNaTysiac = Math.Round(suma[5, 2] * 1000.0 / suma[5, 0], 2);
+            tluszcze_tysiac.Text = tluszczeNaTysiac.ToString();
+            tluszcze_tysiac.ForeColor = Color.DarkGray;
+
+            double kwasyNaTysiac = Math.Round(suma[5, 3] * 1000.0 / suma[5, 0], 2);
+            kwasy_tysiac.Text = kwasyNaTysiac.ToString();
+            kwasy_tysiac.ForeColor = Color.DarkGray;
+
+            double wegleNaTysiac = Math.Round(suma[5, 4] * 1000.0 / suma[5, 0], 2);
+            wegle_tysiac.Text = wegleNaTysiac.ToString();
+            wegle_tysiac.ForeColor = Color.DarkGray;
+
+            double przyswajalneNaTysiac = Math.Round(suma[5, 5] * 1000.0 / suma[5, 0], 2);
+            przyswajalne_tysiac.Text = przyswajalneNaTysiac.ToString();
+            przyswajalne_tysiac.ForeColor = Color.DarkGray;
+
+            double cukryNaTysiac = Math.Round(suma[5, 6] * 1000.0 / suma[5, 0], 2);
+            cukry_tysiac.Text = cukryNaTysiac.ToString();
+            cukry_tysiac.ForeColor = Color.DarkGray;
+
+            double blonnikNaTysiac = Math.Round(suma[5, 7] * 1000.0 / suma[5, 0], 2);
+            blonnik_tysiac.Text = blonnikNaTysiac.ToString();
+            blonnik_tysiac.ForeColor = Color.DarkGray;
 
             //ZAWARTOSC
             try
             {
                 if (cb_dieta.SelectedIndex != -1)
                 {
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.energia != 0)
+                    if (Diety[cb_dieta.SelectedIndex].energiaDo != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 0] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.energia) > 100)
+                        energia_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].energiaOd.ToString()} - {Diety[cb_dieta.SelectedIndex].energiaDo.ToString()}";
+                        if (suma[5, 0] > Diety[cb_dieta.SelectedIndex].energiaDo)
                         {
-                            pb_Energia.Value = 100;
-                            plus_energia.Text = "+ " + Math.Round(suma[5, 0] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.energia, 2) + " kalorii";
+                            plus_energia.Text = "+ " + Math.Round(suma[5, 0] - Diety[cb_dieta.SelectedIndex].energiaDo, 2);
+                            if(suma[5, 0] > Diety[cb_dieta.SelectedIndex].energiaDo * 1.1)
+                                plus_energia.ForeColor = Color.Red;
+                            else
+                                plus_energia.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 0] < Diety[cb_dieta.SelectedIndex].energiaOd)
+                        {
+                            plus_energia.Text =  Math.Round(suma[5, 0] - Diety[cb_dieta.SelectedIndex].energiaOd, 2).ToString();
+                            if (suma[5, 0] < Diety[cb_dieta.SelectedIndex].energiaOd * 0.9)
+                                plus_energia.ForeColor = Color.Red;
+                            else
+                                plus_energia.ForeColor = Color.Orange;
                         }
                         else
                         {
-                            plus_energia.Text = "";
-                            pb_Energia.Value = Convert.ToInt32(suma[5, 0] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.energia);
-                        }
-                    }
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.bialko != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 1] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.bialko) > 100)
-                        {
-                            pb_Bialko.Value = 100;
-                            plus_bialko.Text = "+ " + Math.Round(suma[5, 1] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.bialko, 2) + " g";
-                        }
-                        else
-                        {
-                            plus_bialko.Text = "";
-                            pb_Bialko.Value = Convert.ToInt32(suma[5, 1] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.bialko);
-                        }
-                    }
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 2] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze) > 100)
-                        {
-                            pb_Tluszcze.Value = 100;
-                            plus_tluszcze.Text = "+ " + Math.Round(suma[5, 2] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze, 2) + " g";
-                        }
-                        else
-                        {
-                            plus_tluszcze.Text = "";
-                            pb_Tluszcze.Value = Convert.ToInt32(suma[5, 2] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze);
-                        }
-                    }
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 4] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany) > 100)
-                        {
-                            pb_Weglowodany.Value = 100;
-                            plus_wegle.Text = "+ " + Math.Round(suma[5, 4] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany, 2) + " g";
-                        }
-                        else
-                        {
-                            plus_wegle.Text = "";
-                            pb_Weglowodany.Value = Convert.ToInt32(suma[5, 4] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany);
-                        }
-                    }
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 5] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne) > 100)
-                        {
-                            pb_przyswajalne.Value = 100;
-                            plus_przyswajalne.Text = "+ " + Math.Round(suma[5, 5] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne, 2) + " g";
-                        }
-                        else
-                        {
-                            plus_przyswajalne.Text = "";
-                            pb_przyswajalne.Value = Convert.ToInt32(suma[5, 5] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne);
-                        }
-                    }
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.cukry != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 6] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.cukry) > 100)
-                        {
-                            pb_cukry.Value = 100;
-                            plus_wegle.Text = "+ " + Math.Round(suma[5, 6] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.cukry, 2) + " g";
-                        }
-                        else
-                        {
-                            plus_wegle.Text = "";
-                            pb_cukry.Value = Convert.ToInt32(suma[5, 6] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.cukry);
+                            plus_energia.Text = "OK";
+                            plus_energia.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        pb_cukry.Value = 0;
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.blonnik != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 7] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.blonnik) > 100)
+                        plus_energia.Text = "";
+                        energia_zakres.Text = "";
+                        plus_energia.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].bialkoDo != 0)
+                    {
+                        bialko_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].bialkoOd.ToString()} - {Diety[cb_dieta.SelectedIndex].bialkoDo.ToString()}";
+                        if (suma[5, 1] > Diety[cb_dieta.SelectedIndex].bialkoDo)
                         {
-                            pb_blonnik.Value = 100;
-                            plus_blonnik.Text = "+ " + Math.Round(suma[5, 7] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.blonnik, 2) + " g";
+                            plus_bialko.Text = "+ " + Math.Round(suma[5, 1] - Diety[cb_dieta.SelectedIndex].bialkoDo, 2);
+                            if (suma[5, 1] > Diety[cb_dieta.SelectedIndex].bialkoDo * 1.1)
+                                plus_bialko.ForeColor = Color.Red;
+                            else
+                                plus_bialko.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 1] < Diety[cb_dieta.SelectedIndex].bialkoOd)
+                        {
+                            plus_bialko.Text =  Math.Round(suma[5, 1] - Diety[cb_dieta.SelectedIndex].bialkoOd, 2).ToString();
+                            if (suma[5, 1] < Diety[cb_dieta.SelectedIndex].bialkoOd * 0.9)
+                                plus_bialko.ForeColor = Color.Red;
+                            else
+                                plus_bialko.ForeColor = Color.Orange;
                         }
                         else
                         {
-                            plus_blonnik.Text = "";
-                            pb_blonnik.Value = Convert.ToInt32(suma[5, 7] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.blonnik);
+                            plus_bialko.Text = "OK";
+                            plus_bialko.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        pb_blonnik.Value = 0;
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.sod != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 8] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.sod) > 100)
+                        plus_bialko.Text = "";
+                        bialko_zakres.Text = "";
+                        plus_bialko.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].bialkoDoNaTysiąc != 0)
+                    {
+                        bialko_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].bialkoOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].bialkoDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        bialko_tysiac_zakres.Text = "";
+                        bialko_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].bialkoProcentDo != 0)
+                    {
+                        bialko_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].bialkoProcentOd} - {Diety[cb_dieta.SelectedIndex].bialkoProcentDo} % kcal";
+                        if (bialkoProcent > Diety[cb_dieta.SelectedIndex].bialkoProcentDo * 1.1)
                         {
-                            pb_Sod2.Value = 100;
-                            plus_sod.Text = "+ " + Math.Round(suma[5, 8] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.sod, 2) + " mg";
+                            bialko_procent.ForeColor = Color.Red;
+                        }
+                        else if (bialkoProcent > Diety[cb_dieta.SelectedIndex].bialkoProcentDo)
+                        {
+                            bialko_procent.ForeColor = Color.Orange;
+                        }
+                        else if (bialkoProcent < Diety[cb_dieta.SelectedIndex].bialkoProcentOd * 0.9)
+                        {
+                            bialko_procent.ForeColor = Color.Red;
+                        }
+                        else if (bialkoProcent < Diety[cb_dieta.SelectedIndex].bialkoProcentOd)
+                        {
+                            bialko_procent.ForeColor = Color.Orange;
                         }
                         else
                         {
-                            plus_sod.Text = "";
-                            pb_Sod2.Value = Convert.ToInt32(suma[5, 8] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.sod);
+                            bialko_procent.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        pb_Sod2.Value = 0;
-                    if (Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 3] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn) > 100)
+                        bialko_procent_zakres.Text = "";
+                        bialko_procent_zakres.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].tluszczeDo != 0)
+                    {
+                        tluszcze_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].tluszczeOd.ToString()} - {Diety[cb_dieta.SelectedIndex].tluszczeDo.ToString()}";
+                        if (suma[5, 2] > Diety[cb_dieta.SelectedIndex].tluszczeDo)
                         {
-                            pb_ktn.Value = 100;
-                            plus_kwasy.Text = "+ " + Math.Round(suma[5, 3] - Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn, 2) + " g";
+                            plus_tluszcze.Text = "+ " + Math.Round(suma[5, 2] - Diety[cb_dieta.SelectedIndex].tluszczeDo, 2);
+                            if (suma[5, 2] > Diety[cb_dieta.SelectedIndex].tluszczeDo * 1.1)
+                                plus_tluszcze.ForeColor = Color.Red;
+                            else
+                                plus_tluszcze.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 2] < Diety[cb_dieta.SelectedIndex].tluszczeOd)
+                        {
+                            plus_tluszcze.Text =  Math.Round(suma[5, 2] - Diety[cb_dieta.SelectedIndex].tluszczeOd, 2).ToString();
+                            if (suma[5, 2] < Diety[cb_dieta.SelectedIndex].tluszczeOd * 0.9)
+                                plus_tluszcze.ForeColor = Color.Red;
+                            else
+                                plus_tluszcze.ForeColor = Color.Orange;
                         }
                         else
                         {
-                            plus_kwasy.Text = "";
-                            pb_ktn.Value = Convert.ToInt32(suma[5, 3] * 100 / Diety[cb_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn);
+                            plus_tluszcze.Text = "OK";
+                            plus_tluszcze.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        pb_ktn.Value = 0;
+                    {
+                        plus_tluszcze.Text = "";
+                        tluszcze_zakres.Text = "";
+                        plus_tluszcze.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].tluszczeDoNaTysiąc != 0)
+                    {
+                        tluszcze_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].tluszczeOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].tluszczeDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        tluszcze_tysiac_zakres.Text = "";
+                        t_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].tluszczeProcentDo != 0)
+                    {
+                        tluszcze_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].tluszczeProcentOd} - {Diety[cb_dieta.SelectedIndex].tluszczeProcentDo} % kcal";
+                        if (tluszczeProcent > Diety[cb_dieta.SelectedIndex].tluszczeProcentDo * 1.1)
+                        {
+                            tluszcze_procent.ForeColor = Color.Red;
+                        }
+                        else if (tluszczeProcent > Diety[cb_dieta.SelectedIndex].tluszczeProcentDo)
+                        {
+                            tluszcze_procent.ForeColor = Color.Orange;
+                        }
+                        else if (tluszczeProcent < Diety[cb_dieta.SelectedIndex].tluszczeProcentOd * 0.9)
+                        {
+                            tluszcze_procent.ForeColor = Color.Red;
+                        }
+                        else if (tluszczeProcent < Diety[cb_dieta.SelectedIndex].tluszczeProcentOd)
+                        {
+                            tluszcze_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            tluszcze_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        tluszcze_procent_zakres.Text = "";
+                        tluszcze_procent.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].kwasyDo != 0)
+                    {
+                        kwasy_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].kwasyOd.ToString()} - {Diety[cb_dieta.SelectedIndex].kwasyDo.ToString()}";
+                        if (suma[5, 3] > Diety[cb_dieta.SelectedIndex].kwasyDo)
+                        {
+                            plus_kwasy.Text = "+ " + Math.Round(suma[5, 3] - Diety[cb_dieta.SelectedIndex].kwasyDo, 2);
+                            if (suma[5, 3] > Diety[cb_dieta.SelectedIndex].kwasyDo * 1.1)
+                                plus_kwasy.ForeColor = Color.Red;
+                            else
+                                plus_kwasy.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 3] < Diety[cb_dieta.SelectedIndex].kwasyOd)
+                        {
+                            plus_kwasy.Text =  Math.Round(suma[5, 3] - Diety[cb_dieta.SelectedIndex].kwasyOd, 2).ToString();
+                            if (suma[5, 3] < Diety[cb_dieta.SelectedIndex].kwasyOd * 0.9)
+                                plus_kwasy.ForeColor = Color.Red;
+                            else
+                                plus_kwasy.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_kwasy.Text = "OK";
+                            plus_kwasy.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_kwasy.Text = "";
+                        kwasy_zakres.Text = "";
+                        plus_kwasy.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].kwasyDoNaTysiąc != 0)
+                    {
+                        kwasy_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].kwasyOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].kwasyDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        kwasy_tysiac_zakres.Text = "";
+                        k_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].kwasyProcentDo != 0)
+                    {
+                        kwasy_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].kwasyProcentOd} - {Diety[cb_dieta.SelectedIndex].kwasyProcentDo} % kcal";
+                        if (kwasyProcent > Diety[cb_dieta.SelectedIndex].kwasyProcentDo * 1.1)
+                        {
+                            kwasy_procent.ForeColor = Color.Red;
+                        }
+                        else if (kwasyProcent > Diety[cb_dieta.SelectedIndex].kwasyProcentDo)
+                        {
+                            kwasy_procent.ForeColor = Color.Orange;
+                        }
+                        else if (kwasyProcent < Diety[cb_dieta.SelectedIndex].kwasyProcentOd * 0.9)
+                        {
+                            kwasy_procent.ForeColor = Color.Red;
+                        }
+                        else if (kwasyProcent < Diety[cb_dieta.SelectedIndex].kwasyProcentOd)
+                        {
+                            kwasy_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            kwasy_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        kwasy_procent_zakres.Text = "";
+                        kwasy_procent.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].wegleDo != 0)
+                    {
+                        wegle_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].wegleOd.ToString()} - {Diety[cb_dieta.SelectedIndex].wegleDo.ToString()}";
+                        if (suma[5, 4] > Diety[cb_dieta.SelectedIndex].wegleDo)
+                        {
+                            plus_wegle.Text = "+ " + Math.Round(suma[5, 4] - Diety[cb_dieta.SelectedIndex].wegleDo, 2);
+                            if (suma[5, 4] > Diety[cb_dieta.SelectedIndex].wegleDo * 1.1)
+                                plus_wegle.ForeColor = Color.Red;
+                            else
+                                plus_wegle.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 4] < Diety[cb_dieta.SelectedIndex].wegleOd)
+                        {
+                            plus_wegle.Text =  Math.Round(suma[5, 4] - Diety[cb_dieta.SelectedIndex].wegleOd, 2).ToString();
+                            if (suma[5, 4] < Diety[cb_dieta.SelectedIndex].wegleOd * 0.9)
+                                plus_wegle.ForeColor = Color.Red;
+                            else
+                                plus_wegle.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_wegle.Text = "OK";
+                            plus_wegle.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_wegle.Text = "";
+                        wegle_zakres.Text = "";
+                        plus_wegle.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].wegleDoNaTysiąc != 0)
+                    {
+                        wegle_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].wegleOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].wegleDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        wegle_tysiac_zakres.Text = "";
+                        w_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].wegleProcentDo != 0)
+                    {
+                        wegle_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].wegleProcentOd} - {Diety[cb_dieta.SelectedIndex].wegleProcentDo} % kcal";
+                        if (wegleProcent > Diety[cb_dieta.SelectedIndex].wegleProcentDo * 1.1)
+                        {
+                            wegle_procent.ForeColor = Color.Red;
+                        }
+                        else if (wegleProcent > Diety[cb_dieta.SelectedIndex].wegleProcentDo)
+                        {
+                            wegle_procent.ForeColor = Color.Orange;
+                        }
+                        else if (wegleProcent < Diety[cb_dieta.SelectedIndex].wegleProcentOd * 0.9)
+                        {
+                            wegle_procent.ForeColor = Color.Red;
+                        }
+                        else if (wegleProcent < Diety[cb_dieta.SelectedIndex].wegleProcentOd)
+                        {
+                            wegle_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            wegle_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        wegle_procent_zakres.Text = "";
+                        wegle_procent.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].przyswajalneDo != 0)
+                    {
+                        przyswajalne_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].przyswajalneOd.ToString()} - {Diety[cb_dieta.SelectedIndex].przyswajalneDo.ToString()}";
+                        if (suma[5, 5] > Diety[cb_dieta.SelectedIndex].przyswajalneDo)
+                        {
+                            plus_przyswajalne.Text = "+ " + Math.Round(suma[5, 5] - Diety[cb_dieta.SelectedIndex].przyswajalneDo, 2);
+                            if (suma[5, 5] > Diety[cb_dieta.SelectedIndex].przyswajalneDo * 1.1)
+                                plus_przyswajalne.ForeColor = Color.Red;
+                            else
+                                plus_przyswajalne.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 5] < Diety[cb_dieta.SelectedIndex].przyswajalneOd)
+                        {
+                            plus_przyswajalne.Text =  Math.Round(suma[5, 5] - Diety[cb_dieta.SelectedIndex].przyswajalneOd, 2).ToString();
+                            if (suma[5, 5] < Diety[cb_dieta.SelectedIndex].przyswajalneOd * 0.9)
+                                plus_przyswajalne.ForeColor = Color.Red;
+                            else
+                                plus_przyswajalne.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_przyswajalne.Text = "OK";
+                            plus_przyswajalne.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_przyswajalne.Text = "";
+                        przyswajalne_zakres.Text = "";
+                        plus_przyswajalne.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].przyswajalneDoNaTysiąc != 0)
+                    {
+                        przyswajalne_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].przyswajalneOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].przyswajalneDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        przyswajalne_tysiac_zakres.Text = "";
+                        p_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].przyswajalneProcentDo != 0)
+                    {
+                        przyswajalne_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].przyswajalneProcentOd} - {Diety[cb_dieta.SelectedIndex].przyswajalneProcentDo} % kcal";
+                        if (przyswajalneProcent > Diety[cb_dieta.SelectedIndex].przyswajalneProcentDo * 1.1)
+                        {
+                            przyswajalne_procent.ForeColor = Color.Red;
+                        }
+                        else if (przyswajalneProcent > Diety[cb_dieta.SelectedIndex].przyswajalneProcentDo)
+                        {
+                            przyswajalne_procent.ForeColor = Color.Orange;
+                        }
+                        else if (przyswajalneProcent < Diety[cb_dieta.SelectedIndex].przyswajalneProcentOd * 0.9)
+                        {
+                            przyswajalne_procent.ForeColor = Color.Red;
+                        }
+                        else if (przyswajalneProcent < Diety[cb_dieta.SelectedIndex].przyswajalneProcentOd)
+                        {
+                            przyswajalne_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            przyswajalne_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        przyswajalne_procent_zakres.Text = "";
+                        przyswajalne_procent.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].cukryDo != 0)
+                    {
+                        cukry_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].cukryOd.ToString()} - {Diety[cb_dieta.SelectedIndex].cukryDo.ToString()}";
+                        if (suma[5, 6] > Diety[cb_dieta.SelectedIndex].cukryDo)
+                        {
+                            plus_cukry.Text = "+ " + Math.Round(suma[5, 6] - Diety[cb_dieta.SelectedIndex].cukryDo, 2);
+                            if (suma[5, 6] > Diety[cb_dieta.SelectedIndex].cukryDo * 1.1)
+                                plus_cukry.ForeColor = Color.Red;
+                            else
+                                plus_cukry.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 6] < Diety[cb_dieta.SelectedIndex].cukryOd)
+                        {
+                            plus_cukry.Text =  Math.Round(suma[5, 6] - Diety[cb_dieta.SelectedIndex].cukryOd, 2).ToString();
+                            if (suma[5, 6] < Diety[cb_dieta.SelectedIndex].cukryOd * 0.9)
+                                plus_cukry.ForeColor = Color.Red;
+                            else
+                                plus_cukry.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_cukry.Text = "OK";
+                            plus_cukry.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_cukry.Text = "";
+                        cukry_zakres.Text = "";
+                        plus_cukry.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].cukryDoNaTysiąc != 0)
+                    {
+                        cukry_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].cukryOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].cukryDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        cukry_tysiac_zakres.Text = "";
+                        c_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].cukryProcentDo != 0)
+                    {
+                        cukry_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].cukryProcentOd} - {Diety[cb_dieta.SelectedIndex].cukryProcentDo} % kcal";
+                        if (cukryProcent > Diety[cb_dieta.SelectedIndex].cukryProcentDo * 1.1)
+                        {
+                            cukry_procent.ForeColor = Color.Red;
+                        }
+                        else if (cukryProcent > Diety[cb_dieta.SelectedIndex].cukryProcentDo)
+                        {
+                            cukry_procent.ForeColor = Color.Orange;
+                        }
+                        else if (cukryProcent < Diety[cb_dieta.SelectedIndex].cukryProcentOd * 0.9)
+                        {
+                            cukry_procent.ForeColor = Color.Red;
+                        }
+                        else if (cukryProcent < Diety[cb_dieta.SelectedIndex].cukryProcentOd)
+                        {
+                            cukry_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            cukry_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        cukry_procent_zakres.Text = "";
+                        cukry_procent.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].blonnikDo != 0)
+                    {
+                        blonnik_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].blonnikOd.ToString()} - {Diety[cb_dieta.SelectedIndex].blonnikDo.ToString()}";
+                        if (suma[5, 7] > Diety[cb_dieta.SelectedIndex].blonnikDo)
+                        {
+                            plus_blonnik.Text = "+ " + Math.Round(suma[5, 7] - Diety[cb_dieta.SelectedIndex].blonnikDo, 2);
+                            if (suma[5, 7] > Diety[cb_dieta.SelectedIndex].blonnikDo * 1.1)
+                                plus_blonnik.ForeColor = Color.Red;
+                            else
+                                plus_blonnik.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 7] < Diety[cb_dieta.SelectedIndex].blonnikOd)
+                        {
+                            plus_blonnik.Text =  Math.Round(suma[5, 7] - Diety[cb_dieta.SelectedIndex].blonnikOd, 2).ToString();
+                            if (suma[5, 7] < Diety[cb_dieta.SelectedIndex].blonnikOd * 0.9)
+                                plus_blonnik.ForeColor = Color.Red;
+                            else
+                                plus_blonnik.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_blonnik.Text = "OK";
+                            plus_blonnik.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_blonnik.Text = "";
+                        blonnik_zakres.Text = "";
+                        plus_blonnik.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].blonnikDoNaTysiąc != 0)
+                    {
+                        blonnik_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].blonnikOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].blonnikDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        blonnik_tysiac_zakres.Text = "";
+                        blonnik_label.Text = "";
+                    }
+
+                    if (Diety[cb_dieta.SelectedIndex].blonnikProcentDo != 0)
+                    {
+                        blonnik_procent_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].blonnikProcentOd} - {Diety[cb_dieta.SelectedIndex].blonnikProcentDo} % kcal";
+                        if (blonnikProcent > Diety[cb_dieta.SelectedIndex].blonnikProcentDo * 1.1)
+                        {
+                            blonnik_procent.ForeColor = Color.Red;
+                        }
+                        else if (blonnikProcent > Diety[cb_dieta.SelectedIndex].blonnikProcentDo)
+                        {
+                            blonnik_procent.ForeColor = Color.Orange;
+                        }
+                        else if (blonnikProcent < Diety[cb_dieta.SelectedIndex].blonnikProcentOd * 0.9)
+                        {
+                            blonnik_procent.ForeColor = Color.Red;
+                        }
+                        else if (blonnikProcent < Diety[cb_dieta.SelectedIndex].blonnikProcentOd)
+                        {
+                            blonnik_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            blonnik_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        blonnik_procent_zakres.Text = "";
+                        blonnik_procent.ForeColor = Color.DarkGray;
+                    }
+
+
+                    if (Diety[cb_dieta.SelectedIndex].sodDo != 0)
+                    {
+                        sod_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].sodOd.ToString()} - {Diety[cb_dieta.SelectedIndex].sodDo.ToString()}";
+                        if (suma[5, 8] > Diety[cb_dieta.SelectedIndex].sodDo)
+                        {
+                            plus_sod.Text = "+ " + Math.Round(suma[5, 8] - Diety[cb_dieta.SelectedIndex].sodDo, 2);
+                            if (suma[5, 8] > Diety[cb_dieta.SelectedIndex].sodDo * 1.1)
+                                plus_sod.ForeColor = Color.Red;
+                            else
+                                plus_sod.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 8] < Diety[cb_dieta.SelectedIndex].sodOd)
+                        {
+                            plus_sod.Text =  Math.Round(suma[5, 8] - Diety[cb_dieta.SelectedIndex].sodOd, 2).ToString();
+                            if (suma[5, 8] < Diety[cb_dieta.SelectedIndex].sodOd * 0.9)
+                                plus_sod.ForeColor = Color.Red;
+                            else
+                                plus_sod.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_sod.Text = "OK";
+                            plus_sod.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_sod.Text = "";
+                        sod_zakres.Text = "";
+                        plus_sod.ForeColor = Color.DarkGray;
+                    }
+
+
+                    if (Diety[cb_dieta.SelectedIndex].solDo != 0)
+                    {
+                        sol_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].solOd.ToString()} - {Diety[cb_dieta.SelectedIndex].solDo.ToString()}";
+                        if (Math.Round(suma[5, 8] * 0.0025, 2) > Diety[cb_dieta.SelectedIndex].solDo)
+                        {
+                            plus_sol.Text = "+ " + Math.Round(suma[5, 8] * 0.0025 - Diety[cb_dieta.SelectedIndex].solDo, 2);
+                            if (Math.Round(suma[5, 8] * 0.0025, 2) > Diety[cb_dieta.SelectedIndex].solDo * 1.1)
+                                plus_sol.ForeColor = Color.Red;
+                            else
+                                plus_sol.ForeColor = Color.Orange;
+                        }
+                        else if (Math.Round(suma[5, 8] * 0.0025, 2) < Diety[cb_dieta.SelectedIndex].solOd)
+                        {
+                            plus_sol.Text =  Math.Round(suma[5, 8] * 0.0025 - Diety[cb_dieta.SelectedIndex].solOd, 2).ToString();
+                            if (Math.Round(suma[5, 8] * 0.0025, 2) < Diety[cb_dieta.SelectedIndex].solDo * 0.9)
+                                plus_sol.ForeColor = Color.Red;
+                            else
+                                plus_sol.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            plus_sol.Text = "OK";
+                            plus_sol.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        plus_sol.Text = "";
+                        sol_zakres.Text = "";
+                        plus_sol.ForeColor = Color.DarkGray;
+                    }
                 }
             }
             catch
@@ -1203,7 +1731,6 @@
             panel_jadlospis.BringToFront();
 
             wczytajJadlospis();
-            LiczSredniaJadlospisu();
         }
 
         private void posiłekToolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -1294,15 +1821,15 @@
 
         private void KontrolaClick()
         {
-            panel14.BackColor = highlightColor;
-            panel3.BackColor = primaryColor;
-            panel5.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_k.BackColor = highlightColor;
+            p_p.BackColor = primaryColor;
+            p_r.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
 
             panel_kontrola.Visible = true;
             panel_kontrola.BringToFront();
@@ -1327,17 +1854,17 @@
 
         private void produktClick()
         {
-            panel3.BackColor = highlightColor;
-            pictureBox6.BackColor = highlightColor;
-            label11.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_p.BackColor = highlightColor;
+            i_p.BackColor = highlightColor;
+            t_p.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
 
             panel_produkty.Visible = true;
             panel_produkty.BringToFront();
@@ -1347,17 +1874,17 @@
 
         private void recepturaClick()
         {
-            panel5.BackColor = highlightColor;
-            pictureBox6.BackColor = primaryColor;
-            label11.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_r.BackColor = highlightColor;
+            i_p.BackColor = primaryColor;
+            t_p.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
 
             panel_receptura.Visible = true;
             panel_receptura.BringToFront();
@@ -1368,17 +1895,17 @@
 
         private void jadlospisClick()
         {
-            panel6.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
+            p_j.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
-            pictureBox6.BackColor = primaryColor;
-            label11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            i_p.BackColor = primaryColor;
+            t_p.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
             label10.Text = "Jadłospisy";
 
             panel_jadlospis.Visible = true;
@@ -1397,17 +1924,17 @@
 
         private void dekadowkaClick()
         {
-            panel7.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            pictureBox6.BackColor = primaryColor;
-            label11.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_de.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            i_p.BackColor = primaryColor;
+            t_p.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
             label10.Text = "Szablony";
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = true;
@@ -1431,17 +1958,17 @@
         }
         private void dietaClick()
         {
-            panel8.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_d.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
-            pictureBox6.BackColor = primaryColor;
-            label11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            i_p.BackColor = primaryColor;
+            t_p.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
             panel_dieta.Visible = true;
             panel_dieta.BringToFront();
 
@@ -1451,17 +1978,17 @@
 
         private void glownaClick()
         {
-            panel10.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_g.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel11.BackColor = primaryColor;
-            pictureBox6.BackColor = primaryColor;
-            label11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            i_p.BackColor = primaryColor;
+            t_p.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
             panel_glowny.Visible = true;
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = false;
@@ -1500,18 +2027,18 @@
         }
         private void jednostkaClick()
         {
-            panel9.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_h.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
             label10.Text = "Jednostki";
-            panel11.BackColor = primaryColor;
-            pictureBox6.BackColor = primaryColor;
-            label11.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_pr.BackColor = primaryColor;
+            i_p.BackColor = primaryColor;
+            t_p.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
 
             panel_jednostka.Visible = true;
             panel_jednostka.BringToFront();
@@ -2418,15 +2945,65 @@
         private void dieta_dieta_SelectedIndexChanged(object sender, EventArgs e)
         {
             dieta_nazwa.Text = Diety[dieta_dieta.SelectedIndex].nazwa;
-            dieta_energia.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.energia.ToString();
-            dieta_tluszcze.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.tluszcze.ToString();
-            dieta_bialko.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.bialko.ToString();
-            dieta_weglowodany.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.weglowodany.ToString();
-            dieta_blonnik.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.blonnik.ToString();
-            dieta_przyswajalne.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne.ToString();
-            dieta_cukry.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.cukry.ToString();
-            dieta_ktn.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn.ToString();
-            dieta_sod.Text = Diety[dieta_dieta.SelectedIndex].wartosciOdzywcze.sod.ToString();
+            dieta_kod.Text = Diety[dieta_dieta.SelectedIndex].kod;
+
+            energiaOd.Text = Diety[dieta_dieta.SelectedIndex].energiaOd.ToString();
+            energiaDo.Text = Diety[dieta_dieta.SelectedIndex].energiaDo.ToString();
+
+            bialkoOd.Text = Diety[dieta_dieta.SelectedIndex].bialkoOd.ToString();
+            bialkoDo.Text = Diety[dieta_dieta.SelectedIndex].bialkoDo.ToString();
+            bialkoOdTysiac.Text = Diety[dieta_dieta.SelectedIndex].bialkoOdNaTysiąc.ToString();
+            bialkoDoTysiac.Text = Diety[dieta_dieta.SelectedIndex].bialkoDoNaTysiąc.ToString();
+            bialkoOdProcent.Text = Diety[dieta_dieta.SelectedIndex].bialkoProcentOd.ToString();
+            bialkoDoProcent.Text = Diety[dieta_dieta.SelectedIndex].bialkoProcentDo.ToString();
+
+            tluszczeOd.Text = Diety[dieta_dieta.SelectedIndex].tluszczeOd.ToString();
+            tluszczeDo.Text = Diety[dieta_dieta.SelectedIndex].tluszczeDo.ToString();
+            tluszczeOdTysiac.Text = Diety[dieta_dieta.SelectedIndex].tluszczeOdNaTysiąc.ToString();
+            tluszczeDoTys.Text = Diety[dieta_dieta.SelectedIndex].tluszczeDoNaTysiąc.ToString();
+            TluszczeOdProc.Text = Diety[dieta_dieta.SelectedIndex].tluszczeProcentOd.ToString();
+            tluszczeDoProc.Text = Diety[dieta_dieta.SelectedIndex].tluszczeProcentDo.ToString();
+
+            kwasyOd.Text = Diety[dieta_dieta.SelectedIndex].kwasyOd.ToString();
+            kwasyDo.Text = Diety[dieta_dieta.SelectedIndex].kwasyDo.ToString();
+            KwasyOdTys.Text = Diety[dieta_dieta.SelectedIndex].kwasyOdNaTysiąc.ToString();
+            KwasyDoTys.Text = Diety[dieta_dieta.SelectedIndex].kwasyDoNaTysiąc.ToString();
+            kwasyOdProc.Text = Diety[dieta_dieta.SelectedIndex].kwasyProcentOd.ToString();
+            kwasyDoProc.Text = Diety[dieta_dieta.SelectedIndex].kwasyProcentDo.ToString();
+
+            wegleod.Text = Diety[dieta_dieta.SelectedIndex].wegleOd.ToString();
+            wegleDo.Text = Diety[dieta_dieta.SelectedIndex].wegleDo.ToString();
+            wegleOdTys.Text = Diety[dieta_dieta.SelectedIndex].wegleOdNaTysiąc.ToString();
+            wedgleDoTys.Text = Diety[dieta_dieta.SelectedIndex].wegleDoNaTysiąc.ToString();
+            wegleOdProc.Text = Diety[dieta_dieta.SelectedIndex].wegleProcentOd.ToString();
+            wegleDoProc.Text = Diety[dieta_dieta.SelectedIndex].wegleProcentDo.ToString();
+
+            przyswajalneOd.Text = Diety[dieta_dieta.SelectedIndex].przyswajalneOd.ToString();
+            przyswajalneDo.Text = Diety[dieta_dieta.SelectedIndex].przyswajalneDo.ToString();
+            przyswajalneOdTys.Text = Diety[dieta_dieta.SelectedIndex].przyswajalneOdNaTysiąc.ToString();
+            przyswajalneDotys.Text = Diety[dieta_dieta.SelectedIndex].przyswajalneDoNaTysiąc.ToString();
+            przyswajalneodProc.Text = Diety[dieta_dieta.SelectedIndex].przyswajalneProcentOd.ToString();
+            przyswajalneDoProc.Text = Diety[dieta_dieta.SelectedIndex].przyswajalneProcentDo.ToString();
+
+            cukryOd.Text = Diety[dieta_dieta.SelectedIndex].cukryOd.ToString();
+            cukryDo.Text = Diety[dieta_dieta.SelectedIndex].cukryDo.ToString();
+            cukryOdTys.Text = Diety[dieta_dieta.SelectedIndex].cukryOdNaTysiąc.ToString();
+            cukryDoTys.Text = Diety[dieta_dieta.SelectedIndex].cukryDoNaTysiąc.ToString();
+            cukryOdProc.Text = Diety[dieta_dieta.SelectedIndex].cukryProcentOd.ToString();
+            cukryDoProc.Text = Diety[dieta_dieta.SelectedIndex].cukryProcentDo.ToString();
+
+            blonnikOd.Text = Diety[dieta_dieta.SelectedIndex].blonnikOd.ToString();
+            blonnikDo.Text = Diety[dieta_dieta.SelectedIndex].blonnikDo.ToString();
+            blonnikOdTys.Text = Diety[dieta_dieta.SelectedIndex].blonnikOdNaTysiąc.ToString();
+            blonnikDoTys.Text = Diety[dieta_dieta.SelectedIndex].blonnikDoNaTysiąc.ToString();
+            blonnikOdProc.Text = Diety[dieta_dieta.SelectedIndex].blonnikProcentOd.ToString();
+            blonnikDoProc.Text = Diety[dieta_dieta.SelectedIndex].blonnikProcentDo.ToString();
+
+            sodOd.Text = Diety[dieta_dieta.SelectedIndex].sodOd.ToString();
+            sodDo.Text = Diety[dieta_dieta.SelectedIndex].sodDo.ToString();
+
+            SolOd.Text = Diety[dieta_dieta.SelectedIndex].solOd.ToString();
+            SolDo.Text = Diety[dieta_dieta.SelectedIndex].solDo.ToString();
         }
 
         private void dieta_ok_Click(object sender, EventArgs e)
@@ -2434,11 +3011,32 @@
             switch (label10.Text)
             {
                 case "Diety -> Dodaj":
-                    if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_energia.Text != "" && dieta_bialko.Text != "" && dieta_tluszcze.Text != "" && dieta_weglowodany.Text != "" && dieta_sod.Text != "" && dieta_ktn.Text != "" && dieta_przyswajalne.Text != "" && dieta_blonnik.Text != "" && dieta_cukry.Text != "")
+                    if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_kod.Text != "" &&
+     energiaOd.Text != "" && energiaDo.Text != "" &&
+     bialkoOd.Text != "" && bialkoDo.Text != "" && bialkoOdTysiac.Text != "" && bialkoOdTysiac.Text != "" && bialkoOdProcent.Text != "" && bialkoOdProcent.Text != "" &&
+     tluszczeOd.Text != "" && tluszczeDo.Text != "" && tluszczeOdTysiac.Text != "" && tluszczeDoTys.Text != "" && TluszczeOdProc.Text != "" && tluszczeDoProc.Text != "" &&
+     wegleod.Text != "" && wegleDo.Text != "" && wegleOdTys.Text != "" && wedgleDoTys.Text != "" && wegleOdProc.Text != "" && wegleDoProc.Text != "" &&
+     sodOd.Text != "" && sodDo.Text != "" &&
+     SolOd.Text != "" && SolDo.Text != "" &&
+     kwasyOd.Text != "" && kwasyDo.Text != "" && KwasyOdTys.Text != "" && KwasyDoTys.Text != "" && kwasyOdProc.Text != "" && kwasyDoProc.Text != "" &&
+     przyswajalneOd.Text != "" && przyswajalneDo.Text != "" && przyswajalneOdTys.Text != "" && przyswajalneDotys.Text != "" && przyswajalneodProc.Text != "" && przyswajalneDoProc.Text != "" &&
+     blonnikOd.Text != "" && blonnikDo.Text != "" && blonnikOdTys.Text != "" && blonnikDoTys.Text != "" && blonnikOdProc.Text != "" && blonnikDoProc.Text != "" &&
+     cukryOd.Text != "" && cukryDo.Text != "" && cukryOdTys.Text != "" && cukryDoTys.Text != "" && cukryOdProc.Text != "" && cukryDoProc.Text != "")
                     {
                         try
                         {
-                            DAO.DietaDAO.Insert(dieta_nazwa.Text, dieta_miasto.Text, Convert.ToDouble(dieta_energia.Text), Convert.ToDouble(dieta_bialko.Text), Convert.ToDouble(dieta_tluszcze.Text), Convert.ToDouble(dieta_weglowodany.Text), Convert.ToDouble(dieta_sod.Text), Convert.ToDouble(dieta_ktn.Text), Convert.ToDouble(dieta_przyswajalne.Text), Convert.ToDouble(dieta_blonnik.Text), Convert.ToDouble(dieta_cukry.Text));
+                            DAO.DietaDAO.Insert(dieta_nazwa.Text, dieta_miasto.Text, dieta_kod.Text,
+                                Convert.ToDouble(energiaOd.Text), Convert.ToDouble(energiaDo.Text),0,0,0,0,
+                                Convert.ToDouble(bialkoOd.Text), Convert.ToDouble(bialkoDo.Text), Convert.ToDouble(bialkoOdTysiac.Text), Convert.ToDouble(bialkoDoTysiac.Text), Convert.ToDouble(bialkoOdProcent.Text), Convert.ToDouble(bialkoDoProcent.Text),
+                                Convert.ToDouble(tluszczeOd.Text), Convert.ToDouble(tluszczeDo.Text), Convert.ToDouble(tluszczeOdTysiac.Text), Convert.ToDouble(tluszczeDoTys.Text), Convert.ToDouble(TluszczeOdProc.Text), Convert.ToDouble(tluszczeDoProc.Text),
+                                Convert.ToDouble(kwasyOd.Text), Convert.ToDouble(kwasyDo.Text), Convert.ToDouble(KwasyOdTys.Text), Convert.ToDouble(KwasyDoTys.Text), Convert.ToDouble(kwasyOdProc.Text), Convert.ToDouble(kwasyDoProc.Text),
+                                Convert.ToDouble(wegleod.Text), Convert.ToDouble(wegleDo.Text), Convert.ToDouble(wegleOdTys.Text), Convert.ToDouble(wedgleDoTys.Text), Convert.ToDouble(wegleOdProc.Text), Convert.ToDouble(wegleDoProc.Text),
+                                Convert.ToDouble(przyswajalneOd.Text), Convert.ToDouble(przyswajalneDo.Text), Convert.ToDouble(przyswajalneOdTys.Text), Convert.ToDouble(przyswajalneDotys.Text), Convert.ToDouble(przyswajalneodProc.Text), Convert.ToDouble(przyswajalneDoProc.Text),
+                                Convert.ToDouble(cukryOd.Text), Convert.ToDouble(cukryDo.Text), Convert.ToDouble(cukryOdTys.Text), Convert.ToDouble(cukryDoTys.Text), Convert.ToDouble(cukryOdProc.Text), Convert.ToDouble(cukryDoProc.Text),
+                                Convert.ToDouble(blonnikOd.Text), Convert.ToDouble(blonnikDo.Text), Convert.ToDouble(blonnikOdTys.Text), Convert.ToDouble(blonnikDoTys.Text), Convert.ToDouble(blonnikOdProc.Text), Convert.ToDouble(blonnikDoProc.Text),
+                                Convert.ToDouble(sodOd.Text), Convert.ToDouble(sodDo.Text), 0, 0, 0, 0,
+                                Convert.ToDouble(SolOd.Text), Convert.ToDouble(SolDo.Text),0,0,0,0
+                                );
                             MessageBox.Show("Dodano: " + dieta_nazwa.Text);
                             dietaClick();
                         }
@@ -2452,11 +3050,32 @@
                         MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
                     break;
                 case "Diety -> Edytuj":
-                    if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_energia.Text != "" && dieta_bialko.Text != "" && dieta_tluszcze.Text != "" && dieta_weglowodany.Text != "" && dieta_sod.Text != "" && dieta_ktn.Text != "" && dieta_przyswajalne.Text != "" && dieta_blonnik.Text != "" && dieta_cukry.Text != "")
+                    if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_kod.Text != "" &&
+                        energiaOd.Text != "" && energiaDo.Text != "" &&
+                        bialkoOd.Text != "" && bialkoDo.Text != "" && bialkoOdTysiac.Text != "" && bialkoDoTysiac.Text != "" && bialkoOdProcent.Text != "" && bialkoDoProcent.Text != "" &&
+                        tluszczeOd.Text != "" && tluszczeDo.Text != "" && tluszczeOdTysiac.Text != "" && tluszczeDoTys.Text != "" && TluszczeOdProc.Text != "" && tluszczeDoProc.Text != "" &&
+                        wegleod.Text != "" && wegleDo.Text != "" && wegleOdTys.Text != "" && wedgleDoTys.Text != "" && wegleOdProc.Text != "" && wegleDoProc.Text != "" &&
+                        sodOd.Text != "" && sodDo.Text != "" &&
+                        SolOd.Text != "" && SolDo.Text != "" &&
+                        kwasyOd.Text != "" && kwasyDo.Text != "" && KwasyOdTys.Text != "" && KwasyDoTys.Text != "" && kwasyOdProc.Text != "" && kwasyDoProc.Text != "" &&
+                        przyswajalneOd.Text != "" && przyswajalneDo.Text != "" && przyswajalneOdTys.Text != "" && przyswajalneDotys.Text != "" && przyswajalneodProc.Text != "" && przyswajalneDoProc.Text != "" &&
+                        blonnikOd.Text != "" && blonnikDo.Text != "" && blonnikOdTys.Text != "" && blonnikDoTys.Text != "" && blonnikOdProc.Text != "" && blonnikDoProc.Text != "" &&
+                        cukryOd.Text != "" && cukryDo.Text != "" && cukryOdTys.Text != "" && cukryDoTys.Text != "" && cukryOdProc.Text != "" && cukryDoProc.Text != "")
                     {
                         try
                         {
-                            DAO.DietaDAO.Update(Diety[dieta_dieta.SelectedIndex], dieta_nazwa.Text, dieta_miasto.Text, Convert.ToDouble(dieta_energia.Text), Convert.ToDouble(dieta_bialko.Text), Convert.ToDouble(dieta_tluszcze.Text), Convert.ToDouble(dieta_weglowodany.Text), Convert.ToDouble(dieta_sod.Text), Convert.ToDouble(dieta_ktn.Text), Convert.ToDouble(dieta_przyswajalne.Text), Convert.ToDouble(dieta_blonnik.Text), Convert.ToDouble(dieta_cukry.Text));
+                            DAO.DietaDAO.Update(Diety[dieta_dieta.SelectedIndex], dieta_nazwa.Text, dieta_miasto.Text, dieta_kod.Text,
+                                Convert.ToDouble(energiaOd.Text), Convert.ToDouble(energiaDo.Text), 0, 0, 0, 0,
+                                Convert.ToDouble(bialkoOd.Text), Convert.ToDouble(bialkoDo.Text), Convert.ToDouble(bialkoOdTysiac.Text), Convert.ToDouble(bialkoDoTysiac.Text), Convert.ToDouble(bialkoOdProcent.Text), Convert.ToDouble(bialkoDoProcent.Text),
+                                Convert.ToDouble(tluszczeOd.Text), Convert.ToDouble(tluszczeDo.Text), Convert.ToDouble(tluszczeOdTysiac.Text), Convert.ToDouble(tluszczeDoTys.Text), Convert.ToDouble(TluszczeOdProc.Text), Convert.ToDouble(tluszczeDoProc.Text),
+                                Convert.ToDouble(kwasyOd.Text), Convert.ToDouble(kwasyDo.Text), Convert.ToDouble(KwasyOdTys.Text), Convert.ToDouble(KwasyDoTys.Text), Convert.ToDouble(kwasyOdProc.Text), Convert.ToDouble(kwasyDoProc.Text),
+                                Convert.ToDouble(wegleod.Text), Convert.ToDouble(wegleDo.Text), Convert.ToDouble(wegleOdTys.Text), Convert.ToDouble(wedgleDoTys.Text), Convert.ToDouble(wegleOdProc.Text), Convert.ToDouble(wegleDoProc.Text),
+                                Convert.ToDouble(przyswajalneOd.Text), Convert.ToDouble(przyswajalneDo.Text), Convert.ToDouble(przyswajalneOdTys.Text), Convert.ToDouble(przyswajalneDotys.Text), Convert.ToDouble(przyswajalneodProc.Text), Convert.ToDouble(przyswajalneDoProc.Text),
+                                Convert.ToDouble(cukryOd.Text), Convert.ToDouble(cukryDo.Text), Convert.ToDouble(cukryOdTys.Text), Convert.ToDouble(cukryDoTys.Text), Convert.ToDouble(cukryOdProc.Text), Convert.ToDouble(cukryDoProc.Text),
+                                Convert.ToDouble(blonnikOd.Text), Convert.ToDouble(blonnikDo.Text), Convert.ToDouble(blonnikOdTys.Text), Convert.ToDouble(blonnikDoTys.Text), Convert.ToDouble(blonnikOdProc.Text), Convert.ToDouble(blonnikDoProc.Text),
+                                Convert.ToDouble(sodOd.Text), Convert.ToDouble(sodDo.Text), 0, 0, 0, 0,
+                                Convert.ToDouble(SolOd.Text), Convert.ToDouble(SolDo.Text), 0, 0, 0, 0
+                                );
                             MessageBox.Show("Edytowano: " + dieta_nazwa.Text);
                             dietaClick();
                         }
@@ -2486,27 +3105,125 @@
 
             dieta_nazwa.Enabled = false;
             dieta_nazwa.BackColor = Color.FromName("ControlLight");
-            dieta_energia.Enabled = false;
-            dieta_energia.BackColor = Color.FromName("ControlLight");
-            dieta_bialko.Enabled = false;
-            dieta_bialko.BackColor = Color.FromName("ControlLight");
-            dieta_tluszcze.Enabled = false;
-            dieta_tluszcze.BackColor = Color.FromName("ControlLight");
-            dieta_weglowodany.Enabled = false;
-            dieta_weglowodany.BackColor = Color.FromName("ControlLight");
-            dieta_cukry.Enabled = false;
-            dieta_cukry.BackColor = Color.FromName("ControlLight");
-            dieta_ktn.Enabled = false;
-            dieta_ktn.BackColor = Color.FromName("ControlLight");
-            dieta_sod.Enabled = false;
-            dieta_sod.BackColor = Color.FromName("ControlLight");
-            dieta_przyswajalne.Enabled = false;
-            dieta_przyswajalne.BackColor = Color.FromName("ControlLight");
-            dieta_blonnik.Enabled = false;
-            dieta_blonnik.BackColor = Color.FromName("ControlLight");
-            dieta_lbl_sol.Visible = false;
-            dieta_sol.Visible = false;
-            dieta_przelicz.Visible = false;
+
+            dieta_kod.Enabled = false;
+            dieta_kod.BackColor = Color.FromName("ControlLight");
+
+            energiaOd.Enabled = false;
+            energiaOd.BackColor = Color.FromName("ControlLight");
+            energiaDo.Enabled = false;
+            energiaDo.BackColor = Color.FromName("ControlLight");
+
+            bialkoOd.BackColor = Color.FromName("ControlLight");
+            bialkoDo.BackColor = Color.FromName("ControlLight");
+            bialkoOdTysiac.BackColor = Color.FromName("ControlLight");
+            bialkoDoTysiac.BackColor = Color.FromName("ControlLight");
+            bialkoOdProcent.BackColor = Color.FromName("ControlLight");
+            bialkoDoProcent.BackColor = Color.FromName("ControlLight");
+
+            tluszczeOd.BackColor = Color.FromName("ControlLight");
+            tluszczeDo.BackColor = Color.FromName("ControlLight");
+            tluszczeOdTysiac.BackColor = Color.FromName("ControlLight");
+            tluszczeDoTys.BackColor = Color.FromName("ControlLight");
+            TluszczeOdProc.BackColor = Color.FromName("ControlLight");
+            tluszczeDoProc.BackColor = Color.FromName("ControlLight");
+
+            kwasyOd.BackColor = Color.FromName("ControlLight");
+            kwasyDo.BackColor = Color.FromName("ControlLight");
+            KwasyOdTys.BackColor = Color.FromName("ControlLight");
+            KwasyDoTys.BackColor = Color.FromName("ControlLight");
+            kwasyOdProc.BackColor = Color.FromName("ControlLight");
+            kwasyDoProc.BackColor = Color.FromName("ControlLight");
+
+            wegleod.BackColor = Color.FromName("ControlLight");
+            wegleDo.BackColor = Color.FromName("ControlLight");
+            wegleOdTys.BackColor = Color.FromName("ControlLight");
+            wedgleDoTys.BackColor = Color.FromName("ControlLight");
+            wegleOdProc.BackColor = Color.FromName("ControlLight");
+            wegleDoProc.BackColor = Color.FromName("ControlLight");
+
+            przyswajalneOd.BackColor = Color.FromName("ControlLight");
+            przyswajalneDo.BackColor = Color.FromName("ControlLight");
+            przyswajalneOdTys.BackColor = Color.FromName("ControlLight");
+            przyswajalneDotys.BackColor = Color.FromName("ControlLight");
+            przyswajalneodProc.BackColor = Color.FromName("ControlLight");
+            przyswajalneDoProc.BackColor = Color.FromName("ControlLight");
+
+            cukryOd.BackColor = Color.FromName("ControlLight");
+            cukryDo.BackColor = Color.FromName("ControlLight");
+            cukryOdTys.BackColor = Color.FromName("ControlLight");
+            cukryDoTys.BackColor = Color.FromName("ControlLight");
+            cukryOdProc.BackColor = Color.FromName("ControlLight");
+            cukryDoProc.BackColor = Color.FromName("ControlLight");
+
+            blonnikOd.BackColor = Color.FromName("ControlLight");
+            blonnikDo.BackColor = Color.FromName("ControlLight");
+            blonnikOdTys.BackColor = Color.FromName("ControlLight");
+            blonnikDoTys.BackColor = Color.FromName("ControlLight");
+            blonnikOdProc.BackColor = Color.FromName("ControlLight");
+            blonnikDoProc.BackColor = Color.FromName("ControlLight");
+
+            sodOd.BackColor = Color.FromName("ControlLight");
+            sodDo.BackColor = Color.FromName("ControlLight");
+
+            SolOd.BackColor = Color.FromName("ControlLight");
+            SolDo.BackColor = Color.FromName("ControlLight");
+
+            bialkoOd.Enabled = false;
+            bialkoDo.Enabled = false;
+            bialkoOdTysiac.Enabled = false;
+            bialkoDoTysiac.Enabled = false;
+            bialkoOdProcent.Enabled = false;
+            bialkoDoProcent.Enabled = false;
+
+            tluszczeOd.Enabled = false;
+            tluszczeDo.Enabled = false;
+            tluszczeOdTysiac.Enabled = false;
+            tluszczeDoTys.Enabled = false;
+            TluszczeOdProc.Enabled = false;
+            tluszczeDoProc.Enabled = false;
+
+            kwasyOd.Enabled = false;
+            kwasyDo.Enabled = false; 
+            KwasyOdTys.Enabled = false;
+            KwasyDoTys.Enabled = false; 
+            kwasyOdProc.Enabled = false; 
+            kwasyDoProc.Enabled = false; 
+
+            wegleod.Enabled = false; 
+            wegleDo.Enabled = false;
+            wegleOdTys.Enabled = false; 
+            wedgleDoTys.Enabled = false; 
+            wegleOdProc.Enabled = false; 
+            wegleDoProc.Enabled = false; 
+
+            przyswajalneOd.Enabled = false;
+            przyswajalneDo.Enabled = false; 
+            przyswajalneOdTys.Enabled = false; 
+            przyswajalneDotys.Enabled = false; 
+            przyswajalneodProc.Enabled = false; 
+            przyswajalneDoProc.Enabled = false; 
+
+            cukryOd.Enabled = false;
+            cukryDo.Enabled = false;
+            cukryOdTys.Enabled = false;
+            cukryDoTys.Enabled = false; 
+            cukryOdProc.Enabled = false; 
+            cukryDoProc.Enabled = false; 
+
+            blonnikOd.Enabled = false;
+            blonnikDo.Enabled = false;
+            blonnikOdTys.Enabled = false;
+            blonnikDoTys.Enabled = false; 
+            blonnikOdProc.Enabled = false; 
+            blonnikDoProc.Enabled = false; 
+
+            sodOd.Enabled = false;
+            sodDo.Enabled = false; 
+
+            SolOd.Enabled = false; 
+            SolDo.Enabled = false; 
+
 
             label10.Text = "Diety";
 
@@ -2547,28 +3264,122 @@
 
             dieta_nazwa.Enabled = true;
             dieta_nazwa.BackColor = Color.White;
-            dieta_energia.Enabled = true;
-            dieta_energia.BackColor = Color.White;
-            dieta_bialko.Enabled = true;
-            dieta_bialko.BackColor = Color.White;
-            dieta_tluszcze.Enabled = true;
-            dieta_tluszcze.BackColor = Color.White;
-            dieta_weglowodany.Enabled = true;
-            dieta_weglowodany.BackColor = Color.White;
-            dieta_cukry.Enabled = true;
-            dieta_cukry.BackColor = Color.White;
-            dieta_ktn.Enabled = true;
-            dieta_ktn.BackColor = Color.White;
-            dieta_sod.Enabled = true;
-            dieta_sod.BackColor = Color.White;
-            dieta_lbl_sol.Visible = true;
-            dieta_sol.Visible = true;
-            dieta_przelicz.Visible = true;
-            dieta_przyswajalne.Enabled = true;
-            dieta_przyswajalne.BackColor = Color.White;
-            dieta_blonnik.Enabled = true;
-            dieta_blonnik.BackColor = Color.White;
-            dieta_sol.Text = "";
+            dieta_kod.Enabled = true;
+            dieta_kod.BackColor = Color.White;
+            energiaOd.Enabled = true;
+            energiaOd.BackColor = Color.White;
+            energiaDo.Enabled = true;
+            energiaDo.BackColor = Color.White;
+
+            bialkoOd.BackColor = Color.White;
+            bialkoDo.BackColor = Color.White;
+            bialkoOdTysiac.BackColor = Color.White;
+            bialkoDoTysiac.BackColor = Color.White;
+            bialkoOdProcent.BackColor = Color.White;
+            bialkoDoProcent.BackColor = Color.White;
+
+            tluszczeOd.BackColor = Color.White;
+            tluszczeDo.BackColor = Color.White;
+            tluszczeOdTysiac.BackColor = Color.White;
+            tluszczeDoTys.BackColor = Color.White;
+            TluszczeOdProc.BackColor = Color.White;
+            tluszczeDoProc.BackColor = Color.White;
+
+            kwasyOd.BackColor = Color.White;
+            kwasyDo.BackColor = Color.White;
+            KwasyOdTys.BackColor = Color.White;
+            KwasyDoTys.BackColor = Color.White;
+            kwasyOdProc.BackColor = Color.White;
+            kwasyDoProc.BackColor = Color.White;
+
+            wegleod.BackColor = Color.White;
+            wegleDo.BackColor = Color.White;
+            wegleOdTys.BackColor = Color.White;
+            wedgleDoTys.BackColor = Color.White;
+            wegleOdProc.BackColor = Color.White;
+            wegleDoProc.BackColor = Color.White;
+
+            przyswajalneOd.BackColor = Color.White;
+            przyswajalneDo.BackColor = Color.White;
+            przyswajalneOdTys.BackColor = Color.White;
+            przyswajalneDotys.BackColor = Color.White;
+            przyswajalneodProc.BackColor = Color.White;
+            przyswajalneDoProc.BackColor = Color.White;
+
+            cukryOd.BackColor = Color.White;
+            cukryDo.BackColor = Color.White;
+            cukryOdTys.BackColor = Color.White;
+            cukryDoTys.BackColor = Color.White;
+            cukryOdProc.BackColor = Color.White;
+            cukryDoProc.BackColor = Color.White;
+
+            blonnikOd.BackColor = Color.White;
+            blonnikDo.BackColor = Color.White;
+            blonnikOdTys.BackColor = Color.White;
+            blonnikDoTys.BackColor = Color.White;
+            blonnikOdProc.BackColor = Color.White;
+            blonnikDoProc.BackColor = Color.White;
+
+            sodOd.BackColor = Color.White;
+            sodDo.BackColor = Color.White;
+
+            SolOd.BackColor = Color.White;
+            SolDo.BackColor = Color.White;
+
+            bialkoOd.Enabled = true;
+            bialkoDo.Enabled = true;
+            bialkoOdTysiac.Enabled = true;
+            bialkoDoTysiac.Enabled = true;
+            bialkoOdProcent.Enabled = true;
+            bialkoDoProcent.Enabled = true;
+
+            tluszczeOd.Enabled = true;
+            tluszczeDo.Enabled = true;
+            tluszczeOdTysiac.Enabled = true;
+            tluszczeDoTys.Enabled = true;
+            TluszczeOdProc.Enabled = true;
+            tluszczeDoProc.Enabled = true;
+
+            kwasyOd.Enabled = true;
+            kwasyDo.Enabled = true;
+            KwasyOdTys.Enabled = true;
+            KwasyDoTys.Enabled = true;
+            kwasyOdProc.Enabled = true;
+            kwasyDoProc.Enabled = true;
+
+            wegleod.Enabled = true;
+            wegleDo.Enabled = true;
+            wegleOdTys.Enabled = true;
+            wedgleDoTys.Enabled = true;
+            wegleOdProc.Enabled = true;
+            wegleDoProc.Enabled = true;
+
+            przyswajalneOd.Enabled = true;
+            przyswajalneDo.Enabled = true;
+            przyswajalneOdTys.Enabled = true;
+            przyswajalneDotys.Enabled = true;
+            przyswajalneodProc.Enabled = true;
+            przyswajalneDoProc.Enabled = true;
+
+            cukryOd.Enabled = true;
+            cukryDo.Enabled = true;
+            cukryOdTys.Enabled = true;
+            cukryDoTys.Enabled = true;
+            cukryOdProc.Enabled = true;
+            cukryDoProc.Enabled = true;
+
+            blonnikOd.Enabled = true;
+            blonnikDo.Enabled = true;
+            blonnikOdTys.Enabled = true;
+            blonnikDoTys.Enabled = true;
+            blonnikOdProc.Enabled = true;
+            blonnikDoProc.Enabled = true;
+
+            sodOd.Enabled = true;
+            sodDo.Enabled = true;
+
+            SolOd.Enabled = true;
+            SolDo.Enabled = true;
         }
 
         private void dieta_dodaj_Click(object sender, EventArgs e)
@@ -2585,53 +3396,184 @@
 
             dieta_nazwa.Enabled = true;
             dieta_nazwa.BackColor = Color.White;
-            dieta_energia.Enabled = true;
-            dieta_energia.BackColor = Color.White;
-            dieta_bialko.Enabled = true;
-            dieta_bialko.BackColor = Color.White;
-            dieta_tluszcze.Enabled = true;
-            dieta_tluszcze.BackColor = Color.White;
-            dieta_weglowodany.Enabled = true;
-            dieta_weglowodany.BackColor = Color.White;
-            dieta_cukry.Enabled = true;
-            dieta_cukry.BackColor = Color.White;
-            dieta_ktn.Enabled = true;
-            dieta_ktn.BackColor = Color.White;
-            dieta_sod.Enabled = true;
-            dieta_sod.BackColor = Color.White;
-            dieta_lbl_sol.Visible = true;
-            dieta_sol.Visible = true;
-            dieta_przelicz.Visible = true;
-            dieta_sol.Text = "";
-            dieta_przyswajalne.Enabled = true;
-            dieta_przyswajalne.BackColor = Color.White;
-            dieta_blonnik.Enabled = true;
-            dieta_blonnik.BackColor = Color.White;
+            dieta_kod.Enabled = true;
+            dieta_kod.BackColor = Color.White;
+            energiaOd.Enabled = true;
+            energiaOd.BackColor = Color.White;
+            energiaDo.Enabled = true;
+            energiaDo.BackColor = Color.White;
+
+            bialkoOd.BackColor = Color.White;
+            bialkoDo.BackColor = Color.White;
+            bialkoOdTysiac.BackColor = Color.White;
+            bialkoDoTysiac.BackColor = Color.White;
+            bialkoOdProcent.BackColor = Color.White;
+            bialkoDoProcent.BackColor = Color.White;
+
+            tluszczeOd.BackColor = Color.White;
+            tluszczeDo.BackColor = Color.White;
+            tluszczeOdTysiac.BackColor = Color.White;
+            tluszczeDoTys.BackColor = Color.White;
+            TluszczeOdProc.BackColor = Color.White;
+            tluszczeDoProc.BackColor = Color.White;
+
+            kwasyOd.BackColor = Color.White;
+            kwasyDo.BackColor = Color.White;
+            KwasyOdTys.BackColor = Color.White;
+            KwasyDoTys.BackColor = Color.White;
+            kwasyOdProc.BackColor = Color.White;
+            kwasyDoProc.BackColor = Color.White;
+
+            wegleod.BackColor = Color.White;
+            wegleDo.BackColor = Color.White;
+            wegleOdTys.BackColor = Color.White;
+            wedgleDoTys.BackColor = Color.White;
+            wegleOdProc.BackColor = Color.White;
+            wegleDoProc.BackColor = Color.White;
+
+            przyswajalneOd.BackColor = Color.White;
+            przyswajalneDo.BackColor = Color.White;
+            przyswajalneOdTys.BackColor = Color.White;
+            przyswajalneDotys.BackColor = Color.White;
+            przyswajalneodProc.BackColor = Color.White;
+            przyswajalneDoProc.BackColor = Color.White;
+
+            cukryOd.BackColor = Color.White;
+            cukryDo.BackColor = Color.White;
+            cukryOdTys.BackColor = Color.White;
+            cukryDoTys.BackColor = Color.White;
+            cukryOdProc.BackColor = Color.White;
+            cukryDoProc.BackColor = Color.White;
+
+            blonnikOd.BackColor = Color.White;
+            blonnikDo.BackColor = Color.White;
+            blonnikOdTys.BackColor = Color.White;
+            blonnikDoTys.BackColor = Color.White;
+            blonnikOdProc.BackColor = Color.White;
+            blonnikDoProc.BackColor = Color.White;
+
+            sodOd.BackColor = Color.White;
+            sodDo.BackColor = Color.White;
+
+            SolOd.BackColor = Color.White;
+            SolDo.BackColor = Color.White;
+
+            bialkoOd.Enabled = true;
+            bialkoDo.Enabled = true;
+            bialkoOdTysiac.Enabled = true;
+            bialkoDoTysiac.Enabled = true;
+            bialkoOdProcent.Enabled = true;
+            bialkoDoProcent.Enabled = true;
+
+            tluszczeOd.Enabled = true;
+            tluszczeDo.Enabled = true;
+            tluszczeOdTysiac.Enabled = true;
+            tluszczeDoTys.Enabled = true;
+            TluszczeOdProc.Enabled = true;
+            tluszczeDoProc.Enabled = true;
+
+            kwasyOd.Enabled = true;
+            kwasyDo.Enabled = true;
+            KwasyOdTys.Enabled = true;
+            KwasyDoTys.Enabled = true;
+            kwasyOdProc.Enabled = true;
+            kwasyDoProc.Enabled = true;
+
+            wegleod.Enabled = true;
+            wegleDo.Enabled = true;
+            wegleOdTys.Enabled = true;
+            wedgleDoTys.Enabled = true;
+            wegleOdProc.Enabled = true;
+            wegleDoProc.Enabled = true;
+
+            przyswajalneOd.Enabled = true;
+            przyswajalneDo.Enabled = true;
+            przyswajalneOdTys.Enabled = true;
+            przyswajalneDotys.Enabled = true;
+            przyswajalneodProc.Enabled = true;
+            przyswajalneDoProc.Enabled = true;
+
+            cukryOd.Enabled = true;
+            cukryDo.Enabled = true;
+            cukryOdTys.Enabled = true;
+            cukryDoTys.Enabled = true;
+            cukryOdProc.Enabled = true;
+            cukryDoProc.Enabled = true;
+
+            blonnikOd.Enabled = true;
+            blonnikDo.Enabled = true;
+            blonnikOdTys.Enabled = true;
+            blonnikDoTys.Enabled = true;
+            blonnikOdProc.Enabled = true;
+            blonnikDoProc.Enabled = true;
+
+            sodOd.Enabled = true;
+            sodDo.Enabled = true;
+
+            SolOd.Enabled = true;
+            SolDo.Enabled = true;
 
             dieta_nazwa.Text = "";
-            dieta_energia.Text = "";
-            dieta_bialko.Text = "";
-            dieta_weglowodany.Text = "";
-            dieta_tluszcze.Text = "";
-            dieta_sod.Text = "";
-            dieta_ktn.Text = "";
-            dieta_sol.Text = "";
-            dieta_przyswajalne.Text = "";
-            dieta_blonnik.Text = "";
+            dieta_kod.Text = "";
+            energiaOd.Text = "";
+            energiaDo.Text = "";
+
+            bialkoOd.Text = "";
+            bialkoDo.Text = "";
+            bialkoOdTysiac.Text = "";
+            bialkoDoTysiac.Text = "";
+            bialkoOdProcent.Text = "";
+            bialkoDoProcent.Text = "";
+
+            tluszczeOd.Text = "";
+            tluszczeDo.Text = "";
+            tluszczeOdTysiac.Text = "";
+            tluszczeDoTys.Text = "";
+            TluszczeOdProc.Text = "";
+            tluszczeDoProc.Text = "";
+
+            kwasyOd.Text = "";
+            kwasyDo.Text = "";
+            KwasyOdTys.Text = "";
+            KwasyDoTys.Text = "";
+            kwasyOdProc.Text = "";
+            kwasyDoProc.Text = "";
+
+            wegleod.Text = "";
+            wegleDo.Text = "";
+            wegleOdTys.Text = "";
+            wedgleDoTys.Text = "";
+            wegleOdProc.Text = "";
+            wegleDoProc.Text = "";
+
+            przyswajalneOd.Text = "";
+            przyswajalneDo.Text = "";
+            przyswajalneOdTys.Text = "";
+            przyswajalneDotys.Text = "";
+            przyswajalneodProc.Text = "";
+            przyswajalneDoProc.Text = "";
+
+            cukryOd.Text = "";
+            cukryDo.Text = "";
+            cukryOdTys.Text = "";
+            cukryDoTys.Text = "";
+            cukryOdProc.Text = "";
+            cukryDoProc.Text = "";
+
+            blonnikOd.Text = "";
+            blonnikDo.Text = "";
+            blonnikOdTys.Text = "";
+            blonnikDoTys.Text = "";
+            blonnikOdProc.Text = "";
+            blonnikDoProc.Text = "";
+
+            sodOd.Text = "";
+            sodDo.Text = "";
+
+            SolOd.Text = "";
+            SolDo.Text = "";
         }
 
-        private void dieta_przelicz_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dieta_sol.Text != "")
-                    dieta_sod.Text = (Double.Parse(dieta_sol.Text) / 0.0025).ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Błąd przeliczania", "Błąd");
-            }
-        }
         #endregion
 
         private void jednostka_wstecz_Click(object sender, EventArgs e)
@@ -3474,8 +4416,6 @@
                     }
                     if (dekadowka_wczytaj_dzien.Items.Count > 0)
                         dekadowka_wczytaj_dzien.SelectedIndex = 0;
-
-                    GenerateCardsDoWczytania();
                 }
             }
             else
@@ -3488,7 +4428,6 @@
                 }
                 if (dekadowka_wczytaj_dzien.Items.Count > 0)
                     dekadowka_wczytaj_dzien.SelectedIndex = 0;
-                GenerateCardsDoWczytania();
             }
         }
 
@@ -3513,181 +4452,11 @@
                     if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex)
                     {
                         dekadowka_wczytaj_dieta.Items.Add(d.dieta.nazwa);
-                        //    jadlospisDekadowkiDoWczytania = d;
                     }
                 }
 
                 if (dekadowka_wczytaj_dieta.Items.Count > 0)
                     dekadowka_wczytaj_dieta.SelectedIndex = 0;
-            }
-        }
-
-        public void GenerateCardsDoWczytania()
-        {
-            flowLayoutPanel1.Controls.Clear();
-
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.FlowDirection = FlowDirection.LeftToRight;
-            flowLayoutPanel1.VerticalScroll.Visible = false;
-            flowLayoutPanel1.HorizontalScroll.Visible = false;
-            flowLayoutPanel1.WrapContents = false; // Vertical rather than horizontal scrolling
-            flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.Size = new System.Drawing.Size(dekadowkaSize[0], dekadowkaSize[1] - 75);
-
-            for (int j = 0; j < wybranaDekadowkaDoWczytania.dni; j++)
-            {
-                FlowLayoutPanel dayOfWeek = new FlowLayoutPanel();
-                dayOfWeek.BackColor = Color.White;
-                dayOfWeek.AutoScroll = true;
-                dayOfWeek.FlowDirection = FlowDirection.TopDown;
-                dayOfWeek.VerticalScroll.Visible = false;
-                dayOfWeek.HorizontalScroll.Visible = false;
-                dayOfWeek.WrapContents = false; // Vertical rather than horizontal scrolling
-                dayOfWeek.Size = new System.Drawing.Size(dzienSize[0], dzienSize[1] - 60);
-
-                Label myDay = new Label();
-                string day = GetDay(wybranaDekadowkaDoWczytania.dzienStart, j + 1);
-                myDay.Text = day;
-                myDay.MaximumSize = new Size(dzienSize[0], 0);
-                myDay.AutoSize = true;
-                dayOfWeek.Controls.Add(myDay);
-
-                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), j + 1);
-                foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
-                {
-                    FlowLayoutPanel myPanel = new FlowLayoutPanel();
-                    myPanel.BackColor = Color.LightBlue;
-                    myPanel.AutoScroll = true;
-                    myPanel.VerticalScroll.Visible = false;
-                    myPanel.HorizontalScroll.Enabled = false;
-                    myPanel.FlowDirection = FlowDirection.TopDown;
-                    myPanel.WrapContents = false;
-                    myPanel.AutoSize = true;
-                    //myPanel.Size = new System.Drawing.Size(dietaSize[0], dietaSize[1]);
-
-                    Panel divider = new Panel();
-                    divider.BackColor = Color.Gray;
-                    divider.Size = new System.Drawing.Size(dietaSize[0] - 25, 5);
-                    myPanel.Controls.Add(divider);
-
-                    Label diet = new Label();
-                    diet.Text = jadlospis.dieta.nazwa;
-                    diet.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    diet.Font = new System.Drawing.Font("Sagoe UI", 12);
-                    diet.Margin = new Padding(0, 0, 0, 10);
-                    diet.AutoSize = true;
-                    myPanel.Controls.Add(diet);
-
-                    Label meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    Label meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal.Text = "Śniadanie:";
-                    myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_sniadanie != "")
-                        meal_content.Text = jadlospis.nazwa_sniadanie;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
-
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal.Text = "II śniadanie:";
-                    myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_IIsniadanie != "")
-                        meal_content.Text = jadlospis.nazwa_IIsniadanie;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
-
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal.Text = "Obiad:";
-                    myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_obiad != "")
-                        meal_content.Text = jadlospis.nazwa_obiad;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
-
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal.Text = "Podwieczorek:";
-                    myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_podwieczorek != "")
-                        meal_content.Text = jadlospis.nazwa_podwieczorek;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
-
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal.Text = "Kolacja:";
-                    myPanel.Controls.Add(meal);
-
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_kolacja != "")
-                        meal_content.Text = jadlospis.nazwa_kolacja;
-                    else
-                        meal_content.Text = "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
-
-                    dayOfWeek.Controls.Add(myPanel);
-                }
-
-                flowLayoutPanel1.Controls.Add(dayOfWeek);
             }
         }
 
@@ -3992,7 +4761,7 @@
                     string[] arg = new string[11];
                     string[] arr = produkty[j].Split('|');
                     ListViewItem itm = null;
-                    if (arr.Length != 10)
+                    if (arr.Length != 11)
                     {
                         arg[0] = arr[0];
                         arg[1] = arr[1];
@@ -4003,8 +4772,8 @@
                         arg[6] = arr[6];
                         arg[7] = arr[7];
                         arg[8] = "0";
-                        arg[9] = arr[9];
-                        arg[10] = arr[10];
+                        arg[9] = arr[8];
+                        arg[10] = arr[9];
                         itm = new ListViewItem(arg);
                     }
                     else
@@ -4217,202 +4986,7 @@
                     listView4.Items.Clear();
                     listView5.Items.Clear();
                 }
-                LiczSredniaJadlospisu();
             }
-        }
-
-        public void LiczSredniaJadlospisu()
-        {
-            double[,] suma_jad = new double[6, 9];
-            double[,] proc_jad = new double[6, 9];
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    suma_jad[i, k] = 0;
-                    proc_jad[i, k] = 0;
-                }
-
-            }
-
-            string[] arr = new string[9];
-            for (int i = 0; i < 9; i++)
-                arr[i] = "0";
-            ListViewItem itm = new ListViewItem(arr);
-            itm.UseItemStyleForSubItems = false;
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < listView1.Items.Count; i++)
-                {
-                    double a = double.Parse(listView1.Items[i].SubItems[k + 2].Text);
-                    suma_jad[0, k] += a;
-                }
-            }
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < listView2.Items.Count; i++)
-                {
-                    double a = double.Parse(listView2.Items[i].SubItems[k + 2].Text);
-                    suma_jad[1, k] += a;
-                }
-            }
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < listView3.Items.Count; i++)
-                {
-                    double a = double.Parse(listView3.Items[i].SubItems[k + 2].Text);
-                    suma_jad[2, k] += a;
-                }
-            }
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < listView4.Items.Count; i++)
-                {
-                    double a = double.Parse(listView4.Items[i].SubItems[k + 2].Text);
-                    suma_jad[3, k] += a;
-                }
-            }
-
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < listView5.Items.Count; i++)
-                {
-                    double a = double.Parse(listView5.Items[i].SubItems[k + 2].Text);
-                    suma_jad[4, k] += a;
-                }
-            }
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    suma_jad[5, k] += suma_jad[i, k];
-                }
-            }
-
-
-            //WARTOŚCI
-            jadlospis_energia.Text = Math.Round(suma_jad[5, 0], 2).ToString() + " kcal";
-            jadlospis_bialko.Text = Math.Round(suma_jad[5, 1], 2).ToString() + " g";
-            jadlospis_tluszcze.Text = Math.Round(suma_jad[5, 2], 2).ToString() + " g";
-            jadlospis_ktn.Text = Math.Round(suma_jad[5, 3], 2).ToString() + " g";
-            jadlospis_weglowodany.Text = Math.Round(suma_jad[5, 4], 2).ToString() + " g";
-            jadlospis_przyswajalne.Text = Math.Round(suma_jad[5, 5], 2).ToString() + " g";
-            jadlospis_cukry.Text = Math.Round(suma_jad[5, 6], 2).ToString() + " g";
-            jadlospis_blonnik.Text = Math.Round(suma_jad[5, 7], 2).ToString() + " g";
-            jadlospis_sod.Text = Math.Round(suma_jad[5, 8], 2).ToString() + " mg";
-            jadlospis_sol.Text = Math.Round(suma_jad[5, 8]*0.0025, 2).ToString() + " g";
-
-            for (int k = 0; k < 9; k++)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    if (suma_jad[i, 0] != 0)
-                    {
-                        double wartosc_odzywcza = suma_jad[i, k];
-                        double przelicznik = 0;
-                        if (k == 1)
-                            przelicznik = przelicznik_Bialko;
-                        if (k == 2)
-                            przelicznik = przelicznik_Tluszcze;
-                        if (k == 4)
-                            przelicznik = przelicznik_Weglowodany;
-                        if (k == 7)
-                            wartosc_odzywcza /= 1000;
-
-                        proc_jad[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma_jad[i, 0];
-                    }
-                }
-            }
-
-            //proc_jadY
-            //pb_Energia.SuperscriptText = Math.Round(proc_jad[5, 0], 2).ToString() + " % kalorii";
-            jadlospis_bialko2.Text = Math.Round(proc_jad[5, 1], 2).ToString();
-            jadlospis_tluszcze2.Text = Math.Round(proc_jad[5, 2], 2).ToString();
-            jadlospis_weglowodany2.Text = Math.Round(proc_jad[5, 4], 2).ToString();
-            //pb_Sod.SuperscriptText = Math.Round(proc_jad[5, 4], 2).ToString() + " % kalorii";
-            //pb_TluszczeNN.SuperscriptText = Math.Round(proc_jad[5, 5], 2).ToString() + " % kalorii";
-
-            //ZAWARTOSC
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.energia != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 0] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.energia) > 100)
-                { jadlospis_cb_energia.Value = 100; }
-                else
-                    jadlospis_cb_energia.Value = Convert.ToInt32(suma_jad[5, 0] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.energia);
-            }
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.bialko != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 1] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.bialko) > 100)
-                { jadlospis_cb_bialko.Value = 100; }
-                else
-                    jadlospis_cb_bialko.Value = Convert.ToInt32(suma_jad[5, 1] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.bialko);
-            }
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.tluszcze != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 2] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.tluszcze) > 100)
-                { jadlospis_cb_tluszcze.Value = 100; }
-                else
-                    jadlospis_cb_tluszcze.Value = Convert.ToInt32(suma_jad[5, 2] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.tluszcze);
-            }
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 3] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn) > 100)
-                { jadlospis_cb_ktn.Value = 100; }
-                else
-                    jadlospis_cb_ktn.Value = Convert.ToInt32(suma_jad[5, 3] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn);
-            }
-            else
-                jadlospis_cb_ktn.Value = 0;
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.weglowodany != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 4] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.weglowodany) > 100)
-                { jadlospis_cb_weglowodany.Value = 100; }
-                else
-                    jadlospis_cb_weglowodany.Value = Convert.ToInt32(suma_jad[5, 4] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.weglowodany);
-            }
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 5] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne) > 100)
-                { jadlospis_cb_przyswajalne.Value = 100; }
-                else
-                    jadlospis_cb_przyswajalne.Value = Convert.ToInt32(suma_jad[5, 5] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne);
-            }
-            else
-                jadlospis_cb_przyswajalne.Value = 0;
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.cukry != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 6] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.cukry) > 100)
-                { jadlospis_cb_cukry.Value = 100; }
-                else
-                    jadlospis_cb_cukry.Value = Convert.ToInt32(suma_jad[5, 6] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.cukry);
-            }
-            else
-                jadlospis_cb_cukry.Value = 0;
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.blonnik != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 7] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.blonnik) > 100)
-                { jadlospis_cb_blonnik.Value = 100; }
-                else
-                    jadlospis_cb_blonnik.Value = Convert.ToInt32(suma_jad[5, 7] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.blonnik);
-            }
-            else
-                jadlospis_cb_blonnik.Value = 0;
-            if (Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.sod != 0)
-            {
-                if (Convert.ToInt32(suma_jad[5, 8] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.sod) > 100)
-                { jadlospis_cb_sod.Value = 100; }
-                else
-                    jadlospis_cb_sod.Value = Convert.ToInt32(suma_jad[5, 8] * 100 / Diety[jadlospis_dieta.SelectedIndex].wartosciOdzywcze.sod);
-            }
-            else
-                jadlospis_cb_sod.Value = 0;
-
         }
 
         private void ja_ValueChanged(object sender, EventArgs e)
@@ -4464,16 +5038,64 @@
                 else
                 {
                     dieta_nazwa.Text = "";
-                    dieta_energia.Text = "";
-                    dieta_bialko.Text = "";
-                    dieta_weglowodany.Text = "";
-                    dieta_cukry.Text = "";
-                    dieta_tluszcze.Text = "";
-                    dieta_sod.Text = "";
-                    dieta_ktn.Text = "";
-                    dieta_sol.Text = "";
-                    dieta_przyswajalne.Text = "";
-                    dieta_blonnik.Text = "";
+                    dieta_kod.Text = "";
+                    energiaOd.Text = "";
+                    energiaDo.Text = "";
+
+                    bialkoOd.Text = "";
+                    bialkoDo.Text = "";
+                    bialkoOdTysiac.Text = "";
+                    bialkoDoTysiac.Text = "";
+                    bialkoOdProcent.Text = "";
+                    bialkoDoProcent.Text = "";
+
+                    tluszczeOd.Text = "";
+                    tluszczeDo.Text = "";
+                    tluszczeOdTysiac.Text = "";
+                    tluszczeDoTys.Text = "";
+                    TluszczeOdProc.Text = "";
+                    tluszczeDoProc.Text = "";
+
+                    kwasyOd.Text = "";
+                    kwasyDo.Text = "";
+                    KwasyOdTys.Text = "";
+                    KwasyDoTys.Text = "";
+                    kwasyOdProc.Text = "";
+                    kwasyDoProc.Text = "";
+
+                    wegleod.Text = "";
+                    wegleDo.Text = "";
+                    wegleOdTys.Text = "";
+                    wedgleDoTys.Text = "";
+                    wegleOdProc.Text = "";
+                    wegleDoProc.Text = "";
+
+                    przyswajalneOd.Text = "";
+                    przyswajalneDo.Text = "";
+                    przyswajalneOdTys.Text = "";
+                    przyswajalneDotys.Text = "";
+                    przyswajalneodProc.Text = "";
+                    przyswajalneDoProc.Text = "";
+
+                    cukryOd.Text = "";
+                    cukryDo.Text = "";
+                    cukryOdTys.Text = "";
+                    cukryDoTys.Text = "";
+                    cukryOdProc.Text = "";
+                    cukryDoProc.Text = "";
+
+                    blonnikOd.Text = "";
+                    blonnikDo.Text = "";
+                    blonnikOdTys.Text = "";
+                    blonnikDoTys.Text = "";
+                    blonnikOdProc.Text = "";
+                    blonnikDoProc.Text = "";
+
+                    sodOd.Text = "";
+                    sodDo.Text = "";
+
+                    SolOd.Text = "";
+                    SolDo.Text = "";
                 }
             }
         }
@@ -4521,15 +5143,15 @@
         public void drukujClick()
         {
             label10.Text = "Drukowanie";
-            panel11.BackColor = highlightColor;
-            panel5.BackColor = primaryColor;
-            panel6.BackColor = primaryColor;
+            p_pr.BackColor = highlightColor;
+            p_r.BackColor = primaryColor;
+            p_j.BackColor = primaryColor;
             panel7.BackColor = primaryColor;
-            panel8.BackColor = primaryColor;
-            panel9.BackColor = primaryColor;
-            panel10.BackColor = primaryColor;
-            panel3.BackColor = primaryColor;
-            panel14.BackColor = primaryColor;
+            p_d.BackColor = primaryColor;
+            p_h.BackColor = primaryColor;
+            p_g.BackColor = primaryColor;
+            p_p.BackColor = primaryColor;
+            p_k.BackColor = primaryColor;
 
             panel_drukuj.Visible = true;
             panel_drukuj.BringToFront();
@@ -4573,7 +5195,15 @@
                     MessageBox.Show("Wygenerowano szablon");
                     break;
                 case "Jadłospis":
-                    Printer.Jadlospis(DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString()));
+                    Jadlospis jadlospis = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                    Printer.Jadlospis(jadlospis);
+                    if (jadlospis.dieta.nazwa.Contains("dzieci"))
+                    {
+                        Jadlospis jadlospis2 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                        DuplicateJadlospis(jadlospis2.DeepCopy(), 0.5);
+                        Jadlospis jadlospis3 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                        DuplicateJadlospis(jadlospis3.DeepCopy(), 0.7);
+                    }
                     MessageBox.Show("Wygenerowano jadłospis");
                     break;
                 case "Jadłospisy w danym okresie":
@@ -4583,8 +5213,17 @@
                     {
                         string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
                         List<Jadlospis> jad = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
-                        foreach (Jadlospis j in jad)
-                            Printer.Jadlospis(j);
+                        for(int i = 0; i<jad.Count;i++)
+                        {
+                            Printer.Jadlospis(jad[i]);
+                            if (jad[i].dieta.nazwa.Contains("dzieci"))
+                            {
+                                List<Jadlospis> jad2 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                                DuplicateJadlospis(jad2[i].DeepCopy(), 0.5);
+                                List<Jadlospis> jad3 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                                DuplicateJadlospis(jad3[i].DeepCopy(), 0.7);
+                            }
+                        }
                     }
                     MessageBox.Show("Wygenerowano jadłospisy w wybranym okresie");
                     break;
@@ -4595,8 +5234,9 @@
                     {
                         string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
                         Printer.JadlospisDzienny(DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString()));
+                        Printer.JadlospisNaStrone(DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString()));
                     }
-                    MessageBox.Show("Wygenerowano jadłospisy dzienne w wybranym okresie");
+                    MessageBox.Show("Wygenerowano jadłospisy dzienne i na stronę w wybranym okresie");
                     break;
                 case "Receptura":
                     Printer.Receptura(listaReceptur[drukuj_combo.SelectedIndex]);
@@ -4608,6 +5248,93 @@
                     break;
             }
             //glownaClick();
+        }
+
+        private void DuplicateJadlospis(Jadlospis j3, double percentage)
+        {
+            j3.dieta.nazwa = j3.dieta.nazwa + $" {percentage*100}%";
+
+            j3.nazwa_sniadanie = Printer.ZamienGramature(j3.nazwa_sniadanie, percentage);
+            string[] pr = j3.sklad_sniadanie.Split('$');
+            for (int i = 0; i < pr.Length; i++)
+            {
+                if (pr[i] != "")
+                {
+                    string[] wartosci = pr[i].Split('|');
+                    for (int k = 1; k < wartosci.Length; k++)
+                    {
+                        wartosci[k] = Math.Round(Convert.ToDouble(wartosci[k]) * percentage, 3).ToString();
+                    }
+                    pr[i] = String.Join("|", wartosci);
+                }
+            }
+            j3.sklad_sniadanie = String.Join("$", pr);
+
+            j3.nazwa_IIsniadanie = Printer.ZamienGramature(j3.nazwa_IIsniadanie, percentage);
+            pr = j3.sklad_IIsniadanie.Split('$');
+            for (int i = 0; i < pr.Length; i++)
+            {
+                if (pr[i] != "")
+                {
+                    string[] wartosci = pr[i].Split('|');
+                    for (int k = 1; k < wartosci.Length; k++)
+                    {
+                        wartosci[k] = Math.Round(Convert.ToDouble(wartosci[k]) * percentage, 3).ToString();
+                    }
+                    pr[i] = String.Join("|", wartosci);
+                }
+            }
+            j3.sklad_IIsniadanie = String.Join("$", pr);
+
+            j3.nazwa_obiad = Printer.ZamienGramature(j3.nazwa_obiad, percentage);
+            pr = j3.sklad_obiad.Split('$');
+            for (int i = 0; i < pr.Length; i++)
+            {
+                if (pr[i] != "")
+                {
+                    string[] wartosci = pr[i].Split('|');
+                    for (int k = 1; k < wartosci.Length; k++)
+                    {
+                        wartosci[k] = Math.Round(Convert.ToDouble(wartosci[k]) * percentage, 3).ToString();
+                    }
+                    pr[i] = String.Join("|", wartosci);
+                }
+            }
+            j3.sklad_obiad = String.Join("$", pr);
+
+            j3.nazwa_podwieczorek = Printer.ZamienGramature(j3.nazwa_podwieczorek, percentage);
+            pr = j3.sklad_podwieczorek.Split('$');
+            for (int i = 0; i < pr.Length; i++)
+            {
+                if (pr[i] != "")
+                {
+                    string[] wartosci = pr[i].Split('|');
+                    for (int k = 1; k < wartosci.Length; k++)
+                    {
+                        wartosci[k] = Math.Round(Convert.ToDouble(wartosci[k]) * percentage, 3).ToString();
+                    }
+                    pr[i] = String.Join("|", wartosci);
+                }
+            }
+            j3.sklad_podwieczorek = String.Join("$", pr);
+
+            j3.nazwa_kolacja = Printer.ZamienGramature(j3.nazwa_kolacja, percentage);
+            pr = j3.sklad_kolacja.Split('$');
+            for (int i = 0; i < pr.Length; i++)
+            {
+                if (pr[i] != "")
+                {
+                    string[] wartosci = pr[i].Split('|');
+                    for (int k = 1; k < wartosci.Length; k++)
+                    {
+                        wartosci[k] = Math.Round(Convert.ToDouble(wartosci[k]) * percentage, 3).ToString();
+                    }
+                    pr[i] = String.Join("|", wartosci);
+                }
+            }
+            j3.sklad_kolacja = String.Join("$", pr);
+
+            Printer.Jadlospis(j3);
         }
 
         private void label29_Click(object sender, EventArgs e)
@@ -5278,7 +6005,7 @@
                         itm = new ListViewItem(arr);
                     }
 
-                    for (int k = 0; k < 9; k++)
+                    for (int k = 0; k < 10; k++)
                     {
                         double a = 0;
                         try
@@ -5291,7 +6018,7 @@
                 }
             }
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -5299,24 +6026,24 @@
                 }
             }
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 suma[5, k] = suma[5, k] / jadlospisy.Count;
             }
 
             //WARTOŚCI
-            label139.Text = Math.Round(suma[5, 0], 2).ToString() + " kcal";
-            label137.Text = Math.Round(suma[5, 1], 2).ToString() + " g";
-            label134.Text = Math.Round(suma[5, 2], 2).ToString() + " g";
-            label124.Text = Math.Round(suma[5, 3], 2).ToString() + " g";
-            label131.Text = Math.Round(suma[5, 4], 2).ToString() + " g";
-            label81.Text = Math.Round(suma[5, 5], 2).ToString() + " g";
-            kontrola_cukry.Text = Math.Round(suma[5, 6], 2).ToString() + " g";
-            label113.Text = Math.Round(suma[5, 7], 2).ToString() + " g";
-            label128.Text = Math.Round(suma[5, 8], 2).ToString() + " mg";
-            kontrola_sol.Text = Math.Round(suma[5, 8]*0.0025, 2).ToString() + " g";
+            k_energia.Text = Math.Round(suma[5, 0], 2).ToString();
+            k_bialko.Text = Math.Round(suma[5, 1], 2).ToString();
+            k_tluszcze.Text = Math.Round(suma[5, 2], 2).ToString();
+            k_kwasy.Text = Math.Round(suma[5, 3], 2).ToString() ;
+            k_wegle.Text = Math.Round(suma[5, 4], 2).ToString();
+            k_przyswajalne.Text = Math.Round(suma[5, 5], 2).ToString();
+            k_cukry.Text = Math.Round(suma[5, 6], 2).ToString() ;
+            k_blonnik.Text = Math.Round(suma[5, 7], 2).ToString();
+            k_sod.Text = Math.Round(suma[5, 8], 2).ToString() ;
+            k_sol.Text = Math.Round(suma[5, 8]*0.0025, 2).ToString() ;
 
-            for (int k = 0; k < 9; k++)
+            for (int k = 0; k < 10; k++)
             {
                 for (int i = 0; i < 6; i++)
                 {
@@ -5326,12 +6053,10 @@
                         double przelicznik = 0;
                         if (k == 1)
                             przelicznik = przelicznik_Bialko;
-                        if (k == 2)
+                        if (k == 2 || k == 3)
                             przelicznik = przelicznik_Tluszcze;
-                        if (k == 4)
+                        if (k == 4 || k == 5 || k == 6 || k == 7)
                             przelicznik = przelicznik_Weglowodany;
-                        if (k == 7)
-                            wartosc_odzywcza /= 1000;
 
                         procent[i, k] = (wartosc_odzywcza * przelicznik * 100.0) / suma[i, 0];
                     }
@@ -5339,142 +6064,647 @@
             }
 
             //PROCENTY
-            label136.Text = Math.Round(procent[5, 1], 2).ToString();
-            label133.Text = Math.Round(procent[5, 2], 2).ToString();
-            label130.Text = Math.Round(procent[5, 4], 2).ToString();
+            double bialkoProcent = Math.Round(procent[5, 1], 2);
+            k_bialko_procent.Text = bialkoProcent.ToString();
+            k_bialko_procent.ForeColor = Color.DarkGray;
+
+            double tluszczeProcent = Math.Round(procent[5, 2], 2);
+            k_tluszcze_procent.Text = tluszczeProcent.ToString();
+            k_tluszcze_procent.ForeColor = Color.DarkGray;
+
+            double kwasyProcent = Math.Round(procent[5, 3], 2);
+            k_kwasy_procent.Text = kwasyProcent.ToString();
+            k_kwasy_procent.ForeColor = Color.DarkGray;
+
+            double wegleProcent = Math.Round(procent[5, 4], 2);
+            k_wegle_procent.Text = wegleProcent.ToString();
+            k_wegle_procent.ForeColor = Color.DarkGray;
+
+            double przyswajalneProcent = Math.Round(procent[5, 5], 2);
+            k_przyswajalne_procent.Text = przyswajalneProcent.ToString();
+            k_przyswajalne_procent.ForeColor = Color.DarkGray;
+
+            double cukryProcent = Math.Round(procent[5, 6], 2);
+            k_cukry_procent.Text = cukryProcent.ToString();
+            k_cukry_procent.ForeColor = Color.DarkGray;
+
+            double blonnikProcent = Math.Round(procent[5, 7], 2);
+            k_blonnik_procent.Text = blonnikProcent.ToString();
+            k_blonnik_procent.ForeColor = Color.DarkGray;
+
+
+            //NA TYSIAC
+            double bialkoNaTysiac = Math.Round(suma[5, 1] * 1000.0 / suma[5, 0], 2);
+            k_bialko_tysiac.Text = bialkoNaTysiac.ToString();
+            k_bialko_tysiac.ForeColor = Color.DarkGray;
+
+            double tluszczeNaTysiac = Math.Round(suma[5, 2] * 1000.0 / suma[5, 0], 2);
+            k_tluszcze_tysiac.Text = tluszczeNaTysiac.ToString();
+            k_tluszcze_tysiac.ForeColor = Color.DarkGray;
+
+            double kwasyNaTysiac = Math.Round(suma[5, 3] * 1000.0 / suma[5, 0], 2);
+            k_kwasy_tysiac.Text = kwasyNaTysiac.ToString();
+            k_kwasy_tysiac.ForeColor = Color.DarkGray;
+
+            double wegleNaTysiac = Math.Round(suma[5, 4] * 1000.0 / suma[5, 0], 2);
+            k_wegle_tysiac.Text = wegleNaTysiac.ToString();
+            k_wegle_tysiac.ForeColor = Color.DarkGray;
+
+            double przyswajalneNaTysiac = Math.Round(suma[5, 5] * 1000.0 / suma[5, 0], 2);
+            k_przyswajalne_tysiac.Text = przyswajalneNaTysiac.ToString();
+            k_przyswajalne_tysiac.ForeColor = Color.DarkGray;
+
+            double cukryNaTysiac = Math.Round(suma[5, 6] * 1000.0 / suma[5, 0], 2);
+            k_cukry_tysiac.Text = cukryNaTysiac.ToString();
+            k_cukry_tysiac.ForeColor = Color.DarkGray;
+
+            double blonnikNaTysiac = Math.Round(suma[5, 7] * 1000.0 / suma[5, 0], 2);
+            k_blonnik_tysiac.Text = blonnikNaTysiac.ToString();
+            k_blonnik_tysiac.ForeColor = Color.DarkGray;
 
             //ZAWARTOSC
             try
             {
                 if (k_dieta.SelectedIndex != -1)
                 {
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia != 0)
+                    if (Diety[k_dieta.SelectedIndex].energiaDo != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 0] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia) > 100)
+                        k_energia_zakres.Text = $"{Diety[k_dieta.SelectedIndex].energiaOd.ToString()} - {Diety[k_dieta.SelectedIndex].energiaDo.ToString()}";
+                        if (suma[5, 0] > Diety[k_dieta.SelectedIndex].energiaDo)
                         {
-                            circularProgressBar5.Value = 100;
-                            label148.Text = "+ " + Math.Round(suma[5, 0] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia, 2) + " kalorii";
+                            k_energia_plus.Text = "+ " + Math.Round(suma[5, 0] - Diety[k_dieta.SelectedIndex].energiaDo, 2);
+                            if (suma[5, 0] > Diety[cb_dieta.SelectedIndex].energiaDo * 1.1)
+                                k_energia_plus.ForeColor = Color.Red;
+                            else
+                                k_energia_plus.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 0] < Diety[k_dieta.SelectedIndex].energiaOd)
+                        {
+                            k_energia_plus.Text =  Math.Round(suma[5, 0] - Diety[k_dieta.SelectedIndex].energiaOd, 2).ToString();
+                            if (suma[5, 0] < Diety[cb_dieta.SelectedIndex].energiaOd * 0.9)
+                                k_energia_plus.ForeColor = Color.Red;
+                            else
+                                k_energia_plus.ForeColor = Color.Orange;
                         }
                         else
                         {
-                            label148.Text = "";
-                            circularProgressBar5.Value = Convert.ToInt32(suma[5, 0] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.energia);
-                        }
-                    }
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 1] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko) > 100)
-                        {
-                            circularProgressBar16.Value = 100;
-                            label147.Text = "+ " + Math.Round(suma[5, 1] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko, 2) + " g";
-                        }
-                        else
-                        {
-                            label147.Text = "";
-                            circularProgressBar16.Value = Convert.ToInt32(suma[5, 1] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.bialko);
-                        }
-                    }
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 2] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze) > 100)
-                        {
-                            circularProgressBar15.Value = 100;
-                            label146.Text = "+ " + Math.Round(suma[5, 2] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze, 2) + " g";
-                        }
-                        else
-                        {
-                            label146.Text = "";
-                            circularProgressBar15.Value = Convert.ToInt32(suma[5, 2] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze);
-                        }
-                    }
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 4] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany) > 100)
-                        {
-                            circularProgressBar6.Value = 100;
-                            label145.Text = "+ " + Math.Round(suma[5, 4] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany, 2) + " g";
-                        }
-                        else
-                        {
-                            label145.Text = "";
-                            circularProgressBar6.Value = Convert.ToInt32(suma[5, 4] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany);
-                        }
-                    }
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne != 0)
-                    {
-                        if (Convert.ToInt32(suma[5, 5] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne) > 100)
-                        {
-                            circularProgressBar1.Value = 100;
-                            label141.Text = "+ " + Math.Round(suma[5, 5] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne, 2) + " g";
-                        }
-                        else
-                        {
-                            label141.Text = "";
-                            circularProgressBar1.Value = Convert.ToInt32(suma[5, 5] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.weglowodany_przyswajalne);
+                            k_energia_plus.Text = "OK";
+                            k_energia_plus.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        circularProgressBar1.Value = 0;
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.cukry != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 6] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.cukry) > 100)
+                        k_energia_plus.Text = "";
+                        k_energia_zakres.Text = "";
+                        k_energia_plus.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].bialkoDo != 0)
+                    {
+                        k_bialko_zakres.Text = $"{Diety[k_dieta.SelectedIndex].bialkoOd.ToString()} - {Diety[k_dieta.SelectedIndex].bialkoDo.ToString()}";
+                        if (suma[5, 1] > Diety[k_dieta.SelectedIndex].bialkoDo)
                         {
-                            pb_kontrola_cukry.Value = 100;
-                            kontrola_plus_cukry.Text = "+ " + Math.Round(suma[5, 6] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.cukry, 2) + " g";
+                            k_bialko_plus.Text = "+ " + Math.Round(suma[5, 1] - Diety[k_dieta.SelectedIndex].bialkoDo, 2);
+                            if (suma[5, 1] > Diety[cb_dieta.SelectedIndex].bialkoDo * 1.1)
+                                k_bialko_plus.ForeColor = Color.Red;
+                            else
+                                k_bialko_plus.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 1] < Diety[k_dieta.SelectedIndex].bialkoOd)
+                        {
+                            k_bialko_plus.Text =  Math.Round(suma[5, 1] - Diety[k_dieta.SelectedIndex].bialkoOd, 2).ToString();
+                            if (suma[5, 1] < Diety[cb_dieta.SelectedIndex].bialkoOd * 0.9)
+                                k_bialko_plus.ForeColor = Color.Red;
+                            else
+                                k_bialko_plus.ForeColor = Color.Orange; ;
                         }
                         else
                         {
-                            kontrola_plus_cukry.Text = "";
-                            pb_kontrola_cukry.Value = Convert.ToInt32(suma[5, 6] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.cukry);
+                            k_bialko_plus.Text = "OK";
+                            k_bialko_plus.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        pb_kontrola_cukry.Value = 0;
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 7] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik) > 100)
+                        k_bialko_plus.Text = "";
+                        k_bialko_zakres.Text = "";
+                        k_bialko_plus.ForeColor = Color.DarkGray;
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].bialkoDoNaTysiąc != 0)
+                    {
+                        k_bialko_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].bialkoOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].bialkoDoNaTysiąc}";
+                    }
+                    else
+                    {
+                        k_bialko_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].bialkoProcentDo != 0)
+                    {
+                        k_bialko_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].bialkoProcentOd} - {Diety[k_dieta.SelectedIndex].bialkoProcentDo} % kcal";
+                        if (bialkoProcent > Diety[cb_dieta.SelectedIndex].bialkoProcentDo * 1.1)
                         {
-                            circularProgressBar2.Value = 100;
-                            label142.Text = "+ " + Math.Round(suma[5, 7] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik, 2) + " g";
+                            k_bialko_procent.ForeColor = Color.Red;
+                        }
+                        else if (bialkoProcent > Diety[cb_dieta.SelectedIndex].bialkoProcentDo)
+                        {
+                            k_bialko_procent.ForeColor = Color.Orange;
+                        }
+                        else if (bialkoProcent < Diety[cb_dieta.SelectedIndex].bialkoProcentOd * 0.9)
+                        {
+                            k_bialko_procent.ForeColor = Color.Red;
+                        }
+                        else if (bialkoProcent < Diety[cb_dieta.SelectedIndex].bialkoProcentOd)
+                        {
+                            k_bialko_procent.ForeColor = Color.Orange;
                         }
                         else
                         {
-                            label142.Text = "";
-                            circularProgressBar2.Value = Convert.ToInt32(suma[5, 7] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.blonnik);
+                            k_bialko_procent.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        circularProgressBar2.Value = 0;
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 8] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod) > 100)
+                        k_bialko_procent_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].tluszczeDo != 0)
+                    {
+                        k_tluszcze_zakres.Text = $"{Diety[k_dieta.SelectedIndex].tluszczeOd.ToString()} - {Diety[k_dieta.SelectedIndex].tluszczeDo.ToString()}";
+                        if (suma[5, 2] > Diety[k_dieta.SelectedIndex].tluszczeDo)
                         {
-                            circularProgressBar4.Value = 100;
-                            label144.Text = "+ " + Math.Round(suma[5, 8] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod, 2) + " mg";
+                            k_tluszcze_plus.Text = "+ " + Math.Round(suma[5, 2] - Diety[k_dieta.SelectedIndex].tluszczeDo, 2);
+                            k_tluszcze_plus.ForeColor = Color.Red;
+                        }
+                        else if (suma[5, 2] < Diety[k_dieta.SelectedIndex].tluszczeOd)
+                        {
+                            k_tluszcze_plus.Text =  Math.Round(suma[5, 2] - Diety[k_dieta.SelectedIndex].tluszczeOd, 2).ToString();
+                            k_tluszcze_plus.ForeColor = Color.Red;
                         }
                         else
                         {
-                            label144.Text = "";
-                            circularProgressBar4.Value = Convert.ToInt32(suma[5, 8] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.sod);
+                            k_tluszcze_plus.Text = "OK";
+                            k_tluszcze_plus.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        circularProgressBar4.Value = 0;
-                    if (Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn != 0)
                     {
-                        if (Convert.ToInt32(suma[5, 3] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn) > 100)
+                        k_tluszcze_plus.Text = "";
+                        k_tluszcze_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].tluszczeDoNaTysiąc != 0)
+                    {
+                        k_tluszcze_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].tluszczeOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].tluszczeDoNaTysiąc}";
+                        if (tluszczeNaTysiac > Diety[k_dieta.SelectedIndex].tluszczeDoNaTysiąc)
                         {
-                            circularProgressBar3.Value = 100;
-                            label143.Text = "+ " + Math.Round(suma[5, 3] - Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn, 2) + " g";
+                            k_tluszcze_tysiac.ForeColor = Color.Red;
+                        }
+                        else if (tluszczeNaTysiac < Diety[k_dieta.SelectedIndex].tluszczeOdNaTysiąc)
+                        {
+                            k_tluszcze_tysiac.ForeColor = Color.Red;
                         }
                         else
                         {
-                            label143.Text = "";
-                            circularProgressBar3.Value = Convert.ToInt32(suma[5, 3] * 100 / Diety[k_dieta.SelectedIndex].wartosciOdzywcze.tluszcze_nn);
+                            k_tluszcze_tysiac.ForeColor = Color.DarkGreen;
                         }
                     }
                     else
-                        circularProgressBar3.Value = 0;
+                    {
+                        k_tluszcze_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].tluszczeProcentDo != 0)
+                    {
+                        k_tluszcze_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].tluszczeProcentOd} - {Diety[k_dieta.SelectedIndex].tluszczeProcentDo}";
+                        if (tluszczeProcent > Diety[k_dieta.SelectedIndex].tluszczeProcentDo)
+                        {
+                            k_tluszcze_procent.ForeColor = Color.Red;
+                        }
+                        else if (tluszczeProcent < Diety[k_dieta.SelectedIndex].tluszczeProcentOd)
+                        {
+                            k_tluszcze_procent.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_tluszcze_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_tluszcze_procent_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].kwasyDo != 0)
+                    {
+                        k_kwasy_zakres.Text = $"{Diety[k_dieta.SelectedIndex].kwasyOd.ToString()} - {Diety[k_dieta.SelectedIndex].kwasyDo.ToString()}";
+                        if (suma[5, 3] > Diety[k_dieta.SelectedIndex].kwasyDo)
+                        {
+                            k_kwasy_plus.Text = "+ " + Math.Round(suma[5, 3] - Diety[k_dieta.SelectedIndex].kwasyDo, 2);
+                            k_kwasy_plus.ForeColor = Color.Red;
+                        }
+                        else if (suma[5, 3] < Diety[k_dieta.SelectedIndex].kwasyOd)
+                        {
+                            k_kwasy_plus.Text =  Math.Round(suma[5, 3] - Diety[k_dieta.SelectedIndex].kwasyOd, 2).ToString();
+                            k_kwasy_plus.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_kwasy_plus.Text = "OK";
+                            k_kwasy_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_kwasy_plus.Text = "";
+                        k_kwasy_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].kwasyDoNaTysiąc != 0)
+                    {
+                        k_kwasy_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].kwasyOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].kwasyDoNaTysiąc}";
+                        if (kwasyNaTysiac > Diety[k_dieta.SelectedIndex].kwasyDoNaTysiąc)
+                        {
+                            k_kwasy_tysiac.ForeColor = Color.Red;
+                        }
+                        else if (kwasyNaTysiac < Diety[k_dieta.SelectedIndex].kwasyOdNaTysiąc)
+                        {
+                            k_kwasy_tysiac.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_kwasy_tysiac.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_kwasy_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].kwasyProcentDo != 0)
+                    {
+                        k_kwasy_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].kwasyProcentOd} - {Diety[k_dieta.SelectedIndex].kwasyProcentDo}";
+                        if (kwasyProcent > Diety[k_dieta.SelectedIndex].kwasyProcentDo)
+                        {
+                            k_kwasy_procent.ForeColor = Color.Red;
+                        }
+                        else if (kwasyProcent < Diety[k_dieta.SelectedIndex].kwasyProcentOd)
+                        {
+                            k_kwasy_procent.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_kwasy_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_kwasy_procent_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].wegleDo != 0)
+                    {
+                        k_wegle_zakres.Text = $"{Diety[k_dieta.SelectedIndex].wegleOd.ToString()} - {Diety[k_dieta.SelectedIndex].wegleDo.ToString()}";
+                        if (suma[5, 4] > Diety[k_dieta.SelectedIndex].wegleDo)
+                        {
+                            k_wegle_plus.Text = "+ " + Math.Round(suma[5, 4] - Diety[k_dieta.SelectedIndex].wegleDo, 2);
+                            k_wegle_plus.ForeColor = Color.Red;
+                        }
+                        else if (suma[5, 4] < Diety[k_dieta.SelectedIndex].wegleOd)
+                        {
+                            k_wegle_plus.Text =  Math.Round(suma[5, 4] - Diety[k_dieta.SelectedIndex].wegleOd, 2).ToString();
+                            k_wegle_plus.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_wegle_plus.Text = "OK";
+                            k_wegle_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_wegle_plus.Text = "";
+                        k_wegle_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].wegleDoNaTysiąc != 0)
+                    {
+                        k_wegle_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].wegleOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].wegleDoNaTysiąc}";
+                        if (wegleNaTysiac > Diety[k_dieta.SelectedIndex].wegleDoNaTysiąc)
+                        {
+                            k_wegle_tysiac.ForeColor = Color.Red;
+                        }
+                        else if (wegleNaTysiac < Diety[k_dieta.SelectedIndex].wegleOdNaTysiąc)
+                        {
+                            k_wegle_tysiac.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_wegle_tysiac.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_wegle_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].wegleProcentDo != 0)
+                    {
+                        k_wegle_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].wegleProcentOd} - {Diety[k_dieta.SelectedIndex].wegleProcentDo}";
+                        if (wegleProcent > Diety[k_dieta.SelectedIndex].wegleProcentDo)
+                        {
+                            k_wegle_procent.ForeColor = Color.Red;
+                        }
+                        else if (wegleProcent < Diety[k_dieta.SelectedIndex].wegleProcentOd)
+                        {
+                            k_wegle_procent.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_wegle_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_wegle_procent_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].przyswajalneDo != 0)
+                    {
+                        k_przyswajalne_zakres.Text = $"{Diety[k_dieta.SelectedIndex].przyswajalneOd.ToString()} - {Diety[k_dieta.SelectedIndex].przyswajalneDo.ToString()}";
+                        if (suma[5, 5] > Diety[k_dieta.SelectedIndex].przyswajalneDo)
+                        {
+                            k_przyswajalne_plus.Text = "+ " + Math.Round(suma[5, 5] - Diety[k_dieta.SelectedIndex].przyswajalneDo, 2);
+                            k_przyswajalne_plus.ForeColor = Color.Red;
+                        }
+                        else if (suma[5, 5] < Diety[k_dieta.SelectedIndex].przyswajalneOd)
+                        {
+                            k_przyswajalne_plus.Text =  Math.Round(suma[5, 5] - Diety[k_dieta.SelectedIndex].przyswajalneOd, 2).ToString();
+                            k_przyswajalne_plus.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_przyswajalne_plus.Text = "OK";
+                            k_przyswajalne_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_przyswajalne_plus.Text = "";
+                        k_przyswajalne_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].przyswajalneDoNaTysiąc != 0)
+                    {
+                        k_przyswajalne_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].przyswajalneOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].przyswajalneDoNaTysiąc}";
+                        if (przyswajalneNaTysiac > Diety[k_dieta.SelectedIndex].przyswajalneDoNaTysiąc)
+                        {
+                            k_przyswajalne_tysiac.ForeColor = Color.Red;
+                        }
+                        else if (przyswajalneNaTysiac < Diety[k_dieta.SelectedIndex].przyswajalneOdNaTysiąc)
+                        {
+                            k_przyswajalne_tysiac.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_przyswajalne_tysiac.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_przyswajalne_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].przyswajalneProcentDo != 0)
+                    {
+                        k_przyswajalne_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].przyswajalneProcentOd} - {Diety[k_dieta.SelectedIndex].przyswajalneProcentDo}";
+                        if (przyswajalneProcent > Diety[k_dieta.SelectedIndex].przyswajalneProcentDo)
+                        {
+                            k_przyswajalne_procent.ForeColor = Color.Red;
+                        }
+                        else if (przyswajalneProcent < Diety[k_dieta.SelectedIndex].przyswajalneProcentOd)
+                        {
+                            k_przyswajalne_procent.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_przyswajalne_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_przyswajalne_procent_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].cukryDo != 0)
+                    {
+                        k_cukry_zakres.Text = $"{Diety[k_dieta.SelectedIndex].cukryOd.ToString()} - {Diety[k_dieta.SelectedIndex].cukryDo.ToString()}";
+                        if (suma[5, 6] > Diety[k_dieta.SelectedIndex].cukryDo)
+                        {
+                            k_cukry_plus.Text = "+ " + Math.Round(suma[5, 6] - Diety[k_dieta.SelectedIndex].cukryDo, 2);
+                            k_cukry_plus.ForeColor = Color.Red;
+                        }
+                        else if (suma[5, 6] < Diety[k_dieta.SelectedIndex].cukryOd)
+                        {
+                            k_cukry_plus.Text =  Math.Round(suma[5, 6] - Diety[k_dieta.SelectedIndex].cukryOd, 2).ToString();
+                            k_cukry_plus.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_cukry_plus.Text = "OK";
+                            k_cukry_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_cukry_plus.Text = "";
+                        k_cukry_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].cukryDoNaTysiąc != 0)
+                    {
+                        k_cukry_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].cukryOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].cukryDoNaTysiąc}";
+                        if (cukryNaTysiac > Diety[k_dieta.SelectedIndex].cukryDoNaTysiąc)
+                        {
+                            k_cukry_tysiac.ForeColor = Color.Red;
+                        }
+                        else if (cukryNaTysiac < Diety[k_dieta.SelectedIndex].cukryOdNaTysiąc)
+                        {
+                            k_cukry_tysiac.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_cukry_tysiac.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_cukry_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].cukryProcentDo != 0)
+                    {
+                        k_cukry_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].cukryProcentOd} - {Diety[k_dieta.SelectedIndex].cukryProcentDo}";
+                        if (cukryProcent > Diety[k_dieta.SelectedIndex].cukryProcentDo)
+                        {
+                            k_cukry_procent.ForeColor = Color.Red;
+                        }
+                        else if (cukryProcent < Diety[k_dieta.SelectedIndex].cukryProcentOd)
+                        {
+                            k_cukry_procent.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_cukry_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_cukry_procent_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].blonnikDo != 0)
+                    {
+                        k_blonnik_zakres.Text = $"{Diety[k_dieta.SelectedIndex].blonnikOd.ToString()} - {Diety[k_dieta.SelectedIndex].blonnikDo.ToString()}";
+                        if (suma[5, 7] > Diety[k_dieta.SelectedIndex].blonnikDo)
+                        {
+                            k_blonnik_plus.Text = "+ " + Math.Round(suma[5, 7] - Diety[k_dieta.SelectedIndex].blonnikDo, 2);
+                            k_blonnik_plus.ForeColor = Color.Red;
+                        }
+                        else if (suma[5, 7] < Diety[k_dieta.SelectedIndex].blonnikOd)
+                        {
+                            k_blonnik_plus.Text =  Math.Round(suma[5, 7] - Diety[k_dieta.SelectedIndex].blonnikOd, 2).ToString();
+                            k_blonnik_plus.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_blonnik_plus.Text = "OK";
+                            k_blonnik_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_blonnik_plus.Text = "";
+                        k_blonnik_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].blonnikDoNaTysiąc != 0)
+                    {
+                        k_blonnik_tysiac_zakres.Text = $"{Diety[k_dieta.SelectedIndex].blonnikOdNaTysiąc} - {Diety[k_dieta.SelectedIndex].blonnikDoNaTysiąc}";
+                        if (blonnikNaTysiac > Diety[k_dieta.SelectedIndex].blonnikDoNaTysiąc)
+                        {
+                            k_blonnik_tysiac.ForeColor = Color.Red;
+                        }
+                        else if (blonnikNaTysiac < Diety[k_dieta.SelectedIndex].blonnikOdNaTysiąc)
+                        {
+                            k_blonnik_tysiac.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            k_blonnik_tysiac.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_blonnik_tysiac_zakres.Text = "";
+                    }
+
+                    if (Diety[k_dieta.SelectedIndex].blonnikProcentDo != 0)
+                    {
+                        k_blonnik_procent_zakres.Text = $"{Diety[k_dieta.SelectedIndex].blonnikProcentOd} - {Diety[k_dieta.SelectedIndex].blonnikProcentDo} % kcal";
+                        if (blonnikProcent > Diety[cb_dieta.SelectedIndex].blonnikProcentDo * 1.1)
+                        {
+                            k_blonnik_procent.ForeColor = Color.Red;
+                        }
+                        else if (blonnikProcent > Diety[cb_dieta.SelectedIndex].blonnikProcentDo)
+                        {
+                            k_blonnik_procent.ForeColor = Color.Orange;
+                        }
+                        else if (blonnikProcent < Diety[cb_dieta.SelectedIndex].blonnikProcentOd * 0.9)
+                        {
+                            k_blonnik_procent.ForeColor = Color.Red;
+                        }
+                        else if (blonnikProcent < Diety[cb_dieta.SelectedIndex].blonnikProcentOd)
+                        {
+                            k_blonnik_procent.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            k_blonnik_procent.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_blonnik_procent_zakres.Text = "";
+                        k_blonnik_procent.ForeColor = Color.DarkGray;
+                    }
+
+
+                    if (Diety[k_dieta.SelectedIndex].sodDo != 0)
+                    {
+                        k_sod_zakres.Text = $"{Diety[k_dieta.SelectedIndex].sodOd.ToString()} - {Diety[k_dieta.SelectedIndex].sodDo.ToString()}";
+                        if (suma[5, 8] > Diety[k_dieta.SelectedIndex].sodDo)
+                        {
+                            k_sod_plus.Text = "+ " + Math.Round(suma[5, 8] - Diety[k_dieta.SelectedIndex].sodDo, 2);
+                            if (suma[5, 8] > Diety[cb_dieta.SelectedIndex].sodDo * 1.1)
+                                k_sod_plus.ForeColor = Color.Red;
+                            else
+                                k_sod_plus.ForeColor = Color.Orange;
+                        }
+                        else if (suma[5, 8] < Diety[k_dieta.SelectedIndex].sodOd)
+                        {
+                            k_sod_plus.Text =  Math.Round(suma[5, 8] - Diety[k_dieta.SelectedIndex].sodOd, 2).ToString();
+                            if (suma[5, 8] < Diety[cb_dieta.SelectedIndex].sodOd * 0.9)
+                                k_sod_plus.ForeColor = Color.Red;
+                            else
+                                k_sod_plus.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            k_sod_plus.Text = "OK";
+                            k_sod_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_sod_plus.Text = "";
+                        k_sod_zakres.Text = "";
+                        k_sod_plus.ForeColor = Color.DarkGray;
+                    }
+
+
+                    if (Diety[k_dieta.SelectedIndex].solDo != 0)
+                    {
+                        k_sol_zakres.Text = $"{Diety[k_dieta.SelectedIndex].solOd.ToString()} - {Diety[k_dieta.SelectedIndex].solDo.ToString()}";
+                        if ((Math.Round(suma[5, 8] * 0.0025, 2)) > Diety[k_dieta.SelectedIndex].solDo)
+                        {
+                            k_sol_plus.Text = "+ " + Math.Round(suma[5, 8] * 0.0025 - Diety[k_dieta.SelectedIndex].solDo, 2);
+                            if (Math.Round(suma[5, 8] * 0.0025, 2) > Diety[cb_dieta.SelectedIndex].solDo * 1.1)
+                                k_sol_plus.ForeColor = Color.Red;
+                            else
+                                k_sol_plus.ForeColor = Color.Orange;
+                        }
+                        else if ((Math.Round(suma[5, 8] * 0.0025, 2)) < Diety[k_dieta.SelectedIndex].solOd)
+                        {
+                            k_sol_plus.Text =  Math.Round(suma[5, 8] * 0.0025 - Diety[k_dieta.SelectedIndex].solOd, 2).ToString();
+                            if (Math.Round(suma[5, 8] * 0.0025, 2) < Diety[cb_dieta.SelectedIndex].solDo * 0.9)
+                                k_sol_plus.ForeColor = Color.Red;
+                            else
+                                k_sol_plus.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            k_sol_plus.Text = "OK";
+                            k_sol_plus.ForeColor = Color.DarkGreen;
+                        }
+                    }
+                    else
+                    {
+                        k_sol_plus.Text = "";
+                        k_sol_zakres.Text = "";
+                        k_sol_plus.ForeColor = Color.DarkGray;
+                    }
                 }
             }
             catch
@@ -5486,6 +6716,31 @@
         #endregion
 
         private void jadlospis_cb_ktn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lv_sniadanie_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
