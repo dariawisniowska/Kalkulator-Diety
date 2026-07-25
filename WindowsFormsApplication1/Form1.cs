@@ -1843,8 +1843,6 @@
             }
         }
 
-
-
         private void KontrolaClick()
         {
             p_k.BackColor = highlightColor;
@@ -1858,10 +1856,12 @@
             p_pr.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
 
+            this.Update();
+
+            label10.Text = "Kontrola";
             panel_kontrola.Visible = true;
             panel_kontrola.BringToFront();
 
-            label10.Text = "Kontrola";
             if (k_miasto.Items.Count == 0)
             {
                 listaJednostek = JednostkaDAO.SelectAll();
@@ -1898,6 +1898,8 @@
             p_k.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
 
+            this.Update();
+
             panel_produkty.Visible = true;
             panel_produkty.BringToFront();
 
@@ -1918,6 +1920,8 @@
             p_pr.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
+
+            this.Update();
 
             panel_receptura.Visible = true;
             panel_receptura.BringToFront();
@@ -1940,14 +1944,15 @@
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
+
+            this.Update();
+
             label10.Text = "Jadłospisy";
-
             panel_jadlospis.Visible = true;
-            panel_jadlospis.BringToFront();
-
             pictureBox23.Visible = false;
             pictureBox24.Visible = false;
             pictureBox25.Visible = true;
+            panel_jadlospis.BringToFront();
 
             wczytajJadlospis();
 
@@ -1969,6 +1974,9 @@
             p_g.BackColor = primaryColor;
             p_pr.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+
+            this.Update();
+
             label10.Text = "Szablony";
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = true;
@@ -1984,14 +1992,17 @@
             if (dekadowka_miasto.Items.Count > 0)
                 dekadowka_miasto.SelectedIndex = 0;
 
-            dekadowka_dekadowka.BeginUpdate();
-            dekadowka_dekadowka.Items.Clear();
-            listaDekadowek = DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
-            foreach (Dekadowka d in listaDekadowek)
-                dekadowka_dekadowka.Items.Add(d.nazwa);
-            if (dekadowka_dekadowka.Items.Count > 0)
-                dekadowka_dekadowka.SelectedIndex = 0;
-            dekadowka_dekadowka.EndUpdate();
+                dekadowka_panel.SuspendLayout();
+                dekadowka_panel.Controls.Clear();
+
+                Label loading = new Label
+                {
+                    Text = "Wybierz dekadówkę...",
+                    AutoSize = true,
+                    Font = DietLabelFont
+                };
+                dekadowka_panel.Controls.Add(loading);
+                dekadowka_panel.ResumeLayout();
 
             dekadowka_nope_Click(null, null);
         }
@@ -2009,7 +2020,10 @@
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
-            panel_dieta.Visible = true;
+
+            this.Update();
+
+            panel_dieta.Visible = true; 
             panel_dieta.BringToFront();
 
             dieta_wstecz_Click(null, null);
@@ -2030,6 +2044,10 @@
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
+
+            this.Update();
+
+            label10.Text = "Strona Główna";
             panel_glowny.Visible = true;
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = false;
@@ -2037,8 +2055,6 @@
             panel_dekadowka_zapisz.Visible = false;
             panel_dieta.Visible = false;
             panel_glowny.BringToFront();
-            label10.Text = "Strona Główna";
-
 
             lb_produkty.BeginUpdate();
             lb_produkty.Items.Clear();
@@ -2075,13 +2091,15 @@
             panel7.BackColor = primaryColor;
             p_d.BackColor = primaryColor;
             p_p.BackColor = primaryColor;
-            label10.Text = "Jednostki";
             p_pr.BackColor = primaryColor;
             i_p.BackColor = primaryColor;
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
             p_de.BackColor = primaryColor;
 
+            this.Update();
+
+            label10.Text = "Jednostki";
             panel_jednostka.Visible = true;
             panel_jednostka.BringToFront();
 
@@ -2357,7 +2375,7 @@
             produkt_wczytaj.SelectedIndex = 0;
             produkt_wczytaj_SelectedIndexChanged(sender, e);
 
-            label10.Text = "Produkty -> Przeglądaj";
+            label10.Text = "Produkty";
         }
 
         private void produkt_dodaj_Click(object sender, EventArgs e)
@@ -2833,8 +2851,6 @@
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
             dekadowka_dekadowka.EndUpdate();
-            if (dekadowka_dekadowka.Items.Count > 0)
-                dekadowka_dekadowka.SelectedIndex = 0;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -2912,19 +2928,8 @@
 
         private void dekadowka_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (wybranaDekadowka != null)
-            {
-                if (wybranaDekadowka.nazwa != listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa || wybranaDekadowka.miasto != listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto)
-                {
-                    wybranaDekadowka = listaDekadowek[dekadowka_dekadowka.SelectedIndex];
-                    GenerateCards();
-                }
-            }
-            else
-            {
-                wybranaDekadowka = listaDekadowek[dekadowka_dekadowka.SelectedIndex];
-                GenerateCards();
-            }
+            wybranaDekadowka = listaDekadowek[dekadowka_dekadowka.SelectedIndex];
+            GenerateCards();
         }
 
         private void dekadowka_panel_Paint(object sender, PaintEventArgs e)
