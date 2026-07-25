@@ -63,6 +63,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel_dekadowka = new System.Windows.Forms.Panel();
+            this.generowanie_status = new System.Windows.Forms.Label();
             this.dekadowka_generuj_data2 = new System.Windows.Forms.DateTimePicker();
             this.dekadowka_generuj_label2 = new System.Windows.Forms.Label();
             this.dekadowka_generuj_data1 = new System.Windows.Forms.DateTimePicker();
@@ -240,91 +241,6 @@
             this.label51 = new System.Windows.Forms.Label();
             this.dieta_wstecz = new System.Windows.Forms.PictureBox();
             this.dieta_dodaj = new System.Windows.Forms.PictureBox();
-            this.dieta_ok = new System.Windows.Forms.PictureBox();
-            this.dieta_edytuj = new System.Windows.Forms.PictureBox();
-            this.dieta_usun = new System.Windows.Forms.PictureBox();
-            this.dieta_dieta = new System.Windows.Forms.ComboBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.panel_jednostka = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
-            this.jednostka_miasto = new System.Windows.Forms.TextBox();
-            this.jednostka_wstecz = new System.Windows.Forms.PictureBox();
-            this.jednostka_dodaj = new System.Windows.Forms.PictureBox();
-            this.jednostka_ok = new System.Windows.Forms.PictureBox();
-            this.jednostka_edytuj = new System.Windows.Forms.PictureBox();
-            this.jednostka_usun = new System.Windows.Forms.PictureBox();
-            this.jednostka_jednostka = new System.Windows.Forms.ComboBox();
-            this.jednostka_label = new System.Windows.Forms.Label();
-            this.panel_receptura = new System.Windows.Forms.Panel();
-            this.receptura_cukry = new System.Windows.Forms.Label();
-            this.label155 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.receptura_ktn = new System.Windows.Forms.Label();
-            this.receptura_weglowodany = new System.Windows.Forms.Label();
-            this.label153 = new System.Windows.Forms.Label();
-            this.receptura_sol = new System.Windows.Forms.Label();
-            this.label151 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.receptura_przyswajalne = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.receptura_blonnik = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label114 = new System.Windows.Forms.Label();
-            this.receptura_sod = new System.Windows.Forms.Label();
-            this.label116 = new System.Windows.Forms.Label();
-            this.receptura_tluszcze = new System.Windows.Forms.Label();
-            this.label122 = new System.Windows.Forms.Label();
-            this.receptura_bialko = new System.Windows.Forms.Label();
-            this.label125 = new System.Windows.Forms.Label();
-            this.receptura_energia = new System.Windows.Forms.Label();
-            this.label127 = new System.Windows.Forms.Label();
-            this.receptura_sklad = new System.Windows.Forms.ListView();
-            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader107 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader101 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader102 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.receptura_posilek = new System.Windows.Forms.ComboBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.receptura_down = new System.Windows.Forms.PictureBox();
-            this.receptura_del = new System.Windows.Forms.PictureBox();
-            this.receptura_up = new System.Windows.Forms.PictureBox();
-            this.receptura_produkty = new System.Windows.Forms.ListBox();
-            this.receptura_kategoria = new System.Windows.Forms.ComboBox();
-            this.receptura_masa = new System.Windows.Forms.TextBox();
-            this.receptura_produkt_dodaj = new System.Windows.Forms.Button();
-            this.receptura_masa_label = new System.Windows.Forms.Label();
-            this.receptura_dodaj_edytuj = new System.Windows.Forms.Button();
-            this.label50 = new System.Windows.Forms.Label();
-            this.receptura_nazwa = new System.Windows.Forms.TextBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.receptura_wczytaj = new System.Windows.Forms.ComboBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.panel_dekadowka_wczytaj = new System.Windows.Forms.Panel();
-            this.label54 = new System.Windows.Forms.Label();
-            this.dekadowka_wczytaj_dzien = new System.Windows.Forms.ComboBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.dekadowka_wczytaj_dieta = new System.Windows.Forms.ComboBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.dekadowka_wczytaj_miasto = new System.Windows.Forms.ComboBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.dekadowka_wczytaj_dekadowka = new System.Windows.Forms.ComboBox();
             this.panel_jadlospis = new System.Windows.Forms.Panel();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
@@ -411,6 +327,91 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label95 = new System.Windows.Forms.Label();
             this.jadlospis_miasto = new System.Windows.Forms.ComboBox();
+            this.dieta_ok = new System.Windows.Forms.PictureBox();
+            this.dieta_edytuj = new System.Windows.Forms.PictureBox();
+            this.dieta_usun = new System.Windows.Forms.PictureBox();
+            this.dieta_dieta = new System.Windows.Forms.ComboBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.panel_jednostka = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label48 = new System.Windows.Forms.Label();
+            this.jednostka_miasto = new System.Windows.Forms.TextBox();
+            this.jednostka_wstecz = new System.Windows.Forms.PictureBox();
+            this.jednostka_dodaj = new System.Windows.Forms.PictureBox();
+            this.jednostka_ok = new System.Windows.Forms.PictureBox();
+            this.jednostka_edytuj = new System.Windows.Forms.PictureBox();
+            this.jednostka_usun = new System.Windows.Forms.PictureBox();
+            this.jednostka_jednostka = new System.Windows.Forms.ComboBox();
+            this.jednostka_label = new System.Windows.Forms.Label();
+            this.panel_receptura = new System.Windows.Forms.Panel();
+            this.receptura_cukry = new System.Windows.Forms.Label();
+            this.label155 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label112 = new System.Windows.Forms.Label();
+            this.receptura_ktn = new System.Windows.Forms.Label();
+            this.receptura_weglowodany = new System.Windows.Forms.Label();
+            this.label153 = new System.Windows.Forms.Label();
+            this.receptura_sol = new System.Windows.Forms.Label();
+            this.label151 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.receptura_przyswajalne = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.receptura_blonnik = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.receptura_sod = new System.Windows.Forms.Label();
+            this.label116 = new System.Windows.Forms.Label();
+            this.receptura_tluszcze = new System.Windows.Forms.Label();
+            this.label122 = new System.Windows.Forms.Label();
+            this.receptura_bialko = new System.Windows.Forms.Label();
+            this.label125 = new System.Windows.Forms.Label();
+            this.receptura_energia = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.receptura_sklad = new System.Windows.Forms.ListView();
+            this.columnHeader33 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader34 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader35 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader36 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader37 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader38 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader39 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader40 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader107 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader101 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader102 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.receptura_posilek = new System.Windows.Forms.ComboBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.receptura_down = new System.Windows.Forms.PictureBox();
+            this.receptura_del = new System.Windows.Forms.PictureBox();
+            this.receptura_up = new System.Windows.Forms.PictureBox();
+            this.receptura_produkty = new System.Windows.Forms.ListBox();
+            this.receptura_kategoria = new System.Windows.Forms.ComboBox();
+            this.receptura_masa = new System.Windows.Forms.TextBox();
+            this.receptura_produkt_dodaj = new System.Windows.Forms.Button();
+            this.receptura_masa_label = new System.Windows.Forms.Label();
+            this.receptura_dodaj_edytuj = new System.Windows.Forms.Button();
+            this.label50 = new System.Windows.Forms.Label();
+            this.receptura_nazwa = new System.Windows.Forms.TextBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.receptura_wczytaj = new System.Windows.Forms.ComboBox();
+            this.label61 = new System.Windows.Forms.Label();
+            this.panel_dekadowka_wczytaj = new System.Windows.Forms.Panel();
+            this.label54 = new System.Windows.Forms.Label();
+            this.dekadowka_wczytaj_dzien = new System.Windows.Forms.ComboBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.dekadowka_wczytaj_dieta = new System.Windows.Forms.ComboBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.dekadowka_wczytaj_miasto = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.dekadowka_wczytaj_dekadowka = new System.Windows.Forms.ComboBox();
             this.panel_drukuj = new System.Windows.Forms.Panel();
             this.drukuj_dieta_label = new System.Windows.Forms.Label();
             this.drukuj_dieta = new System.Windows.Forms.ComboBox();
@@ -705,7 +706,6 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label79 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.generowanie_status = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.p_de.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.i_de)).BeginInit();
@@ -749,6 +749,16 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_wstecz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_dodaj)).BeginInit();
+            this.panel_jadlospis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_edytuj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_usun)).BeginInit();
@@ -771,16 +781,6 @@
             this.panel_dekadowka_wczytaj.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            this.panel_jadlospis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            this.tabPage9.SuspendLayout();
-            this.tabPage10.SuspendLayout();
             this.panel_drukuj.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
@@ -1253,6 +1253,18 @@
             this.panel_dekadowka.Name = "panel_dekadowka";
             this.panel_dekadowka.Size = new System.Drawing.Size(976, 481);
             this.panel_dekadowka.TabIndex = 62;
+            // 
+            // generowanie_status
+            // 
+            this.generowanie_status.AutoSize = true;
+            this.generowanie_status.BackColor = System.Drawing.Color.Transparent;
+            this.generowanie_status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.generowanie_status.Location = new System.Drawing.Point(599, 174);
+            this.generowanie_status.Name = "generowanie_status";
+            this.generowanie_status.Size = new System.Drawing.Size(111, 63);
+            this.generowanie_status.TabIndex = 86;
+            this.generowanie_status.Text = "Generowanie...\r\ndzień: 1/7\r\njadłospis: 4/18";
+            this.generowanie_status.Click += new System.EventHandler(this.label11_Click_1);
             // 
             // dekadowka_generuj_data2
             // 
@@ -2059,7 +2071,6 @@
             this.panel_dieta.Controls.Add(this.panel12);
             this.panel_dieta.Controls.Add(this.dieta_wstecz);
             this.panel_dieta.Controls.Add(this.dieta_dodaj);
-            this.panel_dieta.Controls.Add(this.panel_jadlospis);
             this.panel_dieta.Controls.Add(this.dieta_ok);
             this.panel_dieta.Controls.Add(this.dieta_edytuj);
             this.panel_dieta.Controls.Add(this.dieta_usun);
@@ -3260,6 +3271,686 @@
             this.dieta_dodaj.TabStop = false;
             this.dieta_dodaj.Click += new System.EventHandler(this.dieta_dodaj_Click);
             // 
+            // panel_jadlospis
+            // 
+            this.panel_jadlospis.Controls.Add(this.pictureBox23);
+            this.panel_jadlospis.Controls.Add(this.pictureBox24);
+            this.panel_jadlospis.Controls.Add(this.pictureBox25);
+            this.panel_jadlospis.Controls.Add(this.ja);
+            this.panel_jadlospis.Controls.Add(this.label87);
+            this.panel_jadlospis.Controls.Add(this.label88);
+            this.panel_jadlospis.Controls.Add(this.jadlospis_dieta);
+            this.panel_jadlospis.Controls.Add(this.label89);
+            this.panel_jadlospis.Controls.Add(this.tabControl1);
+            this.panel_jadlospis.Controls.Add(this.jadlospis_miasto);
+            this.panel_jadlospis.Location = new System.Drawing.Point(468, 166);
+            this.panel_jadlospis.Name = "panel_jadlospis";
+            this.panel_jadlospis.Size = new System.Drawing.Size(260, 157);
+            this.panel_jadlospis.TabIndex = 62;
+            this.panel_jadlospis.Visible = false;
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
+            this.pictureBox23.Location = new System.Drawing.Point(928, 29);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.TabIndex = 77;
+            this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
+            this.pictureBox24.Location = new System.Drawing.Point(856, 29);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox24.TabIndex = 76;
+            this.pictureBox24.TabStop = false;
+            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
+            this.pictureBox25.Location = new System.Drawing.Point(27, 39);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 74;
+            this.pictureBox25.TabStop = false;
+            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
+            // 
+            // ja
+            // 
+            this.ja.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ja.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ja.Location = new System.Drawing.Point(28, 115);
+            this.ja.Name = "ja";
+            this.ja.Size = new System.Drawing.Size(192, 29);
+            this.ja.TabIndex = 4;
+            this.ja.ValueChanged += new System.EventHandler(this.ja_ValueChanged);
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.BackColor = System.Drawing.Color.Transparent;
+            this.label87.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label87.Location = new System.Drawing.Point(300, 93);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(60, 21);
+            this.label87.TabIndex = 32;
+            this.label87.Text = "Miasto:";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.BackColor = System.Drawing.Color.Transparent;
+            this.label88.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label88.Location = new System.Drawing.Point(575, 88);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(49, 21);
+            this.label88.TabIndex = 8;
+            this.label88.Text = "Dieta:";
+            // 
+            // jadlospis_dieta
+            // 
+            this.jadlospis_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.jadlospis_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.jadlospis_dieta.FormattingEnabled = true;
+            this.jadlospis_dieta.Location = new System.Drawing.Point(442, 117);
+            this.jadlospis_dieta.Name = "jadlospis_dieta";
+            this.jadlospis_dieta.Size = new System.Drawing.Size(309, 29);
+            this.jadlospis_dieta.TabIndex = 5;
+            this.jadlospis_dieta.SelectedIndexChanged += new System.EventHandler(this.jadlospis_dieta_SelectedIndexChanged);
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.BackColor = System.Drawing.Color.Transparent;
+            this.label89.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label89.Location = new System.Drawing.Point(98, 93);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(45, 21);
+            this.label89.TabIndex = 7;
+            this.label89.Text = "Data:";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.tabControl1.Location = new System.Drawing.Point(27, 154);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(726, 334);
+            this.tabControl1.TabIndex = 24;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.listView1);
+            this.tabPage6.Controls.Add(this.textBox7);
+            this.tabPage6.Controls.Add(this.label91);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(718, 308);
+            this.tabPage6.TabIndex = 0;
+            this.tabPage6.Text = "Śniadanie";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader41,
+            this.columnHeader42,
+            this.columnHeader43,
+            this.columnHeader44,
+            this.columnHeader45,
+            this.columnHeader46,
+            this.columnHeader47,
+            this.columnHeader48,
+            this.columnHeader108,
+            this.columnHeader91,
+            this.columnHeader92});
+            this.listView1.Enabled = false;
+            this.listView1.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.listView1.GridLines = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(5, 41);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(707, 262);
+            this.listView1.TabIndex = 32;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader41
+            // 
+            this.columnHeader41.Text = "Nazwa produktu";
+            this.columnHeader41.Width = 87;
+            // 
+            // columnHeader42
+            // 
+            this.columnHeader42.Text = "Masa [g]";
+            this.columnHeader42.Width = 49;
+            // 
+            // columnHeader43
+            // 
+            this.columnHeader43.Text = "Energia [kcal]";
+            this.columnHeader43.Width = 66;
+            // 
+            // columnHeader44
+            // 
+            this.columnHeader44.Text = "Białko [g]";
+            this.columnHeader44.Width = 51;
+            // 
+            // columnHeader45
+            // 
+            this.columnHeader45.Text = "Tłuszcze [g]";
+            // 
+            // columnHeader46
+            // 
+            this.columnHeader46.Text = "KTN [g]";
+            this.columnHeader46.Width = 43;
+            // 
+            // columnHeader47
+            // 
+            this.columnHeader47.Text = "Węgl. ogółem [g]";
+            this.columnHeader47.Width = 83;
+            // 
+            // columnHeader48
+            // 
+            this.columnHeader48.Text = "Węgl. przyswajalne [g]";
+            this.columnHeader48.Width = 100;
+            // 
+            // columnHeader108
+            // 
+            this.columnHeader108.Text = "Cukry [g]";
+            this.columnHeader108.Width = 49;
+            // 
+            // columnHeader91
+            // 
+            this.columnHeader91.Text = "Błonnik [g]";
+            // 
+            // columnHeader92
+            // 
+            this.columnHeader92.Text = "Sód [mg]";
+            this.columnHeader92.Width = 55;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Enabled = false;
+            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBox7.Location = new System.Drawing.Point(90, 9);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(622, 25);
+            this.textBox7.TabIndex = 31;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.label91.Location = new System.Drawing.Point(3, 13);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(85, 13);
+            this.label91.TabIndex = 30;
+            this.label91.Text = "Nazwa posiłku:";
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.listView2);
+            this.tabPage7.Controls.Add(this.textBox8);
+            this.tabPage7.Controls.Add(this.label92);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(718, 308);
+            this.tabPage7.TabIndex = 1;
+            this.tabPage7.Text = "Drugie śniadanie";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader49,
+            this.columnHeader50,
+            this.columnHeader51,
+            this.columnHeader52,
+            this.columnHeader53,
+            this.columnHeader54,
+            this.columnHeader55,
+            this.columnHeader56,
+            this.columnHeader109,
+            this.columnHeader93,
+            this.columnHeader94});
+            this.listView2.Enabled = false;
+            this.listView2.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.listView2.GridLines = true;
+            this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(5, 41);
+            this.listView2.MultiSelect = false;
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(707, 264);
+            this.listView2.TabIndex = 34;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader49
+            // 
+            this.columnHeader49.Text = "Nazwa produktu";
+            this.columnHeader49.Width = 80;
+            // 
+            // columnHeader50
+            // 
+            this.columnHeader50.Text = "Masa [g]";
+            // 
+            // columnHeader51
+            // 
+            this.columnHeader51.Text = "Energia [kcal]";
+            this.columnHeader51.Width = 70;
+            // 
+            // columnHeader52
+            // 
+            this.columnHeader52.Text = "Białko [g]";
+            this.columnHeader52.Width = 55;
+            // 
+            // columnHeader53
+            // 
+            this.columnHeader53.Text = "Tłuszcze [g]";
+            // 
+            // columnHeader54
+            // 
+            this.columnHeader54.Text = "KTN [g]";
+            // 
+            // columnHeader55
+            // 
+            this.columnHeader55.Text = "Węgl. ogółem [g]";
+            this.columnHeader55.Width = 90;
+            // 
+            // columnHeader56
+            // 
+            this.columnHeader56.Text = "Węgl. przyswajalne [g]";
+            this.columnHeader56.Width = 100;
+            // 
+            // columnHeader109
+            // 
+            this.columnHeader109.Text = "Cukry [g]";
+            // 
+            // columnHeader93
+            // 
+            this.columnHeader93.Text = "Błonnik [g]";
+            // 
+            // columnHeader94
+            // 
+            this.columnHeader94.Text = "Sód [mg]";
+            this.columnHeader94.Width = 55;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Enabled = false;
+            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBox8.Location = new System.Drawing.Point(90, 9);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(622, 25);
+            this.textBox8.TabIndex = 33;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(3, 13);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(85, 13);
+            this.label92.TabIndex = 32;
+            this.label92.Text = "Nazwa posiłku:";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.listView3);
+            this.tabPage8.Controls.Add(this.textBox9);
+            this.tabPage8.Controls.Add(this.label93);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(718, 308);
+            this.tabPage8.TabIndex = 2;
+            this.tabPage8.Text = "Obiad";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader57,
+            this.columnHeader58,
+            this.columnHeader59,
+            this.columnHeader60,
+            this.columnHeader61,
+            this.columnHeader62,
+            this.columnHeader63,
+            this.columnHeader64,
+            this.columnHeader110,
+            this.columnHeader95,
+            this.columnHeader96});
+            this.listView3.Enabled = false;
+            this.listView3.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.listView3.GridLines = true;
+            this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(5, 41);
+            this.listView3.MultiSelect = false;
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(707, 262);
+            this.listView3.TabIndex = 34;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader57
+            // 
+            this.columnHeader57.Text = "Nazwa produktu";
+            this.columnHeader57.Width = 80;
+            // 
+            // columnHeader58
+            // 
+            this.columnHeader58.Text = "Masa [g]";
+            // 
+            // columnHeader59
+            // 
+            this.columnHeader59.Text = "Energia [kcal]";
+            this.columnHeader59.Width = 70;
+            // 
+            // columnHeader60
+            // 
+            this.columnHeader60.Text = "Białko [g]";
+            this.columnHeader60.Width = 55;
+            // 
+            // columnHeader61
+            // 
+            this.columnHeader61.Text = "Tłuszcze [g]";
+            // 
+            // columnHeader62
+            // 
+            this.columnHeader62.Text = "KTN [g]";
+            // 
+            // columnHeader63
+            // 
+            this.columnHeader63.Text = "Węgl. ogółem [g]";
+            this.columnHeader63.Width = 90;
+            // 
+            // columnHeader64
+            // 
+            this.columnHeader64.Text = "Węgl. przyswajalne [g]";
+            this.columnHeader64.Width = 100;
+            // 
+            // columnHeader110
+            // 
+            this.columnHeader110.Text = "Cukry [g]";
+            // 
+            // columnHeader95
+            // 
+            this.columnHeader95.Text = "Błonnik [g]";
+            // 
+            // columnHeader96
+            // 
+            this.columnHeader96.Text = "Sód [mg]";
+            this.columnHeader96.Width = 55;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Enabled = false;
+            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBox9.Location = new System.Drawing.Point(90, 9);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(622, 25);
+            this.textBox9.TabIndex = 33;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(3, 13);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(85, 13);
+            this.label93.TabIndex = 32;
+            this.label93.Text = "Nazwa posiłku:";
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.listView4);
+            this.tabPage9.Controls.Add(this.textBox10);
+            this.tabPage9.Controls.Add(this.label94);
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(718, 308);
+            this.tabPage9.TabIndex = 3;
+            this.tabPage9.Text = "Podwieczorek";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // listView4
+            // 
+            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader65,
+            this.columnHeader66,
+            this.columnHeader67,
+            this.columnHeader68,
+            this.columnHeader69,
+            this.columnHeader70,
+            this.columnHeader71,
+            this.columnHeader72,
+            this.columnHeader111,
+            this.columnHeader97,
+            this.columnHeader98});
+            this.listView4.Enabled = false;
+            this.listView4.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.listView4.GridLines = true;
+            this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView4.HideSelection = false;
+            this.listView4.Location = new System.Drawing.Point(5, 41);
+            this.listView4.MultiSelect = false;
+            this.listView4.Name = "listView4";
+            this.listView4.Size = new System.Drawing.Size(707, 262);
+            this.listView4.TabIndex = 34;
+            this.listView4.UseCompatibleStateImageBehavior = false;
+            this.listView4.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader65
+            // 
+            this.columnHeader65.Text = "Nazwa produktu";
+            this.columnHeader65.Width = 80;
+            // 
+            // columnHeader66
+            // 
+            this.columnHeader66.Text = "Masa [g]";
+            // 
+            // columnHeader67
+            // 
+            this.columnHeader67.Text = "Energia [kcal]";
+            this.columnHeader67.Width = 70;
+            // 
+            // columnHeader68
+            // 
+            this.columnHeader68.Text = "Białko [g]";
+            this.columnHeader68.Width = 55;
+            // 
+            // columnHeader69
+            // 
+            this.columnHeader69.Text = "Tłuszcze [g]";
+            // 
+            // columnHeader70
+            // 
+            this.columnHeader70.Text = "KTN [g]";
+            // 
+            // columnHeader71
+            // 
+            this.columnHeader71.Text = "Węgl. ogółem [g]";
+            this.columnHeader71.Width = 90;
+            // 
+            // columnHeader72
+            // 
+            this.columnHeader72.Text = "Węgl. przyswajalne [g]";
+            this.columnHeader72.Width = 100;
+            // 
+            // columnHeader111
+            // 
+            this.columnHeader111.Text = "Cukry [g]";
+            // 
+            // columnHeader97
+            // 
+            this.columnHeader97.Text = "Błonnik [g]";
+            // 
+            // columnHeader98
+            // 
+            this.columnHeader98.Text = "Sód [mg]";
+            this.columnHeader98.Width = 55;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Enabled = false;
+            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBox10.Location = new System.Drawing.Point(90, 9);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(622, 25);
+            this.textBox10.TabIndex = 33;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(3, 13);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(85, 13);
+            this.label94.TabIndex = 32;
+            this.label94.Text = "Nazwa posiłku:";
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.listView5);
+            this.tabPage10.Controls.Add(this.textBox11);
+            this.tabPage10.Controls.Add(this.label95);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(718, 308);
+            this.tabPage10.TabIndex = 4;
+            this.tabPage10.Text = "Kolacja";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // listView5
+            // 
+            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader73,
+            this.columnHeader74,
+            this.columnHeader75,
+            this.columnHeader76,
+            this.columnHeader77,
+            this.columnHeader78,
+            this.columnHeader79,
+            this.columnHeader80,
+            this.columnHeader112,
+            this.columnHeader99,
+            this.columnHeader100});
+            this.listView5.Enabled = false;
+            this.listView5.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.listView5.GridLines = true;
+            this.listView5.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listView5.HideSelection = false;
+            this.listView5.Location = new System.Drawing.Point(5, 41);
+            this.listView5.MultiSelect = false;
+            this.listView5.Name = "listView5";
+            this.listView5.Size = new System.Drawing.Size(707, 264);
+            this.listView5.TabIndex = 34;
+            this.listView5.UseCompatibleStateImageBehavior = false;
+            this.listView5.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader73
+            // 
+            this.columnHeader73.Text = "Nazwa produktu";
+            this.columnHeader73.Width = 80;
+            // 
+            // columnHeader74
+            // 
+            this.columnHeader74.Text = "Masa [g]";
+            // 
+            // columnHeader75
+            // 
+            this.columnHeader75.Text = "Energia [kcal]";
+            this.columnHeader75.Width = 70;
+            // 
+            // columnHeader76
+            // 
+            this.columnHeader76.Text = "Białko [g]";
+            this.columnHeader76.Width = 55;
+            // 
+            // columnHeader77
+            // 
+            this.columnHeader77.Text = "Tłuszcze [g]";
+            // 
+            // columnHeader78
+            // 
+            this.columnHeader78.Text = "KTN [g]";
+            // 
+            // columnHeader79
+            // 
+            this.columnHeader79.Text = "Węgl. ogółem [g]";
+            this.columnHeader79.Width = 90;
+            // 
+            // columnHeader80
+            // 
+            this.columnHeader80.Text = "Węgl. przyswajalne [g]";
+            this.columnHeader80.Width = 100;
+            // 
+            // columnHeader112
+            // 
+            this.columnHeader112.Text = "Cukry [g]";
+            // 
+            // columnHeader99
+            // 
+            this.columnHeader99.Text = "Błonnik [g]";
+            // 
+            // columnHeader100
+            // 
+            this.columnHeader100.Text = "Sód [mg]";
+            this.columnHeader100.Width = 55;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Enabled = false;
+            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.textBox11.Location = new System.Drawing.Point(90, 9);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(622, 25);
+            this.textBox11.TabIndex = 33;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(3, 13);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(85, 13);
+            this.label95.TabIndex = 32;
+            this.label95.Text = "Nazwa posiłku:";
+            // 
+            // jadlospis_miasto
+            // 
+            this.jadlospis_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.jadlospis_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.jadlospis_miasto.FormattingEnabled = true;
+            this.jadlospis_miasto.Items.AddRange(new object[] {
+            "Ustrzyki Dolne",
+            "Lesko"});
+            this.jadlospis_miasto.Location = new System.Drawing.Point(242, 117);
+            this.jadlospis_miasto.Name = "jadlospis_miasto";
+            this.jadlospis_miasto.Size = new System.Drawing.Size(175, 29);
+            this.jadlospis_miasto.TabIndex = 31;
+            this.jadlospis_miasto.SelectedIndexChanged += new System.EventHandler(this.jadlospis_miasto_SelectedIndexChanged);
+            // 
             // dieta_ok
             // 
             this.dieta_ok.BackColor = System.Drawing.Color.Transparent;
@@ -4339,686 +5030,6 @@
             this.dekadowka_wczytaj_dekadowka.Size = new System.Drawing.Size(248, 27);
             this.dekadowka_wczytaj_dekadowka.TabIndex = 54;
             this.dekadowka_wczytaj_dekadowka.SelectedIndexChanged += new System.EventHandler(this.dekadowka_wczytaj_dekadowka_SelectedIndexChanged);
-            // 
-            // panel_jadlospis
-            // 
-            this.panel_jadlospis.Controls.Add(this.pictureBox23);
-            this.panel_jadlospis.Controls.Add(this.pictureBox24);
-            this.panel_jadlospis.Controls.Add(this.pictureBox25);
-            this.panel_jadlospis.Controls.Add(this.ja);
-            this.panel_jadlospis.Controls.Add(this.label87);
-            this.panel_jadlospis.Controls.Add(this.label88);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_dieta);
-            this.panel_jadlospis.Controls.Add(this.label89);
-            this.panel_jadlospis.Controls.Add(this.tabControl1);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_miasto);
-            this.panel_jadlospis.Location = new System.Drawing.Point(294, 347);
-            this.panel_jadlospis.Name = "panel_jadlospis";
-            this.panel_jadlospis.Size = new System.Drawing.Size(260, 157);
-            this.panel_jadlospis.TabIndex = 62;
-            this.panel_jadlospis.Visible = false;
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
-            this.pictureBox23.Location = new System.Drawing.Point(928, 29);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox23.TabIndex = 77;
-            this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
-            this.pictureBox24.Location = new System.Drawing.Point(856, 29);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox24.TabIndex = 76;
-            this.pictureBox24.TabStop = false;
-            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
-            this.pictureBox25.Location = new System.Drawing.Point(27, 39);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox25.TabIndex = 74;
-            this.pictureBox25.TabStop = false;
-            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
-            // 
-            // ja
-            // 
-            this.ja.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.ja.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ja.Location = new System.Drawing.Point(28, 115);
-            this.ja.Name = "ja";
-            this.ja.Size = new System.Drawing.Size(192, 29);
-            this.ja.TabIndex = 4;
-            this.ja.ValueChanged += new System.EventHandler(this.ja_ValueChanged);
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.BackColor = System.Drawing.Color.Transparent;
-            this.label87.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label87.Location = new System.Drawing.Point(300, 93);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(60, 21);
-            this.label87.TabIndex = 32;
-            this.label87.Text = "Miasto:";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.BackColor = System.Drawing.Color.Transparent;
-            this.label88.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label88.Location = new System.Drawing.Point(575, 88);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(49, 21);
-            this.label88.TabIndex = 8;
-            this.label88.Text = "Dieta:";
-            // 
-            // jadlospis_dieta
-            // 
-            this.jadlospis_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.jadlospis_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.jadlospis_dieta.FormattingEnabled = true;
-            this.jadlospis_dieta.Location = new System.Drawing.Point(442, 117);
-            this.jadlospis_dieta.Name = "jadlospis_dieta";
-            this.jadlospis_dieta.Size = new System.Drawing.Size(309, 29);
-            this.jadlospis_dieta.TabIndex = 5;
-            this.jadlospis_dieta.SelectedIndexChanged += new System.EventHandler(this.jadlospis_dieta_SelectedIndexChanged);
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.BackColor = System.Drawing.Color.Transparent;
-            this.label89.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label89.Location = new System.Drawing.Point(98, 93);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(45, 21);
-            this.label89.TabIndex = 7;
-            this.label89.Text = "Data:";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Controls.Add(this.tabPage9);
-            this.tabControl1.Controls.Add(this.tabPage10);
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.tabControl1.Location = new System.Drawing.Point(27, 154);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(726, 334);
-            this.tabControl1.TabIndex = 24;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.listView1);
-            this.tabPage6.Controls.Add(this.textBox7);
-            this.tabPage6.Controls.Add(this.label91);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(718, 308);
-            this.tabPage6.TabIndex = 0;
-            this.tabPage6.Text = "Śniadanie";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader41,
-            this.columnHeader42,
-            this.columnHeader43,
-            this.columnHeader44,
-            this.columnHeader45,
-            this.columnHeader46,
-            this.columnHeader47,
-            this.columnHeader48,
-            this.columnHeader108,
-            this.columnHeader91,
-            this.columnHeader92});
-            this.listView1.Enabled = false;
-            this.listView1.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.listView1.GridLines = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(5, 41);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(707, 262);
-            this.listView1.TabIndex = 32;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader41
-            // 
-            this.columnHeader41.Text = "Nazwa produktu";
-            this.columnHeader41.Width = 87;
-            // 
-            // columnHeader42
-            // 
-            this.columnHeader42.Text = "Masa [g]";
-            this.columnHeader42.Width = 49;
-            // 
-            // columnHeader43
-            // 
-            this.columnHeader43.Text = "Energia [kcal]";
-            this.columnHeader43.Width = 66;
-            // 
-            // columnHeader44
-            // 
-            this.columnHeader44.Text = "Białko [g]";
-            this.columnHeader44.Width = 51;
-            // 
-            // columnHeader45
-            // 
-            this.columnHeader45.Text = "Tłuszcze [g]";
-            // 
-            // columnHeader46
-            // 
-            this.columnHeader46.Text = "KTN [g]";
-            this.columnHeader46.Width = 43;
-            // 
-            // columnHeader47
-            // 
-            this.columnHeader47.Text = "Węgl. ogółem [g]";
-            this.columnHeader47.Width = 83;
-            // 
-            // columnHeader48
-            // 
-            this.columnHeader48.Text = "Węgl. przyswajalne [g]";
-            this.columnHeader48.Width = 100;
-            // 
-            // columnHeader108
-            // 
-            this.columnHeader108.Text = "Cukry [g]";
-            this.columnHeader108.Width = 49;
-            // 
-            // columnHeader91
-            // 
-            this.columnHeader91.Text = "Błonnik [g]";
-            // 
-            // columnHeader92
-            // 
-            this.columnHeader92.Text = "Sód [mg]";
-            this.columnHeader92.Width = 55;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox7.Location = new System.Drawing.Point(90, 9);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(622, 25);
-            this.textBox7.TabIndex = 31;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label91.Location = new System.Drawing.Point(3, 13);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(85, 13);
-            this.label91.TabIndex = 30;
-            this.label91.Text = "Nazwa posiłku:";
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.listView2);
-            this.tabPage7.Controls.Add(this.textBox8);
-            this.tabPage7.Controls.Add(this.label92);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(718, 308);
-            this.tabPage7.TabIndex = 1;
-            this.tabPage7.Text = "Drugie śniadanie";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // listView2
-            // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader49,
-            this.columnHeader50,
-            this.columnHeader51,
-            this.columnHeader52,
-            this.columnHeader53,
-            this.columnHeader54,
-            this.columnHeader55,
-            this.columnHeader56,
-            this.columnHeader109,
-            this.columnHeader93,
-            this.columnHeader94});
-            this.listView2.Enabled = false;
-            this.listView2.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.listView2.GridLines = true;
-            this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(5, 41);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(707, 264);
-            this.listView2.TabIndex = 34;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader49
-            // 
-            this.columnHeader49.Text = "Nazwa produktu";
-            this.columnHeader49.Width = 80;
-            // 
-            // columnHeader50
-            // 
-            this.columnHeader50.Text = "Masa [g]";
-            // 
-            // columnHeader51
-            // 
-            this.columnHeader51.Text = "Energia [kcal]";
-            this.columnHeader51.Width = 70;
-            // 
-            // columnHeader52
-            // 
-            this.columnHeader52.Text = "Białko [g]";
-            this.columnHeader52.Width = 55;
-            // 
-            // columnHeader53
-            // 
-            this.columnHeader53.Text = "Tłuszcze [g]";
-            // 
-            // columnHeader54
-            // 
-            this.columnHeader54.Text = "KTN [g]";
-            // 
-            // columnHeader55
-            // 
-            this.columnHeader55.Text = "Węgl. ogółem [g]";
-            this.columnHeader55.Width = 90;
-            // 
-            // columnHeader56
-            // 
-            this.columnHeader56.Text = "Węgl. przyswajalne [g]";
-            this.columnHeader56.Width = 100;
-            // 
-            // columnHeader109
-            // 
-            this.columnHeader109.Text = "Cukry [g]";
-            // 
-            // columnHeader93
-            // 
-            this.columnHeader93.Text = "Błonnik [g]";
-            // 
-            // columnHeader94
-            // 
-            this.columnHeader94.Text = "Sód [mg]";
-            this.columnHeader94.Width = 55;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox8.Location = new System.Drawing.Point(90, 9);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(622, 25);
-            this.textBox8.TabIndex = 33;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(3, 13);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(85, 13);
-            this.label92.TabIndex = 32;
-            this.label92.Text = "Nazwa posiłku:";
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.listView3);
-            this.tabPage8.Controls.Add(this.textBox9);
-            this.tabPage8.Controls.Add(this.label93);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(718, 308);
-            this.tabPage8.TabIndex = 2;
-            this.tabPage8.Text = "Obiad";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // listView3
-            // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader57,
-            this.columnHeader58,
-            this.columnHeader59,
-            this.columnHeader60,
-            this.columnHeader61,
-            this.columnHeader62,
-            this.columnHeader63,
-            this.columnHeader64,
-            this.columnHeader110,
-            this.columnHeader95,
-            this.columnHeader96});
-            this.listView3.Enabled = false;
-            this.listView3.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.listView3.GridLines = true;
-            this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(5, 41);
-            this.listView3.MultiSelect = false;
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(707, 262);
-            this.listView3.TabIndex = 34;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader57
-            // 
-            this.columnHeader57.Text = "Nazwa produktu";
-            this.columnHeader57.Width = 80;
-            // 
-            // columnHeader58
-            // 
-            this.columnHeader58.Text = "Masa [g]";
-            // 
-            // columnHeader59
-            // 
-            this.columnHeader59.Text = "Energia [kcal]";
-            this.columnHeader59.Width = 70;
-            // 
-            // columnHeader60
-            // 
-            this.columnHeader60.Text = "Białko [g]";
-            this.columnHeader60.Width = 55;
-            // 
-            // columnHeader61
-            // 
-            this.columnHeader61.Text = "Tłuszcze [g]";
-            // 
-            // columnHeader62
-            // 
-            this.columnHeader62.Text = "KTN [g]";
-            // 
-            // columnHeader63
-            // 
-            this.columnHeader63.Text = "Węgl. ogółem [g]";
-            this.columnHeader63.Width = 90;
-            // 
-            // columnHeader64
-            // 
-            this.columnHeader64.Text = "Węgl. przyswajalne [g]";
-            this.columnHeader64.Width = 100;
-            // 
-            // columnHeader110
-            // 
-            this.columnHeader110.Text = "Cukry [g]";
-            // 
-            // columnHeader95
-            // 
-            this.columnHeader95.Text = "Błonnik [g]";
-            // 
-            // columnHeader96
-            // 
-            this.columnHeader96.Text = "Sód [mg]";
-            this.columnHeader96.Width = 55;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox9.Location = new System.Drawing.Point(90, 9);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(622, 25);
-            this.textBox9.TabIndex = 33;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(3, 13);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(85, 13);
-            this.label93.TabIndex = 32;
-            this.label93.Text = "Nazwa posiłku:";
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.Controls.Add(this.listView4);
-            this.tabPage9.Controls.Add(this.textBox10);
-            this.tabPage9.Controls.Add(this.label94);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(718, 308);
-            this.tabPage9.TabIndex = 3;
-            this.tabPage9.Text = "Podwieczorek";
-            this.tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // listView4
-            // 
-            this.listView4.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader65,
-            this.columnHeader66,
-            this.columnHeader67,
-            this.columnHeader68,
-            this.columnHeader69,
-            this.columnHeader70,
-            this.columnHeader71,
-            this.columnHeader72,
-            this.columnHeader111,
-            this.columnHeader97,
-            this.columnHeader98});
-            this.listView4.Enabled = false;
-            this.listView4.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.listView4.GridLines = true;
-            this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(5, 41);
-            this.listView4.MultiSelect = false;
-            this.listView4.Name = "listView4";
-            this.listView4.Size = new System.Drawing.Size(707, 262);
-            this.listView4.TabIndex = 34;
-            this.listView4.UseCompatibleStateImageBehavior = false;
-            this.listView4.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader65
-            // 
-            this.columnHeader65.Text = "Nazwa produktu";
-            this.columnHeader65.Width = 80;
-            // 
-            // columnHeader66
-            // 
-            this.columnHeader66.Text = "Masa [g]";
-            // 
-            // columnHeader67
-            // 
-            this.columnHeader67.Text = "Energia [kcal]";
-            this.columnHeader67.Width = 70;
-            // 
-            // columnHeader68
-            // 
-            this.columnHeader68.Text = "Białko [g]";
-            this.columnHeader68.Width = 55;
-            // 
-            // columnHeader69
-            // 
-            this.columnHeader69.Text = "Tłuszcze [g]";
-            // 
-            // columnHeader70
-            // 
-            this.columnHeader70.Text = "KTN [g]";
-            // 
-            // columnHeader71
-            // 
-            this.columnHeader71.Text = "Węgl. ogółem [g]";
-            this.columnHeader71.Width = 90;
-            // 
-            // columnHeader72
-            // 
-            this.columnHeader72.Text = "Węgl. przyswajalne [g]";
-            this.columnHeader72.Width = 100;
-            // 
-            // columnHeader111
-            // 
-            this.columnHeader111.Text = "Cukry [g]";
-            // 
-            // columnHeader97
-            // 
-            this.columnHeader97.Text = "Błonnik [g]";
-            // 
-            // columnHeader98
-            // 
-            this.columnHeader98.Text = "Sód [mg]";
-            this.columnHeader98.Width = 55;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox10.Location = new System.Drawing.Point(90, 9);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(622, 25);
-            this.textBox10.TabIndex = 33;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(3, 13);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(85, 13);
-            this.label94.TabIndex = 32;
-            this.label94.Text = "Nazwa posiłku:";
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.Controls.Add(this.listView5);
-            this.tabPage10.Controls.Add(this.textBox11);
-            this.tabPage10.Controls.Add(this.label95);
-            this.tabPage10.Location = new System.Drawing.Point(4, 22);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(718, 308);
-            this.tabPage10.TabIndex = 4;
-            this.tabPage10.Text = "Kolacja";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // listView5
-            // 
-            this.listView5.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader73,
-            this.columnHeader74,
-            this.columnHeader75,
-            this.columnHeader76,
-            this.columnHeader77,
-            this.columnHeader78,
-            this.columnHeader79,
-            this.columnHeader80,
-            this.columnHeader112,
-            this.columnHeader99,
-            this.columnHeader100});
-            this.listView5.Enabled = false;
-            this.listView5.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.listView5.GridLines = true;
-            this.listView5.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(5, 41);
-            this.listView5.MultiSelect = false;
-            this.listView5.Name = "listView5";
-            this.listView5.Size = new System.Drawing.Size(707, 264);
-            this.listView5.TabIndex = 34;
-            this.listView5.UseCompatibleStateImageBehavior = false;
-            this.listView5.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader73
-            // 
-            this.columnHeader73.Text = "Nazwa produktu";
-            this.columnHeader73.Width = 80;
-            // 
-            // columnHeader74
-            // 
-            this.columnHeader74.Text = "Masa [g]";
-            // 
-            // columnHeader75
-            // 
-            this.columnHeader75.Text = "Energia [kcal]";
-            this.columnHeader75.Width = 70;
-            // 
-            // columnHeader76
-            // 
-            this.columnHeader76.Text = "Białko [g]";
-            this.columnHeader76.Width = 55;
-            // 
-            // columnHeader77
-            // 
-            this.columnHeader77.Text = "Tłuszcze [g]";
-            // 
-            // columnHeader78
-            // 
-            this.columnHeader78.Text = "KTN [g]";
-            // 
-            // columnHeader79
-            // 
-            this.columnHeader79.Text = "Węgl. ogółem [g]";
-            this.columnHeader79.Width = 90;
-            // 
-            // columnHeader80
-            // 
-            this.columnHeader80.Text = "Węgl. przyswajalne [g]";
-            this.columnHeader80.Width = 100;
-            // 
-            // columnHeader112
-            // 
-            this.columnHeader112.Text = "Cukry [g]";
-            // 
-            // columnHeader99
-            // 
-            this.columnHeader99.Text = "Błonnik [g]";
-            // 
-            // columnHeader100
-            // 
-            this.columnHeader100.Text = "Sód [mg]";
-            this.columnHeader100.Width = 55;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Enabled = false;
-            this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox11.Location = new System.Drawing.Point(90, 9);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(622, 25);
-            this.textBox11.TabIndex = 33;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(3, 13);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(85, 13);
-            this.label95.TabIndex = 32;
-            this.label95.Text = "Nazwa posiłku:";
-            // 
-            // jadlospis_miasto
-            // 
-            this.jadlospis_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.jadlospis_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.jadlospis_miasto.FormattingEnabled = true;
-            this.jadlospis_miasto.Items.AddRange(new object[] {
-            "Ustrzyki Dolne",
-            "Lesko"});
-            this.jadlospis_miasto.Location = new System.Drawing.Point(242, 117);
-            this.jadlospis_miasto.Name = "jadlospis_miasto";
-            this.jadlospis_miasto.Size = new System.Drawing.Size(175, 29);
-            this.jadlospis_miasto.TabIndex = 31;
-            this.jadlospis_miasto.SelectedIndexChanged += new System.EventHandler(this.jadlospis_miasto_SelectedIndexChanged);
             // 
             // panel_drukuj
             // 
@@ -7252,7 +7263,7 @@
             this.wyczyśćToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 2);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(343, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(463, 29);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -7438,7 +7449,7 @@
             this.panel_kontrola.Controls.Add(this.pictureBox28);
             this.panel_kontrola.Location = new System.Drawing.Point(484, 53);
             this.panel_kontrola.Name = "panel_kontrola";
-            this.panel_kontrola.Size = new System.Drawing.Size(917, 579);
+            this.panel_kontrola.Size = new System.Drawing.Size(167, 67);
             this.panel_kontrola.TabIndex = 96;
             this.panel_kontrola.Visible = false;
             // 
@@ -8654,18 +8665,6 @@
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
             // 
-            // generowanie_status
-            // 
-            this.generowanie_status.AutoSize = true;
-            this.generowanie_status.BackColor = System.Drawing.Color.Transparent;
-            this.generowanie_status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.generowanie_status.Location = new System.Drawing.Point(599, 174);
-            this.generowanie_status.Name = "generowanie_status";
-            this.generowanie_status.Size = new System.Drawing.Size(111, 63);
-            this.generowanie_status.TabIndex = 86;
-            this.generowanie_status.Text = "Generowanie...\r\ndzień: 1/7\r\njadłospis: 4/18";
-            this.generowanie_status.Click += new System.EventHandler(this.label11_Click_1);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8679,6 +8678,7 @@
             this.Controls.Add(this.panel_receptura);
             this.Controls.Add(this.panel_glowny);
             this.Controls.Add(this.panel_produkty);
+            this.Controls.Add(this.panel_jadlospis);
             this.Controls.Add(this.panel_jednostka);
             this.Controls.Add(this.panel_dekadowka_zapisz);
             this.Controls.Add(this.panel_dekadowka_wczytaj);
@@ -8755,6 +8755,22 @@
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_wstecz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_dodaj)).EndInit();
+            this.panel_jadlospis.ResumeLayout(false);
+            this.panel_jadlospis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_edytuj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_usun)).EndInit();
@@ -8781,22 +8797,6 @@
             this.panel_dekadowka_wczytaj.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            this.panel_jadlospis.ResumeLayout(false);
-            this.panel_jadlospis.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
-            this.tabPage7.ResumeLayout(false);
-            this.tabPage7.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
-            this.tabPage10.ResumeLayout(false);
-            this.tabPage10.PerformLayout();
             this.panel_drukuj.ResumeLayout(false);
             this.panel_drukuj.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();

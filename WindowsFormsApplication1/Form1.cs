@@ -4777,7 +4777,7 @@
             produkty = jadlospisDekadowkiDoWczytania.sklad_kolacja.Split('$');
             for (int j = 0; j < produkty.Length - 1; j++)
             {
-                string[] arg = new string[10];
+                string[] arg = new string[11];
                 string[] arr = produkty[j].Split('|');
                 ListViewItem itm = null;
                 if (arr.Length != 11)
