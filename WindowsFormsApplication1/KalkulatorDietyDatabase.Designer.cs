@@ -11,7 +11,8 @@
 #pragma warning disable 1591
 
 namespace KalkulatorDiety
-{   
+{
+    
     
     /// <summary>
     ///Represents a strongly typed in-memory cache of data.
@@ -1609,25 +1610,129 @@ namespace KalkulatorDiety
             
             private global::System.Data.DataColumn columnNazwa_diety;
             
-            private global::System.Data.DataColumn columnEnergia;
+            private global::System.Data.DataColumn columnEnergiaDo;
             
-            private global::System.Data.DataColumn columnBiałko;
+            private global::System.Data.DataColumn columnBialkoDo;
             
-            private global::System.Data.DataColumn columnWęglowodany;
+            private global::System.Data.DataColumn columnWeglowodanyDo;
             
-            private global::System.Data.DataColumn columnTłuszcze;
+            private global::System.Data.DataColumn columnTluszczeDo;
             
-            private global::System.Data.DataColumn columnSód;
+            private global::System.Data.DataColumn columnSodDo;
             
-            private global::System.Data.DataColumn columnWęglowodany_przyswajalne;
+            private global::System.Data.DataColumn columnPrzyswajalneDo;
             
-            private global::System.Data.DataColumn columnBłonnik;
+            private global::System.Data.DataColumn columnBlonnikDo;
             
-            private global::System.Data.DataColumn columnKwasy_tłuszczowe_nasycone;
+            private global::System.Data.DataColumn columnKwasyDo;
             
             private global::System.Data.DataColumn columnMiasto;
             
-            private global::System.Data.DataColumn columnCukry;
+            private global::System.Data.DataColumn columnCukryDo;
+            
+            private global::System.Data.DataColumn columnEnergiaOd;
+            
+            private global::System.Data.DataColumn columnEnergiaOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnEnergiaDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnEnergiaOdProcent;
+            
+            private global::System.Data.DataColumn columnEnergiaDoProcent;
+            
+            private global::System.Data.DataColumn columnBialkoOd;
+            
+            private global::System.Data.DataColumn columnBialkoOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnBialkoDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnBialkoOdProcent;
+            
+            private global::System.Data.DataColumn columnBialkoDoProcent;
+            
+            private global::System.Data.DataColumn columnWeglowodanyOd;
+            
+            private global::System.Data.DataColumn columnWeglowodanyOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnWeglowodanyDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnWeglowodanyOdProcent;
+            
+            private global::System.Data.DataColumn columnWeglowodanyDoProcent;
+            
+            private global::System.Data.DataColumn columnTluszczeOd;
+            
+            private global::System.Data.DataColumn columnTluszczeOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnTluszczeDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnTluszczeOdProcent;
+            
+            private global::System.Data.DataColumn columnTluszczeDoProcent;
+            
+            private global::System.Data.DataColumn columnSodOd;
+            
+            private global::System.Data.DataColumn columnSodOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnSodDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnSodOdProcent;
+            
+            private global::System.Data.DataColumn columnSodDoProcent;
+            
+            private global::System.Data.DataColumn columnPrzyswajalneOd;
+            
+            private global::System.Data.DataColumn columnPrzyswajalneOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnPrzyswajalneDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnPrzyswajalneOdProcent;
+            
+            private global::System.Data.DataColumn columnPrzyswajalneDoProcent;
+            
+            private global::System.Data.DataColumn columnBlonnikOd;
+            
+            private global::System.Data.DataColumn columnBlonnikOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnBlonnikDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnBlonnikOdProcent;
+            
+            private global::System.Data.DataColumn columnBlonnikDoProcent;
+            
+            private global::System.Data.DataColumn columnKwasyOd;
+            
+            private global::System.Data.DataColumn columnKwasyOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnKwasyDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnKwasyOdProcent;
+            
+            private global::System.Data.DataColumn columnKwasyDoProcent;
+            
+            private global::System.Data.DataColumn columnCukryOd;
+            
+            private global::System.Data.DataColumn columnCukryOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnCukryDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnCukryOdProcent;
+            
+            private global::System.Data.DataColumn columnCukryDoProcent;
+            
+            private global::System.Data.DataColumn columnSolOd;
+            
+            private global::System.Data.DataColumn columnSolDo;
+            
+            private global::System.Data.DataColumn columnSolOdNaTysiac;
+            
+            private global::System.Data.DataColumn columnSolDoNaTysiac;
+            
+            private global::System.Data.DataColumn columnSolOdProcent;
+            
+            private global::System.Data.DataColumn columnSolDoProcent;
+            
+            private global::System.Data.DataColumn columnKod;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1672,65 +1777,65 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EnergiaColumn {
+            public global::System.Data.DataColumn EnergiaDoColumn {
                 get {
-                    return this.columnEnergia;
+                    return this.columnEnergiaDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn BiałkoColumn {
+            public global::System.Data.DataColumn BialkoDoColumn {
                 get {
-                    return this.columnBiałko;
+                    return this.columnBialkoDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn WęglowodanyColumn {
+            public global::System.Data.DataColumn WeglowodanyDoColumn {
                 get {
-                    return this.columnWęglowodany;
+                    return this.columnWeglowodanyDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TłuszczeColumn {
+            public global::System.Data.DataColumn TluszczeDoColumn {
                 get {
-                    return this.columnTłuszcze;
+                    return this.columnTluszczeDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SódColumn {
+            public global::System.Data.DataColumn SodDoColumn {
                 get {
-                    return this.columnSód;
+                    return this.columnSodDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Węglowodany_przyswajalneColumn {
+            public global::System.Data.DataColumn PrzyswajalneDoColumn {
                 get {
-                    return this.columnWęglowodany_przyswajalne;
+                    return this.columnPrzyswajalneDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn BłonnikColumn {
+            public global::System.Data.DataColumn BlonnikDoColumn {
                 get {
-                    return this.columnBłonnik;
+                    return this.columnBlonnikDo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Kwasy_tłuszczowe_nasyconeColumn {
+            public global::System.Data.DataColumn KwasyDoColumn {
                 get {
-                    return this.columnKwasy_tłuszczowe_nasycone;
+                    return this.columnKwasyDo;
                 }
             }
             
@@ -1744,9 +1849,425 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CukryColumn {
+            public global::System.Data.DataColumn CukryDoColumn {
                 get {
-                    return this.columnCukry;
+                    return this.columnCukryDo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EnergiaOdColumn {
+                get {
+                    return this.columnEnergiaOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EnergiaOdNaTysiacColumn {
+                get {
+                    return this.columnEnergiaOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EnergiaDoNaTysiacColumn {
+                get {
+                    return this.columnEnergiaDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EnergiaOdProcentColumn {
+                get {
+                    return this.columnEnergiaOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EnergiaDoProcentColumn {
+                get {
+                    return this.columnEnergiaDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BialkoOdColumn {
+                get {
+                    return this.columnBialkoOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BialkoOdNaTysiacColumn {
+                get {
+                    return this.columnBialkoOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BialkoDoNaTysiacColumn {
+                get {
+                    return this.columnBialkoDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BialkoOdProcentColumn {
+                get {
+                    return this.columnBialkoOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BialkoDoProcentColumn {
+                get {
+                    return this.columnBialkoDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn WeglowodanyOdColumn {
+                get {
+                    return this.columnWeglowodanyOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn WeglowodanyOdNaTysiacColumn {
+                get {
+                    return this.columnWeglowodanyOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn WeglowodanyDoNaTysiacColumn {
+                get {
+                    return this.columnWeglowodanyDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn WeglowodanyOdProcentColumn {
+                get {
+                    return this.columnWeglowodanyOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn WeglowodanyDoProcentColumn {
+                get {
+                    return this.columnWeglowodanyDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TluszczeOdColumn {
+                get {
+                    return this.columnTluszczeOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TluszczeOdNaTysiacColumn {
+                get {
+                    return this.columnTluszczeOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TluszczeDoNaTysiacColumn {
+                get {
+                    return this.columnTluszczeDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TluszczeOdProcentColumn {
+                get {
+                    return this.columnTluszczeOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TluszczeDoProcentColumn {
+                get {
+                    return this.columnTluszczeDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SodOdColumn {
+                get {
+                    return this.columnSodOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SodOdNaTysiacColumn {
+                get {
+                    return this.columnSodOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SodDoNaTysiacColumn {
+                get {
+                    return this.columnSodDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SodOdProcentColumn {
+                get {
+                    return this.columnSodOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SodDoProcentColumn {
+                get {
+                    return this.columnSodDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrzyswajalneOdColumn {
+                get {
+                    return this.columnPrzyswajalneOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrzyswajalneOdNaTysiacColumn {
+                get {
+                    return this.columnPrzyswajalneOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrzyswajalneDoNaTysiacColumn {
+                get {
+                    return this.columnPrzyswajalneDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrzyswajalneOdProcentColumn {
+                get {
+                    return this.columnPrzyswajalneOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PrzyswajalneDoProcentColumn {
+                get {
+                    return this.columnPrzyswajalneDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BlonnikOdColumn {
+                get {
+                    return this.columnBlonnikOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BlonnikOdNaTysiacColumn {
+                get {
+                    return this.columnBlonnikOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BlonnikDoNaTysiacColumn {
+                get {
+                    return this.columnBlonnikDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BlonnikOdProcentColumn {
+                get {
+                    return this.columnBlonnikOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn BlonnikDoProcentColumn {
+                get {
+                    return this.columnBlonnikDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KwasyOdColumn {
+                get {
+                    return this.columnKwasyOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KwasyOdNaTysiacColumn {
+                get {
+                    return this.columnKwasyOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KwasyDoNaTysiacColumn {
+                get {
+                    return this.columnKwasyDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KwasyOdProcentColumn {
+                get {
+                    return this.columnKwasyOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KwasyDoProcentColumn {
+                get {
+                    return this.columnKwasyDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryOdColumn {
+                get {
+                    return this.columnCukryOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryOdNaTysiacColumn {
+                get {
+                    return this.columnCukryOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryDoNaTysiacColumn {
+                get {
+                    return this.columnCukryDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryOdProcentColumn {
+                get {
+                    return this.columnCukryOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CukryDoProcentColumn {
+                get {
+                    return this.columnCukryDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SolOdColumn {
+                get {
+                    return this.columnSolOd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SolDoColumn {
+                get {
+                    return this.columnSolDo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SolOdNaTysiacColumn {
+                get {
+                    return this.columnSolOdNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SolDoNaTysiacColumn {
+                get {
+                    return this.columnSolDoNaTysiac;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SolOdProcentColumn {
+                get {
+                    return this.columnSolOdProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SolDoProcentColumn {
+                get {
+                    return this.columnSolDoProcent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn KodColumn {
+                get {
+                    return this.columnKod;
                 }
             }
             
@@ -1787,20 +2308,135 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DietyRow AddDietyRow(string Nazwa_diety, string Energia, string Białko, string Węglowodany, string Tłuszcze, string Sód, string Węglowodany_przyswajalne, string Błonnik, string Kwasy_tłuszczowe_nasycone, string Miasto, string Cukry) {
+            public DietyRow AddDietyRow(
+                        string Nazwa_diety, 
+                        string EnergiaDo, 
+                        string BialkoDo, 
+                        string WeglowodanyDo, 
+                        string TluszczeDo, 
+                        string SodDo, 
+                        string PrzyswajalneDo, 
+                        string BlonnikDo, 
+                        string KwasyDo, 
+                        string Miasto, 
+                        string CukryDo, 
+                        string EnergiaOd, 
+                        string EnergiaOdNaTysiac, 
+                        string EnergiaDoNaTysiac, 
+                        string EnergiaOdProcent, 
+                        string EnergiaDoProcent, 
+                        string BialkoOd, 
+                        string BialkoOdNaTysiac, 
+                        string BialkoDoNaTysiac, 
+                        string BialkoOdProcent, 
+                        string BialkoDoProcent, 
+                        string WeglowodanyOd, 
+                        string WeglowodanyOdNaTysiac, 
+                        string WeglowodanyDoNaTysiac, 
+                        string WeglowodanyOdProcent, 
+                        string WeglowodanyDoProcent, 
+                        string TluszczeOd, 
+                        string TluszczeOdNaTysiac, 
+                        string TluszczeDoNaTysiac, 
+                        string TluszczeOdProcent, 
+                        string TluszczeDoProcent, 
+                        string SodOd, 
+                        string SodOdNaTysiac, 
+                        string SodDoNaTysiac, 
+                        string SodOdProcent, 
+                        string SodDoProcent, 
+                        string PrzyswajalneOd, 
+                        string PrzyswajalneOdNaTysiac, 
+                        string PrzyswajalneDoNaTysiac, 
+                        string PrzyswajalneOdProcent, 
+                        string PrzyswajalneDoProcent, 
+                        string BlonnikOd, 
+                        string BlonnikOdNaTysiac, 
+                        string BlonnikDoNaTysiac, 
+                        string BlonnikOdProcent, 
+                        string BlonnikDoProcent, 
+                        string KwasyOd, 
+                        string KwasyOdNaTysiac, 
+                        string KwasyDoNaTysiac, 
+                        string KwasyOdProcent, 
+                        string KwasyDoProcent, 
+                        string CukryOd, 
+                        string CukryOdNaTysiac, 
+                        string CukryDoNaTysiac, 
+                        string CukryOdProcent, 
+                        string CukryDoProcent, 
+                        string SolOd, 
+                        string SolDo, 
+                        string SolOdNaTysiac, 
+                        string SolDoNaTysiac, 
+                        string SolOdProcent, 
+                        string SolDoProcent, 
+                        string Kod) {
                 DietyRow rowDietyRow = ((DietyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nazwa_diety,
-                        Energia,
-                        Białko,
-                        Węglowodany,
-                        Tłuszcze,
-                        Sód,
-                        Węglowodany_przyswajalne,
-                        Błonnik,
-                        Kwasy_tłuszczowe_nasycone,
+                        EnergiaDo,
+                        BialkoDo,
+                        WeglowodanyDo,
+                        TluszczeDo,
+                        SodDo,
+                        PrzyswajalneDo,
+                        BlonnikDo,
+                        KwasyDo,
                         Miasto,
-                        Cukry};
+                        CukryDo,
+                        EnergiaOd,
+                        EnergiaOdNaTysiac,
+                        EnergiaDoNaTysiac,
+                        EnergiaOdProcent,
+                        EnergiaDoProcent,
+                        BialkoOd,
+                        BialkoOdNaTysiac,
+                        BialkoDoNaTysiac,
+                        BialkoOdProcent,
+                        BialkoDoProcent,
+                        WeglowodanyOd,
+                        WeglowodanyOdNaTysiac,
+                        WeglowodanyDoNaTysiac,
+                        WeglowodanyOdProcent,
+                        WeglowodanyDoProcent,
+                        TluszczeOd,
+                        TluszczeOdNaTysiac,
+                        TluszczeDoNaTysiac,
+                        TluszczeOdProcent,
+                        TluszczeDoProcent,
+                        SodOd,
+                        SodOdNaTysiac,
+                        SodDoNaTysiac,
+                        SodOdProcent,
+                        SodDoProcent,
+                        PrzyswajalneOd,
+                        PrzyswajalneOdNaTysiac,
+                        PrzyswajalneDoNaTysiac,
+                        PrzyswajalneOdProcent,
+                        PrzyswajalneDoProcent,
+                        BlonnikOd,
+                        BlonnikOdNaTysiac,
+                        BlonnikDoNaTysiac,
+                        BlonnikOdProcent,
+                        BlonnikDoProcent,
+                        KwasyOd,
+                        KwasyOdNaTysiac,
+                        KwasyDoNaTysiac,
+                        KwasyOdProcent,
+                        KwasyDoProcent,
+                        CukryOd,
+                        CukryOdNaTysiac,
+                        CukryDoNaTysiac,
+                        CukryOdProcent,
+                        CukryDoProcent,
+                        SolOd,
+                        SolDo,
+                        SolOdNaTysiac,
+                        SolDoNaTysiac,
+                        SolOdProcent,
+                        SolDoProcent,
+                        Kod};
                 rowDietyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDietyRow);
                 return rowDietyRow;
@@ -1824,16 +2460,68 @@ namespace KalkulatorDiety
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnNazwa_diety = base.Columns["Nazwa diety"];
-                this.columnEnergia = base.Columns["Energia"];
-                this.columnBiałko = base.Columns["Białko"];
-                this.columnWęglowodany = base.Columns["Węglowodany"];
-                this.columnTłuszcze = base.Columns["Tłuszcze"];
-                this.columnSód = base.Columns["Sód"];
-                this.columnWęglowodany_przyswajalne = base.Columns["Węglowodany przyswajalne"];
-                this.columnBłonnik = base.Columns["Błonnik"];
-                this.columnKwasy_tłuszczowe_nasycone = base.Columns["Kwasy tłuszczowe nasycone"];
+                this.columnEnergiaDo = base.Columns["EnergiaDo"];
+                this.columnBialkoDo = base.Columns["BialkoDo"];
+                this.columnWeglowodanyDo = base.Columns["WeglowodanyDo"];
+                this.columnTluszczeDo = base.Columns["TluszczeDo"];
+                this.columnSodDo = base.Columns["SodDo"];
+                this.columnPrzyswajalneDo = base.Columns["PrzyswajalneDo"];
+                this.columnBlonnikDo = base.Columns["BlonnikDo"];
+                this.columnKwasyDo = base.Columns["KwasyDo"];
                 this.columnMiasto = base.Columns["Miasto"];
-                this.columnCukry = base.Columns["Cukry"];
+                this.columnCukryDo = base.Columns["CukryDo"];
+                this.columnEnergiaOd = base.Columns["EnergiaOd"];
+                this.columnEnergiaOdNaTysiac = base.Columns["EnergiaOdNaTysiac"];
+                this.columnEnergiaDoNaTysiac = base.Columns["EnergiaDoNaTysiac"];
+                this.columnEnergiaOdProcent = base.Columns["EnergiaOdProcent"];
+                this.columnEnergiaDoProcent = base.Columns["EnergiaDoProcent"];
+                this.columnBialkoOd = base.Columns["BialkoOd"];
+                this.columnBialkoOdNaTysiac = base.Columns["BialkoOdNaTysiac"];
+                this.columnBialkoDoNaTysiac = base.Columns["BialkoDoNaTysiac"];
+                this.columnBialkoOdProcent = base.Columns["BialkoOdProcent"];
+                this.columnBialkoDoProcent = base.Columns["BialkoDoProcent"];
+                this.columnWeglowodanyOd = base.Columns["WeglowodanyOd"];
+                this.columnWeglowodanyOdNaTysiac = base.Columns["WeglowodanyOdNaTysiac"];
+                this.columnWeglowodanyDoNaTysiac = base.Columns["WeglowodanyDoNaTysiac"];
+                this.columnWeglowodanyOdProcent = base.Columns["WeglowodanyOdProcent"];
+                this.columnWeglowodanyDoProcent = base.Columns["WeglowodanyDoProcent"];
+                this.columnTluszczeOd = base.Columns["TluszczeOd"];
+                this.columnTluszczeOdNaTysiac = base.Columns["TluszczeOdNaTysiac"];
+                this.columnTluszczeDoNaTysiac = base.Columns["TluszczeDoNaTysiac"];
+                this.columnTluszczeOdProcent = base.Columns["TluszczeOdProcent"];
+                this.columnTluszczeDoProcent = base.Columns["TluszczeDoProcent"];
+                this.columnSodOd = base.Columns["SodOd"];
+                this.columnSodOdNaTysiac = base.Columns["SodOdNaTysiac"];
+                this.columnSodDoNaTysiac = base.Columns["SodDoNaTysiac"];
+                this.columnSodOdProcent = base.Columns["SodOdProcent"];
+                this.columnSodDoProcent = base.Columns["SodDoProcent"];
+                this.columnPrzyswajalneOd = base.Columns["PrzyswajalneOd"];
+                this.columnPrzyswajalneOdNaTysiac = base.Columns["PrzyswajalneOdNaTysiac"];
+                this.columnPrzyswajalneDoNaTysiac = base.Columns["PrzyswajalneDoNaTysiac"];
+                this.columnPrzyswajalneOdProcent = base.Columns["PrzyswajalneOdProcent"];
+                this.columnPrzyswajalneDoProcent = base.Columns["PrzyswajalneDoProcent"];
+                this.columnBlonnikOd = base.Columns["BlonnikOd"];
+                this.columnBlonnikOdNaTysiac = base.Columns["BlonnikOdNaTysiac"];
+                this.columnBlonnikDoNaTysiac = base.Columns["BlonnikDoNaTysiac"];
+                this.columnBlonnikOdProcent = base.Columns["BlonnikOdProcent"];
+                this.columnBlonnikDoProcent = base.Columns["BlonnikDoProcent"];
+                this.columnKwasyOd = base.Columns["KwasyOd"];
+                this.columnKwasyOdNaTysiac = base.Columns["KwasyOdNaTysiac"];
+                this.columnKwasyDoNaTysiac = base.Columns["KwasyDoNaTysiac"];
+                this.columnKwasyOdProcent = base.Columns["KwasyOdProcent"];
+                this.columnKwasyDoProcent = base.Columns["KwasyDoProcent"];
+                this.columnCukryOd = base.Columns["CukryOd"];
+                this.columnCukryOdNaTysiac = base.Columns["CukryOdNaTysiac"];
+                this.columnCukryDoNaTysiac = base.Columns["CukryDoNaTysiac"];
+                this.columnCukryOdProcent = base.Columns["CukryOdProcent"];
+                this.columnCukryDoProcent = base.Columns["CukryDoProcent"];
+                this.columnSolOd = base.Columns["SolOd"];
+                this.columnSolDo = base.Columns["SolDo"];
+                this.columnSolOdNaTysiac = base.Columns["SolOdNaTysiac"];
+                this.columnSolDoNaTysiac = base.Columns["SolDoNaTysiac"];
+                this.columnSolOdProcent = base.Columns["SolOdProcent"];
+                this.columnSolDoProcent = base.Columns["SolDoProcent"];
+                this.columnKod = base.Columns["Kod"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1841,26 +2529,130 @@ namespace KalkulatorDiety
             private void InitClass() {
                 this.columnNazwa_diety = new global::System.Data.DataColumn("Nazwa diety", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwa_diety);
-                this.columnEnergia = new global::System.Data.DataColumn("Energia", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEnergia);
-                this.columnBiałko = new global::System.Data.DataColumn("Białko", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBiałko);
-                this.columnWęglowodany = new global::System.Data.DataColumn("Węglowodany", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWęglowodany);
-                this.columnTłuszcze = new global::System.Data.DataColumn("Tłuszcze", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTłuszcze);
-                this.columnSód = new global::System.Data.DataColumn("Sód", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSód);
-                this.columnWęglowodany_przyswajalne = new global::System.Data.DataColumn("Węglowodany przyswajalne", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWęglowodany_przyswajalne);
-                this.columnBłonnik = new global::System.Data.DataColumn("Błonnik", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBłonnik);
-                this.columnKwasy_tłuszczowe_nasycone = new global::System.Data.DataColumn("Kwasy tłuszczowe nasycone", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKwasy_tłuszczowe_nasycone);
+                this.columnEnergiaDo = new global::System.Data.DataColumn("EnergiaDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnergiaDo);
+                this.columnBialkoDo = new global::System.Data.DataColumn("BialkoDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBialkoDo);
+                this.columnWeglowodanyDo = new global::System.Data.DataColumn("WeglowodanyDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeglowodanyDo);
+                this.columnTluszczeDo = new global::System.Data.DataColumn("TluszczeDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTluszczeDo);
+                this.columnSodDo = new global::System.Data.DataColumn("SodDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSodDo);
+                this.columnPrzyswajalneDo = new global::System.Data.DataColumn("PrzyswajalneDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrzyswajalneDo);
+                this.columnBlonnikDo = new global::System.Data.DataColumn("BlonnikDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlonnikDo);
+                this.columnKwasyDo = new global::System.Data.DataColumn("KwasyDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwasyDo);
                 this.columnMiasto = new global::System.Data.DataColumn("Miasto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMiasto);
-                this.columnCukry = new global::System.Data.DataColumn("Cukry", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCukry);
+                this.columnCukryDo = new global::System.Data.DataColumn("CukryDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukryDo);
+                this.columnEnergiaOd = new global::System.Data.DataColumn("EnergiaOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnergiaOd);
+                this.columnEnergiaOdNaTysiac = new global::System.Data.DataColumn("EnergiaOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnergiaOdNaTysiac);
+                this.columnEnergiaDoNaTysiac = new global::System.Data.DataColumn("EnergiaDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnergiaDoNaTysiac);
+                this.columnEnergiaOdProcent = new global::System.Data.DataColumn("EnergiaOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnergiaOdProcent);
+                this.columnEnergiaDoProcent = new global::System.Data.DataColumn("EnergiaDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnergiaDoProcent);
+                this.columnBialkoOd = new global::System.Data.DataColumn("BialkoOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBialkoOd);
+                this.columnBialkoOdNaTysiac = new global::System.Data.DataColumn("BialkoOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBialkoOdNaTysiac);
+                this.columnBialkoDoNaTysiac = new global::System.Data.DataColumn("BialkoDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBialkoDoNaTysiac);
+                this.columnBialkoOdProcent = new global::System.Data.DataColumn("BialkoOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBialkoOdProcent);
+                this.columnBialkoDoProcent = new global::System.Data.DataColumn("BialkoDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBialkoDoProcent);
+                this.columnWeglowodanyOd = new global::System.Data.DataColumn("WeglowodanyOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeglowodanyOd);
+                this.columnWeglowodanyOdNaTysiac = new global::System.Data.DataColumn("WeglowodanyOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeglowodanyOdNaTysiac);
+                this.columnWeglowodanyDoNaTysiac = new global::System.Data.DataColumn("WeglowodanyDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeglowodanyDoNaTysiac);
+                this.columnWeglowodanyOdProcent = new global::System.Data.DataColumn("WeglowodanyOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeglowodanyOdProcent);
+                this.columnWeglowodanyDoProcent = new global::System.Data.DataColumn("WeglowodanyDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeglowodanyDoProcent);
+                this.columnTluszczeOd = new global::System.Data.DataColumn("TluszczeOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTluszczeOd);
+                this.columnTluszczeOdNaTysiac = new global::System.Data.DataColumn("TluszczeOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTluszczeOdNaTysiac);
+                this.columnTluszczeDoNaTysiac = new global::System.Data.DataColumn("TluszczeDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTluszczeDoNaTysiac);
+                this.columnTluszczeOdProcent = new global::System.Data.DataColumn("TluszczeOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTluszczeOdProcent);
+                this.columnTluszczeDoProcent = new global::System.Data.DataColumn("TluszczeDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTluszczeDoProcent);
+                this.columnSodOd = new global::System.Data.DataColumn("SodOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSodOd);
+                this.columnSodOdNaTysiac = new global::System.Data.DataColumn("SodOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSodOdNaTysiac);
+                this.columnSodDoNaTysiac = new global::System.Data.DataColumn("SodDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSodDoNaTysiac);
+                this.columnSodOdProcent = new global::System.Data.DataColumn("SodOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSodOdProcent);
+                this.columnSodDoProcent = new global::System.Data.DataColumn("SodDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSodDoProcent);
+                this.columnPrzyswajalneOd = new global::System.Data.DataColumn("PrzyswajalneOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrzyswajalneOd);
+                this.columnPrzyswajalneOdNaTysiac = new global::System.Data.DataColumn("PrzyswajalneOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrzyswajalneOdNaTysiac);
+                this.columnPrzyswajalneDoNaTysiac = new global::System.Data.DataColumn("PrzyswajalneDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrzyswajalneDoNaTysiac);
+                this.columnPrzyswajalneOdProcent = new global::System.Data.DataColumn("PrzyswajalneOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrzyswajalneOdProcent);
+                this.columnPrzyswajalneDoProcent = new global::System.Data.DataColumn("PrzyswajalneDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrzyswajalneDoProcent);
+                this.columnBlonnikOd = new global::System.Data.DataColumn("BlonnikOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlonnikOd);
+                this.columnBlonnikOdNaTysiac = new global::System.Data.DataColumn("BlonnikOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlonnikOdNaTysiac);
+                this.columnBlonnikDoNaTysiac = new global::System.Data.DataColumn("BlonnikDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlonnikDoNaTysiac);
+                this.columnBlonnikOdProcent = new global::System.Data.DataColumn("BlonnikOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlonnikOdProcent);
+                this.columnBlonnikDoProcent = new global::System.Data.DataColumn("BlonnikDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBlonnikDoProcent);
+                this.columnKwasyOd = new global::System.Data.DataColumn("KwasyOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwasyOd);
+                this.columnKwasyOdNaTysiac = new global::System.Data.DataColumn("KwasyOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwasyOdNaTysiac);
+                this.columnKwasyDoNaTysiac = new global::System.Data.DataColumn("KwasyDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwasyDoNaTysiac);
+                this.columnKwasyOdProcent = new global::System.Data.DataColumn("KwasyOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwasyOdProcent);
+                this.columnKwasyDoProcent = new global::System.Data.DataColumn("KwasyDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKwasyDoProcent);
+                this.columnCukryOd = new global::System.Data.DataColumn("CukryOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukryOd);
+                this.columnCukryOdNaTysiac = new global::System.Data.DataColumn("CukryOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukryOdNaTysiac);
+                this.columnCukryDoNaTysiac = new global::System.Data.DataColumn("CukryDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukryDoNaTysiac);
+                this.columnCukryOdProcent = new global::System.Data.DataColumn("CukryOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukryOdProcent);
+                this.columnCukryDoProcent = new global::System.Data.DataColumn("CukryDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCukryDoProcent);
+                this.columnSolOd = new global::System.Data.DataColumn("SolOd", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolOd);
+                this.columnSolDo = new global::System.Data.DataColumn("SolDo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolDo);
+                this.columnSolOdNaTysiac = new global::System.Data.DataColumn("SolOdNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolOdNaTysiac);
+                this.columnSolDoNaTysiac = new global::System.Data.DataColumn("SolDoNaTysiac", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolDoNaTysiac);
+                this.columnSolOdProcent = new global::System.Data.DataColumn("SolOdProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolOdProcent);
+                this.columnSolDoProcent = new global::System.Data.DataColumn("SolDoProcent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolDoProcent);
+                this.columnKod = new global::System.Data.DataColumn("Kod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKod);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4051,129 +4843,129 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Energia {
+            public string EnergiaDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.EnergiaColumn]));
+                        return ((string)(this[this.tableDiety.EnergiaDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Energia\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'EnergiaDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.EnergiaColumn] = value;
+                    this[this.tableDiety.EnergiaDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Białko {
+            public string BialkoDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.BiałkoColumn]));
+                        return ((string)(this[this.tableDiety.BialkoDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Białko\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BialkoDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.BiałkoColumn] = value;
+                    this[this.tableDiety.BialkoDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Węglowodany {
+            public string WeglowodanyDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.WęglowodanyColumn]));
+                        return ((string)(this[this.tableDiety.WeglowodanyDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Węglowodany\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WeglowodanyDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.WęglowodanyColumn] = value;
+                    this[this.tableDiety.WeglowodanyDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Tłuszcze {
+            public string TluszczeDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.TłuszczeColumn]));
+                        return ((string)(this[this.tableDiety.TluszczeDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Tłuszcze\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'TluszczeDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.TłuszczeColumn] = value;
+                    this[this.tableDiety.TluszczeDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Sód {
+            public string SodDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.SódColumn]));
+                        return ((string)(this[this.tableDiety.SodDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Sód\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SodDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.SódColumn] = value;
+                    this[this.tableDiety.SodDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Węglowodany_przyswajalne {
+            public string PrzyswajalneDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.Węglowodany_przyswajalneColumn]));
+                        return ((string)(this[this.tableDiety.PrzyswajalneDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Węglowodany przyswajalne\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PrzyswajalneDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.Węglowodany_przyswajalneColumn] = value;
+                    this[this.tableDiety.PrzyswajalneDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Błonnik {
+            public string BlonnikDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.BłonnikColumn]));
+                        return ((string)(this[this.tableDiety.BlonnikDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Błonnik\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BlonnikDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.BłonnikColumn] = value;
+                    this[this.tableDiety.BlonnikDoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Kwasy_tłuszczowe_nasycone {
+            public string KwasyDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.Kwasy_tłuszczowe_nasyconeColumn]));
+                        return ((string)(this[this.tableDiety.KwasyDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Kwasy tłuszczowe nasycone\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'KwasyDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.Kwasy_tłuszczowe_nasyconeColumn] = value;
+                    this[this.tableDiety.KwasyDoColumn] = value;
                 }
             }
             
@@ -4195,17 +4987,849 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Cukry {
+            public string CukryDo {
                 get {
                     try {
-                        return ((string)(this[this.tableDiety.CukryColumn]));
+                        return ((string)(this[this.tableDiety.CukryDoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Cukry\' w tabeli \'Diety\' to DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'CukryDo\' w tabeli \'Diety\' to DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDiety.CukryColumn] = value;
+                    this[this.tableDiety.CukryDoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EnergiaOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.EnergiaOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'EnergiaOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.EnergiaOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EnergiaOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.EnergiaOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'EnergiaOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.EnergiaOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EnergiaDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.EnergiaDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'EnergiaDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.EnergiaDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EnergiaOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.EnergiaOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'EnergiaOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.EnergiaOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EnergiaDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.EnergiaDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'EnergiaDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.EnergiaDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BialkoOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BialkoOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BialkoOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BialkoOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BialkoOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BialkoOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BialkoOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BialkoOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BialkoDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BialkoDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BialkoDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BialkoDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BialkoOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BialkoOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BialkoOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BialkoOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BialkoDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BialkoDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BialkoDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BialkoDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string WeglowodanyOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.WeglowodanyOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WeglowodanyOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.WeglowodanyOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string WeglowodanyOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.WeglowodanyOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WeglowodanyOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.WeglowodanyOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string WeglowodanyDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.WeglowodanyDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WeglowodanyDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.WeglowodanyDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string WeglowodanyOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.WeglowodanyOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WeglowodanyOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.WeglowodanyOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string WeglowodanyDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.WeglowodanyDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WeglowodanyDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.WeglowodanyDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TluszczeOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.TluszczeOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'TluszczeOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.TluszczeOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TluszczeOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.TluszczeOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'TluszczeOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.TluszczeOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TluszczeDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.TluszczeDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'TluszczeDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.TluszczeDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TluszczeOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.TluszczeOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'TluszczeOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.TluszczeOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TluszczeDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.TluszczeDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'TluszczeDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.TluszczeDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SodOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SodOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SodOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SodOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SodOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SodOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SodOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SodOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SodDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SodDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SodDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SodDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SodOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SodOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SodOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SodOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SodDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SodDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SodDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SodDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrzyswajalneOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.PrzyswajalneOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PrzyswajalneOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.PrzyswajalneOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrzyswajalneOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.PrzyswajalneOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PrzyswajalneOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.PrzyswajalneOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrzyswajalneDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.PrzyswajalneDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PrzyswajalneDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.PrzyswajalneDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrzyswajalneOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.PrzyswajalneOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PrzyswajalneOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.PrzyswajalneOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PrzyswajalneDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.PrzyswajalneDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'PrzyswajalneDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.PrzyswajalneDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BlonnikOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BlonnikOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BlonnikOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BlonnikOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BlonnikOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BlonnikOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BlonnikOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BlonnikOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BlonnikDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BlonnikDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BlonnikDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BlonnikDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BlonnikOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BlonnikOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BlonnikOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BlonnikOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string BlonnikDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.BlonnikDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'BlonnikDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.BlonnikDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KwasyOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.KwasyOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'KwasyOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.KwasyOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KwasyOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.KwasyOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'KwasyOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.KwasyOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KwasyDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.KwasyDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'KwasyDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.KwasyDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KwasyOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.KwasyOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'KwasyOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.KwasyOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string KwasyDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.KwasyDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'KwasyDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.KwasyDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CukryOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.CukryOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'CukryOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.CukryOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CukryOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.CukryOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'CukryOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.CukryOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CukryDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.CukryDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'CukryDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.CukryDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CukryOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.CukryOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'CukryOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.CukryOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CukryDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.CukryDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'CukryDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.CukryDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SolOd {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SolOdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SolOd\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SolOdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SolDo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SolDoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SolDo\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SolDoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SolOdNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SolOdNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SolOdNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SolOdNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SolDoNaTysiac {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SolDoNaTysiacColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SolDoNaTysiac\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SolDoNaTysiacColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SolOdProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SolOdProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SolOdProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SolOdProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string SolDoProcent {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.SolDoProcentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'SolDoProcent\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.SolDoProcentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Kod {
+                get {
+                    try {
+                        return ((string)(this[this.tableDiety.KodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Kod\' w tabeli \'Diety\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDiety.KodColumn] = value;
                 }
             }
             
@@ -4223,98 +5847,98 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEnergiaNull() {
-                return this.IsNull(this.tableDiety.EnergiaColumn);
+            public bool IsEnergiaDoNull() {
+                return this.IsNull(this.tableDiety.EnergiaDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEnergiaNull() {
-                this[this.tableDiety.EnergiaColumn] = global::System.Convert.DBNull;
+            public void SetEnergiaDoNull() {
+                this[this.tableDiety.EnergiaDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBiałkoNull() {
-                return this.IsNull(this.tableDiety.BiałkoColumn);
+            public bool IsBialkoDoNull() {
+                return this.IsNull(this.tableDiety.BialkoDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBiałkoNull() {
-                this[this.tableDiety.BiałkoColumn] = global::System.Convert.DBNull;
+            public void SetBialkoDoNull() {
+                this[this.tableDiety.BialkoDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsWęglowodanyNull() {
-                return this.IsNull(this.tableDiety.WęglowodanyColumn);
+            public bool IsWeglowodanyDoNull() {
+                return this.IsNull(this.tableDiety.WeglowodanyDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetWęglowodanyNull() {
-                this[this.tableDiety.WęglowodanyColumn] = global::System.Convert.DBNull;
+            public void SetWeglowodanyDoNull() {
+                this[this.tableDiety.WeglowodanyDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTłuszczeNull() {
-                return this.IsNull(this.tableDiety.TłuszczeColumn);
+            public bool IsTluszczeDoNull() {
+                return this.IsNull(this.tableDiety.TluszczeDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTłuszczeNull() {
-                this[this.tableDiety.TłuszczeColumn] = global::System.Convert.DBNull;
+            public void SetTluszczeDoNull() {
+                this[this.tableDiety.TluszczeDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSódNull() {
-                return this.IsNull(this.tableDiety.SódColumn);
+            public bool IsSodDoNull() {
+                return this.IsNull(this.tableDiety.SodDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSódNull() {
-                this[this.tableDiety.SódColumn] = global::System.Convert.DBNull;
+            public void SetSodDoNull() {
+                this[this.tableDiety.SodDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsWęglowodany_przyswajalneNull() {
-                return this.IsNull(this.tableDiety.Węglowodany_przyswajalneColumn);
+            public bool IsPrzyswajalneDoNull() {
+                return this.IsNull(this.tableDiety.PrzyswajalneDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetWęglowodany_przyswajalneNull() {
-                this[this.tableDiety.Węglowodany_przyswajalneColumn] = global::System.Convert.DBNull;
+            public void SetPrzyswajalneDoNull() {
+                this[this.tableDiety.PrzyswajalneDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsBłonnikNull() {
-                return this.IsNull(this.tableDiety.BłonnikColumn);
+            public bool IsBlonnikDoNull() {
+                return this.IsNull(this.tableDiety.BlonnikDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetBłonnikNull() {
-                this[this.tableDiety.BłonnikColumn] = global::System.Convert.DBNull;
+            public void SetBlonnikDoNull() {
+                this[this.tableDiety.BlonnikDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsKwasy_tłuszczowe_nasyconeNull() {
-                return this.IsNull(this.tableDiety.Kwasy_tłuszczowe_nasyconeColumn);
+            public bool IsKwasyDoNull() {
+                return this.IsNull(this.tableDiety.KwasyDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetKwasy_tłuszczowe_nasyconeNull() {
-                this[this.tableDiety.Kwasy_tłuszczowe_nasyconeColumn] = global::System.Convert.DBNull;
+            public void SetKwasyDoNull() {
+                this[this.tableDiety.KwasyDoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4331,14 +5955,638 @@ namespace KalkulatorDiety
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCukryNull() {
-                return this.IsNull(this.tableDiety.CukryColumn);
+            public bool IsCukryDoNull() {
+                return this.IsNull(this.tableDiety.CukryDoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCukryNull() {
-                this[this.tableDiety.CukryColumn] = global::System.Convert.DBNull;
+            public void SetCukryDoNull() {
+                this[this.tableDiety.CukryDoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEnergiaOdNull() {
+                return this.IsNull(this.tableDiety.EnergiaOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEnergiaOdNull() {
+                this[this.tableDiety.EnergiaOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEnergiaOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.EnergiaOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEnergiaOdNaTysiacNull() {
+                this[this.tableDiety.EnergiaOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEnergiaDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.EnergiaDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEnergiaDoNaTysiacNull() {
+                this[this.tableDiety.EnergiaDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEnergiaOdProcentNull() {
+                return this.IsNull(this.tableDiety.EnergiaOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEnergiaOdProcentNull() {
+                this[this.tableDiety.EnergiaOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEnergiaDoProcentNull() {
+                return this.IsNull(this.tableDiety.EnergiaDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEnergiaDoProcentNull() {
+                this[this.tableDiety.EnergiaDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBialkoOdNull() {
+                return this.IsNull(this.tableDiety.BialkoOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBialkoOdNull() {
+                this[this.tableDiety.BialkoOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBialkoOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.BialkoOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBialkoOdNaTysiacNull() {
+                this[this.tableDiety.BialkoOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBialkoDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.BialkoDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBialkoDoNaTysiacNull() {
+                this[this.tableDiety.BialkoDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBialkoOdProcentNull() {
+                return this.IsNull(this.tableDiety.BialkoOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBialkoOdProcentNull() {
+                this[this.tableDiety.BialkoOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBialkoDoProcentNull() {
+                return this.IsNull(this.tableDiety.BialkoDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBialkoDoProcentNull() {
+                this[this.tableDiety.BialkoDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsWeglowodanyOdNull() {
+                return this.IsNull(this.tableDiety.WeglowodanyOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetWeglowodanyOdNull() {
+                this[this.tableDiety.WeglowodanyOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsWeglowodanyOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.WeglowodanyOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetWeglowodanyOdNaTysiacNull() {
+                this[this.tableDiety.WeglowodanyOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsWeglowodanyDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.WeglowodanyDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetWeglowodanyDoNaTysiacNull() {
+                this[this.tableDiety.WeglowodanyDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsWeglowodanyOdProcentNull() {
+                return this.IsNull(this.tableDiety.WeglowodanyOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetWeglowodanyOdProcentNull() {
+                this[this.tableDiety.WeglowodanyOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsWeglowodanyDoProcentNull() {
+                return this.IsNull(this.tableDiety.WeglowodanyDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetWeglowodanyDoProcentNull() {
+                this[this.tableDiety.WeglowodanyDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTluszczeOdNull() {
+                return this.IsNull(this.tableDiety.TluszczeOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTluszczeOdNull() {
+                this[this.tableDiety.TluszczeOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTluszczeOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.TluszczeOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTluszczeOdNaTysiacNull() {
+                this[this.tableDiety.TluszczeOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTluszczeDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.TluszczeDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTluszczeDoNaTysiacNull() {
+                this[this.tableDiety.TluszczeDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTluszczeOdProcentNull() {
+                return this.IsNull(this.tableDiety.TluszczeOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTluszczeOdProcentNull() {
+                this[this.tableDiety.TluszczeOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTluszczeDoProcentNull() {
+                return this.IsNull(this.tableDiety.TluszczeDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTluszczeDoProcentNull() {
+                this[this.tableDiety.TluszczeDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSodOdNull() {
+                return this.IsNull(this.tableDiety.SodOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSodOdNull() {
+                this[this.tableDiety.SodOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSodOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.SodOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSodOdNaTysiacNull() {
+                this[this.tableDiety.SodOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSodDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.SodDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSodDoNaTysiacNull() {
+                this[this.tableDiety.SodDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSodOdProcentNull() {
+                return this.IsNull(this.tableDiety.SodOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSodOdProcentNull() {
+                this[this.tableDiety.SodOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSodDoProcentNull() {
+                return this.IsNull(this.tableDiety.SodDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSodDoProcentNull() {
+                this[this.tableDiety.SodDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrzyswajalneOdNull() {
+                return this.IsNull(this.tableDiety.PrzyswajalneOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrzyswajalneOdNull() {
+                this[this.tableDiety.PrzyswajalneOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrzyswajalneOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.PrzyswajalneOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrzyswajalneOdNaTysiacNull() {
+                this[this.tableDiety.PrzyswajalneOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrzyswajalneDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.PrzyswajalneDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrzyswajalneDoNaTysiacNull() {
+                this[this.tableDiety.PrzyswajalneDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrzyswajalneOdProcentNull() {
+                return this.IsNull(this.tableDiety.PrzyswajalneOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrzyswajalneOdProcentNull() {
+                this[this.tableDiety.PrzyswajalneOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPrzyswajalneDoProcentNull() {
+                return this.IsNull(this.tableDiety.PrzyswajalneDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPrzyswajalneDoProcentNull() {
+                this[this.tableDiety.PrzyswajalneDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBlonnikOdNull() {
+                return this.IsNull(this.tableDiety.BlonnikOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBlonnikOdNull() {
+                this[this.tableDiety.BlonnikOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBlonnikOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.BlonnikOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBlonnikOdNaTysiacNull() {
+                this[this.tableDiety.BlonnikOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBlonnikDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.BlonnikDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBlonnikDoNaTysiacNull() {
+                this[this.tableDiety.BlonnikDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBlonnikOdProcentNull() {
+                return this.IsNull(this.tableDiety.BlonnikOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBlonnikOdProcentNull() {
+                this[this.tableDiety.BlonnikOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsBlonnikDoProcentNull() {
+                return this.IsNull(this.tableDiety.BlonnikDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetBlonnikDoProcentNull() {
+                this[this.tableDiety.BlonnikDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKwasyOdNull() {
+                return this.IsNull(this.tableDiety.KwasyOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKwasyOdNull() {
+                this[this.tableDiety.KwasyOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKwasyOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.KwasyOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKwasyOdNaTysiacNull() {
+                this[this.tableDiety.KwasyOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKwasyDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.KwasyDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKwasyDoNaTysiacNull() {
+                this[this.tableDiety.KwasyDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKwasyOdProcentNull() {
+                return this.IsNull(this.tableDiety.KwasyOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKwasyOdProcentNull() {
+                this[this.tableDiety.KwasyOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKwasyDoProcentNull() {
+                return this.IsNull(this.tableDiety.KwasyDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKwasyDoProcentNull() {
+                this[this.tableDiety.KwasyDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryOdNull() {
+                return this.IsNull(this.tableDiety.CukryOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryOdNull() {
+                this[this.tableDiety.CukryOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.CukryOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryOdNaTysiacNull() {
+                this[this.tableDiety.CukryOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.CukryDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryDoNaTysiacNull() {
+                this[this.tableDiety.CukryDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryOdProcentNull() {
+                return this.IsNull(this.tableDiety.CukryOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryOdProcentNull() {
+                this[this.tableDiety.CukryOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCukryDoProcentNull() {
+                return this.IsNull(this.tableDiety.CukryDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCukryDoProcentNull() {
+                this[this.tableDiety.CukryDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSolOdNull() {
+                return this.IsNull(this.tableDiety.SolOdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSolOdNull() {
+                this[this.tableDiety.SolOdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSolDoNull() {
+                return this.IsNull(this.tableDiety.SolDoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSolDoNull() {
+                this[this.tableDiety.SolDoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSolOdNaTysiacNull() {
+                return this.IsNull(this.tableDiety.SolOdNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSolOdNaTysiacNull() {
+                this[this.tableDiety.SolOdNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSolDoNaTysiacNull() {
+                return this.IsNull(this.tableDiety.SolDoNaTysiacColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSolDoNaTysiacNull() {
+                this[this.tableDiety.SolDoNaTysiacColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSolOdProcentNull() {
+                return this.IsNull(this.tableDiety.SolOdProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSolOdProcentNull() {
+                this[this.tableDiety.SolOdProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSolDoProcentNull() {
+                return this.IsNull(this.tableDiety.SolDoProcentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSolDoProcentNull() {
+                this[this.tableDiety.SolDoProcentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsKodNull() {
+                return this.IsNull(this.tableDiety.KodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetKodNull() {
+                this[this.tableDiety.KodColumn] = global::System.Convert.DBNull;
             }
         }
         

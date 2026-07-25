@@ -30,37 +30,36 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menu = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.p_de = new System.Windows.Forms.Panel();
+            this.i_de = new System.Windows.Forms.PictureBox();
+            this.t_de = new System.Windows.Forms.Label();
+            this.p_k = new System.Windows.Forms.Panel();
+            this.i_k = new System.Windows.Forms.PictureBox();
+            this.t_k = new System.Windows.Forms.Label();
+            this.p_pr = new System.Windows.Forms.Panel();
+            this.i_pr = new System.Windows.Forms.PictureBox();
+            this.t_pr = new System.Windows.Forms.Label();
+            this.p_h = new System.Windows.Forms.Panel();
+            this.i_h = new System.Windows.Forms.PictureBox();
+            this.t_h = new System.Windows.Forms.Label();
+            this.p_g = new System.Windows.Forms.Panel();
+            this.i_g = new System.Windows.Forms.PictureBox();
+            this.t_g = new System.Windows.Forms.Label();
+            this.p_d = new System.Windows.Forms.Panel();
+            this.i_d = new System.Windows.Forms.PictureBox();
+            this.t_d = new System.Windows.Forms.Label();
+            this.p_j = new System.Windows.Forms.Panel();
+            this.i_j = new System.Windows.Forms.PictureBox();
+            this.t_j = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.p_r = new System.Windows.Forms.Panel();
+            this.i_r = new System.Windows.Forms.PictureBox();
+            this.t_r = new System.Windows.Forms.Label();
+            this.p_p = new System.Windows.Forms.Panel();
+            this.i_p = new System.Windows.Forms.PictureBox();
+            this.t_p = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel_dekadowka = new System.Windows.Forms.Panel();
@@ -137,16 +136,99 @@
             this.dieta_miasto = new System.Windows.Forms.ComboBox();
             this.label90 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.label123 = new System.Windows.Forms.Label();
+            this.dieta_kod = new System.Windows.Forms.TextBox();
+            this.label139 = new System.Windows.Forms.Label();
+            this.label140 = new System.Windows.Forms.Label();
+            this.label137 = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.label135 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.label128 = new System.Windows.Forms.Label();
+            this.label126 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.SolDo = new System.Windows.Forms.TextBox();
+            this.SolOd = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
+            this.sodDo = new System.Windows.Forms.TextBox();
+            this.sodOd = new System.Windows.Forms.TextBox();
+            this.label107 = new System.Windows.Forms.Label();
+            this.blonnikDoProc = new System.Windows.Forms.TextBox();
+            this.blonnikOdProc = new System.Windows.Forms.TextBox();
+            this.label108 = new System.Windows.Forms.Label();
+            this.blonnikDoTys = new System.Windows.Forms.TextBox();
+            this.blonnikOdTys = new System.Windows.Forms.TextBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.blonnikDo = new System.Windows.Forms.TextBox();
+            this.blonnikOd = new System.Windows.Forms.TextBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.cukryDoProc = new System.Windows.Forms.TextBox();
+            this.cukryOdProc = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.cukryDoTys = new System.Windows.Forms.TextBox();
+            this.cukryOdTys = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.cukryDo = new System.Windows.Forms.TextBox();
+            this.cukryOd = new System.Windows.Forms.TextBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.przyswajalneDoProc = new System.Windows.Forms.TextBox();
+            this.przyswajalneodProc = new System.Windows.Forms.TextBox();
+            this.label82 = new System.Windows.Forms.Label();
+            this.przyswajalneDotys = new System.Windows.Forms.TextBox();
+            this.przyswajalneOdTys = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
+            this.przyswajalneDo = new System.Windows.Forms.TextBox();
+            this.przyswajalneOd = new System.Windows.Forms.TextBox();
+            this.label76 = new System.Windows.Forms.Label();
+            this.wegleDoProc = new System.Windows.Forms.TextBox();
+            this.wegleOdProc = new System.Windows.Forms.TextBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.wedgleDoTys = new System.Windows.Forms.TextBox();
+            this.wegleOdTys = new System.Windows.Forms.TextBox();
+            this.label80 = new System.Windows.Forms.Label();
+            this.wegleDo = new System.Windows.Forms.TextBox();
+            this.wegleod = new System.Windows.Forms.TextBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.kwasyDoProc = new System.Windows.Forms.TextBox();
+            this.kwasyOdProc = new System.Windows.Forms.TextBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.KwasyDoTys = new System.Windows.Forms.TextBox();
+            this.KwasyOdTys = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.kwasyDo = new System.Windows.Forms.TextBox();
+            this.kwasyOd = new System.Windows.Forms.TextBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.tluszczeDoProc = new System.Windows.Forms.TextBox();
+            this.TluszczeOdProc = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.tluszczeDoTys = new System.Windows.Forms.TextBox();
+            this.tluszczeOdTysiac = new System.Windows.Forms.TextBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.tluszczeDo = new System.Windows.Forms.TextBox();
+            this.tluszczeOd = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.bialkoDoProcent = new System.Windows.Forms.TextBox();
+            this.bialkoOdProcent = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.bialkoDoTysiac = new System.Windows.Forms.TextBox();
+            this.bialkoOdTysiac = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.bialkoDo = new System.Windows.Forms.TextBox();
+            this.bialkoOd = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.energiaDo = new System.Windows.Forms.TextBox();
             this.label119 = new System.Windows.Forms.Label();
-            this.dieta_cukry = new System.Windows.Forms.TextBox();
             this.label101 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
-            this.dieta_blonnik = new System.Windows.Forms.TextBox();
             this.label99 = new System.Windows.Forms.Label();
-            this.dieta_przyswajalne = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.dieta_przelicz = new System.Windows.Forms.PictureBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
@@ -154,14 +236,8 @@
             this.label49 = new System.Windows.Forms.Label();
             this.dieta_nazwa = new System.Windows.Forms.TextBox();
             this.dieta_lbl_sol = new System.Windows.Forms.Label();
-            this.dieta_energia = new System.Windows.Forms.TextBox();
-            this.dieta_sol = new System.Windows.Forms.TextBox();
-            this.dieta_bialko = new System.Windows.Forms.TextBox();
+            this.energiaOd = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
-            this.dieta_tluszcze = new System.Windows.Forms.TextBox();
-            this.dieta_sod = new System.Windows.Forms.TextBox();
-            this.dieta_weglowodany = new System.Windows.Forms.TextBox();
-            this.dieta_ktn = new System.Windows.Forms.TextBox();
             this.dieta_wstecz = new System.Windows.Forms.PictureBox();
             this.dieta_dodaj = new System.Windows.Forms.PictureBox();
             this.dieta_ok = new System.Windows.Forms.PictureBox();
@@ -248,49 +324,8 @@
             this.label63 = new System.Windows.Forms.Label();
             this.dekadowka_wczytaj_miasto = new System.Windows.Forms.ComboBox();
             this.label64 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.dekadowka_wczytaj_dekadowka = new System.Windows.Forms.ComboBox();
             this.panel_jadlospis = new System.Windows.Forms.Panel();
-            this.jadlospis_sol = new System.Windows.Forms.Label();
-            this.label158 = new System.Windows.Forms.Label();
-            this.jadlospis_cukry = new System.Windows.Forms.Label();
-            this.label156 = new System.Windows.Forms.Label();
-            this.jadlospis_cb_cukry = new CircularProgressBar.CircularProgressBar();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.jadlospis_weglowodany2 = new System.Windows.Forms.Label();
-            this.jadlospis_tluszcze2 = new System.Windows.Forms.Label();
-            this.jadlospis_bialko2 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.jadlospis_przyswajalne = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.jadlospis_cb_przyswajalne = new CircularProgressBar.CircularProgressBar();
-            this.label60 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.jadlospis_blonnik = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.jadlospis_cb_blonnik = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_ktn = new System.Windows.Forms.Label();
-            this.jadlospis_sod = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.jadlospis_weglowodany = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.jadlospis_tluszcze = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.jadlospis_bialko = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.jadlospis_energia = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.jadlospis_cb_ktn = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_cb_sod = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_cb_energia = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_cb_weglowodany = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_cb_tluszcze = new CircularProgressBar.CircularProgressBar();
-            this.jadlospis_cb_bialko = new CircularProgressBar.CircularProgressBar();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
@@ -477,12 +512,8 @@
             this.procent_kolacja = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pb_Bialko = new CircularProgressBar.CircularProgressBar();
-            this.pb_Tluszcze = new CircularProgressBar.CircularProgressBar();
             this.lbl_masa = new System.Windows.Forms.Label();
-            this.pb_Weglowodany = new CircularProgressBar.CircularProgressBar();
             this.btn_dodaj = new System.Windows.Forms.Button();
-            this.pb_Energia = new CircularProgressBar.CircularProgressBar();
             this.tb_masa = new System.Windows.Forms.TextBox();
             this.lbl_data = new System.Windows.Forms.Label();
             this.cb_dieta = new System.Windows.Forms.ComboBox();
@@ -491,52 +522,87 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cb_kategorie = new System.Windows.Forms.ComboBox();
             this.lb_produkty = new System.Windows.Forms.ListBox();
-            this.pb_Sod2 = new CircularProgressBar.CircularProgressBar();
-            this.pb_ktn = new CircularProgressBar.CircularProgressBar();
             this.label18 = new System.Windows.Forms.Label();
             this.e_text = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.b_text = new System.Windows.Forms.Label();
-            this.b_subtext = new System.Windows.Forms.Label();
+            this.bialko_procent = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.t_text = new System.Windows.Forms.Label();
-            this.t_subtext = new System.Windows.Forms.Label();
+            this.tluszcze_procent = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.w_text = new System.Windows.Forms.Label();
-            this.w_subtext = new System.Windows.Forms.Label();
             this.lblsod = new System.Windows.Forms.Label();
             this.s_text = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.k_text = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
+            this.bialko_procent_zakres = new System.Windows.Forms.Label();
+            this.tluszcze_procent_zakres = new System.Windows.Forms.Label();
             this.plus_energia = new System.Windows.Forms.Label();
             this.plus_bialko = new System.Windows.Forms.Label();
             this.plus_tluszcze = new System.Windows.Forms.Label();
-            this.plus_wegle = new System.Windows.Forms.Label();
-            this.plus_sod = new System.Windows.Forms.Label();
             this.plus_kwasy = new System.Windows.Forms.Label();
-            this.pb_blonnik = new CircularProgressBar.CircularProgressBar();
             this.label103 = new System.Windows.Forms.Label();
             this.bp_text = new System.Windows.Forms.Label();
-            this.plus_blonnik = new System.Windows.Forms.Label();
             this.label98 = new System.Windows.Forms.Label();
             this.label97 = new System.Windows.Forms.Label();
             this.panel_glowny = new System.Windows.Forms.Panel();
+            this.sol_zakres = new System.Windows.Forms.Label();
+            this.plus_sol = new System.Windows.Forms.Label();
+            this.blonnik_label = new System.Windows.Forms.Label();
+            this.c_label = new System.Windows.Forms.Label();
+            this.p_label = new System.Windows.Forms.Label();
+            this.sod_zakres = new System.Windows.Forms.Label();
+            this.plus_sod = new System.Windows.Forms.Label();
+            this.blonnik_zakres = new System.Windows.Forms.Label();
+            this.blonnik_tysiac_zakres = new System.Windows.Forms.Label();
+            this.blonnik_tysiac = new System.Windows.Forms.Label();
+            this.blonnik_procent_zakres = new System.Windows.Forms.Label();
+            this.blonnik_procent = new System.Windows.Forms.Label();
+            this.cukry_zakres = new System.Windows.Forms.Label();
+            this.cukry_tysiac_zakres = new System.Windows.Forms.Label();
+            this.cukry_tysiac = new System.Windows.Forms.Label();
+            this.przyswajalne_tysiac_zakres = new System.Windows.Forms.Label();
+            this.przyswajalne_tysiac = new System.Windows.Forms.Label();
+            this.przyswajalne_zakres = new System.Windows.Forms.Label();
+            this.plus_blonnik = new System.Windows.Forms.Label();
+            this.plus_cukry = new System.Windows.Forms.Label();
+            this.plus_przyswajalne = new System.Windows.Forms.Label();
+            this.cukry_procent_zakres = new System.Windows.Forms.Label();
+            this.przyswajalne_procent_zakres = new System.Windows.Forms.Label();
+            this.cukry_procent = new System.Windows.Forms.Label();
+            this.przyswajalne_procent = new System.Windows.Forms.Label();
+            this.w_label = new System.Windows.Forms.Label();
+            this.k_label = new System.Windows.Forms.Label();
+            this.t_label = new System.Windows.Forms.Label();
+            this.bialko_label = new System.Windows.Forms.Label();
+            this.wegle_zakres = new System.Windows.Forms.Label();
+            this.wegle_tysiac_zakres = new System.Windows.Forms.Label();
+            this.wegle_tysiac = new System.Windows.Forms.Label();
+            this.wegle_procent_zakres = new System.Windows.Forms.Label();
+            this.wegle_procent = new System.Windows.Forms.Label();
+            this.plus_wegle = new System.Windows.Forms.Label();
+            this.kwasy_zakres = new System.Windows.Forms.Label();
+            this.kwasy_tysiac_zakres = new System.Windows.Forms.Label();
+            this.kwasy_tysiac = new System.Windows.Forms.Label();
+            this.kwasy_procent_zakres = new System.Windows.Forms.Label();
+            this.kwasy_procent = new System.Windows.Forms.Label();
+            this.tluszcze_zakres = new System.Windows.Forms.Label();
+            this.tluszcze_tysiac_zakres = new System.Windows.Forms.Label();
+            this.tluszcze_tysiac = new System.Windows.Forms.Label();
+            this.bialko_tysiac_zakres = new System.Windows.Forms.Label();
+            this.bialko_tysiac = new System.Windows.Forms.Label();
+            this.bialko_zakres = new System.Windows.Forms.Label();
+            this.energia_zakres = new System.Windows.Forms.Label();
             this.sol_text = new System.Windows.Forms.Label();
             this.label149 = new System.Windows.Forms.Label();
-            this.plus_cukry = new System.Windows.Forms.Label();
             this.c_text = new System.Windows.Forms.Label();
             this.label152 = new System.Windows.Forms.Label();
-            this.pb_cukry = new CircularProgressBar.CircularProgressBar();
             this.label106 = new System.Windows.Forms.Label();
-            this.plus_przyswajalne = new System.Windows.Forms.Label();
             this.wp_text = new System.Windows.Forms.Label();
             this.label111 = new System.Windows.Forms.Label();
-            this.pb_przyswajalne = new CircularProgressBar.CircularProgressBar();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dekadówkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszJadłospisDekadówkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -550,55 +616,86 @@
             this.posiłekToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dzieńToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_kontrola = new System.Windows.Forms.Panel();
-            this.label160 = new System.Windows.Forms.Label();
-            this.kontrola_plus_cukry = new System.Windows.Forms.Label();
-            this.kontrola_cukry = new System.Windows.Forms.Label();
-            this.pb_kontrola_cukry = new CircularProgressBar.CircularProgressBar();
-            this.kontrola_sol = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
-            this.label141 = new System.Windows.Forms.Label();
-            this.label142 = new System.Windows.Forms.Label();
-            this.label143 = new System.Windows.Forms.Label();
-            this.label144 = new System.Windows.Forms.Label();
-            this.label145 = new System.Windows.Forms.Label();
-            this.label146 = new System.Windows.Forms.Label();
-            this.label147 = new System.Windows.Forms.Label();
-            this.label148 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
-            this.label108 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
-            this.circularProgressBar2 = new CircularProgressBar.CircularProgressBar();
-            this.label117 = new System.Windows.Forms.Label();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label120 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
-            this.label123 = new System.Windows.Forms.Label();
-            this.label124 = new System.Windows.Forms.Label();
-            this.label126 = new System.Windows.Forms.Label();
-            this.label128 = new System.Windows.Forms.Label();
+            this.k_sol_zakres = new System.Windows.Forms.Label();
+            this.k_sol_plus = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.k_sod_zakres = new System.Windows.Forms.Label();
+            this.k_sod_plus = new System.Windows.Forms.Label();
+            this.k_blonnik_zakres = new System.Windows.Forms.Label();
+            this.k_blonnik_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_blonnik_tysiac = new System.Windows.Forms.Label();
+            this.k_blonnik_procent_zakres = new System.Windows.Forms.Label();
+            this.k_blonnik_procent = new System.Windows.Forms.Label();
+            this.k_cukry_zakres = new System.Windows.Forms.Label();
+            this.k_cukry_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_cukry_tysiac = new System.Windows.Forms.Label();
+            this.k_przyswajalne_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_przyswajalne_tysiac = new System.Windows.Forms.Label();
+            this.k_przyswajalne_zakres = new System.Windows.Forms.Label();
+            this.k_blonnik_plus = new System.Windows.Forms.Label();
+            this.k_cukry_plus = new System.Windows.Forms.Label();
+            this.k_przyswajalne_plus = new System.Windows.Forms.Label();
+            this.k_cukry_procent_zakres = new System.Windows.Forms.Label();
+            this.k_przyswajalne_procent_zakres = new System.Windows.Forms.Label();
+            this.k_cukry_procent = new System.Windows.Forms.Label();
+            this.k_przyswajalne_procent = new System.Windows.Forms.Label();
             this.label129 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
             this.label131 = new System.Windows.Forms.Label();
             this.label132 = new System.Windows.Forms.Label();
-            this.label133 = new System.Windows.Forms.Label();
-            this.label134 = new System.Windows.Forms.Label();
-            this.label135 = new System.Windows.Forms.Label();
-            this.label136 = new System.Windows.Forms.Label();
-            this.label137 = new System.Windows.Forms.Label();
-            this.label138 = new System.Windows.Forms.Label();
-            this.label139 = new System.Windows.Forms.Label();
-            this.label140 = new System.Windows.Forms.Label();
-            this.circularProgressBar3 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar4 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar5 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar6 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar15 = new CircularProgressBar.CircularProgressBar();
-            this.circularProgressBar16 = new CircularProgressBar.CircularProgressBar();
+            this.k_wegle_zakres = new System.Windows.Forms.Label();
+            this.k_wegle_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_wegle_tysiac = new System.Windows.Forms.Label();
+            this.k_wegle_procent_zakres = new System.Windows.Forms.Label();
+            this.k_wegle_procent = new System.Windows.Forms.Label();
+            this.k_wegle_plus = new System.Windows.Forms.Label();
+            this.k_kwasy_zakres = new System.Windows.Forms.Label();
+            this.k_kwasy_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_kwasy_tysiac = new System.Windows.Forms.Label();
+            this.k_kwasy_procent_zakres = new System.Windows.Forms.Label();
+            this.k_kwasy_procent = new System.Windows.Forms.Label();
+            this.k_tluszcze_zakres = new System.Windows.Forms.Label();
+            this.k_tluszcze_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_tluszcze_tysiac = new System.Windows.Forms.Label();
+            this.k_bialko_tysiac_zakres = new System.Windows.Forms.Label();
+            this.k_bialko_tysiac = new System.Windows.Forms.Label();
+            this.k_bialko_zakres = new System.Windows.Forms.Label();
+            this.k_energia_zakres = new System.Windows.Forms.Label();
+            this.k_sol = new System.Windows.Forms.Label();
+            this.label158 = new System.Windows.Forms.Label();
+            this.k_cukry = new System.Windows.Forms.Label();
+            this.label160 = new System.Windows.Forms.Label();
+            this.label161 = new System.Windows.Forms.Label();
+            this.k_przyswajalne = new System.Windows.Forms.Label();
+            this.label163 = new System.Windows.Forms.Label();
+            this.label164 = new System.Windows.Forms.Label();
+            this.label165 = new System.Windows.Forms.Label();
+            this.k_blonnik = new System.Windows.Forms.Label();
+            this.label175 = new System.Windows.Forms.Label();
+            this.k_kwasy_plus = new System.Windows.Forms.Label();
+            this.k_tluszcze_plus = new System.Windows.Forms.Label();
+            this.k_bialko_plus = new System.Windows.Forms.Label();
+            this.k_energia_plus = new System.Windows.Forms.Label();
+            this.k_tluszcze_procent_zakres = new System.Windows.Forms.Label();
+            this.k_bialko_procent_zakres = new System.Windows.Forms.Label();
+            this.label182 = new System.Windows.Forms.Label();
+            this.label183 = new System.Windows.Forms.Label();
+            this.k_kwasy = new System.Windows.Forms.Label();
+            this.label185 = new System.Windows.Forms.Label();
+            this.k_sod = new System.Windows.Forms.Label();
+            this.label187 = new System.Windows.Forms.Label();
+            this.k_wegle = new System.Windows.Forms.Label();
+            this.label189 = new System.Windows.Forms.Label();
+            this.k_tluszcze_procent = new System.Windows.Forms.Label();
+            this.k_tluszcze = new System.Windows.Forms.Label();
+            this.label192 = new System.Windows.Forms.Label();
+            this.k_bialko_procent = new System.Windows.Forms.Label();
+            this.k_bialko = new System.Windows.Forms.Label();
+            this.label195 = new System.Windows.Forms.Label();
+            this.k_energia = new System.Windows.Forms.Label();
+            this.label197 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.k_dieta = new System.Windows.Forms.ComboBox();
             this.label75 = new System.Windows.Forms.Label();
@@ -609,26 +706,26 @@
             this.label79 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
-            this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.p_de.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_de)).BeginInit();
+            this.p_k.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_k)).BeginInit();
+            this.p_pr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_pr)).BeginInit();
+            this.p_h.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_h)).BeginInit();
+            this.p_g.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_g)).BeginInit();
+            this.p_d.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_d)).BeginInit();
+            this.p_j.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_j)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.p_r.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_r)).BeginInit();
+            this.p_p.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_p)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel_dekadowka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dekadowka_generuj)).BeginInit();
@@ -649,7 +746,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dekadowka_zapisz_ok)).BeginInit();
             this.panel_dieta.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_przelicz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_wstecz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_dodaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).BeginInit();
@@ -706,16 +802,15 @@
             // 
             this.menu.AutoSize = true;
             this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
-            this.menu.Controls.Add(this.panel14);
-            this.menu.Controls.Add(this.panel11);
-            this.menu.Controls.Add(this.panel10);
-            this.menu.Controls.Add(this.panel9);
-            this.menu.Controls.Add(this.panel8);
-            this.menu.Controls.Add(this.panel7);
-            this.menu.Controls.Add(this.panel6);
-            this.menu.Controls.Add(this.panel5);
-            this.menu.Controls.Add(this.panel3);
-            this.menu.Controls.Add(this.panel4);
+            this.menu.Controls.Add(this.p_de);
+            this.menu.Controls.Add(this.p_k);
+            this.menu.Controls.Add(this.p_pr);
+            this.menu.Controls.Add(this.p_h);
+            this.menu.Controls.Add(this.p_g);
+            this.menu.Controls.Add(this.p_d);
+            this.menu.Controls.Add(this.p_j);
+            this.menu.Controls.Add(this.p_r);
+            this.menu.Controls.Add(this.p_p);
             this.menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Margin = new System.Windows.Forms.Padding(0);
@@ -725,197 +820,274 @@
             this.menu.Size = new System.Drawing.Size(300, 839);
             this.menu.TabIndex = 39;
             // 
-            // panel14
+            // p_de
             // 
-            this.panel14.Controls.Add(this.pictureBox26);
-            this.panel14.Controls.Add(this.label58);
-            this.panel14.Location = new System.Drawing.Point(1, 679);
-            this.panel14.Margin = new System.Windows.Forms.Padding(0);
-            this.panel14.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel14.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(300, 50);
-            this.panel14.TabIndex = 10;
-            this.panel14.Click += new System.EventHandler(this.panel14_Click);
+            this.p_de.Controls.Add(this.i_de);
+            this.p_de.Controls.Add(this.t_de);
+            this.p_de.Location = new System.Drawing.Point(1, 303);
+            this.p_de.Margin = new System.Windows.Forms.Padding(0);
+            this.p_de.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_de.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_de.Name = "p_de";
+            this.p_de.Size = new System.Drawing.Size(300, 50);
+            this.p_de.TabIndex = 10;
+            this.p_de.Click += new System.EventHandler(this.panel7_Click);
             // 
-            // pictureBox26
+            // i_de
             // 
-            this.pictureBox26.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox26.Image")));
-            this.pictureBox26.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox26.TabIndex = 2;
-            this.pictureBox26.TabStop = false;
-            this.pictureBox26.Click += new System.EventHandler(this.pictureBox26_Click_1);
+            this.i_de.Image = ((System.Drawing.Image)(resources.GetObject("i_de.Image")));
+            this.i_de.Location = new System.Drawing.Point(19, 10);
+            this.i_de.Name = "i_de";
+            this.i_de.Size = new System.Drawing.Size(30, 32);
+            this.i_de.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_de.TabIndex = 2;
+            this.i_de.TabStop = false;
+            this.i_de.Click += new System.EventHandler(this.panel7_Click);
             // 
-            // label58
+            // t_de
             // 
-            this.label58.AutoSize = true;
-            this.label58.BackColor = System.Drawing.Color.Transparent;
-            this.label58.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label58.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label58.Location = new System.Drawing.Point(55, 10);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(88, 28);
-            this.label58.TabIndex = 2;
-            this.label58.Text = "Kontrola";
-            this.label58.Click += new System.EventHandler(this.label58_Click);
+            this.t_de.AutoSize = true;
+            this.t_de.BackColor = System.Drawing.Color.Transparent;
+            this.t_de.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_de.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_de.Location = new System.Drawing.Point(55, 10);
+            this.t_de.Name = "t_de";
+            this.t_de.Size = new System.Drawing.Size(91, 28);
+            this.t_de.TabIndex = 2;
+            this.t_de.Text = "Szablony";
+            this.t_de.Click += new System.EventHandler(this.panel7_Click);
             // 
-            // panel11
+            // p_k
             // 
-            this.panel11.Controls.Add(this.pictureBox20);
-            this.panel11.Controls.Add(this.label96);
-            this.panel11.Location = new System.Drawing.Point(1, 612);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel11.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(300, 50);
-            this.panel11.TabIndex = 9;
-            this.panel11.Click += new System.EventHandler(this.panel11_Click);
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint_1);
+            this.p_k.Controls.Add(this.i_k);
+            this.p_k.Controls.Add(this.t_k);
+            this.p_k.Location = new System.Drawing.Point(1, 404);
+            this.p_k.Margin = new System.Windows.Forms.Padding(0);
+            this.p_k.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_k.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_k.Name = "p_k";
+            this.p_k.Size = new System.Drawing.Size(300, 50);
+            this.p_k.TabIndex = 10;
+            this.p_k.Click += new System.EventHandler(this.panel14_Click);
             // 
-            // pictureBox20
+            // i_k
             // 
-            this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 2;
-            this.pictureBox20.TabStop = false;
-            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
+            this.i_k.Image = ((System.Drawing.Image)(resources.GetObject("i_k.Image")));
+            this.i_k.Location = new System.Drawing.Point(18, 11);
+            this.i_k.Name = "i_k";
+            this.i_k.Size = new System.Drawing.Size(30, 32);
+            this.i_k.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_k.TabIndex = 2;
+            this.i_k.TabStop = false;
+            this.i_k.Click += new System.EventHandler(this.pictureBox26_Click_1);
             // 
-            // label96
+            // t_k
             // 
-            this.label96.AutoSize = true;
-            this.label96.BackColor = System.Drawing.Color.Transparent;
-            this.label96.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label96.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label96.Location = new System.Drawing.Point(55, 10);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(70, 28);
-            this.label96.TabIndex = 2;
-            this.label96.Text = "Drukuj";
-            this.label96.Click += new System.EventHandler(this.label96_Click);
+            this.t_k.AutoSize = true;
+            this.t_k.BackColor = System.Drawing.Color.Transparent;
+            this.t_k.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_k.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_k.Location = new System.Drawing.Point(54, 11);
+            this.t_k.Name = "t_k";
+            this.t_k.Size = new System.Drawing.Size(88, 28);
+            this.t_k.TabIndex = 2;
+            this.t_k.Text = "Kontrola";
+            this.t_k.Click += new System.EventHandler(this.label58_Click);
             // 
-            // panel10
+            // p_pr
             // 
-            this.panel10.Controls.Add(this.pictureBox12);
-            this.panel10.Controls.Add(this.label17);
-            this.panel10.Location = new System.Drawing.Point(1, 148);
-            this.panel10.Margin = new System.Windows.Forms.Padding(0);
-            this.panel10.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel10.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(300, 50);
-            this.panel10.TabIndex = 4;
-            this.panel10.Click += new System.EventHandler(this.panel10_Click);
+            this.p_pr.Controls.Add(this.i_pr);
+            this.p_pr.Controls.Add(this.t_pr);
+            this.p_pr.Location = new System.Drawing.Point(1, 354);
+            this.p_pr.Margin = new System.Windows.Forms.Padding(0);
+            this.p_pr.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_pr.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_pr.Name = "p_pr";
+            this.p_pr.Size = new System.Drawing.Size(300, 50);
+            this.p_pr.TabIndex = 9;
+            this.p_pr.Click += new System.EventHandler(this.panel11_Click);
+            this.p_pr.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint_1);
             // 
-            // pictureBox12
+            // i_pr
             // 
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(19, 8);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 2;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            this.i_pr.Image = ((System.Drawing.Image)(resources.GetObject("i_pr.Image")));
+            this.i_pr.Location = new System.Drawing.Point(19, 10);
+            this.i_pr.Name = "i_pr";
+            this.i_pr.Size = new System.Drawing.Size(30, 32);
+            this.i_pr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_pr.TabIndex = 2;
+            this.i_pr.TabStop = false;
+            this.i_pr.Click += new System.EventHandler(this.pictureBox20_Click);
             // 
-            // label17
+            // t_pr
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label17.Location = new System.Drawing.Point(55, 8);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(140, 28);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Strona Główna";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
+            this.t_pr.AutoSize = true;
+            this.t_pr.BackColor = System.Drawing.Color.Transparent;
+            this.t_pr.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_pr.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_pr.Location = new System.Drawing.Point(55, 10);
+            this.t_pr.Name = "t_pr";
+            this.t_pr.Size = new System.Drawing.Size(70, 28);
+            this.t_pr.TabIndex = 2;
+            this.t_pr.Text = "Drukuj";
+            this.t_pr.Click += new System.EventHandler(this.label96_Click);
             // 
-            // panel9
+            // p_h
             // 
-            this.panel9.Controls.Add(this.pictureBox11);
-            this.panel9.Controls.Add(this.label16);
-            this.panel9.Location = new System.Drawing.Point(1, 544);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel9.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(300, 50);
-            this.panel9.TabIndex = 8;
-            this.panel9.Click += new System.EventHandler(this.panel9_Click);
+            this.p_h.Controls.Add(this.i_h);
+            this.p_h.Controls.Add(this.t_h);
+            this.p_h.Location = new System.Drawing.Point(1, 253);
+            this.p_h.Margin = new System.Windows.Forms.Padding(0);
+            this.p_h.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_h.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_h.Name = "p_h";
+            this.p_h.Size = new System.Drawing.Size(300, 50);
+            this.p_h.TabIndex = 8;
+            this.p_h.Click += new System.EventHandler(this.panel9_Click);
             // 
-            // pictureBox11
+            // i_h
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 2;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            this.i_h.Image = ((System.Drawing.Image)(resources.GetObject("i_h.Image")));
+            this.i_h.Location = new System.Drawing.Point(19, 10);
+            this.i_h.Name = "i_h";
+            this.i_h.Size = new System.Drawing.Size(30, 32);
+            this.i_h.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_h.TabIndex = 2;
+            this.i_h.TabStop = false;
+            this.i_h.Click += new System.EventHandler(this.pictureBox11_Click);
             // 
-            // label16
+            // t_h
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label16.Location = new System.Drawing.Point(55, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(94, 28);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Jednostki";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
+            this.t_h.AutoSize = true;
+            this.t_h.BackColor = System.Drawing.Color.Transparent;
+            this.t_h.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_h.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_h.Location = new System.Drawing.Point(55, 10);
+            this.t_h.Name = "t_h";
+            this.t_h.Size = new System.Drawing.Size(94, 28);
+            this.t_h.TabIndex = 2;
+            this.t_h.Text = "Jednostki";
+            this.t_h.Click += new System.EventHandler(this.label16_Click);
             // 
-            // panel8
+            // p_g
             // 
-            this.panel8.Controls.Add(this.pictureBox10);
-            this.panel8.Controls.Add(this.label15);
-            this.panel8.Location = new System.Drawing.Point(1, 477);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.panel8.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel8.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(300, 50);
-            this.panel8.TabIndex = 7;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            this.p_g.Controls.Add(this.i_g);
+            this.p_g.Controls.Add(this.t_g);
+            this.p_g.Location = new System.Drawing.Point(1, 3);
+            this.p_g.Margin = new System.Windows.Forms.Padding(0);
+            this.p_g.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_g.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_g.Name = "p_g";
+            this.p_g.Size = new System.Drawing.Size(300, 50);
+            this.p_g.TabIndex = 4;
+            this.p_g.Click += new System.EventHandler(this.panel10_Click);
+            this.p_g.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
-            // pictureBox10
+            // i_g
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 2;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.i_g.Image = ((System.Drawing.Image)(resources.GetObject("i_g.Image")));
+            this.i_g.Location = new System.Drawing.Point(19, 10);
+            this.i_g.Name = "i_g";
+            this.i_g.Size = new System.Drawing.Size(30, 32);
+            this.i_g.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_g.TabIndex = 2;
+            this.i_g.TabStop = false;
+            this.i_g.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
-            // label15
+            // t_g
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label15.Location = new System.Drawing.Point(55, 11);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(58, 28);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Diety";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.t_g.AutoSize = true;
+            this.t_g.BackColor = System.Drawing.Color.Transparent;
+            this.t_g.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_g.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_g.Location = new System.Drawing.Point(55, 10);
+            this.t_g.Name = "t_g";
+            this.t_g.Size = new System.Drawing.Size(140, 28);
+            this.t_g.TabIndex = 2;
+            this.t_g.Text = "Strona Główna";
+            this.t_g.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // p_d
+            // 
+            this.p_d.Controls.Add(this.i_d);
+            this.p_d.Controls.Add(this.t_d);
+            this.p_d.Location = new System.Drawing.Point(1, 201);
+            this.p_d.Margin = new System.Windows.Forms.Padding(0);
+            this.p_d.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_d.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_d.Name = "p_d";
+            this.p_d.Size = new System.Drawing.Size(300, 50);
+            this.p_d.TabIndex = 7;
+            this.p_d.Click += new System.EventHandler(this.panel8_Click);
+            // 
+            // i_d
+            // 
+            this.i_d.Image = ((System.Drawing.Image)(resources.GetObject("i_d.Image")));
+            this.i_d.Location = new System.Drawing.Point(19, 10);
+            this.i_d.Name = "i_d";
+            this.i_d.Size = new System.Drawing.Size(30, 32);
+            this.i_d.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_d.TabIndex = 2;
+            this.i_d.TabStop = false;
+            this.i_d.Click += new System.EventHandler(this.pictureBox10_Click);
+            // 
+            // t_d
+            // 
+            this.t_d.AutoSize = true;
+            this.t_d.BackColor = System.Drawing.Color.Transparent;
+            this.t_d.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_d.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_d.Location = new System.Drawing.Point(55, 11);
+            this.t_d.Name = "t_d";
+            this.t_d.Size = new System.Drawing.Size(58, 28);
+            this.t_d.TabIndex = 2;
+            this.t_d.Text = "Diety";
+            this.t_d.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // p_j
+            // 
+            this.p_j.Controls.Add(this.i_j);
+            this.p_j.Controls.Add(this.t_j);
+            this.p_j.Controls.Add(this.panel7);
+            this.p_j.Location = new System.Drawing.Point(0, 151);
+            this.p_j.Margin = new System.Windows.Forms.Padding(0);
+            this.p_j.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_j.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_j.Name = "p_j";
+            this.p_j.Size = new System.Drawing.Size(300, 50);
+            this.p_j.TabIndex = 5;
+            this.p_j.Click += new System.EventHandler(this.panel6_Click);
+            this.p_j.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // i_j
+            // 
+            this.i_j.Image = ((System.Drawing.Image)(resources.GetObject("i_j.Image")));
+            this.i_j.Location = new System.Drawing.Point(19, 10);
+            this.i_j.Name = "i_j";
+            this.i_j.Size = new System.Drawing.Size(30, 32);
+            this.i_j.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_j.TabIndex = 2;
+            this.i_j.TabStop = false;
+            this.i_j.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // t_j
+            // 
+            this.t_j.AutoSize = true;
+            this.t_j.BackColor = System.Drawing.Color.Transparent;
+            this.t_j.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_j.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_j.Location = new System.Drawing.Point(55, 12);
+            this.t_j.Name = "t_j";
+            this.t_j.Size = new System.Drawing.Size(101, 28);
+            this.t_j.TabIndex = 2;
+            this.t_j.Text = "Jadłospisy";
+            this.t_j.Click += new System.EventHandler(this.label13_Click);
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.pictureBox9);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(1, 411);
+            this.panel7.Location = new System.Drawing.Point(1, 49);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.MaximumSize = new System.Drawing.Size(300, 50);
             this.panel7.MinimumSize = new System.Drawing.Size(300, 50);
@@ -923,6 +1095,7 @@
             this.panel7.Size = new System.Drawing.Size(300, 50);
             this.panel7.TabIndex = 6;
             this.panel7.Click += new System.EventHandler(this.panel7_Click);
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // pictureBox9
             // 
@@ -948,173 +1121,89 @@
             this.label14.Text = "Szablony";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
-            // panel6
+            // p_r
             // 
-            this.panel6.Controls.Add(this.pictureBox8);
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Location = new System.Drawing.Point(1, 343);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel6.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(300, 50);
-            this.panel6.TabIndex = 5;
-            this.panel6.Click += new System.EventHandler(this.panel6_Click);
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            this.p_r.Controls.Add(this.i_r);
+            this.p_r.Controls.Add(this.t_r);
+            this.p_r.Location = new System.Drawing.Point(1, 105);
+            this.p_r.Margin = new System.Windows.Forms.Padding(0);
+            this.p_r.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_r.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_r.Name = "p_r";
+            this.p_r.Size = new System.Drawing.Size(300, 50);
+            this.p_r.TabIndex = 4;
+            this.p_r.Click += new System.EventHandler(this.panel5_Click);
+            this.p_r.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // pictureBox8
+            // i_r
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 2;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.i_r.Image = ((System.Drawing.Image)(resources.GetObject("i_r.Image")));
+            this.i_r.Location = new System.Drawing.Point(19, 9);
+            this.i_r.Name = "i_r";
+            this.i_r.Size = new System.Drawing.Size(30, 32);
+            this.i_r.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_r.TabIndex = 2;
+            this.i_r.TabStop = false;
+            this.i_r.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // label13
+            // t_r
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label13.Location = new System.Drawing.Point(55, 12);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(101, 28);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Jadłospisy";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.t_r.AutoSize = true;
+            this.t_r.BackColor = System.Drawing.Color.Transparent;
+            this.t_r.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_r.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_r.Location = new System.Drawing.Point(54, 9);
+            this.t_r.Name = "t_r";
+            this.t_r.Size = new System.Drawing.Size(99, 28);
+            this.t_r.TabIndex = 2;
+            this.t_r.Text = "Receptury";
+            this.t_r.Click += new System.EventHandler(this.label12_Click);
             // 
-            // panel5
+            // p_p
             // 
-            this.panel5.Controls.Add(this.pictureBox7);
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Location = new System.Drawing.Point(1, 278);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0);
-            this.panel5.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel5.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(300, 50);
-            this.panel5.TabIndex = 4;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
+            this.p_p.Controls.Add(this.i_p);
+            this.p_p.Controls.Add(this.t_p);
+            this.p_p.Location = new System.Drawing.Point(1, 53);
+            this.p_p.Margin = new System.Windows.Forms.Padding(0);
+            this.p_p.MaximumSize = new System.Drawing.Size(300, 50);
+            this.p_p.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_p.Name = "p_p";
+            this.p_p.Size = new System.Drawing.Size(300, 50);
+            this.p_p.TabIndex = 3;
+            this.p_p.Click += new System.EventHandler(this.panel3_Click);
+            this.p_p.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // pictureBox7
+            // i_p
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 2;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.i_p.Image = ((System.Drawing.Image)(resources.GetObject("i_p.Image")));
+            this.i_p.Location = new System.Drawing.Point(19, 10);
+            this.i_p.Name = "i_p";
+            this.i_p.Size = new System.Drawing.Size(30, 32);
+            this.i_p.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.i_p.TabIndex = 2;
+            this.i_p.TabStop = false;
+            this.i_p.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
-            // label12
+            // t_p
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label12.Location = new System.Drawing.Point(54, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(99, 28);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Receptury";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox6);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(0, 215);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.MaximumSize = new System.Drawing.Size(300, 50);
-            this.panel3.MinimumSize = new System.Drawing.Size(300, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(300, 50);
-            this.panel3.TabIndex = 3;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(19, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 2;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.Location = new System.Drawing.Point(55, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 28);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Produkty";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.AutoSize = true;
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panel4.Controls.Add(this.pictureBox5);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.MaximumSize = new System.Drawing.Size(300, 150);
-            this.panel4.MinimumSize = new System.Drawing.Size(300, 150);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(300, 150);
-            this.panel4.TabIndex = 2;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(119, 31);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(41, 39);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F);
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label9.Location = new System.Drawing.Point(46, 82);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(183, 32);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Kalkulator Diety";
-            // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(41)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(300, 0);
-            this.panel1.MaximumSize = new System.Drawing.Size(0, 50);
-            this.panel1.MinimumSize = new System.Drawing.Size(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 50);
-            this.panel1.TabIndex = 40;
+            this.t_p.AutoSize = true;
+            this.t_p.BackColor = System.Drawing.Color.Transparent;
+            this.t_p.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.t_p.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.t_p.Location = new System.Drawing.Point(55, 10);
+            this.t_p.Name = "t_p";
+            this.t_p.Size = new System.Drawing.Size(92, 28);
+            this.t_p.TabIndex = 2;
+            this.t_p.Text = "Produkty";
+            this.t_p.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(300, 50);
+            this.panel2.Location = new System.Drawing.Point(300, 0);
             this.panel2.MaximumSize = new System.Drawing.Size(0, 40);
             this.panel2.MinimumSize = new System.Drawing.Size(0, 40);
             this.panel2.Name = "panel2";
@@ -1126,7 +1215,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 17F);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(6, 3);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(126, 31);
@@ -1421,7 +1510,7 @@
             this.panel_produkty.Controls.Add(this.produkt_usun);
             this.panel_produkty.Controls.Add(this.produkt_wczytaj);
             this.panel_produkty.Controls.Add(this.label27);
-            this.panel_produkty.Location = new System.Drawing.Point(345, 96);
+            this.panel_produkty.Location = new System.Drawing.Point(308, 209);
             this.panel_produkty.Name = "panel_produkty";
             this.panel_produkty.Size = new System.Drawing.Size(50, 128);
             this.panel_produkty.TabIndex = 39;
@@ -1973,16 +2062,16 @@
             this.panel_dieta.Controls.Add(this.dieta_usun);
             this.panel_dieta.Controls.Add(this.dieta_dieta);
             this.panel_dieta.Controls.Add(this.label52);
-            this.panel_dieta.Location = new System.Drawing.Point(366, 98);
+            this.panel_dieta.Location = new System.Drawing.Point(300, 43);
             this.panel_dieta.Name = "panel_dieta";
-            this.panel_dieta.Size = new System.Drawing.Size(41, 126);
+            this.panel_dieta.Size = new System.Drawing.Size(1060, 740);
             this.panel_dieta.TabIndex = 71;
             // 
             // dieta_miasto
             // 
             this.dieta_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dieta_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_miasto.Location = new System.Drawing.Point(205, 139);
+            this.dieta_miasto.Location = new System.Drawing.Point(78, 85);
             this.dieta_miasto.Name = "dieta_miasto";
             this.dieta_miasto.Size = new System.Drawing.Size(193, 29);
             this.dieta_miasto.TabIndex = 72;
@@ -1992,7 +2081,7 @@
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label90.Location = new System.Drawing.Point(42, 143);
+            this.label90.Location = new System.Drawing.Point(12, 90);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(60, 21);
             this.label90.TabIndex = 71;
@@ -2000,16 +2089,99 @@
             // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.label123);
+            this.panel12.Controls.Add(this.dieta_kod);
+            this.panel12.Controls.Add(this.label139);
+            this.panel12.Controls.Add(this.label140);
+            this.panel12.Controls.Add(this.label137);
+            this.panel12.Controls.Add(this.label138);
+            this.panel12.Controls.Add(this.label135);
+            this.panel12.Controls.Add(this.label136);
+            this.panel12.Controls.Add(this.label133);
+            this.panel12.Controls.Add(this.label134);
+            this.panel12.Controls.Add(this.label128);
+            this.panel12.Controls.Add(this.label126);
+            this.panel12.Controls.Add(this.label120);
+            this.panel12.Controls.Add(this.label121);
+            this.panel12.Controls.Add(this.label118);
+            this.panel12.Controls.Add(this.label117);
+            this.panel12.Controls.Add(this.label115);
+            this.panel12.Controls.Add(this.SolDo);
+            this.panel12.Controls.Add(this.SolOd);
+            this.panel12.Controls.Add(this.label113);
+            this.panel12.Controls.Add(this.sodDo);
+            this.panel12.Controls.Add(this.sodOd);
+            this.panel12.Controls.Add(this.label107);
+            this.panel12.Controls.Add(this.blonnikDoProc);
+            this.panel12.Controls.Add(this.blonnikOdProc);
+            this.panel12.Controls.Add(this.label108);
+            this.panel12.Controls.Add(this.blonnikDoTys);
+            this.panel12.Controls.Add(this.blonnikOdTys);
+            this.panel12.Controls.Add(this.label109);
+            this.panel12.Controls.Add(this.blonnikDo);
+            this.panel12.Controls.Add(this.blonnikOd);
+            this.panel12.Controls.Add(this.label84);
+            this.panel12.Controls.Add(this.cukryDoProc);
+            this.panel12.Controls.Add(this.cukryOdProc);
+            this.panel12.Controls.Add(this.label85);
+            this.panel12.Controls.Add(this.cukryDoTys);
+            this.panel12.Controls.Add(this.cukryOdTys);
+            this.panel12.Controls.Add(this.label86);
+            this.panel12.Controls.Add(this.cukryDo);
+            this.panel12.Controls.Add(this.cukryOd);
+            this.panel12.Controls.Add(this.label81);
+            this.panel12.Controls.Add(this.przyswajalneDoProc);
+            this.panel12.Controls.Add(this.przyswajalneodProc);
+            this.panel12.Controls.Add(this.label82);
+            this.panel12.Controls.Add(this.przyswajalneDotys);
+            this.panel12.Controls.Add(this.przyswajalneOdTys);
+            this.panel12.Controls.Add(this.label83);
+            this.panel12.Controls.Add(this.przyswajalneDo);
+            this.panel12.Controls.Add(this.przyswajalneOd);
+            this.panel12.Controls.Add(this.label76);
+            this.panel12.Controls.Add(this.wegleDoProc);
+            this.panel12.Controls.Add(this.wegleOdProc);
+            this.panel12.Controls.Add(this.label78);
+            this.panel12.Controls.Add(this.wedgleDoTys);
+            this.panel12.Controls.Add(this.wegleOdTys);
+            this.panel12.Controls.Add(this.label80);
+            this.panel12.Controls.Add(this.wegleDo);
+            this.panel12.Controls.Add(this.wegleod);
+            this.panel12.Controls.Add(this.label66);
+            this.panel12.Controls.Add(this.kwasyDoProc);
+            this.panel12.Controls.Add(this.kwasyOdProc);
+            this.panel12.Controls.Add(this.label72);
+            this.panel12.Controls.Add(this.KwasyDoTys);
+            this.panel12.Controls.Add(this.KwasyOdTys);
+            this.panel12.Controls.Add(this.label74);
+            this.panel12.Controls.Add(this.kwasyDo);
+            this.panel12.Controls.Add(this.kwasyOd);
+            this.panel12.Controls.Add(this.label57);
+            this.panel12.Controls.Add(this.tluszczeDoProc);
+            this.panel12.Controls.Add(this.TluszczeOdProc);
+            this.panel12.Controls.Add(this.label59);
+            this.panel12.Controls.Add(this.tluszczeDoTys);
+            this.panel12.Controls.Add(this.tluszczeOdTysiac);
+            this.panel12.Controls.Add(this.label60);
+            this.panel12.Controls.Add(this.tluszczeDo);
+            this.panel12.Controls.Add(this.tluszczeOd);
+            this.panel12.Controls.Add(this.label30);
+            this.panel12.Controls.Add(this.bialkoDoProcent);
+            this.panel12.Controls.Add(this.bialkoOdProcent);
+            this.panel12.Controls.Add(this.label28);
+            this.panel12.Controls.Add(this.bialkoDoTysiac);
+            this.panel12.Controls.Add(this.bialkoOdTysiac);
+            this.panel12.Controls.Add(this.label9);
+            this.panel12.Controls.Add(this.bialkoDo);
+            this.panel12.Controls.Add(this.bialkoOd);
+            this.panel12.Controls.Add(this.label1);
+            this.panel12.Controls.Add(this.energiaDo);
             this.panel12.Controls.Add(this.label119);
-            this.panel12.Controls.Add(this.dieta_cukry);
             this.panel12.Controls.Add(this.label101);
             this.panel12.Controls.Add(this.label100);
-            this.panel12.Controls.Add(this.dieta_blonnik);
             this.panel12.Controls.Add(this.label99);
-            this.panel12.Controls.Add(this.dieta_przyswajalne);
             this.panel12.Controls.Add(this.label42);
             this.panel12.Controls.Add(this.label43);
-            this.panel12.Controls.Add(this.dieta_przelicz);
             this.panel12.Controls.Add(this.label44);
             this.panel12.Controls.Add(this.label45);
             this.panel12.Controls.Add(this.label46);
@@ -2017,44 +2189,912 @@
             this.panel12.Controls.Add(this.label49);
             this.panel12.Controls.Add(this.dieta_nazwa);
             this.panel12.Controls.Add(this.dieta_lbl_sol);
-            this.panel12.Controls.Add(this.dieta_energia);
-            this.panel12.Controls.Add(this.dieta_sol);
-            this.panel12.Controls.Add(this.dieta_bialko);
+            this.panel12.Controls.Add(this.energiaOd);
             this.panel12.Controls.Add(this.label51);
-            this.panel12.Controls.Add(this.dieta_tluszcze);
-            this.panel12.Controls.Add(this.dieta_sod);
-            this.panel12.Controls.Add(this.dieta_weglowodany);
-            this.panel12.Controls.Add(this.dieta_ktn);
-            this.panel12.Location = new System.Drawing.Point(36, 179);
+            this.panel12.Location = new System.Drawing.Point(18, 113);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(887, 494);
+            this.panel12.Size = new System.Drawing.Size(970, 555);
             this.panel12.TabIndex = 70;
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label123.Location = new System.Drawing.Point(643, 25);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(40, 21);
+            this.label123.TabIndex = 161;
+            this.label123.Text = "Kod:";
+            // 
+            // dieta_kod
+            // 
+            this.dieta_kod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dieta_kod.Enabled = false;
+            this.dieta_kod.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dieta_kod.Location = new System.Drawing.Point(689, 17);
+            this.dieta_kod.Name = "dieta_kod";
+            this.dieta_kod.Size = new System.Drawing.Size(269, 29);
+            this.dieta_kod.TabIndex = 162;
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label139.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label139.Location = new System.Drawing.Point(876, 367);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(45, 12);
+            this.label139.TabIndex = 160;
+            this.label139.Text = "% energii";
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label140.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label140.Location = new System.Drawing.Point(876, 331);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(68, 12);
+            this.label140.TabIndex = 159;
+            this.label140.Text = "g na 1000 kcal";
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label137.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label137.Location = new System.Drawing.Point(876, 250);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(45, 12);
+            this.label137.TabIndex = 158;
+            this.label137.Text = "% energii";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label138.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label138.Location = new System.Drawing.Point(876, 214);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(68, 12);
+            this.label138.TabIndex = 157;
+            this.label138.Text = "g na 1000 kcal";
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label135.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label135.Location = new System.Drawing.Point(876, 140);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(45, 12);
+            this.label135.TabIndex = 156;
+            this.label135.Text = "% energii";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label136.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label136.Location = new System.Drawing.Point(876, 104);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(68, 12);
+            this.label136.TabIndex = 155;
+            this.label136.Text = "g na 1000 kcal";
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label133.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label133.Location = new System.Drawing.Point(397, 521);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(45, 12);
+            this.label133.TabIndex = 154;
+            this.label133.Text = "% energii";
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label134.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label134.Location = new System.Drawing.Point(397, 485);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(68, 12);
+            this.label134.TabIndex = 153;
+            this.label134.Text = "g na 1000 kcal";
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label128.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label128.Location = new System.Drawing.Point(397, 406);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(45, 12);
+            this.label128.TabIndex = 152;
+            this.label128.Text = "% energii";
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label126.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label126.Location = new System.Drawing.Point(397, 370);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(68, 12);
+            this.label126.TabIndex = 151;
+            this.label126.Text = "g na 1000 kcal";
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label120.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label120.Location = new System.Drawing.Point(395, 299);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(45, 12);
+            this.label120.TabIndex = 150;
+            this.label120.Text = "% energii";
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label121.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label121.Location = new System.Drawing.Point(395, 263);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(68, 12);
+            this.label121.TabIndex = 149;
+            this.label121.Text = "g na 1000 kcal";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label118.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label118.Location = new System.Drawing.Point(395, 186);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(45, 12);
+            this.label118.TabIndex = 148;
+            this.label118.Text = "% energii";
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.label117.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label117.Location = new System.Drawing.Point(395, 150);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(68, 12);
+            this.label117.TabIndex = 147;
+            this.label117.Text = "g na 1000 kcal";
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label115.Location = new System.Drawing.Point(747, 449);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(16, 21);
+            this.label115.TabIndex = 146;
+            this.label115.Text = "-";
+            // 
+            // SolDo
+            // 
+            this.SolDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SolDo.Enabled = false;
+            this.SolDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SolDo.Location = new System.Drawing.Point(777, 444);
+            this.SolDo.Name = "SolDo";
+            this.SolDo.Size = new System.Drawing.Size(93, 29);
+            this.SolDo.TabIndex = 145;
+            // 
+            // SolOd
+            // 
+            this.SolOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SolOd.Enabled = false;
+            this.SolOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SolOd.Location = new System.Drawing.Point(642, 444);
+            this.SolOd.Name = "SolOd";
+            this.SolOd.Size = new System.Drawing.Size(93, 29);
+            this.SolOd.TabIndex = 144;
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label113.Location = new System.Drawing.Point(746, 406);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(16, 21);
+            this.label113.TabIndex = 143;
+            this.label113.Text = "-";
+            // 
+            // sodDo
+            // 
+            this.sodDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sodDo.Enabled = false;
+            this.sodDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.sodDo.Location = new System.Drawing.Point(776, 401);
+            this.sodDo.Name = "sodDo";
+            this.sodDo.Size = new System.Drawing.Size(93, 29);
+            this.sodDo.TabIndex = 142;
+            // 
+            // sodOd
+            // 
+            this.sodOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sodOd.Enabled = false;
+            this.sodOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.sodOd.Location = new System.Drawing.Point(641, 401);
+            this.sodOd.Name = "sodOd";
+            this.sodOd.Size = new System.Drawing.Size(93, 29);
+            this.sodOd.TabIndex = 141;
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label107.Location = new System.Drawing.Point(747, 359);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(16, 21);
+            this.label107.TabIndex = 140;
+            this.label107.Text = "-";
+            // 
+            // blonnikDoProc
+            // 
+            this.blonnikDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikDoProc.Enabled = false;
+            this.blonnikDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikDoProc.Location = new System.Drawing.Point(777, 354);
+            this.blonnikDoProc.Name = "blonnikDoProc";
+            this.blonnikDoProc.Size = new System.Drawing.Size(93, 29);
+            this.blonnikDoProc.TabIndex = 139;
+            // 
+            // blonnikOdProc
+            // 
+            this.blonnikOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikOdProc.Enabled = false;
+            this.blonnikOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikOdProc.Location = new System.Drawing.Point(642, 354);
+            this.blonnikOdProc.Name = "blonnikOdProc";
+            this.blonnikOdProc.Size = new System.Drawing.Size(93, 29);
+            this.blonnikOdProc.TabIndex = 138;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label108.Location = new System.Drawing.Point(747, 326);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(16, 21);
+            this.label108.TabIndex = 137;
+            this.label108.Text = "-";
+            // 
+            // blonnikDoTys
+            // 
+            this.blonnikDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikDoTys.Enabled = false;
+            this.blonnikDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikDoTys.Location = new System.Drawing.Point(777, 321);
+            this.blonnikDoTys.Name = "blonnikDoTys";
+            this.blonnikDoTys.Size = new System.Drawing.Size(93, 29);
+            this.blonnikDoTys.TabIndex = 136;
+            // 
+            // blonnikOdTys
+            // 
+            this.blonnikOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikOdTys.Enabled = false;
+            this.blonnikOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikOdTys.Location = new System.Drawing.Point(642, 321);
+            this.blonnikOdTys.Name = "blonnikOdTys";
+            this.blonnikOdTys.Size = new System.Drawing.Size(93, 29);
+            this.blonnikOdTys.TabIndex = 135;
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label109.Location = new System.Drawing.Point(747, 294);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(16, 21);
+            this.label109.TabIndex = 134;
+            this.label109.Text = "-";
+            // 
+            // blonnikDo
+            // 
+            this.blonnikDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikDo.Enabled = false;
+            this.blonnikDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikDo.Location = new System.Drawing.Point(777, 289);
+            this.blonnikDo.Name = "blonnikDo";
+            this.blonnikDo.Size = new System.Drawing.Size(93, 29);
+            this.blonnikDo.TabIndex = 133;
+            // 
+            // blonnikOd
+            // 
+            this.blonnikOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikOd.Enabled = false;
+            this.blonnikOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikOd.Location = new System.Drawing.Point(642, 289);
+            this.blonnikOd.Name = "blonnikOd";
+            this.blonnikOd.Size = new System.Drawing.Size(93, 29);
+            this.blonnikOd.TabIndex = 132;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label84.Location = new System.Drawing.Point(747, 247);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(16, 21);
+            this.label84.TabIndex = 131;
+            this.label84.Text = "-";
+            // 
+            // cukryDoProc
+            // 
+            this.cukryDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryDoProc.Enabled = false;
+            this.cukryDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryDoProc.Location = new System.Drawing.Point(777, 242);
+            this.cukryDoProc.Name = "cukryDoProc";
+            this.cukryDoProc.Size = new System.Drawing.Size(93, 29);
+            this.cukryDoProc.TabIndex = 130;
+            // 
+            // cukryOdProc
+            // 
+            this.cukryOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryOdProc.Enabled = false;
+            this.cukryOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryOdProc.Location = new System.Drawing.Point(642, 242);
+            this.cukryOdProc.Name = "cukryOdProc";
+            this.cukryOdProc.Size = new System.Drawing.Size(93, 29);
+            this.cukryOdProc.TabIndex = 129;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label85.Location = new System.Drawing.Point(747, 214);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(16, 21);
+            this.label85.TabIndex = 128;
+            this.label85.Text = "-";
+            // 
+            // cukryDoTys
+            // 
+            this.cukryDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryDoTys.Enabled = false;
+            this.cukryDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryDoTys.Location = new System.Drawing.Point(777, 209);
+            this.cukryDoTys.Name = "cukryDoTys";
+            this.cukryDoTys.Size = new System.Drawing.Size(93, 29);
+            this.cukryDoTys.TabIndex = 127;
+            // 
+            // cukryOdTys
+            // 
+            this.cukryOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryOdTys.Enabled = false;
+            this.cukryOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryOdTys.Location = new System.Drawing.Point(642, 209);
+            this.cukryOdTys.Name = "cukryOdTys";
+            this.cukryOdTys.Size = new System.Drawing.Size(93, 29);
+            this.cukryOdTys.TabIndex = 126;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label86.Location = new System.Drawing.Point(747, 182);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(16, 21);
+            this.label86.TabIndex = 125;
+            this.label86.Text = "-";
+            // 
+            // cukryDo
+            // 
+            this.cukryDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryDo.Enabled = false;
+            this.cukryDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryDo.Location = new System.Drawing.Point(777, 177);
+            this.cukryDo.Name = "cukryDo";
+            this.cukryDo.Size = new System.Drawing.Size(93, 29);
+            this.cukryDo.TabIndex = 124;
+            // 
+            // cukryOd
+            // 
+            this.cukryOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryOd.Enabled = false;
+            this.cukryOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryOd.Location = new System.Drawing.Point(642, 177);
+            this.cukryOd.Name = "cukryOd";
+            this.cukryOd.Size = new System.Drawing.Size(93, 29);
+            this.cukryOd.TabIndex = 123;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label81.Location = new System.Drawing.Point(747, 134);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(16, 21);
+            this.label81.TabIndex = 122;
+            this.label81.Text = "-";
+            // 
+            // przyswajalneDoProc
+            // 
+            this.przyswajalneDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneDoProc.Enabled = false;
+            this.przyswajalneDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneDoProc.Location = new System.Drawing.Point(777, 129);
+            this.przyswajalneDoProc.Name = "przyswajalneDoProc";
+            this.przyswajalneDoProc.Size = new System.Drawing.Size(93, 29);
+            this.przyswajalneDoProc.TabIndex = 121;
+            // 
+            // przyswajalneodProc
+            // 
+            this.przyswajalneodProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneodProc.Enabled = false;
+            this.przyswajalneodProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneodProc.Location = new System.Drawing.Point(642, 129);
+            this.przyswajalneodProc.Name = "przyswajalneodProc";
+            this.przyswajalneodProc.Size = new System.Drawing.Size(93, 29);
+            this.przyswajalneodProc.TabIndex = 120;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label82.Location = new System.Drawing.Point(747, 101);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(16, 21);
+            this.label82.TabIndex = 119;
+            this.label82.Text = "-";
+            // 
+            // przyswajalneDotys
+            // 
+            this.przyswajalneDotys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneDotys.Enabled = false;
+            this.przyswajalneDotys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneDotys.Location = new System.Drawing.Point(777, 96);
+            this.przyswajalneDotys.Name = "przyswajalneDotys";
+            this.przyswajalneDotys.Size = new System.Drawing.Size(93, 29);
+            this.przyswajalneDotys.TabIndex = 118;
+            // 
+            // przyswajalneOdTys
+            // 
+            this.przyswajalneOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneOdTys.Enabled = false;
+            this.przyswajalneOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneOdTys.Location = new System.Drawing.Point(642, 96);
+            this.przyswajalneOdTys.Name = "przyswajalneOdTys";
+            this.przyswajalneOdTys.Size = new System.Drawing.Size(93, 29);
+            this.przyswajalneOdTys.TabIndex = 117;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label83.Location = new System.Drawing.Point(747, 69);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(16, 21);
+            this.label83.TabIndex = 116;
+            this.label83.Text = "-";
+            // 
+            // przyswajalneDo
+            // 
+            this.przyswajalneDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneDo.Enabled = false;
+            this.przyswajalneDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneDo.Location = new System.Drawing.Point(777, 64);
+            this.przyswajalneDo.Name = "przyswajalneDo";
+            this.przyswajalneDo.Size = new System.Drawing.Size(93, 29);
+            this.przyswajalneDo.TabIndex = 115;
+            // 
+            // przyswajalneOd
+            // 
+            this.przyswajalneOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneOd.Enabled = false;
+            this.przyswajalneOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneOd.Location = new System.Drawing.Point(642, 64);
+            this.przyswajalneOd.Name = "przyswajalneOd";
+            this.przyswajalneOd.Size = new System.Drawing.Size(93, 29);
+            this.przyswajalneOd.TabIndex = 114;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label76.Location = new System.Drawing.Point(272, 512);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(16, 21);
+            this.label76.TabIndex = 113;
+            this.label76.Text = "-";
+            // 
+            // wegleDoProc
+            // 
+            this.wegleDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleDoProc.Enabled = false;
+            this.wegleDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleDoProc.Location = new System.Drawing.Point(302, 507);
+            this.wegleDoProc.Name = "wegleDoProc";
+            this.wegleDoProc.Size = new System.Drawing.Size(93, 29);
+            this.wegleDoProc.TabIndex = 112;
+            // 
+            // wegleOdProc
+            // 
+            this.wegleOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleOdProc.Enabled = false;
+            this.wegleOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleOdProc.Location = new System.Drawing.Point(167, 507);
+            this.wegleOdProc.Name = "wegleOdProc";
+            this.wegleOdProc.Size = new System.Drawing.Size(93, 29);
+            this.wegleOdProc.TabIndex = 111;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label78.Location = new System.Drawing.Point(272, 479);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(16, 21);
+            this.label78.TabIndex = 110;
+            this.label78.Text = "-";
+            // 
+            // wedgleDoTys
+            // 
+            this.wedgleDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wedgleDoTys.Enabled = false;
+            this.wedgleDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wedgleDoTys.Location = new System.Drawing.Point(302, 474);
+            this.wedgleDoTys.Name = "wedgleDoTys";
+            this.wedgleDoTys.Size = new System.Drawing.Size(93, 29);
+            this.wedgleDoTys.TabIndex = 109;
+            // 
+            // wegleOdTys
+            // 
+            this.wegleOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleOdTys.Enabled = false;
+            this.wegleOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleOdTys.Location = new System.Drawing.Point(167, 474);
+            this.wegleOdTys.Name = "wegleOdTys";
+            this.wegleOdTys.Size = new System.Drawing.Size(93, 29);
+            this.wegleOdTys.TabIndex = 108;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label80.Location = new System.Drawing.Point(272, 447);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(16, 21);
+            this.label80.TabIndex = 107;
+            this.label80.Text = "-";
+            // 
+            // wegleDo
+            // 
+            this.wegleDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleDo.Enabled = false;
+            this.wegleDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleDo.Location = new System.Drawing.Point(302, 442);
+            this.wegleDo.Name = "wegleDo";
+            this.wegleDo.Size = new System.Drawing.Size(93, 29);
+            this.wegleDo.TabIndex = 106;
+            // 
+            // wegleod
+            // 
+            this.wegleod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleod.Enabled = false;
+            this.wegleod.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleod.Location = new System.Drawing.Point(167, 442);
+            this.wegleod.Name = "wegleod";
+            this.wegleod.Size = new System.Drawing.Size(93, 29);
+            this.wegleod.TabIndex = 105;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label66.Location = new System.Drawing.Point(272, 401);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(16, 21);
+            this.label66.TabIndex = 104;
+            this.label66.Text = "-";
+            // 
+            // kwasyDoProc
+            // 
+            this.kwasyDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyDoProc.Enabled = false;
+            this.kwasyDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyDoProc.Location = new System.Drawing.Point(302, 396);
+            this.kwasyDoProc.Name = "kwasyDoProc";
+            this.kwasyDoProc.Size = new System.Drawing.Size(93, 29);
+            this.kwasyDoProc.TabIndex = 103;
+            // 
+            // kwasyOdProc
+            // 
+            this.kwasyOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyOdProc.Enabled = false;
+            this.kwasyOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyOdProc.Location = new System.Drawing.Point(167, 396);
+            this.kwasyOdProc.Name = "kwasyOdProc";
+            this.kwasyOdProc.Size = new System.Drawing.Size(93, 29);
+            this.kwasyOdProc.TabIndex = 102;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label72.Location = new System.Drawing.Point(272, 368);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(16, 21);
+            this.label72.TabIndex = 101;
+            this.label72.Text = "-";
+            // 
+            // KwasyDoTys
+            // 
+            this.KwasyDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.KwasyDoTys.Enabled = false;
+            this.KwasyDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.KwasyDoTys.Location = new System.Drawing.Point(302, 363);
+            this.KwasyDoTys.Name = "KwasyDoTys";
+            this.KwasyDoTys.Size = new System.Drawing.Size(93, 29);
+            this.KwasyDoTys.TabIndex = 100;
+            // 
+            // KwasyOdTys
+            // 
+            this.KwasyOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.KwasyOdTys.Enabled = false;
+            this.KwasyOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.KwasyOdTys.Location = new System.Drawing.Point(167, 363);
+            this.KwasyOdTys.Name = "KwasyOdTys";
+            this.KwasyOdTys.Size = new System.Drawing.Size(93, 29);
+            this.KwasyOdTys.TabIndex = 99;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label74.Location = new System.Drawing.Point(272, 336);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(16, 21);
+            this.label74.TabIndex = 98;
+            this.label74.Text = "-";
+            // 
+            // kwasyDo
+            // 
+            this.kwasyDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyDo.Enabled = false;
+            this.kwasyDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyDo.Location = new System.Drawing.Point(302, 331);
+            this.kwasyDo.Name = "kwasyDo";
+            this.kwasyDo.Size = new System.Drawing.Size(93, 29);
+            this.kwasyDo.TabIndex = 97;
+            // 
+            // kwasyOd
+            // 
+            this.kwasyOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyOd.Enabled = false;
+            this.kwasyOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyOd.Location = new System.Drawing.Point(167, 331);
+            this.kwasyOd.Name = "kwasyOd";
+            this.kwasyOd.Size = new System.Drawing.Size(93, 29);
+            this.kwasyOd.TabIndex = 96;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label57.Location = new System.Drawing.Point(272, 291);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(16, 21);
+            this.label57.TabIndex = 95;
+            this.label57.Text = "-";
+            // 
+            // tluszczeDoProc
+            // 
+            this.tluszczeDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeDoProc.Enabled = false;
+            this.tluszczeDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeDoProc.Location = new System.Drawing.Point(302, 286);
+            this.tluszczeDoProc.Name = "tluszczeDoProc";
+            this.tluszczeDoProc.Size = new System.Drawing.Size(93, 29);
+            this.tluszczeDoProc.TabIndex = 94;
+            // 
+            // TluszczeOdProc
+            // 
+            this.TluszczeOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.TluszczeOdProc.Enabled = false;
+            this.TluszczeOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.TluszczeOdProc.Location = new System.Drawing.Point(167, 286);
+            this.TluszczeOdProc.Name = "TluszczeOdProc";
+            this.TluszczeOdProc.Size = new System.Drawing.Size(93, 29);
+            this.TluszczeOdProc.TabIndex = 93;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label59.Location = new System.Drawing.Point(272, 258);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(16, 21);
+            this.label59.TabIndex = 92;
+            this.label59.Text = "-";
+            // 
+            // tluszczeDoTys
+            // 
+            this.tluszczeDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeDoTys.Enabled = false;
+            this.tluszczeDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeDoTys.Location = new System.Drawing.Point(302, 253);
+            this.tluszczeDoTys.Name = "tluszczeDoTys";
+            this.tluszczeDoTys.Size = new System.Drawing.Size(93, 29);
+            this.tluszczeDoTys.TabIndex = 91;
+            // 
+            // tluszczeOdTysiac
+            // 
+            this.tluszczeOdTysiac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeOdTysiac.Enabled = false;
+            this.tluszczeOdTysiac.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeOdTysiac.Location = new System.Drawing.Point(167, 253);
+            this.tluszczeOdTysiac.Name = "tluszczeOdTysiac";
+            this.tluszczeOdTysiac.Size = new System.Drawing.Size(93, 29);
+            this.tluszczeOdTysiac.TabIndex = 90;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label60.Location = new System.Drawing.Point(272, 226);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(16, 21);
+            this.label60.TabIndex = 89;
+            this.label60.Text = "-";
+            // 
+            // tluszczeDo
+            // 
+            this.tluszczeDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeDo.Enabled = false;
+            this.tluszczeDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeDo.Location = new System.Drawing.Point(302, 221);
+            this.tluszczeDo.Name = "tluszczeDo";
+            this.tluszczeDo.Size = new System.Drawing.Size(93, 29);
+            this.tluszczeDo.TabIndex = 88;
+            // 
+            // tluszczeOd
+            // 
+            this.tluszczeOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeOd.Enabled = false;
+            this.tluszczeOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeOd.Location = new System.Drawing.Point(167, 221);
+            this.tluszczeOd.Name = "tluszczeOd";
+            this.tluszczeOd.Size = new System.Drawing.Size(93, 29);
+            this.tluszczeOd.TabIndex = 87;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label30.Location = new System.Drawing.Point(272, 180);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(16, 21);
+            this.label30.TabIndex = 86;
+            this.label30.Text = "-";
+            // 
+            // bialkoDoProcent
+            // 
+            this.bialkoDoProcent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoDoProcent.Enabled = false;
+            this.bialkoDoProcent.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoDoProcent.Location = new System.Drawing.Point(302, 175);
+            this.bialkoDoProcent.Name = "bialkoDoProcent";
+            this.bialkoDoProcent.Size = new System.Drawing.Size(93, 29);
+            this.bialkoDoProcent.TabIndex = 85;
+            // 
+            // bialkoOdProcent
+            // 
+            this.bialkoOdProcent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoOdProcent.Enabled = false;
+            this.bialkoOdProcent.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoOdProcent.Location = new System.Drawing.Point(167, 175);
+            this.bialkoOdProcent.Name = "bialkoOdProcent";
+            this.bialkoOdProcent.Size = new System.Drawing.Size(93, 29);
+            this.bialkoOdProcent.TabIndex = 84;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label28.Location = new System.Drawing.Point(272, 147);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(16, 21);
+            this.label28.TabIndex = 83;
+            this.label28.Text = "-";
+            // 
+            // bialkoDoTysiac
+            // 
+            this.bialkoDoTysiac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoDoTysiac.Enabled = false;
+            this.bialkoDoTysiac.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoDoTysiac.Location = new System.Drawing.Point(302, 142);
+            this.bialkoDoTysiac.Name = "bialkoDoTysiac";
+            this.bialkoDoTysiac.Size = new System.Drawing.Size(93, 29);
+            this.bialkoDoTysiac.TabIndex = 82;
+            // 
+            // bialkoOdTysiac
+            // 
+            this.bialkoOdTysiac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoOdTysiac.Enabled = false;
+            this.bialkoOdTysiac.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoOdTysiac.Location = new System.Drawing.Point(167, 142);
+            this.bialkoOdTysiac.Name = "bialkoOdTysiac";
+            this.bialkoOdTysiac.Size = new System.Drawing.Size(93, 29);
+            this.bialkoOdTysiac.TabIndex = 81;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label9.Location = new System.Drawing.Point(272, 115);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 21);
+            this.label9.TabIndex = 80;
+            this.label9.Text = "-";
+            // 
+            // bialkoDo
+            // 
+            this.bialkoDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoDo.Enabled = false;
+            this.bialkoDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoDo.Location = new System.Drawing.Point(302, 110);
+            this.bialkoDo.Name = "bialkoDo";
+            this.bialkoDo.Size = new System.Drawing.Size(93, 29);
+            this.bialkoDo.TabIndex = 79;
+            // 
+            // bialkoOd
+            // 
+            this.bialkoOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoOd.Enabled = false;
+            this.bialkoOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoOd.Location = new System.Drawing.Point(167, 110);
+            this.bialkoOd.Name = "bialkoOd";
+            this.bialkoOd.Size = new System.Drawing.Size(93, 29);
+            this.bialkoOd.TabIndex = 78;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label1.Location = new System.Drawing.Point(272, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 21);
+            this.label1.TabIndex = 77;
+            this.label1.Text = "-";
+            // 
+            // energiaDo
+            // 
+            this.energiaDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.energiaDo.Enabled = false;
+            this.energiaDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.energiaDo.Location = new System.Drawing.Point(302, 65);
+            this.energiaDo.Name = "energiaDo";
+            this.energiaDo.Size = new System.Drawing.Size(93, 29);
+            this.energiaDo.TabIndex = 76;
             // 
             // label119
             // 
             this.label119.AutoSize = true;
             this.label119.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label119.Location = new System.Drawing.Point(469, 161);
+            this.label119.Location = new System.Drawing.Point(471, 180);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(77, 21);
             this.label119.TabIndex = 74;
             this.label119.Text = "Cukry [g]:";
             // 
-            // dieta_cukry
-            // 
-            this.dieta_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_cukry.Enabled = false;
-            this.dieta_cukry.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_cukry.Location = new System.Drawing.Point(638, 158);
-            this.dieta_cukry.Name = "dieta_cukry";
-            this.dieta_cukry.Size = new System.Drawing.Size(203, 29);
-            this.dieta_cukry.TabIndex = 75;
-            // 
             // label101
             // 
             this.label101.AutoSize = true;
             this.label101.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label101.Location = new System.Drawing.Point(470, 122);
+            this.label101.Location = new System.Drawing.Point(471, 87);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(126, 21);
             this.label101.TabIndex = 73;
@@ -2064,43 +3104,21 @@
             // 
             this.label100.AutoSize = true;
             this.label100.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label100.Location = new System.Drawing.Point(469, 216);
+            this.label100.Location = new System.Drawing.Point(472, 294);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(88, 21);
             this.label100.TabIndex = 71;
             this.label100.Text = "Błonnik [g]:";
             // 
-            // dieta_blonnik
-            // 
-            this.dieta_blonnik.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_blonnik.Enabled = false;
-            this.dieta_blonnik.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_blonnik.Location = new System.Drawing.Point(638, 213);
-            this.dieta_blonnik.Name = "dieta_blonnik";
-            this.dieta_blonnik.Size = new System.Drawing.Size(203, 29);
-            this.dieta_blonnik.TabIndex = 72;
-            this.dieta_blonnik.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_blonnik_KeyPress);
-            // 
             // label99
             // 
             this.label99.AutoSize = true;
             this.label99.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label99.Location = new System.Drawing.Point(469, 103);
+            this.label99.Location = new System.Drawing.Point(470, 68);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(109, 21);
             this.label99.TabIndex = 69;
             this.label99.Text = "Weglowodany";
-            // 
-            // dieta_przyswajalne
-            // 
-            this.dieta_przyswajalne.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_przyswajalne.Enabled = false;
-            this.dieta_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_przyswajalne.Location = new System.Drawing.Point(638, 100);
-            this.dieta_przyswajalne.Name = "dieta_przyswajalne";
-            this.dieta_przyswajalne.Size = new System.Drawing.Size(203, 29);
-            this.dieta_przyswajalne.TabIndex = 70;
-            this.dieta_przyswajalne.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_przyswajalne_KeyPress);
             // 
             // label42
             // 
@@ -2116,30 +3134,17 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label43.Location = new System.Drawing.Point(6, 108);
+            this.label43.Location = new System.Drawing.Point(2, 68);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(106, 21);
             this.label43.TabIndex = 42;
             this.label43.Text = "Energia [kcal]:";
             // 
-            // dieta_przelicz
-            // 
-            this.dieta_przelicz.BackColor = System.Drawing.Color.Transparent;
-            this.dieta_przelicz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dieta_przelicz.Image = ((System.Drawing.Image)(resources.GetObject("dieta_przelicz.Image")));
-            this.dieta_przelicz.Location = new System.Drawing.Point(719, 390);
-            this.dieta_przelicz.Name = "dieta_przelicz";
-            this.dieta_przelicz.Size = new System.Drawing.Size(45, 45);
-            this.dieta_przelicz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dieta_przelicz.TabIndex = 68;
-            this.dieta_przelicz.TabStop = false;
-            this.dieta_przelicz.Click += new System.EventHandler(this.dieta_przelicz_Click);
-            // 
             // label44
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label44.Location = new System.Drawing.Point(7, 160);
+            this.label44.Location = new System.Drawing.Point(3, 120);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(78, 21);
             this.label44.TabIndex = 43;
@@ -2149,7 +3154,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label45.Location = new System.Drawing.Point(3, 334);
+            this.label45.Location = new System.Drawing.Point(3, 438);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(135, 21);
             this.label45.TabIndex = 44;
@@ -2159,7 +3164,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label46.Location = new System.Drawing.Point(6, 219);
+            this.label46.Location = new System.Drawing.Point(2, 222);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(93, 21);
             this.label46.TabIndex = 45;
@@ -2169,7 +3174,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label47.Location = new System.Drawing.Point(3, 273);
+            this.label47.Location = new System.Drawing.Point(3, 330);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(132, 21);
             this.label47.TabIndex = 46;
@@ -2179,7 +3184,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label49.Location = new System.Drawing.Point(3, 295);
+            this.label49.Location = new System.Drawing.Point(3, 352);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(101, 21);
             this.label49.TabIndex = 63;
@@ -2190,112 +3195,48 @@
             this.dieta_nazwa.BackColor = System.Drawing.SystemColors.ControlLight;
             this.dieta_nazwa.Enabled = false;
             this.dieta_nazwa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_nazwa.Location = new System.Drawing.Point(168, 16);
+            this.dieta_nazwa.Location = new System.Drawing.Point(107, 16);
             this.dieta_nazwa.Name = "dieta_nazwa";
-            this.dieta_nazwa.Size = new System.Drawing.Size(372, 29);
+            this.dieta_nazwa.Size = new System.Drawing.Size(528, 29);
             this.dieta_nazwa.TabIndex = 50;
             // 
             // dieta_lbl_sol
             // 
             this.dieta_lbl_sol.AutoSize = true;
             this.dieta_lbl_sol.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_lbl_sol.Location = new System.Drawing.Point(470, 358);
+            this.dieta_lbl_sol.Location = new System.Drawing.Point(471, 449);
             this.dieta_lbl_sol.Name = "dieta_lbl_sol";
             this.dieta_lbl_sol.Size = new System.Drawing.Size(58, 21);
             this.dieta_lbl_sol.TabIndex = 61;
             this.dieta_lbl_sol.Text = "Sól [g]:";
             // 
-            // dieta_energia
+            // energiaOd
             // 
-            this.dieta_energia.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_energia.Enabled = false;
-            this.dieta_energia.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_energia.Location = new System.Drawing.Point(171, 105);
-            this.dieta_energia.Name = "dieta_energia";
-            this.dieta_energia.Size = new System.Drawing.Size(203, 29);
-            this.dieta_energia.TabIndex = 51;
-            this.dieta_energia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_energia_KeyPress);
-            // 
-            // dieta_sol
-            // 
-            this.dieta_sol.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_sol.Location = new System.Drawing.Point(635, 355);
-            this.dieta_sol.Name = "dieta_sol";
-            this.dieta_sol.Size = new System.Drawing.Size(204, 29);
-            this.dieta_sol.TabIndex = 60;
-            this.dieta_sol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_sol_KeyPress);
-            // 
-            // dieta_bialko
-            // 
-            this.dieta_bialko.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_bialko.Enabled = false;
-            this.dieta_bialko.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_bialko.Location = new System.Drawing.Point(171, 157);
-            this.dieta_bialko.Name = "dieta_bialko";
-            this.dieta_bialko.Size = new System.Drawing.Size(203, 29);
-            this.dieta_bialko.TabIndex = 52;
-            this.dieta_bialko.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_bialko_KeyPress);
+            this.energiaOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.energiaOd.Enabled = false;
+            this.energiaOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.energiaOd.Location = new System.Drawing.Point(167, 65);
+            this.energiaOd.Name = "energiaOd";
+            this.energiaOd.Size = new System.Drawing.Size(93, 29);
+            this.energiaOd.TabIndex = 51;
+            this.energiaOd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_energia_KeyPress);
             // 
             // label51
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label51.Location = new System.Drawing.Point(470, 276);
+            this.label51.Location = new System.Drawing.Point(471, 408);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(77, 21);
             this.label51.TabIndex = 59;
             this.label51.Text = "Sód [mg]:";
-            // 
-            // dieta_tluszcze
-            // 
-            this.dieta_tluszcze.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_tluszcze.Enabled = false;
-            this.dieta_tluszcze.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_tluszcze.Location = new System.Drawing.Point(171, 216);
-            this.dieta_tluszcze.Name = "dieta_tluszcze";
-            this.dieta_tluszcze.Size = new System.Drawing.Size(203, 29);
-            this.dieta_tluszcze.TabIndex = 53;
-            this.dieta_tluszcze.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_tluszcze_KeyPress);
-            // 
-            // dieta_sod
-            // 
-            this.dieta_sod.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_sod.Enabled = false;
-            this.dieta_sod.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_sod.Location = new System.Drawing.Point(636, 273);
-            this.dieta_sod.Name = "dieta_sod";
-            this.dieta_sod.Size = new System.Drawing.Size(204, 29);
-            this.dieta_sod.TabIndex = 58;
-            this.dieta_sod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_sod_KeyPress);
-            // 
-            // dieta_weglowodany
-            // 
-            this.dieta_weglowodany.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_weglowodany.Enabled = false;
-            this.dieta_weglowodany.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_weglowodany.Location = new System.Drawing.Point(172, 331);
-            this.dieta_weglowodany.Name = "dieta_weglowodany";
-            this.dieta_weglowodany.Size = new System.Drawing.Size(203, 29);
-            this.dieta_weglowodany.TabIndex = 54;
-            this.dieta_weglowodany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_weglowodany_KeyPress);
-            // 
-            // dieta_ktn
-            // 
-            this.dieta_ktn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dieta_ktn.Enabled = false;
-            this.dieta_ktn.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_ktn.Location = new System.Drawing.Point(172, 273);
-            this.dieta_ktn.Name = "dieta_ktn";
-            this.dieta_ktn.Size = new System.Drawing.Size(204, 29);
-            this.dieta_ktn.TabIndex = 55;
-            this.dieta_ktn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dieta_ktn_KeyPress);
             // 
             // dieta_wstecz
             // 
             this.dieta_wstecz.BackColor = System.Drawing.Color.Transparent;
             this.dieta_wstecz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dieta_wstecz.Image = ((System.Drawing.Image)(resources.GetObject("dieta_wstecz.Image")));
-            this.dieta_wstecz.Location = new System.Drawing.Point(943, 39);
+            this.dieta_wstecz.Location = new System.Drawing.Point(943, 35);
             this.dieta_wstecz.Name = "dieta_wstecz";
             this.dieta_wstecz.Size = new System.Drawing.Size(45, 45);
             this.dieta_wstecz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2321,7 +3262,7 @@
             this.dieta_ok.BackColor = System.Drawing.Color.Transparent;
             this.dieta_ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dieta_ok.Image = ((System.Drawing.Image)(resources.GetObject("dieta_ok.Image")));
-            this.dieta_ok.Location = new System.Drawing.Point(871, 39);
+            this.dieta_ok.Location = new System.Drawing.Point(871, 35);
             this.dieta_ok.Name = "dieta_ok";
             this.dieta_ok.Size = new System.Drawing.Size(45, 45);
             this.dieta_ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2359,9 +3300,9 @@
             // 
             this.dieta_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dieta_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_dieta.Location = new System.Drawing.Point(565, 139);
+            this.dieta_dieta.Location = new System.Drawing.Point(399, 85);
             this.dieta_dieta.Name = "dieta_dieta";
-            this.dieta_dieta.Size = new System.Drawing.Size(365, 29);
+            this.dieta_dieta.Size = new System.Drawing.Size(589, 29);
             this.dieta_dieta.TabIndex = 40;
             this.dieta_dieta.SelectedIndexChanged += new System.EventHandler(this.dieta_dieta_SelectedIndexChanged);
             // 
@@ -2369,7 +3310,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label52.Location = new System.Drawing.Point(428, 142);
+            this.label52.Location = new System.Drawing.Point(290, 88);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(104, 21);
             this.label52.TabIndex = 39;
@@ -2552,19 +3493,19 @@
             this.panel_receptura.Controls.Add(this.pictureBox18);
             this.panel_receptura.Controls.Add(this.receptura_wczytaj);
             this.panel_receptura.Controls.Add(this.label61);
-            this.panel_receptura.Location = new System.Drawing.Point(320, 253);
+            this.panel_receptura.Location = new System.Drawing.Point(308, 343);
             this.panel_receptura.Name = "panel_receptura";
-            this.panel_receptura.Size = new System.Drawing.Size(40, 41);
+            this.panel_receptura.Size = new System.Drawing.Size(45, 49);
             this.panel_receptura.TabIndex = 72;
             this.panel_receptura.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_receptura_Paint);
             // 
             // receptura_cukry
             // 
             this.receptura_cukry.AutoSize = true;
-            this.receptura_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_cukry.BackColor = System.Drawing.Color.Transparent;
             this.receptura_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_cukry.Location = new System.Drawing.Point(668, 583);
+            this.receptura_cukry.Location = new System.Drawing.Point(545, 580);
             this.receptura_cukry.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_cukry.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_cukry.Name = "receptura_cukry";
@@ -2576,10 +3517,10 @@
             // label155
             // 
             this.label155.AutoSize = true;
-            this.label155.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label155.BackColor = System.Drawing.Color.Transparent;
             this.label155.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label155.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label155.Location = new System.Drawing.Point(676, 563);
+            this.label155.Location = new System.Drawing.Point(553, 543);
             this.label155.MaximumSize = new System.Drawing.Size(60, 0);
             this.label155.MinimumSize = new System.Drawing.Size(60, 0);
             this.label155.Name = "label155";
@@ -2591,10 +3532,10 @@
             // label65
             // 
             this.label65.AutoSize = true;
-            this.label65.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label65.BackColor = System.Drawing.Color.Transparent;
             this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.label65.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label65.Location = new System.Drawing.Point(465, 570);
+            this.label65.Location = new System.Drawing.Point(354, 553);
             this.label65.MaximumSize = new System.Drawing.Size(80, 0);
             this.label65.MinimumSize = new System.Drawing.Size(80, 0);
             this.label65.Name = "label65";
@@ -2606,10 +3547,10 @@
             // label110
             // 
             this.label110.AutoSize = true;
-            this.label110.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label110.BackColor = System.Drawing.Color.Transparent;
             this.label110.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label110.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label110.Location = new System.Drawing.Point(362, 577);
+            this.label110.Location = new System.Drawing.Point(268, 562);
             this.label110.MaximumSize = new System.Drawing.Size(75, 0);
             this.label110.MinimumSize = new System.Drawing.Size(75, 0);
             this.label110.Name = "label110";
@@ -2621,10 +3562,10 @@
             // label112
             // 
             this.label112.AutoSize = true;
-            this.label112.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label112.BackColor = System.Drawing.Color.Transparent;
             this.label112.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label112.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label112.Location = new System.Drawing.Point(362, 562);
+            this.label112.Location = new System.Drawing.Point(268, 547);
             this.label112.MaximumSize = new System.Drawing.Size(75, 0);
             this.label112.MinimumSize = new System.Drawing.Size(75, 0);
             this.label112.Name = "label112";
@@ -2636,10 +3577,10 @@
             // receptura_ktn
             // 
             this.receptura_ktn.AutoSize = true;
-            this.receptura_ktn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_ktn.BackColor = System.Drawing.Color.Transparent;
             this.receptura_ktn.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_ktn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_ktn.Location = new System.Drawing.Point(359, 594);
+            this.receptura_ktn.Location = new System.Drawing.Point(265, 580);
             this.receptura_ktn.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_ktn.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_ktn.Name = "receptura_ktn";
@@ -2651,10 +3592,10 @@
             // receptura_weglowodany
             // 
             this.receptura_weglowodany.AutoSize = true;
-            this.receptura_weglowodany.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_weglowodany.BackColor = System.Drawing.Color.Transparent;
             this.receptura_weglowodany.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_weglowodany.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_weglowodany.Location = new System.Drawing.Point(467, 583);
+            this.receptura_weglowodany.Location = new System.Drawing.Point(356, 580);
             this.receptura_weglowodany.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_weglowodany.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_weglowodany.Name = "receptura_weglowodany";
@@ -2666,10 +3607,10 @@
             // label153
             // 
             this.label153.AutoSize = true;
-            this.label153.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label153.BackColor = System.Drawing.Color.Transparent;
             this.label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label153.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label153.Location = new System.Drawing.Point(475, 561);
+            this.label153.Location = new System.Drawing.Point(364, 544);
             this.label153.MaximumSize = new System.Drawing.Size(65, 0);
             this.label153.MinimumSize = new System.Drawing.Size(65, 0);
             this.label153.Name = "label153";
@@ -2681,10 +3622,10 @@
             // receptura_sol
             // 
             this.receptura_sol.AutoSize = true;
-            this.receptura_sol.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_sol.BackColor = System.Drawing.Color.Transparent;
             this.receptura_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_sol.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_sol.Location = new System.Drawing.Point(868, 644);
+            this.receptura_sol.Location = new System.Drawing.Point(800, 580);
             this.receptura_sol.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_sol.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_sol.Name = "receptura_sol";
@@ -2696,10 +3637,10 @@
             // label151
             // 
             this.label151.AutoSize = true;
-            this.label151.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label151.BackColor = System.Drawing.Color.Transparent;
             this.label151.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label151.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label151.Location = new System.Drawing.Point(876, 624);
+            this.label151.Location = new System.Drawing.Point(808, 540);
             this.label151.MaximumSize = new System.Drawing.Size(60, 0);
             this.label151.MinimumSize = new System.Drawing.Size(60, 0);
             this.label151.Name = "label151";
@@ -2711,10 +3652,10 @@
             // label56
             // 
             this.label56.AutoSize = true;
-            this.label56.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label56.BackColor = System.Drawing.Color.Transparent;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.label56.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label56.Location = new System.Drawing.Point(568, 572);
+            this.label56.Location = new System.Drawing.Point(451, 553);
             this.label56.MaximumSize = new System.Drawing.Size(85, 0);
             this.label56.MinimumSize = new System.Drawing.Size(85, 0);
             this.label56.Name = "label56";
@@ -2726,10 +3667,10 @@
             // receptura_przyswajalne
             // 
             this.receptura_przyswajalne.AutoSize = true;
-            this.receptura_przyswajalne.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_przyswajalne.BackColor = System.Drawing.Color.Transparent;
             this.receptura_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_przyswajalne.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_przyswajalne.Location = new System.Drawing.Point(572, 586);
+            this.receptura_przyswajalne.Location = new System.Drawing.Point(454, 580);
             this.receptura_przyswajalne.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_przyswajalne.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_przyswajalne.Name = "receptura_przyswajalne";
@@ -2741,10 +3682,10 @@
             // label62
             // 
             this.label62.AutoSize = true;
-            this.label62.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label62.BackColor = System.Drawing.Color.Transparent;
             this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label62.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label62.Location = new System.Drawing.Point(579, 561);
+            this.label62.Location = new System.Drawing.Point(462, 542);
             this.label62.MaximumSize = new System.Drawing.Size(65, 0);
             this.label62.MinimumSize = new System.Drawing.Size(65, 0);
             this.label62.Name = "label62";
@@ -2756,10 +3697,10 @@
             // label68
             // 
             this.label68.AutoSize = true;
-            this.label68.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label68.BackColor = System.Drawing.Color.Transparent;
             this.label68.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label68.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label68.Location = new System.Drawing.Point(765, 576);
+            this.label68.Location = new System.Drawing.Point(629, 553);
             this.label68.MaximumSize = new System.Drawing.Size(85, 0);
             this.label68.MinimumSize = new System.Drawing.Size(85, 0);
             this.label68.Name = "label68";
@@ -2771,10 +3712,10 @@
             // receptura_blonnik
             // 
             this.receptura_blonnik.AutoSize = true;
-            this.receptura_blonnik.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_blonnik.BackColor = System.Drawing.Color.Transparent;
             this.receptura_blonnik.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_blonnik.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_blonnik.Location = new System.Drawing.Point(768, 590);
+            this.receptura_blonnik.Location = new System.Drawing.Point(635, 580);
             this.receptura_blonnik.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_blonnik.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_blonnik.Name = "receptura_blonnik";
@@ -2786,10 +3727,10 @@
             // label73
             // 
             this.label73.AutoSize = true;
-            this.label73.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label73.BackColor = System.Drawing.Color.Transparent;
             this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label73.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label73.Location = new System.Drawing.Point(775, 561);
+            this.label73.Location = new System.Drawing.Point(639, 538);
             this.label73.MaximumSize = new System.Drawing.Size(65, 0);
             this.label73.MinimumSize = new System.Drawing.Size(65, 0);
             this.label73.Name = "label73";
@@ -2801,10 +3742,10 @@
             // label114
             // 
             this.label114.AutoSize = true;
-            this.label114.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label114.BackColor = System.Drawing.Color.Transparent;
             this.label114.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.label114.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label114.Location = new System.Drawing.Point(378, 549);
+            this.label114.Location = new System.Drawing.Point(284, 534);
             this.label114.MaximumSize = new System.Drawing.Size(40, 0);
             this.label114.MinimumSize = new System.Drawing.Size(42, 0);
             this.label114.Name = "label114";
@@ -2816,10 +3757,10 @@
             // receptura_sod
             // 
             this.receptura_sod.AutoSize = true;
-            this.receptura_sod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_sod.BackColor = System.Drawing.Color.Transparent;
             this.receptura_sod.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_sod.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_sod.Location = new System.Drawing.Point(868, 584);
+            this.receptura_sod.Location = new System.Drawing.Point(720, 580);
             this.receptura_sod.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_sod.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_sod.Name = "receptura_sod";
@@ -2831,10 +3772,10 @@
             // label116
             // 
             this.label116.AutoSize = true;
-            this.label116.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label116.BackColor = System.Drawing.Color.Transparent;
             this.label116.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label116.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label116.Location = new System.Drawing.Point(876, 564);
+            this.label116.Location = new System.Drawing.Point(728, 541);
             this.label116.MaximumSize = new System.Drawing.Size(60, 0);
             this.label116.MinimumSize = new System.Drawing.Size(60, 0);
             this.label116.Name = "label116";
@@ -2846,10 +3787,10 @@
             // receptura_tluszcze
             // 
             this.receptura_tluszcze.AutoSize = true;
-            this.receptura_tluszcze.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_tluszcze.BackColor = System.Drawing.Color.Transparent;
             this.receptura_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_tluszcze.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_tluszcze.Location = new System.Drawing.Point(243, 582);
+            this.receptura_tluszcze.Location = new System.Drawing.Point(177, 580);
             this.receptura_tluszcze.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_tluszcze.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_tluszcze.Name = "receptura_tluszcze";
@@ -2861,10 +3802,10 @@
             // label122
             // 
             this.label122.AutoSize = true;
-            this.label122.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label122.BackColor = System.Drawing.Color.Transparent;
             this.label122.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.label122.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label122.Location = new System.Drawing.Point(252, 565);
+            this.label122.Location = new System.Drawing.Point(185, 547);
             this.label122.MaximumSize = new System.Drawing.Size(60, 0);
             this.label122.MinimumSize = new System.Drawing.Size(60, 0);
             this.label122.Name = "label122";
@@ -2876,10 +3817,10 @@
             // receptura_bialko
             // 
             this.receptura_bialko.AutoSize = true;
-            this.receptura_bialko.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_bialko.BackColor = System.Drawing.Color.Transparent;
             this.receptura_bialko.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_bialko.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_bialko.Location = new System.Drawing.Point(133, 586);
+            this.receptura_bialko.Location = new System.Drawing.Point(92, 580);
             this.receptura_bialko.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_bialko.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_bialko.Name = "receptura_bialko";
@@ -2891,10 +3832,10 @@
             // label125
             // 
             this.label125.AutoSize = true;
-            this.label125.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label125.BackColor = System.Drawing.Color.Transparent;
             this.label125.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label125.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label125.Location = new System.Drawing.Point(143, 565);
+            this.label125.Location = new System.Drawing.Point(102, 545);
             this.label125.MaximumSize = new System.Drawing.Size(60, 0);
             this.label125.MinimumSize = new System.Drawing.Size(60, 0);
             this.label125.Name = "label125";
@@ -2906,10 +3847,10 @@
             // receptura_energia
             // 
             this.receptura_energia.AutoSize = true;
-            this.receptura_energia.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_energia.BackColor = System.Drawing.Color.Transparent;
             this.receptura_energia.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.receptura_energia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.receptura_energia.Location = new System.Drawing.Point(22, 586);
+            this.receptura_energia.Location = new System.Drawing.Point(3, 580);
             this.receptura_energia.MaximumSize = new System.Drawing.Size(80, 0);
             this.receptura_energia.MinimumSize = new System.Drawing.Size(80, 0);
             this.receptura_energia.Name = "receptura_energia";
@@ -2921,10 +3862,10 @@
             // label127
             // 
             this.label127.AutoSize = true;
-            this.label127.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label127.BackColor = System.Drawing.Color.Transparent;
             this.label127.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label127.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label127.Location = new System.Drawing.Point(35, 567);
+            this.label127.Location = new System.Drawing.Point(19, 546);
             this.label127.MaximumSize = new System.Drawing.Size(60, 0);
             this.label127.MinimumSize = new System.Drawing.Size(60, 0);
             this.label127.Name = "label127";
@@ -3276,11 +4217,10 @@
             this.panel_dekadowka_wczytaj.Controls.Add(this.label63);
             this.panel_dekadowka_wczytaj.Controls.Add(this.dekadowka_wczytaj_miasto);
             this.panel_dekadowka_wczytaj.Controls.Add(this.label64);
-            this.panel_dekadowka_wczytaj.Controls.Add(this.flowLayoutPanel1);
             this.panel_dekadowka_wczytaj.Controls.Add(this.dekadowka_wczytaj_dekadowka);
-            this.panel_dekadowka_wczytaj.Location = new System.Drawing.Point(304, 151);
+            this.panel_dekadowka_wczytaj.Location = new System.Drawing.Point(356, 47);
             this.panel_dekadowka_wczytaj.Name = "panel_dekadowka_wczytaj";
-            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(43, 47);
+            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(95, 45);
             this.panel_dekadowka_wczytaj.TabIndex = 83;
             // 
             // label54
@@ -3386,13 +4326,6 @@
             this.label64.TabIndex = 63;
             this.label64.Text = "Dekadówka:";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 237);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 10);
-            this.flowLayoutPanel1.TabIndex = 59;
-            // 
             // dekadowka_wczytaj_dekadowka
             // 
             this.dekadowka_wczytaj_dekadowka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -3406,46 +4339,6 @@
             // 
             // panel_jadlospis
             // 
-            this.panel_jadlospis.Controls.Add(this.jadlospis_sol);
-            this.panel_jadlospis.Controls.Add(this.label158);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cukry);
-            this.panel_jadlospis.Controls.Add(this.label156);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_cukry);
-            this.panel_jadlospis.Controls.Add(this.label70);
-            this.panel_jadlospis.Controls.Add(this.label71);
-            this.panel_jadlospis.Controls.Add(this.label74);
-            this.panel_jadlospis.Controls.Add(this.label85);
-            this.panel_jadlospis.Controls.Add(this.label86);
-            this.panel_jadlospis.Controls.Add(this.label107);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_weglowodany2);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_tluszcze2);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_bialko2);
-            this.panel_jadlospis.Controls.Add(this.label57);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_przyswajalne);
-            this.panel_jadlospis.Controls.Add(this.label59);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_przyswajalne);
-            this.panel_jadlospis.Controls.Add(this.label60);
-            this.panel_jadlospis.Controls.Add(this.label66);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_blonnik);
-            this.panel_jadlospis.Controls.Add(this.label69);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_blonnik);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_ktn);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_sod);
-            this.panel_jadlospis.Controls.Add(this.label76);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_weglowodany);
-            this.panel_jadlospis.Controls.Add(this.label78);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_tluszcze);
-            this.panel_jadlospis.Controls.Add(this.label80);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_bialko);
-            this.panel_jadlospis.Controls.Add(this.label82);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_energia);
-            this.panel_jadlospis.Controls.Add(this.label84);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_ktn);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_sod);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_energia);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_weglowodany);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_tluszcze);
-            this.panel_jadlospis.Controls.Add(this.jadlospis_cb_bialko);
             this.panel_jadlospis.Controls.Add(this.pictureBox23);
             this.panel_jadlospis.Controls.Add(this.pictureBox24);
             this.panel_jadlospis.Controls.Add(this.pictureBox25);
@@ -3458,755 +4351,9 @@
             this.panel_jadlospis.Controls.Add(this.jadlospis_miasto);
             this.panel_jadlospis.Location = new System.Drawing.Point(303, 107);
             this.panel_jadlospis.Name = "panel_jadlospis";
-            this.panel_jadlospis.Size = new System.Drawing.Size(36, 56);
+            this.panel_jadlospis.Size = new System.Drawing.Size(64, 33);
             this.panel_jadlospis.TabIndex = 62;
             this.panel_jadlospis.Visible = false;
-            // 
-            // jadlospis_sol
-            // 
-            this.jadlospis_sol.AutoSize = true;
-            this.jadlospis_sol.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_sol.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.jadlospis_sol.Location = new System.Drawing.Point(861, 679);
-            this.jadlospis_sol.MaximumSize = new System.Drawing.Size(95, 0);
-            this.jadlospis_sol.MinimumSize = new System.Drawing.Size(95, 0);
-            this.jadlospis_sol.Name = "jadlospis_sol";
-            this.jadlospis_sol.Size = new System.Drawing.Size(95, 20);
-            this.jadlospis_sol.TabIndex = 179;
-            this.jadlospis_sol.Text = "0 g";
-            this.jadlospis_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label158
-            // 
-            this.label158.AutoSize = true;
-            this.label158.BackColor = System.Drawing.Color.Transparent;
-            this.label158.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label158.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label158.Location = new System.Drawing.Point(860, 660);
-            this.label158.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label158.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(95, 20);
-            this.label158.TabIndex = 178;
-            this.label158.Text = "Sól";
-            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cukry
-            // 
-            this.jadlospis_cukry.AutoSize = true;
-            this.jadlospis_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_cukry.Location = new System.Drawing.Point(666, 669);
-            this.jadlospis_cukry.MaximumSize = new System.Drawing.Size(55, 0);
-            this.jadlospis_cukry.MinimumSize = new System.Drawing.Size(55, 0);
-            this.jadlospis_cukry.Name = "jadlospis_cukry";
-            this.jadlospis_cukry.Size = new System.Drawing.Size(55, 20);
-            this.jadlospis_cukry.TabIndex = 177;
-            this.jadlospis_cukry.Text = "0 kcal";
-            this.jadlospis_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label156.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label156.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label156.Location = new System.Drawing.Point(667, 653);
-            this.label156.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label156.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(55, 15);
-            this.label156.TabIndex = 176;
-            this.label156.Text = "Cukry";
-            this.label156.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cb_cukry
-            // 
-            this.jadlospis_cb_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_cukry.AnimationSpeed = 500;
-            this.jadlospis_cb_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_cukry.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_cukry.InnerMargin = 2;
-            this.jadlospis_cb_cukry.InnerWidth = -1;
-            this.jadlospis_cb_cukry.Location = new System.Drawing.Point(648, 625);
-            this.jadlospis_cb_cukry.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_cukry.Name = "jadlospis_cb_cukry";
-            this.jadlospis_cb_cukry.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_cukry.OuterMargin = -25;
-            this.jadlospis_cb_cukry.OuterWidth = 26;
-            this.jadlospis_cb_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.jadlospis_cb_cukry.ProgressWidth = 10;
-            this.jadlospis_cb_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_cukry.Size = new System.Drawing.Size(90, 92);
-            this.jadlospis_cb_cukry.StartAngle = 270;
-            this.jadlospis_cb_cukry.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.jadlospis_cb_cukry.SubscriptText = "";
-            this.jadlospis_cb_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.jadlospis_cb_cukry.SuperscriptText = "";
-            this.jadlospis_cb_cukry.TabIndex = 175;
-            this.jadlospis_cb_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.jadlospis_cb_cukry.Value = 15;
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label70.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.label70.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label70.Location = new System.Drawing.Point(378, 665);
-            this.label70.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label70.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(55, 12);
-            this.label70.TabIndex = 174;
-            this.label70.Text = "nasycone";
-            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label71.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.label71.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label71.Location = new System.Drawing.Point(376, 654);
-            this.label71.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label71.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(60, 12);
-            this.label71.TabIndex = 173;
-            this.label71.Text = "tłuszczowe";
-            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label74.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
-            this.label74.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label74.Location = new System.Drawing.Point(386, 644);
-            this.label74.MaximumSize = new System.Drawing.Size(40, 0);
-            this.label74.MinimumSize = new System.Drawing.Size(42, 0);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(42, 12);
-            this.label74.TabIndex = 172;
-            this.label74.Text = "Kwasy";
-            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label85.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label85.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label85.Location = new System.Drawing.Point(469, 616);
-            this.label85.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label85.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(55, 15);
-            this.label85.TabIndex = 171;
-            this.label85.Text = "% kalorii";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label86.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label86.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label86.Location = new System.Drawing.Point(282, 609);
-            this.label86.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label86.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(60, 15);
-            this.label86.TabIndex = 170;
-            this.label86.Text = "% kalorii";
-            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label107.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label107.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label107.Location = new System.Drawing.Point(160, 608);
-            this.label107.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label107.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(60, 15);
-            this.label107.TabIndex = 169;
-            this.label107.Text = "% kalorii";
-            this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_weglowodany2
-            // 
-            this.jadlospis_weglowodany2.AutoSize = true;
-            this.jadlospis_weglowodany2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_weglowodany2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.jadlospis_weglowodany2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.jadlospis_weglowodany2.Location = new System.Drawing.Point(457, 597);
-            this.jadlospis_weglowodany2.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_weglowodany2.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_weglowodany2.Name = "jadlospis_weglowodany2";
-            this.jadlospis_weglowodany2.Size = new System.Drawing.Size(80, 19);
-            this.jadlospis_weglowodany2.TabIndex = 168;
-            this.jadlospis_weglowodany2.Text = "45";
-            this.jadlospis_weglowodany2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_tluszcze2
-            // 
-            this.jadlospis_tluszcze2.AutoSize = true;
-            this.jadlospis_tluszcze2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_tluszcze2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.jadlospis_tluszcze2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.jadlospis_tluszcze2.Location = new System.Drawing.Point(271, 590);
-            this.jadlospis_tluszcze2.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_tluszcze2.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_tluszcze2.Name = "jadlospis_tluszcze2";
-            this.jadlospis_tluszcze2.Size = new System.Drawing.Size(80, 19);
-            this.jadlospis_tluszcze2.TabIndex = 167;
-            this.jadlospis_tluszcze2.Text = "45";
-            this.jadlospis_tluszcze2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_bialko2
-            // 
-            this.jadlospis_bialko2.AutoSize = true;
-            this.jadlospis_bialko2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_bialko2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.jadlospis_bialko2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.jadlospis_bialko2.Location = new System.Drawing.Point(149, 589);
-            this.jadlospis_bialko2.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_bialko2.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_bialko2.Name = "jadlospis_bialko2";
-            this.jadlospis_bialko2.Size = new System.Drawing.Size(80, 19);
-            this.jadlospis_bialko2.TabIndex = 166;
-            this.jadlospis_bialko2.Text = "45";
-            this.jadlospis_bialko2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
-            this.label57.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label57.Location = new System.Drawing.Point(564, 665);
-            this.label57.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label57.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(60, 7);
-            this.label57.TabIndex = 165;
-            this.label57.Text = "przyswajalne";
-            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_przyswajalne
-            // 
-            this.jadlospis_przyswajalne.AutoSize = true;
-            this.jadlospis_przyswajalne.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_przyswajalne.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_przyswajalne.Location = new System.Drawing.Point(569, 673);
-            this.jadlospis_przyswajalne.MaximumSize = new System.Drawing.Size(50, 0);
-            this.jadlospis_przyswajalne.MinimumSize = new System.Drawing.Size(50, 0);
-            this.jadlospis_przyswajalne.Name = "jadlospis_przyswajalne";
-            this.jadlospis_przyswajalne.Size = new System.Drawing.Size(50, 20);
-            this.jadlospis_przyswajalne.TabIndex = 164;
-            this.jadlospis_przyswajalne.Text = "0 kcal";
-            this.jadlospis_przyswajalne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
-            this.label59.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label59.Location = new System.Drawing.Point(562, 653);
-            this.label59.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label59.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(65, 9);
-            this.label59.TabIndex = 163;
-            this.label59.Text = "Węglowodany";
-            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cb_przyswajalne
-            // 
-            this.jadlospis_cb_przyswajalne.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_przyswajalne.AnimationSpeed = 500;
-            this.jadlospis_cb_przyswajalne.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_przyswajalne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_przyswajalne.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_przyswajalne.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_przyswajalne.InnerMargin = 2;
-            this.jadlospis_cb_przyswajalne.InnerWidth = -1;
-            this.jadlospis_cb_przyswajalne.Location = new System.Drawing.Point(548, 625);
-            this.jadlospis_cb_przyswajalne.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_przyswajalne.Name = "jadlospis_cb_przyswajalne";
-            this.jadlospis_cb_przyswajalne.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_przyswajalne.OuterMargin = -25;
-            this.jadlospis_cb_przyswajalne.OuterWidth = 26;
-            this.jadlospis_cb_przyswajalne.ProgressColor = System.Drawing.Color.PaleGreen;
-            this.jadlospis_cb_przyswajalne.ProgressWidth = 10;
-            this.jadlospis_cb_przyswajalne.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_przyswajalne.Size = new System.Drawing.Size(90, 92);
-            this.jadlospis_cb_przyswajalne.StartAngle = 270;
-            this.jadlospis_cb_przyswajalne.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_przyswajalne.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.jadlospis_cb_przyswajalne.SubscriptText = "";
-            this.jadlospis_cb_przyswajalne.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_przyswajalne.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.jadlospis_cb_przyswajalne.SuperscriptText = "";
-            this.jadlospis_cb_przyswajalne.TabIndex = 162;
-            this.jadlospis_cb_przyswajalne.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.jadlospis_cb_przyswajalne.Value = 15;
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
-            this.label60.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label60.Location = new System.Drawing.Point(456, 564);
-            this.label60.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label60.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(80, 13);
-            this.label60.TabIndex = 161;
-            this.label60.Text = "ogółem";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label66.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label66.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label66.Location = new System.Drawing.Point(743, 567);
-            this.label66.MaximumSize = new System.Drawing.Size(85, 0);
-            this.label66.MinimumSize = new System.Drawing.Size(85, 0);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(85, 15);
-            this.label66.TabIndex = 160;
-            this.label66.Text = "pokarmowy";
-            this.label66.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_blonnik
-            // 
-            this.jadlospis_blonnik.AutoSize = true;
-            this.jadlospis_blonnik.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_blonnik.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_blonnik.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_blonnik.Location = new System.Drawing.Point(745, 591);
-            this.jadlospis_blonnik.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_blonnik.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_blonnik.Name = "jadlospis_blonnik";
-            this.jadlospis_blonnik.Size = new System.Drawing.Size(80, 20);
-            this.jadlospis_blonnik.TabIndex = 159;
-            this.jadlospis_blonnik.Text = "0 kcal";
-            this.jadlospis_blonnik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label69.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label69.Location = new System.Drawing.Point(753, 552);
-            this.label69.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label69.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(65, 15);
-            this.label69.TabIndex = 158;
-            this.label69.Text = "Błonnik";
-            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cb_blonnik
-            // 
-            this.jadlospis_cb_blonnik.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_blonnik.AnimationSpeed = 500;
-            this.jadlospis_cb_blonnik.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_blonnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_blonnik.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_blonnik.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_blonnik.InnerMargin = 2;
-            this.jadlospis_cb_blonnik.InnerWidth = -1;
-            this.jadlospis_cb_blonnik.Location = new System.Drawing.Point(722, 526);
-            this.jadlospis_cb_blonnik.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_blonnik.Name = "jadlospis_cb_blonnik";
-            this.jadlospis_cb_blonnik.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_blonnik.OuterMargin = -25;
-            this.jadlospis_cb_blonnik.OuterWidth = 26;
-            this.jadlospis_cb_blonnik.ProgressColor = System.Drawing.Color.Pink;
-            this.jadlospis_cb_blonnik.ProgressWidth = 10;
-            this.jadlospis_cb_blonnik.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_blonnik.Size = new System.Drawing.Size(125, 125);
-            this.jadlospis_cb_blonnik.StartAngle = 270;
-            this.jadlospis_cb_blonnik.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_blonnik.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.jadlospis_cb_blonnik.SubscriptText = "";
-            this.jadlospis_cb_blonnik.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_blonnik.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.jadlospis_cb_blonnik.SuperscriptText = "";
-            this.jadlospis_cb_blonnik.TabIndex = 157;
-            this.jadlospis_cb_blonnik.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.jadlospis_cb_blonnik.Value = 15;
-            // 
-            // jadlospis_ktn
-            // 
-            this.jadlospis_ktn.AutoSize = true;
-            this.jadlospis_ktn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_ktn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.jadlospis_ktn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_ktn.Location = new System.Drawing.Point(383, 679);
-            this.jadlospis_ktn.MaximumSize = new System.Drawing.Size(50, 0);
-            this.jadlospis_ktn.MinimumSize = new System.Drawing.Size(50, 0);
-            this.jadlospis_ktn.Name = "jadlospis_ktn";
-            this.jadlospis_ktn.Size = new System.Drawing.Size(50, 15);
-            this.jadlospis_ktn.TabIndex = 154;
-            this.jadlospis_ktn.Text = "0 kcal";
-            this.jadlospis_ktn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_sod
-            // 
-            this.jadlospis_sod.AutoSize = true;
-            this.jadlospis_sod.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_sod.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_sod.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_sod.Location = new System.Drawing.Point(873, 592);
-            this.jadlospis_sod.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_sod.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_sod.Name = "jadlospis_sod";
-            this.jadlospis_sod.Size = new System.Drawing.Size(80, 20);
-            this.jadlospis_sod.TabIndex = 152;
-            this.jadlospis_sod.Text = "0 kcal";
-            this.jadlospis_sod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label76.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label76.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label76.Location = new System.Drawing.Point(882, 563);
-            this.label76.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label76.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(60, 20);
-            this.label76.TabIndex = 151;
-            this.label76.Text = "Sód";
-            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_weglowodany
-            // 
-            this.jadlospis_weglowodany.AutoSize = true;
-            this.jadlospis_weglowodany.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_weglowodany.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_weglowodany.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_weglowodany.Location = new System.Drawing.Point(457, 578);
-            this.jadlospis_weglowodany.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_weglowodany.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_weglowodany.Name = "jadlospis_weglowodany";
-            this.jadlospis_weglowodany.Size = new System.Drawing.Size(80, 20);
-            this.jadlospis_weglowodany.TabIndex = 150;
-            this.jadlospis_weglowodany.Text = "0 kcal";
-            this.jadlospis_weglowodany.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
-            this.label78.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label78.Location = new System.Drawing.Point(466, 555);
-            this.label78.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label78.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(65, 9);
-            this.label78.TabIndex = 149;
-            this.label78.Text = "Węglowodany";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_tluszcze
-            // 
-            this.jadlospis_tluszcze.AutoSize = true;
-            this.jadlospis_tluszcze.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_tluszcze.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_tluszcze.Location = new System.Drawing.Point(273, 571);
-            this.jadlospis_tluszcze.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_tluszcze.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_tluszcze.Name = "jadlospis_tluszcze";
-            this.jadlospis_tluszcze.Size = new System.Drawing.Size(80, 20);
-            this.jadlospis_tluszcze.TabIndex = 148;
-            this.jadlospis_tluszcze.Text = "0 kcal";
-            this.jadlospis_tluszcze.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label80.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.label80.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label80.Location = new System.Drawing.Point(283, 555);
-            this.label80.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label80.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(60, 17);
-            this.label80.TabIndex = 147;
-            this.label80.Text = "Tłuszcze";
-            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_bialko
-            // 
-            this.jadlospis_bialko.AutoSize = true;
-            this.jadlospis_bialko.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_bialko.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_bialko.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_bialko.Location = new System.Drawing.Point(149, 570);
-            this.jadlospis_bialko.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_bialko.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_bialko.Name = "jadlospis_bialko";
-            this.jadlospis_bialko.Size = new System.Drawing.Size(80, 20);
-            this.jadlospis_bialko.TabIndex = 146;
-            this.jadlospis_bialko.Text = "0 kcal";
-            this.jadlospis_bialko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label82.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label82.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label82.Location = new System.Drawing.Point(161, 549);
-            this.label82.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label82.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(60, 20);
-            this.label82.TabIndex = 145;
-            this.label82.Text = "Białko";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_energia
-            // 
-            this.jadlospis_energia.AutoSize = true;
-            this.jadlospis_energia.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.jadlospis_energia.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.jadlospis_energia.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.jadlospis_energia.Location = new System.Drawing.Point(25, 577);
-            this.jadlospis_energia.MaximumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_energia.MinimumSize = new System.Drawing.Size(80, 0);
-            this.jadlospis_energia.Name = "jadlospis_energia";
-            this.jadlospis_energia.Size = new System.Drawing.Size(80, 20);
-            this.jadlospis_energia.TabIndex = 144;
-            this.jadlospis_energia.Text = "0 kcal";
-            this.jadlospis_energia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label84.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label84.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label84.Location = new System.Drawing.Point(38, 558);
-            this.label84.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label84.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(60, 19);
-            this.label84.TabIndex = 143;
-            this.label84.Text = "Energia";
-            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // jadlospis_cb_ktn
-            // 
-            this.jadlospis_cb_ktn.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_ktn.AnimationSpeed = 500;
-            this.jadlospis_cb_ktn.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_ktn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_ktn.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_ktn.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_ktn.InnerMargin = 2;
-            this.jadlospis_cb_ktn.InnerWidth = -1;
-            this.jadlospis_cb_ktn.Location = new System.Drawing.Point(360, 625);
-            this.jadlospis_cb_ktn.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_ktn.Name = "jadlospis_cb_ktn";
-            this.jadlospis_cb_ktn.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_ktn.OuterMargin = -25;
-            this.jadlospis_cb_ktn.OuterWidth = 26;
-            this.jadlospis_cb_ktn.ProgressColor = System.Drawing.Color.DarkSalmon;
-            this.jadlospis_cb_ktn.ProgressWidth = 10;
-            this.jadlospis_cb_ktn.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_ktn.Size = new System.Drawing.Size(90, 88);
-            this.jadlospis_cb_ktn.StartAngle = 270;
-            this.jadlospis_cb_ktn.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_ktn.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.jadlospis_cb_ktn.SubscriptText = "";
-            this.jadlospis_cb_ktn.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_ktn.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.jadlospis_cb_ktn.SuperscriptText = "";
-            this.jadlospis_cb_ktn.TabIndex = 142;
-            this.jadlospis_cb_ktn.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.jadlospis_cb_ktn.Value = 99;
-            this.jadlospis_cb_ktn.Click += new System.EventHandler(this.jadlospis_cb_ktn_Click);
-            // 
-            // jadlospis_cb_sod
-            // 
-            this.jadlospis_cb_sod.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_sod.AnimationSpeed = 500;
-            this.jadlospis_cb_sod.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_sod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_sod.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_sod.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_sod.InnerMargin = 2;
-            this.jadlospis_cb_sod.InnerWidth = -1;
-            this.jadlospis_cb_sod.Location = new System.Drawing.Point(848, 526);
-            this.jadlospis_cb_sod.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_sod.Name = "jadlospis_cb_sod";
-            this.jadlospis_cb_sod.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_sod.OuterMargin = -25;
-            this.jadlospis_cb_sod.OuterWidth = 26;
-            this.jadlospis_cb_sod.ProgressColor = System.Drawing.Color.LightBlue;
-            this.jadlospis_cb_sod.ProgressWidth = 10;
-            this.jadlospis_cb_sod.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_sod.Size = new System.Drawing.Size(125, 125);
-            this.jadlospis_cb_sod.StartAngle = 270;
-            this.jadlospis_cb_sod.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_sod.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.jadlospis_cb_sod.SubscriptText = "";
-            this.jadlospis_cb_sod.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_sod.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.jadlospis_cb_sod.SuperscriptText = "";
-            this.jadlospis_cb_sod.TabIndex = 141;
-            this.jadlospis_cb_sod.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.jadlospis_cb_sod.Value = 99;
-            // 
-            // jadlospis_cb_energia
-            // 
-            this.jadlospis_cb_energia.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_energia.AnimationSpeed = 500;
-            this.jadlospis_cb_energia.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_energia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_energia.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_energia.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_energia.InnerMargin = 2;
-            this.jadlospis_cb_energia.InnerWidth = -1;
-            this.jadlospis_cb_energia.Location = new System.Drawing.Point(4, 526);
-            this.jadlospis_cb_energia.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_energia.Name = "jadlospis_cb_energia";
-            this.jadlospis_cb_energia.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_energia.OuterMargin = -25;
-            this.jadlospis_cb_energia.OuterWidth = 26;
-            this.jadlospis_cb_energia.ProgressColor = System.Drawing.Color.Khaki;
-            this.jadlospis_cb_energia.ProgressWidth = 10;
-            this.jadlospis_cb_energia.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_energia.Size = new System.Drawing.Size(125, 125);
-            this.jadlospis_cb_energia.StartAngle = 270;
-            this.jadlospis_cb_energia.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_energia.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.jadlospis_cb_energia.SubscriptText = "";
-            this.jadlospis_cb_energia.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_energia.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.jadlospis_cb_energia.SuperscriptText = "";
-            this.jadlospis_cb_energia.TabIndex = 140;
-            this.jadlospis_cb_energia.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.jadlospis_cb_energia.Value = 78;
-            // 
-            // jadlospis_cb_weglowodany
-            // 
-            this.jadlospis_cb_weglowodany.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_weglowodany.AnimationSpeed = 500;
-            this.jadlospis_cb_weglowodany.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_weglowodany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_weglowodany.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_weglowodany.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_weglowodany.InnerMargin = 2;
-            this.jadlospis_cb_weglowodany.InnerWidth = -1;
-            this.jadlospis_cb_weglowodany.Location = new System.Drawing.Point(433, 527);
-            this.jadlospis_cb_weglowodany.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_weglowodany.Name = "jadlospis_cb_weglowodany";
-            this.jadlospis_cb_weglowodany.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_weglowodany.OuterMargin = -25;
-            this.jadlospis_cb_weglowodany.OuterWidth = 26;
-            this.jadlospis_cb_weglowodany.ProgressColor = System.Drawing.Color.DarkGreen;
-            this.jadlospis_cb_weglowodany.ProgressWidth = 10;
-            this.jadlospis_cb_weglowodany.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_weglowodany.Size = new System.Drawing.Size(125, 125);
-            this.jadlospis_cb_weglowodany.StartAngle = 270;
-            this.jadlospis_cb_weglowodany.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_weglowodany.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.jadlospis_cb_weglowodany.SubscriptText = "";
-            this.jadlospis_cb_weglowodany.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_weglowodany.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.jadlospis_cb_weglowodany.SuperscriptText = "";
-            this.jadlospis_cb_weglowodany.TabIndex = 139;
-            this.jadlospis_cb_weglowodany.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.jadlospis_cb_weglowodany.Value = 15;
-            // 
-            // jadlospis_cb_tluszcze
-            // 
-            this.jadlospis_cb_tluszcze.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_tluszcze.AnimationSpeed = 500;
-            this.jadlospis_cb_tluszcze.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_tluszcze.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_tluszcze.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_tluszcze.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_tluszcze.InnerMargin = 2;
-            this.jadlospis_cb_tluszcze.InnerWidth = -1;
-            this.jadlospis_cb_tluszcze.Location = new System.Drawing.Point(248, 526);
-            this.jadlospis_cb_tluszcze.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_tluszcze.Name = "jadlospis_cb_tluszcze";
-            this.jadlospis_cb_tluszcze.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_tluszcze.OuterMargin = -25;
-            this.jadlospis_cb_tluszcze.OuterWidth = 26;
-            this.jadlospis_cb_tluszcze.ProgressColor = System.Drawing.Color.SandyBrown;
-            this.jadlospis_cb_tluszcze.ProgressWidth = 10;
-            this.jadlospis_cb_tluszcze.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_tluszcze.Size = new System.Drawing.Size(125, 125);
-            this.jadlospis_cb_tluszcze.StartAngle = 270;
-            this.jadlospis_cb_tluszcze.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_tluszcze.SubscriptMargin = new System.Windows.Forms.Padding(-29, 15, 0, 0);
-            this.jadlospis_cb_tluszcze.SubscriptText = "";
-            this.jadlospis_cb_tluszcze.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_tluszcze.SuperscriptMargin = new System.Windows.Forms.Padding(-29, 65, 0, 0);
-            this.jadlospis_cb_tluszcze.SuperscriptText = "";
-            this.jadlospis_cb_tluszcze.TabIndex = 138;
-            this.jadlospis_cb_tluszcze.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.jadlospis_cb_tluszcze.Value = 54;
-            // 
-            // jadlospis_cb_bialko
-            // 
-            this.jadlospis_cb_bialko.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.jadlospis_cb_bialko.AnimationSpeed = 500;
-            this.jadlospis_cb_bialko.BackColor = System.Drawing.Color.Transparent;
-            this.jadlospis_cb_bialko.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.jadlospis_cb_bialko.ForeColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_bialko.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.jadlospis_cb_bialko.InnerMargin = 2;
-            this.jadlospis_cb_bialko.InnerWidth = -1;
-            this.jadlospis_cb_bialko.Location = new System.Drawing.Point(126, 526);
-            this.jadlospis_cb_bialko.MarqueeAnimationSpeed = 2000;
-            this.jadlospis_cb_bialko.Name = "jadlospis_cb_bialko";
-            this.jadlospis_cb_bialko.OuterColor = System.Drawing.Color.White;
-            this.jadlospis_cb_bialko.OuterMargin = -25;
-            this.jadlospis_cb_bialko.OuterWidth = 26;
-            this.jadlospis_cb_bialko.ProgressColor = System.Drawing.Color.MediumPurple;
-            this.jadlospis_cb_bialko.ProgressWidth = 10;
-            this.jadlospis_cb_bialko.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.jadlospis_cb_bialko.Size = new System.Drawing.Size(125, 125);
-            this.jadlospis_cb_bialko.StartAngle = 270;
-            this.jadlospis_cb_bialko.SubscriptColor = System.Drawing.Color.Gray;
-            this.jadlospis_cb_bialko.SubscriptMargin = new System.Windows.Forms.Padding(-19, 15, 0, 0);
-            this.jadlospis_cb_bialko.SubscriptText = "";
-            this.jadlospis_cb_bialko.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.jadlospis_cb_bialko.SuperscriptMargin = new System.Windows.Forms.Padding(-19, 65, 0, 0);
-            this.jadlospis_cb_bialko.SuperscriptText = "";
-            this.jadlospis_cb_bialko.TabIndex = 137;
-            this.jadlospis_cb_bialko.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.jadlospis_cb_bialko.Value = 65;
             // 
             // pictureBox23
             // 
@@ -4886,7 +5033,7 @@
             this.panel_drukuj.Controls.Add(this.pictureBox22);
             this.panel_drukuj.Controls.Add(this.drukuj_rodzaj_label);
             this.panel_drukuj.Controls.Add(this.drukuj_rodzaj);
-            this.panel_drukuj.Location = new System.Drawing.Point(308, 500);
+            this.panel_drukuj.Location = new System.Drawing.Point(1362, 125);
             this.panel_drukuj.Name = "panel_drukuj";
             this.panel_drukuj.Size = new System.Drawing.Size(107, 73);
             this.panel_drukuj.TabIndex = 78;
@@ -5198,6 +5345,7 @@
             this.lv_sniadanie.TabIndex = 29;
             this.lv_sniadanie.UseCompatibleStateImageBehavior = false;
             this.lv_sniadanie.View = System.Windows.Forms.View.Details;
+            this.lv_sniadanie.SelectedIndexChanged += new System.EventHandler(this.lv_sniadanie_SelectedIndexChanged);
             this.lv_sniadanie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Produkt_KeyPress);
             // 
             // c_nazwa
@@ -5737,68 +5885,6 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Nazwa posiłku:";
             // 
-            // pb_Bialko
-            // 
-            this.pb_Bialko.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_Bialko.AnimationSpeed = 500;
-            this.pb_Bialko.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Bialko.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_Bialko.ForeColor = System.Drawing.Color.Gray;
-            this.pb_Bialko.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_Bialko.InnerMargin = 2;
-            this.pb_Bialko.InnerWidth = -1;
-            this.pb_Bialko.Location = new System.Drawing.Point(124, 458);
-            this.pb_Bialko.MarqueeAnimationSpeed = 2000;
-            this.pb_Bialko.Name = "pb_Bialko";
-            this.pb_Bialko.OuterColor = System.Drawing.Color.White;
-            this.pb_Bialko.OuterMargin = -25;
-            this.pb_Bialko.OuterWidth = 26;
-            this.pb_Bialko.ProgressColor = System.Drawing.Color.MediumPurple;
-            this.pb_Bialko.ProgressWidth = 10;
-            this.pb_Bialko.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_Bialko.Size = new System.Drawing.Size(125, 125);
-            this.pb_Bialko.StartAngle = 270;
-            this.pb_Bialko.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_Bialko.SubscriptMargin = new System.Windows.Forms.Padding(-19, 15, 0, 0);
-            this.pb_Bialko.SubscriptText = "";
-            this.pb_Bialko.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_Bialko.SuperscriptMargin = new System.Windows.Forms.Padding(-19, 65, 0, 0);
-            this.pb_Bialko.SuperscriptText = "";
-            this.pb_Bialko.TabIndex = 33;
-            this.pb_Bialko.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.pb_Bialko.Value = 65;
-            // 
-            // pb_Tluszcze
-            // 
-            this.pb_Tluszcze.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_Tluszcze.AnimationSpeed = 500;
-            this.pb_Tluszcze.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Tluszcze.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_Tluszcze.ForeColor = System.Drawing.Color.Gray;
-            this.pb_Tluszcze.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_Tluszcze.InnerMargin = 2;
-            this.pb_Tluszcze.InnerWidth = -1;
-            this.pb_Tluszcze.Location = new System.Drawing.Point(247, 458);
-            this.pb_Tluszcze.MarqueeAnimationSpeed = 2000;
-            this.pb_Tluszcze.Name = "pb_Tluszcze";
-            this.pb_Tluszcze.OuterColor = System.Drawing.Color.White;
-            this.pb_Tluszcze.OuterMargin = -25;
-            this.pb_Tluszcze.OuterWidth = 26;
-            this.pb_Tluszcze.ProgressColor = System.Drawing.Color.SandyBrown;
-            this.pb_Tluszcze.ProgressWidth = 10;
-            this.pb_Tluszcze.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_Tluszcze.Size = new System.Drawing.Size(125, 125);
-            this.pb_Tluszcze.StartAngle = 270;
-            this.pb_Tluszcze.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_Tluszcze.SubscriptMargin = new System.Windows.Forms.Padding(-29, 15, 0, 0);
-            this.pb_Tluszcze.SubscriptText = "";
-            this.pb_Tluszcze.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_Tluszcze.SuperscriptMargin = new System.Windows.Forms.Padding(-29, 65, 0, 0);
-            this.pb_Tluszcze.SuperscriptText = "";
-            this.pb_Tluszcze.TabIndex = 34;
-            this.pb_Tluszcze.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_Tluszcze.Value = 54;
-            // 
             // lbl_masa
             // 
             this.lbl_masa.AutoSize = true;
@@ -5809,37 +5895,6 @@
             this.lbl_masa.Size = new System.Drawing.Size(120, 17);
             this.lbl_masa.TabIndex = 12;
             this.lbl_masa.Text = "Masa produktu [g]:";
-            // 
-            // pb_Weglowodany
-            // 
-            this.pb_Weglowodany.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_Weglowodany.AnimationSpeed = 500;
-            this.pb_Weglowodany.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Weglowodany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_Weglowodany.ForeColor = System.Drawing.Color.Gray;
-            this.pb_Weglowodany.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_Weglowodany.InnerMargin = 2;
-            this.pb_Weglowodany.InnerWidth = -1;
-            this.pb_Weglowodany.Location = new System.Drawing.Point(418, 458);
-            this.pb_Weglowodany.MarqueeAnimationSpeed = 2000;
-            this.pb_Weglowodany.Name = "pb_Weglowodany";
-            this.pb_Weglowodany.OuterColor = System.Drawing.Color.White;
-            this.pb_Weglowodany.OuterMargin = -25;
-            this.pb_Weglowodany.OuterWidth = 26;
-            this.pb_Weglowodany.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.pb_Weglowodany.ProgressWidth = 10;
-            this.pb_Weglowodany.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_Weglowodany.Size = new System.Drawing.Size(125, 125);
-            this.pb_Weglowodany.StartAngle = 270;
-            this.pb_Weglowodany.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_Weglowodany.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_Weglowodany.SubscriptText = "";
-            this.pb_Weglowodany.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_Weglowodany.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_Weglowodany.SuperscriptText = "";
-            this.pb_Weglowodany.TabIndex = 35;
-            this.pb_Weglowodany.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_Weglowodany.Value = 15;
             // 
             // btn_dodaj
             // 
@@ -5854,37 +5909,6 @@
             this.btn_dodaj.Text = "Dodaj";
             this.btn_dodaj.UseVisualStyleBackColor = false;
             this.btn_dodaj.Click += new System.EventHandler(this.Dodaj_Click);
-            // 
-            // pb_Energia
-            // 
-            this.pb_Energia.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_Energia.AnimationSpeed = 500;
-            this.pb_Energia.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Energia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_Energia.ForeColor = System.Drawing.Color.Gray;
-            this.pb_Energia.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_Energia.InnerMargin = 2;
-            this.pb_Energia.InnerWidth = -1;
-            this.pb_Energia.Location = new System.Drawing.Point(1, 458);
-            this.pb_Energia.MarqueeAnimationSpeed = 2000;
-            this.pb_Energia.Name = "pb_Energia";
-            this.pb_Energia.OuterColor = System.Drawing.Color.White;
-            this.pb_Energia.OuterMargin = -25;
-            this.pb_Energia.OuterWidth = 26;
-            this.pb_Energia.ProgressColor = System.Drawing.Color.Khaki;
-            this.pb_Energia.ProgressWidth = 10;
-            this.pb_Energia.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_Energia.Size = new System.Drawing.Size(125, 125);
-            this.pb_Energia.StartAngle = 270;
-            this.pb_Energia.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_Energia.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.pb_Energia.SubscriptText = "";
-            this.pb_Energia.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_Energia.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.pb_Energia.SuperscriptText = "";
-            this.pb_Energia.TabIndex = 36;
-            this.pb_Energia.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.pb_Energia.Value = 78;
             // 
             // tb_masa
             // 
@@ -5983,200 +6007,129 @@
             this.lb_produkty.Size = new System.Drawing.Size(183, 151);
             this.lb_produkty.TabIndex = 0;
             // 
-            // pb_Sod2
-            // 
-            this.pb_Sod2.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_Sod2.AnimationSpeed = 500;
-            this.pb_Sod2.BackColor = System.Drawing.Color.Transparent;
-            this.pb_Sod2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_Sod2.ForeColor = System.Drawing.Color.Gray;
-            this.pb_Sod2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_Sod2.InnerMargin = 2;
-            this.pb_Sod2.InnerWidth = -1;
-            this.pb_Sod2.Location = new System.Drawing.Point(827, 458);
-            this.pb_Sod2.MarqueeAnimationSpeed = 2000;
-            this.pb_Sod2.Name = "pb_Sod2";
-            this.pb_Sod2.OuterColor = System.Drawing.Color.White;
-            this.pb_Sod2.OuterMargin = -25;
-            this.pb_Sod2.OuterWidth = 26;
-            this.pb_Sod2.ProgressColor = System.Drawing.Color.LightBlue;
-            this.pb_Sod2.ProgressWidth = 10;
-            this.pb_Sod2.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_Sod2.Size = new System.Drawing.Size(125, 125);
-            this.pb_Sod2.StartAngle = 270;
-            this.pb_Sod2.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_Sod2.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.pb_Sod2.SubscriptText = "";
-            this.pb_Sod2.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_Sod2.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.pb_Sod2.SuperscriptText = "";
-            this.pb_Sod2.TabIndex = 40;
-            this.pb_Sod2.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.pb_Sod2.Value = 99;
-            // 
-            // pb_ktn
-            // 
-            this.pb_ktn.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_ktn.AnimationSpeed = 500;
-            this.pb_ktn.BackColor = System.Drawing.Color.Transparent;
-            this.pb_ktn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_ktn.ForeColor = System.Drawing.Color.Gray;
-            this.pb_ktn.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_ktn.InnerMargin = 2;
-            this.pb_ktn.InnerWidth = -1;
-            this.pb_ktn.Location = new System.Drawing.Point(348, 565);
-            this.pb_ktn.MarqueeAnimationSpeed = 2000;
-            this.pb_ktn.Name = "pb_ktn";
-            this.pb_ktn.OuterColor = System.Drawing.Color.White;
-            this.pb_ktn.OuterMargin = -25;
-            this.pb_ktn.OuterWidth = 26;
-            this.pb_ktn.ProgressColor = System.Drawing.Color.DarkSalmon;
-            this.pb_ktn.ProgressWidth = 10;
-            this.pb_ktn.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_ktn.Size = new System.Drawing.Size(90, 90);
-            this.pb_ktn.StartAngle = 270;
-            this.pb_ktn.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_ktn.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.pb_ktn.SubscriptText = "";
-            this.pb_ktn.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_ktn.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.pb_ktn.SuperscriptText = "";
-            this.pb_ktn.TabIndex = 41;
-            this.pb_ktn.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.pb_ktn.Value = 99;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label18.Location = new System.Drawing.Point(35, 490);
-            this.label18.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label18.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label18.Location = new System.Drawing.Point(0, 460);
+            this.label18.MinimumSize = new System.Drawing.Size(100, 20);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 19);
+            this.label18.Size = new System.Drawing.Size(100, 20);
             this.label18.TabIndex = 42;
-            this.label18.Text = "Energia";
+            this.label18.Text = "Energia [kcal]";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // e_text
             // 
             this.e_text.AutoSize = true;
-            this.e_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.e_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.e_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.e_text.Location = new System.Drawing.Point(22, 509);
-            this.e_text.MaximumSize = new System.Drawing.Size(80, 0);
-            this.e_text.MinimumSize = new System.Drawing.Size(80, 0);
+            this.e_text.BackColor = System.Drawing.Color.Transparent;
+            this.e_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.e_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.e_text.Location = new System.Drawing.Point(0, 480);
+            this.e_text.MinimumSize = new System.Drawing.Size(100, 20);
             this.e_text.Name = "e_text";
-            this.e_text.Size = new System.Drawing.Size(80, 20);
+            this.e_text.Size = new System.Drawing.Size(100, 20);
             this.e_text.TabIndex = 43;
-            this.e_text.Text = "0 kcal";
+            this.e_text.Text = "2500";
             this.e_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label29.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label29.Location = new System.Drawing.Point(159, 488);
-            this.label29.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label29.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label29.Location = new System.Drawing.Point(100, 460);
+            this.label29.MinimumSize = new System.Drawing.Size(100, 20);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(60, 20);
+            this.label29.Size = new System.Drawing.Size(100, 20);
             this.label29.TabIndex = 44;
-            this.label29.Text = "Białko";
+            this.label29.Text = "Białko [g]";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
             // b_text
             // 
             this.b_text.AutoSize = true;
-            this.b_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.b_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.b_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.b_text.Location = new System.Drawing.Point(149, 508);
-            this.b_text.MaximumSize = new System.Drawing.Size(80, 0);
-            this.b_text.MinimumSize = new System.Drawing.Size(80, 0);
+            this.b_text.BackColor = System.Drawing.Color.Transparent;
+            this.b_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.b_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.b_text.Location = new System.Drawing.Point(100, 480);
+            this.b_text.MinimumSize = new System.Drawing.Size(100, 20);
             this.b_text.Name = "b_text";
-            this.b_text.Size = new System.Drawing.Size(80, 20);
+            this.b_text.Size = new System.Drawing.Size(100, 20);
             this.b_text.TabIndex = 45;
-            this.b_text.Text = "0 kcal";
+            this.b_text.Text = "100";
             this.b_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // b_subtext
+            // bialko_procent
             // 
-            this.b_subtext.AutoSize = true;
-            this.b_subtext.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.b_subtext.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.b_subtext.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.b_subtext.Location = new System.Drawing.Point(148, 526);
-            this.b_subtext.MaximumSize = new System.Drawing.Size(80, 0);
-            this.b_subtext.MinimumSize = new System.Drawing.Size(80, 0);
-            this.b_subtext.Name = "b_subtext";
-            this.b_subtext.Size = new System.Drawing.Size(80, 19);
-            this.b_subtext.TabIndex = 46;
-            this.b_subtext.Text = "45";
-            this.b_subtext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bialko_procent.AutoSize = true;
+            this.bialko_procent.BackColor = System.Drawing.Color.Transparent;
+            this.bialko_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bialko_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bialko_procent.Location = new System.Drawing.Point(100, 600);
+            this.bialko_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.bialko_procent.Name = "bialko_procent";
+            this.bialko_procent.Size = new System.Drawing.Size(100, 20);
+            this.bialko_procent.TabIndex = 46;
+            this.bialko_procent.Text = "45";
+            this.bialko_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label31.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label31.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label31.Location = new System.Drawing.Point(282, 487);
-            this.label31.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label31.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label31.Location = new System.Drawing.Point(200, 460);
+            this.label31.MinimumSize = new System.Drawing.Size(100, 20);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(60, 17);
+            this.label31.Size = new System.Drawing.Size(100, 20);
             this.label31.TabIndex = 47;
-            this.label31.Text = "Tłuszcze";
+            this.label31.Text = "Tłuszcze [g]";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // t_text
             // 
             this.t_text.AutoSize = true;
-            this.t_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.t_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.t_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.t_text.Location = new System.Drawing.Point(272, 508);
-            this.t_text.MaximumSize = new System.Drawing.Size(80, 0);
-            this.t_text.MinimumSize = new System.Drawing.Size(80, 0);
+            this.t_text.BackColor = System.Drawing.Color.Transparent;
+            this.t_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.t_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.t_text.Location = new System.Drawing.Point(200, 480);
+            this.t_text.MinimumSize = new System.Drawing.Size(100, 20);
             this.t_text.Name = "t_text";
-            this.t_text.Size = new System.Drawing.Size(80, 20);
+            this.t_text.Size = new System.Drawing.Size(100, 20);
             this.t_text.TabIndex = 48;
-            this.t_text.Text = "0 kcal";
+            this.t_text.Text = "0";
             this.t_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // t_subtext
+            // tluszcze_procent
             // 
-            this.t_subtext.AutoSize = true;
-            this.t_subtext.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.t_subtext.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.t_subtext.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.t_subtext.Location = new System.Drawing.Point(271, 526);
-            this.t_subtext.MaximumSize = new System.Drawing.Size(80, 0);
-            this.t_subtext.MinimumSize = new System.Drawing.Size(80, 0);
-            this.t_subtext.Name = "t_subtext";
-            this.t_subtext.Size = new System.Drawing.Size(80, 19);
-            this.t_subtext.TabIndex = 49;
-            this.t_subtext.Text = "45";
-            this.t_subtext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tluszcze_procent.AutoSize = true;
+            this.tluszcze_procent.BackColor = System.Drawing.Color.Transparent;
+            this.tluszcze_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tluszcze_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tluszcze_procent.Location = new System.Drawing.Point(200, 600);
+            this.tluszcze_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.tluszcze_procent.Name = "tluszcze_procent";
+            this.tluszcze_procent.Size = new System.Drawing.Size(100, 20);
+            this.tluszcze_procent.TabIndex = 49;
+            this.tluszcze_procent.Text = "45";
+            this.tluszcze_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label34.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label34.Location = new System.Drawing.Point(451, 486);
-            this.label34.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label34.MinimumSize = new System.Drawing.Size(65, 0);
+            this.label34.Location = new System.Drawing.Point(400, 454);
+            this.label34.MinimumSize = new System.Drawing.Size(100, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(65, 9);
+            this.label34.Size = new System.Drawing.Size(100, 9);
             this.label34.TabIndex = 50;
             this.label34.Text = "Węglowodany";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6184,74 +6137,56 @@
             // w_text
             // 
             this.w_text.AutoSize = true;
-            this.w_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.w_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.w_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.w_text.Location = new System.Drawing.Point(443, 508);
+            this.w_text.BackColor = System.Drawing.Color.Transparent;
+            this.w_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.w_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.w_text.Location = new System.Drawing.Point(410, 480);
             this.w_text.MaximumSize = new System.Drawing.Size(80, 0);
             this.w_text.MinimumSize = new System.Drawing.Size(80, 0);
             this.w_text.Name = "w_text";
             this.w_text.Size = new System.Drawing.Size(80, 20);
             this.w_text.TabIndex = 51;
-            this.w_text.Text = "0 kcal";
+            this.w_text.Text = "0";
             this.w_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // w_subtext
-            // 
-            this.w_subtext.AutoSize = true;
-            this.w_subtext.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.w_subtext.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.w_subtext.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.w_subtext.Location = new System.Drawing.Point(443, 526);
-            this.w_subtext.MaximumSize = new System.Drawing.Size(80, 0);
-            this.w_subtext.MinimumSize = new System.Drawing.Size(80, 0);
-            this.w_subtext.Name = "w_subtext";
-            this.w_subtext.Size = new System.Drawing.Size(80, 19);
-            this.w_subtext.TabIndex = 52;
-            this.w_subtext.Text = "45";
-            this.w_subtext.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblsod
             // 
             this.lblsod.AutoSize = true;
-            this.lblsod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblsod.BackColor = System.Drawing.Color.Transparent;
             this.lblsod.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblsod.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblsod.Location = new System.Drawing.Point(861, 484);
-            this.lblsod.MaximumSize = new System.Drawing.Size(60, 0);
-            this.lblsod.MinimumSize = new System.Drawing.Size(60, 0);
+            this.lblsod.Location = new System.Drawing.Point(800, 460);
+            this.lblsod.MinimumSize = new System.Drawing.Size(100, 0);
             this.lblsod.Name = "lblsod";
-            this.lblsod.Size = new System.Drawing.Size(60, 20);
+            this.lblsod.Size = new System.Drawing.Size(100, 20);
             this.lblsod.TabIndex = 53;
-            this.lblsod.Text = "Sód";
+            this.lblsod.Text = "Sód [mg]";
             this.lblsod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // s_text
             // 
             this.s_text.AutoSize = true;
-            this.s_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.s_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.s_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.s_text.Location = new System.Drawing.Point(851, 509);
-            this.s_text.MaximumSize = new System.Drawing.Size(80, 0);
-            this.s_text.MinimumSize = new System.Drawing.Size(80, 0);
+            this.s_text.BackColor = System.Drawing.Color.Transparent;
+            this.s_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.s_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.s_text.Location = new System.Drawing.Point(800, 480);
+            this.s_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.s_text.Name = "s_text";
-            this.s_text.Size = new System.Drawing.Size(80, 20);
+            this.s_text.Size = new System.Drawing.Size(100, 20);
             this.s_text.TabIndex = 54;
-            this.s_text.Text = "0 kcal";
+            this.s_text.Text = "0";
             this.s_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label36.BackColor = System.Drawing.Color.Transparent;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label36.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label36.Location = new System.Drawing.Point(374, 586);
-            this.label36.MaximumSize = new System.Drawing.Size(40, 0);
-            this.label36.MinimumSize = new System.Drawing.Size(42, 0);
+            this.label36.Location = new System.Drawing.Point(300, 446);
+            this.label36.MinimumSize = new System.Drawing.Size(100, 6);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(42, 12);
+            this.label36.Size = new System.Drawing.Size(100, 12);
             this.label36.TabIndex = 55;
             this.label36.Text = "Kwasy";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6259,29 +6194,27 @@
             // k_text
             // 
             this.k_text.AutoSize = true;
-            this.k_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.k_text.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.k_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_text.Location = new System.Drawing.Point(375, 619);
-            this.k_text.MaximumSize = new System.Drawing.Size(40, 0);
-            this.k_text.MinimumSize = new System.Drawing.Size(40, 0);
+            this.k_text.BackColor = System.Drawing.Color.Transparent;
+            this.k_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_text.Location = new System.Drawing.Point(300, 480);
+            this.k_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_text.Name = "k_text";
-            this.k_text.Size = new System.Drawing.Size(40, 15);
+            this.k_text.Size = new System.Drawing.Size(100, 20);
             this.k_text.TabIndex = 56;
-            this.k_text.Text = "0 kcal";
+            this.k_text.Text = "0";
             this.k_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label37.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label37.Location = new System.Drawing.Point(364, 596);
-            this.label37.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label37.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label37.Location = new System.Drawing.Point(300, 456);
+            this.label37.MinimumSize = new System.Drawing.Size(100, 6);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(60, 12);
+            this.label37.Size = new System.Drawing.Size(100, 12);
             this.label37.TabIndex = 57;
             this.label37.Text = "tłuszczowe";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6289,189 +6222,111 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label38.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label38.Location = new System.Drawing.Point(366, 607);
-            this.label38.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label38.MinimumSize = new System.Drawing.Size(55, 0);
+            this.label38.Location = new System.Drawing.Point(300, 466);
+            this.label38.MinimumSize = new System.Drawing.Size(100, 6);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(55, 12);
+            this.label38.Size = new System.Drawing.Size(100, 12);
             this.label38.TabIndex = 58;
-            this.label38.Text = "nasycone";
+            this.label38.Text = "nasycone [g]";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // bialko_procent_zakres
             // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label28.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label28.Location = new System.Drawing.Point(159, 545);
-            this.label28.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label28.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(60, 15);
-            this.label28.TabIndex = 59;
-            this.label28.Text = "% kalorii";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bialko_procent_zakres.AutoSize = true;
+            this.bialko_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.bialko_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bialko_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bialko_procent_zakres.Location = new System.Drawing.Point(100, 620);
+            this.bialko_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.bialko_procent_zakres.Name = "bialko_procent_zakres";
+            this.bialko_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.bialko_procent_zakres.TabIndex = 59;
+            this.bialko_procent_zakres.Text = "40 - 50 % kcal";
+            this.bialko_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // tluszcze_procent_zakres
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(282, 545);
-            this.label1.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label1.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 15);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "% kalorii";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label30.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label30.Location = new System.Drawing.Point(455, 545);
-            this.label30.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label30.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(55, 15);
-            this.label30.TabIndex = 61;
-            this.label30.Text = "% kalorii";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tluszcze_procent_zakres.AutoSize = true;
+            this.tluszcze_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.tluszcze_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tluszcze_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.tluszcze_procent_zakres.Location = new System.Drawing.Point(200, 620);
+            this.tluszcze_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.tluszcze_procent_zakres.Name = "tluszcze_procent_zakres";
+            this.tluszcze_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.tluszcze_procent_zakres.TabIndex = 60;
+            this.tluszcze_procent_zakres.Text = "20 - 25 % kcal";
+            this.tluszcze_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // plus_energia
             // 
             this.plus_energia.AutoSize = true;
             this.plus_energia.BackColor = System.Drawing.Color.Transparent;
-            this.plus_energia.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.plus_energia.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_energia.ForeColor = System.Drawing.Color.Red;
-            this.plus_energia.Location = new System.Drawing.Point(19, 586);
-            this.plus_energia.MaximumSize = new System.Drawing.Size(95, 0);
-            this.plus_energia.MinimumSize = new System.Drawing.Size(95, 0);
+            this.plus_energia.Location = new System.Drawing.Point(0, 500);
+            this.plus_energia.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_energia.Name = "plus_energia";
-            this.plus_energia.Size = new System.Drawing.Size(95, 20);
+            this.plus_energia.Size = new System.Drawing.Size(100, 13);
             this.plus_energia.TabIndex = 63;
+            this.plus_energia.Text = "+ 100";
             this.plus_energia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // plus_bialko
             // 
             this.plus_bialko.AutoSize = true;
             this.plus_bialko.BackColor = System.Drawing.Color.Transparent;
-            this.plus_bialko.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.plus_bialko.ForeColor = System.Drawing.Color.Red;
-            this.plus_bialko.Location = new System.Drawing.Point(143, 586);
-            this.plus_bialko.MaximumSize = new System.Drawing.Size(95, 0);
-            this.plus_bialko.MinimumSize = new System.Drawing.Size(95, 0);
+            this.plus_bialko.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_bialko.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_bialko.Location = new System.Drawing.Point(100, 500);
+            this.plus_bialko.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_bialko.Name = "plus_bialko";
-            this.plus_bialko.Size = new System.Drawing.Size(95, 20);
+            this.plus_bialko.Size = new System.Drawing.Size(100, 13);
             this.plus_bialko.TabIndex = 64;
+            this.plus_bialko.Text = "OK";
             this.plus_bialko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // plus_tluszcze
             // 
             this.plus_tluszcze.AutoSize = true;
             this.plus_tluszcze.BackColor = System.Drawing.Color.Transparent;
-            this.plus_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.plus_tluszcze.ForeColor = System.Drawing.Color.Red;
-            this.plus_tluszcze.Location = new System.Drawing.Point(272, 583);
-            this.plus_tluszcze.MaximumSize = new System.Drawing.Size(75, 0);
-            this.plus_tluszcze.MinimumSize = new System.Drawing.Size(75, 0);
+            this.plus_tluszcze.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_tluszcze.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_tluszcze.Location = new System.Drawing.Point(200, 500);
+            this.plus_tluszcze.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_tluszcze.Name = "plus_tluszcze";
-            this.plus_tluszcze.Size = new System.Drawing.Size(75, 20);
+            this.plus_tluszcze.Size = new System.Drawing.Size(100, 13);
             this.plus_tluszcze.TabIndex = 65;
+            this.plus_tluszcze.Text = "OK";
             this.plus_tluszcze.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // plus_wegle
-            // 
-            this.plus_wegle.AutoSize = true;
-            this.plus_wegle.BackColor = System.Drawing.Color.Transparent;
-            this.plus_wegle.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.plus_wegle.ForeColor = System.Drawing.Color.Red;
-            this.plus_wegle.Location = new System.Drawing.Point(435, 586);
-            this.plus_wegle.MaximumSize = new System.Drawing.Size(95, 0);
-            this.plus_wegle.MinimumSize = new System.Drawing.Size(95, 0);
-            this.plus_wegle.Name = "plus_wegle";
-            this.plus_wegle.Size = new System.Drawing.Size(95, 20);
-            this.plus_wegle.TabIndex = 66;
-            this.plus_wegle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // plus_sod
-            // 
-            this.plus_sod.AutoSize = true;
-            this.plus_sod.BackColor = System.Drawing.Color.Transparent;
-            this.plus_sod.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.plus_sod.ForeColor = System.Drawing.Color.Red;
-            this.plus_sod.Location = new System.Drawing.Point(844, 586);
-            this.plus_sod.MaximumSize = new System.Drawing.Size(95, 0);
-            this.plus_sod.MinimumSize = new System.Drawing.Size(95, 0);
-            this.plus_sod.Name = "plus_sod";
-            this.plus_sod.Size = new System.Drawing.Size(95, 20);
-            this.plus_sod.TabIndex = 67;
-            this.plus_sod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // plus_kwasy
             // 
             this.plus_kwasy.AutoSize = true;
             this.plus_kwasy.BackColor = System.Drawing.Color.Transparent;
-            this.plus_kwasy.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.plus_kwasy.ForeColor = System.Drawing.Color.Red;
-            this.plus_kwasy.Location = new System.Drawing.Point(359, 652);
-            this.plus_kwasy.MaximumSize = new System.Drawing.Size(75, 0);
-            this.plus_kwasy.MinimumSize = new System.Drawing.Size(75, 0);
+            this.plus_kwasy.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_kwasy.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_kwasy.Location = new System.Drawing.Point(300, 500);
+            this.plus_kwasy.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_kwasy.Name = "plus_kwasy";
-            this.plus_kwasy.Size = new System.Drawing.Size(75, 15);
+            this.plus_kwasy.Size = new System.Drawing.Size(100, 13);
             this.plus_kwasy.TabIndex = 68;
+            this.plus_kwasy.Text = "OK";
             this.plus_kwasy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_blonnik
-            // 
-            this.pb_blonnik.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_blonnik.AnimationSpeed = 500;
-            this.pb_blonnik.BackColor = System.Drawing.Color.Transparent;
-            this.pb_blonnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_blonnik.ForeColor = System.Drawing.Color.Gray;
-            this.pb_blonnik.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_blonnik.InnerMargin = 2;
-            this.pb_blonnik.InnerWidth = -1;
-            this.pb_blonnik.Location = new System.Drawing.Point(705, 458);
-            this.pb_blonnik.MarqueeAnimationSpeed = 2000;
-            this.pb_blonnik.Name = "pb_blonnik";
-            this.pb_blonnik.OuterColor = System.Drawing.Color.White;
-            this.pb_blonnik.OuterMargin = -25;
-            this.pb_blonnik.OuterWidth = 26;
-            this.pb_blonnik.ProgressColor = System.Drawing.Color.Pink;
-            this.pb_blonnik.ProgressWidth = 10;
-            this.pb_blonnik.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_blonnik.Size = new System.Drawing.Size(125, 125);
-            this.pb_blonnik.StartAngle = 270;
-            this.pb_blonnik.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_blonnik.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_blonnik.SubscriptText = "";
-            this.pb_blonnik.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_blonnik.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_blonnik.SuperscriptText = "";
-            this.pb_blonnik.TabIndex = 70;
-            this.pb_blonnik.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_blonnik.Value = 15;
             // 
             // label103
             // 
             this.label103.AutoSize = true;
-            this.label103.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label103.BackColor = System.Drawing.Color.Transparent;
             this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label103.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label103.Location = new System.Drawing.Point(736, 484);
-            this.label103.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label103.MinimumSize = new System.Drawing.Size(65, 0);
+            this.label103.Location = new System.Drawing.Point(700, 449);
+            this.label103.MinimumSize = new System.Drawing.Size(100, 0);
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(65, 15);
+            this.label103.Size = new System.Drawing.Size(100, 15);
             this.label103.TabIndex = 71;
             this.label103.Text = "Błonnik";
             this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -6479,109 +6334,128 @@
             // bp_text
             // 
             this.bp_text.AutoSize = true;
-            this.bp_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.bp_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.bp_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bp_text.Location = new System.Drawing.Point(728, 523);
-            this.bp_text.MaximumSize = new System.Drawing.Size(80, 0);
-            this.bp_text.MinimumSize = new System.Drawing.Size(80, 0);
+            this.bp_text.BackColor = System.Drawing.Color.Transparent;
+            this.bp_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bp_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.bp_text.Location = new System.Drawing.Point(700, 480);
+            this.bp_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.bp_text.Name = "bp_text";
-            this.bp_text.Size = new System.Drawing.Size(80, 20);
+            this.bp_text.Size = new System.Drawing.Size(100, 20);
             this.bp_text.TabIndex = 72;
-            this.bp_text.Text = "0 kcal";
+            this.bp_text.Text = "0";
             this.bp_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // plus_blonnik
-            // 
-            this.plus_blonnik.AutoSize = true;
-            this.plus_blonnik.BackColor = System.Drawing.Color.Transparent;
-            this.plus_blonnik.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.plus_blonnik.ForeColor = System.Drawing.Color.Red;
-            this.plus_blonnik.Location = new System.Drawing.Point(721, 586);
-            this.plus_blonnik.MaximumSize = new System.Drawing.Size(95, 0);
-            this.plus_blonnik.MinimumSize = new System.Drawing.Size(95, 0);
-            this.plus_blonnik.Name = "plus_blonnik";
-            this.plus_blonnik.Size = new System.Drawing.Size(95, 20);
-            this.plus_blonnik.TabIndex = 75;
-            this.plus_blonnik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label98
             // 
             this.label98.AutoSize = true;
-            this.label98.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label98.BackColor = System.Drawing.Color.Transparent;
             this.label98.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label98.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label98.Location = new System.Drawing.Point(726, 499);
-            this.label98.MaximumSize = new System.Drawing.Size(85, 0);
-            this.label98.MinimumSize = new System.Drawing.Size(85, 0);
+            this.label98.Location = new System.Drawing.Point(700, 464);
+            this.label98.MinimumSize = new System.Drawing.Size(100, 0);
             this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(85, 15);
+            this.label98.Size = new System.Drawing.Size(100, 15);
             this.label98.TabIndex = 76;
-            this.label98.Text = "pokarmowy";
+            this.label98.Text = "pokarmowy [g]";
             this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label97
             // 
             this.label97.AutoSize = true;
-            this.label97.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label97.BackColor = System.Drawing.Color.Transparent;
             this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.label97.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label97.Location = new System.Drawing.Point(441, 495);
+            this.label97.Location = new System.Drawing.Point(411, 463);
             this.label97.MaximumSize = new System.Drawing.Size(80, 0);
             this.label97.MinimumSize = new System.Drawing.Size(80, 0);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(80, 13);
             this.label97.TabIndex = 79;
-            this.label97.Text = "ogółem";
+            this.label97.Text = "ogółem [g]";
             this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel_glowny
             // 
+            this.panel_glowny.Controls.Add(this.sol_zakres);
+            this.panel_glowny.Controls.Add(this.plus_sol);
+            this.panel_glowny.Controls.Add(this.blonnik_label);
+            this.panel_glowny.Controls.Add(this.c_label);
+            this.panel_glowny.Controls.Add(this.p_label);
+            this.panel_glowny.Controls.Add(this.sod_zakres);
+            this.panel_glowny.Controls.Add(this.plus_sod);
+            this.panel_glowny.Controls.Add(this.blonnik_zakres);
+            this.panel_glowny.Controls.Add(this.blonnik_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.blonnik_tysiac);
+            this.panel_glowny.Controls.Add(this.blonnik_procent_zakres);
+            this.panel_glowny.Controls.Add(this.blonnik_procent);
+            this.panel_glowny.Controls.Add(this.cukry_zakres);
+            this.panel_glowny.Controls.Add(this.cukry_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.cukry_tysiac);
+            this.panel_glowny.Controls.Add(this.przyswajalne_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.przyswajalne_tysiac);
+            this.panel_glowny.Controls.Add(this.przyswajalne_zakres);
+            this.panel_glowny.Controls.Add(this.plus_blonnik);
+            this.panel_glowny.Controls.Add(this.plus_cukry);
+            this.panel_glowny.Controls.Add(this.plus_przyswajalne);
+            this.panel_glowny.Controls.Add(this.cukry_procent_zakres);
+            this.panel_glowny.Controls.Add(this.przyswajalne_procent_zakres);
+            this.panel_glowny.Controls.Add(this.cukry_procent);
+            this.panel_glowny.Controls.Add(this.przyswajalne_procent);
+            this.panel_glowny.Controls.Add(this.w_label);
+            this.panel_glowny.Controls.Add(this.k_label);
+            this.panel_glowny.Controls.Add(this.t_label);
+            this.panel_glowny.Controls.Add(this.bialko_label);
+            this.panel_glowny.Controls.Add(this.wegle_zakres);
+            this.panel_glowny.Controls.Add(this.wegle_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.wegle_tysiac);
+            this.panel_glowny.Controls.Add(this.wegle_procent_zakres);
+            this.panel_glowny.Controls.Add(this.wegle_procent);
+            this.panel_glowny.Controls.Add(this.plus_wegle);
+            this.panel_glowny.Controls.Add(this.kwasy_zakres);
+            this.panel_glowny.Controls.Add(this.kwasy_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.kwasy_tysiac);
+            this.panel_glowny.Controls.Add(this.kwasy_procent_zakres);
+            this.panel_glowny.Controls.Add(this.kwasy_procent);
+            this.panel_glowny.Controls.Add(this.tluszcze_zakres);
+            this.panel_glowny.Controls.Add(this.tluszcze_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.tluszcze_tysiac);
+            this.panel_glowny.Controls.Add(this.bialko_tysiac_zakres);
+            this.panel_glowny.Controls.Add(this.bialko_tysiac);
+            this.panel_glowny.Controls.Add(this.bialko_zakres);
+            this.panel_glowny.Controls.Add(this.energia_zakres);
             this.panel_glowny.Controls.Add(this.sol_text);
             this.panel_glowny.Controls.Add(this.label149);
-            this.panel_glowny.Controls.Add(this.plus_cukry);
             this.panel_glowny.Controls.Add(this.c_text);
             this.panel_glowny.Controls.Add(this.label152);
-            this.panel_glowny.Controls.Add(this.pb_cukry);
             this.panel_glowny.Controls.Add(this.label106);
-            this.panel_glowny.Controls.Add(this.plus_przyswajalne);
             this.panel_glowny.Controls.Add(this.wp_text);
             this.panel_glowny.Controls.Add(this.label111);
-            this.panel_glowny.Controls.Add(this.pb_przyswajalne);
             this.panel_glowny.Controls.Add(this.label97);
             this.panel_glowny.Controls.Add(this.label98);
-            this.panel_glowny.Controls.Add(this.plus_blonnik);
             this.panel_glowny.Controls.Add(this.bp_text);
             this.panel_glowny.Controls.Add(this.label103);
-            this.panel_glowny.Controls.Add(this.pb_blonnik);
             this.panel_glowny.Controls.Add(this.plus_kwasy);
-            this.panel_glowny.Controls.Add(this.plus_sod);
-            this.panel_glowny.Controls.Add(this.plus_wegle);
             this.panel_glowny.Controls.Add(this.plus_tluszcze);
             this.panel_glowny.Controls.Add(this.plus_bialko);
             this.panel_glowny.Controls.Add(this.plus_energia);
-            this.panel_glowny.Controls.Add(this.label30);
-            this.panel_glowny.Controls.Add(this.label1);
-            this.panel_glowny.Controls.Add(this.label28);
+            this.panel_glowny.Controls.Add(this.tluszcze_procent_zakres);
+            this.panel_glowny.Controls.Add(this.bialko_procent_zakres);
             this.panel_glowny.Controls.Add(this.label38);
             this.panel_glowny.Controls.Add(this.label37);
             this.panel_glowny.Controls.Add(this.k_text);
             this.panel_glowny.Controls.Add(this.label36);
             this.panel_glowny.Controls.Add(this.s_text);
             this.panel_glowny.Controls.Add(this.lblsod);
-            this.panel_glowny.Controls.Add(this.w_subtext);
             this.panel_glowny.Controls.Add(this.w_text);
             this.panel_glowny.Controls.Add(this.label34);
-            this.panel_glowny.Controls.Add(this.t_subtext);
+            this.panel_glowny.Controls.Add(this.tluszcze_procent);
             this.panel_glowny.Controls.Add(this.t_text);
             this.panel_glowny.Controls.Add(this.label31);
-            this.panel_glowny.Controls.Add(this.b_subtext);
+            this.panel_glowny.Controls.Add(this.bialko_procent);
             this.panel_glowny.Controls.Add(this.b_text);
             this.panel_glowny.Controls.Add(this.label29);
             this.panel_glowny.Controls.Add(this.e_text);
             this.panel_glowny.Controls.Add(this.label18);
-            this.panel_glowny.Controls.Add(this.pb_ktn);
-            this.panel_glowny.Controls.Add(this.pb_Sod2);
             this.panel_glowny.Controls.Add(this.lb_produkty);
             this.panel_glowny.Controls.Add(this.cb_kategorie);
             this.panel_glowny.Controls.Add(this.menuStrip1);
@@ -6591,38 +6465,691 @@
             this.panel_glowny.Controls.Add(this.cb_dieta);
             this.panel_glowny.Controls.Add(this.lbl_data);
             this.panel_glowny.Controls.Add(this.tb_masa);
-            this.panel_glowny.Controls.Add(this.pb_Energia);
             this.panel_glowny.Controls.Add(this.btn_dodaj);
-            this.panel_glowny.Controls.Add(this.pb_Weglowodany);
             this.panel_glowny.Controls.Add(this.lbl_masa);
-            this.panel_glowny.Controls.Add(this.pb_Tluszcze);
-            this.panel_glowny.Controls.Add(this.pb_Bialko);
             this.panel_glowny.Controls.Add(this.tc_posilki);
             this.panel_glowny.Controls.Add(this.cb_miasto);
             this.panel_glowny.Controls.Add(this.button1);
             this.panel_glowny.Controls.Add(this.pictureBox3);
             this.panel_glowny.Controls.Add(this.pictureBox1);
             this.panel_glowny.Controls.Add(this.pictureBox2);
-            this.panel_glowny.Location = new System.Drawing.Point(416, 96);
+            this.panel_glowny.Location = new System.Drawing.Point(308, 40);
             this.panel_glowny.Name = "panel_glowny";
-            this.panel_glowny.Size = new System.Drawing.Size(66, 67);
+            this.panel_glowny.Size = new System.Drawing.Size(1074, 493);
             this.panel_glowny.TabIndex = 42;
             this.panel_glowny.Visible = false;
             this.panel_glowny.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+            // 
+            // sol_zakres
+            // 
+            this.sol_zakres.AutoSize = true;
+            this.sol_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.sol_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.sol_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.sol_zakres.Location = new System.Drawing.Point(900, 515);
+            this.sol_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.sol_zakres.Name = "sol_zakres";
+            this.sol_zakres.Size = new System.Drawing.Size(100, 20);
+            this.sol_zakres.TabIndex = 149;
+            this.sol_zakres.Text = "80 - 100";
+            this.sol_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_sol
+            // 
+            this.plus_sol.AutoSize = true;
+            this.plus_sol.BackColor = System.Drawing.Color.Transparent;
+            this.plus_sol.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_sol.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_sol.Location = new System.Drawing.Point(900, 500);
+            this.plus_sol.MinimumSize = new System.Drawing.Size(100, 0);
+            this.plus_sol.Name = "plus_sol";
+            this.plus_sol.Size = new System.Drawing.Size(100, 13);
+            this.plus_sol.TabIndex = 144;
+            this.plus_sol.Text = "OK";
+            this.plus_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blonnik_label
+            // 
+            this.blonnik_label.AutoSize = true;
+            this.blonnik_label.BackColor = System.Drawing.Color.Transparent;
+            this.blonnik_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.blonnik_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.blonnik_label.Location = new System.Drawing.Point(699, 583);
+            this.blonnik_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.blonnik_label.Name = "blonnik_label";
+            this.blonnik_label.Size = new System.Drawing.Size(100, 11);
+            this.blonnik_label.TabIndex = 142;
+            this.blonnik_label.Text = "na 1000 kcal";
+            this.blonnik_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // c_label
+            // 
+            this.c_label.AutoSize = true;
+            this.c_label.BackColor = System.Drawing.Color.Transparent;
+            this.c_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.c_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.c_label.Location = new System.Drawing.Point(605, 582);
+            this.c_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.c_label.Name = "c_label";
+            this.c_label.Size = new System.Drawing.Size(100, 11);
+            this.c_label.TabIndex = 141;
+            this.c_label.Text = "na 1000 kcal";
+            this.c_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // p_label
+            // 
+            this.p_label.AutoSize = true;
+            this.p_label.BackColor = System.Drawing.Color.Transparent;
+            this.p_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.p_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.p_label.Location = new System.Drawing.Point(500, 582);
+            this.p_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.p_label.Name = "p_label";
+            this.p_label.Size = new System.Drawing.Size(100, 11);
+            this.p_label.TabIndex = 140;
+            this.p_label.Text = "na 1000 kcal";
+            this.p_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sod_zakres
+            // 
+            this.sod_zakres.AutoSize = true;
+            this.sod_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.sod_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.sod_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.sod_zakres.Location = new System.Drawing.Point(800, 515);
+            this.sod_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.sod_zakres.Name = "sod_zakres";
+            this.sod_zakres.Size = new System.Drawing.Size(100, 20);
+            this.sod_zakres.TabIndex = 139;
+            this.sod_zakres.Text = "80 - 100";
+            this.sod_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_sod
+            // 
+            this.plus_sod.AutoSize = true;
+            this.plus_sod.BackColor = System.Drawing.Color.Transparent;
+            this.plus_sod.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_sod.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_sod.Location = new System.Drawing.Point(800, 500);
+            this.plus_sod.MinimumSize = new System.Drawing.Size(100, 0);
+            this.plus_sod.Name = "plus_sod";
+            this.plus_sod.Size = new System.Drawing.Size(100, 13);
+            this.plus_sod.TabIndex = 134;
+            this.plus_sod.Text = "OK";
+            this.plus_sod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blonnik_zakres
+            // 
+            this.blonnik_zakres.AutoSize = true;
+            this.blonnik_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.blonnik_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.blonnik_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.blonnik_zakres.Location = new System.Drawing.Point(700, 515);
+            this.blonnik_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.blonnik_zakres.Name = "blonnik_zakres";
+            this.blonnik_zakres.Size = new System.Drawing.Size(100, 20);
+            this.blonnik_zakres.TabIndex = 133;
+            this.blonnik_zakres.Text = "80 - 100";
+            this.blonnik_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blonnik_tysiac_zakres
+            // 
+            this.blonnik_tysiac_zakres.AutoSize = true;
+            this.blonnik_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.blonnik_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.blonnik_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.blonnik_tysiac_zakres.Location = new System.Drawing.Point(700, 565);
+            this.blonnik_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.blonnik_tysiac_zakres.Name = "blonnik_tysiac_zakres";
+            this.blonnik_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.blonnik_tysiac_zakres.TabIndex = 132;
+            this.blonnik_tysiac_zakres.Text = "20 - 30";
+            this.blonnik_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blonnik_tysiac
+            // 
+            this.blonnik_tysiac.AutoSize = true;
+            this.blonnik_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.blonnik_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.blonnik_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.blonnik_tysiac.Location = new System.Drawing.Point(700, 545);
+            this.blonnik_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.blonnik_tysiac.Name = "blonnik_tysiac";
+            this.blonnik_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.blonnik_tysiac.TabIndex = 131;
+            this.blonnik_tysiac.Text = "25";
+            this.blonnik_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blonnik_procent_zakres
+            // 
+            this.blonnik_procent_zakres.AutoSize = true;
+            this.blonnik_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.blonnik_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.blonnik_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.blonnik_procent_zakres.Location = new System.Drawing.Point(700, 620);
+            this.blonnik_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.blonnik_procent_zakres.Name = "blonnik_procent_zakres";
+            this.blonnik_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.blonnik_procent_zakres.TabIndex = 130;
+            this.blonnik_procent_zakres.Text = "20 - 25 % kcal";
+            this.blonnik_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // blonnik_procent
+            // 
+            this.blonnik_procent.AutoSize = true;
+            this.blonnik_procent.BackColor = System.Drawing.Color.Transparent;
+            this.blonnik_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.blonnik_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.blonnik_procent.Location = new System.Drawing.Point(700, 600);
+            this.blonnik_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.blonnik_procent.Name = "blonnik_procent";
+            this.blonnik_procent.Size = new System.Drawing.Size(100, 20);
+            this.blonnik_procent.TabIndex = 129;
+            this.blonnik_procent.Text = "45";
+            this.blonnik_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cukry_zakres
+            // 
+            this.cukry_zakres.AutoSize = true;
+            this.cukry_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.cukry_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cukry_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.cukry_zakres.Location = new System.Drawing.Point(600, 515);
+            this.cukry_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.cukry_zakres.Name = "cukry_zakres";
+            this.cukry_zakres.Size = new System.Drawing.Size(100, 20);
+            this.cukry_zakres.TabIndex = 128;
+            this.cukry_zakres.Text = "80 - 100";
+            this.cukry_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cukry_tysiac_zakres
+            // 
+            this.cukry_tysiac_zakres.AutoSize = true;
+            this.cukry_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.cukry_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cukry_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.cukry_tysiac_zakres.Location = new System.Drawing.Point(600, 565);
+            this.cukry_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.cukry_tysiac_zakres.Name = "cukry_tysiac_zakres";
+            this.cukry_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.cukry_tysiac_zakres.TabIndex = 127;
+            this.cukry_tysiac_zakres.Text = "20 - 30";
+            this.cukry_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cukry_tysiac
+            // 
+            this.cukry_tysiac.AutoSize = true;
+            this.cukry_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.cukry_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cukry_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cukry_tysiac.Location = new System.Drawing.Point(600, 545);
+            this.cukry_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.cukry_tysiac.Name = "cukry_tysiac";
+            this.cukry_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.cukry_tysiac.TabIndex = 126;
+            this.cukry_tysiac.Text = "25";
+            this.cukry_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // przyswajalne_tysiac_zakres
+            // 
+            this.przyswajalne_tysiac_zakres.AutoSize = true;
+            this.przyswajalne_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.przyswajalne_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.przyswajalne_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.przyswajalne_tysiac_zakres.Location = new System.Drawing.Point(499, 565);
+            this.przyswajalne_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.przyswajalne_tysiac_zakres.Name = "przyswajalne_tysiac_zakres";
+            this.przyswajalne_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.przyswajalne_tysiac_zakres.TabIndex = 125;
+            this.przyswajalne_tysiac_zakres.Text = "20 - 30";
+            this.przyswajalne_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // przyswajalne_tysiac
+            // 
+            this.przyswajalne_tysiac.AutoSize = true;
+            this.przyswajalne_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.przyswajalne_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.przyswajalne_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.przyswajalne_tysiac.Location = new System.Drawing.Point(499, 545);
+            this.przyswajalne_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.przyswajalne_tysiac.Name = "przyswajalne_tysiac";
+            this.przyswajalne_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.przyswajalne_tysiac.TabIndex = 124;
+            this.przyswajalne_tysiac.Text = "25";
+            this.przyswajalne_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // przyswajalne_zakres
+            // 
+            this.przyswajalne_zakres.AutoSize = true;
+            this.przyswajalne_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.przyswajalne_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.przyswajalne_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.przyswajalne_zakres.Location = new System.Drawing.Point(499, 515);
+            this.przyswajalne_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.przyswajalne_zakres.Name = "przyswajalne_zakres";
+            this.przyswajalne_zakres.Size = new System.Drawing.Size(100, 20);
+            this.przyswajalne_zakres.TabIndex = 123;
+            this.przyswajalne_zakres.Text = "80 - 100";
+            this.przyswajalne_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_blonnik
+            // 
+            this.plus_blonnik.AutoSize = true;
+            this.plus_blonnik.BackColor = System.Drawing.Color.Transparent;
+            this.plus_blonnik.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_blonnik.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_blonnik.Location = new System.Drawing.Point(700, 500);
+            this.plus_blonnik.MinimumSize = new System.Drawing.Size(100, 0);
+            this.plus_blonnik.Name = "plus_blonnik";
+            this.plus_blonnik.Size = new System.Drawing.Size(100, 13);
+            this.plus_blonnik.TabIndex = 122;
+            this.plus_blonnik.Text = "OK";
+            this.plus_blonnik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_cukry
+            // 
+            this.plus_cukry.AutoSize = true;
+            this.plus_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.plus_cukry.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_cukry.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_cukry.Location = new System.Drawing.Point(600, 500);
+            this.plus_cukry.MinimumSize = new System.Drawing.Size(100, 0);
+            this.plus_cukry.Name = "plus_cukry";
+            this.plus_cukry.Size = new System.Drawing.Size(100, 13);
+            this.plus_cukry.TabIndex = 121;
+            this.plus_cukry.Text = "OK";
+            this.plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_przyswajalne
+            // 
+            this.plus_przyswajalne.AutoSize = true;
+            this.plus_przyswajalne.BackColor = System.Drawing.Color.Transparent;
+            this.plus_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_przyswajalne.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_przyswajalne.Location = new System.Drawing.Point(499, 500);
+            this.plus_przyswajalne.MinimumSize = new System.Drawing.Size(100, 0);
+            this.plus_przyswajalne.Name = "plus_przyswajalne";
+            this.plus_przyswajalne.Size = new System.Drawing.Size(100, 13);
+            this.plus_przyswajalne.TabIndex = 120;
+            this.plus_przyswajalne.Text = "OK";
+            this.plus_przyswajalne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cukry_procent_zakres
+            // 
+            this.cukry_procent_zakres.AutoSize = true;
+            this.cukry_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.cukry_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cukry_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.cukry_procent_zakres.Location = new System.Drawing.Point(600, 620);
+            this.cukry_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.cukry_procent_zakres.Name = "cukry_procent_zakres";
+            this.cukry_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.cukry_procent_zakres.TabIndex = 119;
+            this.cukry_procent_zakres.Text = "20 - 25 % kcal";
+            this.cukry_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // przyswajalne_procent_zakres
+            // 
+            this.przyswajalne_procent_zakres.AutoSize = true;
+            this.przyswajalne_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.przyswajalne_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.przyswajalne_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.przyswajalne_procent_zakres.Location = new System.Drawing.Point(499, 620);
+            this.przyswajalne_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.przyswajalne_procent_zakres.Name = "przyswajalne_procent_zakres";
+            this.przyswajalne_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.przyswajalne_procent_zakres.TabIndex = 118;
+            this.przyswajalne_procent_zakres.Text = "40 - 50 % kcal";
+            this.przyswajalne_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cukry_procent
+            // 
+            this.cukry_procent.AutoSize = true;
+            this.cukry_procent.BackColor = System.Drawing.Color.Transparent;
+            this.cukry_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cukry_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cukry_procent.Location = new System.Drawing.Point(600, 600);
+            this.cukry_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.cukry_procent.Name = "cukry_procent";
+            this.cukry_procent.Size = new System.Drawing.Size(100, 20);
+            this.cukry_procent.TabIndex = 117;
+            this.cukry_procent.Text = "45";
+            this.cukry_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // przyswajalne_procent
+            // 
+            this.przyswajalne_procent.AutoSize = true;
+            this.przyswajalne_procent.BackColor = System.Drawing.Color.Transparent;
+            this.przyswajalne_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.przyswajalne_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.przyswajalne_procent.Location = new System.Drawing.Point(499, 600);
+            this.przyswajalne_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.przyswajalne_procent.Name = "przyswajalne_procent";
+            this.przyswajalne_procent.Size = new System.Drawing.Size(100, 20);
+            this.przyswajalne_procent.TabIndex = 116;
+            this.przyswajalne_procent.Text = "45";
+            this.przyswajalne_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // w_label
+            // 
+            this.w_label.AutoSize = true;
+            this.w_label.BackColor = System.Drawing.Color.Transparent;
+            this.w_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.w_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.w_label.Location = new System.Drawing.Point(400, 582);
+            this.w_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.w_label.Name = "w_label";
+            this.w_label.Size = new System.Drawing.Size(100, 11);
+            this.w_label.TabIndex = 115;
+            this.w_label.Text = "na 1000 kcal";
+            this.w_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_label
+            // 
+            this.k_label.AutoSize = true;
+            this.k_label.BackColor = System.Drawing.Color.Transparent;
+            this.k_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.k_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_label.Location = new System.Drawing.Point(299, 583);
+            this.k_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.k_label.Name = "k_label";
+            this.k_label.Size = new System.Drawing.Size(100, 11);
+            this.k_label.TabIndex = 114;
+            this.k_label.Text = "na 1000 kcal";
+            this.k_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // t_label
+            // 
+            this.t_label.AutoSize = true;
+            this.t_label.BackColor = System.Drawing.Color.Transparent;
+            this.t_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.t_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.t_label.Location = new System.Drawing.Point(201, 582);
+            this.t_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.t_label.Name = "t_label";
+            this.t_label.Size = new System.Drawing.Size(100, 11);
+            this.t_label.TabIndex = 113;
+            this.t_label.Text = "na 1000 kcal";
+            this.t_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bialko_label
+            // 
+            this.bialko_label.AutoSize = true;
+            this.bialko_label.BackColor = System.Drawing.Color.Transparent;
+            this.bialko_label.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.bialko_label.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bialko_label.Location = new System.Drawing.Point(101, 582);
+            this.bialko_label.MinimumSize = new System.Drawing.Size(100, 6);
+            this.bialko_label.Name = "bialko_label";
+            this.bialko_label.Size = new System.Drawing.Size(100, 11);
+            this.bialko_label.TabIndex = 112;
+            this.bialko_label.Text = "na 1000 kcal";
+            this.bialko_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wegle_zakres
+            // 
+            this.wegle_zakres.AutoSize = true;
+            this.wegle_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.wegle_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.wegle_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.wegle_zakres.Location = new System.Drawing.Point(400, 515);
+            this.wegle_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.wegle_zakres.Name = "wegle_zakres";
+            this.wegle_zakres.Size = new System.Drawing.Size(100, 20);
+            this.wegle_zakres.TabIndex = 111;
+            this.wegle_zakres.Text = "80 - 100";
+            this.wegle_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wegle_tysiac_zakres
+            // 
+            this.wegle_tysiac_zakres.AutoSize = true;
+            this.wegle_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.wegle_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.wegle_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.wegle_tysiac_zakres.Location = new System.Drawing.Point(400, 565);
+            this.wegle_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.wegle_tysiac_zakres.Name = "wegle_tysiac_zakres";
+            this.wegle_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.wegle_tysiac_zakres.TabIndex = 110;
+            this.wegle_tysiac_zakres.Text = "20 - 30";
+            this.wegle_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wegle_tysiac
+            // 
+            this.wegle_tysiac.AutoSize = true;
+            this.wegle_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.wegle_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.wegle_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.wegle_tysiac.Location = new System.Drawing.Point(400, 545);
+            this.wegle_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.wegle_tysiac.Name = "wegle_tysiac";
+            this.wegle_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.wegle_tysiac.TabIndex = 109;
+            this.wegle_tysiac.Text = "25";
+            this.wegle_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wegle_procent_zakres
+            // 
+            this.wegle_procent_zakres.AutoSize = true;
+            this.wegle_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.wegle_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.wegle_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.wegle_procent_zakres.Location = new System.Drawing.Point(400, 620);
+            this.wegle_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.wegle_procent_zakres.Name = "wegle_procent_zakres";
+            this.wegle_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.wegle_procent_zakres.TabIndex = 108;
+            this.wegle_procent_zakres.Text = "20 - 25 % kcal";
+            this.wegle_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wegle_procent
+            // 
+            this.wegle_procent.AutoSize = true;
+            this.wegle_procent.BackColor = System.Drawing.Color.Transparent;
+            this.wegle_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.wegle_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.wegle_procent.Location = new System.Drawing.Point(400, 600);
+            this.wegle_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.wegle_procent.Name = "wegle_procent";
+            this.wegle_procent.Size = new System.Drawing.Size(100, 20);
+            this.wegle_procent.TabIndex = 107;
+            this.wegle_procent.Text = "45";
+            this.wegle_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // plus_wegle
+            // 
+            this.plus_wegle.AutoSize = true;
+            this.plus_wegle.BackColor = System.Drawing.Color.Transparent;
+            this.plus_wegle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.plus_wegle.ForeColor = System.Drawing.Color.ForestGreen;
+            this.plus_wegle.Location = new System.Drawing.Point(400, 500);
+            this.plus_wegle.MinimumSize = new System.Drawing.Size(100, 0);
+            this.plus_wegle.Name = "plus_wegle";
+            this.plus_wegle.Size = new System.Drawing.Size(100, 13);
+            this.plus_wegle.TabIndex = 106;
+            this.plus_wegle.Text = "OK";
+            this.plus_wegle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kwasy_zakres
+            // 
+            this.kwasy_zakres.AutoSize = true;
+            this.kwasy_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.kwasy_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.kwasy_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.kwasy_zakres.Location = new System.Drawing.Point(300, 515);
+            this.kwasy_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.kwasy_zakres.Name = "kwasy_zakres";
+            this.kwasy_zakres.Size = new System.Drawing.Size(100, 20);
+            this.kwasy_zakres.TabIndex = 105;
+            this.kwasy_zakres.Text = "80 - 100";
+            this.kwasy_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kwasy_tysiac_zakres
+            // 
+            this.kwasy_tysiac_zakres.AutoSize = true;
+            this.kwasy_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.kwasy_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.kwasy_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.kwasy_tysiac_zakres.Location = new System.Drawing.Point(300, 565);
+            this.kwasy_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.kwasy_tysiac_zakres.Name = "kwasy_tysiac_zakres";
+            this.kwasy_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.kwasy_tysiac_zakres.TabIndex = 104;
+            this.kwasy_tysiac_zakres.Text = "20 - 30";
+            this.kwasy_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kwasy_tysiac
+            // 
+            this.kwasy_tysiac.AutoSize = true;
+            this.kwasy_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.kwasy_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.kwasy_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.kwasy_tysiac.Location = new System.Drawing.Point(300, 545);
+            this.kwasy_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.kwasy_tysiac.Name = "kwasy_tysiac";
+            this.kwasy_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.kwasy_tysiac.TabIndex = 103;
+            this.kwasy_tysiac.Text = "25";
+            this.kwasy_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kwasy_procent_zakres
+            // 
+            this.kwasy_procent_zakres.AutoSize = true;
+            this.kwasy_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.kwasy_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.kwasy_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.kwasy_procent_zakres.Location = new System.Drawing.Point(300, 620);
+            this.kwasy_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.kwasy_procent_zakres.Name = "kwasy_procent_zakres";
+            this.kwasy_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.kwasy_procent_zakres.TabIndex = 102;
+            this.kwasy_procent_zakres.Text = "20 - 25 % kcal";
+            this.kwasy_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // kwasy_procent
+            // 
+            this.kwasy_procent.AutoSize = true;
+            this.kwasy_procent.BackColor = System.Drawing.Color.Transparent;
+            this.kwasy_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.kwasy_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.kwasy_procent.Location = new System.Drawing.Point(300, 600);
+            this.kwasy_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.kwasy_procent.Name = "kwasy_procent";
+            this.kwasy_procent.Size = new System.Drawing.Size(100, 20);
+            this.kwasy_procent.TabIndex = 101;
+            this.kwasy_procent.Text = "45";
+            this.kwasy_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tluszcze_zakres
+            // 
+            this.tluszcze_zakres.AutoSize = true;
+            this.tluszcze_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.tluszcze_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tluszcze_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.tluszcze_zakres.Location = new System.Drawing.Point(200, 515);
+            this.tluszcze_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.tluszcze_zakres.Name = "tluszcze_zakres";
+            this.tluszcze_zakres.Size = new System.Drawing.Size(100, 20);
+            this.tluszcze_zakres.TabIndex = 100;
+            this.tluszcze_zakres.Text = "80 - 100";
+            this.tluszcze_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tluszcze_tysiac_zakres
+            // 
+            this.tluszcze_tysiac_zakres.AutoSize = true;
+            this.tluszcze_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.tluszcze_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tluszcze_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.tluszcze_tysiac_zakres.Location = new System.Drawing.Point(200, 565);
+            this.tluszcze_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.tluszcze_tysiac_zakres.Name = "tluszcze_tysiac_zakres";
+            this.tluszcze_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.tluszcze_tysiac_zakres.TabIndex = 99;
+            this.tluszcze_tysiac_zakres.Text = "20 - 30";
+            this.tluszcze_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tluszcze_tysiac
+            // 
+            this.tluszcze_tysiac.AutoSize = true;
+            this.tluszcze_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.tluszcze_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tluszcze_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.tluszcze_tysiac.Location = new System.Drawing.Point(200, 545);
+            this.tluszcze_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.tluszcze_tysiac.Name = "tluszcze_tysiac";
+            this.tluszcze_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.tluszcze_tysiac.TabIndex = 98;
+            this.tluszcze_tysiac.Text = "25";
+            this.tluszcze_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bialko_tysiac_zakres
+            // 
+            this.bialko_tysiac_zakres.AutoSize = true;
+            this.bialko_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.bialko_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bialko_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bialko_tysiac_zakres.Location = new System.Drawing.Point(100, 565);
+            this.bialko_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.bialko_tysiac_zakres.Name = "bialko_tysiac_zakres";
+            this.bialko_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.bialko_tysiac_zakres.TabIndex = 97;
+            this.bialko_tysiac_zakres.Text = "20 - 30";
+            this.bialko_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bialko_tysiac
+            // 
+            this.bialko_tysiac.AutoSize = true;
+            this.bialko_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.bialko_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bialko_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bialko_tysiac.Location = new System.Drawing.Point(100, 545);
+            this.bialko_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.bialko_tysiac.Name = "bialko_tysiac";
+            this.bialko_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.bialko_tysiac.TabIndex = 96;
+            this.bialko_tysiac.Text = "25";
+            this.bialko_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // bialko_zakres
+            // 
+            this.bialko_zakres.AutoSize = true;
+            this.bialko_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.bialko_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bialko_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bialko_zakres.Location = new System.Drawing.Point(100, 515);
+            this.bialko_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.bialko_zakres.Name = "bialko_zakres";
+            this.bialko_zakres.Size = new System.Drawing.Size(100, 20);
+            this.bialko_zakres.TabIndex = 95;
+            this.bialko_zakres.Text = "80 - 100";
+            this.bialko_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // energia_zakres
+            // 
+            this.energia_zakres.AutoSize = true;
+            this.energia_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.energia_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.energia_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.energia_zakres.Location = new System.Drawing.Point(0, 515);
+            this.energia_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.energia_zakres.Name = "energia_zakres";
+            this.energia_zakres.Size = new System.Drawing.Size(100, 20);
+            this.energia_zakres.TabIndex = 93;
+            this.energia_zakres.Text = "2000 - 2400";
+            this.energia_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sol_text
             // 
             this.sol_text.AutoSize = true;
             this.sol_text.BackColor = System.Drawing.Color.Transparent;
-            this.sol_text.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.sol_text.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.sol_text.Location = new System.Drawing.Point(841, 632);
-            this.sol_text.MaximumSize = new System.Drawing.Size(95, 0);
-            this.sol_text.MinimumSize = new System.Drawing.Size(95, 0);
+            this.sol_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sol_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.sol_text.Location = new System.Drawing.Point(900, 480);
+            this.sol_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.sol_text.Name = "sol_text";
-            this.sol_text.Size = new System.Drawing.Size(95, 20);
+            this.sol_text.Size = new System.Drawing.Size(100, 20);
             this.sol_text.TabIndex = 92;
-            this.sol_text.Text = "0 g";
+            this.sol_text.Text = "0";
             this.sol_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label149
@@ -6630,180 +7157,84 @@
             this.label149.AutoSize = true;
             this.label149.BackColor = System.Drawing.Color.Transparent;
             this.label149.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label149.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label149.Location = new System.Drawing.Point(840, 613);
-            this.label149.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label149.MinimumSize = new System.Drawing.Size(95, 0);
+            this.label149.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label149.Location = new System.Drawing.Point(900, 460);
+            this.label149.MinimumSize = new System.Drawing.Size(100, 0);
             this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(95, 20);
+            this.label149.Size = new System.Drawing.Size(100, 20);
             this.label149.TabIndex = 91;
-            this.label149.Text = "Sól";
+            this.label149.Text = "Sól [g]";
             this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // plus_cukry
-            // 
-            this.plus_cukry.AutoSize = true;
-            this.plus_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.plus_cukry.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.plus_cukry.ForeColor = System.Drawing.Color.Red;
-            this.plus_cukry.Location = new System.Drawing.Point(638, 652);
-            this.plus_cukry.MaximumSize = new System.Drawing.Size(75, 0);
-            this.plus_cukry.MinimumSize = new System.Drawing.Size(75, 0);
-            this.plus_cukry.Name = "plus_cukry";
-            this.plus_cukry.Size = new System.Drawing.Size(75, 15);
-            this.plus_cukry.TabIndex = 90;
-            this.plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // c_text
             // 
             this.c_text.AutoSize = true;
-            this.c_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.c_text.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.c_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.c_text.Location = new System.Drawing.Point(647, 609);
-            this.c_text.MaximumSize = new System.Drawing.Size(55, 0);
-            this.c_text.MinimumSize = new System.Drawing.Size(55, 0);
+            this.c_text.BackColor = System.Drawing.Color.Transparent;
+            this.c_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.c_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.c_text.Location = new System.Drawing.Point(600, 480);
+            this.c_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.c_text.Name = "c_text";
-            this.c_text.Size = new System.Drawing.Size(55, 15);
+            this.c_text.Size = new System.Drawing.Size(100, 20);
             this.c_text.TabIndex = 89;
-            this.c_text.Text = "0 kcal";
+            this.c_text.Text = "0";
             this.c_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label152
             // 
             this.label152.AutoSize = true;
-            this.label152.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label152.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label152.BackColor = System.Drawing.Color.Transparent;
+            this.label152.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label152.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label152.Location = new System.Drawing.Point(647, 586);
-            this.label152.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label152.MinimumSize = new System.Drawing.Size(55, 0);
+            this.label152.Location = new System.Drawing.Point(600, 460);
+            this.label152.MinimumSize = new System.Drawing.Size(100, 0);
             this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(55, 15);
+            this.label152.Size = new System.Drawing.Size(100, 20);
             this.label152.TabIndex = 88;
-            this.label152.Text = "Cukry";
+            this.label152.Text = "Cukry [g]";
             this.label152.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_cukry
-            // 
-            this.pb_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_cukry.AnimationSpeed = 500;
-            this.pb_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.pb_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_cukry.ForeColor = System.Drawing.Color.Gray;
-            this.pb_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_cukry.InnerMargin = 2;
-            this.pb_cukry.InnerWidth = -1;
-            this.pb_cukry.Location = new System.Drawing.Point(626, 556);
-            this.pb_cukry.MarqueeAnimationSpeed = 2000;
-            this.pb_cukry.Name = "pb_cukry";
-            this.pb_cukry.OuterColor = System.Drawing.Color.White;
-            this.pb_cukry.OuterMargin = -25;
-            this.pb_cukry.OuterWidth = 26;
-            this.pb_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.pb_cukry.ProgressWidth = 10;
-            this.pb_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_cukry.Size = new System.Drawing.Size(94, 98);
-            this.pb_cukry.StartAngle = 270;
-            this.pb_cukry.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_cukry.SubscriptText = "";
-            this.pb_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_cukry.SuperscriptText = "";
-            this.pb_cukry.TabIndex = 87;
-            this.pb_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_cukry.Value = 15;
             // 
             // label106
             // 
             this.label106.AutoSize = true;
-            this.label106.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label106.BackColor = System.Drawing.Color.Transparent;
             this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
             this.label106.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label106.Location = new System.Drawing.Point(553, 600);
-            this.label106.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label106.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label106.Location = new System.Drawing.Point(500, 470);
+            this.label106.MinimumSize = new System.Drawing.Size(100, 0);
             this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(60, 7);
+            this.label106.Size = new System.Drawing.Size(100, 7);
             this.label106.TabIndex = 86;
-            this.label106.Text = "przyswajalne";
+            this.label106.Text = "przyswajalne [g]";
             this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // plus_przyswajalne
-            // 
-            this.plus_przyswajalne.AutoSize = true;
-            this.plus_przyswajalne.BackColor = System.Drawing.Color.Transparent;
-            this.plus_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.plus_przyswajalne.ForeColor = System.Drawing.Color.Red;
-            this.plus_przyswajalne.Location = new System.Drawing.Point(544, 650);
-            this.plus_przyswajalne.MaximumSize = new System.Drawing.Size(75, 0);
-            this.plus_przyswajalne.MinimumSize = new System.Drawing.Size(75, 0);
-            this.plus_przyswajalne.Name = "plus_przyswajalne";
-            this.plus_przyswajalne.Size = new System.Drawing.Size(75, 15);
-            this.plus_przyswajalne.TabIndex = 85;
-            this.plus_przyswajalne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // wp_text
             // 
             this.wp_text.AutoSize = true;
-            this.wp_text.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.wp_text.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.wp_text.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.wp_text.Location = new System.Drawing.Point(553, 609);
-            this.wp_text.MaximumSize = new System.Drawing.Size(55, 0);
-            this.wp_text.MinimumSize = new System.Drawing.Size(55, 0);
+            this.wp_text.BackColor = System.Drawing.Color.Transparent;
+            this.wp_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wp_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.wp_text.Location = new System.Drawing.Point(500, 480);
+            this.wp_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.wp_text.Name = "wp_text";
-            this.wp_text.Size = new System.Drawing.Size(55, 15);
+            this.wp_text.Size = new System.Drawing.Size(100, 20);
             this.wp_text.TabIndex = 82;
-            this.wp_text.Text = "0 kcal";
+            this.wp_text.Text = "0";
             this.wp_text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label111
             // 
             this.label111.AutoSize = true;
-            this.label111.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label111.BackColor = System.Drawing.Color.Transparent;
             this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label111.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label111.Location = new System.Drawing.Point(549, 589);
-            this.label111.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label111.MinimumSize = new System.Drawing.Size(65, 0);
+            this.label111.Location = new System.Drawing.Point(500, 458);
+            this.label111.MinimumSize = new System.Drawing.Size(100, 0);
             this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(65, 9);
+            this.label111.Size = new System.Drawing.Size(100, 9);
             this.label111.TabIndex = 81;
             this.label111.Text = "Węglowodany";
             this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pb_przyswajalne
-            // 
-            this.pb_przyswajalne.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_przyswajalne.AnimationSpeed = 500;
-            this.pb_przyswajalne.BackColor = System.Drawing.Color.Transparent;
-            this.pb_przyswajalne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_przyswajalne.ForeColor = System.Drawing.Color.Gray;
-            this.pb_przyswajalne.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_przyswajalne.InnerMargin = 2;
-            this.pb_przyswajalne.InnerWidth = -1;
-            this.pb_przyswajalne.Location = new System.Drawing.Point(533, 554);
-            this.pb_przyswajalne.MarqueeAnimationSpeed = 2000;
-            this.pb_przyswajalne.Name = "pb_przyswajalne";
-            this.pb_przyswajalne.OuterColor = System.Drawing.Color.White;
-            this.pb_przyswajalne.OuterMargin = -25;
-            this.pb_przyswajalne.OuterWidth = 26;
-            this.pb_przyswajalne.ProgressColor = System.Drawing.Color.PaleGreen;
-            this.pb_przyswajalne.ProgressWidth = 10;
-            this.pb_przyswajalne.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_przyswajalne.Size = new System.Drawing.Size(94, 98);
-            this.pb_przyswajalne.StartAngle = 270;
-            this.pb_przyswajalne.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_przyswajalne.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_przyswajalne.SubscriptText = "";
-            this.pb_przyswajalne.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_przyswajalne.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_przyswajalne.SuperscriptText = "";
-            this.pb_przyswajalne.TabIndex = 80;
-            this.pb_przyswajalne.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_przyswajalne.Value = 15;
             // 
             // menuStrip1
             // 
@@ -6913,55 +7344,86 @@
             // 
             // panel_kontrola
             // 
-            this.panel_kontrola.Controls.Add(this.label160);
-            this.panel_kontrola.Controls.Add(this.kontrola_plus_cukry);
-            this.panel_kontrola.Controls.Add(this.kontrola_cukry);
-            this.panel_kontrola.Controls.Add(this.pb_kontrola_cukry);
-            this.panel_kontrola.Controls.Add(this.kontrola_sol);
-            this.panel_kontrola.Controls.Add(this.label157);
-            this.panel_kontrola.Controls.Add(this.label141);
-            this.panel_kontrola.Controls.Add(this.label142);
-            this.panel_kontrola.Controls.Add(this.label143);
-            this.panel_kontrola.Controls.Add(this.label144);
-            this.panel_kontrola.Controls.Add(this.label145);
-            this.panel_kontrola.Controls.Add(this.label146);
-            this.panel_kontrola.Controls.Add(this.label147);
-            this.panel_kontrola.Controls.Add(this.label148);
-            this.panel_kontrola.Controls.Add(this.label72);
-            this.panel_kontrola.Controls.Add(this.label81);
-            this.panel_kontrola.Controls.Add(this.label83);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar1);
-            this.panel_kontrola.Controls.Add(this.label108);
-            this.panel_kontrola.Controls.Add(this.label109);
-            this.panel_kontrola.Controls.Add(this.label113);
-            this.panel_kontrola.Controls.Add(this.label115);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar2);
-            this.panel_kontrola.Controls.Add(this.label117);
-            this.panel_kontrola.Controls.Add(this.label118);
-            this.panel_kontrola.Controls.Add(this.label120);
-            this.panel_kontrola.Controls.Add(this.label121);
-            this.panel_kontrola.Controls.Add(this.label123);
-            this.panel_kontrola.Controls.Add(this.label124);
-            this.panel_kontrola.Controls.Add(this.label126);
-            this.panel_kontrola.Controls.Add(this.label128);
+            this.panel_kontrola.Controls.Add(this.k_sol_zakres);
+            this.panel_kontrola.Controls.Add(this.k_sol_plus);
+            this.panel_kontrola.Controls.Add(this.label69);
+            this.panel_kontrola.Controls.Add(this.label70);
+            this.panel_kontrola.Controls.Add(this.label71);
+            this.panel_kontrola.Controls.Add(this.k_sod_zakres);
+            this.panel_kontrola.Controls.Add(this.k_sod_plus);
+            this.panel_kontrola.Controls.Add(this.k_blonnik_zakres);
+            this.panel_kontrola.Controls.Add(this.k_blonnik_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_blonnik_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_blonnik_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.k_blonnik_procent);
+            this.panel_kontrola.Controls.Add(this.k_cukry_zakres);
+            this.panel_kontrola.Controls.Add(this.k_cukry_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_cukry_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne_zakres);
+            this.panel_kontrola.Controls.Add(this.k_blonnik_plus);
+            this.panel_kontrola.Controls.Add(this.k_cukry_plus);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne_plus);
+            this.panel_kontrola.Controls.Add(this.k_cukry_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.k_cukry_procent);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne_procent);
             this.panel_kontrola.Controls.Add(this.label129);
             this.panel_kontrola.Controls.Add(this.label130);
             this.panel_kontrola.Controls.Add(this.label131);
             this.panel_kontrola.Controls.Add(this.label132);
-            this.panel_kontrola.Controls.Add(this.label133);
-            this.panel_kontrola.Controls.Add(this.label134);
-            this.panel_kontrola.Controls.Add(this.label135);
-            this.panel_kontrola.Controls.Add(this.label136);
-            this.panel_kontrola.Controls.Add(this.label137);
-            this.panel_kontrola.Controls.Add(this.label138);
-            this.panel_kontrola.Controls.Add(this.label139);
-            this.panel_kontrola.Controls.Add(this.label140);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar3);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar4);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar5);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar6);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar15);
-            this.panel_kontrola.Controls.Add(this.circularProgressBar16);
+            this.panel_kontrola.Controls.Add(this.k_wegle_zakres);
+            this.panel_kontrola.Controls.Add(this.k_wegle_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_wegle_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_wegle_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.k_wegle_procent);
+            this.panel_kontrola.Controls.Add(this.k_wegle_plus);
+            this.panel_kontrola.Controls.Add(this.k_kwasy_zakres);
+            this.panel_kontrola.Controls.Add(this.k_kwasy_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_kwasy_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_kwasy_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.k_kwasy_procent);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze_zakres);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_bialko_tysiac_zakres);
+            this.panel_kontrola.Controls.Add(this.k_bialko_tysiac);
+            this.panel_kontrola.Controls.Add(this.k_bialko_zakres);
+            this.panel_kontrola.Controls.Add(this.k_energia_zakres);
+            this.panel_kontrola.Controls.Add(this.k_sol);
+            this.panel_kontrola.Controls.Add(this.label158);
+            this.panel_kontrola.Controls.Add(this.k_cukry);
+            this.panel_kontrola.Controls.Add(this.label160);
+            this.panel_kontrola.Controls.Add(this.label161);
+            this.panel_kontrola.Controls.Add(this.k_przyswajalne);
+            this.panel_kontrola.Controls.Add(this.label163);
+            this.panel_kontrola.Controls.Add(this.label164);
+            this.panel_kontrola.Controls.Add(this.label165);
+            this.panel_kontrola.Controls.Add(this.k_blonnik);
+            this.panel_kontrola.Controls.Add(this.label175);
+            this.panel_kontrola.Controls.Add(this.k_kwasy_plus);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze_plus);
+            this.panel_kontrola.Controls.Add(this.k_bialko_plus);
+            this.panel_kontrola.Controls.Add(this.k_energia_plus);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.k_bialko_procent_zakres);
+            this.panel_kontrola.Controls.Add(this.label182);
+            this.panel_kontrola.Controls.Add(this.label183);
+            this.panel_kontrola.Controls.Add(this.k_kwasy);
+            this.panel_kontrola.Controls.Add(this.label185);
+            this.panel_kontrola.Controls.Add(this.k_sod);
+            this.panel_kontrola.Controls.Add(this.label187);
+            this.panel_kontrola.Controls.Add(this.k_wegle);
+            this.panel_kontrola.Controls.Add(this.label189);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze_procent);
+            this.panel_kontrola.Controls.Add(this.k_tluszcze);
+            this.panel_kontrola.Controls.Add(this.label192);
+            this.panel_kontrola.Controls.Add(this.k_bialko_procent);
+            this.panel_kontrola.Controls.Add(this.k_bialko);
+            this.panel_kontrola.Controls.Add(this.label195);
+            this.panel_kontrola.Controls.Add(this.k_energia);
+            this.panel_kontrola.Controls.Add(this.label197);
             this.panel_kontrola.Controls.Add(this.label67);
             this.panel_kontrola.Controls.Add(this.k_dieta);
             this.panel_kontrola.Controls.Add(this.label75);
@@ -6971,881 +7433,1133 @@
             this.panel_kontrola.Controls.Add(this.dateTimePicker4);
             this.panel_kontrola.Controls.Add(this.label79);
             this.panel_kontrola.Controls.Add(this.pictureBox28);
-            this.panel_kontrola.Location = new System.Drawing.Point(303, 105);
+            this.panel_kontrola.Location = new System.Drawing.Point(484, 53);
             this.panel_kontrola.Name = "panel_kontrola";
-            this.panel_kontrola.Size = new System.Drawing.Size(1081, 557);
+            this.panel_kontrola.Size = new System.Drawing.Size(18, 36);
             this.panel_kontrola.TabIndex = 96;
             this.panel_kontrola.Visible = false;
             // 
-            // label160
+            // k_sol_zakres
             // 
-            this.label160.AutoSize = true;
-            this.label160.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label160.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.label160.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label160.Location = new System.Drawing.Point(683, 492);
-            this.label160.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label160.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label160.Name = "label160";
-            this.label160.Size = new System.Drawing.Size(60, 17);
-            this.label160.TabIndex = 187;
-            this.label160.Text = "Cukry";
-            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_sol_zakres.AutoSize = true;
+            this.k_sol_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_sol_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_sol_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_sol_zakres.Location = new System.Drawing.Point(922, 318);
+            this.k_sol_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_sol_zakres.Name = "k_sol_zakres";
+            this.k_sol_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_sol_zakres.TabIndex = 239;
+            this.k_sol_zakres.Text = "80 - 100";
+            this.k_sol_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // kontrola_plus_cukry
+            // k_sol_plus
             // 
-            this.kontrola_plus_cukry.AutoSize = true;
-            this.kontrola_plus_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.kontrola_plus_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.kontrola_plus_cukry.ForeColor = System.Drawing.Color.Red;
-            this.kontrola_plus_cukry.Location = new System.Drawing.Point(667, 561);
-            this.kontrola_plus_cukry.MaximumSize = new System.Drawing.Size(95, 0);
-            this.kontrola_plus_cukry.MinimumSize = new System.Drawing.Size(95, 0);
-            this.kontrola_plus_cukry.Name = "kontrola_plus_cukry";
-            this.kontrola_plus_cukry.Size = new System.Drawing.Size(95, 20);
-            this.kontrola_plus_cukry.TabIndex = 186;
-            this.kontrola_plus_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_sol_plus.AutoSize = true;
+            this.k_sol_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_sol_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_sol_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_sol_plus.Location = new System.Drawing.Point(922, 303);
+            this.k_sol_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_sol_plus.Name = "k_sol_plus";
+            this.k_sol_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_sol_plus.TabIndex = 234;
+            this.k_sol_plus.Text = "OK";
+            this.k_sol_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // kontrola_cukry
+            // label69
             // 
-            this.kontrola_cukry.AutoSize = true;
-            this.kontrola_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.kontrola_cukry.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.kontrola_cukry.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.kontrola_cukry.Location = new System.Drawing.Point(688, 515);
-            this.kontrola_cukry.MaximumSize = new System.Drawing.Size(50, 0);
-            this.kontrola_cukry.MinimumSize = new System.Drawing.Size(50, 0);
-            this.kontrola_cukry.Name = "kontrola_cukry";
-            this.kontrola_cukry.Size = new System.Drawing.Size(50, 20);
-            this.kontrola_cukry.TabIndex = 184;
-            this.kontrola_cukry.Text = "0 kcal";
-            this.kontrola_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label69.AutoSize = true;
+            this.label69.BackColor = System.Drawing.Color.Transparent;
+            this.label69.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.label69.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label69.Location = new System.Drawing.Point(721, 386);
+            this.label69.MinimumSize = new System.Drawing.Size(100, 6);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(100, 11);
+            this.label69.TabIndex = 232;
+            this.label69.Text = "na 1000 kcal";
+            this.label69.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pb_kontrola_cukry
+            // label70
             // 
-            this.pb_kontrola_cukry.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.pb_kontrola_cukry.AnimationSpeed = 500;
-            this.pb_kontrola_cukry.BackColor = System.Drawing.Color.Transparent;
-            this.pb_kontrola_cukry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.pb_kontrola_cukry.ForeColor = System.Drawing.Color.Gray;
-            this.pb_kontrola_cukry.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pb_kontrola_cukry.InnerMargin = 2;
-            this.pb_kontrola_cukry.InnerWidth = -1;
-            this.pb_kontrola_cukry.Location = new System.Drawing.Point(663, 462);
-            this.pb_kontrola_cukry.MarqueeAnimationSpeed = 2000;
-            this.pb_kontrola_cukry.Name = "pb_kontrola_cukry";
-            this.pb_kontrola_cukry.OuterColor = System.Drawing.Color.White;
-            this.pb_kontrola_cukry.OuterMargin = -25;
-            this.pb_kontrola_cukry.OuterWidth = 26;
-            this.pb_kontrola_cukry.ProgressColor = System.Drawing.Color.YellowGreen;
-            this.pb_kontrola_cukry.ProgressWidth = 10;
-            this.pb_kontrola_cukry.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.pb_kontrola_cukry.Size = new System.Drawing.Size(97, 97);
-            this.pb_kontrola_cukry.StartAngle = 270;
-            this.pb_kontrola_cukry.SubscriptColor = System.Drawing.Color.Gray;
-            this.pb_kontrola_cukry.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.pb_kontrola_cukry.SubscriptText = "";
-            this.pb_kontrola_cukry.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.pb_kontrola_cukry.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.pb_kontrola_cukry.SuperscriptText = "";
-            this.pb_kontrola_cukry.TabIndex = 182;
-            this.pb_kontrola_cukry.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.pb_kontrola_cukry.Value = 15;
+            this.label70.AutoSize = true;
+            this.label70.BackColor = System.Drawing.Color.Transparent;
+            this.label70.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.label70.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label70.Location = new System.Drawing.Point(627, 385);
+            this.label70.MinimumSize = new System.Drawing.Size(100, 6);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(100, 11);
+            this.label70.TabIndex = 231;
+            this.label70.Text = "na 1000 kcal";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // kontrola_sol
+            // label71
             // 
-            this.kontrola_sol.AutoSize = true;
-            this.kontrola_sol.BackColor = System.Drawing.Color.Transparent;
-            this.kontrola_sol.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.kontrola_sol.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.kontrola_sol.Location = new System.Drawing.Point(897, 523);
-            this.kontrola_sol.MaximumSize = new System.Drawing.Size(95, 0);
-            this.kontrola_sol.MinimumSize = new System.Drawing.Size(95, 0);
-            this.kontrola_sol.Name = "kontrola_sol";
-            this.kontrola_sol.Size = new System.Drawing.Size(95, 20);
-            this.kontrola_sol.TabIndex = 181;
-            this.kontrola_sol.Text = "0 g";
-            this.kontrola_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label71.AutoSize = true;
+            this.label71.BackColor = System.Drawing.Color.Transparent;
+            this.label71.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.label71.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label71.Location = new System.Drawing.Point(522, 385);
+            this.label71.MinimumSize = new System.Drawing.Size(100, 6);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(100, 11);
+            this.label71.TabIndex = 230;
+            this.label71.Text = "na 1000 kcal";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label157
+            // k_sod_zakres
             // 
-            this.label157.AutoSize = true;
-            this.label157.BackColor = System.Drawing.Color.Transparent;
-            this.label157.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label157.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label157.Location = new System.Drawing.Point(896, 504);
-            this.label157.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label157.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(95, 20);
-            this.label157.TabIndex = 180;
-            this.label157.Text = "Sól";
-            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_sod_zakres.AutoSize = true;
+            this.k_sod_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_sod_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_sod_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_sod_zakres.Location = new System.Drawing.Point(822, 318);
+            this.k_sod_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_sod_zakres.Name = "k_sod_zakres";
+            this.k_sod_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_sod_zakres.TabIndex = 229;
+            this.k_sod_zakres.Text = "80 - 100";
+            this.k_sod_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label141
+            // k_sod_plus
             // 
-            this.label141.AutoSize = true;
-            this.label141.BackColor = System.Drawing.Color.Transparent;
-            this.label141.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label141.ForeColor = System.Drawing.Color.Red;
-            this.label141.Location = new System.Drawing.Point(556, 562);
-            this.label141.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label141.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(95, 20);
-            this.label141.TabIndex = 139;
-            this.label141.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_sod_plus.AutoSize = true;
+            this.k_sod_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_sod_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_sod_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_sod_plus.Location = new System.Drawing.Point(822, 303);
+            this.k_sod_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_sod_plus.Name = "k_sod_plus";
+            this.k_sod_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_sod_plus.TabIndex = 224;
+            this.k_sod_plus.Text = "OK";
+            this.k_sod_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label142
+            // k_blonnik_zakres
             // 
-            this.label142.AutoSize = true;
-            this.label142.BackColor = System.Drawing.Color.Transparent;
-            this.label142.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label142.ForeColor = System.Drawing.Color.Red;
-            this.label142.Location = new System.Drawing.Point(772, 485);
-            this.label142.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label142.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(95, 20);
-            this.label142.TabIndex = 138;
-            this.label142.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_blonnik_zakres.AutoSize = true;
+            this.k_blonnik_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_blonnik_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_blonnik_zakres.Location = new System.Drawing.Point(722, 318);
+            this.k_blonnik_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_blonnik_zakres.Name = "k_blonnik_zakres";
+            this.k_blonnik_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_blonnik_zakres.TabIndex = 223;
+            this.k_blonnik_zakres.Text = "80 - 100";
+            this.k_blonnik_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label143
+            // k_blonnik_tysiac_zakres
             // 
-            this.label143.AutoSize = true;
-            this.label143.BackColor = System.Drawing.Color.Transparent;
-            this.label143.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label143.ForeColor = System.Drawing.Color.Red;
-            this.label143.Location = new System.Drawing.Point(368, 563);
-            this.label143.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label143.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(95, 20);
-            this.label143.TabIndex = 137;
-            this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_blonnik_tysiac_zakres.AutoSize = true;
+            this.k_blonnik_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_blonnik_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_blonnik_tysiac_zakres.Location = new System.Drawing.Point(722, 368);
+            this.k_blonnik_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_blonnik_tysiac_zakres.Name = "k_blonnik_tysiac_zakres";
+            this.k_blonnik_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_blonnik_tysiac_zakres.TabIndex = 222;
+            this.k_blonnik_tysiac_zakres.Text = "20 - 30";
+            this.k_blonnik_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label144
+            // k_blonnik_tysiac
             // 
-            this.label144.AutoSize = true;
-            this.label144.BackColor = System.Drawing.Color.Transparent;
-            this.label144.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label144.ForeColor = System.Drawing.Color.Red;
-            this.label144.Location = new System.Drawing.Point(899, 485);
-            this.label144.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label144.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(95, 20);
-            this.label144.TabIndex = 136;
-            this.label144.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_blonnik_tysiac.AutoSize = true;
+            this.k_blonnik_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_blonnik_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_blonnik_tysiac.Location = new System.Drawing.Point(722, 348);
+            this.k_blonnik_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_blonnik_tysiac.Name = "k_blonnik_tysiac";
+            this.k_blonnik_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_blonnik_tysiac.TabIndex = 221;
+            this.k_blonnik_tysiac.Text = "25";
+            this.k_blonnik_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label145
+            // k_blonnik_procent_zakres
             // 
-            this.label145.AutoSize = true;
-            this.label145.BackColor = System.Drawing.Color.Transparent;
-            this.label145.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label145.ForeColor = System.Drawing.Color.Red;
-            this.label145.Location = new System.Drawing.Point(456, 484);
-            this.label145.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label145.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(95, 20);
-            this.label145.TabIndex = 135;
-            this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_blonnik_procent_zakres.AutoSize = true;
+            this.k_blonnik_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_blonnik_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_blonnik_procent_zakres.Location = new System.Drawing.Point(722, 423);
+            this.k_blonnik_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_blonnik_procent_zakres.Name = "k_blonnik_procent_zakres";
+            this.k_blonnik_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_blonnik_procent_zakres.TabIndex = 220;
+            this.k_blonnik_procent_zakres.Text = "20 - 25 % kcal";
+            this.k_blonnik_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label146
+            // k_blonnik_procent
             // 
-            this.label146.AutoSize = true;
-            this.label146.BackColor = System.Drawing.Color.Transparent;
-            this.label146.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label146.ForeColor = System.Drawing.Color.Red;
-            this.label146.Location = new System.Drawing.Point(283, 482);
-            this.label146.MaximumSize = new System.Drawing.Size(75, 0);
-            this.label146.MinimumSize = new System.Drawing.Size(75, 0);
-            this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(75, 20);
-            this.label146.TabIndex = 134;
-            this.label146.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_blonnik_procent.AutoSize = true;
+            this.k_blonnik_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_blonnik_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_blonnik_procent.Location = new System.Drawing.Point(722, 403);
+            this.k_blonnik_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_blonnik_procent.Name = "k_blonnik_procent";
+            this.k_blonnik_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_blonnik_procent.TabIndex = 219;
+            this.k_blonnik_procent.Text = "45";
+            this.k_blonnik_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label147
+            // k_cukry_zakres
             // 
-            this.label147.AutoSize = true;
-            this.label147.BackColor = System.Drawing.Color.Transparent;
-            this.label147.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label147.ForeColor = System.Drawing.Color.Red;
-            this.label147.Location = new System.Drawing.Point(155, 485);
-            this.label147.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label147.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(95, 20);
-            this.label147.TabIndex = 133;
-            this.label147.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_cukry_zakres.AutoSize = true;
+            this.k_cukry_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_cukry_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_cukry_zakres.Location = new System.Drawing.Point(622, 318);
+            this.k_cukry_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_cukry_zakres.Name = "k_cukry_zakres";
+            this.k_cukry_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_cukry_zakres.TabIndex = 218;
+            this.k_cukry_zakres.Text = "80 - 100";
+            this.k_cukry_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label148
+            // k_cukry_tysiac_zakres
             // 
-            this.label148.AutoSize = true;
-            this.label148.BackColor = System.Drawing.Color.Transparent;
-            this.label148.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label148.ForeColor = System.Drawing.Color.Red;
-            this.label148.Location = new System.Drawing.Point(31, 485);
-            this.label148.MaximumSize = new System.Drawing.Size(95, 0);
-            this.label148.MinimumSize = new System.Drawing.Size(95, 0);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(95, 20);
-            this.label148.TabIndex = 132;
-            this.label148.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_cukry_tysiac_zakres.AutoSize = true;
+            this.k_cukry_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_cukry_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_cukry_tysiac_zakres.Location = new System.Drawing.Point(622, 368);
+            this.k_cukry_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_cukry_tysiac_zakres.Name = "k_cukry_tysiac_zakres";
+            this.k_cukry_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_cukry_tysiac_zakres.TabIndex = 217;
+            this.k_cukry_tysiac_zakres.Text = "20 - 30";
+            this.k_cukry_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label72
+            // k_cukry_tysiac
             // 
-            this.label72.AutoSize = true;
-            this.label72.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
-            this.label72.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label72.Location = new System.Drawing.Point(572, 505);
-            this.label72.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label72.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(60, 7);
-            this.label72.TabIndex = 131;
-            this.label72.Text = "przyswajalne";
-            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_cukry_tysiac.AutoSize = true;
+            this.k_cukry_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_cukry_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_cukry_tysiac.Location = new System.Drawing.Point(622, 348);
+            this.k_cukry_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_cukry_tysiac.Name = "k_cukry_tysiac";
+            this.k_cukry_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_cukry_tysiac.TabIndex = 216;
+            this.k_cukry_tysiac.Text = "25";
+            this.k_cukry_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label81
+            // k_przyswajalne_tysiac_zakres
             // 
-            this.label81.AutoSize = true;
-            this.label81.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label81.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label81.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label81.Location = new System.Drawing.Point(575, 517);
-            this.label81.MaximumSize = new System.Drawing.Size(50, 0);
-            this.label81.MinimumSize = new System.Drawing.Size(50, 0);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(50, 20);
-            this.label81.TabIndex = 130;
-            this.label81.Text = "0 kcal";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_przyswajalne_tysiac_zakres.AutoSize = true;
+            this.k_przyswajalne_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_przyswajalne_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_przyswajalne_tysiac_zakres.Location = new System.Drawing.Point(521, 368);
+            this.k_przyswajalne_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_tysiac_zakres.Name = "k_przyswajalne_tysiac_zakres";
+            this.k_przyswajalne_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_tysiac_zakres.TabIndex = 215;
+            this.k_przyswajalne_tysiac_zakres.Text = "20 - 30";
+            this.k_przyswajalne_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label83
+            // k_przyswajalne_tysiac
             // 
-            this.label83.AutoSize = true;
-            this.label83.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
-            this.label83.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label83.Location = new System.Drawing.Point(569, 491);
-            this.label83.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label83.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(65, 9);
-            this.label83.TabIndex = 129;
-            this.label83.Text = "Węglowodany";
-            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_przyswajalne_tysiac.AutoSize = true;
+            this.k_przyswajalne_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_przyswajalne_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_przyswajalne_tysiac.Location = new System.Drawing.Point(521, 348);
+            this.k_przyswajalne_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_tysiac.Name = "k_przyswajalne_tysiac";
+            this.k_przyswajalne_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_tysiac.TabIndex = 214;
+            this.k_przyswajalne_tysiac.Text = "25";
+            this.k_przyswajalne_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar1
+            // k_przyswajalne_zakres
             // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(552, 463);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar1.OuterMargin = -25;
-            this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.PaleGreen;
-            this.circularProgressBar1.ProgressWidth = 10;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(97, 97);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.circularProgressBar1.SubscriptText = "";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "";
-            this.circularProgressBar1.TabIndex = 128;
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.circularProgressBar1.Value = 15;
+            this.k_przyswajalne_zakres.AutoSize = true;
+            this.k_przyswajalne_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_przyswajalne_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_przyswajalne_zakres.Location = new System.Drawing.Point(521, 318);
+            this.k_przyswajalne_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_zakres.Name = "k_przyswajalne_zakres";
+            this.k_przyswajalne_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_zakres.TabIndex = 213;
+            this.k_przyswajalne_zakres.Text = "80 - 100";
+            this.k_przyswajalne_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label108
+            // k_blonnik_plus
             // 
-            this.label108.AutoSize = true;
-            this.label108.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
-            this.label108.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label108.Location = new System.Drawing.Point(460, 390);
-            this.label108.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label108.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label108.Name = "label108";
-            this.label108.Size = new System.Drawing.Size(80, 13);
-            this.label108.TabIndex = 127;
-            this.label108.Text = "ogółem";
-            this.label108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_blonnik_plus.AutoSize = true;
+            this.k_blonnik_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_blonnik_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_blonnik_plus.Location = new System.Drawing.Point(722, 303);
+            this.k_blonnik_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_blonnik_plus.Name = "k_blonnik_plus";
+            this.k_blonnik_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_blonnik_plus.TabIndex = 212;
+            this.k_blonnik_plus.Text = "OK";
+            this.k_blonnik_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label109
+            // k_cukry_plus
             // 
-            this.label109.AutoSize = true;
-            this.label109.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label109.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label109.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label109.Location = new System.Drawing.Point(775, 395);
-            this.label109.MaximumSize = new System.Drawing.Size(85, 0);
-            this.label109.MinimumSize = new System.Drawing.Size(85, 0);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(85, 15);
-            this.label109.TabIndex = 126;
-            this.label109.Text = "pokarmowy";
-            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_cukry_plus.AutoSize = true;
+            this.k_cukry_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_cukry_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_cukry_plus.Location = new System.Drawing.Point(622, 303);
+            this.k_cukry_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_cukry_plus.Name = "k_cukry_plus";
+            this.k_cukry_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_cukry_plus.TabIndex = 211;
+            this.k_cukry_plus.Text = "OK";
+            this.k_cukry_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label113
+            // k_przyswajalne_plus
             // 
-            this.label113.AutoSize = true;
-            this.label113.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label113.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label113.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label113.Location = new System.Drawing.Point(777, 419);
-            this.label113.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label113.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(80, 20);
-            this.label113.TabIndex = 125;
-            this.label113.Text = "0 kcal";
-            this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_przyswajalne_plus.AutoSize = true;
+            this.k_przyswajalne_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_przyswajalne_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_przyswajalne_plus.Location = new System.Drawing.Point(521, 303);
+            this.k_przyswajalne_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_przyswajalne_plus.Name = "k_przyswajalne_plus";
+            this.k_przyswajalne_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_przyswajalne_plus.TabIndex = 210;
+            this.k_przyswajalne_plus.Text = "OK";
+            this.k_przyswajalne_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label115
+            // k_cukry_procent_zakres
             // 
-            this.label115.AutoSize = true;
-            this.label115.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label115.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label115.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label115.Location = new System.Drawing.Point(785, 380);
-            this.label115.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label115.MinimumSize = new System.Drawing.Size(65, 0);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(65, 15);
-            this.label115.TabIndex = 124;
-            this.label115.Text = "Błonnik";
-            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_cukry_procent_zakres.AutoSize = true;
+            this.k_cukry_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_cukry_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_cukry_procent_zakres.Location = new System.Drawing.Point(622, 423);
+            this.k_cukry_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_cukry_procent_zakres.Name = "k_cukry_procent_zakres";
+            this.k_cukry_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_cukry_procent_zakres.TabIndex = 209;
+            this.k_cukry_procent_zakres.Text = "20 - 25 % kcal";
+            this.k_cukry_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar2
+            // k_przyswajalne_procent_zakres
             // 
-            this.circularProgressBar2.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar2.AnimationSpeed = 500;
-            this.circularProgressBar2.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar2.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar2.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar2.InnerMargin = 2;
-            this.circularProgressBar2.InnerWidth = -1;
-            this.circularProgressBar2.Location = new System.Drawing.Point(754, 354);
-            this.circularProgressBar2.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar2.Name = "circularProgressBar2";
-            this.circularProgressBar2.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar2.OuterMargin = -25;
-            this.circularProgressBar2.OuterWidth = 26;
-            this.circularProgressBar2.ProgressColor = System.Drawing.Color.Pink;
-            this.circularProgressBar2.ProgressWidth = 10;
-            this.circularProgressBar2.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar2.Size = new System.Drawing.Size(125, 125);
-            this.circularProgressBar2.StartAngle = 270;
-            this.circularProgressBar2.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar2.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.circularProgressBar2.SubscriptText = "";
-            this.circularProgressBar2.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar2.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.circularProgressBar2.SuperscriptText = "";
-            this.circularProgressBar2.TabIndex = 123;
-            this.circularProgressBar2.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.circularProgressBar2.Value = 15;
+            this.k_przyswajalne_procent_zakres.AutoSize = true;
+            this.k_przyswajalne_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_przyswajalne_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_przyswajalne_procent_zakres.Location = new System.Drawing.Point(521, 423);
+            this.k_przyswajalne_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_procent_zakres.Name = "k_przyswajalne_procent_zakres";
+            this.k_przyswajalne_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_procent_zakres.TabIndex = 208;
+            this.k_przyswajalne_procent_zakres.Text = "40 - 50 % kcal";
+            this.k_przyswajalne_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label117
+            // k_cukry_procent
             // 
-            this.label117.AutoSize = true;
-            this.label117.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label117.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label117.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label117.Location = new System.Drawing.Point(474, 440);
-            this.label117.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label117.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(55, 15);
-            this.label117.TabIndex = 122;
-            this.label117.Text = "% kalorii";
-            this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_cukry_procent.AutoSize = true;
+            this.k_cukry_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_cukry_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_cukry_procent.Location = new System.Drawing.Point(622, 403);
+            this.k_cukry_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_cukry_procent.Name = "k_cukry_procent";
+            this.k_cukry_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_cukry_procent.TabIndex = 207;
+            this.k_cukry_procent.Text = "45";
+            this.k_cukry_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label118
+            // k_przyswajalne_procent
             // 
-            this.label118.AutoSize = true;
-            this.label118.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label118.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label118.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label118.Location = new System.Drawing.Point(293, 441);
-            this.label118.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label118.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(60, 15);
-            this.label118.TabIndex = 121;
-            this.label118.Text = "% kalorii";
-            this.label118.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label120.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label120.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label120.Location = new System.Drawing.Point(169, 441);
-            this.label120.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label120.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(60, 15);
-            this.label120.TabIndex = 120;
-            this.label120.Text = "% kalorii";
-            this.label120.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label121.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
-            this.label121.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label121.Location = new System.Drawing.Point(386, 507);
-            this.label121.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label121.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(55, 11);
-            this.label121.TabIndex = 119;
-            this.label121.Text = "nasycone";
-            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label123
-            // 
-            this.label123.AutoSize = true;
-            this.label123.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label123.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
-            this.label123.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label123.Location = new System.Drawing.Point(386, 498);
-            this.label123.MaximumSize = new System.Drawing.Size(55, 0);
-            this.label123.MinimumSize = new System.Drawing.Size(55, 0);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(55, 11);
-            this.label123.TabIndex = 118;
-            this.label123.Text = "tłuszczowe";
-            this.label123.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label124
-            // 
-            this.label124.AutoSize = true;
-            this.label124.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label124.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label124.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label124.Location = new System.Drawing.Point(389, 518);
-            this.label124.MaximumSize = new System.Drawing.Size(50, 0);
-            this.label124.MinimumSize = new System.Drawing.Size(50, 0);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(50, 20);
-            this.label124.TabIndex = 117;
-            this.label124.Text = "0 kcal";
-            this.label124.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label126.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Bold);
-            this.label126.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label126.Location = new System.Drawing.Point(393, 488);
-            this.label126.MaximumSize = new System.Drawing.Size(40, 0);
-            this.label126.MinimumSize = new System.Drawing.Size(42, 0);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(42, 11);
-            this.label126.TabIndex = 116;
-            this.label126.Text = "Kwasy";
-            this.label126.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label128.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label128.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label128.Location = new System.Drawing.Point(904, 405);
-            this.label128.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label128.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(80, 20);
-            this.label128.TabIndex = 115;
-            this.label128.Text = "0 kcal";
-            this.label128.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_przyswajalne_procent.AutoSize = true;
+            this.k_przyswajalne_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_przyswajalne_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_przyswajalne_procent.Location = new System.Drawing.Point(521, 403);
+            this.k_przyswajalne_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_procent.Name = "k_przyswajalne_procent";
+            this.k_przyswajalne_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne_procent.TabIndex = 206;
+            this.k_przyswajalne_procent.Text = "45";
+            this.k_przyswajalne_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label129
             // 
             this.label129.AutoSize = true;
-            this.label129.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label129.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label129.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label129.Location = new System.Drawing.Point(914, 380);
-            this.label129.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label129.MinimumSize = new System.Drawing.Size(60, 0);
+            this.label129.BackColor = System.Drawing.Color.Transparent;
+            this.label129.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.label129.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label129.Location = new System.Drawing.Point(422, 385);
+            this.label129.MinimumSize = new System.Drawing.Size(100, 6);
             this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(60, 20);
-            this.label129.TabIndex = 114;
-            this.label129.Text = "Sód";
+            this.label129.Size = new System.Drawing.Size(100, 11);
+            this.label129.TabIndex = 205;
+            this.label129.Text = "na 1000 kcal";
             this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label130
             // 
             this.label130.AutoSize = true;
-            this.label130.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label130.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label130.BackColor = System.Drawing.Color.Transparent;
+            this.label130.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label130.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label130.Location = new System.Drawing.Point(462, 421);
-            this.label130.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label130.MinimumSize = new System.Drawing.Size(80, 0);
+            this.label130.Location = new System.Drawing.Point(321, 386);
+            this.label130.MinimumSize = new System.Drawing.Size(100, 6);
             this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(80, 19);
-            this.label130.TabIndex = 113;
-            this.label130.Text = "45";
+            this.label130.Size = new System.Drawing.Size(100, 11);
+            this.label130.TabIndex = 204;
+            this.label130.Text = "na 1000 kcal";
             this.label130.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label131
             // 
             this.label131.AutoSize = true;
-            this.label131.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label131.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label131.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label131.Location = new System.Drawing.Point(462, 403);
-            this.label131.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label131.MinimumSize = new System.Drawing.Size(80, 0);
+            this.label131.BackColor = System.Drawing.Color.Transparent;
+            this.label131.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.label131.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label131.Location = new System.Drawing.Point(223, 385);
+            this.label131.MinimumSize = new System.Drawing.Size(100, 6);
             this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(80, 20);
-            this.label131.TabIndex = 112;
-            this.label131.Text = "0 kcal";
+            this.label131.Size = new System.Drawing.Size(100, 11);
+            this.label131.TabIndex = 203;
+            this.label131.Text = "na 1000 kcal";
             this.label131.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label132
             // 
             this.label132.AutoSize = true;
-            this.label132.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label132.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
-            this.label132.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label132.Location = new System.Drawing.Point(470, 381);
-            this.label132.MaximumSize = new System.Drawing.Size(65, 0);
-            this.label132.MinimumSize = new System.Drawing.Size(65, 0);
+            this.label132.BackColor = System.Drawing.Color.Transparent;
+            this.label132.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.label132.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label132.Location = new System.Drawing.Point(123, 385);
+            this.label132.MinimumSize = new System.Drawing.Size(100, 6);
             this.label132.Name = "label132";
-            this.label132.Size = new System.Drawing.Size(65, 9);
-            this.label132.TabIndex = 111;
-            this.label132.Text = "Węglowodany";
+            this.label132.Size = new System.Drawing.Size(100, 11);
+            this.label132.TabIndex = 202;
+            this.label132.Text = "na 1000 kcal";
             this.label132.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label133
+            // k_wegle_zakres
             // 
-            this.label133.AutoSize = true;
-            this.label133.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label133.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label133.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label133.Location = new System.Drawing.Point(282, 422);
-            this.label133.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label133.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(80, 19);
-            this.label133.TabIndex = 110;
-            this.label133.Text = "45";
-            this.label133.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_wegle_zakres.AutoSize = true;
+            this.k_wegle_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_wegle_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_wegle_zakres.Location = new System.Drawing.Point(422, 318);
+            this.k_wegle_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_wegle_zakres.Name = "k_wegle_zakres";
+            this.k_wegle_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_wegle_zakres.TabIndex = 201;
+            this.k_wegle_zakres.Text = "80 - 100";
+            this.k_wegle_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label134
+            // k_wegle_tysiac_zakres
             // 
-            this.label134.AutoSize = true;
-            this.label134.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label134.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label134.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label134.Location = new System.Drawing.Point(283, 404);
-            this.label134.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label134.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(80, 20);
-            this.label134.TabIndex = 109;
-            this.label134.Text = "0 kcal";
-            this.label134.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_wegle_tysiac_zakres.AutoSize = true;
+            this.k_wegle_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_wegle_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_wegle_tysiac_zakres.Location = new System.Drawing.Point(422, 368);
+            this.k_wegle_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_wegle_tysiac_zakres.Name = "k_wegle_tysiac_zakres";
+            this.k_wegle_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_wegle_tysiac_zakres.TabIndex = 200;
+            this.k_wegle_tysiac_zakres.Text = "20 - 30";
+            this.k_wegle_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label135
+            // k_wegle_tysiac
             // 
-            this.label135.AutoSize = true;
-            this.label135.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label135.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.label135.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label135.Location = new System.Drawing.Point(293, 383);
-            this.label135.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label135.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(60, 17);
-            this.label135.TabIndex = 108;
-            this.label135.Text = "Tłuszcze";
-            this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_wegle_tysiac.AutoSize = true;
+            this.k_wegle_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_wegle_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_wegle_tysiac.Location = new System.Drawing.Point(422, 348);
+            this.k_wegle_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_wegle_tysiac.Name = "k_wegle_tysiac";
+            this.k_wegle_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_wegle_tysiac.TabIndex = 199;
+            this.k_wegle_tysiac.Text = "25";
+            this.k_wegle_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label136
+            // k_wegle_procent_zakres
             // 
-            this.label136.AutoSize = true;
-            this.label136.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label136.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label136.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label136.Location = new System.Drawing.Point(158, 422);
-            this.label136.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label136.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(80, 19);
-            this.label136.TabIndex = 107;
-            this.label136.Text = "45";
-            this.label136.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_wegle_procent_zakres.AutoSize = true;
+            this.k_wegle_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_wegle_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_wegle_procent_zakres.Location = new System.Drawing.Point(422, 423);
+            this.k_wegle_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_wegle_procent_zakres.Name = "k_wegle_procent_zakres";
+            this.k_wegle_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_wegle_procent_zakres.TabIndex = 198;
+            this.k_wegle_procent_zakres.Text = "20 - 25 % kcal";
+            this.k_wegle_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label137
+            // k_wegle_procent
             // 
-            this.label137.AutoSize = true;
-            this.label137.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label137.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label137.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label137.Location = new System.Drawing.Point(158, 404);
-            this.label137.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label137.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(80, 20);
-            this.label137.TabIndex = 106;
-            this.label137.Text = "0 kcal";
-            this.label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_wegle_procent.AutoSize = true;
+            this.k_wegle_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_wegle_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_wegle_procent.Location = new System.Drawing.Point(422, 403);
+            this.k_wegle_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_wegle_procent.Name = "k_wegle_procent";
+            this.k_wegle_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_wegle_procent.TabIndex = 197;
+            this.k_wegle_procent.Text = "45";
+            this.k_wegle_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label138
+            // k_wegle_plus
             // 
-            this.label138.AutoSize = true;
-            this.label138.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label138.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label138.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label138.Location = new System.Drawing.Point(169, 384);
-            this.label138.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label138.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(60, 20);
-            this.label138.TabIndex = 105;
-            this.label138.Text = "Białko";
-            this.label138.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_wegle_plus.AutoSize = true;
+            this.k_wegle_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_wegle_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_wegle_plus.Location = new System.Drawing.Point(422, 303);
+            this.k_wegle_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_wegle_plus.Name = "k_wegle_plus";
+            this.k_wegle_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_wegle_plus.TabIndex = 196;
+            this.k_wegle_plus.Text = "OK";
+            this.k_wegle_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label139
+            // k_kwasy_zakres
             // 
-            this.label139.AutoSize = true;
-            this.label139.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label139.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label139.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label139.Location = new System.Drawing.Point(32, 405);
-            this.label139.MaximumSize = new System.Drawing.Size(80, 0);
-            this.label139.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(80, 20);
-            this.label139.TabIndex = 104;
-            this.label139.Text = "0 kcal";
-            this.label139.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_kwasy_zakres.AutoSize = true;
+            this.k_kwasy_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_kwasy_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_kwasy_zakres.Location = new System.Drawing.Point(322, 318);
+            this.k_kwasy_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_kwasy_zakres.Name = "k_kwasy_zakres";
+            this.k_kwasy_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_kwasy_zakres.TabIndex = 195;
+            this.k_kwasy_zakres.Text = "80 - 100";
+            this.k_kwasy_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label140
+            // k_kwasy_tysiac_zakres
             // 
-            this.label140.AutoSize = true;
-            this.label140.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label140.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label140.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label140.Location = new System.Drawing.Point(45, 386);
-            this.label140.MaximumSize = new System.Drawing.Size(60, 0);
-            this.label140.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(60, 19);
-            this.label140.TabIndex = 103;
-            this.label140.Text = "Energia";
-            this.label140.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.k_kwasy_tysiac_zakres.AutoSize = true;
+            this.k_kwasy_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_kwasy_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_kwasy_tysiac_zakres.Location = new System.Drawing.Point(322, 368);
+            this.k_kwasy_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_kwasy_tysiac_zakres.Name = "k_kwasy_tysiac_zakres";
+            this.k_kwasy_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_kwasy_tysiac_zakres.TabIndex = 194;
+            this.k_kwasy_tysiac_zakres.Text = "20 - 30";
+            this.k_kwasy_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar3
+            // k_kwasy_tysiac
             // 
-            this.circularProgressBar3.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar3.AnimationSpeed = 500;
-            this.circularProgressBar3.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar3.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar3.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar3.InnerMargin = 2;
-            this.circularProgressBar3.InnerWidth = -1;
-            this.circularProgressBar3.Location = new System.Drawing.Point(363, 467);
-            this.circularProgressBar3.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar3.Name = "circularProgressBar3";
-            this.circularProgressBar3.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar3.OuterMargin = -25;
-            this.circularProgressBar3.OuterWidth = 26;
-            this.circularProgressBar3.ProgressColor = System.Drawing.Color.DarkSalmon;
-            this.circularProgressBar3.ProgressWidth = 10;
-            this.circularProgressBar3.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar3.Size = new System.Drawing.Size(98, 93);
-            this.circularProgressBar3.StartAngle = 270;
-            this.circularProgressBar3.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar3.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.circularProgressBar3.SubscriptText = "";
-            this.circularProgressBar3.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar3.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularProgressBar3.SuperscriptText = "";
-            this.circularProgressBar3.TabIndex = 102;
-            this.circularProgressBar3.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.circularProgressBar3.Value = 99;
+            this.k_kwasy_tysiac.AutoSize = true;
+            this.k_kwasy_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_kwasy_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_kwasy_tysiac.Location = new System.Drawing.Point(322, 348);
+            this.k_kwasy_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_kwasy_tysiac.Name = "k_kwasy_tysiac";
+            this.k_kwasy_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_kwasy_tysiac.TabIndex = 193;
+            this.k_kwasy_tysiac.Text = "25";
+            this.k_kwasy_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar4
+            // k_kwasy_procent_zakres
             // 
-            this.circularProgressBar4.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar4.AnimationSpeed = 500;
-            this.circularProgressBar4.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar4.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar4.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar4.InnerMargin = 2;
-            this.circularProgressBar4.InnerWidth = -1;
-            this.circularProgressBar4.Location = new System.Drawing.Point(880, 354);
-            this.circularProgressBar4.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar4.Name = "circularProgressBar4";
-            this.circularProgressBar4.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar4.OuterMargin = -25;
-            this.circularProgressBar4.OuterWidth = 26;
-            this.circularProgressBar4.ProgressColor = System.Drawing.Color.LightBlue;
-            this.circularProgressBar4.ProgressWidth = 10;
-            this.circularProgressBar4.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar4.Size = new System.Drawing.Size(125, 125);
-            this.circularProgressBar4.StartAngle = 270;
-            this.circularProgressBar4.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar4.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.circularProgressBar4.SubscriptText = "";
-            this.circularProgressBar4.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar4.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularProgressBar4.SuperscriptText = "";
-            this.circularProgressBar4.TabIndex = 101;
-            this.circularProgressBar4.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.circularProgressBar4.Value = 99;
+            this.k_kwasy_procent_zakres.AutoSize = true;
+            this.k_kwasy_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_kwasy_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_kwasy_procent_zakres.Location = new System.Drawing.Point(322, 423);
+            this.k_kwasy_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_kwasy_procent_zakres.Name = "k_kwasy_procent_zakres";
+            this.k_kwasy_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_kwasy_procent_zakres.TabIndex = 192;
+            this.k_kwasy_procent_zakres.Text = "20 - 25 % kcal";
+            this.k_kwasy_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar5
+            // k_kwasy_procent
             // 
-            this.circularProgressBar5.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar5.AnimationSpeed = 500;
-            this.circularProgressBar5.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar5.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar5.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar5.InnerMargin = 2;
-            this.circularProgressBar5.InnerWidth = -1;
-            this.circularProgressBar5.Location = new System.Drawing.Point(11, 354);
-            this.circularProgressBar5.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar5.Name = "circularProgressBar5";
-            this.circularProgressBar5.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar5.OuterMargin = -25;
-            this.circularProgressBar5.OuterWidth = 26;
-            this.circularProgressBar5.ProgressColor = System.Drawing.Color.Khaki;
-            this.circularProgressBar5.ProgressWidth = 10;
-            this.circularProgressBar5.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar5.Size = new System.Drawing.Size(125, 125);
-            this.circularProgressBar5.StartAngle = 270;
-            this.circularProgressBar5.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar5.SubscriptMargin = new System.Windows.Forms.Padding(-26, 15, 0, 0);
-            this.circularProgressBar5.SubscriptText = "";
-            this.circularProgressBar5.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar5.SuperscriptMargin = new System.Windows.Forms.Padding(0);
-            this.circularProgressBar5.SuperscriptText = "";
-            this.circularProgressBar5.TabIndex = 100;
-            this.circularProgressBar5.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.circularProgressBar5.Value = 78;
+            this.k_kwasy_procent.AutoSize = true;
+            this.k_kwasy_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_kwasy_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_kwasy_procent.Location = new System.Drawing.Point(322, 403);
+            this.k_kwasy_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_kwasy_procent.Name = "k_kwasy_procent";
+            this.k_kwasy_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_kwasy_procent.TabIndex = 191;
+            this.k_kwasy_procent.Text = "45";
+            this.k_kwasy_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar6
+            // k_tluszcze_zakres
             // 
-            this.circularProgressBar6.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar6.AnimationSpeed = 500;
-            this.circularProgressBar6.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar6.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar6.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar6.InnerMargin = 2;
-            this.circularProgressBar6.InnerWidth = -1;
-            this.circularProgressBar6.Location = new System.Drawing.Point(437, 353);
-            this.circularProgressBar6.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar6.Name = "circularProgressBar6";
-            this.circularProgressBar6.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar6.OuterMargin = -25;
-            this.circularProgressBar6.OuterWidth = 26;
-            this.circularProgressBar6.ProgressColor = System.Drawing.Color.DarkGreen;
-            this.circularProgressBar6.ProgressWidth = 10;
-            this.circularProgressBar6.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar6.Size = new System.Drawing.Size(125, 125);
-            this.circularProgressBar6.StartAngle = 270;
-            this.circularProgressBar6.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar6.SubscriptMargin = new System.Windows.Forms.Padding(-45, 15, 0, 0);
-            this.circularProgressBar6.SubscriptText = "";
-            this.circularProgressBar6.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar6.SuperscriptMargin = new System.Windows.Forms.Padding(-45, 65, 0, 0);
-            this.circularProgressBar6.SuperscriptText = "";
-            this.circularProgressBar6.TabIndex = 99;
-            this.circularProgressBar6.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.circularProgressBar6.Value = 15;
+            this.k_tluszcze_zakres.AutoSize = true;
+            this.k_tluszcze_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_tluszcze_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_tluszcze_zakres.Location = new System.Drawing.Point(222, 318);
+            this.k_tluszcze_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_zakres.Name = "k_tluszcze_zakres";
+            this.k_tluszcze_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_zakres.TabIndex = 190;
+            this.k_tluszcze_zakres.Text = "80 - 100";
+            this.k_tluszcze_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar15
+            // k_tluszcze_tysiac_zakres
             // 
-            this.circularProgressBar15.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar15.AnimationSpeed = 500;
-            this.circularProgressBar15.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar15.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar15.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar15.InnerMargin = 2;
-            this.circularProgressBar15.InnerWidth = -1;
-            this.circularProgressBar15.Location = new System.Drawing.Point(258, 354);
-            this.circularProgressBar15.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar15.Name = "circularProgressBar15";
-            this.circularProgressBar15.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar15.OuterMargin = -25;
-            this.circularProgressBar15.OuterWidth = 26;
-            this.circularProgressBar15.ProgressColor = System.Drawing.Color.SandyBrown;
-            this.circularProgressBar15.ProgressWidth = 10;
-            this.circularProgressBar15.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar15.Size = new System.Drawing.Size(125, 125);
-            this.circularProgressBar15.StartAngle = 270;
-            this.circularProgressBar15.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar15.SubscriptMargin = new System.Windows.Forms.Padding(-29, 15, 0, 0);
-            this.circularProgressBar15.SubscriptText = "";
-            this.circularProgressBar15.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar15.SuperscriptMargin = new System.Windows.Forms.Padding(-29, 65, 0, 0);
-            this.circularProgressBar15.SuperscriptText = "";
-            this.circularProgressBar15.TabIndex = 98;
-            this.circularProgressBar15.TextMargin = new System.Windows.Forms.Padding(20, -25, 0, 0);
-            this.circularProgressBar15.Value = 54;
+            this.k_tluszcze_tysiac_zakres.AutoSize = true;
+            this.k_tluszcze_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_tluszcze_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_tluszcze_tysiac_zakres.Location = new System.Drawing.Point(222, 368);
+            this.k_tluszcze_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_tysiac_zakres.Name = "k_tluszcze_tysiac_zakres";
+            this.k_tluszcze_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_tysiac_zakres.TabIndex = 189;
+            this.k_tluszcze_tysiac_zakres.Text = "20 - 30";
+            this.k_tluszcze_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularProgressBar16
+            // k_tluszcze_tysiac
             // 
-            this.circularProgressBar16.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar16.AnimationSpeed = 500;
-            this.circularProgressBar16.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.circularProgressBar16.ForeColor = System.Drawing.Color.Gray;
-            this.circularProgressBar16.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar16.InnerMargin = 2;
-            this.circularProgressBar16.InnerWidth = -1;
-            this.circularProgressBar16.Location = new System.Drawing.Point(134, 354);
-            this.circularProgressBar16.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar16.Name = "circularProgressBar16";
-            this.circularProgressBar16.OuterColor = System.Drawing.Color.White;
-            this.circularProgressBar16.OuterMargin = -25;
-            this.circularProgressBar16.OuterWidth = 26;
-            this.circularProgressBar16.ProgressColor = System.Drawing.Color.MediumPurple;
-            this.circularProgressBar16.ProgressWidth = 10;
-            this.circularProgressBar16.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.circularProgressBar16.Size = new System.Drawing.Size(125, 125);
-            this.circularProgressBar16.StartAngle = 270;
-            this.circularProgressBar16.SubscriptColor = System.Drawing.Color.Gray;
-            this.circularProgressBar16.SubscriptMargin = new System.Windows.Forms.Padding(-19, 15, 0, 0);
-            this.circularProgressBar16.SubscriptText = "";
-            this.circularProgressBar16.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar16.SuperscriptMargin = new System.Windows.Forms.Padding(-19, 65, 0, 0);
-            this.circularProgressBar16.SuperscriptText = "";
-            this.circularProgressBar16.TabIndex = 97;
-            this.circularProgressBar16.TextMargin = new System.Windows.Forms.Padding(17, -25, 0, 0);
-            this.circularProgressBar16.Value = 65;
+            this.k_tluszcze_tysiac.AutoSize = true;
+            this.k_tluszcze_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_tluszcze_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_tluszcze_tysiac.Location = new System.Drawing.Point(222, 348);
+            this.k_tluszcze_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_tysiac.Name = "k_tluszcze_tysiac";
+            this.k_tluszcze_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_tysiac.TabIndex = 188;
+            this.k_tluszcze_tysiac.Text = "25";
+            this.k_tluszcze_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko_tysiac_zakres
+            // 
+            this.k_bialko_tysiac_zakres.AutoSize = true;
+            this.k_bialko_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_bialko_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_bialko_tysiac_zakres.Location = new System.Drawing.Point(122, 368);
+            this.k_bialko_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_bialko_tysiac_zakres.Name = "k_bialko_tysiac_zakres";
+            this.k_bialko_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_bialko_tysiac_zakres.TabIndex = 187;
+            this.k_bialko_tysiac_zakres.Text = "20 - 30";
+            this.k_bialko_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko_tysiac
+            // 
+            this.k_bialko_tysiac.AutoSize = true;
+            this.k_bialko_tysiac.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_bialko_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_bialko_tysiac.Location = new System.Drawing.Point(122, 348);
+            this.k_bialko_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_bialko_tysiac.Name = "k_bialko_tysiac";
+            this.k_bialko_tysiac.Size = new System.Drawing.Size(100, 20);
+            this.k_bialko_tysiac.TabIndex = 186;
+            this.k_bialko_tysiac.Text = "25";
+            this.k_bialko_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko_zakres
+            // 
+            this.k_bialko_zakres.AutoSize = true;
+            this.k_bialko_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_bialko_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_bialko_zakres.Location = new System.Drawing.Point(122, 318);
+            this.k_bialko_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_bialko_zakres.Name = "k_bialko_zakres";
+            this.k_bialko_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_bialko_zakres.TabIndex = 185;
+            this.k_bialko_zakres.Text = "80 - 100";
+            this.k_bialko_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_energia_zakres
+            // 
+            this.k_energia_zakres.AutoSize = true;
+            this.k_energia_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_energia_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_energia_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_energia_zakres.Location = new System.Drawing.Point(22, 318);
+            this.k_energia_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_energia_zakres.Name = "k_energia_zakres";
+            this.k_energia_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_energia_zakres.TabIndex = 184;
+            this.k_energia_zakres.Text = "2000 - 2400";
+            this.k_energia_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_sol
+            // 
+            this.k_sol.AutoSize = true;
+            this.k_sol.BackColor = System.Drawing.Color.Transparent;
+            this.k_sol.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_sol.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_sol.Location = new System.Drawing.Point(922, 283);
+            this.k_sol.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_sol.Name = "k_sol";
+            this.k_sol.Size = new System.Drawing.Size(100, 20);
+            this.k_sol.TabIndex = 183;
+            this.k_sol.Text = "0";
+            this.k_sol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label158
+            // 
+            this.label158.AutoSize = true;
+            this.label158.BackColor = System.Drawing.Color.Transparent;
+            this.label158.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label158.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label158.Location = new System.Drawing.Point(922, 263);
+            this.label158.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label158.Name = "label158";
+            this.label158.Size = new System.Drawing.Size(100, 20);
+            this.label158.TabIndex = 182;
+            this.label158.Text = "Sól [g]";
+            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_cukry
+            // 
+            this.k_cukry.AutoSize = true;
+            this.k_cukry.BackColor = System.Drawing.Color.Transparent;
+            this.k_cukry.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_cukry.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_cukry.Location = new System.Drawing.Point(622, 283);
+            this.k_cukry.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_cukry.Name = "k_cukry";
+            this.k_cukry.Size = new System.Drawing.Size(100, 20);
+            this.k_cukry.TabIndex = 181;
+            this.k_cukry.Text = "0";
+            this.k_cukry.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label160
+            // 
+            this.label160.AutoSize = true;
+            this.label160.BackColor = System.Drawing.Color.Transparent;
+            this.label160.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label160.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label160.Location = new System.Drawing.Point(622, 263);
+            this.label160.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label160.Name = "label160";
+            this.label160.Size = new System.Drawing.Size(100, 20);
+            this.label160.TabIndex = 180;
+            this.label160.Text = "Cukry [g]";
+            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label161
+            // 
+            this.label161.AutoSize = true;
+            this.label161.BackColor = System.Drawing.Color.Transparent;
+            this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
+            this.label161.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label161.Location = new System.Drawing.Point(522, 273);
+            this.label161.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(100, 7);
+            this.label161.TabIndex = 179;
+            this.label161.Text = "przyswajalne [g]";
+            this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_przyswajalne
+            // 
+            this.k_przyswajalne.AutoSize = true;
+            this.k_przyswajalne.BackColor = System.Drawing.Color.Transparent;
+            this.k_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_przyswajalne.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_przyswajalne.Location = new System.Drawing.Point(522, 283);
+            this.k_przyswajalne.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_przyswajalne.Name = "k_przyswajalne";
+            this.k_przyswajalne.Size = new System.Drawing.Size(100, 20);
+            this.k_przyswajalne.TabIndex = 178;
+            this.k_przyswajalne.Text = "0";
+            this.k_przyswajalne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label163
+            // 
+            this.label163.AutoSize = true;
+            this.label163.BackColor = System.Drawing.Color.Transparent;
+            this.label163.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
+            this.label163.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label163.Location = new System.Drawing.Point(522, 261);
+            this.label163.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(100, 9);
+            this.label163.TabIndex = 177;
+            this.label163.Text = "Węglowodany";
+            this.label163.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label164
+            // 
+            this.label164.AutoSize = true;
+            this.label164.BackColor = System.Drawing.Color.Transparent;
+            this.label164.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
+            this.label164.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label164.Location = new System.Drawing.Point(433, 266);
+            this.label164.MaximumSize = new System.Drawing.Size(80, 0);
+            this.label164.MinimumSize = new System.Drawing.Size(80, 0);
+            this.label164.Name = "label164";
+            this.label164.Size = new System.Drawing.Size(80, 13);
+            this.label164.TabIndex = 176;
+            this.label164.Text = "ogółem [g]";
+            this.label164.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label165
+            // 
+            this.label165.AutoSize = true;
+            this.label165.BackColor = System.Drawing.Color.Transparent;
+            this.label165.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label165.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label165.Location = new System.Drawing.Point(722, 267);
+            this.label165.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label165.Name = "label165";
+            this.label165.Size = new System.Drawing.Size(100, 15);
+            this.label165.TabIndex = 175;
+            this.label165.Text = "pokarmowy [g]";
+            this.label165.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_blonnik
+            // 
+            this.k_blonnik.AutoSize = true;
+            this.k_blonnik.BackColor = System.Drawing.Color.Transparent;
+            this.k_blonnik.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_blonnik.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_blonnik.Location = new System.Drawing.Point(722, 283);
+            this.k_blonnik.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_blonnik.Name = "k_blonnik";
+            this.k_blonnik.Size = new System.Drawing.Size(100, 20);
+            this.k_blonnik.TabIndex = 174;
+            this.k_blonnik.Text = "0";
+            this.k_blonnik.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label175
+            // 
+            this.label175.AutoSize = true;
+            this.label175.BackColor = System.Drawing.Color.Transparent;
+            this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label175.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label175.Location = new System.Drawing.Point(722, 252);
+            this.label175.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label175.Name = "label175";
+            this.label175.Size = new System.Drawing.Size(100, 15);
+            this.label175.TabIndex = 173;
+            this.label175.Text = "Błonnik";
+            this.label175.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_kwasy_plus
+            // 
+            this.k_kwasy_plus.AutoSize = true;
+            this.k_kwasy_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_kwasy_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_kwasy_plus.Location = new System.Drawing.Point(322, 303);
+            this.k_kwasy_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_kwasy_plus.Name = "k_kwasy_plus";
+            this.k_kwasy_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_kwasy_plus.TabIndex = 172;
+            this.k_kwasy_plus.Text = "OK";
+            this.k_kwasy_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_tluszcze_plus
+            // 
+            this.k_tluszcze_plus.AutoSize = true;
+            this.k_tluszcze_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_tluszcze_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_tluszcze_plus.Location = new System.Drawing.Point(222, 303);
+            this.k_tluszcze_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_tluszcze_plus.Name = "k_tluszcze_plus";
+            this.k_tluszcze_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_tluszcze_plus.TabIndex = 171;
+            this.k_tluszcze_plus.Text = "OK";
+            this.k_tluszcze_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko_plus
+            // 
+            this.k_bialko_plus.AutoSize = true;
+            this.k_bialko_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_bialko_plus.ForeColor = System.Drawing.Color.ForestGreen;
+            this.k_bialko_plus.Location = new System.Drawing.Point(122, 303);
+            this.k_bialko_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_bialko_plus.Name = "k_bialko_plus";
+            this.k_bialko_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_bialko_plus.TabIndex = 170;
+            this.k_bialko_plus.Text = "OK";
+            this.k_bialko_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_energia_plus
+            // 
+            this.k_energia_plus.AutoSize = true;
+            this.k_energia_plus.BackColor = System.Drawing.Color.Transparent;
+            this.k_energia_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.k_energia_plus.ForeColor = System.Drawing.Color.Red;
+            this.k_energia_plus.Location = new System.Drawing.Point(22, 303);
+            this.k_energia_plus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_energia_plus.Name = "k_energia_plus";
+            this.k_energia_plus.Size = new System.Drawing.Size(100, 13);
+            this.k_energia_plus.TabIndex = 169;
+            this.k_energia_plus.Text = "+ 100";
+            this.k_energia_plus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_tluszcze_procent_zakres
+            // 
+            this.k_tluszcze_procent_zakres.AutoSize = true;
+            this.k_tluszcze_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_tluszcze_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_tluszcze_procent_zakres.Location = new System.Drawing.Point(222, 423);
+            this.k_tluszcze_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_procent_zakres.Name = "k_tluszcze_procent_zakres";
+            this.k_tluszcze_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_procent_zakres.TabIndex = 168;
+            this.k_tluszcze_procent_zakres.Text = "20 - 25 % kcal";
+            this.k_tluszcze_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko_procent_zakres
+            // 
+            this.k_bialko_procent_zakres.AutoSize = true;
+            this.k_bialko_procent_zakres.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.k_bialko_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.k_bialko_procent_zakres.Location = new System.Drawing.Point(122, 423);
+            this.k_bialko_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_bialko_procent_zakres.Name = "k_bialko_procent_zakres";
+            this.k_bialko_procent_zakres.Size = new System.Drawing.Size(100, 20);
+            this.k_bialko_procent_zakres.TabIndex = 167;
+            this.k_bialko_procent_zakres.Text = "40 - 50 % kcal";
+            this.k_bialko_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label182
+            // 
+            this.label182.AutoSize = true;
+            this.label182.BackColor = System.Drawing.Color.Transparent;
+            this.label182.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.label182.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label182.Location = new System.Drawing.Point(322, 269);
+            this.label182.MinimumSize = new System.Drawing.Size(100, 6);
+            this.label182.Name = "label182";
+            this.label182.Size = new System.Drawing.Size(100, 12);
+            this.label182.TabIndex = 166;
+            this.label182.Text = "nasycone [g]";
+            this.label182.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label183
+            // 
+            this.label183.AutoSize = true;
+            this.label183.BackColor = System.Drawing.Color.Transparent;
+            this.label183.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.label183.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label183.Location = new System.Drawing.Point(322, 259);
+            this.label183.MinimumSize = new System.Drawing.Size(100, 6);
+            this.label183.Name = "label183";
+            this.label183.Size = new System.Drawing.Size(100, 12);
+            this.label183.TabIndex = 165;
+            this.label183.Text = "tłuszczowe";
+            this.label183.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_kwasy
+            // 
+            this.k_kwasy.AutoSize = true;
+            this.k_kwasy.BackColor = System.Drawing.Color.Transparent;
+            this.k_kwasy.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_kwasy.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_kwasy.Location = new System.Drawing.Point(322, 283);
+            this.k_kwasy.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_kwasy.Name = "k_kwasy";
+            this.k_kwasy.Size = new System.Drawing.Size(100, 20);
+            this.k_kwasy.TabIndex = 164;
+            this.k_kwasy.Text = "0";
+            this.k_kwasy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label185
+            // 
+            this.label185.AutoSize = true;
+            this.label185.BackColor = System.Drawing.Color.Transparent;
+            this.label185.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
+            this.label185.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label185.Location = new System.Drawing.Point(322, 249);
+            this.label185.MinimumSize = new System.Drawing.Size(100, 6);
+            this.label185.Name = "label185";
+            this.label185.Size = new System.Drawing.Size(100, 12);
+            this.label185.TabIndex = 163;
+            this.label185.Text = "Kwasy";
+            this.label185.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_sod
+            // 
+            this.k_sod.AutoSize = true;
+            this.k_sod.BackColor = System.Drawing.Color.Transparent;
+            this.k_sod.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_sod.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_sod.Location = new System.Drawing.Point(822, 283);
+            this.k_sod.MinimumSize = new System.Drawing.Size(100, 0);
+            this.k_sod.Name = "k_sod";
+            this.k_sod.Size = new System.Drawing.Size(100, 20);
+            this.k_sod.TabIndex = 162;
+            this.k_sod.Text = "0";
+            this.k_sod.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label187
+            // 
+            this.label187.AutoSize = true;
+            this.label187.BackColor = System.Drawing.Color.Transparent;
+            this.label187.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label187.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label187.Location = new System.Drawing.Point(822, 263);
+            this.label187.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label187.Name = "label187";
+            this.label187.Size = new System.Drawing.Size(100, 20);
+            this.label187.TabIndex = 161;
+            this.label187.Text = "Sód [mg]";
+            this.label187.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_wegle
+            // 
+            this.k_wegle.AutoSize = true;
+            this.k_wegle.BackColor = System.Drawing.Color.Transparent;
+            this.k_wegle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_wegle.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_wegle.Location = new System.Drawing.Point(432, 283);
+            this.k_wegle.MaximumSize = new System.Drawing.Size(80, 0);
+            this.k_wegle.MinimumSize = new System.Drawing.Size(80, 0);
+            this.k_wegle.Name = "k_wegle";
+            this.k_wegle.Size = new System.Drawing.Size(80, 20);
+            this.k_wegle.TabIndex = 160;
+            this.k_wegle.Text = "0";
+            this.k_wegle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label189
+            // 
+            this.label189.AutoSize = true;
+            this.label189.BackColor = System.Drawing.Color.Transparent;
+            this.label189.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
+            this.label189.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label189.Location = new System.Drawing.Point(422, 257);
+            this.label189.MinimumSize = new System.Drawing.Size(100, 0);
+            this.label189.Name = "label189";
+            this.label189.Size = new System.Drawing.Size(100, 9);
+            this.label189.TabIndex = 159;
+            this.label189.Text = "Węglowodany";
+            this.label189.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_tluszcze_procent
+            // 
+            this.k_tluszcze_procent.AutoSize = true;
+            this.k_tluszcze_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_tluszcze_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_tluszcze_procent.Location = new System.Drawing.Point(222, 403);
+            this.k_tluszcze_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_procent.Name = "k_tluszcze_procent";
+            this.k_tluszcze_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_tluszcze_procent.TabIndex = 158;
+            this.k_tluszcze_procent.Text = "45";
+            this.k_tluszcze_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_tluszcze
+            // 
+            this.k_tluszcze.AutoSize = true;
+            this.k_tluszcze.BackColor = System.Drawing.Color.Transparent;
+            this.k_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_tluszcze.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_tluszcze.Location = new System.Drawing.Point(222, 283);
+            this.k_tluszcze.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_tluszcze.Name = "k_tluszcze";
+            this.k_tluszcze.Size = new System.Drawing.Size(100, 20);
+            this.k_tluszcze.TabIndex = 157;
+            this.k_tluszcze.Text = "0";
+            this.k_tluszcze.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label192
+            // 
+            this.label192.AutoSize = true;
+            this.label192.BackColor = System.Drawing.Color.Transparent;
+            this.label192.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label192.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label192.Location = new System.Drawing.Point(222, 263);
+            this.label192.MinimumSize = new System.Drawing.Size(100, 20);
+            this.label192.Name = "label192";
+            this.label192.Size = new System.Drawing.Size(100, 20);
+            this.label192.TabIndex = 156;
+            this.label192.Text = "Tłuszcze [g]";
+            this.label192.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko_procent
+            // 
+            this.k_bialko_procent.AutoSize = true;
+            this.k_bialko_procent.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.k_bialko_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.k_bialko_procent.Location = new System.Drawing.Point(122, 403);
+            this.k_bialko_procent.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_bialko_procent.Name = "k_bialko_procent";
+            this.k_bialko_procent.Size = new System.Drawing.Size(100, 20);
+            this.k_bialko_procent.TabIndex = 155;
+            this.k_bialko_procent.Text = "45";
+            this.k_bialko_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_bialko
+            // 
+            this.k_bialko.AutoSize = true;
+            this.k_bialko.BackColor = System.Drawing.Color.Transparent;
+            this.k_bialko.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_bialko.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_bialko.Location = new System.Drawing.Point(122, 283);
+            this.k_bialko.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_bialko.Name = "k_bialko";
+            this.k_bialko.Size = new System.Drawing.Size(100, 20);
+            this.k_bialko.TabIndex = 154;
+            this.k_bialko.Text = "100";
+            this.k_bialko.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label195
+            // 
+            this.label195.AutoSize = true;
+            this.label195.BackColor = System.Drawing.Color.Transparent;
+            this.label195.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.label195.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label195.Location = new System.Drawing.Point(122, 263);
+            this.label195.MinimumSize = new System.Drawing.Size(100, 20);
+            this.label195.Name = "label195";
+            this.label195.Size = new System.Drawing.Size(100, 20);
+            this.label195.TabIndex = 153;
+            this.label195.Text = "Białko [g]";
+            this.label195.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // k_energia
+            // 
+            this.k_energia.AutoSize = true;
+            this.k_energia.BackColor = System.Drawing.Color.Transparent;
+            this.k_energia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.k_energia.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.k_energia.Location = new System.Drawing.Point(22, 283);
+            this.k_energia.MinimumSize = new System.Drawing.Size(100, 20);
+            this.k_energia.Name = "k_energia";
+            this.k_energia.Size = new System.Drawing.Size(100, 20);
+            this.k_energia.TabIndex = 152;
+            this.k_energia.Text = "2500";
+            this.k_energia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label197
+            // 
+            this.label197.AutoSize = true;
+            this.label197.BackColor = System.Drawing.Color.Transparent;
+            this.label197.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label197.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.label197.Location = new System.Drawing.Point(22, 263);
+            this.label197.MinimumSize = new System.Drawing.Size(100, 20);
+            this.label197.Name = "label197";
+            this.label197.Size = new System.Drawing.Size(100, 20);
+            this.label197.TabIndex = 151;
+            this.label197.Text = "Energia [kcal]";
+            this.label197.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label67
             // 
@@ -7961,7 +8675,6 @@
             this.Controls.Add(this.panel_dekadowka_wczytaj);
             this.Controls.Add(this.panel_dieta);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.panel_dekadowka);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -7974,37 +8687,36 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kalkulator diety";
             this.menu.ResumeLayout(false);
-            this.menu.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.p_de.ResumeLayout(false);
+            this.p_de.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_de)).EndInit();
+            this.p_k.ResumeLayout(false);
+            this.p_k.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_k)).EndInit();
+            this.p_pr.ResumeLayout(false);
+            this.p_pr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_pr)).EndInit();
+            this.p_h.ResumeLayout(false);
+            this.p_h.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_h)).EndInit();
+            this.p_g.ResumeLayout(false);
+            this.p_g.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_g)).EndInit();
+            this.p_d.ResumeLayout(false);
+            this.p_d.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_d)).EndInit();
+            this.p_j.ResumeLayout(false);
+            this.p_j.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_j)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.p_r.ResumeLayout(false);
+            this.p_r.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_r)).EndInit();
+            this.p_p.ResumeLayout(false);
+            this.p_p.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.i_p)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel_dekadowka.ResumeLayout(false);
@@ -8032,7 +8744,6 @@
             this.panel_dieta.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_przelicz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_wstecz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_dodaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).EndInit();
@@ -8109,33 +8820,29 @@
 
         #endregion
         private System.Windows.Forms.Panel menu;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel p_p;
+        private System.Windows.Forms.PictureBox i_p;
+        private System.Windows.Forms.Label t_p;
+        private System.Windows.Forms.Panel p_r;
+        private System.Windows.Forms.PictureBox i_r;
+        private System.Windows.Forms.Label t_r;
+        private System.Windows.Forms.Panel p_j;
+        private System.Windows.Forms.PictureBox i_j;
+        private System.Windows.Forms.Label t_j;
+        private System.Windows.Forms.Panel p_h;
+        private System.Windows.Forms.PictureBox i_h;
+        private System.Windows.Forms.Label t_h;
+        private System.Windows.Forms.Panel p_d;
+        private System.Windows.Forms.PictureBox i_d;
+        private System.Windows.Forms.Label t_d;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel p_g;
+        private System.Windows.Forms.PictureBox i_g;
+        private System.Windows.Forms.Label t_g;
         private System.Windows.Forms.Panel panel_produkty;
         private System.Windows.Forms.PictureBox produkt_przelicz;
         private System.Windows.Forms.PictureBox produkt_wstecz;
@@ -8190,7 +8897,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.PictureBox dieta_przelicz;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
@@ -8198,14 +8904,8 @@
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox dieta_nazwa;
         private System.Windows.Forms.Label dieta_lbl_sol;
-        private System.Windows.Forms.TextBox dieta_energia;
-        private System.Windows.Forms.TextBox dieta_sol;
-        private System.Windows.Forms.TextBox dieta_bialko;
+        private System.Windows.Forms.TextBox energiaOd;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox dieta_tluszcze;
-        private System.Windows.Forms.TextBox dieta_sod;
-        private System.Windows.Forms.TextBox dieta_weglowodany;
-        private System.Windows.Forms.TextBox dieta_ktn;
         private System.Windows.Forms.PictureBox dieta_wstecz;
         private System.Windows.Forms.PictureBox dieta_dodaj;
         private System.Windows.Forms.PictureBox dieta_ok;
@@ -8263,7 +8963,6 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.ComboBox dekadowka_wczytaj_miasto;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox dekadowka_wczytaj_dekadowka;
         private System.Windows.Forms.Panel panel_jadlospis;
         private System.Windows.Forms.PictureBox pictureBox23;
@@ -8298,9 +8997,9 @@
         private System.Windows.Forms.DateTimePicker dekadowka_generuj_data1;
         private System.Windows.Forms.PictureBox dekadowka_generuj;
         private System.Windows.Forms.Label dekadowka_generuj_label1;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Panel p_pr;
+        private System.Windows.Forms.PictureBox i_pr;
+        private System.Windows.Forms.Label t_pr;
         private System.Windows.Forms.Panel panel_drukuj;
         private System.Windows.Forms.Label drukuj_combo_label;
         private System.Windows.Forms.ComboBox drukuj_combo;
@@ -8349,12 +9048,8 @@
         private System.Windows.Forms.Label procent_kolacja;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label7;
-        private CircularProgressBar.CircularProgressBar pb_Bialko;
-        private CircularProgressBar.CircularProgressBar pb_Tluszcze;
         private System.Windows.Forms.Label lbl_masa;
-        private CircularProgressBar.CircularProgressBar pb_Weglowodany;
         private System.Windows.Forms.Button btn_dodaj;
-        private CircularProgressBar.CircularProgressBar pb_Energia;
         private System.Windows.Forms.TextBox tb_masa;
         private System.Windows.Forms.Label lbl_data;
         private System.Windows.Forms.ComboBox cb_dieta;
@@ -8363,38 +9058,30 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cb_kategorie;
         private System.Windows.Forms.ListBox lb_produkty;
-        private CircularProgressBar.CircularProgressBar pb_Sod2;
-        private CircularProgressBar.CircularProgressBar pb_ktn;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label e_text;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label b_text;
-        private System.Windows.Forms.Label b_subtext;
+        private System.Windows.Forms.Label bialko_procent;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label t_text;
-        private System.Windows.Forms.Label t_subtext;
+        private System.Windows.Forms.Label tluszcze_procent;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label w_text;
-        private System.Windows.Forms.Label w_subtext;
         private System.Windows.Forms.Label lblsod;
         private System.Windows.Forms.Label s_text;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label k_text;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label bialko_procent_zakres;
+        private System.Windows.Forms.Label tluszcze_procent_zakres;
         private System.Windows.Forms.Label plus_energia;
         private System.Windows.Forms.Label plus_bialko;
         private System.Windows.Forms.Label plus_tluszcze;
-        private System.Windows.Forms.Label plus_wegle;
-        private System.Windows.Forms.Label plus_sod;
         private System.Windows.Forms.Label plus_kwasy;
-        private CircularProgressBar.CircularProgressBar pb_blonnik;
         private System.Windows.Forms.Label label103;
         private System.Windows.Forms.Label bp_text;
-        private System.Windows.Forms.Label plus_blonnik;
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Panel panel_glowny;
@@ -8402,9 +9089,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader82;
         private System.Windows.Forms.Label label101;
         private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.TextBox dieta_blonnik;
         private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.TextBox dieta_przyswajalne;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader41;
         private System.Windows.Forms.ColumnHeader columnHeader42;
@@ -8549,41 +9234,9 @@
         private System.Windows.Forms.Label label125;
         private System.Windows.Forms.Label receptura_energia;
         private System.Windows.Forms.Label label127;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label jadlospis_przyswajalne;
-        private System.Windows.Forms.Label label59;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_przyswajalne;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label jadlospis_blonnik;
-        private System.Windows.Forms.Label label69;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_blonnik;
-        private System.Windows.Forms.Label jadlospis_ktn;
-        private System.Windows.Forms.Label jadlospis_sod;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label jadlospis_weglowodany;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.Label jadlospis_tluszcze;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label jadlospis_bialko;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label jadlospis_energia;
-        private System.Windows.Forms.Label label84;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_ktn;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_sod;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_energia;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_weglowodany;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_tluszcze;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_bialko;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label107;
-        private System.Windows.Forms.Label jadlospis_weglowodany2;
-        private System.Windows.Forms.Label jadlospis_tluszcze2;
-        private System.Windows.Forms.Label jadlospis_bialko2;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Panel p_k;
+        private System.Windows.Forms.PictureBox i_k;
+        private System.Windows.Forms.Label t_k;
         private System.Windows.Forms.Panel panel_kontrola;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.ComboBox k_dieta;
@@ -8594,58 +9247,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.PictureBox pictureBox28;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label83;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
-        private System.Windows.Forms.Label label108;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label113;
-        private System.Windows.Forms.Label label115;
-        private CircularProgressBar.CircularProgressBar circularProgressBar2;
-        private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Label label121;
-        private System.Windows.Forms.Label label123;
-        private System.Windows.Forms.Label label124;
-        private System.Windows.Forms.Label label126;
-        private System.Windows.Forms.Label label128;
-        private System.Windows.Forms.Label label129;
-        private System.Windows.Forms.Label label130;
-        private System.Windows.Forms.Label label131;
-        private System.Windows.Forms.Label label132;
-        private System.Windows.Forms.Label label133;
-        private System.Windows.Forms.Label label134;
-        private System.Windows.Forms.Label label135;
-        private System.Windows.Forms.Label label136;
-        private System.Windows.Forms.Label label137;
-        private System.Windows.Forms.Label label138;
-        private System.Windows.Forms.Label label139;
-        private System.Windows.Forms.Label label140;
-        private CircularProgressBar.CircularProgressBar circularProgressBar3;
-        private CircularProgressBar.CircularProgressBar circularProgressBar4;
-        private CircularProgressBar.CircularProgressBar circularProgressBar5;
-        private CircularProgressBar.CircularProgressBar circularProgressBar6;
-        private CircularProgressBar.CircularProgressBar circularProgressBar15;
-        private CircularProgressBar.CircularProgressBar circularProgressBar16;
-        private System.Windows.Forms.Label label141;
-        private System.Windows.Forms.Label label142;
-        private System.Windows.Forms.Label label143;
-        private System.Windows.Forms.Label label144;
-        private System.Windows.Forms.Label label145;
-        private System.Windows.Forms.Label label146;
-        private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.Label label148;
-        private System.Windows.Forms.Label plus_cukry;
         private System.Windows.Forms.Label c_text;
         private System.Windows.Forms.Label label152;
-        private CircularProgressBar.CircularProgressBar pb_cukry;
         private System.Windows.Forms.Label label106;
-        private System.Windows.Forms.Label plus_przyswajalne;
         private System.Windows.Forms.Label wp_text;
         private System.Windows.Forms.Label label111;
-        private CircularProgressBar.CircularProgressBar pb_przyswajalne;
         private System.Windows.Forms.ColumnHeader c_cukry;
         private System.Windows.Forms.Label sol_text;
         private System.Windows.Forms.Label label149;
@@ -8667,26 +9273,228 @@
         private System.Windows.Forms.Label label150;
         private System.Windows.Forms.TextBox produkty_cukry;
         private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.TextBox dieta_cukry;
-        private System.Windows.Forms.Label jadlospis_sol;
-        private System.Windows.Forms.Label label158;
-        private System.Windows.Forms.Label jadlospis_cukry;
-        private System.Windows.Forms.Label label156;
-        private CircularProgressBar.CircularProgressBar jadlospis_cb_cukry;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label74;
         private System.Windows.Forms.ColumnHeader columnHeader108;
-        private System.Windows.Forms.Label label160;
-        private System.Windows.Forms.Label kontrola_plus_cukry;
-        private System.Windows.Forms.Label kontrola_cukry;
-        private CircularProgressBar.CircularProgressBar pb_kontrola_cukry;
-        private System.Windows.Forms.Label kontrola_sol;
-        private System.Windows.Forms.Label label157;
         private System.Windows.Forms.ColumnHeader columnHeader109;
         private System.Windows.Forms.ColumnHeader columnHeader110;
         private System.Windows.Forms.ColumnHeader columnHeader111;
         private System.Windows.Forms.ColumnHeader columnHeader112;
+        private System.Windows.Forms.Label bialko_tysiac_zakres;
+        private System.Windows.Forms.Label bialko_tysiac;
+        private System.Windows.Forms.Label sol_zakres;
+        private System.Windows.Forms.Label plus_sol;
+        private System.Windows.Forms.Label blonnik_label;
+        private System.Windows.Forms.Label c_label;
+        private System.Windows.Forms.Label p_label;
+        private System.Windows.Forms.Label sod_zakres;
+        private System.Windows.Forms.Label plus_sod;
+        private System.Windows.Forms.Label blonnik_zakres;
+        private System.Windows.Forms.Label blonnik_tysiac_zakres;
+        private System.Windows.Forms.Label blonnik_tysiac;
+        private System.Windows.Forms.Label blonnik_procent_zakres;
+        private System.Windows.Forms.Label blonnik_procent;
+        private System.Windows.Forms.Label cukry_zakres;
+        private System.Windows.Forms.Label cukry_tysiac_zakres;
+        private System.Windows.Forms.Label cukry_tysiac;
+        private System.Windows.Forms.Label przyswajalne_tysiac_zakres;
+        private System.Windows.Forms.Label przyswajalne_tysiac;
+        private System.Windows.Forms.Label przyswajalne_zakres;
+        private System.Windows.Forms.Label plus_blonnik;
+        private System.Windows.Forms.Label plus_cukry;
+        private System.Windows.Forms.Label plus_przyswajalne;
+        private System.Windows.Forms.Label cukry_procent_zakres;
+        private System.Windows.Forms.Label przyswajalne_procent_zakres;
+        private System.Windows.Forms.Label cukry_procent;
+        private System.Windows.Forms.Label przyswajalne_procent;
+        private System.Windows.Forms.Label w_label;
+        private System.Windows.Forms.Label k_label;
+        private System.Windows.Forms.Label t_label;
+        private System.Windows.Forms.Label bialko_label;
+        private System.Windows.Forms.Label wegle_zakres;
+        private System.Windows.Forms.Label wegle_tysiac_zakres;
+        private System.Windows.Forms.Label wegle_tysiac;
+        private System.Windows.Forms.Label wegle_procent_zakres;
+        private System.Windows.Forms.Label wegle_procent;
+        private System.Windows.Forms.Label plus_wegle;
+        private System.Windows.Forms.Label kwasy_zakres;
+        private System.Windows.Forms.Label kwasy_tysiac_zakres;
+        private System.Windows.Forms.Label kwasy_tysiac;
+        private System.Windows.Forms.Label kwasy_procent_zakres;
+        private System.Windows.Forms.Label kwasy_procent;
+        private System.Windows.Forms.Label tluszcze_zakres;
+        private System.Windows.Forms.Label tluszcze_tysiac_zakres;
+        private System.Windows.Forms.Label tluszcze_tysiac;
+        private System.Windows.Forms.Label bialko_zakres;
+        private System.Windows.Forms.Label energia_zakres;
+        private System.Windows.Forms.Label k_sol_zakres;
+        private System.Windows.Forms.Label k_sol_plus;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label k_sod_zakres;
+        private System.Windows.Forms.Label k_sod_plus;
+        private System.Windows.Forms.Label k_blonnik_zakres;
+        private System.Windows.Forms.Label k_blonnik_tysiac_zakres;
+        private System.Windows.Forms.Label k_blonnik_tysiac;
+        private System.Windows.Forms.Label k_blonnik_procent_zakres;
+        private System.Windows.Forms.Label k_blonnik_procent;
+        private System.Windows.Forms.Label k_cukry_zakres;
+        private System.Windows.Forms.Label k_cukry_tysiac_zakres;
+        private System.Windows.Forms.Label k_cukry_tysiac;
+        private System.Windows.Forms.Label k_przyswajalne_tysiac_zakres;
+        private System.Windows.Forms.Label k_przyswajalne_tysiac;
+        private System.Windows.Forms.Label k_przyswajalne_zakres;
+        private System.Windows.Forms.Label k_blonnik_plus;
+        private System.Windows.Forms.Label k_cukry_plus;
+        private System.Windows.Forms.Label k_przyswajalne_plus;
+        private System.Windows.Forms.Label k_cukry_procent_zakres;
+        private System.Windows.Forms.Label k_przyswajalne_procent_zakres;
+        private System.Windows.Forms.Label k_cukry_procent;
+        private System.Windows.Forms.Label k_przyswajalne_procent;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.Label k_wegle_zakres;
+        private System.Windows.Forms.Label k_wegle_tysiac_zakres;
+        private System.Windows.Forms.Label k_wegle_tysiac;
+        private System.Windows.Forms.Label k_wegle_procent_zakres;
+        private System.Windows.Forms.Label k_wegle_procent;
+        private System.Windows.Forms.Label k_wegle_plus;
+        private System.Windows.Forms.Label k_kwasy_zakres;
+        private System.Windows.Forms.Label k_kwasy_tysiac_zakres;
+        private System.Windows.Forms.Label k_kwasy_tysiac;
+        private System.Windows.Forms.Label k_kwasy_procent_zakres;
+        private System.Windows.Forms.Label k_kwasy_procent;
+        private System.Windows.Forms.Label k_tluszcze_zakres;
+        private System.Windows.Forms.Label k_tluszcze_tysiac_zakres;
+        private System.Windows.Forms.Label k_tluszcze_tysiac;
+        private System.Windows.Forms.Label k_bialko_tysiac_zakres;
+        private System.Windows.Forms.Label k_bialko_tysiac;
+        private System.Windows.Forms.Label k_bialko_zakres;
+        private System.Windows.Forms.Label k_energia_zakres;
+        private System.Windows.Forms.Label k_sol;
+        private System.Windows.Forms.Label label158;
+        private System.Windows.Forms.Label k_cukry;
+        private System.Windows.Forms.Label label160;
+        private System.Windows.Forms.Label label161;
+        private System.Windows.Forms.Label k_przyswajalne;
+        private System.Windows.Forms.Label label163;
+        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.Label label165;
+        private System.Windows.Forms.Label k_blonnik;
+        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.Label k_kwasy_plus;
+        private System.Windows.Forms.Label k_tluszcze_plus;
+        private System.Windows.Forms.Label k_bialko_plus;
+        private System.Windows.Forms.Label k_energia_plus;
+        private System.Windows.Forms.Label k_tluszcze_procent_zakres;
+        private System.Windows.Forms.Label k_bialko_procent_zakres;
+        private System.Windows.Forms.Label label182;
+        private System.Windows.Forms.Label label183;
+        private System.Windows.Forms.Label k_kwasy;
+        private System.Windows.Forms.Label label185;
+        private System.Windows.Forms.Label k_sod;
+        private System.Windows.Forms.Label label187;
+        private System.Windows.Forms.Label k_wegle;
+        private System.Windows.Forms.Label label189;
+        private System.Windows.Forms.Label k_tluszcze_procent;
+        private System.Windows.Forms.Label k_tluszcze;
+        private System.Windows.Forms.Label label192;
+        private System.Windows.Forms.Label k_bialko_procent;
+        private System.Windows.Forms.Label k_bialko;
+        private System.Windows.Forms.Label label195;
+        private System.Windows.Forms.Label k_energia;
+        private System.Windows.Forms.Label label197;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox energiaDo;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.TextBox SolDo;
+        private System.Windows.Forms.TextBox SolOd;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.TextBox sodDo;
+        private System.Windows.Forms.TextBox sodOd;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.TextBox blonnikDoProc;
+        private System.Windows.Forms.TextBox blonnikOdProc;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.TextBox blonnikDoTys;
+        private System.Windows.Forms.TextBox blonnikOdTys;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.TextBox blonnikDo;
+        private System.Windows.Forms.TextBox blonnikOd;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.TextBox cukryDoProc;
+        private System.Windows.Forms.TextBox cukryOdProc;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.TextBox cukryDoTys;
+        private System.Windows.Forms.TextBox cukryOdTys;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox cukryDo;
+        private System.Windows.Forms.TextBox cukryOd;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.TextBox przyswajalneDoProc;
+        private System.Windows.Forms.TextBox przyswajalneodProc;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.TextBox przyswajalneDotys;
+        private System.Windows.Forms.TextBox przyswajalneOdTys;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.TextBox przyswajalneDo;
+        private System.Windows.Forms.TextBox przyswajalneOd;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.TextBox wegleDoProc;
+        private System.Windows.Forms.TextBox wegleOdProc;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox wedgleDoTys;
+        private System.Windows.Forms.TextBox wegleOdTys;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox wegleDo;
+        private System.Windows.Forms.TextBox wegleod;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.TextBox kwasyDoProc;
+        private System.Windows.Forms.TextBox kwasyOdProc;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.TextBox KwasyDoTys;
+        private System.Windows.Forms.TextBox KwasyOdTys;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox kwasyDo;
+        private System.Windows.Forms.TextBox kwasyOd;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.TextBox tluszczeDoProc;
+        private System.Windows.Forms.TextBox TluszczeOdProc;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox tluszczeDoTys;
+        private System.Windows.Forms.TextBox tluszczeOdTysiac;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TextBox tluszczeDo;
+        private System.Windows.Forms.TextBox tluszczeOd;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox bialkoDoProcent;
+        private System.Windows.Forms.TextBox bialkoOdProcent;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox bialkoDoTysiac;
+        private System.Windows.Forms.TextBox bialkoOdTysiac;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox bialkoDo;
+        private System.Windows.Forms.TextBox bialkoOd;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.TextBox dieta_kod;
+        private System.Windows.Forms.Panel p_de;
+        private System.Windows.Forms.PictureBox i_de;
+        private System.Windows.Forms.Label t_de;
     }
 }
 
