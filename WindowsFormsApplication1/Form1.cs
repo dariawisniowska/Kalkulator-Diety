@@ -2904,22 +2904,33 @@
                     int dni = (Convert.ToDateTime(dekadowka_generuj_data2.Text) - Convert.ToDateTime(dekadowka_generuj_data1.Text)).Days + 1;
                     if (dni == wybranaDekadowka.dni)
                     {
+                        Cursor.Current = Cursors.WaitCursor;
+                        generowanie_status.Visible = true;
+                        generowanie_status.Text = $"";
                         DateTime data = Convert.ToDateTime(dekadowka_generuj_data1.Text);
                         for (int i = 0; i < dni; i++)
                         {
-                            string aktualna_data = data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year;
-                            List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), i + 1);
+                            string aktualna_data = $"{data.Day} {GetMonthForDate(data.Month)} {data.Year}";
+                            List<Jadlospis> jadlospisyDanegoDnia = JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), i + 1);
+                            int j = 0;
                             foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
                             {
-                                if (jadlospis.dzien == i + 1)
-                                    DAO.JadlospisDAO.Insert(aktualna_data, jadlospis.dieta.nazwa, wybranaDekadowka.miasto, jadlospis.nazwa_sniadanie, jadlospis.nazwa_IIsniadanie, jadlospis.nazwa_obiad, jadlospis.nazwa_podwieczorek, jadlospis.nazwa_kolacja, jadlospis.sklad_sniadanie, jadlospis.sklad_IIsniadanie, jadlospis.sklad_obiad, jadlospis.sklad_podwieczorek, jadlospis.sklad_kolacja);
+                                generowanie_status.Text = $"Generowanie... \r\ndzień: {i + 1}/{dni} \r\njadłospis: {j + 1}/{jadlospisyDanegoDnia.Count}";
+                                generowanie_status.Refresh();
+                                JadlospisDAO.Insert(aktualna_data, jadlospis.dieta.nazwa, wybranaDekadowka.miasto, jadlospis.nazwa_sniadanie, jadlospis.nazwa_IIsniadanie, jadlospis.nazwa_obiad, jadlospis.nazwa_podwieczorek, jadlospis.nazwa_kolacja, jadlospis.sklad_sniadanie, jadlospis.sklad_IIsniadanie, jadlospis.sklad_obiad, jadlospis.sklad_podwieczorek, jadlospis.sklad_kolacja,
+                                    reload: i == dni - 1 && j == jadlospisyDanegoDnia.Count - 1);
+                                j++;
                             }
                             data = data.AddDays(1);
                         }
+                        Cursor.Current = Cursors.Default;
                         MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
+                        generowanie_status.Text = $"";
+                        generowanie_status.Visible = false;
                     }
                     else
                     {
+                        Cursor.Current = Cursors.Default;
                         MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu");
                     }
                     break;
@@ -2993,6 +3004,7 @@
             dekadowka_generuj_label2.Visible = false;
             dekadowka_generuj_data1.Visible = false;
             dekadowka_generuj_data2.Visible = false;
+            generowanie_status.Visible = false;
 
             dekadowka_dodaj_dni.Visible = false;
             dekadowka_dodaj_label_dzienStart.Visible = false;
@@ -5306,8 +5318,8 @@
             switch (drukuj_rodzaj.SelectedItem.ToString())
             {
                 case "Szablon":
-                    Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
-                    MessageBox.Show("Wygenerowano szablon");
+                    bool success = Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
+                    if(success) MessageBox.Show("Wygenerowano szablon");
                     break;
                 case "Jadłospis":
                     Jadlospis jadlospis = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
@@ -6538,6 +6550,7 @@
                     }
                     else
                     {
+                        k_wegle_tysiac.Text = "";
                         k_wegle_tysiac_zakres.Text = "";
                     }
 
@@ -6559,6 +6572,7 @@
                     }
                     else
                     {
+                        k_wegle_procent.Text = "";
                         k_wegle_procent_zakres.Text = "";
                     }
 
@@ -6873,6 +6887,11 @@
         }
 
         private void lv_sniadanie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click_1(object sender, EventArgs e)
         {
 
         }

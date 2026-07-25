@@ -13,10 +13,11 @@
             DataSet.ReadXml(XML_Location);
         }
 
-        public static void WriteXml()
+        public static void WriteXml(bool reload = true)
         {
             DataSet.WriteXml(XML_Location); 
-            ReloadDatabase();
+            if(reload)
+                ReloadDatabase();
         }
     }
 }

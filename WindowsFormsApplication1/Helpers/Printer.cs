@@ -2889,7 +2889,7 @@
             }
         }
 
-        public static void Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
+        public static bool Dekadowka(string miasto, string dataOd, string dataDo, List<Jadlospis> listaJadlospisow)
         {
             try
             {
@@ -3092,7 +3092,6 @@
 
                             document.Save();
 
-                            //  MessageBox.Show("Zapisano dokument");
                         }
                         if(d.nazwa.Contains("dzieci"))
                         {
@@ -3641,17 +3640,18 @@
                                    .FontSize(8)
                                    .Color(Color.Black);
                                 document.Save();
-
-                                //  MessageBox.Show("Zapisano dokument");
                             }
                         }
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                return false;
             }
+
+            return true;
         }
 
         private static string GetMonthForDate(int month)

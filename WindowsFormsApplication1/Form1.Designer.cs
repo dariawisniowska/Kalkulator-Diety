@@ -705,6 +705,7 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label79 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.generowanie_status = new System.Windows.Forms.Label();
             this.menu.SuspendLayout();
             this.p_de.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.i_de)).BeginInit();
@@ -1225,6 +1226,7 @@
             // 
             // panel_dekadowka
             // 
+            this.panel_dekadowka.Controls.Add(this.generowanie_status);
             this.panel_dekadowka.Controls.Add(this.dekadowka_generuj_data2);
             this.panel_dekadowka.Controls.Add(this.dekadowka_generuj_label2);
             this.panel_dekadowka.Controls.Add(this.dekadowka_generuj_data1);
@@ -1247,9 +1249,9 @@
             this.panel_dekadowka.Controls.Add(this.label32);
             this.panel_dekadowka.Controls.Add(this.dekadowka_panel);
             this.panel_dekadowka.Controls.Add(this.dekadowka_dekadowka);
-            this.panel_dekadowka.Location = new System.Drawing.Point(312, 430);
+            this.panel_dekadowka.Location = new System.Drawing.Point(456, 347);
             this.panel_dekadowka.Name = "panel_dekadowka";
-            this.panel_dekadowka.Size = new System.Drawing.Size(108, 59);
+            this.panel_dekadowka.Size = new System.Drawing.Size(976, 481);
             this.panel_dekadowka.TabIndex = 62;
             // 
             // dekadowka_generuj_data2
@@ -1286,7 +1288,7 @@
             this.dekadowka_generuj.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_generuj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_generuj.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_generuj.Image")));
-            this.dekadowka_generuj.Location = new System.Drawing.Point(188, 28);
+            this.dekadowka_generuj.Location = new System.Drawing.Point(193, 28);
             this.dekadowka_generuj.Name = "dekadowka_generuj";
             this.dekadowka_generuj.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_generuj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1934,7 +1936,7 @@
             this.panel_dekadowka_zapisz.Controls.Add(this.dekadowka_zapisz_dekadowka);
             this.panel_dekadowka_zapisz.Location = new System.Drawing.Point(1325, 323);
             this.panel_dekadowka_zapisz.Name = "panel_dekadowka_zapisz";
-            this.panel_dekadowka_zapisz.Size = new System.Drawing.Size(67, 75);
+            this.panel_dekadowka_zapisz.Size = new System.Drawing.Size(67, 76);
             this.panel_dekadowka_zapisz.TabIndex = 74;
             this.panel_dekadowka_zapisz.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_dekadowka_zapisz_Paint);
             // 
@@ -2057,14 +2059,15 @@
             this.panel_dieta.Controls.Add(this.panel12);
             this.panel_dieta.Controls.Add(this.dieta_wstecz);
             this.panel_dieta.Controls.Add(this.dieta_dodaj);
+            this.panel_dieta.Controls.Add(this.panel_jadlospis);
             this.panel_dieta.Controls.Add(this.dieta_ok);
             this.panel_dieta.Controls.Add(this.dieta_edytuj);
             this.panel_dieta.Controls.Add(this.dieta_usun);
             this.panel_dieta.Controls.Add(this.dieta_dieta);
             this.panel_dieta.Controls.Add(this.label52);
-            this.panel_dieta.Location = new System.Drawing.Point(300, 43);
+            this.panel_dieta.Location = new System.Drawing.Point(712, 63);
             this.panel_dieta.Name = "panel_dieta";
-            this.panel_dieta.Size = new System.Drawing.Size(1060, 740);
+            this.panel_dieta.Size = new System.Drawing.Size(321, 263);
             this.panel_dieta.TabIndex = 71;
             // 
             // dieta_miasto
@@ -2191,9 +2194,9 @@
             this.panel12.Controls.Add(this.dieta_lbl_sol);
             this.panel12.Controls.Add(this.energiaOd);
             this.panel12.Controls.Add(this.label51);
-            this.panel12.Location = new System.Drawing.Point(18, 113);
+            this.panel12.Location = new System.Drawing.Point(22, 125);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(970, 555);
+            this.panel12.Size = new System.Drawing.Size(860, 476);
             this.panel12.TabIndex = 70;
             // 
             // label123
@@ -4220,7 +4223,7 @@
             this.panel_dekadowka_wczytaj.Controls.Add(this.dekadowka_wczytaj_dekadowka);
             this.panel_dekadowka_wczytaj.Location = new System.Drawing.Point(356, 47);
             this.panel_dekadowka_wczytaj.Name = "panel_dekadowka_wczytaj";
-            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(95, 45);
+            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(95, 60);
             this.panel_dekadowka_wczytaj.TabIndex = 83;
             // 
             // label54
@@ -4349,9 +4352,9 @@
             this.panel_jadlospis.Controls.Add(this.label89);
             this.panel_jadlospis.Controls.Add(this.tabControl1);
             this.panel_jadlospis.Controls.Add(this.jadlospis_miasto);
-            this.panel_jadlospis.Location = new System.Drawing.Point(303, 107);
+            this.panel_jadlospis.Location = new System.Drawing.Point(294, 347);
             this.panel_jadlospis.Name = "panel_jadlospis";
-            this.panel_jadlospis.Size = new System.Drawing.Size(64, 33);
+            this.panel_jadlospis.Size = new System.Drawing.Size(260, 157);
             this.panel_jadlospis.TabIndex = 62;
             this.panel_jadlospis.Visible = false;
             // 
@@ -6475,7 +6478,7 @@
             this.panel_glowny.Controls.Add(this.pictureBox2);
             this.panel_glowny.Location = new System.Drawing.Point(308, 40);
             this.panel_glowny.Name = "panel_glowny";
-            this.panel_glowny.Size = new System.Drawing.Size(1011, 676);
+            this.panel_glowny.Size = new System.Drawing.Size(258, 31);
             this.panel_glowny.TabIndex = 42;
             this.panel_glowny.Visible = false;
             this.panel_glowny.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
@@ -7435,7 +7438,7 @@
             this.panel_kontrola.Controls.Add(this.pictureBox28);
             this.panel_kontrola.Location = new System.Drawing.Point(484, 53);
             this.panel_kontrola.Name = "panel_kontrola";
-            this.panel_kontrola.Size = new System.Drawing.Size(18, 36);
+            this.panel_kontrola.Size = new System.Drawing.Size(917, 579);
             this.panel_kontrola.TabIndex = 96;
             this.panel_kontrola.Visible = false;
             // 
@@ -7800,7 +7803,6 @@
             this.label129.Name = "label129";
             this.label129.Size = new System.Drawing.Size(100, 11);
             this.label129.TabIndex = 205;
-            this.label129.Text = "na 1000 kcal";
             this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label130
@@ -7870,7 +7872,6 @@
             this.k_wegle_tysiac_zakres.Name = "k_wegle_tysiac_zakres";
             this.k_wegle_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
             this.k_wegle_tysiac_zakres.TabIndex = 200;
-            this.k_wegle_tysiac_zakres.Text = "20 - 30";
             this.k_wegle_tysiac_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // k_wegle_tysiac
@@ -7884,7 +7885,6 @@
             this.k_wegle_tysiac.Name = "k_wegle_tysiac";
             this.k_wegle_tysiac.Size = new System.Drawing.Size(100, 20);
             this.k_wegle_tysiac.TabIndex = 199;
-            this.k_wegle_tysiac.Text = "25";
             this.k_wegle_tysiac.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // k_wegle_procent_zakres
@@ -7898,7 +7898,6 @@
             this.k_wegle_procent_zakres.Name = "k_wegle_procent_zakres";
             this.k_wegle_procent_zakres.Size = new System.Drawing.Size(100, 20);
             this.k_wegle_procent_zakres.TabIndex = 198;
-            this.k_wegle_procent_zakres.Text = "20 - 25 % kcal";
             this.k_wegle_procent_zakres.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // k_wegle_procent
@@ -7912,7 +7911,6 @@
             this.k_wegle_procent.Name = "k_wegle_procent";
             this.k_wegle_procent.Size = new System.Drawing.Size(100, 20);
             this.k_wegle_procent.TabIndex = 197;
-            this.k_wegle_procent.Text = "45";
             this.k_wegle_procent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // k_wegle_plus
@@ -8656,6 +8654,18 @@
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
             // 
+            // generowanie_status
+            // 
+            this.generowanie_status.AutoSize = true;
+            this.generowanie_status.BackColor = System.Drawing.Color.Transparent;
+            this.generowanie_status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.generowanie_status.Location = new System.Drawing.Point(599, 174);
+            this.generowanie_status.Name = "generowanie_status";
+            this.generowanie_status.Size = new System.Drawing.Size(111, 63);
+            this.generowanie_status.TabIndex = 86;
+            this.generowanie_status.Text = "Generowanie...\r\ndzień: 1/7\r\njadłospis: 4/18";
+            this.generowanie_status.Click += new System.EventHandler(this.label11_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -8669,7 +8679,6 @@
             this.Controls.Add(this.panel_receptura);
             this.Controls.Add(this.panel_glowny);
             this.Controls.Add(this.panel_produkty);
-            this.Controls.Add(this.panel_jadlospis);
             this.Controls.Add(this.panel_jednostka);
             this.Controls.Add(this.panel_dekadowka_zapisz);
             this.Controls.Add(this.panel_dekadowka_wczytaj);
@@ -9495,6 +9504,7 @@
         private System.Windows.Forms.Panel p_de;
         private System.Windows.Forms.PictureBox i_de;
         private System.Windows.Forms.Label t_de;
+        private System.Windows.Forms.Label generowanie_status;
     }
 }
 
