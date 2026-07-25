@@ -18,10 +18,7 @@
             double sodOd, double sodDo, double sodOdNaTysiąc, double sodDoNaTysiąc, double sodProcentOd, double sodProcentDo,
             double solOd, double solDo, double solOdNaTysiąc, double solDoNaTysiąc, double solProcentOd, double solProcentDo)
         {
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            DataTable dtProdukty = DataSet.Tables["Diety"];
+            DataTable dtProdukty = DAO.DataSet.Tables["Diety"];
             DataRow drProdukty = dtProdukty.NewRow();
             drProdukty["Nazwa diety"] = nazwa;
             drProdukty["Miasto"] = miasto;
@@ -98,7 +95,7 @@
             drProdukty["BlonnikDoProcent"] = blonnikProcentDo;
 
             dtProdukty.Rows.Add(drProdukty);
-            DataSet.WriteXml(XML_Location);
+            DAO.WriteXml();
         }
 
         public static void Update(Dieta dieta, string nazwa, string miasto, string kod,
@@ -129,49 +126,43 @@
 
         public static void Delete(Dieta dieta)
         {
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Diety.Rows.Count > 0)
+            if (DAO.DataSet.Diety.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Diety.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Diety.Rows.Count; i++)
                 {
-                    if (DataSet.Diety.Rows[i]["Nazwa diety"].ToString() == dieta.nazwa && DataSet.Diety.Rows[i]["Miasto"].ToString() == dieta.miasto)
-                        DataSet.Diety.Rows[i].Delete();
+                    if (DAO.DataSet.Diety.Rows[i]["Nazwa diety"].ToString() == dieta.nazwa && DAO.DataSet.Diety.Rows[i]["Miasto"].ToString() == dieta.miasto)
+                        DAO.DataSet.Diety.Rows[i].Delete();
                 }
             }
-            DataSet.WriteXml(XML_Location);
+            DAO.WriteXml();
         }
 
         public static List<Dieta> SelectAll(string miasto)
         {
             List<Dieta> listaDiet = new List<Dieta>();
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Diety.Rows.Count > 0)
+            if (DAO.DataSet.Diety.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Diety.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Diety.Rows.Count; i++)
                 {
-                    if (DataSet.Diety.Rows[i]["Miasto"].ToString() == miasto)
+                    if (DAO.DataSet.Diety.Rows[i]["Miasto"].ToString() == miasto)
                     {
                         try
                         {
-                            listaDiet.Add(new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), DataSet.Diety.Rows[i]["Kod"].ToString(),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["CukryOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["SodOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["SolOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolDoProcent"])));
+                            listaDiet.Add(new Dieta(DAO.DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DAO.DataSet.Diety.Rows[i]["Miasto"].ToString(), DAO.DataSet.Diety.Rows[i]["Kod"].ToString(),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolDoProcent"])));
                         }
                         catch
                         {
-                            listaDiet.Add(new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), "", 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
+                            listaDiet.Add(new Dieta(DAO.DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DAO.DataSet.Diety.Rows[i]["Miasto"].ToString(), "", 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0));
                         }
                     }
                 }
@@ -183,32 +174,29 @@
         public static Dieta Select(string nazwa, string miasto)
         {
             Dieta dieta = null;
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Diety.Rows.Count > 0)
+            if (DAO.DataSet.Diety.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Diety.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Diety.Rows.Count; i++)
                 {
-                    if (DataSet.Diety.Rows[i]["Nazwa diety"].ToString() == nazwa && DataSet.Diety.Rows[i]["Miasto"].ToString() == miasto)
+                    if (DAO.DataSet.Diety.Rows[i]["Nazwa diety"].ToString() == nazwa && DAO.DataSet.Diety.Rows[i]["Miasto"].ToString() == miasto)
                     {
                         try
                         {
-                            dieta = new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(), DataSet.Diety.Rows[i]["Kod"].ToString(),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["EnergiaDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BialkoDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["TluszczeDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["KwasyDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["WeglowodanyDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["PrzyswajalneDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["CukryOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["CukryDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["BlonnikDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["SodOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SodDoProcent"]),
-                                Convert.ToDouble(DataSet.Diety.Rows[i]["SolOd"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolDo"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolOdNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolDoNaTysiac"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolOdProcent"]), Convert.ToDouble(DataSet.Diety.Rows[i]["SolDoProcent"]));
+                            dieta = new Dieta(DAO.DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DAO.DataSet.Diety.Rows[i]["Miasto"].ToString(), DAO.DataSet.Diety.Rows[i]["Kod"].ToString(),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["EnergiaDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BialkoDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["TluszczeDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["KwasyDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["WeglowodanyDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["PrzyswajalneDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["CukryDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["BlonnikDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SodDoProcent"]),
+                                Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolOd"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolDo"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolOdNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolDoNaTysiac"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolOdProcent"]), Convert.ToDouble(DAO.DataSet.Diety.Rows[i]["SolDoProcent"]));
                         }
                         catch
                         {
-                            dieta = new Dieta(DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DataSet.Diety.Rows[i]["Miasto"].ToString(),"", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                            dieta = new Dieta(DAO.DataSet.Diety.Rows[i]["Nazwa diety"].ToString(), DAO.DataSet.Diety.Rows[i]["Miasto"].ToString(),"", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
                         }
                     }
                 }

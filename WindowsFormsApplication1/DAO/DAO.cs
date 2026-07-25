@@ -15,7 +15,8 @@
 
         public static void WriteXml()
         {
-            DataSet.WriteXml(XML_Location);
+            DataSet.WriteXml(XML_Location); 
+            ReloadDatabase();
         }
     }
 }

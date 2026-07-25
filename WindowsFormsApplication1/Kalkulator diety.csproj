@@ -64,7 +64,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iconicon-veggies-tomato.ico</ApplicationIcon>
+    <ApplicationIcon>Data\iconicon-veggies-tomato.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar, Version=2.5.6403.13419, Culture=neutral, processorArchitecture=MSIL">
@@ -123,6 +123,7 @@
     <Compile Include="DAO\DekadowkaDAO.cs" />
     <Compile Include="DAO\DietaDAO.cs" />
     <Compile Include="DAO\JadlospisDAO.cs" />
+    <Compile Include="DAO\JadlospisDekadowkiDAO.cs" />
     <Compile Include="DAO\JednostkaDAO.cs" />
     <Compile Include="DAO\ProduktDAO.cs" />
     <Compile Include="DAO\RecepturaDAO.cs" />
@@ -143,18 +144,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KalkulatorDietyDatabase.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Printer.cs" />
+    <Compile Include="Helpers\Printer.cs" />
+    <Compile Include="Models\Jednostka.cs" />
     <Compile Include="Models\Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Receptura.cs" />
     <Compile Include="Models\WartosciOdzywcze.cs" />
-    <Compile Include="WczytajDzien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WczytajDzien.Designer.cs">
-      <DependentUpon>WczytajDzien.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +164,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WczytajDzien.resx">
-      <DependentUpon>WczytajDzien.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="KalkulatorDietyDatabase.xsc">
       <DependentUpon>KalkulatorDietyDatabase.xsd</DependentUpon>
     </None>
@@ -214,7 +207,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="iconicon-veggies-tomato.ico" />
+    <Content Include="Data\iconicon-veggies-tomato.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

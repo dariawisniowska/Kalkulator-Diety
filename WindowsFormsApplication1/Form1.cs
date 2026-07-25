@@ -4,12 +4,10 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Drawing;
-    using System.IO;
     using System.Linq;
-    using System.Runtime.Serialization;
-    using System.Runtime.Serialization.Formatters.Binary;
     using System.Windows.Forms;
     using KalkulatorDiety.DAO;
+    using KalkulatorDiety.Models;
 
     public partial class Form1 : Form
     {
@@ -25,14 +23,19 @@
 
         private readonly Color highlightColor = Color.LightBlue; 
         private readonly Color primaryColor = Color.FromArgb(44, 57, 64);
+        private static readonly Font DietLabelFont = new Font("Segoe UI", 12);
+        private static readonly Font MealLabelFont = new Font("Segoe UI", 10);
 
         private double[,] suma;
         private double[,] procent;
 
+        private List<Jednostka> listaJednostek;
         private List<Receptura> listaReceptur;
         private List<Dekadowka> listaDekadowekDoWczytania;
         private Dekadowka wybranaDekadowkaDoWczytania;
         private Jadlospis jadlospisDekadowkiDoWczytania;
+        private List<Dekadowka> listaDekadowekDoZapisania;
+        private Dekadowka wybranaDekadowkaDoZapisania;
         private List<Produkt> Lista;
         private List<Dieta> Diety = new List<Dieta>();
         private List<Produkt> Bakalie = new List<Produkt>();
@@ -219,7 +222,7 @@
                         switch (posilek)
                         {
                             case 0:
-                                lv_sniadanie.Items.Add(itm);
+                                lv_sniadanie.Items.Add(itm); 
                                 break;
                             case 1:
                                 lv_IIsniadanie.Items.Add(itm);
@@ -684,9 +687,11 @@
                     if (Diety[cb_dieta.SelectedIndex].bialkoDoNaTysiąc != 0)
                     {
                         bialko_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].bialkoOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].bialkoDoNaTysiąc}";
+                        bialko_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        bialko_tysiac.Text = "";
                         bialko_tysiac_zakres.Text = "";
                         bialko_label.Text = "";
                     }
@@ -717,6 +722,7 @@
                     }
                     else
                     {
+                        bialko_procent.Text = "";
                         bialko_procent_zakres.Text = "";
                         bialko_procent_zakres.ForeColor = Color.DarkGray;
                     }
@@ -756,9 +762,11 @@
                     if (Diety[cb_dieta.SelectedIndex].tluszczeDoNaTysiąc != 0)
                     {
                         tluszcze_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].tluszczeOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].tluszczeDoNaTysiąc}";
+                        t_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        tluszcze_tysiac.Text = "";
                         tluszcze_tysiac_zakres.Text = "";
                         t_label.Text = "";
                     }
@@ -789,6 +797,7 @@
                     }
                     else
                     {
+                        tluszcze_procent.Text = "";
                         tluszcze_procent_zakres.Text = "";
                         tluszcze_procent.ForeColor = Color.DarkGray;
                     }
@@ -828,9 +837,11 @@
                     if (Diety[cb_dieta.SelectedIndex].kwasyDoNaTysiąc != 0)
                     {
                         kwasy_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].kwasyOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].kwasyDoNaTysiąc}";
+                        k_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        kwasy_tysiac.Text = "";
                         kwasy_tysiac_zakres.Text = "";
                         k_label.Text = "";
                     }
@@ -861,6 +872,7 @@
                     }
                     else
                     {
+                        kwasy_procent.Text = "";
                         kwasy_procent_zakres.Text = "";
                         kwasy_procent.ForeColor = Color.DarkGray;
                     }
@@ -900,9 +912,11 @@
                     if (Diety[cb_dieta.SelectedIndex].wegleDoNaTysiąc != 0)
                     {
                         wegle_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].wegleOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].wegleDoNaTysiąc}";
+                        w_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        wegle_tysiac.Text = "";
                         wegle_tysiac_zakres.Text = "";
                         w_label.Text = "";
                     }
@@ -933,6 +947,7 @@
                     }
                     else
                     {
+                        wegle_procent.Text = "";
                         wegle_procent_zakres.Text = "";
                         wegle_procent.ForeColor = Color.DarkGray;
                     }
@@ -972,9 +987,11 @@
                     if (Diety[cb_dieta.SelectedIndex].przyswajalneDoNaTysiąc != 0)
                     {
                         przyswajalne_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].przyswajalneOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].przyswajalneDoNaTysiąc}";
+                        p_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        przyswajalne_tysiac.Text = "";
                         przyswajalne_tysiac_zakres.Text = "";
                         p_label.Text = "";
                     }
@@ -1005,6 +1022,7 @@
                     }
                     else
                     {
+                        przyswajalne_procent.Text = "";
                         przyswajalne_procent_zakres.Text = "";
                         przyswajalne_procent.ForeColor = Color.DarkGray;
                     }
@@ -1044,9 +1062,11 @@
                     if (Diety[cb_dieta.SelectedIndex].cukryDoNaTysiąc != 0)
                     {
                         cukry_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].cukryOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].cukryDoNaTysiąc}";
+                        c_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        cukry_tysiac.Text = "";
                         cukry_tysiac_zakres.Text = "";
                         c_label.Text = "";
                     }
@@ -1077,6 +1097,7 @@
                     }
                     else
                     {
+                        cukry_procent.Text = "";
                         cukry_procent_zakres.Text = "";
                         cukry_procent.ForeColor = Color.DarkGray;
                     }
@@ -1116,9 +1137,11 @@
                     if (Diety[cb_dieta.SelectedIndex].blonnikDoNaTysiąc != 0)
                     {
                         blonnik_tysiac_zakres.Text = $"{Diety[cb_dieta.SelectedIndex].blonnikOdNaTysiąc} - {Diety[cb_dieta.SelectedIndex].blonnikDoNaTysiąc}";
+                        blonnik_label.Text = "na 1000 kcal";
                     }
                     else
                     {
+                        blonnik_tysiac.Text = "";
                         blonnik_tysiac_zakres.Text = "";
                         blonnik_label.Text = "";
                     }
@@ -1149,6 +1172,7 @@
                     }
                     else
                     {
+                        blonnik_procent.Text = "";
                         blonnik_procent_zakres.Text = "";
                         blonnik_procent.ForeColor = Color.DarkGray;
                     }
@@ -1230,6 +1254,7 @@
         {
             int wybor = cb_kategorie.SelectedIndex;
 
+            lb_produkty.BeginUpdate();
             lb_produkty.Items.Clear();
             switch (wybor)
             {
@@ -1329,6 +1354,7 @@
                     kategoria = "Z";
                     break;
             }
+            lb_produkty.EndUpdate();
         }
 
         private string GetMonthForDate(int month)
@@ -1830,6 +1856,7 @@
             p_h.BackColor = primaryColor;
             p_g.BackColor = primaryColor;
             p_pr.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
 
             panel_kontrola.Visible = true;
             panel_kontrola.BringToFront();
@@ -1837,17 +1864,21 @@
             label10.Text = "Kontrola";
             if (k_miasto.Items.Count == 0)
             {
-                listaJednostek = DAO.JednostkaDAO.SelectAll();
-                foreach (DAO.Jednostka r in listaJednostek)
+                listaJednostek = JednostkaDAO.SelectAll();
+                k_miasto.BeginUpdate();
+                foreach (Jednostka r in listaJednostek)
                     k_miasto.Items.Add(r.miasto);
+                k_miasto.EndUpdate();
             }
             k_miasto.SelectedIndex = 0;
 
             if (k_dieta.Items.Count == 0)
             {
+                k_dieta.BeginUpdate();
                 Diety = DAO.DietaDAO.SelectAll(k_miasto.SelectedItem.ToString());
                 foreach (Dieta d in Diety)
                     k_dieta.Items.Add(d.nazwa);
+                k_dieta.EndUpdate();
             }
             k_dieta.SelectedIndex = 0;
         }
@@ -1865,6 +1896,7 @@
             p_g.BackColor = primaryColor;
             p_pr.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
 
             panel_produkty.Visible = true;
             panel_produkty.BringToFront();
@@ -1885,6 +1917,7 @@
             p_g.BackColor = primaryColor;
             p_pr.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
 
             panel_receptura.Visible = true;
             panel_receptura.BringToFront();
@@ -1906,6 +1939,7 @@
             i_p.BackColor = primaryColor;
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
             label10.Text = "Jadłospisy";
 
             panel_jadlospis.Visible = true;
@@ -1940,19 +1974,24 @@
             panel_dekadowka.Visible = true;
             panel_dekadowka.BringToFront();
 
+            dekadowka_miasto.BeginUpdate();
             dekadowka_miasto.Items.Clear();
             listaJednostek = JednostkaDAO.SelectAll();
             foreach (Jednostka j in listaJednostek)
                 dekadowka_miasto.Items.Add(j.miasto);
+            dekadowka_miasto.EndUpdate();
 
             if (dekadowka_miasto.Items.Count > 0)
                 dekadowka_miasto.SelectedIndex = 0;
+
+            dekadowka_dekadowka.BeginUpdate();
             dekadowka_dekadowka.Items.Clear();
             listaDekadowek = DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
             if (dekadowka_dekadowka.Items.Count > 0)
                 dekadowka_dekadowka.SelectedIndex = 0;
+            dekadowka_dekadowka.EndUpdate();
 
             dekadowka_nope_Click(null, null);
         }
@@ -1969,6 +2008,7 @@
             i_p.BackColor = primaryColor;
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
             panel_dieta.Visible = true;
             panel_dieta.BringToFront();
 
@@ -1989,6 +2029,7 @@
             i_p.BackColor = primaryColor;
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
             panel_glowny.Visible = true;
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = false;
@@ -1999,21 +2040,21 @@
             label10.Text = "Strona Główna";
 
 
-
+            lb_produkty.BeginUpdate();
             lb_produkty.Items.Clear();
             Lista = DAO.ProduktDAO.SelectAll();
             Lista = Lista.OrderBy(x => x.nazwa).Cast<Produkt>().ToList();
-
             foreach (Produkt p in Lista)
                 lb_produkty.Items.Add(p.nazwa);
-
+            lb_produkty.EndUpdate();
             cb_kategorie.SelectedIndex = 0;
 
+            cb_miasto.BeginUpdate();
             cb_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
                 cb_miasto.Items.Add(j.miasto);
-
+            cb_miasto.EndUpdate();
             if (cb_miasto.Items.Count > 0)
                 cb_miasto.SelectedIndex = 0;
 
@@ -2039,6 +2080,7 @@
             i_p.BackColor = primaryColor;
             t_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
 
             panel_jednostka.Visible = true;
             panel_jednostka.BringToFront();
@@ -2286,6 +2328,9 @@
             produkt_wczytaj.Visible = true;
 
             Lista = DAO.ProduktDAO.SelectAll();
+
+            produkt_wczytaj.BeginUpdate();
+            produkt_kategoria.BeginUpdate();
             produkt_wczytaj.Items.Clear();
             produkt_kategoria.Items.Clear();
 
@@ -2294,6 +2339,7 @@
             {
                 produkt_wczytaj.Items.Add(Lista[i].nazwa);
             }
+            produkt_wczytaj.EndUpdate();
 
             produkt_kategoria.Items.Add("Bakalie, orzechy, ziarna");
             produkt_kategoria.Items.Add("Mięso");
@@ -2306,6 +2352,8 @@
             produkt_kategoria.Items.Add("Słodycze");
             produkt_kategoria.Items.Add("Napoje");
             produkt_kategoria.Items.Add("Zbożowe");
+            produkt_kategoria.EndUpdate();
+
             produkt_wczytaj.SelectedIndex = 0;
             produkt_wczytaj_SelectedIndexChanged(sender, e);
 
@@ -2542,10 +2590,12 @@
             wybraneMiasto = cb_miasto.SelectedIndex;
             if (wybraneMiasto != -1)
             {
+                cb_dieta.BeginUpdate();
                 cb_dieta.Items.Clear();
                 Diety = DAO.DietaDAO.SelectAll(cb_miasto.SelectedItem.ToString());
                 foreach (Dieta d in Diety)
                     cb_dieta.Items.Add(d.nazwa);
+                cb_dieta.EndUpdate();
                 try { cb_dieta.SelectedIndex = wybranaDieta; } catch { if (cb_dieta.Items.Count > 0) cb_dieta.SelectedIndex = 0; }
             }
         }
@@ -2561,24 +2611,46 @@
 
         public void GenerateCards()
         {
+            Dekadowka dekadowkaDoWyswietlenia = wybranaDekadowka;
+
+            // Show something immediately, before the background read even starts
+            Cursor.Current = Cursors.WaitCursor; 
+            dekadowka_dekadowka.Enabled = false;
+            dekadowka_panel.SuspendLayout();
             dekadowka_panel.Controls.Clear();
+            Label loading = new Label
+            {
+                Text = "Wczytywanie...",
+                AutoSize = true,
+                Font = DietLabelFont
+            };
+            dekadowka_panel.Controls.Add(loading);
+            dekadowka_panel.ResumeLayout();
 
-            Dekadowka[] jadlospisyDanejDekadowki = DAO.JadlospisDekadowkiDAO.SelectForAllDays(wybranaDekadowka);
+            Dekadowka[] jadlospisyDanejDekadowki = DAO.JadlospisDekadowkiDAO.SelectForAllDays(dekadowkaDoWyswietlenia);
 
-            for (int j = 0; j < wybranaDekadowka.dni; j++)
+            Cursor.Current = Cursors.Default;
+
+            if (dekadowkaDoWyswietlenia != wybranaDekadowka) return;
+
+            dekadowka_panel.SuspendLayout();
+            dekadowka_panel.Controls.Clear();   // clears the "Wczytywanie..." label
+
+            for (int j = 0; j < dekadowkaDoWyswietlenia.dni; j++)
             {
                 FlowLayoutPanel dayOfWeek = new FlowLayoutPanel
                 {
                     BackColor = Color.White,
                     AutoScroll = true,
                     FlowDirection = FlowDirection.TopDown,
-                    WrapContents = false, // Vertical rather than horizontal scrolling
+                    WrapContents = false,
                     Size = new Size(dzienSize[0], dzienSize[1])
                 };
                 dayOfWeek.VerticalScroll.Visible = false;
                 dayOfWeek.HorizontalScroll.Visible = false;
+                dayOfWeek.SuspendLayout();
 
-                string day = GetDay(wybranaDekadowka.dzienStart, j + 1);
+                string day = GetDay(dekadowkaDoWyswietlenia.dzienStart, j + 1);
                 Label myDay = new Label
                 {
                     Text = day,
@@ -2590,6 +2662,7 @@
                 foreach (Jadlospis jadlospis in jadlospisyDanejDekadowki[j].listaJadlospisow)
                 {
                     FlowLayoutPanel myPanel = new FlowLayoutPanel();
+                    myPanel.SuspendLayout();
                     myPanel.BackColor = Color.LightBlue;
                     myPanel.AutoScroll = true;
                     myPanel.VerticalScroll.Visible = false;
@@ -2597,7 +2670,6 @@
                     myPanel.FlowDirection = FlowDirection.TopDown;
                     myPanel.WrapContents = false;
                     myPanel.AutoSize = true;
-                    //myPanel.Size = new System.Drawing.Size(dietaSize[0], dietaSize[1]);
 
                     Panel divider = new Panel();
                     divider.BackColor = Color.Gray;
@@ -2607,7 +2679,7 @@
                     Label diet = new Label();
                     diet.Text = jadlospis.dieta.nazwa;
                     diet.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    diet.Font = new System.Drawing.Font("Sagoe UI", 12);
+                    diet.Font = DietLabelFont;
                     diet.Margin = new Padding(0, 0, 0, 10);
                     diet.AutoSize = true;
                     myPanel.Controls.Add(diet);
@@ -2615,10 +2687,10 @@
                     Label meal = new Label();
                     meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
                     meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal.Font = MealLabelFont;
                     Label meal_content = new Label();
                     meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal_content.Font = MealLabelFont;
                     meal_content.ForeColor = Color.Gray;
                     meal_content.AutoSize = true;
                     meal_content.Margin = new Padding(10, 0, 0, 5);
@@ -2626,105 +2698,95 @@
                     meal = new Label();
                     meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
                     meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal.Font = MealLabelFont;
                     meal.Text = "Śniadanie:";
                     myPanel.Controls.Add(meal);
 
                     meal_content = new Label();
                     meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal_content.Font = MealLabelFont;
                     meal_content.ForeColor = Color.Gray;
                     meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_sniadanie != "")
-                        meal_content.Text = jadlospis.nazwa_sniadanie;
-                    else
-                        meal_content.Text = "-";
+                    meal_content.Text = jadlospis.nazwa_sniadanie != "" ? jadlospis.nazwa_sniadanie : "-";
                     meal_content.Margin = new Padding(10, 0, 0, 5);
                     myPanel.Controls.Add(meal_content);
 
                     meal = new Label();
                     meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
                     meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal.Font = MealLabelFont;
                     meal.Text = "II śniadanie:";
                     myPanel.Controls.Add(meal);
 
                     meal_content = new Label();
                     meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal_content.Font = MealLabelFont;
                     meal_content.ForeColor = Color.Gray;
                     meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_IIsniadanie != "")
-                        meal_content.Text = jadlospis.nazwa_IIsniadanie;
-                    else
-                        meal_content.Text = "-";
+                    meal_content.Text = jadlospis.nazwa_IIsniadanie != "" ? jadlospis.nazwa_IIsniadanie : "-";
                     meal_content.Margin = new Padding(10, 0, 0, 5);
                     myPanel.Controls.Add(meal_content);
 
                     meal = new Label();
                     meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
                     meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal.Font = MealLabelFont;
                     meal.Text = "Obiad:";
                     myPanel.Controls.Add(meal);
 
                     meal_content = new Label();
                     meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal_content.Font = MealLabelFont;
                     meal_content.ForeColor = Color.Gray;
                     meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_obiad != "")
-                        meal_content.Text = jadlospis.nazwa_obiad;
-                    else
-                        meal_content.Text = "-";
+                    meal_content.Text = jadlospis.nazwa_obiad != "" ? jadlospis.nazwa_obiad : "-";
                     meal_content.Margin = new Padding(10, 0, 0, 5);
                     myPanel.Controls.Add(meal_content);
 
                     meal = new Label();
                     meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
                     meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal.Font = MealLabelFont;
                     meal.Text = "Podwieczorek:";
                     myPanel.Controls.Add(meal);
 
                     meal_content = new Label();
                     meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal_content.Font = MealLabelFont;
                     meal_content.ForeColor = Color.Gray;
                     meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_podwieczorek != "")
-                        meal_content.Text = jadlospis.nazwa_podwieczorek;
-                    else
-                        meal_content.Text = "-";
+                    meal_content.Text = jadlospis.nazwa_podwieczorek != "" ? jadlospis.nazwa_podwieczorek : "-";
                     meal_content.Margin = new Padding(10, 0, 0, 5);
                     myPanel.Controls.Add(meal_content);
 
                     meal = new Label();
                     meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
                     meal.AutoSize = true;
-                    meal.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal.Font = MealLabelFont;
                     meal.Text = "Kolacja:";
                     myPanel.Controls.Add(meal);
 
                     meal_content = new Label();
                     meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = new System.Drawing.Font("Sagoe UI", 10);
+                    meal_content.Font = MealLabelFont;
                     meal_content.ForeColor = Color.Gray;
                     meal_content.AutoSize = true;
-                    if (jadlospis.nazwa_kolacja != "")
-                        meal_content.Text = jadlospis.nazwa_kolacja;
-                    else
-                        meal_content.Text = "-";
+                    meal_content.Text = jadlospis.nazwa_kolacja != "" ? jadlospis.nazwa_kolacja : "-";
                     meal_content.Margin = new Padding(10, 0, 0, 5);
                     myPanel.Controls.Add(meal_content);
 
+                    myPanel.ResumeLayout();
                     dayOfWeek.Controls.Add(myPanel);
                 }
 
+                dayOfWeek.ResumeLayout();
                 dekadowka_panel.Controls.Add(dayOfWeek);
             }
-        }
 
+            dekadowka_panel.ResumeLayout(); 
+
+            dekadowka_dekadowka.Enabled = true;
+        }
 
         public string GetDay(string dzien, int licznik)
         {
@@ -2762,14 +2824,90 @@
             else
                 return dzien;
         }
+        
         private void dekadowka_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dekadowka_dekadowka.BeginUpdate();
             dekadowka_dekadowka.Items.Clear();
             listaDekadowek = DekadowkaDAO.Select(dekadowka_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowek)
                 dekadowka_dekadowka.Items.Add(d.nazwa);
+            dekadowka_dekadowka.EndUpdate();
             if (dekadowka_dekadowka.Items.Count > 0)
                 dekadowka_dekadowka.SelectedIndex = 0;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void dekadowka_usun_Click_1(object sender, EventArgs e)
+        {
+            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę szablon?", "Usuwanie szablonu", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    break;
+                case DialogResult.Yes:
+                    DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
+                    MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa + " z: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
+                    dekadowkaClick();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void dekadowka_ok_Click(object sender, EventArgs e)
+        {
+            switch (label10.Text)
+            {
+                case "Szablony -> Dodaj":
+                    if (dekadowka_dodaj_nazwa.Text != "" && dekadowka_dodaj_dni.Text != "")
+                    {
+                        try
+                        {
+                            DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
+                            MessageBox.Show("Dodano szablon: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie szablonu");
+                            dekadowkaClick();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Błąd dodawania szablonu", "Błąd");
+
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąd");
+                    }
+                    break;
+                case "Szablony -> Generuj jadłospisy":
+                    List<string> daty = new List<string>();
+                    int dni = (Convert.ToDateTime(dekadowka_generuj_data2.Text) - Convert.ToDateTime(dekadowka_generuj_data1.Text)).Days + 1;
+                    if (dni == wybranaDekadowka.dni)
+                    {
+                        DateTime data = Convert.ToDateTime(dekadowka_generuj_data1.Text);
+                        for (int i = 0; i < dni; i++)
+                        {
+                            string aktualna_data = data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year;
+                            List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), i + 1);
+                            foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
+                            {
+                                if (jadlospis.dzien == i + 1)
+                                    DAO.JadlospisDAO.Insert(aktualna_data, jadlospis.dieta.nazwa, wybranaDekadowka.miasto, jadlospis.nazwa_sniadanie, jadlospis.nazwa_IIsniadanie, jadlospis.nazwa_obiad, jadlospis.nazwa_podwieczorek, jadlospis.nazwa_kolacja, jadlospis.sklad_sniadanie, jadlospis.sklad_IIsniadanie, jadlospis.sklad_obiad, jadlospis.sklad_podwieczorek, jadlospis.sklad_kolacja);
+                            }
+                            data = data.AddDays(1);
+                        }
+                        MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu");
+                    }
+                    break;
+            }
         }
 
         private void dekadowka_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
@@ -2819,10 +2957,12 @@
             dekadowka_dodaj_nazwa.Visible = true;
             dekadowka_dodaj_dzienStart.Visible = true;
 
+            dekadowka_dodaj_miasto.BeginUpdate();
             dekadowka_dodaj_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
                 dekadowka_dodaj_miasto.Items.Add(j.miasto);
+            dekadowka_dodaj_miasto.EndUpdate();
 
             dekadowka_dodaj_dni.Text = "7";
             dekadowka_dodaj_miasto.SelectedIndex = 0;
@@ -2859,20 +2999,19 @@
             dekadowka_dodaj_dzienStart.Visible = false;
         }
 
-
-        List<Dekadowka> listaDekadowekDoZapisania;
-        Dekadowka wybranaDekadowkaDoZapisania;
         private void zapiszJadłospisDekadówkiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             label10.Text = "Szablon -> Dodaj jadłospis";
             panel_dekadowka_zapisz.Visible = true;
             panel_dekadowka_zapisz.BringToFront();
-            dekadowka_zapisz_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
-                dekadowka_zapisz_miasto.Items.Add(j.miasto);
-            dekadowka_zapisz_miasto.SelectedIndex = 0;
 
+            dekadowka_zapisz_miasto.BeginUpdate();
+            dekadowka_zapisz_miasto.Items.Clear();
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
+                dekadowka_zapisz_miasto.Items.Add(j.miasto);
+            dekadowka_zapisz_miasto.EndUpdate();
+            dekadowka_zapisz_miasto.SelectedIndex = 0;
         }
 
         private void dekadowka_zapisz_wstec_Click(object sender, EventArgs e)
@@ -2910,18 +3049,21 @@
 
         private void dekadowka_zapisz_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            dekadowka_zapisz_dieta.BeginUpdate();
             dekadowka_zapisz_dieta.Items.Clear();
             Diety = DAO.DietaDAO.SelectAll(dekadowka_zapisz_miasto.Text);
             foreach (Dieta d in Diety)
                 dekadowka_zapisz_dieta.Items.Add(d.nazwa);
+            dekadowka_zapisz_dieta.EndUpdate();
             if (dekadowka_zapisz_dieta.Items.Count > 0)
                 dekadowka_zapisz_dieta.SelectedIndex = 0;
 
+            dekadowka_zapisz_dekadowka.BeginUpdate();
             dekadowka_zapisz_dekadowka.Items.Clear();
             listaDekadowekDoZapisania = DekadowkaDAO.Select(dekadowka_zapisz_miasto.SelectedItem.ToString());
             foreach (Dekadowka d in listaDekadowekDoZapisania)
                 dekadowka_zapisz_dekadowka.Items.Add(d.nazwa);
+            dekadowka_zapisz_dekadowka.EndUpdate();
             if (dekadowka_zapisz_dekadowka.Items.Count > 0)
                 dekadowka_zapisz_dekadowka.SelectedIndex = 0;
         }
@@ -2929,19 +3071,188 @@
         private void dekadowka_zapisz_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
         {
             wybranaDekadowkaDoZapisania = listaDekadowekDoZapisania[dekadowka_zapisz_dekadowka.SelectedIndex];
+            dekadowka_zapisz_dzien.BeginUpdate();
             dekadowka_zapisz_dzien.Items.Clear();
             for (int j = 0; j < wybranaDekadowkaDoZapisania.dni; j++)
             {
                 dekadowka_zapisz_dzien.Items.Add(GetDay(wybranaDekadowkaDoZapisania.dzienStart, j + 1));
             }
+            dekadowka_zapisz_dzien.EndUpdate();
             if (dekadowka_zapisz_dzien.Items.Count > 0)
                 dekadowka_zapisz_dzien.SelectedIndex = 0;
         }
+        
+        private void wczytajJadłospisDekadówkiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            label10.Text = "Szablony -> Wczytaj";
+            panel_dekadowka_wczytaj.Visible = true;
+            panel_dekadowka_wczytaj.BringToFront();
 
+            dekadowka_wczytaj_miasto.BeginUpdate();
+            dekadowka_wczytaj_miasto.Items.Clear();
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
+                dekadowka_wczytaj_miasto.Items.Add(j.miasto);
+            dekadowka_wczytaj_miasto.EndUpdate();
+            dekadowka_wczytaj_miasto.SelectedIndex = 0;
+
+            dekadowka_wczytaj_dekadowka.BeginUpdate();
+            dekadowka_wczytaj_dekadowka.Items.Clear();
+            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
+            foreach (Dekadowka d in listaDekadowekDoWczytania)
+                dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
+            dekadowka_wczytaj_dekadowka.EndUpdate();
+            if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
+                dekadowka_wczytaj_dekadowka.SelectedIndex = 0;
+        }
+
+        private void dekadowka_wczytaj_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (wybranaDekadowkaDoWczytania != null)
+            {
+                if (wybranaDekadowkaDoWczytania.nazwa != listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex].nazwa || wybranaDekadowkaDoWczytania.miasto != listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex].miasto)
+                {
+                    dekadowka_wczytaj_dzien.BeginUpdate();
+                    dekadowka_wczytaj_dzien.Items.Clear();
+                    wybranaDekadowkaDoWczytania = listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex];
+                    for (int j = 0; j < wybranaDekadowkaDoWczytania.dni; j++)
+                    {
+                        dekadowka_wczytaj_dzien.Items.Add(GetDay(wybranaDekadowkaDoWczytania.dzienStart, j + 1));
+                    }
+                    dekadowka_wczytaj_dzien.EndUpdate();
+                    if (dekadowka_wczytaj_dzien.Items.Count > 0)
+                        dekadowka_wczytaj_dzien.SelectedIndex = 0;
+                }
+            }
+            else
+            {
+                dekadowka_wczytaj_dzien.BeginUpdate();
+                dekadowka_wczytaj_dzien.Items.Clear();
+                wybranaDekadowkaDoWczytania = listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex];
+                for (int j = 0; j < wybranaDekadowkaDoWczytania.dni; j++)
+                {
+                    dekadowka_wczytaj_dzien.Items.Add(GetDay(wybranaDekadowkaDoWczytania.dzienStart, j + 1));
+                }
+                dekadowka_wczytaj_dzien.EndUpdate();
+                if (dekadowka_wczytaj_dzien.Items.Count > 0)
+                    dekadowka_wczytaj_dzien.SelectedIndex = 0;
+            }
+        }
+
+        private void dekadowka_wczytaj_miasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dekadowka_wczytaj_dekadowka.BeginUpdate();
+            dekadowka_wczytaj_dekadowka.Items.Clear();
+            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
+            foreach (Dekadowka d in listaDekadowekDoWczytania)
+                dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
+            dekadowka_wczytaj_dekadowka.EndUpdate();
+            if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
+                dekadowka_wczytaj_dekadowka.SelectedIndex = 0;
+        }
+
+        private void dekadowka_wczytaj_dzien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (wybranaDekadowkaDoWczytania != null)
+            {
+                dekadowka_wczytaj_dieta.BeginUpdate();
+                dekadowka_wczytaj_dieta.Items.Clear();
+                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), dekadowka_wczytaj_dzien.SelectedIndex + 1);
+                foreach (Jadlospis d in jadlospisyDanegoDnia)
+                {
+                    if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex)
+                    {
+                        dekadowka_wczytaj_dieta.Items.Add(d.dieta.nazwa);
+                    }
+                }
+                dekadowka_wczytaj_dieta.EndUpdate();
+
+                if (dekadowka_wczytaj_dieta.Items.Count > 0)
+                    dekadowka_wczytaj_dieta.SelectedIndex = 0;
+            }
+        }
 
         #endregion
 
         #region Dieta
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (label10.Text != "Diety -> Dodaj")
+            {
+                dieta_dieta.BeginUpdate();
+                dieta_dieta.Items.Clear();
+                Diety = DAO.DietaDAO.SelectAll(dieta_miasto.SelectedItem.ToString());
+                foreach (Dieta d in Diety)
+                    dieta_dieta.Items.Add(d.nazwa);
+                dieta_dieta.EndUpdate();
+                if (dieta_dieta.Items.Count > 0)
+                    dieta_dieta.SelectedIndex = 0;
+                else
+                {
+                    dieta_nazwa.Text = "";
+                    dieta_kod.Text = "";
+                    energiaOd.Text = "";
+                    energiaDo.Text = "";
+
+                    bialkoOd.Text = "";
+                    bialkoDo.Text = "";
+                    bialkoOdTysiac.Text = "";
+                    bialkoDoTysiac.Text = "";
+                    bialkoOdProcent.Text = "";
+                    bialkoDoProcent.Text = "";
+
+                    tluszczeOd.Text = "";
+                    tluszczeDo.Text = "";
+                    tluszczeOdTysiac.Text = "";
+                    tluszczeDoTys.Text = "";
+                    TluszczeOdProc.Text = "";
+                    tluszczeDoProc.Text = "";
+
+                    kwasyOd.Text = "";
+                    kwasyDo.Text = "";
+                    KwasyOdTys.Text = "";
+                    KwasyDoTys.Text = "";
+                    kwasyOdProc.Text = "";
+                    kwasyDoProc.Text = "";
+
+                    wegleod.Text = "";
+                    wegleDo.Text = "";
+                    wegleOdTys.Text = "";
+                    wedgleDoTys.Text = "";
+                    wegleOdProc.Text = "";
+                    wegleDoProc.Text = "";
+
+                    przyswajalneOd.Text = "";
+                    przyswajalneDo.Text = "";
+                    przyswajalneOdTys.Text = "";
+                    przyswajalneDotys.Text = "";
+                    przyswajalneodProc.Text = "";
+                    przyswajalneDoProc.Text = "";
+
+                    cukryOd.Text = "";
+                    cukryDo.Text = "";
+                    cukryOdTys.Text = "";
+                    cukryDoTys.Text = "";
+                    cukryOdProc.Text = "";
+                    cukryDoProc.Text = "";
+
+                    blonnikOd.Text = "";
+                    blonnikDo.Text = "";
+                    blonnikOdTys.Text = "";
+                    blonnikDoTys.Text = "";
+                    blonnikOdProc.Text = "";
+                    blonnikDoProc.Text = "";
+
+                    sodOd.Text = "";
+                    sodDo.Text = "";
+
+                    SolOd.Text = "";
+                    SolDo.Text = "";
+                }
+            }
+        }
+
         private void dieta_dieta_SelectedIndexChanged(object sender, EventArgs e)
         {
             dieta_nazwa.Text = Diety[dieta_dieta.SelectedIndex].nazwa;
@@ -3227,10 +3538,12 @@
 
             label10.Text = "Diety";
 
+            dieta_miasto.BeginUpdate();
             dieta_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka d in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka d in listaJednostek)
                 dieta_miasto.Items.Add(d.miasto);
+            dieta_miasto.EndUpdate();
             if (dieta_miasto.Items.Count > 0) dieta_miasto.SelectedIndex = 0;
 
 
@@ -3576,6 +3889,8 @@
 
         #endregion
 
+        #region Jednostka
+
         private void jednostka_wstecz_Click(object sender, EventArgs e)
         {
             label10.Text = "Jednostki";
@@ -3590,17 +3905,18 @@
             jednostka_miasto.Enabled = false;
             jednostka_miasto.BackColor = Color.FromName("ControlLight");
 
+            jednostka_jednostka.BeginUpdate();
             jednostka_jednostka.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka j in listaJednostek)
                 jednostka_jednostka.Items.Add(j.miasto);
-
+            jednostka_jednostka.EndUpdate();
             if (jednostka_jednostka.Items.Count > 0)
                 jednostka_jednostka.SelectedIndex = 0;
 
 
         }
-        List<DAO.Jednostka> listaJednostek;
+
         private void jednostka_edytuj_Click(object sender, EventArgs e)
         {
 
@@ -3641,7 +3957,7 @@
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
-                    DAO.JednostkaDAO.Delete(listaJednostek[jednostka_jednostka.SelectedIndex]);
+                    JednostkaDAO.Delete(listaJednostek[jednostka_jednostka.SelectedIndex]);
                     MessageBox.Show("Usunięto: " + listaJednostek[jednostka_jednostka.SelectedIndex].miasto);
                     jednostkaClick();
                     break;
@@ -3657,7 +3973,7 @@
                 case "Jednostki -> Dodaj":
                     if (jednostka_miasto.Text != "")
                     {
-                        DAO.JednostkaDAO.Insert(jednostka_miasto.Text);
+                        JednostkaDAO.Insert(jednostka_miasto.Text);
                         MessageBox.Show("Dodano: " + jednostka_miasto.Text);
 
                         jednostkaClick();
@@ -3670,7 +3986,7 @@
                 case "Jednostki -> Edytuj":
                     if (jednostka_miasto.Text != "")
                     {
-                        DAO.JednostkaDAO.Update(listaJednostek[jednostka_jednostka.SelectedIndex], jednostka_miasto.Text);
+                        JednostkaDAO.Update(listaJednostek[jednostka_jednostka.SelectedIndex], jednostka_miasto.Text);
                         MessageBox.Show("Edytowano: " + jednostka_miasto.Text);
 
                         jednostkaClick();
@@ -3689,78 +4005,9 @@
             jednostka_miasto.Text = listaJednostek[jednostka_jednostka.SelectedIndex].miasto;
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+        #endregion Jednostka
 
-        }
-
-        private void dekadowka_usun_Click_1(object sender, EventArgs e)
-        {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę szablon?", "Usuwanie szablonu", MessageBoxButtons.YesNo))
-            {
-                case DialogResult.No:
-                    break;
-                case DialogResult.Yes:
-                    DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
-                    MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa + " z: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
-                    dekadowkaClick();
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void dekadowka_ok_Click(object sender, EventArgs e)
-        {
-            switch (label10.Text)
-            {
-                case "Szablony -> Dodaj":
-                    if (dekadowka_dodaj_nazwa.Text != "" && dekadowka_dodaj_dni.Text != "")
-                    {
-                        try
-                        {
-                            DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
-                            MessageBox.Show("Dodano szablon: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie szablonu");
-                            dekadowkaClick();
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Błąd dodawania szablonu", "Błąd");
-
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąd");
-                    }
-                    break;
-                case "Szablony -> Generuj jadłospisy":
-                    List<string> daty = new List<string>();
-                    int dni = (Convert.ToDateTime(dekadowka_generuj_data2.Text) - Convert.ToDateTime(dekadowka_generuj_data1.Text)).Days + 1;
-                    if (dni == wybranaDekadowka.dni)
-                    {
-                        DateTime data = Convert.ToDateTime(dekadowka_generuj_data1.Text);
-                        for (int i = 0; i < dni; i++)
-                        {
-                            string aktualna_data = data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year;
-                            List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), i + 1);
-                            foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
-                            {
-                                if (jadlospis.dzien == i + 1)
-                                    DAO.JadlospisDAO.Insert(aktualna_data, jadlospis.dieta.nazwa, wybranaDekadowka.miasto, jadlospis.nazwa_sniadanie, jadlospis.nazwa_IIsniadanie, jadlospis.nazwa_obiad, jadlospis.nazwa_podwieczorek, jadlospis.nazwa_kolacja, jadlospis.sklad_sniadanie, jadlospis.sklad_IIsniadanie, jadlospis.sklad_obiad, jadlospis.sklad_podwieczorek, jadlospis.sklad_kolacja);
-                            }
-                            data = data.AddDays(1);
-                        }
-                        MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu");
-                    }
-                    break;
-            }
-        }
+        #region Receptury
 
         private void pictureBox14_Click(object sender, EventArgs e)
         {
@@ -3769,10 +4016,12 @@
                 default:
                     label10.Text = "Receptury";
 
+                    receptura_wczytaj.BeginUpdate();
                     receptura_wczytaj.Items.Clear();
                     listaReceptur = DAO.RecepturaDAO.SelectAll();
                     foreach (Receptura r in listaReceptur)
                         receptura_wczytaj.Items.Add(r.nazwa);
+                    receptura_wczytaj.EndUpdate();
 
                     if (receptura_wczytaj.Items.Count > 0)
                         receptura_wczytaj.SelectedIndex = 0;
@@ -3816,6 +4065,7 @@
         {
             receptura_nazwa.Text = listaReceptur[receptura_wczytaj.SelectedIndex].nazwa;
 
+            receptura_sklad.BeginUpdate();
             receptura_sklad.Items.Clear();
             string[] produkty = listaReceptur[receptura_wczytaj.SelectedIndex].sklad.Split('$');
             for (int j = 0; j < produkty.Length - 1; j++)
@@ -3844,6 +4094,7 @@
                 }
                 receptura_sklad.Items.Add(itm);
             }
+            receptura_sklad.EndUpdate();
 
             LiczSredniaDlaReceptur();
         }
@@ -3972,6 +4223,7 @@
         {
             int wybor = receptura_kategoria.SelectedIndex;
 
+            receptura_produkty.BeginUpdate();
             receptura_produkty.Items.Clear();
             switch (wybor)
             {
@@ -4071,6 +4323,7 @@
                     kategoria = "Z";
                     break;
             }
+            receptura_produkty.EndUpdate();
         }
 
         private void receptura_produkt_dodaj_Click(object sender, EventArgs e)
@@ -4375,89 +4628,11 @@
 
         }
 
+        #endregion Receptury
+
         private void pictureBox13_Click_1(object sender, EventArgs e)
         {
             glownaClick();
-        }
-
-        private void wczytajJadłospisDekadówkiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            label10.Text = "Szablony -> Wczytaj";
-            panel_dekadowka_wczytaj.Visible = true;
-            panel_dekadowka_wczytaj.BringToFront();
-
-            dekadowka_wczytaj_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka j in listaJednostek)
-                dekadowka_wczytaj_miasto.Items.Add(j.miasto);
-            dekadowka_wczytaj_miasto.SelectedIndex = 0;
-
-            dekadowka_wczytaj_dekadowka.Items.Clear();
-            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
-            foreach (Dekadowka d in listaDekadowekDoWczytania)
-                dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
-            if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
-                dekadowka_wczytaj_dekadowka.SelectedIndex = 0;
-
-
-        }
-
-        private void dekadowka_wczytaj_dekadowka_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (wybranaDekadowkaDoWczytania != null)
-            {
-                if (wybranaDekadowkaDoWczytania.nazwa != listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex].nazwa || wybranaDekadowkaDoWczytania.miasto != listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex].miasto)
-                {
-                    dekadowka_wczytaj_dzien.Items.Clear();
-                    wybranaDekadowkaDoWczytania = listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex];
-                    for (int j = 0; j < wybranaDekadowkaDoWczytania.dni; j++)
-                    {
-                        dekadowka_wczytaj_dzien.Items.Add(GetDay(wybranaDekadowkaDoWczytania.dzienStart, j + 1));
-                    }
-                    if (dekadowka_wczytaj_dzien.Items.Count > 0)
-                        dekadowka_wczytaj_dzien.SelectedIndex = 0;
-                }
-            }
-            else
-            {
-                dekadowka_wczytaj_dzien.Items.Clear();
-                wybranaDekadowkaDoWczytania = listaDekadowekDoWczytania[dekadowka_wczytaj_dekadowka.SelectedIndex];
-                for (int j = 0; j < wybranaDekadowkaDoWczytania.dni; j++)
-                {
-                    dekadowka_wczytaj_dzien.Items.Add(GetDay(wybranaDekadowkaDoWczytania.dzienStart, j + 1));
-                }
-                if (dekadowka_wczytaj_dzien.Items.Count > 0)
-                    dekadowka_wczytaj_dzien.SelectedIndex = 0;
-            }
-        }
-
-        private void dekadowka_wczytaj_miasto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            dekadowka_wczytaj_dekadowka.Items.Clear();
-            listaDekadowekDoWczytania = DekadowkaDAO.Select(dekadowka_wczytaj_miasto.SelectedItem.ToString());
-            foreach (Dekadowka d in listaDekadowekDoWczytania)
-                dekadowka_wczytaj_dekadowka.Items.Add(d.nazwa);
-            if (dekadowka_wczytaj_dekadowka.Items.Count > 0)
-                dekadowka_wczytaj_dekadowka.SelectedIndex = 0;
-        }
-
-        private void dekadowka_wczytaj_dzien_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (wybranaDekadowkaDoWczytania != null)
-            {
-                dekadowka_wczytaj_dieta.Items.Clear();
-                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), dekadowka_wczytaj_dzien.SelectedIndex + 1);
-                foreach (Jadlospis d in jadlospisyDanegoDnia)
-                {
-                    if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex)
-                    {
-                        dekadowka_wczytaj_dieta.Items.Add(d.dieta.nazwa);
-                    }
-                }
-
-                if (dekadowka_wczytaj_dieta.Items.Count > 0)
-                    dekadowka_wczytaj_dieta.SelectedIndex = 0;
-            }
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
@@ -4789,13 +4964,16 @@
             LiczSrednia();
         }
 
+        #region Jadlospis
+
         public void wczytajJadlospis()
         {
-
+            jadlospis_miasto.BeginUpdate();
             jadlospis_miasto.Items.Clear();
-            listaJednostek = DAO.JednostkaDAO.SelectAll();
-            foreach (DAO.Jednostka d in listaJednostek)
+            listaJednostek = JednostkaDAO.SelectAll();
+            foreach (Jednostka d in listaJednostek)
                 jadlospis_miasto.Items.Add(d.miasto);
+            jadlospis_miasto.EndUpdate();
 
             if (jadlospis_miasto.Items.Count > 0)
                 jadlospis_miasto.SelectedIndex = 0;
@@ -4996,10 +5174,12 @@
 
         private void jadlospis_miasto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            jadlospis_dieta.BeginUpdate();
             jadlospis_dieta.Items.Clear();
             Diety = DAO.DietaDAO.SelectAll(jadlospis_miasto.Text);
             foreach (Dieta d in Diety)
                 jadlospis_dieta.Items.Add(d.nazwa);
+            jadlospis_dieta.EndUpdate();
 
             if (jadlospis_dieta.Items.Count > 0)
                 jadlospis_dieta.SelectedIndex = 0;
@@ -5025,81 +5205,8 @@
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (label10.Text != "Diety -> Dodaj")
-            {
-                dieta_dieta.Items.Clear();
-                Diety = DAO.DietaDAO.SelectAll(dieta_miasto.SelectedItem.ToString());
-                foreach (Dieta d in Diety)
-                    dieta_dieta.Items.Add(d.nazwa);
-                if (dieta_dieta.Items.Count > 0)
-                    dieta_dieta.SelectedIndex = 0;
-                else
-                {
-                    dieta_nazwa.Text = "";
-                    dieta_kod.Text = "";
-                    energiaOd.Text = "";
-                    energiaDo.Text = "";
-
-                    bialkoOd.Text = "";
-                    bialkoDo.Text = "";
-                    bialkoOdTysiac.Text = "";
-                    bialkoDoTysiac.Text = "";
-                    bialkoOdProcent.Text = "";
-                    bialkoDoProcent.Text = "";
-
-                    tluszczeOd.Text = "";
-                    tluszczeDo.Text = "";
-                    tluszczeOdTysiac.Text = "";
-                    tluszczeDoTys.Text = "";
-                    TluszczeOdProc.Text = "";
-                    tluszczeDoProc.Text = "";
-
-                    kwasyOd.Text = "";
-                    kwasyDo.Text = "";
-                    KwasyOdTys.Text = "";
-                    KwasyDoTys.Text = "";
-                    kwasyOdProc.Text = "";
-                    kwasyDoProc.Text = "";
-
-                    wegleod.Text = "";
-                    wegleDo.Text = "";
-                    wegleOdTys.Text = "";
-                    wedgleDoTys.Text = "";
-                    wegleOdProc.Text = "";
-                    wegleDoProc.Text = "";
-
-                    przyswajalneOd.Text = "";
-                    przyswajalneDo.Text = "";
-                    przyswajalneOdTys.Text = "";
-                    przyswajalneDotys.Text = "";
-                    przyswajalneodProc.Text = "";
-                    przyswajalneDoProc.Text = "";
-
-                    cukryOd.Text = "";
-                    cukryDo.Text = "";
-                    cukryOdTys.Text = "";
-                    cukryDoTys.Text = "";
-                    cukryOdProc.Text = "";
-                    cukryDoProc.Text = "";
-
-                    blonnikOd.Text = "";
-                    blonnikDo.Text = "";
-                    blonnikOdTys.Text = "";
-                    blonnikDoTys.Text = "";
-                    blonnikOdProc.Text = "";
-                    blonnikDoProc.Text = "";
-
-                    sodOd.Text = "";
-                    sodDo.Text = "";
-
-                    SolOd.Text = "";
-                    SolDo.Text = "";
-                }
-            }
-        }
-
+        #endregion Jadlospis
+        
         private void dekadowka_generuj_Click(object sender, EventArgs e)
         {
             label10.Text = "Szablony -> Generuj jadłospisy";
@@ -5129,7 +5236,9 @@
             dekadowka_dodaj_dzienStart.Visible = false;
 
         }
-        
+
+        #region Drukuj
+
         private void panel11_Click(object sender, EventArgs e)
         {
             drukujClick();
@@ -5152,6 +5261,7 @@
             p_g.BackColor = primaryColor;
             p_p.BackColor = primaryColor;
             p_k.BackColor = primaryColor;
+            p_de.BackColor = primaryColor;
 
             panel_drukuj.Visible = true;
             panel_drukuj.BringToFront();
@@ -5359,10 +5469,12 @@
                     drukuj_dieta.Visible = false;
                     drukuj_dieta_label.Visible = false;
                     drukuj_combo_label.Text = "Miasto:";
+                    drukuj_combo.BeginUpdate();
                     drukuj_combo.Items.Clear();
-                    listaJednostek = DAO.JednostkaDAO.SelectAll();
-                    foreach (DAO.Jednostka r in listaJednostek)
+                    listaJednostek = JednostkaDAO.SelectAll();
+                    foreach (Jednostka r in listaJednostek)
                         drukuj_combo.Items.Add(r.miasto);
+                    drukuj_combo.EndUpdate();
                     if (drukuj_combo.Items.Count > 0)
                         drukuj_combo.SelectedIndex = 0;
                     break;
@@ -5379,10 +5491,12 @@
                     drukuj_dieta.Visible = true;
                     drukuj_dieta_label.Visible = true;
                     drukuj_combo_label.Text = "Miasto:";
+                    drukuj_combo.BeginUpdate();
                     drukuj_combo.Items.Clear();
-                    listaJednostek = DAO.JednostkaDAO.SelectAll();
-                    foreach (DAO.Jednostka r in listaJednostek)
+                    listaJednostek = JednostkaDAO.SelectAll();
+                    foreach (Jednostka r in listaJednostek)
                         drukuj_combo.Items.Add(r.miasto);
+                    drukuj_combo.EndUpdate();
                     if (drukuj_combo.Items.Count > 0)
                         drukuj_combo.SelectedIndex = 0;
                     break;
@@ -5397,10 +5511,12 @@
                     drukuj_dieta.Visible = false;
                     drukuj_dieta_label.Visible = false;
                     drukuj_combo_label.Text = "Miasto:";
+                    drukuj_combo.BeginUpdate();
                     drukuj_combo.Items.Clear();
-                    listaJednostek = DAO.JednostkaDAO.SelectAll();
-                    foreach (DAO.Jednostka r in listaJednostek)
+                    listaJednostek = JednostkaDAO.SelectAll();
+                    foreach (Jednostka r in listaJednostek)
                         drukuj_combo.Items.Add(r.miasto);
+                    drukuj_combo.EndUpdate();
                     if (drukuj_combo.Items.Count > 0)
                         drukuj_combo.SelectedIndex = 0;
                     break;
@@ -5415,10 +5531,12 @@
                     drukuj_combo.Visible = true;
                     drukuj_combo_label.Visible = true;
                     drukuj_combo_label.Text = "Miasto:";
+                    drukuj_combo.BeginUpdate();
                     drukuj_combo.Items.Clear();
-                    listaJednostek = DAO.JednostkaDAO.SelectAll();
-                    foreach (DAO.Jednostka r in listaJednostek)
+                    listaJednostek = JednostkaDAO.SelectAll();
+                    foreach (Jednostka r in listaJednostek)
                         drukuj_combo.Items.Add(r.miasto);
+                    drukuj_combo.EndUpdate();
                     if (drukuj_combo.Items.Count > 0)
                         drukuj_combo.SelectedIndex = 0;
                     drukuj_dieta.Visible = false;
@@ -5435,10 +5553,12 @@
                     drukuj_data.Visible = false;
                     drukuj_data_label.Visible = false;
                     drukuj_combo_label.Text = "Receptura:";
+                    drukuj_combo.BeginUpdate();
                     drukuj_combo.Items.Clear();
                     listaReceptur = DAO.RecepturaDAO.SelectAll();
                     foreach (Receptura r in listaReceptur)
                         drukuj_combo.Items.Add(r.nazwa);
+                    drukuj_combo.EndUpdate();
                     if (drukuj_combo.Items.Count > 0)
                         drukuj_combo.SelectedIndex = 0;
                     drukuj_dieta.Visible = false;
@@ -5455,9 +5575,11 @@
                     drukuj_data_label.Visible = false;
                     drukuj_combo_label.Visible = true;
                     drukuj_combo_label.Text = "Produkt:";
+                    drukuj_combo.BeginUpdate();
                     drukuj_combo.Items.Clear();
                     foreach (Produkt r in Lista)
                         drukuj_combo.Items.Add(r.nazwa);
+                    drukuj_combo.EndUpdate();
                     if (drukuj_combo.Items.Count > 0)
                         drukuj_combo.SelectedIndex = 0;
                     drukuj_dieta.Visible = false;
@@ -5473,10 +5595,12 @@
                 case "Drukowanie -> Szablon":
                     break;
                 case "Drukowanie -> Jadłospis":
+                    drukuj_dieta.BeginUpdate();
                     drukuj_dieta.Items.Clear();
                     Diety = DAO.DietaDAO.SelectAll(drukuj_combo.SelectedItem.ToString());
                     foreach (Dieta r in Diety)
                         drukuj_dieta.Items.Add(r.nazwa);
+                    drukuj_dieta.EndUpdate();
                     if (drukuj_dieta.Items.Count > 0)
                         drukuj_dieta.SelectedIndex = 0;
                     break;
@@ -5485,10 +5609,13 @@
             }
         }
 
+        #endregion Drukuj
+
         private void panel_dekadowka_zapisz_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
 
         private void tb_masa_TextChanged(object sender, EventArgs e)
         {

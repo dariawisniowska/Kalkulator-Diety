@@ -1,6 +1,5 @@
 ﻿namespace KalkulatorDiety.DAO
 {
-    using System;
     using System.Collections.Generic;
     using System.Data;
     
@@ -8,15 +7,12 @@
     {
         public static void Insert(string nazwa,string sklad)
         {
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            DataTable dtProdukty = DataSet.Tables["Receptury"];
+            DataTable dtProdukty = DAO.DataSet.Tables["Receptury"];
             DataRow drProdukty = dtProdukty.NewRow();
             drProdukty["Nazwa receptury"] = nazwa;
             drProdukty["Skład receptury"] = sklad;
             dtProdukty.Rows.Add(drProdukty);
-            DataSet.WriteXml(XML_Location);
+            DAO.WriteXml();
         }
 
         public static void Update(Receptura receptura, string nazwa, string sklad)
@@ -27,31 +23,26 @@
 
         public static void Delete(Receptura receptura)
         {
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Receptury.Rows.Count > 0)
+            if (DAO.DataSet.Receptury.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Receptury.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Receptury.Rows.Count; i++)
                 {
-                    if (DataSet.Receptury.Rows[i]["Nazwa receptury"].ToString() == receptura.nazwa && DataSet.Receptury.Rows[i]["Skład receptury"].ToString() == receptura.sklad)
-                        DataSet.Receptury.Rows[i].Delete();
+                    if (DAO.DataSet.Receptury.Rows[i]["Nazwa receptury"].ToString() == receptura.nazwa && DAO.DataSet.Receptury.Rows[i]["Skład receptury"].ToString() == receptura.sklad)
+                        DAO.DataSet.Receptury.Rows[i].Delete();
                 }
             }
-            DataSet.WriteXml(XML_Location);
+            DAO.WriteXml();
         }
 
         public static List<Receptura> SelectAll()
         {
             List<Receptura> listaDiet = new List<Receptura>();
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Receptury.Rows.Count > 0)
+
+            if (DAO.DataSet.Receptury.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Receptury.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Receptury.Rows.Count; i++)
                 {
-                    listaDiet.Add(new Receptura(DataSet.Receptury.Rows[i]["Nazwa receptury"].ToString(), DataSet.Receptury.Rows[i]["Skład receptury"].ToString()));
+                    listaDiet.Add(new Receptura(DAO.DataSet.Receptury.Rows[i]["Nazwa receptury"].ToString(), DAO.DataSet.Receptury.Rows[i]["Skład receptury"].ToString()));
                 }
             }
 

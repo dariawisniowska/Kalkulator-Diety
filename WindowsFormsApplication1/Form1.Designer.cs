@@ -6475,7 +6475,7 @@
             this.panel_glowny.Controls.Add(this.pictureBox2);
             this.panel_glowny.Location = new System.Drawing.Point(308, 40);
             this.panel_glowny.Name = "panel_glowny";
-            this.panel_glowny.Size = new System.Drawing.Size(1074, 493);
+            this.panel_glowny.Size = new System.Drawing.Size(1011, 676);
             this.panel_glowny.TabIndex = 42;
             this.panel_glowny.Visible = false;
             this.panel_glowny.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);

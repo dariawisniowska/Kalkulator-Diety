@@ -1,21 +1,18 @@
 ﻿namespace KalkulatorDiety.DAO
 {
-    using System;
     using System.Collections.Generic;
     using System.Data;
+    using KalkulatorDiety.Models;
 
     public class JednostkaDAO
     {
         public static void Insert(string miasto)
         {
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            DataTable dtProdukty = DataSet.Tables["Jednostka"];
+            DataTable dtProdukty = DAO.DataSet.Tables["Jednostka"];
             DataRow drProdukty = dtProdukty.NewRow();
             drProdukty["Miasto"] = miasto;
             dtProdukty.Rows.Add(drProdukty);
-            DataSet.WriteXml(XML_Location);
+            DAO.WriteXml();
         }
 
         public static void Update(Jednostka jednostka, string miasto)
@@ -26,44 +23,30 @@
 
         public static void Delete(Jednostka jednostka)
         {
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Diety.Rows.Count > 0)
+            if (DAO.DataSet.Diety.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Jednostka.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Jednostka.Rows.Count; i++)
                 {
-                    if (DataSet.Jednostka.Rows[i]["Miasto"].ToString() == jednostka.miasto)
-                        DataSet.Jednostka.Rows[i].Delete();
+                    if (DAO.DataSet.Jednostka.Rows[i]["Miasto"].ToString() == jednostka.miasto)
+                        DAO.DataSet.Jednostka.Rows[i].Delete();
                 }
             }
-            DataSet.WriteXml(XML_Location);
+            DAO.WriteXml();
         }
+
         public static List<Jednostka> SelectAll()
         {
             List<Jednostka> listaJednostek = new List<Jednostka>();
-            KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
-            String XML_Location = @"DataBase.xml";
-            DataSet.ReadXml(XML_Location);
-            if (DataSet.Jednostka.Rows.Count > 0)
+
+            if (DAO.DataSet.Jednostka.Rows.Count > 0)
             {
-                for (int i = 0; i < DataSet.Jednostka.Rows.Count; i++)
+                for (int i = 0; i < DAO.DataSet.Jednostka.Rows.Count; i++)
                 {
-                    listaJednostek.Add(new Jednostka(DataSet.Jednostka.Rows[i]["Miasto"].ToString()));
+                    listaJednostek.Add(new Jednostka(DAO.DataSet.Jednostka.Rows[i]["Miasto"].ToString()));
                 }
             }
 
             return listaJednostek;
-        }
-
-
-    }
-    public class Jednostka
-    {
-        public string miasto;
-        public Jednostka(string miasto)
-        {
-            this.miasto = miasto;
         }
     }
 }
