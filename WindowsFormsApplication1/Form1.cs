@@ -2679,122 +2679,125 @@
 
                 foreach (Jadlospis jadlospis in jadlospisyDanejDekadowki[j].listaJadlospisow)
                 {
-                    FlowLayoutPanel myPanel = new FlowLayoutPanel();
-                    myPanel.SuspendLayout();
-                    myPanel.BackColor = Color.LightBlue;
-                    myPanel.AutoScroll = true;
-                    myPanel.VerticalScroll.Visible = false;
-                    myPanel.HorizontalScroll.Enabled = false;
-                    myPanel.FlowDirection = FlowDirection.TopDown;
-                    myPanel.WrapContents = false;
-                    myPanel.AutoSize = true;
+                    if (jadlospis.dieta != null)
+                    {
+                        FlowLayoutPanel myPanel = new FlowLayoutPanel();
+                        myPanel.SuspendLayout();
+                        myPanel.BackColor = Color.LightBlue;
+                        myPanel.AutoScroll = true;
+                        myPanel.VerticalScroll.Visible = false;
+                        myPanel.HorizontalScroll.Enabled = false;
+                        myPanel.FlowDirection = FlowDirection.TopDown;
+                        myPanel.WrapContents = false;
+                        myPanel.AutoSize = true;
 
-                    Panel divider = new Panel();
-                    divider.BackColor = Color.Gray;
-                    divider.Size = new System.Drawing.Size(dietaSize[0] - 25, 5);
-                    myPanel.Controls.Add(divider);
+                        Panel divider = new Panel();
+                        divider.BackColor = Color.Gray;
+                        divider.Size = new System.Drawing.Size(dietaSize[0] - 25, 5);
+                        myPanel.Controls.Add(divider);
 
-                    Label diet = new Label();
-                    diet.Text = jadlospis.dieta.nazwa;
-                    diet.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    diet.Font = DietLabelFont;
-                    diet.Margin = new Padding(0, 0, 0, 10);
-                    diet.AutoSize = true;
-                    myPanel.Controls.Add(diet);
+                        Label diet = new Label();
+                        diet.Text = jadlospis.dieta.nazwa;
+                        diet.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        diet.Font = DietLabelFont;
+                        diet.Margin = new Padding(0, 0, 0, 10);
+                        diet.AutoSize = true;
+                        myPanel.Controls.Add(diet);
 
-                    Label meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = MealLabelFont;
-                    Label meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = MealLabelFont;
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
+                        Label meal = new Label();
+                        meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal.AutoSize = true;
+                        meal.Font = MealLabelFont;
+                        Label meal_content = new Label();
+                        meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal_content.Font = MealLabelFont;
+                        meal_content.ForeColor = Color.Gray;
+                        meal_content.AutoSize = true;
+                        meal_content.Margin = new Padding(10, 0, 0, 5);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = MealLabelFont;
-                    meal.Text = "Śniadanie:";
-                    myPanel.Controls.Add(meal);
+                        meal = new Label();
+                        meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal.AutoSize = true;
+                        meal.Font = MealLabelFont;
+                        meal.Text = "Śniadanie:";
+                        myPanel.Controls.Add(meal);
 
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = MealLabelFont;
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Text = jadlospis.nazwa_sniadanie != "" ? jadlospis.nazwa_sniadanie : "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
+                        meal_content = new Label();
+                        meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal_content.Font = MealLabelFont;
+                        meal_content.ForeColor = Color.Gray;
+                        meal_content.AutoSize = true;
+                        meal_content.Text = jadlospis.nazwa_sniadanie != "" ? jadlospis.nazwa_sniadanie : "-";
+                        meal_content.Margin = new Padding(10, 0, 0, 5);
+                        myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = MealLabelFont;
-                    meal.Text = "II śniadanie:";
-                    myPanel.Controls.Add(meal);
+                        meal = new Label();
+                        meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal.AutoSize = true;
+                        meal.Font = MealLabelFont;
+                        meal.Text = "II śniadanie:";
+                        myPanel.Controls.Add(meal);
 
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = MealLabelFont;
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Text = jadlospis.nazwa_IIsniadanie != "" ? jadlospis.nazwa_IIsniadanie : "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
+                        meal_content = new Label();
+                        meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal_content.Font = MealLabelFont;
+                        meal_content.ForeColor = Color.Gray;
+                        meal_content.AutoSize = true;
+                        meal_content.Text = jadlospis.nazwa_IIsniadanie != "" ? jadlospis.nazwa_IIsniadanie : "-";
+                        meal_content.Margin = new Padding(10, 0, 0, 5);
+                        myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = MealLabelFont;
-                    meal.Text = "Obiad:";
-                    myPanel.Controls.Add(meal);
+                        meal = new Label();
+                        meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal.AutoSize = true;
+                        meal.Font = MealLabelFont;
+                        meal.Text = "Obiad:";
+                        myPanel.Controls.Add(meal);
 
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = MealLabelFont;
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Text = jadlospis.nazwa_obiad != "" ? jadlospis.nazwa_obiad : "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
+                        meal_content = new Label();
+                        meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal_content.Font = MealLabelFont;
+                        meal_content.ForeColor = Color.Gray;
+                        meal_content.AutoSize = true;
+                        meal_content.Text = jadlospis.nazwa_obiad != "" ? jadlospis.nazwa_obiad : "-";
+                        meal_content.Margin = new Padding(10, 0, 0, 5);
+                        myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = MealLabelFont;
-                    meal.Text = "Podwieczorek:";
-                    myPanel.Controls.Add(meal);
+                        meal = new Label();
+                        meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal.AutoSize = true;
+                        meal.Font = MealLabelFont;
+                        meal.Text = "Podwieczorek:";
+                        myPanel.Controls.Add(meal);
 
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = MealLabelFont;
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Text = jadlospis.nazwa_podwieczorek != "" ? jadlospis.nazwa_podwieczorek : "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
+                        meal_content = new Label();
+                        meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal_content.Font = MealLabelFont;
+                        meal_content.ForeColor = Color.Gray;
+                        meal_content.AutoSize = true;
+                        meal_content.Text = jadlospis.nazwa_podwieczorek != "" ? jadlospis.nazwa_podwieczorek : "-";
+                        meal_content.Margin = new Padding(10, 0, 0, 5);
+                        myPanel.Controls.Add(meal_content);
 
-                    meal = new Label();
-                    meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal.AutoSize = true;
-                    meal.Font = MealLabelFont;
-                    meal.Text = "Kolacja:";
-                    myPanel.Controls.Add(meal);
+                        meal = new Label();
+                        meal.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal.AutoSize = true;
+                        meal.Font = MealLabelFont;
+                        meal.Text = "Kolacja:";
+                        myPanel.Controls.Add(meal);
 
-                    meal_content = new Label();
-                    meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
-                    meal_content.Font = MealLabelFont;
-                    meal_content.ForeColor = Color.Gray;
-                    meal_content.AutoSize = true;
-                    meal_content.Text = jadlospis.nazwa_kolacja != "" ? jadlospis.nazwa_kolacja : "-";
-                    meal_content.Margin = new Padding(10, 0, 0, 5);
-                    myPanel.Controls.Add(meal_content);
+                        meal_content = new Label();
+                        meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
+                        meal_content.Font = MealLabelFont;
+                        meal_content.ForeColor = Color.Gray;
+                        meal_content.AutoSize = true;
+                        meal_content.Text = jadlospis.nazwa_kolacja != "" ? jadlospis.nazwa_kolacja : "-";
+                        meal_content.Margin = new Padding(10, 0, 0, 5);
+                        myPanel.Controls.Add(meal_content);
 
-                    myPanel.ResumeLayout();
-                    dayOfWeek.Controls.Add(myPanel);
+                        myPanel.ResumeLayout();
+                        dayOfWeek.Controls.Add(myPanel);
+                    }
                 }
 
                 dayOfWeek.ResumeLayout();
@@ -3343,7 +3346,7 @@
      energiaOd.Text != "" && energiaDo.Text != "" &&
      bialkoOd.Text != "" && bialkoDo.Text != "" && bialkoOdTysiac.Text != "" && bialkoOdTysiac.Text != "" && bialkoOdProcent.Text != "" && bialkoOdProcent.Text != "" &&
      tluszczeOd.Text != "" && tluszczeDo.Text != "" && tluszczeOdTysiac.Text != "" && tluszczeDoTys.Text != "" && TluszczeOdProc.Text != "" && tluszczeDoProc.Text != "" &&
-     wegleod.Text != "" && wegleDo.Text != "" && wegleOdTys.Text != "" && wedgleDoTys.Text != "" && wegleOdProc.Text != "" && wegleDoProc.Text != "" &&
+     wegleod.Text != "" && wegleDo.Text != "" &&
      sodOd.Text != "" && sodDo.Text != "" &&
      SolOd.Text != "" && SolDo.Text != "" &&
      kwasyOd.Text != "" && kwasyDo.Text != "" && KwasyOdTys.Text != "" && KwasyDoTys.Text != "" && kwasyOdProc.Text != "" && kwasyDoProc.Text != "" &&
@@ -3358,17 +3361,17 @@
                                 Convert.ToDouble(bialkoOd.Text), Convert.ToDouble(bialkoDo.Text), Convert.ToDouble(bialkoOdTysiac.Text), Convert.ToDouble(bialkoDoTysiac.Text), Convert.ToDouble(bialkoOdProcent.Text), Convert.ToDouble(bialkoDoProcent.Text),
                                 Convert.ToDouble(tluszczeOd.Text), Convert.ToDouble(tluszczeDo.Text), Convert.ToDouble(tluszczeOdTysiac.Text), Convert.ToDouble(tluszczeDoTys.Text), Convert.ToDouble(TluszczeOdProc.Text), Convert.ToDouble(tluszczeDoProc.Text),
                                 Convert.ToDouble(kwasyOd.Text), Convert.ToDouble(kwasyDo.Text), Convert.ToDouble(KwasyOdTys.Text), Convert.ToDouble(KwasyDoTys.Text), Convert.ToDouble(kwasyOdProc.Text), Convert.ToDouble(kwasyDoProc.Text),
-                                Convert.ToDouble(wegleod.Text), Convert.ToDouble(wegleDo.Text), Convert.ToDouble(wegleOdTys.Text), Convert.ToDouble(wedgleDoTys.Text), Convert.ToDouble(wegleOdProc.Text), Convert.ToDouble(wegleDoProc.Text),
+                                Convert.ToDouble(wegleod.Text), Convert.ToDouble(wegleDo.Text), 0, 0, 0, 0,
                                 Convert.ToDouble(przyswajalneOd.Text), Convert.ToDouble(przyswajalneDo.Text), Convert.ToDouble(przyswajalneOdTys.Text), Convert.ToDouble(przyswajalneDotys.Text), Convert.ToDouble(przyswajalneodProc.Text), Convert.ToDouble(przyswajalneDoProc.Text),
                                 Convert.ToDouble(cukryOd.Text), Convert.ToDouble(cukryDo.Text), Convert.ToDouble(cukryOdTys.Text), Convert.ToDouble(cukryDoTys.Text), Convert.ToDouble(cukryOdProc.Text), Convert.ToDouble(cukryDoProc.Text),
                                 Convert.ToDouble(blonnikOd.Text), Convert.ToDouble(blonnikDo.Text), Convert.ToDouble(blonnikOdTys.Text), Convert.ToDouble(blonnikDoTys.Text), Convert.ToDouble(blonnikOdProc.Text), Convert.ToDouble(blonnikDoProc.Text),
                                 Convert.ToDouble(sodOd.Text), Convert.ToDouble(sodDo.Text), 0, 0, 0, 0,
-                                Convert.ToDouble(SolOd.Text), Convert.ToDouble(SolDo.Text),0,0,0,0
+                                Convert.ToDouble(SolOd.Text), Convert.ToDouble(SolDo.Text),0, 0, 0, 0
                                 );
                             MessageBox.Show("Dodano: " + dieta_nazwa.Text);
                             dietaClick();
                         }
-                        catch
+                        catch(Exception ex)
                         {
                             MessageBox.Show("Błąd dodawania diety", "Błąd");
 

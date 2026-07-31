@@ -29,11 +29,12 @@
 
             Check(identyfikatorDekadowki, dzien, dieta.nazwa);
 
-            dataRow = dataTable.NewRow();
-            dataRow["IdentyfikatorDekadowki"] = identyfikatorDekadowki;
-            dataRow["IdentyfikatorJadlospisu"] = identyfikatorJadlospisu;
-            dataRow["Dzien"] = dzien;
-            dataTable.Rows.Add(dataRow);
+            DataTable dataTable2 = DAO.DataSet.Tables["JadlsopisDekadowki"];
+            DataRow dataRow2 = dataTable2.NewRow();
+            dataRow2["IdentyfikatorDekadowki"] = identyfikatorDekadowki;
+            dataRow2["IdentyfikatorJadlospisu"] = identyfikatorJadlospisu;
+            dataRow2["Dzien"] = dzien;
+            dataTable2.Rows.Add(dataRow2);
             DAO.WriteXml();
         }
 
