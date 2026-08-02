@@ -2914,7 +2914,7 @@
                         for (int i = 0; i < dni; i++)
                         {
                             string aktualna_data = $"{data.Day} {GetMonthForDate(data.Month)} {data.Year}";
-                            List<Jadlospis> jadlospisyDanegoDnia = JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), i + 1);
+                            List<Jadlospis> jadlospisyDanegoDnia = JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowka.id), wybranaDekadowka.miasto, i + 1);
                             int j = 0;
                             foreach (Jadlospis jadlospis in jadlospisyDanegoDnia)
                             {
@@ -3177,7 +3177,7 @@
             {
                 dekadowka_wczytaj_dieta.BeginUpdate();
                 dekadowka_wczytaj_dieta.Items.Clear();
-                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), dekadowka_wczytaj_dzien.SelectedIndex + 1);
+                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), wybranaDekadowkaDoWczytania.miasto, dekadowka_wczytaj_dzien.SelectedIndex + 1);
                 foreach (Jadlospis d in jadlospisyDanegoDnia)
                 {
                     if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex)
@@ -5918,7 +5918,7 @@
         {
             if (wybranaDekadowkaDoWczytania != null)
             {
-                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), dekadowka_wczytaj_dzien.SelectedIndex + 1);
+                List<Jadlospis> jadlospisyDanegoDnia = DAO.JadlospisDekadowkiDAO.SelectForDay(Convert.ToInt32(wybranaDekadowkaDoWczytania.id), wybranaDekadowkaDoWczytania.miasto, dekadowka_wczytaj_dzien.SelectedIndex + 1);
                 foreach (Jadlospis d in jadlospisyDanegoDnia)
                 {
                     if (d.dzien - 1 == dekadowka_wczytaj_dzien.SelectedIndex && d.dieta.nazwa == dekadowka_wczytaj_dieta.SelectedItem.ToString())

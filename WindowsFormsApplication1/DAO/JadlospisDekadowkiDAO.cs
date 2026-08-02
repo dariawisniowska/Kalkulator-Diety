@@ -125,7 +125,7 @@
             return jadlospis;
         }
 
-        public static List<Jadlospis> SelectForDay(int identyfikatorDekadowki, int dzien)
+        public static List<Jadlospis> SelectForDay(int identyfikatorDekadowki, string miasto, int dzien)
         {
             List<Jadlospis> listaJadlospisow = new List<Jadlospis>();
             List<int> listaIdentyfikatorowJadlospisowDekadowki = new List<int>();
@@ -138,7 +138,6 @@
             {
                 listaIdentyfikatorowJadlospisowDekadowki.Add(Convert.ToInt32(jadlospis.Field<String>("IdentyfikatorJadlospisu")));
             }
-            Dekadowka dekadowka = DekadowkaDAO.SelectFromId(identyfikatorDekadowki);
 
             int end = 0;
             for (int i = 0; i < DAO.DataSet.Jadlospis.Rows.Count; i++)
@@ -147,7 +146,7 @@
                     return listaJadlospisow;
                 if (listaIdentyfikatorowJadlospisowDekadowki.Contains(Convert.ToInt32(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"].ToString())))
                 {
-                    listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"]), dzien, DietaDAO.Select(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Dieta"].ToString(), dekadowka.miasto), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Kolacja"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Kolacja"].ToString()));
+                    listaJadlospisow.Add(new Jadlospis(Convert.ToInt32(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Identyfikator"]), dzien, DietaDAO.Select(DAO.DataSet.Tables["Jadlospis"].Rows[i]["Dieta"].ToString(), miasto), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Nazwa-Kolacja"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Śniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-IIŚniadanie"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Obiad"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Podwieczorek"].ToString(), DAO.DataSet.Tables["Jadlospis"].Rows[i]["Skład-Kolacja"].ToString()));
                     end++;
                 }
             }
