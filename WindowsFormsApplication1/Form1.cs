@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Data;
     using System.Drawing;
+    using System.Drawing.Drawing2D;
     using System.Linq;
     using System.Windows.Forms;
     using KalkulatorDiety.DAO;
@@ -21,10 +22,12 @@
         public static double przelicznik_Weglowodany = 4; //kcal na 1g
         public static double przelicznik_Tluszcze = 9; //kcal na 1g
 
-        private readonly Color highlightColor = Color.LightBlue; 
-        private readonly Color primaryColor = Color.FromArgb(44, 57, 64);
+        private static readonly Color highlightColor = Color.FromArgb(91, 146, 121); 
+        private static readonly Color primaryColor = Color.FromArgb(31, 61, 46);
+        private static readonly Color sandColor = Color.FromArgb(247, 243, 233);
         private static readonly Font DietLabelFont = new Font("Segoe UI", 12);
         private static readonly Font MealLabelFont = new Font("Segoe UI", 10);
+        public static int borderRadius = 20;
 
         private double[,] suma;
         private double[,] procent;
@@ -53,12 +56,45 @@
         private List<Dekadowka> listaDekadowek;
         private Dekadowka wybranaDekadowka;
 
-        private readonly int[] dekadowkaSize = new int[] { 900, 470 };
-        private readonly int[] dzienSize = new int[] { 150, 400 };
-        private readonly int[] dietaSize = new int[] { 140, 200 };
+        private readonly int[] dekadowkaSize = new int[] { 900, 475 };
+        private readonly int[] dzienSize = new int[] { 300, 450 };
+        private readonly int[] dietaSize = new int[] { 295, 200 };
 
         private readonly KalkulatorDietyDatabase DataSet = new KalkulatorDietyDatabase();
         private readonly String XML_Location = @"DataBase.xml";
+        public static readonly string[] DietaPriority = new[]
+        {
+            "Dieta podstawowa",
+            "Dieta łatwostrawna",
+            "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów 3 posiłkowa",
+            "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów",
+            "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów 4 posiłkowa",
+            "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów 5 posiłkowa",
+            "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów 6 posiłkowa",
+            "Dieta łatwostrawna z ograniczeniem łatwo przyswajalnych węglowodanów",
+            "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów i nasyconych kwasów tłuszczowych",
+            "Dieta bogatobiałkowa",
+            "Dieta łatwostrawna z ograniczeniem tłuszczu",
+            "Dieta bezmleczna",
+            "Dieta papkowata",
+            "Dieta łatwostrawna o zmienionej konsystencji - płynna wzmocniona",
+            "Dieta bezglutenowa",
+            "Dieta niskobiałkowa",
+            "Dieta wegetariańska",
+            "Dieta uberopurynowa",
+            "Dieta ubogoenergetyczna 1200kcal",
+            "Dieta redukcyjna 1200kcal",
+            "Dieta ubogoenergetyczna 1400kcal",
+            "Dieta redukcyjna 1400kcal",
+            "Dieta ubogoresztkowa",
+            "Dieta niskobiałkowa",
+            "Dieta łatwostrawna z ograniczeniem ubstancji pobudzających wydzielanie soku żołądkowego",
+            "Dieta podstawowa dzieci",
+            "Dieta łatwostrawna dzieci",
+            "Dieta bezmleczna dzieci",
+            "Dieta bezglutenowa dzieci",
+            "Dieta łatwostrawna osób starszych",
+        };
 
         #endregion
 
@@ -143,7 +179,7 @@
         {
             if ((Keys)e.KeyChar == Keys.Back)
             {
-                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć ten produkt?", "Potwierdź", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     Usun_Click(sender, e);
@@ -153,7 +189,7 @@
 
         #endregion
 
-        #region Strona Główna
+        #region Strona główna
 
         private void Dodaj_Click(object sender, EventArgs e)
         {
@@ -240,18 +276,18 @@
                     }
                     catch
                     {
-                        MessageBox.Show("Nieprawidłowa wartość", "Błąd");
+                        MessageBox.Show("Nieprawidłowa wartość.", "Błąd");
                     }
                     LiczSrednia();
                 }
                 else
                 {
-                    MessageBox.Show("Nie wpisano masy produktu", "Błąd");
+                    MessageBox.Show("Nie wpisano masy produktu.", "Błąd");
                 }
             }
             else
             {
-                MessageBox.Show("Nie wybrano produktu", "Błąd");
+                MessageBox.Show("Nie wybrano produktu.", "Błąd");
             }
 
         }
@@ -340,7 +376,7 @@
             }
             else
             {
-                MessageBox.Show("Nie wybrano produktu", "Błąd");
+                MessageBox.Show("Nie wybrano produktu.", "Błąd");
             }
         }
 
@@ -1244,9 +1280,9 @@
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można przeliczyć wartości, o które przekroczono limity diety", "Błąd");
+                MessageBox.Show($"Nie można przeliczyć wartości, o które przekroczono limity diety.\r\n{ex.Message}", "Błąd");
             }
         }
 
@@ -1506,7 +1542,7 @@
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Nie można edytować.{ex.Message}", "Błąd");
+                MessageBox.Show($"Nie można edytować.{ex.Message}.", "Błąd");
             }
         }
 
@@ -1570,9 +1606,9 @@
                         break;
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można przesunąć", "Błąd");
+                MessageBox.Show($"Nie można przesunąć.\r\n{ex.Message}.", "Błąd");
             }
         }
 
@@ -1636,9 +1672,9 @@
                         break;
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można przesunąć", "Błąd");
+                MessageBox.Show($"Nie można przesunąć.\r\n{ex.Message}.", "Błąd");
             }
         }
 
@@ -1672,7 +1708,7 @@
                     break;
             }
             LiczSrednia();
-            MessageBox.Show("Wyczyszczono recepturę: " + tc_posilki.SelectedTab.Text, "Wyczyszczono");
+            MessageBox.Show($"Wyczyszczono recepturę: {tc_posilki.SelectedTab.Text}.", "Sukces");
         }
 
         private void dzieńToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -1688,13 +1724,13 @@
             textBox5.Text = "";
             lv_kolacja.Items.Clear();
             LiczSrednia();
-            MessageBox.Show("Wyczyszczono dzień: " + dateTimePicker1.Text + " (" + cb_dieta.SelectedItem + ")", "Wczyszczono");
+            MessageBox.Show($"Wyczyszczono dzień: {dateTimePicker1.Text} ({cb_dieta.SelectedItem}).", "Sukces");
         }
 
         private void dzieńToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać dzień: " + '\n' + dateTimePicker1.Text + '\n' + cb_dieta.Text + '\n' + cb_miasto.Text, "Zapisz dzień", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show($"Czy na pewno chcesz zapisać dzień: \n{dateTimePicker1.Text}\n{cb_dieta.Text}\n{cb_miasto.Text}", "Potwierdź", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
 
@@ -1722,7 +1758,7 @@
 
                 DAO.JadlospisDAO.Insert(dateTimePicker1.Text, cb_dieta.Text, cb_miasto.SelectedItem.ToString(), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
 
-                MessageBox.Show("Zapisano dzień:" + '\n' + dateTimePicker1.Text + '\n' + cb_dieta.Text + '\n' + cb_miasto.Text, "Zapisano");
+                MessageBox.Show($"Zapisano dzień:\n{dateTimePicker1.Text}\n{cb_dieta.Text}\n{cb_miasto.Text}.", "Sukces");
 
             }
             else if (dialogResult == DialogResult.No)
@@ -1782,7 +1818,7 @@
                     break;
 
             }
-            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać: " + '\n' + tc_posilki.SelectedTab.ToString().Remove(tc_posilki.SelectedTab.ToString().Length - 1).Remove(0, 10) + '\n' + tekst, "Zapisz recepturę", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show($"Czy na pewno chcesz zapisać: \n{tc_posilki.SelectedTab.ToString().Remove(tc_posilki.SelectedTab.ToString().Length - 1).Remove(0, 10)}\n{tekst}.", "Potwierdź", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 DataTable dtProdukty = DataSet.Tables["Receptury"];
@@ -1804,31 +1840,31 @@
                         drProdukty["Nazwa receptury"] = textBox1.Text;
                         for (int i = 0; i < lv_sniadanie.Items.Count; i++)
                             drProdukty["Skład receptury"] += lv_sniadanie.Items[i].SubItems[0].Text + "|" + lv_sniadanie.Items[i].SubItems[1].Text + "|" + lv_sniadanie.Items[i].SubItems[2].Text + "|" + lv_sniadanie.Items[i].SubItems[3].Text + "|" + lv_sniadanie.Items[i].SubItems[4].Text + "|" + lv_sniadanie.Items[i].SubItems[5].Text + "|" + lv_sniadanie.Items[i].SubItems[6].Text + "|" + lv_sniadanie.Items[i].SubItems[7].Text + "|" + lv_sniadanie.Items[i].SubItems[8].Text + "|" + lv_sniadanie.Items[i].SubItems[9].Text + "|" + lv_sniadanie.Items[i].SubItems[10].Text + "$";
-                        MessageBox.Show("Zapisano recepturę: " + textBox1.Text, "Zapisano");
+                        MessageBox.Show($"Zapisano recepturę: {textBox1.Text}.", "Sukces");
                         break;
                     case 1:
                         drProdukty["Nazwa receptury"] = textBox2.Text;
                         for (int i = 0; i < lv_IIsniadanie.Items.Count; i++)
                             drProdukty["Skład receptury"] += lv_IIsniadanie.Items[i].SubItems[0].Text + "|" + lv_IIsniadanie.Items[i].SubItems[1].Text + "|" + lv_IIsniadanie.Items[i].SubItems[2].Text + "|" + lv_IIsniadanie.Items[i].SubItems[3].Text + "|" + lv_IIsniadanie.Items[i].SubItems[4].Text + "|" + lv_IIsniadanie.Items[i].SubItems[5].Text + "|" + lv_IIsniadanie.Items[i].SubItems[6].Text + "|" + lv_IIsniadanie.Items[i].SubItems[7].Text + "|" + lv_IIsniadanie.Items[i].SubItems[8].Text + "|" + lv_IIsniadanie.Items[i].SubItems[9].Text + "|" + lv_IIsniadanie.Items[i].SubItems[10].Text + "$";
-                        MessageBox.Show("Zapisano recepturę: " + textBox2.Text, "Zapisano");
+                        MessageBox.Show($"Zapisano recepturę: {textBox2.Text}.", "Sukces");
                         break;
                     case 2:
                         drProdukty["Nazwa receptury"] = textBox3.Text;
                         for (int i = 0; i < lv_obiad.Items.Count; i++)
                             drProdukty["Skład receptury"] += lv_obiad.Items[i].SubItems[0].Text + "|" + lv_obiad.Items[i].SubItems[1].Text + "|" + lv_obiad.Items[i].SubItems[2].Text + "|" + lv_obiad.Items[i].SubItems[3].Text + "|" + lv_obiad.Items[i].SubItems[4].Text + "|" + lv_obiad.Items[i].SubItems[5].Text + "|" + lv_obiad.Items[i].SubItems[6].Text + "|" + lv_obiad.Items[i].SubItems[7].Text + "|" + lv_obiad.Items[i].SubItems[8].Text + "|" + lv_obiad.Items[i].SubItems[9].Text + "|" + lv_obiad.Items[i].SubItems[10].Text + "$";
-                        MessageBox.Show("Zapisano recepturę: " + textBox3.Text, "Zapisano");
+                        MessageBox.Show($"Zapisano recepturę: {textBox3.Text}.", "Sukces");
                         break;
                     case 3:
                         drProdukty["Nazwa receptury"] = textBox4.Text;
                         for (int i = 0; i < lv_podwieczorek.Items.Count; i++)
                             drProdukty["Skład receptury"] += lv_podwieczorek.Items[i].SubItems[0].Text + "|" + lv_podwieczorek.Items[i].SubItems[1].Text + "|" + lv_podwieczorek.Items[i].SubItems[2].Text + "|" + lv_podwieczorek.Items[i].SubItems[3].Text + "|" + lv_podwieczorek.Items[i].SubItems[4].Text + "|" + lv_podwieczorek.Items[i].SubItems[5].Text + "|" + lv_podwieczorek.Items[i].SubItems[6].Text + "|" + lv_podwieczorek.Items[i].SubItems[7].Text + "|" + lv_podwieczorek.Items[i].SubItems[8].Text + "|" + lv_podwieczorek.Items[i].SubItems[9].Text + "|" + lv_podwieczorek.Items[i].SubItems[10].Text + "$";
-                        MessageBox.Show("Zapisano recepturę: " + textBox4.Text, "Zapisano");
+                        MessageBox.Show($"Zapisano recepturę: {textBox4.Text}.", "Sukces");
                         break;
                     case 4:
                         drProdukty["Nazwa receptury"] = textBox5.Text;
                         for (int i = 0; i < lv_kolacja.Items.Count; i++)
                             drProdukty["Skład receptury"] += lv_kolacja.Items[i].SubItems[0].Text + "|" + lv_kolacja.Items[i].SubItems[1].Text + "|" + lv_kolacja.Items[i].SubItems[2].Text + "|" + lv_kolacja.Items[i].SubItems[3].Text + "|" + lv_kolacja.Items[i].SubItems[4].Text + "|" + lv_kolacja.Items[i].SubItems[5].Text + "|" + lv_kolacja.Items[i].SubItems[6].Text + "|" + lv_kolacja.Items[i].SubItems[7].Text + "|" + lv_kolacja.Items[i].SubItems[8].Text + "|" + lv_kolacja.Items[i].SubItems[9].Text + "|" + lv_kolacja.Items[i].SubItems[10].Text + "$";
-                        MessageBox.Show("Zapisano recepturę: " + textBox5.Text, "Zapisano");
+                        MessageBox.Show($"Zapisano recepturę: {textBox5.Text}.", "Sukces");
                         break;
                 }
 
@@ -1876,7 +1912,14 @@
             {
                 k_dieta.BeginUpdate();
                 Diety = DAO.DietaDAO.SelectAll(k_miasto.SelectedItem.ToString());
-                foreach (Dieta d in Diety)
+                var sortedDiety = Diety
+                .OrderBy(d =>
+                {
+                    int index = Array.IndexOf(DietaPriority, d.nazwa);
+                    return index == -1 ? int.MaxValue : index;
+                }).ThenBy(d => d.nazwa).ToList();
+
+                foreach (Dieta d in sortedDiety)
                     k_dieta.Items.Add(d.nazwa);
                 k_dieta.EndUpdate();
             }
@@ -2047,7 +2090,7 @@
 
             this.Update();
 
-            label10.Text = "Strona Główna";
+            label10.Text = "Strona główna";
             panel_glowny.Visible = true;
             panel_produkty.Visible = false;
             panel_dekadowka.Visible = false;
@@ -2239,9 +2282,9 @@
                 if (produkt_sol.Text != "")
                     produkt_sod.Text = (Double.Parse(produkt_sol.Text) / 0.0025).ToString();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Błąd przeliczania", "Błąd");
+                MessageBox.Show($"Błąd przeliczania.\r\n{ex.Message}", "Błąd");
             }
         }
 
@@ -2294,13 +2337,13 @@
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć ten produkt?", "Usuwanie produktu", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Na pewno chcesz usunąć ten produkt?", "Potwierdź", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
                     DAO.ProduktDAO.Delete(Lista[produkt_wczytaj.SelectedIndex]);
-                    MessageBox.Show("Usunięto: " + Lista[produkt_wczytaj.SelectedIndex].nazwa);
+                    MessageBox.Show($"Usunięto: {Lista[produkt_wczytaj.SelectedIndex].nazwa}.", "Sukces");
                     produktClick();
                     break;
                 default:
@@ -2478,17 +2521,17 @@
                                     break;
                             }
                             DAO.ProduktDAO.Insert(produkt_nazwa.Text, kategoria, Convert.ToDouble(produkt_energia.Text), Convert.ToDouble(produkt_bialko.Text), Convert.ToDouble(produkt_tluszcze.Text), Convert.ToDouble(produkt_weglowodany.Text), Convert.ToDouble(produkt_sod.Text), Convert.ToDouble(produkt_tluszcze_nn.Text), Convert.ToDouble(produkty_przyswajalne.Text), Convert.ToDouble(produkty_blonnik.Text), Convert.ToDouble(produkty_cukry.Text));
-                            MessageBox.Show("Dodano: " + produkt_nazwa.Text);
+                            MessageBox.Show($"Dodano: {produkt_nazwa.Text}.", "Sukces");
                             produktClick();
                         }
                         else
                         {
-                            MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
+                            MessageBox.Show("Nie uzupełniono wszystkich danych.", "Błąd");
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
-                        MessageBox.Show("Błąd dodawania produktu", "Błąd");
+                        MessageBox.Show($"Błąd dodawania produktu.\r\n{ex.Message}.", "Błąd");
                     }
                     break;
                 case "Produkty -> Edytuj":
@@ -2534,17 +2577,17 @@
                                     break;
                             }
                             DAO.ProduktDAO.Update(Lista[produkt_wczytaj.SelectedIndex], produkt_nazwa.Text, kategoria, Convert.ToDouble(produkt_energia.Text), Convert.ToDouble(produkt_bialko.Text), Convert.ToDouble(produkt_tluszcze.Text), Convert.ToDouble(produkt_weglowodany.Text), Convert.ToDouble(produkt_sod.Text), Convert.ToDouble(produkt_tluszcze_nn.Text), Convert.ToDouble(produkty_przyswajalne.Text), Convert.ToDouble(produkty_blonnik.Text), Convert.ToDouble(produkty_cukry.Text));
-                            MessageBox.Show("Edytowano: " + produkt_nazwa.Text);
+                            MessageBox.Show($"Edytowano: {produkt_nazwa.Text}.", "Sukces");
                             produktClick();
                         }
                         else
                         {
-                            MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
+                            MessageBox.Show("Nie uzupełniono wszystkich danych.", "Błąd");
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
-                        MessageBox.Show("Błąd dodawania produktu", "Błąd");
+                        MessageBox.Show($"Błąd dodawania produktu.\r\n{ex.Message}.", "Błąd");
                     }
                     break;
             }
@@ -2610,8 +2653,15 @@
             {
                 cb_dieta.BeginUpdate();
                 cb_dieta.Items.Clear();
-                Diety = DAO.DietaDAO.SelectAll(cb_miasto.SelectedItem.ToString());
-                foreach (Dieta d in Diety)
+                Diety = DAO.DietaDAO.SelectAll(cb_miasto.SelectedItem.ToString()); 
+                var sortedDiety = Diety
+                .OrderBy(d =>
+                {
+                    int index = Array.IndexOf(DietaPriority, d.nazwa);
+                    return index == -1 ? int.MaxValue : index;
+                }).ThenBy(d => d.nazwa).ToList();
+
+                foreach (Dieta d in sortedDiety)
                     cb_dieta.Items.Add(d.nazwa);
                 cb_dieta.EndUpdate();
                 try { cb_dieta.SelectedIndex = wybranaDieta; } catch { if (cb_dieta.Items.Count > 0) cb_dieta.SelectedIndex = 0; }
@@ -2623,6 +2673,48 @@
             wybranaDieta = cb_dieta.SelectedIndex;
             LiczSrednia();
         }
+
+        private void cb_dieta_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            ComboBox cb = (ComboBox)sender;
+            if (e.Index < 0) return;
+
+            string text = cb.Items[e.Index].ToString();
+
+            // Measure how tall the wrapped text will be at the combo's current width
+            Size proposedSize = new Size(cb.Width - SystemInformation.VerticalScrollBarWidth - 4, int.MaxValue);
+            SizeF textSize = e.Graphics.MeasureString(text, cb.Font, proposedSize.Width);
+
+            e.ItemHeight = (int)Math.Ceiling(textSize.Height);
+            e.ItemWidth = cb.Width;
+        }
+
+
+        private void cb_dieta_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ComboBox cb = (ComboBox)sender;
+            string text = cb.Items[e.Index].ToString();
+
+            e.DrawBackground();
+
+            using (Brush textBrush = new SolidBrush(e.ForeColor))
+            {
+                Rectangle rect = e.Bounds;
+                StringFormat sf = new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Center
+                };
+
+                e.Graphics.DrawString(text, e.Font, textBrush, rect, sf);
+            }
+
+            e.DrawFocusRectangle();
+
+        }
+
         #endregion
 
         #region Dekadowka
@@ -2631,7 +2723,7 @@
         {
             Dekadowka dekadowkaDoWyswietlenia = wybranaDekadowka;
 
-            // Show something immediately, before the background read even starts
+            //Pokaż pusty panel 
             Cursor.Current = Cursors.WaitCursor; 
             dekadowka_dekadowka.Enabled = false;
             dekadowka_panel.SuspendLayout();
@@ -2645,14 +2737,15 @@
             dekadowka_panel.Controls.Add(loading);
             dekadowka_panel.ResumeLayout();
 
-            Dekadowka[] jadlospisyDanejDekadowki = DAO.JadlospisDekadowkiDAO.SelectForAllDays(dekadowkaDoWyswietlenia);
-
+            //Wczytaj dane
+            Dekadowka[] jadlospisyDanejDekadowki = JadlospisDekadowkiDAO.SelectForAllDays(dekadowkaDoWyswietlenia);
             Cursor.Current = Cursors.Default;
-
             if (dekadowkaDoWyswietlenia != wybranaDekadowka) return;
 
             dekadowka_panel.SuspendLayout();
-            dekadowka_panel.Controls.Clear();   // clears the "Wczytywanie..." label
+            dekadowka_panel.Controls.Clear();
+            dekadowka_panel.VerticalScroll.Visible = true;
+            dekadowka_panel.HorizontalScroll.Visible = false;
 
             for (int j = 0; j < dekadowkaDoWyswietlenia.dni; j++)
             {
@@ -2683,7 +2776,7 @@
                     {
                         FlowLayoutPanel myPanel = new FlowLayoutPanel();
                         myPanel.SuspendLayout();
-                        myPanel.BackColor = Color.LightBlue;
+                        myPanel.BackColor = sandColor;
                         myPanel.AutoScroll = true;
                         myPanel.VerticalScroll.Visible = false;
                         myPanel.HorizontalScroll.Enabled = false;
@@ -2692,8 +2785,8 @@
                         myPanel.AutoSize = true;
 
                         Panel divider = new Panel();
-                        divider.BackColor = Color.Gray;
-                        divider.Size = new System.Drawing.Size(dietaSize[0] - 25, 5);
+                        divider.BackColor = highlightColor;
+                        divider.Size = new Size(dietaSize[0] - 25, 5);
                         myPanel.Controls.Add(divider);
 
                         Label diet = new Label();
@@ -2711,7 +2804,6 @@
                         Label meal_content = new Label();
                         meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
                         meal_content.Font = MealLabelFont;
-                        meal_content.ForeColor = Color.Gray;
                         meal_content.AutoSize = true;
                         meal_content.Margin = new Padding(10, 0, 0, 5);
 
@@ -2725,7 +2817,6 @@
                         meal_content = new Label();
                         meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
                         meal_content.Font = MealLabelFont;
-                        meal_content.ForeColor = Color.Gray;
                         meal_content.AutoSize = true;
                         meal_content.Text = jadlospis.nazwa_sniadanie != "" ? jadlospis.nazwa_sniadanie : "-";
                         meal_content.Margin = new Padding(10, 0, 0, 5);
@@ -2741,7 +2832,6 @@
                         meal_content = new Label();
                         meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
                         meal_content.Font = MealLabelFont;
-                        meal_content.ForeColor = Color.Gray;
                         meal_content.AutoSize = true;
                         meal_content.Text = jadlospis.nazwa_IIsniadanie != "" ? jadlospis.nazwa_IIsniadanie : "-";
                         meal_content.Margin = new Padding(10, 0, 0, 5);
@@ -2757,7 +2847,6 @@
                         meal_content = new Label();
                         meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
                         meal_content.Font = MealLabelFont;
-                        meal_content.ForeColor = Color.Gray;
                         meal_content.AutoSize = true;
                         meal_content.Text = jadlospis.nazwa_obiad != "" ? jadlospis.nazwa_obiad : "-";
                         meal_content.Margin = new Padding(10, 0, 0, 5);
@@ -2773,7 +2862,6 @@
                         meal_content = new Label();
                         meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
                         meal_content.Font = MealLabelFont;
-                        meal_content.ForeColor = Color.Gray;
                         meal_content.AutoSize = true;
                         meal_content.Text = jadlospis.nazwa_podwieczorek != "" ? jadlospis.nazwa_podwieczorek : "-";
                         meal_content.Margin = new Padding(10, 0, 0, 5);
@@ -2789,7 +2877,6 @@
                         meal_content = new Label();
                         meal_content.MaximumSize = new Size(dietaSize[0] - 25, 0);
                         meal_content.Font = MealLabelFont;
-                        meal_content.ForeColor = Color.Gray;
                         meal_content.AutoSize = true;
                         meal_content.Text = jadlospis.nazwa_kolacja != "" ? jadlospis.nazwa_kolacja : "-";
                         meal_content.Margin = new Padding(10, 0, 0, 5);
@@ -2805,7 +2892,6 @@
             }
 
             dekadowka_panel.ResumeLayout(); 
-
             dekadowka_dekadowka.Enabled = true;
         }
 
@@ -2863,13 +2949,13 @@
 
         private void dekadowka_usun_Click_1(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę szablon?", "Usuwanie szablonu", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę szablon?", "Potwierdź", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
                     DekadowkaDAO.Delete(listaDekadowek[dekadowka_dekadowka.SelectedIndex]);
-                    MessageBox.Show("Usunięto szablon: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa + " z: " + listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto);
+                    MessageBox.Show($"Usunięto szablon: {listaDekadowek[dekadowka_dekadowka.SelectedIndex].nazwa} z: {listaDekadowek[dekadowka_dekadowka.SelectedIndex].miasto}.", "Sukces");
                     dekadowkaClick();
                     break;
                 default:
@@ -2887,19 +2973,19 @@
                         try
                         {
                             DekadowkaDAO.Insert(dekadowka_dodaj_nazwa.Text, dekadowka_dodaj_miasto.Text, Convert.ToInt32(dekadowka_dodaj_dni.Text), dekadowka_dodaj_dzienStart.SelectedItem.ToString(), null);
-                            MessageBox.Show("Dodano szablon: " + dekadowka_dodaj_nazwa.Text + " w: " + dekadowka_dodaj_miasto.Text, "Dodawanie szablonu");
+                            MessageBox.Show($"Dodano szablon: {dekadowka_dodaj_nazwa.Text} w: {dekadowka_dodaj_miasto.Text}.", "Sukces");
                             dekadowkaClick();
                         }
-                        catch
+                        catch(Exception ex)
                         {
-                            MessageBox.Show("Błąd dodawania szablonu", "Błąd");
+                            MessageBox.Show($"Błąd dodawania szablonu.\r\n{ex.Message}.", "Błąd");
 
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąd");
+                        MessageBox.Show("Nie wprowadzono wszystkich danych.", "Błąd");
                     }
                     break;
                 case "Szablony -> Generuj jadłospisy":
@@ -2927,14 +3013,14 @@
                             data = data.AddDays(1);
                         }
                         Cursor.Current = Cursors.Default;
-                        MessageBox.Show("Dodano jadłospisy według szablonu", "Generowanie jadłospisów");
+                        MessageBox.Show("Dodano jadłospisy według szablonu.", "Sukces");
                         generowanie_status.Text = $"";
                         generowanie_status.Visible = false;
                     }
                     else
                     {
                         Cursor.Current = Cursors.Default;
-                        MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu");
+                        MessageBox.Show("Wpisano inną ilość dni niż wybranego szablonu.", "Błąd");
                     }
                     break;
             }
@@ -3063,7 +3149,7 @@
 
             DAO.JadlospisDekadowkiDAO.Insert(Convert.ToInt32(wybranaDekadowkaDoZapisania.id), dekadowka_zapisz_dzien.SelectedIndex + 1, DAO.DietaDAO.Select(dekadowka_zapisz_dieta.SelectedItem.ToString(), dekadowka_zapisz_miasto.Text), textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, sklad_sniadanie, sklad_IIsniadanie, sklad_obiad, sklad_podwieczorek, sklad_kolacja);
 
-            MessageBox.Show("Zapisano jadłospis szablonu", "Zapisz");
+            MessageBox.Show("Zapisano jadłospis szablonu.", "Sukces");
             dekadowka_zapisz_wstec_Click(null, null);
         }
 
@@ -3072,7 +3158,14 @@
             dekadowka_zapisz_dieta.BeginUpdate();
             dekadowka_zapisz_dieta.Items.Clear();
             Diety = DAO.DietaDAO.SelectAll(dekadowka_zapisz_miasto.Text);
-            foreach (Dieta d in Diety)
+            var sortedDiety = Diety
+            .OrderBy(d =>
+            {
+                int index = Array.IndexOf(DietaPriority, d.nazwa);
+                return index == -1 ? int.MaxValue : index;
+            }).ThenBy(d => d.nazwa).ToList();
+
+            foreach (Dieta d in sortedDiety)
                 dekadowka_zapisz_dieta.Items.Add(d.nazwa);
             dekadowka_zapisz_dieta.EndUpdate();
             if (dekadowka_zapisz_dieta.Items.Count > 0)
@@ -3203,7 +3296,14 @@
                 dieta_dieta.BeginUpdate();
                 dieta_dieta.Items.Clear();
                 Diety = DAO.DietaDAO.SelectAll(dieta_miasto.SelectedItem.ToString());
-                foreach (Dieta d in Diety)
+                var sortedDiety = Diety
+                .OrderBy(d =>
+                {
+                    int index = Array.IndexOf(DietaPriority, d.nazwa);
+                    return index == -1 ? int.MaxValue : index;
+                }).ThenBy(d => d.nazwa).ToList();
+
+                foreach (Dieta d in sortedDiety)
                     dieta_dieta.Items.Add(d.nazwa);
                 dieta_dieta.EndUpdate();
                 if (dieta_dieta.Items.Count > 0)
@@ -3356,7 +3456,7 @@
                     {
                         try
                         {
-                            DAO.DietaDAO.Insert(dieta_nazwa.Text, dieta_miasto.Text, dieta_kod.Text,
+                            DietaDAO.Insert(dieta_nazwa.Text, dieta_miasto.Text, dieta_kod.Text,
                                 Convert.ToDouble(energiaOd.Text), Convert.ToDouble(energiaDo.Text),0,0,0,0,
                                 Convert.ToDouble(bialkoOd.Text), Convert.ToDouble(bialkoDo.Text), Convert.ToDouble(bialkoOdTysiac.Text), Convert.ToDouble(bialkoDoTysiac.Text), Convert.ToDouble(bialkoOdProcent.Text), Convert.ToDouble(bialkoDoProcent.Text),
                                 Convert.ToDouble(tluszczeOd.Text), Convert.ToDouble(tluszczeDo.Text), Convert.ToDouble(tluszczeOdTysiac.Text), Convert.ToDouble(tluszczeDoTys.Text), Convert.ToDouble(TluszczeOdProc.Text), Convert.ToDouble(tluszczeDoProc.Text),
@@ -3368,17 +3468,17 @@
                                 Convert.ToDouble(sodOd.Text), Convert.ToDouble(sodDo.Text), 0, 0, 0, 0,
                                 Convert.ToDouble(SolOd.Text), Convert.ToDouble(SolDo.Text),0, 0, 0, 0
                                 );
-                            MessageBox.Show("Dodano: " + dieta_nazwa.Text);
+                            MessageBox.Show($"Dodano: {dieta_nazwa.Text}.", "Sukces");
                             dietaClick();
                         }
                         catch(Exception ex)
                         {
-                            MessageBox.Show("Błąd dodawania diety", "Błąd");
+                            MessageBox.Show($"Błąd dodawania diety. \r\n{ex.Message}.", "Błąd");
 
                         }
                     }
                     else
-                        MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
+                        MessageBox.Show("Nie uzupełniono wszystkich danych.", "Błąd");
                     break;
                 case "Diety -> Edytuj":
                     if (dieta_nazwa.Text != "" && dieta_miasto.Text != "" && dieta_kod.Text != "" &&
@@ -3407,17 +3507,17 @@
                                 Convert.ToDouble(sodOd.Text), Convert.ToDouble(sodDo.Text), 0, 0, 0, 0,
                                 Convert.ToDouble(SolOd.Text), Convert.ToDouble(SolDo.Text), 0, 0, 0, 0
                                 );
-                            MessageBox.Show("Edytowano: " + dieta_nazwa.Text);
+                            MessageBox.Show($"Edytowano: {dieta_nazwa.Text}.", "Sukces");
                             dietaClick();
                         }
-                        catch
+                        catch(Exception ex)
                         {
-                            MessageBox.Show("Błąd edytowania diety", "Błąd");
+                            MessageBox.Show($"Błąd edytowania diety.\r\n{ex.Message}.", "Błąd");
 
                         }
                     }
                     else
-                        MessageBox.Show("Nie uzupełniono wszystkich danych", "Błąd");
+                        MessageBox.Show("Nie uzupełniono wszystkich danych.", "Błąd");
                     break;
             }
 
@@ -3571,13 +3671,13 @@
 
         private void dieta_usun_Click(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę dietę?", "Usuwanie diety", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, $"Na pewno chcesz usunąć {Diety[dieta_dieta.SelectedIndex].nazwa}?", "Potwierdź", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
-                    DAO.DietaDAO.Delete(Diety[dieta_dieta.SelectedIndex]);
-                    MessageBox.Show("Usunięto: " + Diety[dieta_dieta.SelectedIndex].nazwa);
+                    DietaDAO.Delete(Diety[dieta_dieta.SelectedIndex]);
+                    MessageBox.Show($"Usunięto: {Diety[dieta_dieta.SelectedIndex].nazwa}.", "Sukces");
                     dietaClick();
                     break;
                 default:
@@ -3972,13 +4072,13 @@
 
         private void jednostka_usun_Click(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę jednostkę?", "Usuwanie jednostki", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, $"Na pewno chcesz usunąć {listaJednostek[jednostka_jednostka.SelectedIndex].miasto}?", "Potwierdź", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
                     JednostkaDAO.Delete(listaJednostek[jednostka_jednostka.SelectedIndex]);
-                    MessageBox.Show("Usunięto: " + listaJednostek[jednostka_jednostka.SelectedIndex].miasto);
+                    MessageBox.Show($"Usunięto: {listaJednostek[jednostka_jednostka.SelectedIndex].miasto}.", "Sukces");
                     jednostkaClick();
                     break;
                 default:
@@ -3994,26 +4094,26 @@
                     if (jednostka_miasto.Text != "")
                     {
                         JednostkaDAO.Insert(jednostka_miasto.Text);
-                        MessageBox.Show("Dodano: " + jednostka_miasto.Text);
+                        MessageBox.Show($"Dodano: {jednostka_miasto.Text}.", "Sukces");
 
                         jednostkaClick();
                     }
                     else
                     {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąd");
+                        MessageBox.Show("Nie wprowadzono wszystkich danych.", "Błąd");
                     }
                     break;
                 case "Jednostki -> Edytuj":
                     if (jednostka_miasto.Text != "")
                     {
                         JednostkaDAO.Update(listaJednostek[jednostka_jednostka.SelectedIndex], jednostka_miasto.Text);
-                        MessageBox.Show("Edytowano: " + jednostka_miasto.Text);
+                        MessageBox.Show($"Edytowano: {jednostka_miasto.Text}.", "Sukces");
 
                         jednostkaClick();
                     }
                     else
                     {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąd");
+                        MessageBox.Show("Nie wprowadzono wszystkich danych.", "Błąd");
                     }
                     break;
             }
@@ -4048,10 +4148,9 @@
 
                     receptura_kategoria.Visible = false;
                     receptura_produkty.Visible = false;
-                    receptura_produkt_dodaj.Visible = false;
+                    pictureBox6.Visible = false;
                     receptura_masa.Visible = false;
-                    receptura_masa_label.Visible = false;
-                    receptura_dodaj_edytuj.Visible = false;
+                    pictureBox7.Visible = false;
                     receptura_up.Visible = false;
                     receptura_down.Visible = false;
                     receptura_del.Visible = false;
@@ -4121,13 +4220,13 @@
 
         private void pictureBox18_Click(object sender, EventArgs e)
         {
-            switch (MessageBox.Show(this, "Na pewno chcesz usunąć tę recepturę?", "Usuwanie receptury", MessageBoxButtons.YesNo))
+            switch (MessageBox.Show(this, $"Na pewno chcesz usunąć {listaReceptur[receptura_wczytaj.SelectedIndex].nazwa}?", "Potwierdź", MessageBoxButtons.YesNo))
             {
                 case DialogResult.No:
                     break;
                 case DialogResult.Yes:
                     DAO.RecepturaDAO.Delete(listaReceptur[receptura_wczytaj.SelectedIndex]);
-                    MessageBox.Show("Usunięto: " + listaReceptur[receptura_wczytaj.SelectedIndex].nazwa);
+                    MessageBox.Show($"Usunięto: {listaReceptur[receptura_wczytaj.SelectedIndex].nazwa}.", "Sukces");
                     recepturaClick();
                     break;
                 default:
@@ -4149,10 +4248,9 @@
 
             receptura_kategoria.Visible = true;
             receptura_produkty.Visible = true;
-            receptura_produkt_dodaj.Visible = true;
+            pictureBox6.Visible = true;
             receptura_masa.Visible = true;
-            receptura_masa_label.Visible = true;
-            receptura_dodaj_edytuj.Visible = true;
+            pictureBox7.Visible = true;
             receptura_up.Visible = true;
             receptura_down.Visible = true;
             receptura_del.Visible = true;
@@ -4178,10 +4276,9 @@
 
             receptura_kategoria.Visible = true;
             receptura_produkty.Visible = true;
-            receptura_produkt_dodaj.Visible = true;
+            pictureBox6.Visible = true;
             receptura_masa.Visible = true;
-            receptura_masa_label.Visible = true;
-            receptura_dodaj_edytuj.Visible = true;
+            pictureBox7.Visible = true;
             receptura_up.Visible = true;
             receptura_down.Visible = true;
             receptura_del.Visible = true;
@@ -4416,20 +4513,20 @@
                         receptura_sklad.Items.Add(itm);
 
                     }
-                    catch
+                    catch(Exception ex)
                     {
-                        MessageBox.Show("Nieprawidłowa wartość", "Błąd");
+                        MessageBox.Show($"Nieprawidłowa wartość.\r\n{ex.Message}.", "Błąd");
                     }
                     LiczSredniaDlaReceptur();
                 }
                 else
                 {
-                    MessageBox.Show("Nie wpisano masy produktu", "Błąd");
+                    MessageBox.Show("Nie wpisano masy produktu.", "Błąd");
                 }
             }
             else
             {
-                MessageBox.Show("Nie wybrano produktu", "Błąd");
+                MessageBox.Show("Nie wybrano produktu.", "Błąd");
             }
 
         }
@@ -4445,7 +4542,7 @@
             if (ktory.Count > 0)
                 produkt = receptura_sklad.Items[ktory[0]].Text;
 
-            DialogResult dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć " + produkt + "?", "Usuwanie produktu z receptury", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show($"Czy na pewno chcesz usunąć {produkt}?", "Potwierdź", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
 
@@ -4488,7 +4585,7 @@
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Nie można edytować. {ex.Message}", "Błąd");
+                MessageBox.Show($"Nie można edytować.\r\n{ex.Message}.", "Błąd");
             }
         }
 
@@ -4507,9 +4604,9 @@
                 }
 
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można przesunąć", "Błąd");
+                MessageBox.Show($"Nie można przesunąć.\r\n{ex.Message}", "Błąd");
             }
         }
 
@@ -4528,9 +4625,9 @@
                 }
 
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Nie można przesunąć", "Błąd");
+                MessageBox.Show($"Nie można przesunąć.\r\n{ex.Message}", "Błąd");
             }
         }
 
@@ -4546,24 +4643,24 @@
                     if (sklad != "" && receptura_nazwa.Text != "")
                     {
                         DAO.RecepturaDAO.Insert(receptura_nazwa.Text, sklad);
-                        MessageBox.Show("Dodano: " + receptura_nazwa.Text);
+                        MessageBox.Show($"Dodano: {receptura_nazwa.Text}.", "Sukces");
                         recepturaClick();
                     }
                     else
                     {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąda");
+                        MessageBox.Show("Nie wprowadzono wszystkich danych.", "Błąd");
                     }
                     break;
                 case "Receptury -> Edytuj":
                     if (sklad != "" && receptura_nazwa.Text != "")
                     {
                         DAO.RecepturaDAO.Update(listaReceptur[receptura_wczytaj.SelectedIndex], receptura_nazwa.Text, sklad);
-                        MessageBox.Show("Edytowano: " + receptura_nazwa.Text);
+                        MessageBox.Show($"Edytowano: {receptura_nazwa.Text}.", "Sukces");
                         recepturaClick();
                     }
                     else
                     {
-                        MessageBox.Show("Nie wprowadzono wszystkich danych", "Błąda");
+                        MessageBox.Show("Nie wprowadzono wszystkich danych.", "Błąd");
                     }
                     break;
                 case "Receptury -> Wczytaj":
@@ -4814,7 +4911,7 @@
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
-
+            SetRoundedRegion(p_j, borderRadius);
         }
 
         private void pictureBox23_Click(object sender, EventArgs e)
@@ -5197,7 +5294,14 @@
             jadlospis_dieta.BeginUpdate();
             jadlospis_dieta.Items.Clear();
             Diety = DAO.DietaDAO.SelectAll(jadlospis_miasto.Text);
-            foreach (Dieta d in Diety)
+            var sortedDiety = Diety
+            .OrderBy(d =>
+            {
+                int index = Array.IndexOf(DietaPriority, d.nazwa);
+                return index == -1 ? int.MaxValue : index;
+            }).ThenBy(d => d.nazwa).ToList();
+
+            foreach (Dieta d in sortedDiety)
                 jadlospis_dieta.Items.Add(d.nazwa);
             jadlospis_dieta.EndUpdate();
 
@@ -5221,7 +5325,7 @@
                 string data = ja.Text;
 
                 DAO.JadlospisDAO.Delete(data, miasto, dieta);
-                MessageBox.Show("Usunięto wybrany jadłospis", "Usuwanie jadłospisu");
+                MessageBox.Show("Usunięto wybrany jadłospis.", "Sukces");
             }
         }
 
@@ -5267,6 +5371,7 @@
         private void panel11_Paint_1(object sender, PaintEventArgs e)
         {
 
+            SetRoundedRegion(p_pr, borderRadius);
         }
 
         public void drukujClick()
@@ -5326,12 +5431,12 @@
                     { 
                         bool success = Printer.Dekadowka(miasto, "Lesko", drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
                         bool success2 = Printer.Dekadowka(miasto, "Ustrzyki Dolne", drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
-                        if (success && success2) MessageBox.Show("Wygenerowano szablon");
+                        if (success && success2) MessageBox.Show("Wygenerowano szablon.", "Sukces");
                     }
                     else
                     {
                         bool success = Printer.Dekadowka(miasto, miasto, drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
-                        if (success) MessageBox.Show("Wygenerowano szablon");
+                        if (success) MessageBox.Show("Wygenerowano szablon.", "Sukces");
                     }
                     break;
                 case "Jadłospis":
@@ -5362,7 +5467,7 @@
                             DuplicateJadlospis(jadlospis3.DeepCopy(), 0.7, miasto);
                         }
                     }
-                    MessageBox.Show("Wygenerowano jadłospis");
+                    MessageBox.Show("Wygenerowano jadłospis.", "Sukces");
                     break;
                 case "Jadłospisy w danym okresie":
                     DateTime dateFrom = Convert.ToDateTime(drukuj_od.Text);
@@ -5408,7 +5513,7 @@
                             }
                         }
                     }
-                    MessageBox.Show("Wygenerowano jadłospisy w wybranym okresie");
+                    MessageBox.Show("Wygenerowano jadłospisy w wybranym okresie.", "Sukces");
                     break;
                 case "Jadłospis dzienny":
                     DateTime dateFrom2 = Convert.ToDateTime(drukuj_od.Text);
@@ -5419,15 +5524,15 @@
                         Printer.JadlospisDzienny(DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString()));
                         Printer.JadlospisNaStrone(DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString()));
                     }
-                    MessageBox.Show("Wygenerowano jadłospisy dzienne i na stronę w wybranym okresie");
+                    MessageBox.Show("Wygenerowano jadłospisy dzienne i na stronę w wybranym okresie.", "Sukces");
                     break;
                 case "Receptura":
                     Printer.Receptura(listaReceptur[drukuj_combo.SelectedIndex]);
-                    MessageBox.Show("Wygernerowano recepturę");
+                    MessageBox.Show("Wygernerowano recepturę.", "Sukces");
                     break;
                 case "Produkt":
                     Printer.Produkt(Lista[drukuj_combo.SelectedIndex]);
-                    MessageBox.Show("Wygernerowano produkt");
+                    MessageBox.Show("Wygernerowano produkt.", "Sukces");
                     break;
             }
         }
@@ -6908,9 +7013,9 @@
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można przeliczyć wartości, o które przekroczono limity diety", "Błąd");
+                MessageBox.Show($"Nie można przeliczyć wartości, o które przekroczono limity diety,\r\n{ex.Message}.", "Błąd");
             }
         }
 
@@ -6923,17 +7028,31 @@
 
         private void panel10_Paint(object sender, PaintEventArgs e)
         {
+            SetRoundedRegion(p_g, borderRadius);
+        }
 
+        private void SetRoundedRegion(Control control, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, control.Width, control.Height);
+
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.Right - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.Right - radius, rect.Bottom - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            control.Region = new Region(path);
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-
+            SetRoundedRegion(p_p, borderRadius);
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
+        { 
+            SetRoundedRegion(p_r, borderRadius);
         }
 
         private void panel7_Paint(object sender, PaintEventArgs e)
@@ -6949,6 +7068,73 @@
         private void label11_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void lb_produkty_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            ListBox lb = (ListBox)sender;
+            if (e.Index < 0) return;
+
+            string text = lb.Items[e.Index].ToString();
+
+            // Account for the vertical scrollbar potentially showing
+            int availableWidth = lb.Width - SystemInformation.VerticalScrollBarWidth - 4;
+            if (availableWidth < 1) availableWidth = 1;
+
+            SizeF textSize = e.Graphics.MeasureString(text, lb.Font, availableWidth);
+
+            e.ItemHeight = (int)Math.Ceiling(textSize.Height) + 4; // small padding
+        }
+
+        private void lb_produkty_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            ListBox lb = (ListBox)sender;
+            string text = lb.Items[e.Index].ToString();
+
+            e.DrawBackground();
+
+            using (Brush textBrush = new SolidBrush(e.ForeColor))
+            {
+                StringFormat sf = new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Center
+                };
+                e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds, sf);
+            }
+
+            e.DrawFocusRectangle();
+        }
+
+        private void p_d_Paint(object sender, PaintEventArgs e)
+        {
+
+            SetRoundedRegion(p_d, borderRadius);
+        }
+
+        private void p_h_Paint(object sender, PaintEventArgs e)
+        {
+
+            SetRoundedRegion(p_h, borderRadius);
+        }
+
+        private void p_de_Paint(object sender, PaintEventArgs e)
+        {
+
+            SetRoundedRegion(p_de, borderRadius);
+        }
+
+        private void p_k_Paint(object sender, PaintEventArgs e)
+        {
+
+            SetRoundedRegion(p_k, borderRadius);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            SetRoundedRegion(panel1, 45);
         }
     }
 }

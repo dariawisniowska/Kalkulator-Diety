@@ -36,7 +36,6 @@
             {
                 System.IO.Directory.CreateDirectory("Receptury");
                 string path = @"Receptury/" + receptura.nazwa + ".docx";
-
                 using (DocX document = DocX.Create(path))
                 {
                     Paragraph p = document.InsertParagraph();
@@ -147,7 +146,7 @@
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n {ex.Message}", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n{ex.Message}", "Błąd");
             }
         }
 
@@ -187,7 +186,7 @@
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n {ex.Message}", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n{ex.Message}", "Błąd");
             }
         }
 
@@ -1803,7 +1802,7 @@
                 }
                 else
                 {
-                    MessageBox.Show("Brak jadłospisu");
+                    MessageBox.Show("Brak jadłospisu.", "Błąd");
                 }
             }
             catch (Exception ex)
@@ -1830,12 +1829,12 @@
                 }
                 else
                 {
-                    MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
+                    MessageBox.Show("Brak jadłospisów we wskazanym dniu.", "Błąd");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu.\r\n{ex.Message}", "Błąd");
             }
         }
         public static void JadlospisDzienny(List<Jadlospis> listaJadlospisow, string miasto)
@@ -1901,7 +1900,14 @@
                     }
                 }
                 p0.InsertTableAfterSelf(t0);
-
+                listaJadlospisow = listaJadlospisow
+                    .OrderBy(j =>
+                    {
+                        int index = Array.IndexOf(Form1.DietaPriority, j.dieta.nazwa);
+                        return index == -1 ? int.MaxValue : index;
+                    })
+                    .ThenBy(j => j.dieta.nazwa) // optional: alphabetical fallback for unmatched/tied items
+                    .ToList();
                 foreach (Jadlospis jadlospis in listaJadlospisow)
                 {
                     Paragraph p2 = document.InsertParagraph();
@@ -2614,9 +2620,9 @@
                     MessageBox.Show("Brak jadłospisów we wskazanym dniu", "Błąd");
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n{ex.Message}", "Błąd");
             }
         }
         public static void JadlospisNaStrone(List<Jadlospis> listaJadlospisow, string miasto)
@@ -2656,7 +2662,7 @@
                 foreach (Jadlospis jadlospis in listaJadlospisow)
                 {
                     if ((miasto == "Ustrzyki Dolne" && (jadlospis.dieta.nazwa == "Dieta podstawowa" || jadlospis.dieta.nazwa == "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów 3 posiłkowa")) ||
-                        (miasto == "Lesko" && (jadlospis.dieta.nazwa == "Dieta podstawowa" || jadlospis.dieta.nazwa == "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów")))
+                        (miasto == "Lesko" && (jadlospis.dieta.nazwa == "Dieta podstawowa" || jadlospis.dieta.nazwa == "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów" || jadlospis.dieta.nazwa == "Dieta z ograniczeniem łatwo przyswajalnych węglowodanów 4 posiłkowa")))
                     {
                         Paragraph p1 = document.InsertParagraph();
                         p1.Alignment = Alignment.left;
@@ -3683,7 +3689,7 @@
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Nie można wydrukować dokumentu", "Błąd");
+                MessageBox.Show($"Nie można wydrukować dokumentu. \r\n{ex.Message}", "Błąd");
                 return false;
             }
 

@@ -1,4 +1,6 @@
-﻿namespace KalkulatorDiety
+﻿using System.Windows.Forms;
+
+namespace KalkulatorDiety
 {
     partial class Form1
     {
@@ -241,6 +243,11 @@
             this.label51 = new System.Windows.Forms.Label();
             this.dieta_wstecz = new System.Windows.Forms.PictureBox();
             this.dieta_dodaj = new System.Windows.Forms.PictureBox();
+            this.dieta_ok = new System.Windows.Forms.PictureBox();
+            this.dieta_edytuj = new System.Windows.Forms.PictureBox();
+            this.dieta_usun = new System.Windows.Forms.PictureBox();
+            this.dieta_dieta = new System.Windows.Forms.ComboBox();
+            this.label52 = new System.Windows.Forms.Label();
             this.panel_jadlospis = new System.Windows.Forms.Panel();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
@@ -265,7 +272,6 @@
             this.columnHeader91 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader92 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader49 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -280,7 +286,6 @@
             this.columnHeader93 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader94 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.listView3 = new System.Windows.Forms.ListView();
             this.columnHeader57 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -295,7 +300,6 @@
             this.columnHeader95 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader96 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.listView4 = new System.Windows.Forms.ListView();
             this.columnHeader65 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -310,7 +314,6 @@
             this.columnHeader97 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader98 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.listView5 = new System.Windows.Forms.ListView();
             this.columnHeader73 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -325,13 +328,7 @@
             this.columnHeader99 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader100 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label95 = new System.Windows.Forms.Label();
             this.jadlospis_miasto = new System.Windows.Forms.ComboBox();
-            this.dieta_ok = new System.Windows.Forms.PictureBox();
-            this.dieta_edytuj = new System.Windows.Forms.PictureBox();
-            this.dieta_usun = new System.Windows.Forms.PictureBox();
-            this.dieta_dieta = new System.Windows.Forms.ComboBox();
-            this.label52 = new System.Windows.Forms.Label();
             this.panel_jednostka = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label48 = new System.Windows.Forms.Label();
@@ -344,6 +341,8 @@
             this.jednostka_jednostka = new System.Windows.Forms.ComboBox();
             this.jednostka_label = new System.Windows.Forms.Label();
             this.panel_receptura = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.receptura_cukry = new System.Windows.Forms.Label();
             this.label155 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
@@ -389,9 +388,6 @@
             this.receptura_produkty = new System.Windows.Forms.ListBox();
             this.receptura_kategoria = new System.Windows.Forms.ComboBox();
             this.receptura_masa = new System.Windows.Forms.TextBox();
-            this.receptura_produkt_dodaj = new System.Windows.Forms.Button();
-            this.receptura_masa_label = new System.Windows.Forms.Label();
-            this.receptura_dodaj_edytuj = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
             this.receptura_nazwa = new System.Windows.Forms.TextBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -423,20 +419,17 @@
             this.drukuj_do_label = new System.Windows.Forms.Label();
             this.drukuj_od = new System.Windows.Forms.DateTimePicker();
             this.drukuj_od_label = new System.Windows.Forms.Label();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.drukuj_rodzaj_label = new System.Windows.Forms.Label();
             this.drukuj_rodzaj = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.cb_miasto = new System.Windows.Forms.ComboBox();
             this.tc_posilki = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.procent_sniadanie = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.lv_sniadanie = new System.Windows.Forms.ListView();
             this.c_nazwa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.c_masa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -464,7 +457,6 @@
             this.columnHeader84 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_IIsniadanie = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.lv_obiad = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -480,7 +472,6 @@
             this.columnHeader86 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_obiad = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lv_podwieczorek = new System.Windows.Forms.ListView();
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -496,7 +487,6 @@
             this.columnHeader88 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_podwieczorek = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.lv_kolacja = new System.Windows.Forms.ListView();
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -512,9 +502,6 @@
             this.columnHeader90 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.procent_kolacja = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbl_masa = new System.Windows.Forms.Label();
-            this.btn_dodaj = new System.Windows.Forms.Button();
             this.tb_masa = new System.Windows.Forms.TextBox();
             this.lbl_data = new System.Windows.Forms.Label();
             this.cb_dieta = new System.Windows.Forms.ComboBox();
@@ -616,6 +603,9 @@
             this.wyczyśćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posiłekToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.dzieńToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel_kontrola = new System.Windows.Forms.Panel();
             this.k_sol_zakres = new System.Windows.Forms.Label();
             this.k_sol_plus = new System.Windows.Forms.Label();
@@ -706,6 +696,7 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label79 = new System.Windows.Forms.Label();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.menu.SuspendLayout();
             this.p_de.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.i_de)).BeginInit();
@@ -749,6 +740,9 @@
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_wstecz)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_dodaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieta_edytuj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieta_usun)).BeginInit();
             this.panel_jadlospis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -759,9 +753,6 @@
             this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_edytuj)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_usun)).BeginInit();
             this.panel_jednostka.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jednostka_wstecz)).BeginInit();
@@ -770,6 +761,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.jednostka_edytuj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jednostka_usun)).BeginInit();
             this.panel_receptura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receptura_down)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receptura_del)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receptura_up)).BeginInit();
@@ -782,7 +775,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.panel_drukuj.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -795,14 +787,18 @@
             this.tabPage5.SuspendLayout();
             this.panel_glowny.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel_kontrola.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
             // 
             this.menu.AutoSize = true;
-            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(61)))), ((int)(((byte)(46)))));
             this.menu.Controls.Add(this.p_de);
             this.menu.Controls.Add(this.p_k);
             this.menu.Controls.Add(this.p_pr);
@@ -815,29 +811,30 @@
             this.menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Margin = new System.Windows.Forms.Padding(0);
-            this.menu.MaximumSize = new System.Drawing.Size(300, 0);
-            this.menu.MinimumSize = new System.Drawing.Size(300, 0);
+            this.menu.MaximumSize = new System.Drawing.Size(200, 0);
+            this.menu.MinimumSize = new System.Drawing.Size(200, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(300, 839);
+            this.menu.Size = new System.Drawing.Size(200, 839);
             this.menu.TabIndex = 39;
             // 
             // p_de
             // 
             this.p_de.Controls.Add(this.i_de);
             this.p_de.Controls.Add(this.t_de);
-            this.p_de.Location = new System.Drawing.Point(1, 303);
+            this.p_de.Location = new System.Drawing.Point(5, 305);
             this.p_de.Margin = new System.Windows.Forms.Padding(0);
-            this.p_de.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_de.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_de.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_de.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_de.Name = "p_de";
-            this.p_de.Size = new System.Drawing.Size(300, 50);
+            this.p_de.Size = new System.Drawing.Size(190, 40);
             this.p_de.TabIndex = 10;
             this.p_de.Click += new System.EventHandler(this.panel7_Click);
+            this.p_de.Paint += new System.Windows.Forms.PaintEventHandler(this.p_de_Paint);
             // 
             // i_de
             // 
             this.i_de.Image = ((System.Drawing.Image)(resources.GetObject("i_de.Image")));
-            this.i_de.Location = new System.Drawing.Point(19, 10);
+            this.i_de.Location = new System.Drawing.Point(5, 5);
             this.i_de.Name = "i_de";
             this.i_de.Size = new System.Drawing.Size(30, 32);
             this.i_de.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -850,8 +847,8 @@
             this.t_de.AutoSize = true;
             this.t_de.BackColor = System.Drawing.Color.Transparent;
             this.t_de.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_de.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_de.Location = new System.Drawing.Point(55, 10);
+            this.t_de.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_de.Location = new System.Drawing.Point(40, 5);
             this.t_de.Name = "t_de";
             this.t_de.Size = new System.Drawing.Size(91, 28);
             this.t_de.TabIndex = 2;
@@ -862,19 +859,20 @@
             // 
             this.p_k.Controls.Add(this.i_k);
             this.p_k.Controls.Add(this.t_k);
-            this.p_k.Location = new System.Drawing.Point(1, 404);
+            this.p_k.Location = new System.Drawing.Point(5, 405);
             this.p_k.Margin = new System.Windows.Forms.Padding(0);
-            this.p_k.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_k.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_k.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_k.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_k.Name = "p_k";
-            this.p_k.Size = new System.Drawing.Size(300, 50);
+            this.p_k.Size = new System.Drawing.Size(190, 40);
             this.p_k.TabIndex = 10;
             this.p_k.Click += new System.EventHandler(this.panel14_Click);
+            this.p_k.Paint += new System.Windows.Forms.PaintEventHandler(this.p_k_Paint);
             // 
             // i_k
             // 
             this.i_k.Image = ((System.Drawing.Image)(resources.GetObject("i_k.Image")));
-            this.i_k.Location = new System.Drawing.Point(18, 11);
+            this.i_k.Location = new System.Drawing.Point(5, 5);
             this.i_k.Name = "i_k";
             this.i_k.Size = new System.Drawing.Size(30, 32);
             this.i_k.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -887,8 +885,8 @@
             this.t_k.AutoSize = true;
             this.t_k.BackColor = System.Drawing.Color.Transparent;
             this.t_k.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_k.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_k.Location = new System.Drawing.Point(54, 11);
+            this.t_k.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_k.Location = new System.Drawing.Point(40, 5);
             this.t_k.Name = "t_k";
             this.t_k.Size = new System.Drawing.Size(88, 28);
             this.t_k.TabIndex = 2;
@@ -899,12 +897,12 @@
             // 
             this.p_pr.Controls.Add(this.i_pr);
             this.p_pr.Controls.Add(this.t_pr);
-            this.p_pr.Location = new System.Drawing.Point(1, 354);
+            this.p_pr.Location = new System.Drawing.Point(5, 355);
             this.p_pr.Margin = new System.Windows.Forms.Padding(0);
-            this.p_pr.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_pr.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_pr.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_pr.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_pr.Name = "p_pr";
-            this.p_pr.Size = new System.Drawing.Size(300, 50);
+            this.p_pr.Size = new System.Drawing.Size(190, 40);
             this.p_pr.TabIndex = 9;
             this.p_pr.Click += new System.EventHandler(this.panel11_Click);
             this.p_pr.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint_1);
@@ -912,7 +910,7 @@
             // i_pr
             // 
             this.i_pr.Image = ((System.Drawing.Image)(resources.GetObject("i_pr.Image")));
-            this.i_pr.Location = new System.Drawing.Point(19, 10);
+            this.i_pr.Location = new System.Drawing.Point(5, 5);
             this.i_pr.Name = "i_pr";
             this.i_pr.Size = new System.Drawing.Size(30, 32);
             this.i_pr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -925,8 +923,8 @@
             this.t_pr.AutoSize = true;
             this.t_pr.BackColor = System.Drawing.Color.Transparent;
             this.t_pr.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_pr.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_pr.Location = new System.Drawing.Point(55, 10);
+            this.t_pr.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_pr.Location = new System.Drawing.Point(40, 5);
             this.t_pr.Name = "t_pr";
             this.t_pr.Size = new System.Drawing.Size(70, 28);
             this.t_pr.TabIndex = 2;
@@ -937,19 +935,20 @@
             // 
             this.p_h.Controls.Add(this.i_h);
             this.p_h.Controls.Add(this.t_h);
-            this.p_h.Location = new System.Drawing.Point(1, 253);
+            this.p_h.Location = new System.Drawing.Point(5, 255);
             this.p_h.Margin = new System.Windows.Forms.Padding(0);
-            this.p_h.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_h.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_h.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_h.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_h.Name = "p_h";
-            this.p_h.Size = new System.Drawing.Size(300, 50);
+            this.p_h.Size = new System.Drawing.Size(190, 40);
             this.p_h.TabIndex = 8;
             this.p_h.Click += new System.EventHandler(this.panel9_Click);
+            this.p_h.Paint += new System.Windows.Forms.PaintEventHandler(this.p_h_Paint);
             // 
             // i_h
             // 
             this.i_h.Image = ((System.Drawing.Image)(resources.GetObject("i_h.Image")));
-            this.i_h.Location = new System.Drawing.Point(19, 10);
+            this.i_h.Location = new System.Drawing.Point(5, 5);
             this.i_h.Name = "i_h";
             this.i_h.Size = new System.Drawing.Size(30, 32);
             this.i_h.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -962,8 +961,8 @@
             this.t_h.AutoSize = true;
             this.t_h.BackColor = System.Drawing.Color.Transparent;
             this.t_h.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_h.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_h.Location = new System.Drawing.Point(55, 10);
+            this.t_h.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_h.Location = new System.Drawing.Point(40, 5);
             this.t_h.Name = "t_h";
             this.t_h.Size = new System.Drawing.Size(94, 28);
             this.t_h.TabIndex = 2;
@@ -974,12 +973,12 @@
             // 
             this.p_g.Controls.Add(this.i_g);
             this.p_g.Controls.Add(this.t_g);
-            this.p_g.Location = new System.Drawing.Point(1, 3);
+            this.p_g.Location = new System.Drawing.Point(5, 5);
             this.p_g.Margin = new System.Windows.Forms.Padding(0);
-            this.p_g.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_g.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_g.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_g.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_g.Name = "p_g";
-            this.p_g.Size = new System.Drawing.Size(300, 50);
+            this.p_g.Size = new System.Drawing.Size(190, 40);
             this.p_g.TabIndex = 4;
             this.p_g.Click += new System.EventHandler(this.panel10_Click);
             this.p_g.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
@@ -987,7 +986,7 @@
             // i_g
             // 
             this.i_g.Image = ((System.Drawing.Image)(resources.GetObject("i_g.Image")));
-            this.i_g.Location = new System.Drawing.Point(19, 10);
+            this.i_g.Location = new System.Drawing.Point(5, 5);
             this.i_g.Name = "i_g";
             this.i_g.Size = new System.Drawing.Size(30, 32);
             this.i_g.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1000,31 +999,32 @@
             this.t_g.AutoSize = true;
             this.t_g.BackColor = System.Drawing.Color.Transparent;
             this.t_g.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_g.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_g.Location = new System.Drawing.Point(55, 10);
+            this.t_g.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_g.Location = new System.Drawing.Point(40, 5);
             this.t_g.Name = "t_g";
-            this.t_g.Size = new System.Drawing.Size(140, 28);
+            this.t_g.Size = new System.Drawing.Size(138, 28);
             this.t_g.TabIndex = 2;
-            this.t_g.Text = "Strona Główna";
+            this.t_g.Text = "Strona główna";
             this.t_g.Click += new System.EventHandler(this.label17_Click);
             // 
             // p_d
             // 
             this.p_d.Controls.Add(this.i_d);
             this.p_d.Controls.Add(this.t_d);
-            this.p_d.Location = new System.Drawing.Point(1, 201);
+            this.p_d.Location = new System.Drawing.Point(5, 205);
             this.p_d.Margin = new System.Windows.Forms.Padding(0);
-            this.p_d.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_d.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_d.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_d.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_d.Name = "p_d";
-            this.p_d.Size = new System.Drawing.Size(300, 50);
+            this.p_d.Size = new System.Drawing.Size(190, 40);
             this.p_d.TabIndex = 7;
             this.p_d.Click += new System.EventHandler(this.panel8_Click);
+            this.p_d.Paint += new System.Windows.Forms.PaintEventHandler(this.p_d_Paint);
             // 
             // i_d
             // 
             this.i_d.Image = ((System.Drawing.Image)(resources.GetObject("i_d.Image")));
-            this.i_d.Location = new System.Drawing.Point(19, 10);
+            this.i_d.Location = new System.Drawing.Point(5, 5);
             this.i_d.Name = "i_d";
             this.i_d.Size = new System.Drawing.Size(30, 32);
             this.i_d.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1037,8 +1037,8 @@
             this.t_d.AutoSize = true;
             this.t_d.BackColor = System.Drawing.Color.Transparent;
             this.t_d.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_d.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_d.Location = new System.Drawing.Point(55, 11);
+            this.t_d.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_d.Location = new System.Drawing.Point(40, 5);
             this.t_d.Name = "t_d";
             this.t_d.Size = new System.Drawing.Size(58, 28);
             this.t_d.TabIndex = 2;
@@ -1050,12 +1050,12 @@
             this.p_j.Controls.Add(this.i_j);
             this.p_j.Controls.Add(this.t_j);
             this.p_j.Controls.Add(this.panel7);
-            this.p_j.Location = new System.Drawing.Point(0, 151);
+            this.p_j.Location = new System.Drawing.Point(5, 155);
             this.p_j.Margin = new System.Windows.Forms.Padding(0);
-            this.p_j.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_j.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_j.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_j.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_j.Name = "p_j";
-            this.p_j.Size = new System.Drawing.Size(300, 50);
+            this.p_j.Size = new System.Drawing.Size(190, 40);
             this.p_j.TabIndex = 5;
             this.p_j.Click += new System.EventHandler(this.panel6_Click);
             this.p_j.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
@@ -1063,7 +1063,7 @@
             // i_j
             // 
             this.i_j.Image = ((System.Drawing.Image)(resources.GetObject("i_j.Image")));
-            this.i_j.Location = new System.Drawing.Point(19, 10);
+            this.i_j.Location = new System.Drawing.Point(5, 5);
             this.i_j.Name = "i_j";
             this.i_j.Size = new System.Drawing.Size(30, 32);
             this.i_j.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1076,8 +1076,8 @@
             this.t_j.AutoSize = true;
             this.t_j.BackColor = System.Drawing.Color.Transparent;
             this.t_j.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_j.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_j.Location = new System.Drawing.Point(55, 12);
+            this.t_j.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_j.Location = new System.Drawing.Point(40, 5);
             this.t_j.Name = "t_j";
             this.t_j.Size = new System.Drawing.Size(101, 28);
             this.t_j.TabIndex = 2;
@@ -1126,12 +1126,12 @@
             // 
             this.p_r.Controls.Add(this.i_r);
             this.p_r.Controls.Add(this.t_r);
-            this.p_r.Location = new System.Drawing.Point(1, 105);
+            this.p_r.Location = new System.Drawing.Point(5, 105);
             this.p_r.Margin = new System.Windows.Forms.Padding(0);
-            this.p_r.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_r.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_r.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_r.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_r.Name = "p_r";
-            this.p_r.Size = new System.Drawing.Size(300, 50);
+            this.p_r.Size = new System.Drawing.Size(190, 40);
             this.p_r.TabIndex = 4;
             this.p_r.Click += new System.EventHandler(this.panel5_Click);
             this.p_r.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
@@ -1139,7 +1139,7 @@
             // i_r
             // 
             this.i_r.Image = ((System.Drawing.Image)(resources.GetObject("i_r.Image")));
-            this.i_r.Location = new System.Drawing.Point(19, 9);
+            this.i_r.Location = new System.Drawing.Point(5, 5);
             this.i_r.Name = "i_r";
             this.i_r.Size = new System.Drawing.Size(30, 32);
             this.i_r.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1152,8 +1152,8 @@
             this.t_r.AutoSize = true;
             this.t_r.BackColor = System.Drawing.Color.Transparent;
             this.t_r.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_r.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_r.Location = new System.Drawing.Point(54, 9);
+            this.t_r.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_r.Location = new System.Drawing.Point(40, 5);
             this.t_r.Name = "t_r";
             this.t_r.Size = new System.Drawing.Size(99, 28);
             this.t_r.TabIndex = 2;
@@ -1164,12 +1164,12 @@
             // 
             this.p_p.Controls.Add(this.i_p);
             this.p_p.Controls.Add(this.t_p);
-            this.p_p.Location = new System.Drawing.Point(1, 53);
+            this.p_p.Location = new System.Drawing.Point(5, 55);
             this.p_p.Margin = new System.Windows.Forms.Padding(0);
-            this.p_p.MaximumSize = new System.Drawing.Size(300, 50);
-            this.p_p.MinimumSize = new System.Drawing.Size(300, 50);
+            this.p_p.MaximumSize = new System.Drawing.Size(190, 40);
+            this.p_p.MinimumSize = new System.Drawing.Size(190, 40);
             this.p_p.Name = "p_p";
-            this.p_p.Size = new System.Drawing.Size(300, 50);
+            this.p_p.Size = new System.Drawing.Size(190, 40);
             this.p_p.TabIndex = 3;
             this.p_p.Click += new System.EventHandler(this.panel3_Click);
             this.p_p.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
@@ -1177,7 +1177,7 @@
             // i_p
             // 
             this.i_p.Image = ((System.Drawing.Image)(resources.GetObject("i_p.Image")));
-            this.i_p.Location = new System.Drawing.Point(19, 10);
+            this.i_p.Location = new System.Drawing.Point(5, 5);
             this.i_p.Name = "i_p";
             this.i_p.Size = new System.Drawing.Size(30, 32);
             this.i_p.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1190,8 +1190,8 @@
             this.t_p.AutoSize = true;
             this.t_p.BackColor = System.Drawing.Color.Transparent;
             this.t_p.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.t_p.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.t_p.Location = new System.Drawing.Point(55, 10);
+            this.t_p.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(216)))));
+            this.t_p.Location = new System.Drawing.Point(45, 5);
             this.t_p.Name = "t_p";
             this.t_p.Size = new System.Drawing.Size(92, 28);
             this.t_p.TabIndex = 2;
@@ -1201,27 +1201,27 @@
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(57)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(146)))), ((int)(((byte)(121)))));
             this.panel2.Controls.Add(this.label10);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(300, 0);
-            this.panel2.MaximumSize = new System.Drawing.Size(0, 40);
-            this.panel2.MinimumSize = new System.Drawing.Size(0, 40);
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.MaximumSize = new System.Drawing.Size(0, 25);
+            this.panel2.MinimumSize = new System.Drawing.Size(0, 25);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 40);
+            this.panel2.Size = new System.Drawing.Size(1257, 25);
             this.panel2.TabIndex = 41;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 17F);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(6, 3);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 31);
+            this.label10.Size = new System.Drawing.Size(98, 19);
             this.label10.TabIndex = 42;
-            this.label10.Text = "Dashboard";
+            this.label10.Text = "Strona główna";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // panel_dekadowka
@@ -1249,9 +1249,9 @@
             this.panel_dekadowka.Controls.Add(this.label32);
             this.panel_dekadowka.Controls.Add(this.dekadowka_panel);
             this.panel_dekadowka.Controls.Add(this.dekadowka_dekadowka);
-            this.panel_dekadowka.Location = new System.Drawing.Point(456, 347);
+            this.panel_dekadowka.Location = new System.Drawing.Point(257, 266);
             this.panel_dekadowka.Name = "panel_dekadowka";
-            this.panel_dekadowka.Size = new System.Drawing.Size(976, 481);
+            this.panel_dekadowka.Size = new System.Drawing.Size(80, 82);
             this.panel_dekadowka.TabIndex = 62;
             // 
             // generowanie_status
@@ -1259,6 +1259,7 @@
             this.generowanie_status.AutoSize = true;
             this.generowanie_status.BackColor = System.Drawing.Color.Transparent;
             this.generowanie_status.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.generowanie_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.generowanie_status.Location = new System.Drawing.Point(599, 174);
             this.generowanie_status.Name = "generowanie_status";
             this.generowanie_status.Size = new System.Drawing.Size(111, 63);
@@ -1268,7 +1269,9 @@
             // 
             // dekadowka_generuj_data2
             // 
-            this.dekadowka_generuj_data2.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_generuj_data2.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_generuj_data2.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dekadowka_generuj_data2.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_generuj_data2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dekadowka_generuj_data2.Location = new System.Drawing.Point(335, 192);
             this.dekadowka_generuj_data2.Name = "dekadowka_generuj_data2";
@@ -1288,7 +1291,9 @@
             // 
             // dekadowka_generuj_data1
             // 
-            this.dekadowka_generuj_data1.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_generuj_data1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_generuj_data1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dekadowka_generuj_data1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_generuj_data1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dekadowka_generuj_data1.Location = new System.Drawing.Point(68, 192);
             this.dekadowka_generuj_data1.Name = "dekadowka_generuj_data1";
@@ -1300,7 +1305,7 @@
             this.dekadowka_generuj.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_generuj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_generuj.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_generuj.Image")));
-            this.dekadowka_generuj.Location = new System.Drawing.Point(193, 28);
+            this.dekadowka_generuj.Location = new System.Drawing.Point(175, 25);
             this.dekadowka_generuj.Name = "dekadowka_generuj";
             this.dekadowka_generuj.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_generuj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1313,6 +1318,7 @@
             this.dekadowka_generuj_label1.AutoSize = true;
             this.dekadowka_generuj_label1.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_generuj_label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_generuj_label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_generuj_label1.Location = new System.Drawing.Point(147, 168);
             this.dekadowka_generuj_label1.Name = "dekadowka_generuj_label1";
             this.dekadowka_generuj_label1.Size = new System.Drawing.Size(34, 21);
@@ -1321,7 +1327,11 @@
             // 
             // dekadowka_dodaj_dni
             // 
+            this.dekadowka_dodaj_dni.BackColor = System.Drawing.Color.White;
+            this.dekadowka_dodaj_dni.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dekadowka_dodaj_dni.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dekadowka_dodaj_dni.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_dni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_dni.Location = new System.Drawing.Point(232, 309);
             this.dekadowka_dodaj_dni.Name = "dekadowka_dodaj_dni";
             this.dekadowka_dodaj_dni.Size = new System.Drawing.Size(286, 29);
@@ -1334,6 +1344,7 @@
             this.dekadowka_dodaj_label_dni.AutoSize = true;
             this.dekadowka_dodaj_label_dni.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_dodaj_label_dni.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_label_dni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_label_dni.Location = new System.Drawing.Point(232, 285);
             this.dekadowka_dodaj_label_dni.Name = "dekadowka_dodaj_label_dni";
             this.dekadowka_dodaj_label_dni.Size = new System.Drawing.Size(82, 21);
@@ -1345,6 +1356,7 @@
             this.dekadowka_dodaj_label_dzienStart.AutoSize = true;
             this.dekadowka_dodaj_label_dzienStart.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_dodaj_label_dzienStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_label_dzienStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_label_dzienStart.Location = new System.Drawing.Point(44, 284);
             this.dekadowka_dodaj_label_dzienStart.Name = "dekadowka_dodaj_label_dzienStart";
             this.dekadowka_dodaj_label_dzienStart.Size = new System.Drawing.Size(115, 21);
@@ -1353,8 +1365,11 @@
             // 
             // dekadowka_dodaj_dzienStart
             // 
+            this.dekadowka_dodaj_dzienStart.BackColor = System.Drawing.Color.White;
+            this.dekadowka_dodaj_dzienStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_dodaj_dzienStart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dekadowka_dodaj_dzienStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_dzienStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_dzienStart.FormattingEnabled = true;
             this.dekadowka_dodaj_dzienStart.Items.AddRange(new object[] {
             "Poniedziałek",
@@ -1371,7 +1386,11 @@
             // 
             // dekadowka_dodaj_nazwa
             // 
+            this.dekadowka_dodaj_nazwa.BackColor = System.Drawing.Color.White;
+            this.dekadowka_dodaj_nazwa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dekadowka_dodaj_nazwa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dekadowka_dodaj_nazwa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_nazwa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_nazwa.Location = new System.Drawing.Point(44, 194);
             this.dekadowka_dodaj_nazwa.Name = "dekadowka_dodaj_nazwa";
             this.dekadowka_dodaj_nazwa.Size = new System.Drawing.Size(474, 29);
@@ -1382,6 +1401,7 @@
             this.dekadowka_dodaj_label_dekadowka.AutoSize = true;
             this.dekadowka_dodaj_label_dekadowka.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_dodaj_label_dekadowka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_label_dekadowka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_label_dekadowka.Location = new System.Drawing.Point(44, 170);
             this.dekadowka_dodaj_label_dekadowka.Name = "dekadowka_dodaj_label_dekadowka";
             this.dekadowka_dodaj_label_dekadowka.Size = new System.Drawing.Size(60, 21);
@@ -1393,6 +1413,7 @@
             this.dekadowka_dodaj_label_miasto.AutoSize = true;
             this.dekadowka_dodaj_label_miasto.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_dodaj_label_miasto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_label_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_label_miasto.Location = new System.Drawing.Point(42, 225);
             this.dekadowka_dodaj_label_miasto.Name = "dekadowka_dodaj_label_miasto";
             this.dekadowka_dodaj_label_miasto.Size = new System.Drawing.Size(60, 21);
@@ -1401,8 +1422,11 @@
             // 
             // dekadowka_dodaj_miasto
             // 
+            this.dekadowka_dodaj_miasto.BackColor = System.Drawing.Color.White;
+            this.dekadowka_dodaj_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_dodaj_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dekadowka_dodaj_miasto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dodaj_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dodaj_miasto.FormattingEnabled = true;
             this.dekadowka_dodaj_miasto.Location = new System.Drawing.Point(44, 249);
             this.dekadowka_dodaj_miasto.Name = "dekadowka_dodaj_miasto";
@@ -1414,7 +1438,7 @@
             this.dekadowka_nope.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_nope.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_nope.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_nope.Image")));
-            this.dekadowka_nope.Location = new System.Drawing.Point(910, 28);
+            this.dekadowka_nope.Location = new System.Drawing.Point(950, 25);
             this.dekadowka_nope.Name = "dekadowka_nope";
             this.dekadowka_nope.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_nope.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1427,7 +1451,7 @@
             this.dekadowka_ok.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_ok.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_ok.Image")));
-            this.dekadowka_ok.Location = new System.Drawing.Point(838, 28);
+            this.dekadowka_ok.Location = new System.Drawing.Point(875, 25);
             this.dekadowka_ok.Name = "dekadowka_ok";
             this.dekadowka_ok.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1440,7 +1464,7 @@
             this.dekadowka_usun.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_usun.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_usun.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_usun.Image")));
-            this.dekadowka_usun.Location = new System.Drawing.Point(47, 28);
+            this.dekadowka_usun.Location = new System.Drawing.Point(25, 25);
             this.dekadowka_usun.Name = "dekadowka_usun";
             this.dekadowka_usun.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_usun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1453,7 +1477,7 @@
             this.dekadowka_dodaj.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_dodaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_dodaj.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_dodaj.Image")));
-            this.dekadowka_dodaj.Location = new System.Drawing.Point(120, 28);
+            this.dekadowka_dodaj.Location = new System.Drawing.Point(100, 25);
             this.dekadowka_dodaj.Name = "dekadowka_dodaj";
             this.dekadowka_dodaj.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_dodaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1466,6 +1490,7 @@
             this.label33.AutoSize = true;
             this.label33.BackColor = System.Drawing.Color.Transparent;
             this.label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label33.Location = new System.Drawing.Point(43, 90);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(60, 21);
@@ -1474,8 +1499,11 @@
             // 
             // dekadowka_miasto
             // 
+            this.dekadowka_miasto.BackColor = System.Drawing.Color.White;
+            this.dekadowka_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dekadowka_miasto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_miasto.FormattingEnabled = true;
             this.dekadowka_miasto.Location = new System.Drawing.Point(45, 114);
             this.dekadowka_miasto.Name = "dekadowka_miasto";
@@ -1488,6 +1516,7 @@
             this.label32.AutoSize = true;
             this.label32.BackColor = System.Drawing.Color.Transparent;
             this.label32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label32.Location = new System.Drawing.Point(303, 90);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(94, 21);
@@ -1505,8 +1534,11 @@
             // 
             // dekadowka_dekadowka
             // 
+            this.dekadowka_dekadowka.BackColor = System.Drawing.Color.White;
+            this.dekadowka_dekadowka.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_dekadowka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dekadowka_dekadowka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_dekadowka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_dekadowka.FormattingEnabled = true;
             this.dekadowka_dekadowka.Location = new System.Drawing.Point(307, 114);
             this.dekadowka_dekadowka.Name = "dekadowka_dekadowka";
@@ -1524,9 +1556,9 @@
             this.panel_produkty.Controls.Add(this.produkt_usun);
             this.panel_produkty.Controls.Add(this.produkt_wczytaj);
             this.panel_produkty.Controls.Add(this.label27);
-            this.panel_produkty.Location = new System.Drawing.Point(308, 209);
+            this.panel_produkty.Location = new System.Drawing.Point(229, 214);
             this.panel_produkty.Name = "panel_produkty";
-            this.panel_produkty.Size = new System.Drawing.Size(50, 128);
+            this.panel_produkty.Size = new System.Drawing.Size(48, 40);
             this.panel_produkty.TabIndex = 39;
             this.panel_produkty.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_produkty_Paint);
             // 
@@ -1559,15 +1591,16 @@
             this.produkt_przegladaj.Controls.Add(this.produkt_sod);
             this.produkt_przegladaj.Controls.Add(this.produkt_weglowodany);
             this.produkt_przegladaj.Controls.Add(this.produkt_tluszcze_nn);
-            this.produkt_przegladaj.Location = new System.Drawing.Point(37, 191);
+            this.produkt_przegladaj.Location = new System.Drawing.Point(20, 145);
             this.produkt_przegladaj.Name = "produkt_przegladaj";
-            this.produkt_przegladaj.Size = new System.Drawing.Size(924, 434);
+            this.produkt_przegladaj.Size = new System.Drawing.Size(924, 433);
             this.produkt_przegladaj.TabIndex = 70;
             // 
             // label150
             // 
             this.label150.AutoSize = true;
             this.label150.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label150.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label150.Location = new System.Drawing.Point(479, 190);
             this.label150.Name = "label150";
             this.label150.Size = new System.Drawing.Size(77, 21);
@@ -1576,9 +1609,11 @@
             // 
             // produkty_cukry
             // 
-            this.produkty_cukry.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkty_cukry.BackColor = System.Drawing.Color.White;
+            this.produkty_cukry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkty_cukry.Enabled = false;
             this.produkty_cukry.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkty_cukry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkty_cukry.Location = new System.Drawing.Point(648, 187);
             this.produkty_cukry.Name = "produkty_cukry";
             this.produkty_cukry.Size = new System.Drawing.Size(203, 29);
@@ -1588,6 +1623,7 @@
             // 
             this.label102.AutoSize = true;
             this.label102.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label102.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label102.Location = new System.Drawing.Point(479, 150);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(126, 21);
@@ -1598,6 +1634,7 @@
             // 
             this.label104.AutoSize = true;
             this.label104.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label104.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label104.Location = new System.Drawing.Point(480, 243);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(88, 21);
@@ -1606,9 +1643,11 @@
             // 
             // produkty_blonnik
             // 
-            this.produkty_blonnik.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkty_blonnik.BackColor = System.Drawing.Color.White;
+            this.produkty_blonnik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkty_blonnik.Enabled = false;
             this.produkty_blonnik.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkty_blonnik.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkty_blonnik.Location = new System.Drawing.Point(649, 240);
             this.produkty_blonnik.Name = "produkty_blonnik";
             this.produkty_blonnik.Size = new System.Drawing.Size(203, 29);
@@ -1619,6 +1658,7 @@
             // 
             this.label105.AutoSize = true;
             this.label105.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label105.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label105.Location = new System.Drawing.Point(478, 131);
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(109, 21);
@@ -1627,9 +1667,11 @@
             // 
             // produkty_przyswajalne
             // 
-            this.produkty_przyswajalne.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkty_przyswajalne.BackColor = System.Drawing.Color.White;
+            this.produkty_przyswajalne.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkty_przyswajalne.Enabled = false;
             this.produkty_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkty_przyswajalne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkty_przyswajalne.Location = new System.Drawing.Point(647, 128);
             this.produkty_przyswajalne.Name = "produkty_przyswajalne";
             this.produkty_przyswajalne.Size = new System.Drawing.Size(203, 29);
@@ -1640,7 +1682,8 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label26.Location = new System.Drawing.Point(3, 19);
+            this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label26.Location = new System.Drawing.Point(5, 19);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(128, 21);
             this.label26.TabIndex = 41;
@@ -1650,7 +1693,8 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label25.Location = new System.Drawing.Point(4, 136);
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label25.Location = new System.Drawing.Point(5, 136);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(106, 21);
             this.label25.TabIndex = 42;
@@ -1673,6 +1717,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label24.Location = new System.Drawing.Point(5, 188);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(78, 21);
@@ -1683,7 +1728,8 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label23.Location = new System.Drawing.Point(-1, 357);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label23.Location = new System.Drawing.Point(5, 357);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(135, 21);
             this.label23.TabIndex = 44;
@@ -1693,7 +1739,8 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label22.Location = new System.Drawing.Point(4, 247);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label22.Location = new System.Drawing.Point(5, 247);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(93, 21);
             this.label22.TabIndex = 45;
@@ -1703,7 +1750,8 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label21.Location = new System.Drawing.Point(-1, 295);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label21.Location = new System.Drawing.Point(5, 295);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(132, 21);
             this.label21.TabIndex = 46;
@@ -1713,7 +1761,8 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label20.Location = new System.Drawing.Point(4, 82);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label20.Location = new System.Drawing.Point(5, 82);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(79, 21);
             this.label20.TabIndex = 47;
@@ -1721,10 +1770,12 @@
             // 
             // produkt_kategoria
             // 
-            this.produkt_kategoria.BackColor = System.Drawing.SystemColors.Window;
+            this.produkt_kategoria.BackColor = System.Drawing.Color.White;
+            this.produkt_kategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_kategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.produkt_kategoria.Enabled = false;
             this.produkt_kategoria.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_kategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_kategoria.FormattingEnabled = true;
             this.produkt_kategoria.Location = new System.Drawing.Point(170, 74);
             this.produkt_kategoria.Name = "produkt_kategoria";
@@ -1735,7 +1786,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.Location = new System.Drawing.Point(-1, 317);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label2.Location = new System.Drawing.Point(5, 317);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 21);
             this.label2.TabIndex = 63;
@@ -1743,9 +1795,11 @@
             // 
             // produkt_nazwa
             // 
-            this.produkt_nazwa.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_nazwa.BackColor = System.Drawing.Color.White;
+            this.produkt_nazwa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_nazwa.Enabled = false;
             this.produkt_nazwa.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_nazwa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_nazwa.Location = new System.Drawing.Point(168, 16);
             this.produkt_nazwa.Name = "produkt_nazwa";
             this.produkt_nazwa.Size = new System.Drawing.Size(372, 29);
@@ -1756,6 +1810,7 @@
             // 
             this.lbl_sol.AutoSize = true;
             this.lbl_sol.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lbl_sol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lbl_sol.Location = new System.Drawing.Point(482, 351);
             this.lbl_sol.Name = "lbl_sol";
             this.lbl_sol.Size = new System.Drawing.Size(58, 21);
@@ -1764,9 +1819,11 @@
             // 
             // produkt_energia
             // 
-            this.produkt_energia.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_energia.BackColor = System.Drawing.Color.White;
+            this.produkt_energia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_energia.Enabled = false;
             this.produkt_energia.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_energia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_energia.Location = new System.Drawing.Point(169, 133);
             this.produkt_energia.Name = "produkt_energia";
             this.produkt_energia.Size = new System.Drawing.Size(203, 29);
@@ -1775,7 +1832,10 @@
             // 
             // produkt_sol
             // 
+            this.produkt_sol.BackColor = System.Drawing.Color.White;
+            this.produkt_sol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_sol.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_sol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_sol.Location = new System.Drawing.Point(647, 348);
             this.produkt_sol.Name = "produkt_sol";
             this.produkt_sol.Size = new System.Drawing.Size(204, 29);
@@ -1785,9 +1845,11 @@
             // 
             // produkt_bialko
             // 
-            this.produkt_bialko.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_bialko.BackColor = System.Drawing.Color.White;
+            this.produkt_bialko.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_bialko.Enabled = false;
             this.produkt_bialko.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_bialko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_bialko.Location = new System.Drawing.Point(169, 185);
             this.produkt_bialko.Name = "produkt_bialko";
             this.produkt_bialko.Size = new System.Drawing.Size(203, 29);
@@ -1798,6 +1860,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label19.Location = new System.Drawing.Point(482, 295);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(77, 21);
@@ -1806,9 +1869,11 @@
             // 
             // produkt_tluszcze
             // 
-            this.produkt_tluszcze.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_tluszcze.BackColor = System.Drawing.Color.White;
+            this.produkt_tluszcze.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_tluszcze.Enabled = false;
             this.produkt_tluszcze.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_tluszcze.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_tluszcze.Location = new System.Drawing.Point(169, 244);
             this.produkt_tluszcze.Name = "produkt_tluszcze";
             this.produkt_tluszcze.Size = new System.Drawing.Size(203, 29);
@@ -1817,9 +1882,11 @@
             // 
             // produkt_sod
             // 
-            this.produkt_sod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_sod.BackColor = System.Drawing.Color.White;
+            this.produkt_sod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_sod.Enabled = false;
             this.produkt_sod.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_sod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_sod.Location = new System.Drawing.Point(648, 292);
             this.produkt_sod.Name = "produkt_sod";
             this.produkt_sod.Size = new System.Drawing.Size(204, 29);
@@ -1828,9 +1895,11 @@
             // 
             // produkt_weglowodany
             // 
-            this.produkt_weglowodany.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_weglowodany.BackColor = System.Drawing.Color.White;
+            this.produkt_weglowodany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_weglowodany.Enabled = false;
             this.produkt_weglowodany.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_weglowodany.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_weglowodany.Location = new System.Drawing.Point(168, 354);
             this.produkt_weglowodany.Name = "produkt_weglowodany";
             this.produkt_weglowodany.Size = new System.Drawing.Size(203, 29);
@@ -1839,9 +1908,11 @@
             // 
             // produkt_tluszcze_nn
             // 
-            this.produkt_tluszcze_nn.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.produkt_tluszcze_nn.BackColor = System.Drawing.Color.White;
+            this.produkt_tluszcze_nn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.produkt_tluszcze_nn.Enabled = false;
             this.produkt_tluszcze_nn.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.produkt_tluszcze_nn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.produkt_tluszcze_nn.Location = new System.Drawing.Point(168, 295);
             this.produkt_tluszcze_nn.Name = "produkt_tluszcze_nn";
             this.produkt_tluszcze_nn.Size = new System.Drawing.Size(204, 29);
@@ -1853,7 +1924,7 @@
             this.produkt_wstecz.BackColor = System.Drawing.Color.Transparent;
             this.produkt_wstecz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_wstecz.Image = ((System.Drawing.Image)(resources.GetObject("produkt_wstecz.Image")));
-            this.produkt_wstecz.Location = new System.Drawing.Point(943, 39);
+            this.produkt_wstecz.Location = new System.Drawing.Point(950, 25);
             this.produkt_wstecz.Name = "produkt_wstecz";
             this.produkt_wstecz.Size = new System.Drawing.Size(45, 45);
             this.produkt_wstecz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1866,7 +1937,7 @@
             this.produkt_dodaj.BackColor = System.Drawing.Color.Transparent;
             this.produkt_dodaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_dodaj.Image = ((System.Drawing.Image)(resources.GetObject("produkt_dodaj.Image")));
-            this.produkt_dodaj.Location = new System.Drawing.Point(173, 34);
+            this.produkt_dodaj.Location = new System.Drawing.Point(175, 25);
             this.produkt_dodaj.Name = "produkt_dodaj";
             this.produkt_dodaj.Size = new System.Drawing.Size(45, 45);
             this.produkt_dodaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1879,7 +1950,7 @@
             this.produkt_zapisz.BackColor = System.Drawing.Color.Transparent;
             this.produkt_zapisz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_zapisz.Image = ((System.Drawing.Image)(resources.GetObject("produkt_zapisz.Image")));
-            this.produkt_zapisz.Location = new System.Drawing.Point(871, 39);
+            this.produkt_zapisz.Location = new System.Drawing.Point(875, 25);
             this.produkt_zapisz.Name = "produkt_zapisz";
             this.produkt_zapisz.Size = new System.Drawing.Size(45, 45);
             this.produkt_zapisz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1892,7 +1963,7 @@
             this.produkt_edytuj.BackColor = System.Drawing.Color.Transparent;
             this.produkt_edytuj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_edytuj.Image = ((System.Drawing.Image)(resources.GetObject("produkt_edytuj.Image")));
-            this.produkt_edytuj.Location = new System.Drawing.Point(23, 34);
+            this.produkt_edytuj.Location = new System.Drawing.Point(25, 25);
             this.produkt_edytuj.Name = "produkt_edytuj";
             this.produkt_edytuj.Size = new System.Drawing.Size(45, 45);
             this.produkt_edytuj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1905,7 +1976,7 @@
             this.produkt_usun.BackColor = System.Drawing.Color.Transparent;
             this.produkt_usun.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_usun.Image = ((System.Drawing.Image)(resources.GetObject("produkt_usun.Image")));
-            this.produkt_usun.Location = new System.Drawing.Point(98, 34);
+            this.produkt_usun.Location = new System.Drawing.Point(100, 25);
             this.produkt_usun.Name = "produkt_usun";
             this.produkt_usun.Size = new System.Drawing.Size(45, 45);
             this.produkt_usun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1915,9 +1986,12 @@
             // 
             // produkt_wczytaj
             // 
+            this.produkt_wczytaj.BackColor = System.Drawing.Color.White;
+            this.produkt_wczytaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.produkt_wczytaj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.produkt_wczytaj.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.produkt_wczytaj.Location = new System.Drawing.Point(208, 119);
+            this.produkt_wczytaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.produkt_wczytaj.Location = new System.Drawing.Point(190, 105);
             this.produkt_wczytaj.Name = "produkt_wczytaj";
             this.produkt_wczytaj.Size = new System.Drawing.Size(372, 29);
             this.produkt_wczytaj.TabIndex = 40;
@@ -1927,7 +2001,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label27.Location = new System.Drawing.Point(43, 122);
+            this.label27.Location = new System.Drawing.Point(25, 105);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(125, 21);
             this.label27.TabIndex = 39;
@@ -1946,9 +2020,9 @@
             this.panel_dekadowka_zapisz.Controls.Add(this.dekadowka_zapisz_miasto);
             this.panel_dekadowka_zapisz.Controls.Add(this.label39);
             this.panel_dekadowka_zapisz.Controls.Add(this.dekadowka_zapisz_dekadowka);
-            this.panel_dekadowka_zapisz.Location = new System.Drawing.Point(1325, 323);
+            this.panel_dekadowka_zapisz.Location = new System.Drawing.Point(273, 368);
             this.panel_dekadowka_zapisz.Name = "panel_dekadowka_zapisz";
-            this.panel_dekadowka_zapisz.Size = new System.Drawing.Size(67, 76);
+            this.panel_dekadowka_zapisz.Size = new System.Drawing.Size(50, 55);
             this.panel_dekadowka_zapisz.TabIndex = 74;
             this.panel_dekadowka_zapisz.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_dekadowka_zapisz_Paint);
             // 
@@ -1957,7 +2031,8 @@
             this.label41.AutoSize = true;
             this.label41.BackColor = System.Drawing.Color.Transparent;
             this.label41.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label41.Location = new System.Drawing.Point(27, 154);
+            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label41.Location = new System.Drawing.Point(25, 160);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(49, 21);
             this.label41.TabIndex = 77;
@@ -1965,20 +2040,28 @@
             // 
             // dekadowka_zapisz_dieta
             // 
+            this.dekadowka_zapisz_dieta.BackColor = System.Drawing.Color.White;
+            this.dekadowka_zapisz_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dekadowka_zapisz_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.dekadowka_zapisz_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_zapisz_dieta.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_dieta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_zapisz_dieta.FormattingEnabled = true;
-            this.dekadowka_zapisz_dieta.Location = new System.Drawing.Point(28, 178);
+            this.dekadowka_zapisz_dieta.ItemHeight = 40;
+            this.dekadowka_zapisz_dieta.Location = new System.Drawing.Point(190, 151);
             this.dekadowka_zapisz_dieta.Name = "dekadowka_zapisz_dieta";
-            this.dekadowka_zapisz_dieta.Size = new System.Drawing.Size(502, 27);
+            this.dekadowka_zapisz_dieta.Size = new System.Drawing.Size(500, 46);
             this.dekadowka_zapisz_dieta.TabIndex = 76;
+            this.dekadowka_zapisz_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.dekadowka_zapisz_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.BackColor = System.Drawing.Color.Transparent;
             this.label40.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label40.Location = new System.Drawing.Point(24, 324);
+            this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label40.Location = new System.Drawing.Point(25, 260);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(52, 21);
             this.label40.TabIndex = 75;
@@ -1986,12 +2069,15 @@
             // 
             // dekadowka_zapisz_dzien
             // 
+            this.dekadowka_zapisz_dzien.BackColor = System.Drawing.Color.White;
+            this.dekadowka_zapisz_dzien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_zapisz_dzien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_zapisz_dzien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_dzien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_dzien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_zapisz_dzien.FormattingEnabled = true;
-            this.dekadowka_zapisz_dzien.Location = new System.Drawing.Point(25, 347);
+            this.dekadowka_zapisz_dzien.Location = new System.Drawing.Point(190, 257);
             this.dekadowka_zapisz_dzien.Name = "dekadowka_zapisz_dzien";
-            this.dekadowka_zapisz_dzien.Size = new System.Drawing.Size(502, 27);
+            this.dekadowka_zapisz_dzien.Size = new System.Drawing.Size(500, 29);
             this.dekadowka_zapisz_dzien.TabIndex = 74;
             // 
             // dekadowka_zapisz_wstec
@@ -1999,7 +2085,7 @@
             this.dekadowka_zapisz_wstec.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_zapisz_wstec.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_zapisz_wstec.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_zapisz_wstec.Image")));
-            this.dekadowka_zapisz_wstec.Location = new System.Drawing.Point(910, 28);
+            this.dekadowka_zapisz_wstec.Location = new System.Drawing.Point(950, 25);
             this.dekadowka_zapisz_wstec.Name = "dekadowka_zapisz_wstec";
             this.dekadowka_zapisz_wstec.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_zapisz_wstec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2012,7 +2098,7 @@
             this.dekadowka_zapisz_ok.BackColor = System.Drawing.Color.Transparent;
             this.dekadowka_zapisz_ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_zapisz_ok.Image = ((System.Drawing.Image)(resources.GetObject("dekadowka_zapisz_ok.Image")));
-            this.dekadowka_zapisz_ok.Location = new System.Drawing.Point(838, 28);
+            this.dekadowka_zapisz_ok.Location = new System.Drawing.Point(875, 25);
             this.dekadowka_zapisz_ok.Name = "dekadowka_zapisz_ok";
             this.dekadowka_zapisz_ok.Size = new System.Drawing.Size(45, 45);
             this.dekadowka_zapisz_ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2025,7 +2111,8 @@
             this.label35.AutoSize = true;
             this.label35.BackColor = System.Drawing.Color.Transparent;
             this.label35.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label35.Location = new System.Drawing.Point(26, 72);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label35.Location = new System.Drawing.Point(25, 105);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(60, 21);
             this.label35.TabIndex = 65;
@@ -2033,12 +2120,15 @@
             // 
             // dekadowka_zapisz_miasto
             // 
+            this.dekadowka_zapisz_miasto.BackColor = System.Drawing.Color.White;
+            this.dekadowka_zapisz_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_zapisz_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_zapisz_miasto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_miasto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_zapisz_miasto.FormattingEnabled = true;
-            this.dekadowka_zapisz_miasto.Location = new System.Drawing.Point(28, 96);
+            this.dekadowka_zapisz_miasto.Location = new System.Drawing.Point(190, 105);
             this.dekadowka_zapisz_miasto.Name = "dekadowka_zapisz_miasto";
-            this.dekadowka_zapisz_miasto.Size = new System.Drawing.Size(502, 27);
+            this.dekadowka_zapisz_miasto.Size = new System.Drawing.Size(500, 29);
             this.dekadowka_zapisz_miasto.TabIndex = 64;
             this.dekadowka_zapisz_miasto.SelectedIndexChanged += new System.EventHandler(this.dekadowka_zapisz_miasto_SelectedIndexChanged);
             // 
@@ -2047,7 +2137,8 @@
             this.label39.AutoSize = true;
             this.label39.BackColor = System.Drawing.Color.Transparent;
             this.label39.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label39.Location = new System.Drawing.Point(24, 239);
+            this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label39.Location = new System.Drawing.Point(25, 215);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(94, 21);
             this.label39.TabIndex = 63;
@@ -2055,12 +2146,15 @@
             // 
             // dekadowka_zapisz_dekadowka
             // 
+            this.dekadowka_zapisz_dekadowka.BackColor = System.Drawing.Color.White;
+            this.dekadowka_zapisz_dekadowka.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_zapisz_dekadowka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_zapisz_dekadowka.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_dekadowka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_zapisz_dekadowka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_zapisz_dekadowka.FormattingEnabled = true;
-            this.dekadowka_zapisz_dekadowka.Location = new System.Drawing.Point(25, 262);
+            this.dekadowka_zapisz_dekadowka.Location = new System.Drawing.Point(190, 213);
             this.dekadowka_zapisz_dekadowka.Name = "dekadowka_zapisz_dekadowka";
-            this.dekadowka_zapisz_dekadowka.Size = new System.Drawing.Size(502, 27);
+            this.dekadowka_zapisz_dekadowka.Size = new System.Drawing.Size(500, 29);
             this.dekadowka_zapisz_dekadowka.TabIndex = 54;
             this.dekadowka_zapisz_dekadowka.SelectedIndexChanged += new System.EventHandler(this.dekadowka_zapisz_dekadowka_SelectedIndexChanged);
             // 
@@ -2076,16 +2170,19 @@
             this.panel_dieta.Controls.Add(this.dieta_usun);
             this.panel_dieta.Controls.Add(this.dieta_dieta);
             this.panel_dieta.Controls.Add(this.label52);
-            this.panel_dieta.Location = new System.Drawing.Point(712, 63);
+            this.panel_dieta.Location = new System.Drawing.Point(216, 531);
             this.panel_dieta.Name = "panel_dieta";
-            this.panel_dieta.Size = new System.Drawing.Size(321, 263);
+            this.panel_dieta.Size = new System.Drawing.Size(28, 53);
             this.panel_dieta.TabIndex = 71;
             // 
             // dieta_miasto
             // 
+            this.dieta_miasto.BackColor = System.Drawing.Color.White;
+            this.dieta_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dieta_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dieta_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_miasto.Location = new System.Drawing.Point(78, 85);
+            this.dieta_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dieta_miasto.Location = new System.Drawing.Point(87, 89);
             this.dieta_miasto.Name = "dieta_miasto";
             this.dieta_miasto.Size = new System.Drawing.Size(193, 29);
             this.dieta_miasto.TabIndex = 72;
@@ -2095,7 +2192,8 @@
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label90.Location = new System.Drawing.Point(12, 90);
+            this.label90.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label90.Location = new System.Drawing.Point(21, 92);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(60, 21);
             this.label90.TabIndex = 71;
@@ -2205,16 +2303,17 @@
             this.panel12.Controls.Add(this.dieta_lbl_sol);
             this.panel12.Controls.Add(this.energiaOd);
             this.panel12.Controls.Add(this.label51);
-            this.panel12.Location = new System.Drawing.Point(22, 125);
+            this.panel12.Location = new System.Drawing.Point(22, 131);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(860, 476);
+            this.panel12.Size = new System.Drawing.Size(966, 551);
             this.panel12.TabIndex = 70;
             // 
             // label123
             // 
             this.label123.AutoSize = true;
             this.label123.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label123.Location = new System.Drawing.Point(643, 25);
+            this.label123.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label123.Location = new System.Drawing.Point(637, 17);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(40, 21);
             this.label123.TabIndex = 161;
@@ -2222,10 +2321,12 @@
             // 
             // dieta_kod
             // 
-            this.dieta_kod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dieta_kod.BackColor = System.Drawing.Color.White;
+            this.dieta_kod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dieta_kod.Enabled = false;
             this.dieta_kod.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_kod.Location = new System.Drawing.Point(689, 17);
+            this.dieta_kod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dieta_kod.Location = new System.Drawing.Point(678, 14);
             this.dieta_kod.Name = "dieta_kod";
             this.dieta_kod.Size = new System.Drawing.Size(269, 29);
             this.dieta_kod.TabIndex = 162;
@@ -2396,9 +2497,11 @@
             // 
             // SolDo
             // 
-            this.SolDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SolDo.BackColor = System.Drawing.Color.White;
+            this.SolDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SolDo.Enabled = false;
             this.SolDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SolDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.SolDo.Location = new System.Drawing.Point(777, 444);
             this.SolDo.Name = "SolDo";
             this.SolDo.Size = new System.Drawing.Size(93, 29);
@@ -2406,9 +2509,11 @@
             // 
             // SolOd
             // 
-            this.SolOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.SolOd.BackColor = System.Drawing.Color.White;
+            this.SolOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SolOd.Enabled = false;
             this.SolOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.SolOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.SolOd.Location = new System.Drawing.Point(642, 444);
             this.SolOd.Name = "SolOd";
             this.SolOd.Size = new System.Drawing.Size(93, 29);
@@ -2426,9 +2531,11 @@
             // 
             // sodDo
             // 
-            this.sodDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sodDo.BackColor = System.Drawing.Color.White;
+            this.sodDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sodDo.Enabled = false;
             this.sodDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.sodDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.sodDo.Location = new System.Drawing.Point(776, 401);
             this.sodDo.Name = "sodDo";
             this.sodDo.Size = new System.Drawing.Size(93, 29);
@@ -2436,9 +2543,11 @@
             // 
             // sodOd
             // 
-            this.sodOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.sodOd.BackColor = System.Drawing.Color.White;
+            this.sodOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sodOd.Enabled = false;
             this.sodOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.sodOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.sodOd.Location = new System.Drawing.Point(641, 401);
             this.sodOd.Name = "sodOd";
             this.sodOd.Size = new System.Drawing.Size(93, 29);
@@ -2456,9 +2565,11 @@
             // 
             // blonnikDoProc
             // 
-            this.blonnikDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikDoProc.BackColor = System.Drawing.Color.White;
+            this.blonnikDoProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blonnikDoProc.Enabled = false;
             this.blonnikDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikDoProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.blonnikDoProc.Location = new System.Drawing.Point(777, 354);
             this.blonnikDoProc.Name = "blonnikDoProc";
             this.blonnikDoProc.Size = new System.Drawing.Size(93, 29);
@@ -2466,9 +2577,11 @@
             // 
             // blonnikOdProc
             // 
-            this.blonnikOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikOdProc.BackColor = System.Drawing.Color.White;
+            this.blonnikOdProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blonnikOdProc.Enabled = false;
             this.blonnikOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikOdProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.blonnikOdProc.Location = new System.Drawing.Point(642, 354);
             this.blonnikOdProc.Name = "blonnikOdProc";
             this.blonnikOdProc.Size = new System.Drawing.Size(93, 29);
@@ -2486,9 +2599,11 @@
             // 
             // blonnikDoTys
             // 
-            this.blonnikDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikDoTys.BackColor = System.Drawing.Color.White;
+            this.blonnikDoTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blonnikDoTys.Enabled = false;
             this.blonnikDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikDoTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.blonnikDoTys.Location = new System.Drawing.Point(777, 321);
             this.blonnikDoTys.Name = "blonnikDoTys";
             this.blonnikDoTys.Size = new System.Drawing.Size(93, 29);
@@ -2496,9 +2611,11 @@
             // 
             // blonnikOdTys
             // 
-            this.blonnikOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikOdTys.BackColor = System.Drawing.Color.White;
+            this.blonnikOdTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blonnikOdTys.Enabled = false;
             this.blonnikOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikOdTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.blonnikOdTys.Location = new System.Drawing.Point(642, 321);
             this.blonnikOdTys.Name = "blonnikOdTys";
             this.blonnikOdTys.Size = new System.Drawing.Size(93, 29);
@@ -2516,9 +2633,11 @@
             // 
             // blonnikDo
             // 
-            this.blonnikDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikDo.BackColor = System.Drawing.Color.White;
+            this.blonnikDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blonnikDo.Enabled = false;
             this.blonnikDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.blonnikDo.Location = new System.Drawing.Point(777, 289);
             this.blonnikDo.Name = "blonnikDo";
             this.blonnikDo.Size = new System.Drawing.Size(93, 29);
@@ -2526,9 +2645,11 @@
             // 
             // blonnikOd
             // 
-            this.blonnikOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.blonnikOd.BackColor = System.Drawing.Color.White;
+            this.blonnikOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.blonnikOd.Enabled = false;
             this.blonnikOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.blonnikOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.blonnikOd.Location = new System.Drawing.Point(642, 289);
             this.blonnikOd.Name = "blonnikOd";
             this.blonnikOd.Size = new System.Drawing.Size(93, 29);
@@ -2546,9 +2667,11 @@
             // 
             // cukryDoProc
             // 
-            this.cukryDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryDoProc.BackColor = System.Drawing.Color.White;
+            this.cukryDoProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cukryDoProc.Enabled = false;
             this.cukryDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryDoProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cukryDoProc.Location = new System.Drawing.Point(777, 242);
             this.cukryDoProc.Name = "cukryDoProc";
             this.cukryDoProc.Size = new System.Drawing.Size(93, 29);
@@ -2556,9 +2679,11 @@
             // 
             // cukryOdProc
             // 
-            this.cukryOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryOdProc.BackColor = System.Drawing.Color.White;
+            this.cukryOdProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cukryOdProc.Enabled = false;
             this.cukryOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryOdProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cukryOdProc.Location = new System.Drawing.Point(642, 242);
             this.cukryOdProc.Name = "cukryOdProc";
             this.cukryOdProc.Size = new System.Drawing.Size(93, 29);
@@ -2576,9 +2701,11 @@
             // 
             // cukryDoTys
             // 
-            this.cukryDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryDoTys.BackColor = System.Drawing.Color.White;
+            this.cukryDoTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cukryDoTys.Enabled = false;
             this.cukryDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryDoTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cukryDoTys.Location = new System.Drawing.Point(777, 209);
             this.cukryDoTys.Name = "cukryDoTys";
             this.cukryDoTys.Size = new System.Drawing.Size(93, 29);
@@ -2586,9 +2713,11 @@
             // 
             // cukryOdTys
             // 
-            this.cukryOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryOdTys.BackColor = System.Drawing.Color.White;
+            this.cukryOdTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cukryOdTys.Enabled = false;
             this.cukryOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryOdTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cukryOdTys.Location = new System.Drawing.Point(642, 209);
             this.cukryOdTys.Name = "cukryOdTys";
             this.cukryOdTys.Size = new System.Drawing.Size(93, 29);
@@ -2606,9 +2735,11 @@
             // 
             // cukryDo
             // 
-            this.cukryDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryDo.BackColor = System.Drawing.Color.White;
+            this.cukryDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cukryDo.Enabled = false;
             this.cukryDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cukryDo.Location = new System.Drawing.Point(777, 177);
             this.cukryDo.Name = "cukryDo";
             this.cukryDo.Size = new System.Drawing.Size(93, 29);
@@ -2616,9 +2747,11 @@
             // 
             // cukryOd
             // 
-            this.cukryOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cukryOd.BackColor = System.Drawing.Color.White;
+            this.cukryOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cukryOd.Enabled = false;
             this.cukryOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cukryOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cukryOd.Location = new System.Drawing.Point(642, 177);
             this.cukryOd.Name = "cukryOd";
             this.cukryOd.Size = new System.Drawing.Size(93, 29);
@@ -2636,9 +2769,11 @@
             // 
             // przyswajalneDoProc
             // 
-            this.przyswajalneDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneDoProc.BackColor = System.Drawing.Color.White;
+            this.przyswajalneDoProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.przyswajalneDoProc.Enabled = false;
             this.przyswajalneDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneDoProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.przyswajalneDoProc.Location = new System.Drawing.Point(777, 129);
             this.przyswajalneDoProc.Name = "przyswajalneDoProc";
             this.przyswajalneDoProc.Size = new System.Drawing.Size(93, 29);
@@ -2646,9 +2781,11 @@
             // 
             // przyswajalneodProc
             // 
-            this.przyswajalneodProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneodProc.BackColor = System.Drawing.Color.White;
+            this.przyswajalneodProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.przyswajalneodProc.Enabled = false;
             this.przyswajalneodProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneodProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.przyswajalneodProc.Location = new System.Drawing.Point(642, 129);
             this.przyswajalneodProc.Name = "przyswajalneodProc";
             this.przyswajalneodProc.Size = new System.Drawing.Size(93, 29);
@@ -2666,9 +2803,11 @@
             // 
             // przyswajalneDotys
             // 
-            this.przyswajalneDotys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneDotys.BackColor = System.Drawing.Color.White;
+            this.przyswajalneDotys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.przyswajalneDotys.Enabled = false;
             this.przyswajalneDotys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneDotys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.przyswajalneDotys.Location = new System.Drawing.Point(777, 96);
             this.przyswajalneDotys.Name = "przyswajalneDotys";
             this.przyswajalneDotys.Size = new System.Drawing.Size(93, 29);
@@ -2676,9 +2815,11 @@
             // 
             // przyswajalneOdTys
             // 
-            this.przyswajalneOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneOdTys.BackColor = System.Drawing.Color.White;
+            this.przyswajalneOdTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.przyswajalneOdTys.Enabled = false;
             this.przyswajalneOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneOdTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.przyswajalneOdTys.Location = new System.Drawing.Point(642, 96);
             this.przyswajalneOdTys.Name = "przyswajalneOdTys";
             this.przyswajalneOdTys.Size = new System.Drawing.Size(93, 29);
@@ -2696,9 +2837,11 @@
             // 
             // przyswajalneDo
             // 
-            this.przyswajalneDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneDo.BackColor = System.Drawing.Color.White;
+            this.przyswajalneDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.przyswajalneDo.Enabled = false;
             this.przyswajalneDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.przyswajalneDo.Location = new System.Drawing.Point(777, 64);
             this.przyswajalneDo.Name = "przyswajalneDo";
             this.przyswajalneDo.Size = new System.Drawing.Size(93, 29);
@@ -2706,9 +2849,11 @@
             // 
             // przyswajalneOd
             // 
-            this.przyswajalneOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.przyswajalneOd.BackColor = System.Drawing.Color.White;
+            this.przyswajalneOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.przyswajalneOd.Enabled = false;
             this.przyswajalneOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.przyswajalneOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.przyswajalneOd.Location = new System.Drawing.Point(642, 64);
             this.przyswajalneOd.Name = "przyswajalneOd";
             this.przyswajalneOd.Size = new System.Drawing.Size(93, 29);
@@ -2726,9 +2871,11 @@
             // 
             // wegleDoProc
             // 
-            this.wegleDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleDoProc.BackColor = System.Drawing.Color.White;
+            this.wegleDoProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wegleDoProc.Enabled = false;
             this.wegleDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleDoProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.wegleDoProc.Location = new System.Drawing.Point(302, 507);
             this.wegleDoProc.Name = "wegleDoProc";
             this.wegleDoProc.Size = new System.Drawing.Size(93, 29);
@@ -2736,9 +2883,11 @@
             // 
             // wegleOdProc
             // 
-            this.wegleOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleOdProc.BackColor = System.Drawing.Color.White;
+            this.wegleOdProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wegleOdProc.Enabled = false;
             this.wegleOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleOdProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.wegleOdProc.Location = new System.Drawing.Point(167, 507);
             this.wegleOdProc.Name = "wegleOdProc";
             this.wegleOdProc.Size = new System.Drawing.Size(93, 29);
@@ -2756,9 +2905,11 @@
             // 
             // wedgleDoTys
             // 
-            this.wedgleDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wedgleDoTys.BackColor = System.Drawing.Color.White;
+            this.wedgleDoTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wedgleDoTys.Enabled = false;
             this.wedgleDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wedgleDoTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.wedgleDoTys.Location = new System.Drawing.Point(302, 474);
             this.wedgleDoTys.Name = "wedgleDoTys";
             this.wedgleDoTys.Size = new System.Drawing.Size(93, 29);
@@ -2766,9 +2917,11 @@
             // 
             // wegleOdTys
             // 
-            this.wegleOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleOdTys.BackColor = System.Drawing.Color.White;
+            this.wegleOdTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wegleOdTys.Enabled = false;
             this.wegleOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleOdTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.wegleOdTys.Location = new System.Drawing.Point(167, 474);
             this.wegleOdTys.Name = "wegleOdTys";
             this.wegleOdTys.Size = new System.Drawing.Size(93, 29);
@@ -2786,9 +2939,11 @@
             // 
             // wegleDo
             // 
-            this.wegleDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleDo.BackColor = System.Drawing.Color.White;
+            this.wegleDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wegleDo.Enabled = false;
             this.wegleDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.wegleDo.Location = new System.Drawing.Point(302, 442);
             this.wegleDo.Name = "wegleDo";
             this.wegleDo.Size = new System.Drawing.Size(93, 29);
@@ -2796,9 +2951,11 @@
             // 
             // wegleod
             // 
-            this.wegleod.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.wegleod.BackColor = System.Drawing.Color.White;
+            this.wegleod.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.wegleod.Enabled = false;
             this.wegleod.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wegleod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.wegleod.Location = new System.Drawing.Point(167, 442);
             this.wegleod.Name = "wegleod";
             this.wegleod.Size = new System.Drawing.Size(93, 29);
@@ -2816,9 +2973,11 @@
             // 
             // kwasyDoProc
             // 
-            this.kwasyDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyDoProc.BackColor = System.Drawing.Color.White;
+            this.kwasyDoProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kwasyDoProc.Enabled = false;
             this.kwasyDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyDoProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.kwasyDoProc.Location = new System.Drawing.Point(302, 396);
             this.kwasyDoProc.Name = "kwasyDoProc";
             this.kwasyDoProc.Size = new System.Drawing.Size(93, 29);
@@ -2826,9 +2985,11 @@
             // 
             // kwasyOdProc
             // 
-            this.kwasyOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyOdProc.BackColor = System.Drawing.Color.White;
+            this.kwasyOdProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kwasyOdProc.Enabled = false;
             this.kwasyOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyOdProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.kwasyOdProc.Location = new System.Drawing.Point(167, 396);
             this.kwasyOdProc.Name = "kwasyOdProc";
             this.kwasyOdProc.Size = new System.Drawing.Size(93, 29);
@@ -2846,9 +3007,11 @@
             // 
             // KwasyDoTys
             // 
-            this.KwasyDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.KwasyDoTys.BackColor = System.Drawing.Color.White;
+            this.KwasyDoTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.KwasyDoTys.Enabled = false;
             this.KwasyDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.KwasyDoTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.KwasyDoTys.Location = new System.Drawing.Point(302, 363);
             this.KwasyDoTys.Name = "KwasyDoTys";
             this.KwasyDoTys.Size = new System.Drawing.Size(93, 29);
@@ -2856,9 +3019,11 @@
             // 
             // KwasyOdTys
             // 
-            this.KwasyOdTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.KwasyOdTys.BackColor = System.Drawing.Color.White;
+            this.KwasyOdTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.KwasyOdTys.Enabled = false;
             this.KwasyOdTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.KwasyOdTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.KwasyOdTys.Location = new System.Drawing.Point(167, 363);
             this.KwasyOdTys.Name = "KwasyOdTys";
             this.KwasyOdTys.Size = new System.Drawing.Size(93, 29);
@@ -2876,9 +3041,11 @@
             // 
             // kwasyDo
             // 
-            this.kwasyDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyDo.BackColor = System.Drawing.Color.White;
+            this.kwasyDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kwasyDo.Enabled = false;
             this.kwasyDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.kwasyDo.Location = new System.Drawing.Point(302, 331);
             this.kwasyDo.Name = "kwasyDo";
             this.kwasyDo.Size = new System.Drawing.Size(93, 29);
@@ -2886,9 +3053,11 @@
             // 
             // kwasyOd
             // 
-            this.kwasyOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.kwasyOd.BackColor = System.Drawing.Color.White;
+            this.kwasyOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.kwasyOd.Enabled = false;
             this.kwasyOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.kwasyOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.kwasyOd.Location = new System.Drawing.Point(167, 331);
             this.kwasyOd.Name = "kwasyOd";
             this.kwasyOd.Size = new System.Drawing.Size(93, 29);
@@ -2906,9 +3075,11 @@
             // 
             // tluszczeDoProc
             // 
-            this.tluszczeDoProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeDoProc.BackColor = System.Drawing.Color.White;
+            this.tluszczeDoProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tluszczeDoProc.Enabled = false;
             this.tluszczeDoProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeDoProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.tluszczeDoProc.Location = new System.Drawing.Point(302, 286);
             this.tluszczeDoProc.Name = "tluszczeDoProc";
             this.tluszczeDoProc.Size = new System.Drawing.Size(93, 29);
@@ -2916,9 +3087,11 @@
             // 
             // TluszczeOdProc
             // 
-            this.TluszczeOdProc.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.TluszczeOdProc.BackColor = System.Drawing.Color.White;
+            this.TluszczeOdProc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TluszczeOdProc.Enabled = false;
             this.TluszczeOdProc.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.TluszczeOdProc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.TluszczeOdProc.Location = new System.Drawing.Point(167, 286);
             this.TluszczeOdProc.Name = "TluszczeOdProc";
             this.TluszczeOdProc.Size = new System.Drawing.Size(93, 29);
@@ -2936,9 +3109,11 @@
             // 
             // tluszczeDoTys
             // 
-            this.tluszczeDoTys.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeDoTys.BackColor = System.Drawing.Color.White;
+            this.tluszczeDoTys.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tluszczeDoTys.Enabled = false;
             this.tluszczeDoTys.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeDoTys.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.tluszczeDoTys.Location = new System.Drawing.Point(302, 253);
             this.tluszczeDoTys.Name = "tluszczeDoTys";
             this.tluszczeDoTys.Size = new System.Drawing.Size(93, 29);
@@ -2946,9 +3121,11 @@
             // 
             // tluszczeOdTysiac
             // 
-            this.tluszczeOdTysiac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeOdTysiac.BackColor = System.Drawing.Color.White;
+            this.tluszczeOdTysiac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tluszczeOdTysiac.Enabled = false;
             this.tluszczeOdTysiac.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeOdTysiac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.tluszczeOdTysiac.Location = new System.Drawing.Point(167, 253);
             this.tluszczeOdTysiac.Name = "tluszczeOdTysiac";
             this.tluszczeOdTysiac.Size = new System.Drawing.Size(93, 29);
@@ -2966,9 +3143,11 @@
             // 
             // tluszczeDo
             // 
-            this.tluszczeDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeDo.BackColor = System.Drawing.Color.White;
+            this.tluszczeDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tluszczeDo.Enabled = false;
             this.tluszczeDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.tluszczeDo.Location = new System.Drawing.Point(302, 221);
             this.tluszczeDo.Name = "tluszczeDo";
             this.tluszczeDo.Size = new System.Drawing.Size(93, 29);
@@ -2976,9 +3155,11 @@
             // 
             // tluszczeOd
             // 
-            this.tluszczeOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tluszczeOd.BackColor = System.Drawing.Color.White;
+            this.tluszczeOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tluszczeOd.Enabled = false;
             this.tluszczeOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tluszczeOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.tluszczeOd.Location = new System.Drawing.Point(167, 221);
             this.tluszczeOd.Name = "tluszczeOd";
             this.tluszczeOd.Size = new System.Drawing.Size(93, 29);
@@ -2996,9 +3177,11 @@
             // 
             // bialkoDoProcent
             // 
-            this.bialkoDoProcent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoDoProcent.BackColor = System.Drawing.Color.White;
+            this.bialkoDoProcent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bialkoDoProcent.Enabled = false;
             this.bialkoDoProcent.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoDoProcent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.bialkoDoProcent.Location = new System.Drawing.Point(302, 175);
             this.bialkoDoProcent.Name = "bialkoDoProcent";
             this.bialkoDoProcent.Size = new System.Drawing.Size(93, 29);
@@ -3006,9 +3189,11 @@
             // 
             // bialkoOdProcent
             // 
-            this.bialkoOdProcent.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoOdProcent.BackColor = System.Drawing.Color.White;
+            this.bialkoOdProcent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bialkoOdProcent.Enabled = false;
             this.bialkoOdProcent.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoOdProcent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.bialkoOdProcent.Location = new System.Drawing.Point(167, 175);
             this.bialkoOdProcent.Name = "bialkoOdProcent";
             this.bialkoOdProcent.Size = new System.Drawing.Size(93, 29);
@@ -3026,9 +3211,11 @@
             // 
             // bialkoDoTysiac
             // 
-            this.bialkoDoTysiac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoDoTysiac.BackColor = System.Drawing.Color.White;
+            this.bialkoDoTysiac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bialkoDoTysiac.Enabled = false;
             this.bialkoDoTysiac.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoDoTysiac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.bialkoDoTysiac.Location = new System.Drawing.Point(302, 142);
             this.bialkoDoTysiac.Name = "bialkoDoTysiac";
             this.bialkoDoTysiac.Size = new System.Drawing.Size(93, 29);
@@ -3036,9 +3223,11 @@
             // 
             // bialkoOdTysiac
             // 
-            this.bialkoOdTysiac.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoOdTysiac.BackColor = System.Drawing.Color.White;
+            this.bialkoOdTysiac.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bialkoOdTysiac.Enabled = false;
             this.bialkoOdTysiac.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoOdTysiac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.bialkoOdTysiac.Location = new System.Drawing.Point(167, 142);
             this.bialkoOdTysiac.Name = "bialkoOdTysiac";
             this.bialkoOdTysiac.Size = new System.Drawing.Size(93, 29);
@@ -3056,9 +3245,11 @@
             // 
             // bialkoDo
             // 
-            this.bialkoDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoDo.BackColor = System.Drawing.Color.White;
+            this.bialkoDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bialkoDo.Enabled = false;
             this.bialkoDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.bialkoDo.Location = new System.Drawing.Point(302, 110);
             this.bialkoDo.Name = "bialkoDo";
             this.bialkoDo.Size = new System.Drawing.Size(93, 29);
@@ -3066,9 +3257,11 @@
             // 
             // bialkoOd
             // 
-            this.bialkoOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.bialkoOd.BackColor = System.Drawing.Color.White;
+            this.bialkoOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bialkoOd.Enabled = false;
             this.bialkoOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.bialkoOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.bialkoOd.Location = new System.Drawing.Point(167, 110);
             this.bialkoOd.Name = "bialkoOd";
             this.bialkoOd.Size = new System.Drawing.Size(93, 29);
@@ -3086,9 +3279,11 @@
             // 
             // energiaDo
             // 
-            this.energiaDo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.energiaDo.BackColor = System.Drawing.Color.White;
+            this.energiaDo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.energiaDo.Enabled = false;
             this.energiaDo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.energiaDo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.energiaDo.Location = new System.Drawing.Point(302, 65);
             this.energiaDo.Name = "energiaDo";
             this.energiaDo.Size = new System.Drawing.Size(93, 29);
@@ -3098,6 +3293,7 @@
             // 
             this.label119.AutoSize = true;
             this.label119.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label119.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label119.Location = new System.Drawing.Point(471, 180);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(77, 21);
@@ -3108,6 +3304,7 @@
             // 
             this.label101.AutoSize = true;
             this.label101.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label101.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label101.Location = new System.Drawing.Point(471, 87);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(126, 21);
@@ -3118,6 +3315,7 @@
             // 
             this.label100.AutoSize = true;
             this.label100.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label100.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label100.Location = new System.Drawing.Point(472, 294);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(88, 21);
@@ -3128,6 +3326,7 @@
             // 
             this.label99.AutoSize = true;
             this.label99.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label99.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label99.Location = new System.Drawing.Point(470, 68);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(109, 21);
@@ -3138,7 +3337,8 @@
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label42.Location = new System.Drawing.Point(3, 19);
+            this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label42.Location = new System.Drawing.Point(3, 17);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(98, 21);
             this.label42.TabIndex = 41;
@@ -3148,6 +3348,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label43.Location = new System.Drawing.Point(2, 68);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(106, 21);
@@ -3158,6 +3359,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label44.Location = new System.Drawing.Point(3, 120);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(78, 21);
@@ -3168,6 +3370,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label45.Location = new System.Drawing.Point(3, 438);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(135, 21);
@@ -3178,6 +3381,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label46.Location = new System.Drawing.Point(2, 222);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(93, 21);
@@ -3188,6 +3392,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label47.Location = new System.Drawing.Point(3, 330);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(132, 21);
@@ -3198,6 +3403,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label49.Location = new System.Drawing.Point(3, 352);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(101, 21);
@@ -3206,18 +3412,23 @@
             // 
             // dieta_nazwa
             // 
-            this.dieta_nazwa.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dieta_nazwa.BackColor = System.Drawing.Color.White;
+            this.dieta_nazwa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dieta_nazwa.Enabled = false;
             this.dieta_nazwa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_nazwa.Location = new System.Drawing.Point(107, 16);
+            this.dieta_nazwa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dieta_nazwa.Location = new System.Drawing.Point(103, 6);
+            this.dieta_nazwa.Multiline = true;
             this.dieta_nazwa.Name = "dieta_nazwa";
-            this.dieta_nazwa.Size = new System.Drawing.Size(528, 29);
+            this.dieta_nazwa.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.dieta_nazwa.Size = new System.Drawing.Size(528, 43);
             this.dieta_nazwa.TabIndex = 50;
             // 
             // dieta_lbl_sol
             // 
             this.dieta_lbl_sol.AutoSize = true;
             this.dieta_lbl_sol.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dieta_lbl_sol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dieta_lbl_sol.Location = new System.Drawing.Point(471, 449);
             this.dieta_lbl_sol.Name = "dieta_lbl_sol";
             this.dieta_lbl_sol.Size = new System.Drawing.Size(58, 21);
@@ -3226,9 +3437,11 @@
             // 
             // energiaOd
             // 
-            this.energiaOd.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.energiaOd.BackColor = System.Drawing.Color.White;
+            this.energiaOd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.energiaOd.Enabled = false;
             this.energiaOd.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.energiaOd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.energiaOd.Location = new System.Drawing.Point(167, 65);
             this.energiaOd.Name = "energiaOd";
             this.energiaOd.Size = new System.Drawing.Size(93, 29);
@@ -3239,6 +3452,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label51.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.label51.Location = new System.Drawing.Point(471, 408);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(77, 21);
@@ -3250,7 +3464,7 @@
             this.dieta_wstecz.BackColor = System.Drawing.Color.Transparent;
             this.dieta_wstecz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dieta_wstecz.Image = ((System.Drawing.Image)(resources.GetObject("dieta_wstecz.Image")));
-            this.dieta_wstecz.Location = new System.Drawing.Point(943, 35);
+            this.dieta_wstecz.Location = new System.Drawing.Point(950, 25);
             this.dieta_wstecz.Name = "dieta_wstecz";
             this.dieta_wstecz.Size = new System.Drawing.Size(45, 45);
             this.dieta_wstecz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3263,13 +3477,80 @@
             this.dieta_dodaj.BackColor = System.Drawing.Color.Transparent;
             this.dieta_dodaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dieta_dodaj.Image = ((System.Drawing.Image)(resources.GetObject("dieta_dodaj.Image")));
-            this.dieta_dodaj.Location = new System.Drawing.Point(173, 34);
+            this.dieta_dodaj.Location = new System.Drawing.Point(175, 25);
             this.dieta_dodaj.Name = "dieta_dodaj";
             this.dieta_dodaj.Size = new System.Drawing.Size(45, 45);
             this.dieta_dodaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dieta_dodaj.TabIndex = 66;
             this.dieta_dodaj.TabStop = false;
             this.dieta_dodaj.Click += new System.EventHandler(this.dieta_dodaj_Click);
+            // 
+            // dieta_ok
+            // 
+            this.dieta_ok.BackColor = System.Drawing.Color.Transparent;
+            this.dieta_ok.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dieta_ok.Image = ((System.Drawing.Image)(resources.GetObject("dieta_ok.Image")));
+            this.dieta_ok.Location = new System.Drawing.Point(875, 25);
+            this.dieta_ok.Name = "dieta_ok";
+            this.dieta_ok.Size = new System.Drawing.Size(45, 45);
+            this.dieta_ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dieta_ok.TabIndex = 65;
+            this.dieta_ok.TabStop = false;
+            this.dieta_ok.Click += new System.EventHandler(this.dieta_ok_Click);
+            // 
+            // dieta_edytuj
+            // 
+            this.dieta_edytuj.BackColor = System.Drawing.Color.Transparent;
+            this.dieta_edytuj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dieta_edytuj.Image = ((System.Drawing.Image)(resources.GetObject("dieta_edytuj.Image")));
+            this.dieta_edytuj.Location = new System.Drawing.Point(25, 25);
+            this.dieta_edytuj.Name = "dieta_edytuj";
+            this.dieta_edytuj.Size = new System.Drawing.Size(45, 45);
+            this.dieta_edytuj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dieta_edytuj.TabIndex = 64;
+            this.dieta_edytuj.TabStop = false;
+            this.dieta_edytuj.Click += new System.EventHandler(this.dieta_edytuj_Click);
+            // 
+            // dieta_usun
+            // 
+            this.dieta_usun.BackColor = System.Drawing.Color.Transparent;
+            this.dieta_usun.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dieta_usun.Image = ((System.Drawing.Image)(resources.GetObject("dieta_usun.Image")));
+            this.dieta_usun.Location = new System.Drawing.Point(100, 25);
+            this.dieta_usun.Name = "dieta_usun";
+            this.dieta_usun.Size = new System.Drawing.Size(45, 45);
+            this.dieta_usun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dieta_usun.TabIndex = 43;
+            this.dieta_usun.TabStop = false;
+            this.dieta_usun.Click += new System.EventHandler(this.dieta_usun_Click);
+            // 
+            // dieta_dieta
+            // 
+            this.dieta_dieta.BackColor = System.Drawing.Color.White;
+            this.dieta_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dieta_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.dieta_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dieta_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dieta_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dieta_dieta.ItemHeight = 40;
+            this.dieta_dieta.Location = new System.Drawing.Point(388, 81);
+            this.dieta_dieta.Name = "dieta_dieta";
+            this.dieta_dieta.Size = new System.Drawing.Size(589, 46);
+            this.dieta_dieta.TabIndex = 40;
+            this.dieta_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.dieta_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
+            this.dieta_dieta.SelectedIndexChanged += new System.EventHandler(this.dieta_dieta_SelectedIndexChanged);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label52.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label52.Location = new System.Drawing.Point(283, 92);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(104, 21);
+            this.label52.TabIndex = 39;
+            this.label52.Text = "Wczytaj dietę:";
             // 
             // panel_jadlospis
             // 
@@ -3283,9 +3564,9 @@
             this.panel_jadlospis.Controls.Add(this.label89);
             this.panel_jadlospis.Controls.Add(this.tabControl1);
             this.panel_jadlospis.Controls.Add(this.jadlospis_miasto);
-            this.panel_jadlospis.Location = new System.Drawing.Point(468, 166);
+            this.panel_jadlospis.Location = new System.Drawing.Point(229, 627);
             this.panel_jadlospis.Name = "panel_jadlospis";
-            this.panel_jadlospis.Size = new System.Drawing.Size(260, 157);
+            this.panel_jadlospis.Size = new System.Drawing.Size(41, 49);
             this.panel_jadlospis.TabIndex = 62;
             this.panel_jadlospis.Visible = false;
             // 
@@ -3294,7 +3575,7 @@
             this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox23.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox23.Image")));
-            this.pictureBox23.Location = new System.Drawing.Point(928, 29);
+            this.pictureBox23.Location = new System.Drawing.Point(950, 25);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(45, 45);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3307,7 +3588,7 @@
             this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox24.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox24.Image")));
-            this.pictureBox24.Location = new System.Drawing.Point(856, 29);
+            this.pictureBox24.Location = new System.Drawing.Point(875, 25);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(45, 45);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3320,7 +3601,7 @@
             this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
-            this.pictureBox25.Location = new System.Drawing.Point(27, 39);
+            this.pictureBox25.Location = new System.Drawing.Point(25, 25);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(45, 45);
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -3330,11 +3611,13 @@
             // 
             // ja
             // 
-            this.ja.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ja.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ja.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.ja.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.ja.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ja.Location = new System.Drawing.Point(28, 115);
+            this.ja.Location = new System.Drawing.Point(30, 120);
             this.ja.Name = "ja";
-            this.ja.Size = new System.Drawing.Size(192, 29);
+            this.ja.Size = new System.Drawing.Size(190, 29);
             this.ja.TabIndex = 4;
             this.ja.ValueChanged += new System.EventHandler(this.ja_ValueChanged);
             // 
@@ -3343,7 +3626,8 @@
             this.label87.AutoSize = true;
             this.label87.BackColor = System.Drawing.Color.Transparent;
             this.label87.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label87.Location = new System.Drawing.Point(300, 93);
+            this.label87.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label87.Location = new System.Drawing.Point(230, 95);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(60, 21);
             this.label87.TabIndex = 32;
@@ -3354,7 +3638,8 @@
             this.label88.AutoSize = true;
             this.label88.BackColor = System.Drawing.Color.Transparent;
             this.label88.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label88.Location = new System.Drawing.Point(575, 88);
+            this.label88.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label88.Location = new System.Drawing.Point(400, 95);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(49, 21);
             this.label88.TabIndex = 8;
@@ -3362,13 +3647,20 @@
             // 
             // jadlospis_dieta
             // 
+            this.jadlospis_dieta.BackColor = System.Drawing.Color.White;
+            this.jadlospis_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.jadlospis_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.jadlospis_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jadlospis_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.jadlospis_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.jadlospis_dieta.FormattingEnabled = true;
-            this.jadlospis_dieta.Location = new System.Drawing.Point(442, 117);
+            this.jadlospis_dieta.ItemHeight = 40;
+            this.jadlospis_dieta.Location = new System.Drawing.Point(400, 120);
             this.jadlospis_dieta.Name = "jadlospis_dieta";
-            this.jadlospis_dieta.Size = new System.Drawing.Size(309, 29);
+            this.jadlospis_dieta.Size = new System.Drawing.Size(350, 46);
             this.jadlospis_dieta.TabIndex = 5;
+            this.jadlospis_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.jadlospis_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             this.jadlospis_dieta.SelectedIndexChanged += new System.EventHandler(this.jadlospis_dieta_SelectedIndexChanged);
             // 
             // label89
@@ -3376,7 +3668,8 @@
             this.label89.AutoSize = true;
             this.label89.BackColor = System.Drawing.Color.Transparent;
             this.label89.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label89.Location = new System.Drawing.Point(98, 93);
+            this.label89.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label89.Location = new System.Drawing.Point(25, 95);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(45, 21);
             this.label89.TabIndex = 7;
@@ -3390,21 +3683,20 @@
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.tabControl1.Location = new System.Drawing.Point(27, 154);
+            this.tabControl1.Location = new System.Drawing.Point(28, 183);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(726, 334);
+            this.tabControl1.Size = new System.Drawing.Size(726, 395);
             this.tabControl1.TabIndex = 24;
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.listView1);
             this.tabPage6.Controls.Add(this.textBox7);
-            this.tabPage6.Controls.Add(this.label91);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(718, 308);
+            this.tabPage6.Size = new System.Drawing.Size(718, 369);
             this.tabPage6.TabIndex = 0;
             this.tabPage6.Text = "Śniadanie";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -3428,7 +3720,7 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(5, 41);
+            this.listView1.Location = new System.Drawing.Point(5, 104);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(707, 262);
@@ -3491,32 +3783,24 @@
             // 
             // textBox7
             // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox7.Location = new System.Drawing.Point(90, 9);
+            this.textBox7.Location = new System.Drawing.Point(5, 3);
+            this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(622, 25);
+            this.textBox7.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox7.Size = new System.Drawing.Size(707, 95);
             this.textBox7.TabIndex = 31;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label91.Location = new System.Drawing.Point(3, 13);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(85, 13);
-            this.label91.TabIndex = 30;
-            this.label91.Text = "Nazwa posiłku:";
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.listView2);
             this.tabPage7.Controls.Add(this.textBox8);
-            this.tabPage7.Controls.Add(this.label92);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(718, 308);
+            this.tabPage7.Size = new System.Drawing.Size(718, 369);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "Drugie śniadanie";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -3540,7 +3824,7 @@
             this.listView2.GridLines = true;
             this.listView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(5, 41);
+            this.listView2.Location = new System.Drawing.Point(5, 101);
             this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(707, 264);
@@ -3556,6 +3840,7 @@
             // columnHeader50
             // 
             this.columnHeader50.Text = "Masa [g]";
+            this.columnHeader50.Width = 53;
             // 
             // columnHeader51
             // 
@@ -3574,11 +3859,12 @@
             // columnHeader54
             // 
             this.columnHeader54.Text = "KTN [g]";
+            this.columnHeader54.Width = 45;
             // 
             // columnHeader55
             // 
             this.columnHeader55.Text = "Węgl. ogółem [g]";
-            this.columnHeader55.Width = 90;
+            this.columnHeader55.Width = 81;
             // 
             // columnHeader56
             // 
@@ -3588,10 +3874,12 @@
             // columnHeader109
             // 
             this.columnHeader109.Text = "Cukry [g]";
+            this.columnHeader109.Width = 48;
             // 
             // columnHeader93
             // 
             this.columnHeader93.Text = "Błonnik [g]";
+            this.columnHeader93.Width = 54;
             // 
             // columnHeader94
             // 
@@ -3600,30 +3888,24 @@
             // 
             // textBox8
             // 
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox8.Enabled = false;
             this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox8.Location = new System.Drawing.Point(90, 9);
+            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox8.Location = new System.Drawing.Point(5, 3);
+            this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(622, 25);
+            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox8.Size = new System.Drawing.Size(707, 92);
             this.textBox8.TabIndex = 33;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(3, 13);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(85, 13);
-            this.label92.TabIndex = 32;
-            this.label92.Text = "Nazwa posiłku:";
             // 
             // tabPage8
             // 
             this.tabPage8.Controls.Add(this.listView3);
             this.tabPage8.Controls.Add(this.textBox9);
-            this.tabPage8.Controls.Add(this.label93);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(718, 308);
+            this.tabPage8.Size = new System.Drawing.Size(718, 369);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "Obiad";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -3647,7 +3929,7 @@
             this.listView3.GridLines = true;
             this.listView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(5, 41);
+            this.listView3.Location = new System.Drawing.Point(4, 105);
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(707, 262);
@@ -3663,6 +3945,7 @@
             // columnHeader58
             // 
             this.columnHeader58.Text = "Masa [g]";
+            this.columnHeader58.Width = 52;
             // 
             // columnHeader59
             // 
@@ -3681,11 +3964,12 @@
             // columnHeader62
             // 
             this.columnHeader62.Text = "KTN [g]";
+            this.columnHeader62.Width = 43;
             // 
             // columnHeader63
             // 
             this.columnHeader63.Text = "Węgl. ogółem [g]";
-            this.columnHeader63.Width = 90;
+            this.columnHeader63.Width = 82;
             // 
             // columnHeader64
             // 
@@ -3695,6 +3979,7 @@
             // columnHeader110
             // 
             this.columnHeader110.Text = "Cukry [g]";
+            this.columnHeader110.Width = 50;
             // 
             // columnHeader95
             // 
@@ -3707,30 +3992,24 @@
             // 
             // textBox9
             // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9.Enabled = false;
             this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox9.Location = new System.Drawing.Point(90, 9);
+            this.textBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox9.Location = new System.Drawing.Point(4, 3);
+            this.textBox9.Multiline = true;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(622, 25);
+            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox9.Size = new System.Drawing.Size(708, 98);
             this.textBox9.TabIndex = 33;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(3, 13);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(85, 13);
-            this.label93.TabIndex = 32;
-            this.label93.Text = "Nazwa posiłku:";
             // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.listView4);
             this.tabPage9.Controls.Add(this.textBox10);
-            this.tabPage9.Controls.Add(this.label94);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(718, 308);
+            this.tabPage9.Size = new System.Drawing.Size(718, 369);
             this.tabPage9.TabIndex = 3;
             this.tabPage9.Text = "Podwieczorek";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -3754,7 +4033,7 @@
             this.listView4.GridLines = true;
             this.listView4.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView4.HideSelection = false;
-            this.listView4.Location = new System.Drawing.Point(5, 41);
+            this.listView4.Location = new System.Drawing.Point(4, 104);
             this.listView4.MultiSelect = false;
             this.listView4.Name = "listView4";
             this.listView4.Size = new System.Drawing.Size(707, 262);
@@ -3770,11 +4049,12 @@
             // columnHeader66
             // 
             this.columnHeader66.Text = "Masa [g]";
+            this.columnHeader66.Width = 48;
             // 
             // columnHeader67
             // 
             this.columnHeader67.Text = "Energia [kcal]";
-            this.columnHeader67.Width = 70;
+            this.columnHeader67.Width = 66;
             // 
             // columnHeader68
             // 
@@ -3788,6 +4068,7 @@
             // columnHeader70
             // 
             this.columnHeader70.Text = "KTN [g]";
+            this.columnHeader70.Width = 43;
             // 
             // columnHeader71
             // 
@@ -3802,6 +4083,7 @@
             // columnHeader111
             // 
             this.columnHeader111.Text = "Cukry [g]";
+            this.columnHeader111.Width = 49;
             // 
             // columnHeader97
             // 
@@ -3814,30 +4096,24 @@
             // 
             // textBox10
             // 
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.Enabled = false;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox10.Location = new System.Drawing.Point(90, 9);
+            this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox10.Location = new System.Drawing.Point(4, 3);
+            this.textBox10.Multiline = true;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(622, 25);
+            this.textBox10.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox10.Size = new System.Drawing.Size(708, 98);
             this.textBox10.TabIndex = 33;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(3, 13);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(85, 13);
-            this.label94.TabIndex = 32;
-            this.label94.Text = "Nazwa posiłku:";
             // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.listView5);
             this.tabPage10.Controls.Add(this.textBox11);
-            this.tabPage10.Controls.Add(this.label95);
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(718, 308);
+            this.tabPage10.Size = new System.Drawing.Size(718, 369);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "Kolacja";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -3861,7 +4137,7 @@
             this.listView5.GridLines = true;
             this.listView5.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView5.HideSelection = false;
-            this.listView5.Location = new System.Drawing.Point(5, 41);
+            this.listView5.Location = new System.Drawing.Point(4, 101);
             this.listView5.MultiSelect = false;
             this.listView5.Name = "listView5";
             this.listView5.Size = new System.Drawing.Size(707, 264);
@@ -3877,6 +4153,7 @@
             // columnHeader74
             // 
             this.columnHeader74.Text = "Masa [g]";
+            this.columnHeader74.Width = 48;
             // 
             // columnHeader75
             // 
@@ -3886,7 +4163,7 @@
             // columnHeader76
             // 
             this.columnHeader76.Text = "Białko [g]";
-            this.columnHeader76.Width = 55;
+            this.columnHeader76.Width = 50;
             // 
             // columnHeader77
             // 
@@ -3895,6 +4172,7 @@
             // columnHeader78
             // 
             this.columnHeader78.Text = "KTN [g]";
+            this.columnHeader78.Width = 44;
             // 
             // columnHeader79
             // 
@@ -3909,6 +4187,7 @@
             // columnHeader112
             // 
             this.columnHeader112.Text = "Cukry [g]";
+            this.columnHeader112.Width = 52;
             // 
             // columnHeader99
             // 
@@ -3921,94 +4200,33 @@
             // 
             // textBox11
             // 
+            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox11.Enabled = false;
             this.textBox11.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox11.Location = new System.Drawing.Point(90, 9);
+            this.textBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox11.Location = new System.Drawing.Point(4, 3);
+            this.textBox11.Multiline = true;
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(622, 25);
+            this.textBox11.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox11.Size = new System.Drawing.Size(708, 92);
             this.textBox11.TabIndex = 33;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(3, 13);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(85, 13);
-            this.label95.TabIndex = 32;
-            this.label95.Text = "Nazwa posiłku:";
             // 
             // jadlospis_miasto
             // 
+            this.jadlospis_miasto.BackColor = System.Drawing.Color.White;
+            this.jadlospis_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jadlospis_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jadlospis_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.jadlospis_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.jadlospis_miasto.FormattingEnabled = true;
             this.jadlospis_miasto.Items.AddRange(new object[] {
             "Ustrzyki Dolne",
             "Lesko"});
-            this.jadlospis_miasto.Location = new System.Drawing.Point(242, 117);
+            this.jadlospis_miasto.Location = new System.Drawing.Point(230, 120);
             this.jadlospis_miasto.Name = "jadlospis_miasto";
-            this.jadlospis_miasto.Size = new System.Drawing.Size(175, 29);
+            this.jadlospis_miasto.Size = new System.Drawing.Size(160, 29);
             this.jadlospis_miasto.TabIndex = 31;
             this.jadlospis_miasto.SelectedIndexChanged += new System.EventHandler(this.jadlospis_miasto_SelectedIndexChanged);
-            // 
-            // dieta_ok
-            // 
-            this.dieta_ok.BackColor = System.Drawing.Color.Transparent;
-            this.dieta_ok.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dieta_ok.Image = ((System.Drawing.Image)(resources.GetObject("dieta_ok.Image")));
-            this.dieta_ok.Location = new System.Drawing.Point(871, 35);
-            this.dieta_ok.Name = "dieta_ok";
-            this.dieta_ok.Size = new System.Drawing.Size(45, 45);
-            this.dieta_ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dieta_ok.TabIndex = 65;
-            this.dieta_ok.TabStop = false;
-            this.dieta_ok.Click += new System.EventHandler(this.dieta_ok_Click);
-            // 
-            // dieta_edytuj
-            // 
-            this.dieta_edytuj.BackColor = System.Drawing.Color.Transparent;
-            this.dieta_edytuj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dieta_edytuj.Image = ((System.Drawing.Image)(resources.GetObject("dieta_edytuj.Image")));
-            this.dieta_edytuj.Location = new System.Drawing.Point(23, 34);
-            this.dieta_edytuj.Name = "dieta_edytuj";
-            this.dieta_edytuj.Size = new System.Drawing.Size(45, 45);
-            this.dieta_edytuj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dieta_edytuj.TabIndex = 64;
-            this.dieta_edytuj.TabStop = false;
-            this.dieta_edytuj.Click += new System.EventHandler(this.dieta_edytuj_Click);
-            // 
-            // dieta_usun
-            // 
-            this.dieta_usun.BackColor = System.Drawing.Color.Transparent;
-            this.dieta_usun.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dieta_usun.Image = ((System.Drawing.Image)(resources.GetObject("dieta_usun.Image")));
-            this.dieta_usun.Location = new System.Drawing.Point(98, 34);
-            this.dieta_usun.Name = "dieta_usun";
-            this.dieta_usun.Size = new System.Drawing.Size(45, 45);
-            this.dieta_usun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dieta_usun.TabIndex = 43;
-            this.dieta_usun.TabStop = false;
-            this.dieta_usun.Click += new System.EventHandler(this.dieta_usun_Click);
-            // 
-            // dieta_dieta
-            // 
-            this.dieta_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dieta_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dieta_dieta.Location = new System.Drawing.Point(399, 85);
-            this.dieta_dieta.Name = "dieta_dieta";
-            this.dieta_dieta.Size = new System.Drawing.Size(589, 29);
-            this.dieta_dieta.TabIndex = 40;
-            this.dieta_dieta.SelectedIndexChanged += new System.EventHandler(this.dieta_dieta_SelectedIndexChanged);
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label52.Location = new System.Drawing.Point(290, 88);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(104, 21);
-            this.label52.TabIndex = 39;
-            this.label52.Text = "Wczytaj dietę:";
             // 
             // panel_jednostka
             // 
@@ -4020,25 +4238,25 @@
             this.panel_jednostka.Controls.Add(this.jednostka_usun);
             this.panel_jednostka.Controls.Add(this.jednostka_jednostka);
             this.panel_jednostka.Controls.Add(this.jednostka_label);
-            this.panel_jednostka.Location = new System.Drawing.Point(311, 408);
+            this.panel_jednostka.Location = new System.Drawing.Point(216, 40);
             this.panel_jednostka.Name = "panel_jednostka";
-            this.panel_jednostka.Size = new System.Drawing.Size(19, 18);
+            this.panel_jednostka.Size = new System.Drawing.Size(43, 48);
             this.panel_jednostka.TabIndex = 72;
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.label48);
             this.panel13.Controls.Add(this.jednostka_miasto);
-            this.panel13.Location = new System.Drawing.Point(37, 191);
+            this.panel13.Location = new System.Drawing.Point(20, 145);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(924, 434);
+            this.panel13.Size = new System.Drawing.Size(924, 45);
             this.panel13.TabIndex = 70;
             // 
             // label48
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label48.Location = new System.Drawing.Point(3, 19);
+            this.label48.Location = new System.Drawing.Point(5, 5);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(60, 21);
             this.label48.TabIndex = 41;
@@ -4046,10 +4264,12 @@
             // 
             // jednostka_miasto
             // 
-            this.jednostka_miasto.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.jednostka_miasto.BackColor = System.Drawing.Color.White;
+            this.jednostka_miasto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.jednostka_miasto.Enabled = false;
             this.jednostka_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.jednostka_miasto.Location = new System.Drawing.Point(168, 16);
+            this.jednostka_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.jednostka_miasto.Location = new System.Drawing.Point(170, 5);
             this.jednostka_miasto.Name = "jednostka_miasto";
             this.jednostka_miasto.Size = new System.Drawing.Size(372, 29);
             this.jednostka_miasto.TabIndex = 50;
@@ -4059,7 +4279,7 @@
             this.jednostka_wstecz.BackColor = System.Drawing.Color.Transparent;
             this.jednostka_wstecz.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jednostka_wstecz.Image = ((System.Drawing.Image)(resources.GetObject("jednostka_wstecz.Image")));
-            this.jednostka_wstecz.Location = new System.Drawing.Point(943, 39);
+            this.jednostka_wstecz.Location = new System.Drawing.Point(950, 25);
             this.jednostka_wstecz.Name = "jednostka_wstecz";
             this.jednostka_wstecz.Size = new System.Drawing.Size(45, 45);
             this.jednostka_wstecz.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4072,7 +4292,7 @@
             this.jednostka_dodaj.BackColor = System.Drawing.Color.Transparent;
             this.jednostka_dodaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jednostka_dodaj.Image = ((System.Drawing.Image)(resources.GetObject("jednostka_dodaj.Image")));
-            this.jednostka_dodaj.Location = new System.Drawing.Point(173, 34);
+            this.jednostka_dodaj.Location = new System.Drawing.Point(175, 25);
             this.jednostka_dodaj.Name = "jednostka_dodaj";
             this.jednostka_dodaj.Size = new System.Drawing.Size(45, 45);
             this.jednostka_dodaj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4085,7 +4305,7 @@
             this.jednostka_ok.BackColor = System.Drawing.Color.Transparent;
             this.jednostka_ok.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jednostka_ok.Image = ((System.Drawing.Image)(resources.GetObject("jednostka_ok.Image")));
-            this.jednostka_ok.Location = new System.Drawing.Point(871, 39);
+            this.jednostka_ok.Location = new System.Drawing.Point(875, 25);
             this.jednostka_ok.Name = "jednostka_ok";
             this.jednostka_ok.Size = new System.Drawing.Size(45, 45);
             this.jednostka_ok.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4098,7 +4318,7 @@
             this.jednostka_edytuj.BackColor = System.Drawing.Color.Transparent;
             this.jednostka_edytuj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jednostka_edytuj.Image = ((System.Drawing.Image)(resources.GetObject("jednostka_edytuj.Image")));
-            this.jednostka_edytuj.Location = new System.Drawing.Point(23, 34);
+            this.jednostka_edytuj.Location = new System.Drawing.Point(25, 25);
             this.jednostka_edytuj.Name = "jednostka_edytuj";
             this.jednostka_edytuj.Size = new System.Drawing.Size(45, 45);
             this.jednostka_edytuj.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4111,7 +4331,7 @@
             this.jednostka_usun.BackColor = System.Drawing.Color.Transparent;
             this.jednostka_usun.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jednostka_usun.Image = ((System.Drawing.Image)(resources.GetObject("jednostka_usun.Image")));
-            this.jednostka_usun.Location = new System.Drawing.Point(98, 34);
+            this.jednostka_usun.Location = new System.Drawing.Point(100, 25);
             this.jednostka_usun.Name = "jednostka_usun";
             this.jednostka_usun.Size = new System.Drawing.Size(45, 45);
             this.jednostka_usun.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4121,11 +4341,13 @@
             // 
             // jednostka_jednostka
             // 
+            this.jednostka_jednostka.Cursor = System.Windows.Forms.Cursors.Hand;
             this.jednostka_jednostka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jednostka_jednostka.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.jednostka_jednostka.Location = new System.Drawing.Point(208, 119);
+            this.jednostka_jednostka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.jednostka_jednostka.Location = new System.Drawing.Point(190, 105);
             this.jednostka_jednostka.Name = "jednostka_jednostka";
-            this.jednostka_jednostka.Size = new System.Drawing.Size(372, 29);
+            this.jednostka_jednostka.Size = new System.Drawing.Size(375, 29);
             this.jednostka_jednostka.TabIndex = 40;
             this.jednostka_jednostka.SelectedIndexChanged += new System.EventHandler(this.jednostka_jednostka_SelectedIndexChanged);
             // 
@@ -4133,7 +4355,7 @@
             // 
             this.jednostka_label.AutoSize = true;
             this.jednostka_label.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.jednostka_label.Location = new System.Drawing.Point(43, 122);
+            this.jednostka_label.Location = new System.Drawing.Point(25, 105);
             this.jednostka_label.Name = "jednostka_label";
             this.jednostka_label.Size = new System.Drawing.Size(137, 21);
             this.jednostka_label.TabIndex = 39;
@@ -4141,6 +4363,8 @@
             // 
             // panel_receptura
             // 
+            this.panel_receptura.Controls.Add(this.pictureBox7);
+            this.panel_receptura.Controls.Add(this.pictureBox6);
             this.panel_receptura.Controls.Add(this.receptura_cukry);
             this.panel_receptura.Controls.Add(this.label155);
             this.panel_receptura.Controls.Add(this.label65);
@@ -4175,9 +4399,6 @@
             this.panel_receptura.Controls.Add(this.receptura_produkty);
             this.panel_receptura.Controls.Add(this.receptura_kategoria);
             this.panel_receptura.Controls.Add(this.receptura_masa);
-            this.panel_receptura.Controls.Add(this.receptura_produkt_dodaj);
-            this.panel_receptura.Controls.Add(this.receptura_masa_label);
-            this.panel_receptura.Controls.Add(this.receptura_dodaj_edytuj);
             this.panel_receptura.Controls.Add(this.label50);
             this.panel_receptura.Controls.Add(this.receptura_nazwa);
             this.panel_receptura.Controls.Add(this.pictureBox14);
@@ -4187,11 +4408,37 @@
             this.panel_receptura.Controls.Add(this.pictureBox18);
             this.panel_receptura.Controls.Add(this.receptura_wczytaj);
             this.panel_receptura.Controls.Add(this.label61);
-            this.panel_receptura.Location = new System.Drawing.Point(308, 343);
+            this.panel_receptura.Location = new System.Drawing.Point(296, 203);
             this.panel_receptura.Name = "panel_receptura";
-            this.panel_receptura.Size = new System.Drawing.Size(45, 49);
+            this.panel_receptura.Size = new System.Drawing.Size(36, 48);
             this.panel_receptura.TabIndex = 72;
             this.panel_receptura.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_receptura_Paint);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(106, 428);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 148;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.receptura_dodaj_edytuj_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(55, 428);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 147;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.receptura_produkt_dodaj_Click);
             // 
             // receptura_cukry
             // 
@@ -4651,24 +4898,27 @@
             // 
             // receptura_posilek
             // 
+            this.receptura_posilek.BackColor = System.Drawing.Color.White;
+            this.receptura_posilek.Cursor = System.Windows.Forms.Cursors.Hand;
             this.receptura_posilek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.receptura_posilek.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.receptura_posilek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.receptura_posilek.Items.AddRange(new object[] {
             "Śniadanie",
             "II Śniadanie",
             "Obiad",
             "Podwieczorek",
             "Kolacja"});
-            this.receptura_posilek.Location = new System.Drawing.Point(687, 120);
+            this.receptura_posilek.Location = new System.Drawing.Point(549, 112);
             this.receptura_posilek.Name = "receptura_posilek";
-            this.receptura_posilek.Size = new System.Drawing.Size(200, 29);
+            this.receptura_posilek.Size = new System.Drawing.Size(197, 29);
             this.receptura_posilek.TabIndex = 101;
             // 
             // label53
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label53.Location = new System.Drawing.Point(628, 125);
+            this.label53.Location = new System.Drawing.Point(501, 115);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(48, 21);
             this.label53.TabIndex = 100;
@@ -4679,7 +4929,7 @@
             this.receptura_down.BackColor = System.Drawing.Color.Transparent;
             this.receptura_down.Cursor = System.Windows.Forms.Cursors.Hand;
             this.receptura_down.Image = ((System.Drawing.Image)(resources.GetObject("receptura_down.Image")));
-            this.receptura_down.Location = new System.Drawing.Point(943, 394);
+            this.receptura_down.Location = new System.Drawing.Point(765, 373);
             this.receptura_down.Name = "receptura_down";
             this.receptura_down.Size = new System.Drawing.Size(45, 45);
             this.receptura_down.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4692,7 +4942,7 @@
             this.receptura_del.BackColor = System.Drawing.Color.Transparent;
             this.receptura_del.Cursor = System.Windows.Forms.Cursors.Hand;
             this.receptura_del.Image = ((System.Drawing.Image)(resources.GetObject("receptura_del.Image")));
-            this.receptura_del.Location = new System.Drawing.Point(943, 341);
+            this.receptura_del.Location = new System.Drawing.Point(765, 320);
             this.receptura_del.Name = "receptura_del";
             this.receptura_del.Size = new System.Drawing.Size(45, 45);
             this.receptura_del.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4705,7 +4955,7 @@
             this.receptura_up.BackColor = System.Drawing.Color.Transparent;
             this.receptura_up.Cursor = System.Windows.Forms.Cursors.Hand;
             this.receptura_up.Image = ((System.Drawing.Image)(resources.GetObject("receptura_up.Image")));
-            this.receptura_up.Location = new System.Drawing.Point(943, 284);
+            this.receptura_up.Location = new System.Drawing.Point(765, 263);
             this.receptura_up.Name = "receptura_up";
             this.receptura_up.Size = new System.Drawing.Size(45, 45);
             this.receptura_up.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4715,18 +4965,24 @@
             // 
             // receptura_produkty
             // 
+            this.receptura_produkty.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.receptura_produkty.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.receptura_produkty.FormattingEnabled = true;
             this.receptura_produkty.ItemHeight = 21;
             this.receptura_produkty.Location = new System.Drawing.Point(15, 212);
             this.receptura_produkty.Name = "receptura_produkty";
-            this.receptura_produkty.Size = new System.Drawing.Size(183, 151);
+            this.receptura_produkty.Size = new System.Drawing.Size(183, 172);
             this.receptura_produkty.TabIndex = 91;
+            this.receptura_produkty.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lb_produkty_DrawItem);
+            this.receptura_produkty.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lb_produkty_MeasureItem);
             // 
             // receptura_kategoria
             // 
+            this.receptura_kategoria.BackColor = System.Drawing.Color.White;
+            this.receptura_kategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.receptura_kategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.receptura_kategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.receptura_kategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.receptura_kategoria.FormattingEnabled = true;
             this.receptura_kategoria.Items.AddRange(new object[] {
             "Wszystkie kategorie",
@@ -4749,51 +5005,13 @@
             // 
             // receptura_masa
             // 
+            this.receptura_masa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.receptura_masa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.receptura_masa.Location = new System.Drawing.Point(52, 426);
+            this.receptura_masa.Location = new System.Drawing.Point(14, 392);
             this.receptura_masa.Name = "receptura_masa";
-            this.receptura_masa.Size = new System.Drawing.Size(101, 29);
+            this.receptura_masa.Size = new System.Drawing.Size(185, 29);
             this.receptura_masa.TabIndex = 93;
             this.receptura_masa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.receptura_masa_KeyPress);
-            // 
-            // receptura_produkt_dodaj
-            // 
-            this.receptura_produkt_dodaj.BackColor = System.Drawing.Color.White;
-            this.receptura_produkt_dodaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.receptura_produkt_dodaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.receptura_produkt_dodaj.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.receptura_produkt_dodaj.Location = new System.Drawing.Point(19, 461);
-            this.receptura_produkt_dodaj.Name = "receptura_produkt_dodaj";
-            this.receptura_produkt_dodaj.Size = new System.Drawing.Size(71, 41);
-            this.receptura_produkt_dodaj.TabIndex = 94;
-            this.receptura_produkt_dodaj.Text = "Dodaj";
-            this.receptura_produkt_dodaj.UseVisualStyleBackColor = false;
-            this.receptura_produkt_dodaj.Click += new System.EventHandler(this.receptura_produkt_dodaj_Click);
-            // 
-            // receptura_masa_label
-            // 
-            this.receptura_masa_label.AutoSize = true;
-            this.receptura_masa_label.BackColor = System.Drawing.Color.Transparent;
-            this.receptura_masa_label.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.receptura_masa_label.Location = new System.Drawing.Point(42, 398);
-            this.receptura_masa_label.Name = "receptura_masa_label";
-            this.receptura_masa_label.Size = new System.Drawing.Size(120, 17);
-            this.receptura_masa_label.TabIndex = 95;
-            this.receptura_masa_label.Text = "Masa produktu [g]:";
-            // 
-            // receptura_dodaj_edytuj
-            // 
-            this.receptura_dodaj_edytuj.BackColor = System.Drawing.Color.White;
-            this.receptura_dodaj_edytuj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.receptura_dodaj_edytuj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.receptura_dodaj_edytuj.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.receptura_dodaj_edytuj.Location = new System.Drawing.Point(113, 461);
-            this.receptura_dodaj_edytuj.Name = "receptura_dodaj_edytuj";
-            this.receptura_dodaj_edytuj.Size = new System.Drawing.Size(71, 41);
-            this.receptura_dodaj_edytuj.TabIndex = 96;
-            this.receptura_dodaj_edytuj.Text = "Edytuj";
-            this.receptura_dodaj_edytuj.UseVisualStyleBackColor = false;
-            this.receptura_dodaj_edytuj.Click += new System.EventHandler(this.receptura_dodaj_edytuj_Click);
             // 
             // label50
             // 
@@ -4807,12 +5025,16 @@
             // 
             // receptura_nazwa
             // 
-            this.receptura_nazwa.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.receptura_nazwa.BackColor = System.Drawing.Color.White;
+            this.receptura_nazwa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.receptura_nazwa.Enabled = false;
             this.receptura_nazwa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.receptura_nazwa.Location = new System.Drawing.Point(210, 170);
+            this.receptura_nazwa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.receptura_nazwa.Location = new System.Drawing.Point(209, 166);
+            this.receptura_nazwa.Multiline = true;
             this.receptura_nazwa.Name = "receptura_nazwa";
-            this.receptura_nazwa.Size = new System.Drawing.Size(375, 29);
+            this.receptura_nazwa.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.receptura_nazwa.Size = new System.Drawing.Size(537, 40);
             this.receptura_nazwa.TabIndex = 50;
             // 
             // pictureBox14
@@ -4820,7 +5042,7 @@
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(943, 39);
+            this.pictureBox14.Location = new System.Drawing.Point(950, 25);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(45, 45);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4833,7 +5055,7 @@
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(173, 34);
+            this.pictureBox15.Location = new System.Drawing.Point(175, 25);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(45, 45);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4846,7 +5068,7 @@
             this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(871, 39);
+            this.pictureBox16.Location = new System.Drawing.Point(875, 25);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(45, 45);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4859,7 +5081,7 @@
             this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(23, 34);
+            this.pictureBox17.Location = new System.Drawing.Point(25, 25);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(45, 45);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4872,7 +5094,7 @@
             this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(98, 34);
+            this.pictureBox18.Location = new System.Drawing.Point(100, 25);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(45, 45);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4882,19 +5104,26 @@
             // 
             // receptura_wczytaj
             // 
+            this.receptura_wczytaj.BackColor = System.Drawing.Color.White;
+            this.receptura_wczytaj.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.receptura_wczytaj.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.receptura_wczytaj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.receptura_wczytaj.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.receptura_wczytaj.Location = new System.Drawing.Point(210, 120);
+            this.receptura_wczytaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.receptura_wczytaj.ItemHeight = 40;
+            this.receptura_wczytaj.Location = new System.Drawing.Point(152, 105);
             this.receptura_wczytaj.Name = "receptura_wczytaj";
-            this.receptura_wczytaj.Size = new System.Drawing.Size(375, 29);
+            this.receptura_wczytaj.Size = new System.Drawing.Size(343, 46);
             this.receptura_wczytaj.TabIndex = 40;
+            this.receptura_wczytaj.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.receptura_wczytaj.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             this.receptura_wczytaj.SelectedIndexChanged += new System.EventHandler(this.receptura_wczytaj_SelectedIndexChanged);
             // 
             // label61
             // 
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label61.Location = new System.Drawing.Point(41, 125);
+            this.label61.Location = new System.Drawing.Point(13, 115);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(136, 21);
             this.label61.TabIndex = 39;
@@ -4912,9 +5141,9 @@
             this.panel_dekadowka_wczytaj.Controls.Add(this.dekadowka_wczytaj_miasto);
             this.panel_dekadowka_wczytaj.Controls.Add(this.label64);
             this.panel_dekadowka_wczytaj.Controls.Add(this.dekadowka_wczytaj_dekadowka);
-            this.panel_dekadowka_wczytaj.Location = new System.Drawing.Point(356, 47);
+            this.panel_dekadowka_wczytaj.Location = new System.Drawing.Point(209, 360);
             this.panel_dekadowka_wczytaj.Name = "panel_dekadowka_wczytaj";
-            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(95, 60);
+            this.panel_dekadowka_wczytaj.Size = new System.Drawing.Size(35, 40);
             this.panel_dekadowka_wczytaj.TabIndex = 83;
             // 
             // label54
@@ -4922,7 +5151,8 @@
             this.label54.AutoSize = true;
             this.label54.BackColor = System.Drawing.Color.Transparent;
             this.label54.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label54.Location = new System.Drawing.Point(43, 161);
+            this.label54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label54.Location = new System.Drawing.Point(25, 195);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(52, 21);
             this.label54.TabIndex = 77;
@@ -4930,12 +5160,15 @@
             // 
             // dekadowka_wczytaj_dzien
             // 
+            this.dekadowka_wczytaj_dzien.BackColor = System.Drawing.Color.White;
+            this.dekadowka_wczytaj_dzien.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_wczytaj_dzien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_wczytaj_dzien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_dzien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_dzien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_wczytaj_dzien.FormattingEnabled = true;
-            this.dekadowka_wczytaj_dzien.Location = new System.Drawing.Point(45, 185);
+            this.dekadowka_wczytaj_dzien.Location = new System.Drawing.Point(190, 195);
             this.dekadowka_wczytaj_dzien.Name = "dekadowka_wczytaj_dzien";
-            this.dekadowka_wczytaj_dzien.Size = new System.Drawing.Size(248, 27);
+            this.dekadowka_wczytaj_dzien.Size = new System.Drawing.Size(375, 29);
             this.dekadowka_wczytaj_dzien.TabIndex = 76;
             this.dekadowka_wczytaj_dzien.SelectedIndexChanged += new System.EventHandler(this.dekadowka_wczytaj_dzien_SelectedIndexChanged);
             // 
@@ -4944,7 +5177,8 @@
             this.label55.AutoSize = true;
             this.label55.BackColor = System.Drawing.Color.Transparent;
             this.label55.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label55.Location = new System.Drawing.Point(303, 161);
+            this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label55.Location = new System.Drawing.Point(25, 240);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(49, 21);
             this.label55.TabIndex = 75;
@@ -4952,13 +5186,20 @@
             // 
             // dekadowka_wczytaj_dieta
             // 
+            this.dekadowka_wczytaj_dieta.BackColor = System.Drawing.Color.White;
+            this.dekadowka_wczytaj_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dekadowka_wczytaj_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.dekadowka_wczytaj_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_wczytaj_dieta.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_dieta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_wczytaj_dieta.FormattingEnabled = true;
-            this.dekadowka_wczytaj_dieta.Location = new System.Drawing.Point(307, 185);
+            this.dekadowka_wczytaj_dieta.ItemHeight = 40;
+            this.dekadowka_wczytaj_dieta.Location = new System.Drawing.Point(190, 240);
             this.dekadowka_wczytaj_dieta.Name = "dekadowka_wczytaj_dieta";
-            this.dekadowka_wczytaj_dieta.Size = new System.Drawing.Size(416, 27);
+            this.dekadowka_wczytaj_dieta.Size = new System.Drawing.Size(375, 46);
             this.dekadowka_wczytaj_dieta.TabIndex = 74;
+            this.dekadowka_wczytaj_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.dekadowka_wczytaj_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             this.dekadowka_wczytaj_dieta.SelectedIndexChanged += new System.EventHandler(this.dekadowka_wczytaj_dieta_SelectedIndexChanged);
             // 
             // pictureBox13
@@ -4966,7 +5207,7 @@
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(910, 28);
+            this.pictureBox13.Location = new System.Drawing.Point(950, 25);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(45, 45);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4979,7 +5220,7 @@
             this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(838, 28);
+            this.pictureBox19.Location = new System.Drawing.Point(875, 25);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(45, 45);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -4992,7 +5233,8 @@
             this.label63.AutoSize = true;
             this.label63.BackColor = System.Drawing.Color.Transparent;
             this.label63.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label63.Location = new System.Drawing.Point(43, 90);
+            this.label63.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label63.Location = new System.Drawing.Point(25, 105);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(60, 21);
             this.label63.TabIndex = 65;
@@ -5000,12 +5242,15 @@
             // 
             // dekadowka_wczytaj_miasto
             // 
+            this.dekadowka_wczytaj_miasto.BackColor = System.Drawing.Color.White;
+            this.dekadowka_wczytaj_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_wczytaj_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_wczytaj_miasto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_miasto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_wczytaj_miasto.FormattingEnabled = true;
-            this.dekadowka_wczytaj_miasto.Location = new System.Drawing.Point(45, 114);
+            this.dekadowka_wczytaj_miasto.Location = new System.Drawing.Point(190, 105);
             this.dekadowka_wczytaj_miasto.Name = "dekadowka_wczytaj_miasto";
-            this.dekadowka_wczytaj_miasto.Size = new System.Drawing.Size(248, 27);
+            this.dekadowka_wczytaj_miasto.Size = new System.Drawing.Size(375, 29);
             this.dekadowka_wczytaj_miasto.TabIndex = 64;
             this.dekadowka_wczytaj_miasto.SelectedIndexChanged += new System.EventHandler(this.dekadowka_wczytaj_miasto_SelectedIndexChanged);
             // 
@@ -5014,7 +5259,8 @@
             this.label64.AutoSize = true;
             this.label64.BackColor = System.Drawing.Color.Transparent;
             this.label64.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label64.Location = new System.Drawing.Point(303, 90);
+            this.label64.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label64.Location = new System.Drawing.Point(25, 150);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(94, 21);
             this.label64.TabIndex = 63;
@@ -5022,12 +5268,15 @@
             // 
             // dekadowka_wczytaj_dekadowka
             // 
+            this.dekadowka_wczytaj_dekadowka.BackColor = System.Drawing.Color.White;
+            this.dekadowka_wczytaj_dekadowka.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dekadowka_wczytaj_dekadowka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dekadowka_wczytaj_dekadowka.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_dekadowka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dekadowka_wczytaj_dekadowka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dekadowka_wczytaj_dekadowka.FormattingEnabled = true;
-            this.dekadowka_wczytaj_dekadowka.Location = new System.Drawing.Point(307, 114);
+            this.dekadowka_wczytaj_dekadowka.Location = new System.Drawing.Point(190, 150);
             this.dekadowka_wczytaj_dekadowka.Name = "dekadowka_wczytaj_dekadowka";
-            this.dekadowka_wczytaj_dekadowka.Size = new System.Drawing.Size(248, 27);
+            this.dekadowka_wczytaj_dekadowka.Size = new System.Drawing.Size(375, 29);
             this.dekadowka_wczytaj_dekadowka.TabIndex = 54;
             this.dekadowka_wczytaj_dekadowka.SelectedIndexChanged += new System.EventHandler(this.dekadowka_wczytaj_dekadowka_SelectedIndexChanged);
             // 
@@ -5043,13 +5292,12 @@
             this.panel_drukuj.Controls.Add(this.drukuj_do_label);
             this.panel_drukuj.Controls.Add(this.drukuj_od);
             this.panel_drukuj.Controls.Add(this.drukuj_od_label);
-            this.panel_drukuj.Controls.Add(this.pictureBox21);
             this.panel_drukuj.Controls.Add(this.pictureBox22);
             this.panel_drukuj.Controls.Add(this.drukuj_rodzaj_label);
             this.panel_drukuj.Controls.Add(this.drukuj_rodzaj);
-            this.panel_drukuj.Location = new System.Drawing.Point(1362, 125);
+            this.panel_drukuj.Location = new System.Drawing.Point(209, 474);
             this.panel_drukuj.Name = "panel_drukuj";
-            this.panel_drukuj.Size = new System.Drawing.Size(107, 73);
+            this.panel_drukuj.Size = new System.Drawing.Size(29, 33);
             this.panel_drukuj.TabIndex = 78;
             // 
             // drukuj_dieta_label
@@ -5057,6 +5305,7 @@
             this.drukuj_dieta_label.AutoSize = true;
             this.drukuj_dieta_label.BackColor = System.Drawing.Color.Transparent;
             this.drukuj_dieta_label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_dieta_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_dieta_label.Location = new System.Drawing.Point(27, 312);
             this.drukuj_dieta_label.Name = "drukuj_dieta_label";
             this.drukuj_dieta_label.Size = new System.Drawing.Size(49, 21);
@@ -5065,17 +5314,26 @@
             // 
             // drukuj_dieta
             // 
+            this.drukuj_dieta.BackColor = System.Drawing.Color.White;
+            this.drukuj_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.drukuj_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.drukuj_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drukuj_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_dieta.FormattingEnabled = true;
+            this.drukuj_dieta.ItemHeight = 40;
             this.drukuj_dieta.Location = new System.Drawing.Point(29, 336);
             this.drukuj_dieta.Name = "drukuj_dieta";
-            this.drukuj_dieta.Size = new System.Drawing.Size(502, 29);
+            this.drukuj_dieta.Size = new System.Drawing.Size(502, 46);
             this.drukuj_dieta.TabIndex = 94;
+            this.drukuj_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.drukuj_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             // 
             // drukuj_data
             // 
-            this.drukuj_data.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.drukuj_data.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.drukuj_data.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.drukuj_data.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_data.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.drukuj_data.Location = new System.Drawing.Point(166, 263);
             this.drukuj_data.Name = "drukuj_data";
@@ -5087,6 +5345,7 @@
             this.drukuj_data_label.AutoSize = true;
             this.drukuj_data_label.BackColor = System.Drawing.Color.Transparent;
             this.drukuj_data_label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_data_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_data_label.Location = new System.Drawing.Point(251, 239);
             this.drukuj_data_label.Name = "drukuj_data_label";
             this.drukuj_data_label.Size = new System.Drawing.Size(42, 21);
@@ -5098,6 +5357,7 @@
             this.drukuj_combo_label.AutoSize = true;
             this.drukuj_combo_label.BackColor = System.Drawing.Color.Transparent;
             this.drukuj_combo_label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_combo_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_combo_label.Location = new System.Drawing.Point(26, 160);
             this.drukuj_combo_label.Name = "drukuj_combo_label";
             this.drukuj_combo_label.Size = new System.Drawing.Size(83, 21);
@@ -5106,8 +5366,11 @@
             // 
             // drukuj_combo
             // 
+            this.drukuj_combo.BackColor = System.Drawing.Color.White;
+            this.drukuj_combo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.drukuj_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drukuj_combo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_combo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_combo.FormattingEnabled = true;
             this.drukuj_combo.Location = new System.Drawing.Point(28, 184);
             this.drukuj_combo.Name = "drukuj_combo";
@@ -5117,7 +5380,9 @@
             // 
             // drukuj_do
             // 
-            this.drukuj_do.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.drukuj_do.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.drukuj_do.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.drukuj_do.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_do.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.drukuj_do.Location = new System.Drawing.Point(307, 263);
             this.drukuj_do.Name = "drukuj_do";
@@ -5129,6 +5394,7 @@
             this.drukuj_do_label.AutoSize = true;
             this.drukuj_do_label.BackColor = System.Drawing.Color.Transparent;
             this.drukuj_do_label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_do_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_do_label.Location = new System.Drawing.Point(383, 241);
             this.drukuj_do_label.Name = "drukuj_do_label";
             this.drukuj_do_label.Size = new System.Drawing.Size(34, 21);
@@ -5137,7 +5403,9 @@
             // 
             // drukuj_od
             // 
-            this.drukuj_od.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.drukuj_od.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.drukuj_od.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.drukuj_od.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_od.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.drukuj_od.Location = new System.Drawing.Point(40, 263);
             this.drukuj_od.Name = "drukuj_od";
@@ -5149,24 +5417,12 @@
             this.drukuj_od_label.AutoSize = true;
             this.drukuj_od_label.BackColor = System.Drawing.Color.Transparent;
             this.drukuj_od_label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_od_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_od_label.Location = new System.Drawing.Point(119, 239);
             this.drukuj_od_label.Name = "drukuj_od_label";
             this.drukuj_od_label.Size = new System.Drawing.Size(34, 21);
             this.drukuj_od_label.TabIndex = 87;
             this.drukuj_od_label.Text = "Od:";
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(910, 28);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(45, 45);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox21.TabIndex = 73;
-            this.pictureBox21.TabStop = false;
-            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click);
             // 
             // pictureBox22
             // 
@@ -5186,6 +5442,7 @@
             this.drukuj_rodzaj_label.AutoSize = true;
             this.drukuj_rodzaj_label.BackColor = System.Drawing.Color.Transparent;
             this.drukuj_rodzaj_label.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_rodzaj_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_rodzaj_label.Location = new System.Drawing.Point(26, 72);
             this.drukuj_rodzaj_label.Name = "drukuj_rodzaj_label";
             this.drukuj_rodzaj_label.Size = new System.Drawing.Size(144, 21);
@@ -5194,8 +5451,11 @@
             // 
             // drukuj_rodzaj
             // 
+            this.drukuj_rodzaj.BackColor = System.Drawing.Color.White;
+            this.drukuj_rodzaj.Cursor = System.Windows.Forms.Cursors.Hand;
             this.drukuj_rodzaj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drukuj_rodzaj.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.drukuj_rodzaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.drukuj_rodzaj.FormattingEnabled = true;
             this.drukuj_rodzaj.Items.AddRange(new object[] {
             "Szablon",
@@ -5215,7 +5475,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(945, 209);
+            this.pictureBox2.Location = new System.Drawing.Point(945, 229);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 45);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5228,7 +5488,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(945, 266);
+            this.pictureBox1.Location = new System.Drawing.Point(945, 286);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5241,7 +5501,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(945, 319);
+            this.pictureBox3.Location = new System.Drawing.Point(945, 339);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(45, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -5249,29 +5509,18 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.Dol_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button1.Location = new System.Drawing.Point(110, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 41);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Edytuj";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Edytuj_Click);
-            // 
             // cb_miasto
             // 
+            this.cb_miasto.BackColor = System.Drawing.Color.White;
+            this.cb_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cb_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cb_miasto.FormattingEnabled = true;
             this.cb_miasto.Items.AddRange(new object[] {
             "Ustrzyki Dolne",
             "Lesko"});
-            this.cb_miasto.Location = new System.Drawing.Point(427, 71);
+            this.cb_miasto.Location = new System.Drawing.Point(427, 58);
             this.cb_miasto.Name = "cb_miasto";
             this.cb_miasto.Size = new System.Drawing.Size(176, 29);
             this.cb_miasto.TabIndex = 31;
@@ -5284,23 +5533,23 @@
             this.tc_posilki.Controls.Add(this.tabPage3);
             this.tc_posilki.Controls.Add(this.tabPage4);
             this.tc_posilki.Controls.Add(this.tabPage5);
+            this.tc_posilki.Cursor = System.Windows.Forms.Cursors.Default;
             this.tc_posilki.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.tc_posilki.Location = new System.Drawing.Point(213, 111);
+            this.tc_posilki.Location = new System.Drawing.Point(213, 98);
             this.tc_posilki.Name = "tc_posilki";
             this.tc_posilki.SelectedIndex = 0;
-            this.tc_posilki.Size = new System.Drawing.Size(726, 334);
+            this.tc_posilki.Size = new System.Drawing.Size(726, 348);
             this.tc_posilki.TabIndex = 24;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.procent_sniadanie);
             this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.lv_sniadanie);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(718, 308);
+            this.tabPage1.Size = new System.Drawing.Size(718, 322);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Śniadanie";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -5309,7 +5558,8 @@
             // 
             this.procent_sniadanie.AutoSize = true;
             this.procent_sniadanie.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.procent_sniadanie.Location = new System.Drawing.Point(666, 15);
+            this.procent_sniadanie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.procent_sniadanie.Location = new System.Drawing.Point(671, 25);
             this.procent_sniadanie.Name = "procent_sniadanie";
             this.procent_sniadanie.Size = new System.Drawing.Size(25, 13);
             this.procent_sniadanie.TabIndex = 32;
@@ -5317,24 +5567,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox1.Location = new System.Drawing.Point(90, 9);
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox1.Location = new System.Drawing.Point(3, 9);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(550, 25);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(667, 43);
             this.textBox1.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.label3.Location = new System.Drawing.Point(3, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Nazwa posiłku:";
             // 
             // lv_sniadanie
             // 
+            this.lv_sniadanie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lv_sniadanie.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.c_nazwa,
             this.c_masa,
@@ -5348,14 +5593,15 @@
             this.columnHeader82,
             this.c_sod});
             this.lv_sniadanie.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lv_sniadanie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lv_sniadanie.FullRowSelect = true;
             this.lv_sniadanie.GridLines = true;
             this.lv_sniadanie.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lv_sniadanie.HideSelection = false;
-            this.lv_sniadanie.Location = new System.Drawing.Point(3, 40);
+            this.lv_sniadanie.Location = new System.Drawing.Point(3, 58);
             this.lv_sniadanie.MultiSelect = false;
             this.lv_sniadanie.Name = "lv_sniadanie";
-            this.lv_sniadanie.Size = new System.Drawing.Size(707, 261);
+            this.lv_sniadanie.Size = new System.Drawing.Size(711, 261);
             this.lv_sniadanie.TabIndex = 29;
             this.lv_sniadanie.UseCompatibleStateImageBehavior = false;
             this.lv_sniadanie.View = System.Windows.Forms.View.Details;
@@ -5421,17 +5667,17 @@
             this.tabPage2.Controls.Add(this.lv_IIsniadanie);
             this.tabPage2.Controls.Add(this.procent_IIsniadanie);
             this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(718, 308);
+            this.tabPage2.Size = new System.Drawing.Size(718, 322);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Drugie śniadanie";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lv_IIsniadanie
             // 
+            this.lv_IIsniadanie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lv_IIsniadanie.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -5445,14 +5691,15 @@
             this.columnHeader83,
             this.columnHeader84});
             this.lv_IIsniadanie.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lv_IIsniadanie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lv_IIsniadanie.FullRowSelect = true;
             this.lv_IIsniadanie.GridLines = true;
             this.lv_IIsniadanie.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lv_IIsniadanie.HideSelection = false;
-            this.lv_IIsniadanie.Location = new System.Drawing.Point(5, 41);
+            this.lv_IIsniadanie.Location = new System.Drawing.Point(3, 58);
             this.lv_IIsniadanie.MultiSelect = false;
             this.lv_IIsniadanie.Name = "lv_IIsniadanie";
-            this.lv_IIsniadanie.Size = new System.Drawing.Size(707, 261);
+            this.lv_IIsniadanie.Size = new System.Drawing.Size(712, 261);
             this.lv_IIsniadanie.TabIndex = 35;
             this.lv_IIsniadanie.UseCompatibleStateImageBehavior = false;
             this.lv_IIsniadanie.View = System.Windows.Forms.View.Details;
@@ -5514,7 +5761,8 @@
             // 
             this.procent_IIsniadanie.AutoSize = true;
             this.procent_IIsniadanie.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.procent_IIsniadanie.Location = new System.Drawing.Point(666, 15);
+            this.procent_IIsniadanie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.procent_IIsniadanie.Location = new System.Drawing.Point(671, 25);
             this.procent_IIsniadanie.Name = "procent_IIsniadanie";
             this.procent_IIsniadanie.Size = new System.Drawing.Size(25, 13);
             this.procent_IIsniadanie.TabIndex = 34;
@@ -5522,36 +5770,31 @@
             // 
             // textBox2
             // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox2.Location = new System.Drawing.Point(90, 9);
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox2.Location = new System.Drawing.Point(3, 9);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(550, 25);
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox2.Size = new System.Drawing.Size(667, 43);
             this.textBox2.TabIndex = 33;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Nazwa posiłku:";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.lv_obiad);
             this.tabPage3.Controls.Add(this.procent_obiad);
             this.tabPage3.Controls.Add(this.textBox3);
-            this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(718, 308);
+            this.tabPage3.Size = new System.Drawing.Size(718, 322);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Obiad";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // lv_obiad
             // 
+            this.lv_obiad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lv_obiad.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
             this.columnHeader10,
@@ -5565,14 +5808,15 @@
             this.columnHeader85,
             this.columnHeader86});
             this.lv_obiad.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lv_obiad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lv_obiad.FullRowSelect = true;
             this.lv_obiad.GridLines = true;
             this.lv_obiad.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lv_obiad.HideSelection = false;
-            this.lv_obiad.Location = new System.Drawing.Point(5, 41);
+            this.lv_obiad.Location = new System.Drawing.Point(3, 56);
             this.lv_obiad.MultiSelect = false;
             this.lv_obiad.Name = "lv_obiad";
-            this.lv_obiad.Size = new System.Drawing.Size(707, 263);
+            this.lv_obiad.Size = new System.Drawing.Size(712, 263);
             this.lv_obiad.TabIndex = 35;
             this.lv_obiad.UseCompatibleStateImageBehavior = false;
             this.lv_obiad.View = System.Windows.Forms.View.Details;
@@ -5635,7 +5879,8 @@
             // 
             this.procent_obiad.AutoSize = true;
             this.procent_obiad.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.procent_obiad.Location = new System.Drawing.Point(666, 15);
+            this.procent_obiad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.procent_obiad.Location = new System.Drawing.Point(669, 25);
             this.procent_obiad.Name = "procent_obiad";
             this.procent_obiad.Size = new System.Drawing.Size(25, 13);
             this.procent_obiad.TabIndex = 34;
@@ -5643,36 +5888,31 @@
             // 
             // textBox3
             // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox3.Location = new System.Drawing.Point(90, 9);
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox3.Location = new System.Drawing.Point(3, 9);
+            this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(550, 25);
+            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox3.Size = new System.Drawing.Size(665, 41);
             this.textBox3.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 13);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Nazwa posiłku:";
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.lv_podwieczorek);
             this.tabPage4.Controls.Add(this.procent_podwieczorek);
             this.tabPage4.Controls.Add(this.textBox4);
-            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(718, 308);
+            this.tabPage4.Size = new System.Drawing.Size(718, 322);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Podwieczorek";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // lv_podwieczorek
             // 
+            this.lv_podwieczorek.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lv_podwieczorek.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader17,
             this.columnHeader18,
@@ -5686,14 +5926,15 @@
             this.columnHeader87,
             this.columnHeader88});
             this.lv_podwieczorek.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lv_podwieczorek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lv_podwieczorek.FullRowSelect = true;
             this.lv_podwieczorek.GridLines = true;
             this.lv_podwieczorek.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lv_podwieczorek.HideSelection = false;
-            this.lv_podwieczorek.Location = new System.Drawing.Point(5, 41);
+            this.lv_podwieczorek.Location = new System.Drawing.Point(3, 56);
             this.lv_podwieczorek.MultiSelect = false;
             this.lv_podwieczorek.Name = "lv_podwieczorek";
-            this.lv_podwieczorek.Size = new System.Drawing.Size(707, 263);
+            this.lv_podwieczorek.Size = new System.Drawing.Size(711, 263);
             this.lv_podwieczorek.TabIndex = 35;
             this.lv_podwieczorek.UseCompatibleStateImageBehavior = false;
             this.lv_podwieczorek.View = System.Windows.Forms.View.Details;
@@ -5755,7 +5996,8 @@
             // 
             this.procent_podwieczorek.AutoSize = true;
             this.procent_podwieczorek.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.procent_podwieczorek.Location = new System.Drawing.Point(666, 15);
+            this.procent_podwieczorek.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.procent_podwieczorek.Location = new System.Drawing.Point(669, 25);
             this.procent_podwieczorek.Name = "procent_podwieczorek";
             this.procent_podwieczorek.Size = new System.Drawing.Size(25, 13);
             this.procent_podwieczorek.TabIndex = 34;
@@ -5763,36 +6005,31 @@
             // 
             // textBox4
             // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox4.Location = new System.Drawing.Point(90, 9);
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox4.Location = new System.Drawing.Point(3, 9);
+            this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(550, 25);
+            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox4.Size = new System.Drawing.Size(665, 41);
             this.textBox4.TabIndex = 33;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Nazwa posiłku:";
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.lv_kolacja);
             this.tabPage5.Controls.Add(this.procent_kolacja);
             this.tabPage5.Controls.Add(this.textBox5);
-            this.tabPage5.Controls.Add(this.label7);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(718, 308);
+            this.tabPage5.Size = new System.Drawing.Size(718, 322);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Kolacja";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // lv_kolacja
             // 
+            this.lv_kolacja.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lv_kolacja.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader25,
             this.columnHeader26,
@@ -5806,14 +6043,15 @@
             this.columnHeader89,
             this.columnHeader90});
             this.lv_kolacja.Font = new System.Drawing.Font("Segoe UI", 7F);
+            this.lv_kolacja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lv_kolacja.FullRowSelect = true;
             this.lv_kolacja.GridLines = true;
             this.lv_kolacja.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lv_kolacja.HideSelection = false;
-            this.lv_kolacja.Location = new System.Drawing.Point(7, 45);
+            this.lv_kolacja.Location = new System.Drawing.Point(3, 56);
             this.lv_kolacja.MultiSelect = false;
             this.lv_kolacja.Name = "lv_kolacja";
-            this.lv_kolacja.Size = new System.Drawing.Size(707, 263);
+            this.lv_kolacja.Size = new System.Drawing.Size(711, 263);
             this.lv_kolacja.TabIndex = 35;
             this.lv_kolacja.UseCompatibleStateImageBehavior = false;
             this.lv_kolacja.View = System.Windows.Forms.View.Details;
@@ -5876,7 +6114,8 @@
             // 
             this.procent_kolacja.AutoSize = true;
             this.procent_kolacja.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.procent_kolacja.Location = new System.Drawing.Point(666, 15);
+            this.procent_kolacja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.procent_kolacja.Location = new System.Drawing.Point(669, 25);
             this.procent_kolacja.Name = "procent_kolacja";
             this.procent_kolacja.Size = new System.Drawing.Size(25, 13);
             this.procent_kolacja.TabIndex = 34;
@@ -5884,52 +6123,25 @@
             // 
             // textBox5
             // 
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.textBox5.Location = new System.Drawing.Point(90, 9);
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.textBox5.Location = new System.Drawing.Point(3, 9);
+            this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(550, 25);
+            this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox5.Size = new System.Drawing.Size(665, 41);
             this.textBox5.TabIndex = 33;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Nazwa posiłku:";
-            // 
-            // lbl_masa
-            // 
-            this.lbl_masa.AutoSize = true;
-            this.lbl_masa.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_masa.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lbl_masa.Location = new System.Drawing.Point(44, 339);
-            this.lbl_masa.Name = "lbl_masa";
-            this.lbl_masa.Size = new System.Drawing.Size(120, 17);
-            this.lbl_masa.TabIndex = 12;
-            this.lbl_masa.Text = "Masa produktu [g]:";
-            // 
-            // btn_dodaj
-            // 
-            this.btn_dodaj.BackColor = System.Drawing.Color.White;
-            this.btn_dodaj.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_dodaj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_dodaj.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btn_dodaj.Location = new System.Drawing.Point(16, 402);
-            this.btn_dodaj.Name = "btn_dodaj";
-            this.btn_dodaj.Size = new System.Drawing.Size(71, 41);
-            this.btn_dodaj.TabIndex = 10;
-            this.btn_dodaj.Text = "Dodaj";
-            this.btn_dodaj.UseVisualStyleBackColor = false;
-            this.btn_dodaj.Click += new System.EventHandler(this.Dodaj_Click);
             // 
             // tb_masa
             // 
+            this.tb_masa.BackColor = System.Drawing.Color.White;
+            this.tb_masa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_masa.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tb_masa.Location = new System.Drawing.Point(47, 367);
+            this.tb_masa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.tb_masa.Location = new System.Drawing.Point(10, 241);
             this.tb_masa.Name = "tb_masa";
-            this.tb_masa.Size = new System.Drawing.Size(101, 29);
+            this.tb_masa.Size = new System.Drawing.Size(175, 29);
             this.tb_masa.TabIndex = 9;
             this.tb_masa.TextChanged += new System.EventHandler(this.tb_masa_TextChanged);
             this.tb_masa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Masa_KeyPress);
@@ -5938,32 +6150,40 @@
             // 
             this.lbl_data.AutoSize = true;
             this.lbl_data.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_data.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_data.Location = new System.Drawing.Point(277, 49);
+            this.lbl_data.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbl_data.Location = new System.Drawing.Point(213, 39);
             this.lbl_data.Name = "lbl_data";
-            this.lbl_data.Size = new System.Drawing.Size(45, 21);
+            this.lbl_data.Size = new System.Drawing.Size(41, 19);
             this.lbl_data.TabIndex = 7;
             this.lbl_data.Text = "Data:";
             // 
             // cb_dieta
             // 
+            this.cb_dieta.BackColor = System.Drawing.Color.White;
+            this.cb_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cb_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cb_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cb_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cb_dieta.FormattingEnabled = true;
-            this.cb_dieta.Location = new System.Drawing.Point(619, 71);
+            this.cb_dieta.IntegralHeight = false;
+            this.cb_dieta.ItemHeight = 40;
+            this.cb_dieta.Location = new System.Drawing.Point(619, 58);
             this.cb_dieta.Name = "cb_dieta";
-            this.cb_dieta.Size = new System.Drawing.Size(319, 29);
+            this.cb_dieta.Size = new System.Drawing.Size(320, 46);
             this.cb_dieta.TabIndex = 5;
+            this.cb_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.cb_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             this.cb_dieta.SelectedIndexChanged += new System.EventHandler(this.cb_dieta_SelectedIndexChanged);
             // 
             // lbl_dieta
             // 
             this.lbl_dieta.AutoSize = true;
             this.lbl_dieta.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lbl_dieta.Location = new System.Drawing.Point(729, 46);
+            this.lbl_dieta.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lbl_dieta.Location = new System.Drawing.Point(617, 39);
             this.lbl_dieta.Name = "lbl_dieta";
-            this.lbl_dieta.Size = new System.Drawing.Size(49, 21);
+            this.lbl_dieta.Size = new System.Drawing.Size(44, 19);
             this.lbl_dieta.TabIndex = 8;
             this.lbl_dieta.Text = "Dieta:";
             // 
@@ -5971,26 +6191,34 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label8.Location = new System.Drawing.Point(486, 49);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label8.Location = new System.Drawing.Point(428, 39);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 21);
+            this.label8.Size = new System.Drawing.Size(54, 19);
             this.label8.TabIndex = 32;
             this.label8.Text = "Miasto:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.White;
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(61)))), ((int)(((byte)(46)))));
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(214, 71);
+            this.dateTimePicker1.Location = new System.Drawing.Point(214, 58);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(192, 29);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // cb_kategorie
             // 
+            this.cb_kategorie.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cb_kategorie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_kategorie.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cb_kategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.cb_kategorie.FormattingEnabled = true;
             this.cb_kategorie.Items.AddRange(new object[] {
             "Wszystkie kategorie",
@@ -6005,21 +6233,28 @@
             "Słodycze",
             "Napoje",
             "Zbożowe"});
-            this.cb_kategorie.Location = new System.Drawing.Point(12, 111);
+            this.cb_kategorie.Location = new System.Drawing.Point(10, 17);
             this.cb_kategorie.Name = "cb_kategorie";
-            this.cb_kategorie.Size = new System.Drawing.Size(183, 29);
+            this.cb_kategorie.Size = new System.Drawing.Size(175, 29);
             this.cb_kategorie.TabIndex = 1;
             this.cb_kategorie.SelectedIndexChanged += new System.EventHandler(this.Kategoria_SelectedIndexChanged);
             // 
             // lb_produkty
             // 
+            this.lb_produkty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lb_produkty.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lb_produkty.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.lb_produkty.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lb_produkty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.lb_produkty.FormattingEnabled = true;
+            this.lb_produkty.IntegralHeight = false;
             this.lb_produkty.ItemHeight = 21;
-            this.lb_produkty.Location = new System.Drawing.Point(12, 153);
+            this.lb_produkty.Location = new System.Drawing.Point(10, 52);
             this.lb_produkty.Name = "lb_produkty";
-            this.lb_produkty.Size = new System.Drawing.Size(183, 151);
+            this.lb_produkty.Size = new System.Drawing.Size(175, 185);
             this.lb_produkty.TabIndex = 0;
+            this.lb_produkty.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lb_produkty_DrawItem);
+            this.lb_produkty.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lb_produkty_MeasureItem);
             // 
             // label18
             // 
@@ -6027,7 +6262,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label18.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label18.Location = new System.Drawing.Point(0, 460);
+            this.label18.Location = new System.Drawing.Point(2, 462);
             this.label18.MinimumSize = new System.Drawing.Size(100, 20);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 20);
@@ -6041,7 +6276,7 @@
             this.e_text.BackColor = System.Drawing.Color.Transparent;
             this.e_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.e_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.e_text.Location = new System.Drawing.Point(0, 480);
+            this.e_text.Location = new System.Drawing.Point(2, 482);
             this.e_text.MinimumSize = new System.Drawing.Size(100, 20);
             this.e_text.Name = "e_text";
             this.e_text.Size = new System.Drawing.Size(100, 20);
@@ -6055,7 +6290,7 @@
             this.label29.BackColor = System.Drawing.Color.Transparent;
             this.label29.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label29.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label29.Location = new System.Drawing.Point(100, 460);
+            this.label29.Location = new System.Drawing.Point(102, 462);
             this.label29.MinimumSize = new System.Drawing.Size(100, 20);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(100, 20);
@@ -6070,7 +6305,7 @@
             this.b_text.BackColor = System.Drawing.Color.Transparent;
             this.b_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.b_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.b_text.Location = new System.Drawing.Point(100, 480);
+            this.b_text.Location = new System.Drawing.Point(102, 482);
             this.b_text.MinimumSize = new System.Drawing.Size(100, 20);
             this.b_text.Name = "b_text";
             this.b_text.Size = new System.Drawing.Size(100, 20);
@@ -6084,7 +6319,7 @@
             this.bialko_procent.BackColor = System.Drawing.Color.Transparent;
             this.bialko_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.bialko_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bialko_procent.Location = new System.Drawing.Point(100, 600);
+            this.bialko_procent.Location = new System.Drawing.Point(102, 602);
             this.bialko_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.bialko_procent.Name = "bialko_procent";
             this.bialko_procent.Size = new System.Drawing.Size(100, 20);
@@ -6098,7 +6333,7 @@
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label31.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label31.Location = new System.Drawing.Point(200, 460);
+            this.label31.Location = new System.Drawing.Point(202, 462);
             this.label31.MinimumSize = new System.Drawing.Size(100, 20);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(100, 20);
@@ -6112,7 +6347,7 @@
             this.t_text.BackColor = System.Drawing.Color.Transparent;
             this.t_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.t_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.t_text.Location = new System.Drawing.Point(200, 480);
+            this.t_text.Location = new System.Drawing.Point(202, 482);
             this.t_text.MinimumSize = new System.Drawing.Size(100, 20);
             this.t_text.Name = "t_text";
             this.t_text.Size = new System.Drawing.Size(100, 20);
@@ -6126,7 +6361,7 @@
             this.tluszcze_procent.BackColor = System.Drawing.Color.Transparent;
             this.tluszcze_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tluszcze_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tluszcze_procent.Location = new System.Drawing.Point(200, 600);
+            this.tluszcze_procent.Location = new System.Drawing.Point(202, 602);
             this.tluszcze_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.tluszcze_procent.Name = "tluszcze_procent";
             this.tluszcze_procent.Size = new System.Drawing.Size(100, 20);
@@ -6140,7 +6375,7 @@
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label34.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label34.Location = new System.Drawing.Point(400, 454);
+            this.label34.Location = new System.Drawing.Point(402, 456);
             this.label34.MinimumSize = new System.Drawing.Size(100, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(100, 9);
@@ -6154,7 +6389,7 @@
             this.w_text.BackColor = System.Drawing.Color.Transparent;
             this.w_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.w_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.w_text.Location = new System.Drawing.Point(410, 480);
+            this.w_text.Location = new System.Drawing.Point(412, 482);
             this.w_text.MaximumSize = new System.Drawing.Size(80, 0);
             this.w_text.MinimumSize = new System.Drawing.Size(80, 0);
             this.w_text.Name = "w_text";
@@ -6169,7 +6404,7 @@
             this.lblsod.BackColor = System.Drawing.Color.Transparent;
             this.lblsod.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblsod.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblsod.Location = new System.Drawing.Point(800, 460);
+            this.lblsod.Location = new System.Drawing.Point(802, 462);
             this.lblsod.MinimumSize = new System.Drawing.Size(100, 0);
             this.lblsod.Name = "lblsod";
             this.lblsod.Size = new System.Drawing.Size(100, 20);
@@ -6183,7 +6418,7 @@
             this.s_text.BackColor = System.Drawing.Color.Transparent;
             this.s_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.s_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.s_text.Location = new System.Drawing.Point(800, 480);
+            this.s_text.Location = new System.Drawing.Point(802, 482);
             this.s_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.s_text.Name = "s_text";
             this.s_text.Size = new System.Drawing.Size(100, 20);
@@ -6197,7 +6432,7 @@
             this.label36.BackColor = System.Drawing.Color.Transparent;
             this.label36.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label36.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label36.Location = new System.Drawing.Point(300, 446);
+            this.label36.Location = new System.Drawing.Point(302, 448);
             this.label36.MinimumSize = new System.Drawing.Size(100, 6);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(100, 12);
@@ -6211,7 +6446,7 @@
             this.k_text.BackColor = System.Drawing.Color.Transparent;
             this.k_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_text.Location = new System.Drawing.Point(300, 480);
+            this.k_text.Location = new System.Drawing.Point(302, 482);
             this.k_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_text.Name = "k_text";
             this.k_text.Size = new System.Drawing.Size(100, 20);
@@ -6225,7 +6460,7 @@
             this.label37.BackColor = System.Drawing.Color.Transparent;
             this.label37.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label37.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label37.Location = new System.Drawing.Point(300, 456);
+            this.label37.Location = new System.Drawing.Point(302, 458);
             this.label37.MinimumSize = new System.Drawing.Size(100, 6);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(100, 12);
@@ -6239,7 +6474,7 @@
             this.label38.BackColor = System.Drawing.Color.Transparent;
             this.label38.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label38.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label38.Location = new System.Drawing.Point(300, 466);
+            this.label38.Location = new System.Drawing.Point(302, 468);
             this.label38.MinimumSize = new System.Drawing.Size(100, 6);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(100, 12);
@@ -6253,7 +6488,7 @@
             this.bialko_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.bialko_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bialko_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bialko_procent_zakres.Location = new System.Drawing.Point(100, 620);
+            this.bialko_procent_zakres.Location = new System.Drawing.Point(102, 622);
             this.bialko_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.bialko_procent_zakres.Name = "bialko_procent_zakres";
             this.bialko_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6267,7 +6502,7 @@
             this.tluszcze_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.tluszcze_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tluszcze_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tluszcze_procent_zakres.Location = new System.Drawing.Point(200, 620);
+            this.tluszcze_procent_zakres.Location = new System.Drawing.Point(202, 622);
             this.tluszcze_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.tluszcze_procent_zakres.Name = "tluszcze_procent_zakres";
             this.tluszcze_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6281,7 +6516,7 @@
             this.plus_energia.BackColor = System.Drawing.Color.Transparent;
             this.plus_energia.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_energia.ForeColor = System.Drawing.Color.Red;
-            this.plus_energia.Location = new System.Drawing.Point(0, 500);
+            this.plus_energia.Location = new System.Drawing.Point(2, 502);
             this.plus_energia.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_energia.Name = "plus_energia";
             this.plus_energia.Size = new System.Drawing.Size(100, 13);
@@ -6295,7 +6530,7 @@
             this.plus_bialko.BackColor = System.Drawing.Color.Transparent;
             this.plus_bialko.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_bialko.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_bialko.Location = new System.Drawing.Point(100, 500);
+            this.plus_bialko.Location = new System.Drawing.Point(102, 502);
             this.plus_bialko.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_bialko.Name = "plus_bialko";
             this.plus_bialko.Size = new System.Drawing.Size(100, 13);
@@ -6309,7 +6544,7 @@
             this.plus_tluszcze.BackColor = System.Drawing.Color.Transparent;
             this.plus_tluszcze.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_tluszcze.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_tluszcze.Location = new System.Drawing.Point(200, 500);
+            this.plus_tluszcze.Location = new System.Drawing.Point(202, 502);
             this.plus_tluszcze.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_tluszcze.Name = "plus_tluszcze";
             this.plus_tluszcze.Size = new System.Drawing.Size(100, 13);
@@ -6323,7 +6558,7 @@
             this.plus_kwasy.BackColor = System.Drawing.Color.Transparent;
             this.plus_kwasy.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_kwasy.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_kwasy.Location = new System.Drawing.Point(300, 500);
+            this.plus_kwasy.Location = new System.Drawing.Point(302, 502);
             this.plus_kwasy.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_kwasy.Name = "plus_kwasy";
             this.plus_kwasy.Size = new System.Drawing.Size(100, 13);
@@ -6337,7 +6572,7 @@
             this.label103.BackColor = System.Drawing.Color.Transparent;
             this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label103.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label103.Location = new System.Drawing.Point(700, 449);
+            this.label103.Location = new System.Drawing.Point(702, 451);
             this.label103.MinimumSize = new System.Drawing.Size(100, 0);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(100, 15);
@@ -6351,7 +6586,7 @@
             this.bp_text.BackColor = System.Drawing.Color.Transparent;
             this.bp_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.bp_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.bp_text.Location = new System.Drawing.Point(700, 480);
+            this.bp_text.Location = new System.Drawing.Point(702, 482);
             this.bp_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.bp_text.Name = "bp_text";
             this.bp_text.Size = new System.Drawing.Size(100, 20);
@@ -6365,7 +6600,7 @@
             this.label98.BackColor = System.Drawing.Color.Transparent;
             this.label98.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label98.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label98.Location = new System.Drawing.Point(700, 464);
+            this.label98.Location = new System.Drawing.Point(702, 466);
             this.label98.MinimumSize = new System.Drawing.Size(100, 0);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(100, 15);
@@ -6379,7 +6614,7 @@
             this.label97.BackColor = System.Drawing.Color.Transparent;
             this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.label97.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label97.Location = new System.Drawing.Point(411, 463);
+            this.label97.Location = new System.Drawing.Point(413, 465);
             this.label97.MaximumSize = new System.Drawing.Size(80, 0);
             this.label97.MinimumSize = new System.Drawing.Size(80, 0);
             this.label97.Name = "label97";
@@ -6470,26 +6705,22 @@
             this.panel_glowny.Controls.Add(this.label29);
             this.panel_glowny.Controls.Add(this.e_text);
             this.panel_glowny.Controls.Add(this.label18);
-            this.panel_glowny.Controls.Add(this.lb_produkty);
-            this.panel_glowny.Controls.Add(this.cb_kategorie);
             this.panel_glowny.Controls.Add(this.menuStrip1);
             this.panel_glowny.Controls.Add(this.dateTimePicker1);
             this.panel_glowny.Controls.Add(this.label8);
             this.panel_glowny.Controls.Add(this.lbl_dieta);
             this.panel_glowny.Controls.Add(this.cb_dieta);
             this.panel_glowny.Controls.Add(this.lbl_data);
-            this.panel_glowny.Controls.Add(this.tb_masa);
-            this.panel_glowny.Controls.Add(this.btn_dodaj);
-            this.panel_glowny.Controls.Add(this.lbl_masa);
             this.panel_glowny.Controls.Add(this.tc_posilki);
             this.panel_glowny.Controls.Add(this.cb_miasto);
-            this.panel_glowny.Controls.Add(this.button1);
             this.panel_glowny.Controls.Add(this.pictureBox3);
             this.panel_glowny.Controls.Add(this.pictureBox1);
             this.panel_glowny.Controls.Add(this.pictureBox2);
-            this.panel_glowny.Location = new System.Drawing.Point(308, 40);
+            this.panel_glowny.Controls.Add(this.panel1);
+            this.panel_glowny.Controls.Add(this.pictureBox8);
+            this.panel_glowny.Location = new System.Drawing.Point(375, 67);
             this.panel_glowny.Name = "panel_glowny";
-            this.panel_glowny.Size = new System.Drawing.Size(258, 31);
+            this.panel_glowny.Size = new System.Drawing.Size(1046, 543);
             this.panel_glowny.TabIndex = 42;
             this.panel_glowny.Visible = false;
             this.panel_glowny.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
@@ -6500,7 +6731,7 @@
             this.sol_zakres.BackColor = System.Drawing.Color.Transparent;
             this.sol_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.sol_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.sol_zakres.Location = new System.Drawing.Point(900, 515);
+            this.sol_zakres.Location = new System.Drawing.Point(902, 517);
             this.sol_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.sol_zakres.Name = "sol_zakres";
             this.sol_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6514,7 +6745,7 @@
             this.plus_sol.BackColor = System.Drawing.Color.Transparent;
             this.plus_sol.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_sol.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_sol.Location = new System.Drawing.Point(900, 500);
+            this.plus_sol.Location = new System.Drawing.Point(902, 502);
             this.plus_sol.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_sol.Name = "plus_sol";
             this.plus_sol.Size = new System.Drawing.Size(100, 13);
@@ -6528,7 +6759,7 @@
             this.blonnik_label.BackColor = System.Drawing.Color.Transparent;
             this.blonnik_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.blonnik_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.blonnik_label.Location = new System.Drawing.Point(699, 583);
+            this.blonnik_label.Location = new System.Drawing.Point(701, 585);
             this.blonnik_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.blonnik_label.Name = "blonnik_label";
             this.blonnik_label.Size = new System.Drawing.Size(100, 11);
@@ -6542,7 +6773,7 @@
             this.c_label.BackColor = System.Drawing.Color.Transparent;
             this.c_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.c_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.c_label.Location = new System.Drawing.Point(605, 582);
+            this.c_label.Location = new System.Drawing.Point(607, 584);
             this.c_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.c_label.Name = "c_label";
             this.c_label.Size = new System.Drawing.Size(100, 11);
@@ -6556,7 +6787,7 @@
             this.p_label.BackColor = System.Drawing.Color.Transparent;
             this.p_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.p_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.p_label.Location = new System.Drawing.Point(500, 582);
+            this.p_label.Location = new System.Drawing.Point(502, 584);
             this.p_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.p_label.Name = "p_label";
             this.p_label.Size = new System.Drawing.Size(100, 11);
@@ -6570,7 +6801,7 @@
             this.sod_zakres.BackColor = System.Drawing.Color.Transparent;
             this.sod_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.sod_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.sod_zakres.Location = new System.Drawing.Point(800, 515);
+            this.sod_zakres.Location = new System.Drawing.Point(802, 517);
             this.sod_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.sod_zakres.Name = "sod_zakres";
             this.sod_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6584,7 +6815,7 @@
             this.plus_sod.BackColor = System.Drawing.Color.Transparent;
             this.plus_sod.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_sod.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_sod.Location = new System.Drawing.Point(800, 500);
+            this.plus_sod.Location = new System.Drawing.Point(802, 502);
             this.plus_sod.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_sod.Name = "plus_sod";
             this.plus_sod.Size = new System.Drawing.Size(100, 13);
@@ -6598,7 +6829,7 @@
             this.blonnik_zakres.BackColor = System.Drawing.Color.Transparent;
             this.blonnik_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.blonnik_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.blonnik_zakres.Location = new System.Drawing.Point(700, 515);
+            this.blonnik_zakres.Location = new System.Drawing.Point(702, 517);
             this.blonnik_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.blonnik_zakres.Name = "blonnik_zakres";
             this.blonnik_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6612,7 +6843,7 @@
             this.blonnik_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.blonnik_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.blonnik_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.blonnik_tysiac_zakres.Location = new System.Drawing.Point(700, 565);
+            this.blonnik_tysiac_zakres.Location = new System.Drawing.Point(702, 567);
             this.blonnik_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.blonnik_tysiac_zakres.Name = "blonnik_tysiac_zakres";
             this.blonnik_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6626,7 +6857,7 @@
             this.blonnik_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.blonnik_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.blonnik_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.blonnik_tysiac.Location = new System.Drawing.Point(700, 545);
+            this.blonnik_tysiac.Location = new System.Drawing.Point(702, 547);
             this.blonnik_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.blonnik_tysiac.Name = "blonnik_tysiac";
             this.blonnik_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -6640,7 +6871,7 @@
             this.blonnik_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.blonnik_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.blonnik_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.blonnik_procent_zakres.Location = new System.Drawing.Point(700, 620);
+            this.blonnik_procent_zakres.Location = new System.Drawing.Point(702, 622);
             this.blonnik_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.blonnik_procent_zakres.Name = "blonnik_procent_zakres";
             this.blonnik_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6654,7 +6885,7 @@
             this.blonnik_procent.BackColor = System.Drawing.Color.Transparent;
             this.blonnik_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.blonnik_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.blonnik_procent.Location = new System.Drawing.Point(700, 600);
+            this.blonnik_procent.Location = new System.Drawing.Point(702, 602);
             this.blonnik_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.blonnik_procent.Name = "blonnik_procent";
             this.blonnik_procent.Size = new System.Drawing.Size(100, 20);
@@ -6668,7 +6899,7 @@
             this.cukry_zakres.BackColor = System.Drawing.Color.Transparent;
             this.cukry_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cukry_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.cukry_zakres.Location = new System.Drawing.Point(600, 515);
+            this.cukry_zakres.Location = new System.Drawing.Point(602, 517);
             this.cukry_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.cukry_zakres.Name = "cukry_zakres";
             this.cukry_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6682,7 +6913,7 @@
             this.cukry_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.cukry_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cukry_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.cukry_tysiac_zakres.Location = new System.Drawing.Point(600, 565);
+            this.cukry_tysiac_zakres.Location = new System.Drawing.Point(602, 567);
             this.cukry_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.cukry_tysiac_zakres.Name = "cukry_tysiac_zakres";
             this.cukry_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6696,7 +6927,7 @@
             this.cukry_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.cukry_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cukry_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cukry_tysiac.Location = new System.Drawing.Point(600, 545);
+            this.cukry_tysiac.Location = new System.Drawing.Point(602, 547);
             this.cukry_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.cukry_tysiac.Name = "cukry_tysiac";
             this.cukry_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -6710,7 +6941,7 @@
             this.przyswajalne_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.przyswajalne_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.przyswajalne_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.przyswajalne_tysiac_zakres.Location = new System.Drawing.Point(499, 565);
+            this.przyswajalne_tysiac_zakres.Location = new System.Drawing.Point(501, 567);
             this.przyswajalne_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.przyswajalne_tysiac_zakres.Name = "przyswajalne_tysiac_zakres";
             this.przyswajalne_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6724,7 +6955,7 @@
             this.przyswajalne_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.przyswajalne_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.przyswajalne_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.przyswajalne_tysiac.Location = new System.Drawing.Point(499, 545);
+            this.przyswajalne_tysiac.Location = new System.Drawing.Point(501, 547);
             this.przyswajalne_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.przyswajalne_tysiac.Name = "przyswajalne_tysiac";
             this.przyswajalne_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -6738,7 +6969,7 @@
             this.przyswajalne_zakres.BackColor = System.Drawing.Color.Transparent;
             this.przyswajalne_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.przyswajalne_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.przyswajalne_zakres.Location = new System.Drawing.Point(499, 515);
+            this.przyswajalne_zakres.Location = new System.Drawing.Point(501, 517);
             this.przyswajalne_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.przyswajalne_zakres.Name = "przyswajalne_zakres";
             this.przyswajalne_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6752,7 +6983,7 @@
             this.plus_blonnik.BackColor = System.Drawing.Color.Transparent;
             this.plus_blonnik.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_blonnik.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_blonnik.Location = new System.Drawing.Point(700, 500);
+            this.plus_blonnik.Location = new System.Drawing.Point(702, 502);
             this.plus_blonnik.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_blonnik.Name = "plus_blonnik";
             this.plus_blonnik.Size = new System.Drawing.Size(100, 13);
@@ -6766,7 +6997,7 @@
             this.plus_cukry.BackColor = System.Drawing.Color.Transparent;
             this.plus_cukry.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_cukry.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_cukry.Location = new System.Drawing.Point(600, 500);
+            this.plus_cukry.Location = new System.Drawing.Point(602, 502);
             this.plus_cukry.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_cukry.Name = "plus_cukry";
             this.plus_cukry.Size = new System.Drawing.Size(100, 13);
@@ -6780,7 +7011,7 @@
             this.plus_przyswajalne.BackColor = System.Drawing.Color.Transparent;
             this.plus_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_przyswajalne.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_przyswajalne.Location = new System.Drawing.Point(499, 500);
+            this.plus_przyswajalne.Location = new System.Drawing.Point(501, 502);
             this.plus_przyswajalne.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_przyswajalne.Name = "plus_przyswajalne";
             this.plus_przyswajalne.Size = new System.Drawing.Size(100, 13);
@@ -6794,7 +7025,7 @@
             this.cukry_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.cukry_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cukry_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.cukry_procent_zakres.Location = new System.Drawing.Point(600, 620);
+            this.cukry_procent_zakres.Location = new System.Drawing.Point(602, 622);
             this.cukry_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.cukry_procent_zakres.Name = "cukry_procent_zakres";
             this.cukry_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6808,7 +7039,7 @@
             this.przyswajalne_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.przyswajalne_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.przyswajalne_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.przyswajalne_procent_zakres.Location = new System.Drawing.Point(499, 620);
+            this.przyswajalne_procent_zakres.Location = new System.Drawing.Point(501, 622);
             this.przyswajalne_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.przyswajalne_procent_zakres.Name = "przyswajalne_procent_zakres";
             this.przyswajalne_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6822,7 +7053,7 @@
             this.cukry_procent.BackColor = System.Drawing.Color.Transparent;
             this.cukry_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cukry_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cukry_procent.Location = new System.Drawing.Point(600, 600);
+            this.cukry_procent.Location = new System.Drawing.Point(602, 602);
             this.cukry_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.cukry_procent.Name = "cukry_procent";
             this.cukry_procent.Size = new System.Drawing.Size(100, 20);
@@ -6836,7 +7067,7 @@
             this.przyswajalne_procent.BackColor = System.Drawing.Color.Transparent;
             this.przyswajalne_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.przyswajalne_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.przyswajalne_procent.Location = new System.Drawing.Point(499, 600);
+            this.przyswajalne_procent.Location = new System.Drawing.Point(501, 602);
             this.przyswajalne_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.przyswajalne_procent.Name = "przyswajalne_procent";
             this.przyswajalne_procent.Size = new System.Drawing.Size(100, 20);
@@ -6850,7 +7081,7 @@
             this.w_label.BackColor = System.Drawing.Color.Transparent;
             this.w_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.w_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.w_label.Location = new System.Drawing.Point(400, 582);
+            this.w_label.Location = new System.Drawing.Point(402, 584);
             this.w_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.w_label.Name = "w_label";
             this.w_label.Size = new System.Drawing.Size(100, 11);
@@ -6864,7 +7095,7 @@
             this.k_label.BackColor = System.Drawing.Color.Transparent;
             this.k_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.k_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_label.Location = new System.Drawing.Point(299, 583);
+            this.k_label.Location = new System.Drawing.Point(301, 585);
             this.k_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.k_label.Name = "k_label";
             this.k_label.Size = new System.Drawing.Size(100, 11);
@@ -6878,7 +7109,7 @@
             this.t_label.BackColor = System.Drawing.Color.Transparent;
             this.t_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.t_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.t_label.Location = new System.Drawing.Point(201, 582);
+            this.t_label.Location = new System.Drawing.Point(203, 584);
             this.t_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.t_label.Name = "t_label";
             this.t_label.Size = new System.Drawing.Size(100, 11);
@@ -6892,7 +7123,7 @@
             this.bialko_label.BackColor = System.Drawing.Color.Transparent;
             this.bialko_label.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.bialko_label.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bialko_label.Location = new System.Drawing.Point(101, 582);
+            this.bialko_label.Location = new System.Drawing.Point(103, 584);
             this.bialko_label.MinimumSize = new System.Drawing.Size(100, 6);
             this.bialko_label.Name = "bialko_label";
             this.bialko_label.Size = new System.Drawing.Size(100, 11);
@@ -6906,7 +7137,7 @@
             this.wegle_zakres.BackColor = System.Drawing.Color.Transparent;
             this.wegle_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.wegle_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wegle_zakres.Location = new System.Drawing.Point(400, 515);
+            this.wegle_zakres.Location = new System.Drawing.Point(402, 517);
             this.wegle_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.wegle_zakres.Name = "wegle_zakres";
             this.wegle_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6920,7 +7151,7 @@
             this.wegle_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.wegle_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.wegle_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wegle_tysiac_zakres.Location = new System.Drawing.Point(400, 565);
+            this.wegle_tysiac_zakres.Location = new System.Drawing.Point(402, 567);
             this.wegle_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.wegle_tysiac_zakres.Name = "wegle_tysiac_zakres";
             this.wegle_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6934,7 +7165,7 @@
             this.wegle_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.wegle_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.wegle_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.wegle_tysiac.Location = new System.Drawing.Point(400, 545);
+            this.wegle_tysiac.Location = new System.Drawing.Point(402, 547);
             this.wegle_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.wegle_tysiac.Name = "wegle_tysiac";
             this.wegle_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -6948,7 +7179,7 @@
             this.wegle_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.wegle_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.wegle_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.wegle_procent_zakres.Location = new System.Drawing.Point(400, 620);
+            this.wegle_procent_zakres.Location = new System.Drawing.Point(402, 622);
             this.wegle_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.wegle_procent_zakres.Name = "wegle_procent_zakres";
             this.wegle_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -6962,7 +7193,7 @@
             this.wegle_procent.BackColor = System.Drawing.Color.Transparent;
             this.wegle_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.wegle_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.wegle_procent.Location = new System.Drawing.Point(400, 600);
+            this.wegle_procent.Location = new System.Drawing.Point(402, 602);
             this.wegle_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.wegle_procent.Name = "wegle_procent";
             this.wegle_procent.Size = new System.Drawing.Size(100, 20);
@@ -6976,7 +7207,7 @@
             this.plus_wegle.BackColor = System.Drawing.Color.Transparent;
             this.plus_wegle.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.plus_wegle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.plus_wegle.Location = new System.Drawing.Point(400, 500);
+            this.plus_wegle.Location = new System.Drawing.Point(402, 502);
             this.plus_wegle.MinimumSize = new System.Drawing.Size(100, 0);
             this.plus_wegle.Name = "plus_wegle";
             this.plus_wegle.Size = new System.Drawing.Size(100, 13);
@@ -6990,7 +7221,7 @@
             this.kwasy_zakres.BackColor = System.Drawing.Color.Transparent;
             this.kwasy_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.kwasy_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.kwasy_zakres.Location = new System.Drawing.Point(300, 515);
+            this.kwasy_zakres.Location = new System.Drawing.Point(302, 517);
             this.kwasy_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.kwasy_zakres.Name = "kwasy_zakres";
             this.kwasy_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7004,7 +7235,7 @@
             this.kwasy_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.kwasy_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.kwasy_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.kwasy_tysiac_zakres.Location = new System.Drawing.Point(300, 565);
+            this.kwasy_tysiac_zakres.Location = new System.Drawing.Point(302, 567);
             this.kwasy_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.kwasy_tysiac_zakres.Name = "kwasy_tysiac_zakres";
             this.kwasy_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7018,7 +7249,7 @@
             this.kwasy_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.kwasy_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.kwasy_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.kwasy_tysiac.Location = new System.Drawing.Point(300, 545);
+            this.kwasy_tysiac.Location = new System.Drawing.Point(302, 547);
             this.kwasy_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.kwasy_tysiac.Name = "kwasy_tysiac";
             this.kwasy_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7032,7 +7263,7 @@
             this.kwasy_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.kwasy_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.kwasy_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.kwasy_procent_zakres.Location = new System.Drawing.Point(300, 620);
+            this.kwasy_procent_zakres.Location = new System.Drawing.Point(302, 622);
             this.kwasy_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.kwasy_procent_zakres.Name = "kwasy_procent_zakres";
             this.kwasy_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7046,7 +7277,7 @@
             this.kwasy_procent.BackColor = System.Drawing.Color.Transparent;
             this.kwasy_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.kwasy_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.kwasy_procent.Location = new System.Drawing.Point(300, 600);
+            this.kwasy_procent.Location = new System.Drawing.Point(302, 602);
             this.kwasy_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.kwasy_procent.Name = "kwasy_procent";
             this.kwasy_procent.Size = new System.Drawing.Size(100, 20);
@@ -7060,7 +7291,7 @@
             this.tluszcze_zakres.BackColor = System.Drawing.Color.Transparent;
             this.tluszcze_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tluszcze_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tluszcze_zakres.Location = new System.Drawing.Point(200, 515);
+            this.tluszcze_zakres.Location = new System.Drawing.Point(202, 517);
             this.tluszcze_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.tluszcze_zakres.Name = "tluszcze_zakres";
             this.tluszcze_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7074,7 +7305,7 @@
             this.tluszcze_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.tluszcze_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tluszcze_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.tluszcze_tysiac_zakres.Location = new System.Drawing.Point(200, 565);
+            this.tluszcze_tysiac_zakres.Location = new System.Drawing.Point(202, 567);
             this.tluszcze_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.tluszcze_tysiac_zakres.Name = "tluszcze_tysiac_zakres";
             this.tluszcze_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7088,7 +7319,7 @@
             this.tluszcze_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.tluszcze_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tluszcze_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.tluszcze_tysiac.Location = new System.Drawing.Point(200, 545);
+            this.tluszcze_tysiac.Location = new System.Drawing.Point(202, 547);
             this.tluszcze_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.tluszcze_tysiac.Name = "tluszcze_tysiac";
             this.tluszcze_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7102,7 +7333,7 @@
             this.bialko_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.bialko_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bialko_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bialko_tysiac_zakres.Location = new System.Drawing.Point(100, 565);
+            this.bialko_tysiac_zakres.Location = new System.Drawing.Point(102, 567);
             this.bialko_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.bialko_tysiac_zakres.Name = "bialko_tysiac_zakres";
             this.bialko_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7116,7 +7347,7 @@
             this.bialko_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.bialko_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.bialko_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.bialko_tysiac.Location = new System.Drawing.Point(100, 545);
+            this.bialko_tysiac.Location = new System.Drawing.Point(102, 547);
             this.bialko_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.bialko_tysiac.Name = "bialko_tysiac";
             this.bialko_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7130,7 +7361,7 @@
             this.bialko_zakres.BackColor = System.Drawing.Color.Transparent;
             this.bialko_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.bialko_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.bialko_zakres.Location = new System.Drawing.Point(100, 515);
+            this.bialko_zakres.Location = new System.Drawing.Point(102, 517);
             this.bialko_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.bialko_zakres.Name = "bialko_zakres";
             this.bialko_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7144,7 +7375,7 @@
             this.energia_zakres.BackColor = System.Drawing.Color.Transparent;
             this.energia_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.energia_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.energia_zakres.Location = new System.Drawing.Point(0, 515);
+            this.energia_zakres.Location = new System.Drawing.Point(2, 517);
             this.energia_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.energia_zakres.Name = "energia_zakres";
             this.energia_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7158,7 +7389,7 @@
             this.sol_text.BackColor = System.Drawing.Color.Transparent;
             this.sol_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.sol_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.sol_text.Location = new System.Drawing.Point(900, 480);
+            this.sol_text.Location = new System.Drawing.Point(902, 482);
             this.sol_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.sol_text.Name = "sol_text";
             this.sol_text.Size = new System.Drawing.Size(100, 20);
@@ -7172,7 +7403,7 @@
             this.label149.BackColor = System.Drawing.Color.Transparent;
             this.label149.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label149.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label149.Location = new System.Drawing.Point(900, 460);
+            this.label149.Location = new System.Drawing.Point(902, 462);
             this.label149.MinimumSize = new System.Drawing.Size(100, 0);
             this.label149.Name = "label149";
             this.label149.Size = new System.Drawing.Size(100, 20);
@@ -7186,7 +7417,7 @@
             this.c_text.BackColor = System.Drawing.Color.Transparent;
             this.c_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.c_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.c_text.Location = new System.Drawing.Point(600, 480);
+            this.c_text.Location = new System.Drawing.Point(602, 482);
             this.c_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.c_text.Name = "c_text";
             this.c_text.Size = new System.Drawing.Size(100, 20);
@@ -7200,7 +7431,7 @@
             this.label152.BackColor = System.Drawing.Color.Transparent;
             this.label152.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label152.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label152.Location = new System.Drawing.Point(600, 460);
+            this.label152.Location = new System.Drawing.Point(602, 462);
             this.label152.MinimumSize = new System.Drawing.Size(100, 0);
             this.label152.Name = "label152";
             this.label152.Size = new System.Drawing.Size(100, 20);
@@ -7214,7 +7445,7 @@
             this.label106.BackColor = System.Drawing.Color.Transparent;
             this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
             this.label106.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label106.Location = new System.Drawing.Point(500, 470);
+            this.label106.Location = new System.Drawing.Point(502, 472);
             this.label106.MinimumSize = new System.Drawing.Size(100, 0);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(100, 7);
@@ -7228,7 +7459,7 @@
             this.wp_text.BackColor = System.Drawing.Color.Transparent;
             this.wp_text.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.wp_text.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.wp_text.Location = new System.Drawing.Point(500, 480);
+            this.wp_text.Location = new System.Drawing.Point(502, 482);
             this.wp_text.MinimumSize = new System.Drawing.Size(100, 0);
             this.wp_text.Name = "wp_text";
             this.wp_text.Size = new System.Drawing.Size(100, 20);
@@ -7242,7 +7473,7 @@
             this.label111.BackColor = System.Drawing.Color.Transparent;
             this.label111.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label111.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label111.Location = new System.Drawing.Point(500, 458);
+            this.label111.Location = new System.Drawing.Point(502, 460);
             this.label111.MinimumSize = new System.Drawing.Size(100, 0);
             this.label111.Name = "label111";
             this.label111.Size = new System.Drawing.Size(100, 9);
@@ -7252,18 +7483,19 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.AutoSize = false;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(33, 33);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dekadówkaToolStripMenuItem,
             this.zapiszPosiłekToolStripMenuItem,
             this.wczytajPosiłekToolStripMenuItem,
             this.wyczyśćToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 2);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(463, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(2000, 30);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -7275,7 +7507,7 @@
             this.wczytajJadłospisDekadówkiToolStripMenuItem});
             this.dekadówkaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dekadówkaToolStripMenuItem.Name = "dekadówkaToolStripMenuItem";
-            this.dekadówkaToolStripMenuItem.Size = new System.Drawing.Size(77, 25);
+            this.dekadówkaToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.dekadówkaToolStripMenuItem.Text = "Szablon";
             // 
             // zapiszJadłospisDekadówkiToolStripMenuItem
@@ -7299,7 +7531,7 @@
             this.dzieńToolStripMenuItem});
             this.zapiszPosiłekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zapiszPosiłekToolStripMenuItem.Name = "zapiszPosiłekToolStripMenuItem";
-            this.zapiszPosiłekToolStripMenuItem.Size = new System.Drawing.Size(85, 25);
+            this.zapiszPosiłekToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
             this.zapiszPosiłekToolStripMenuItem.Text = "Jadłospis";
             // 
             // dzieńToolStripMenuItem1
@@ -7322,7 +7554,7 @@
             this.posiłekToolStripMenuItem});
             this.wczytajPosiłekToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wczytajPosiłekToolStripMenuItem.Name = "wczytajPosiłekToolStripMenuItem";
-            this.wczytajPosiłekToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
+            this.wczytajPosiłekToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
             this.wczytajPosiłekToolStripMenuItem.Text = "Receptura";
             // 
             // posiłekToolStripMenuItem
@@ -7339,7 +7571,7 @@
             this.dzieńToolStripMenuItem2});
             this.wyczyśćToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wyczyśćToolStripMenuItem.Name = "wyczyśćToolStripMenuItem";
-            this.wyczyśćToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
+            this.wyczyśćToolStripMenuItem.Size = new System.Drawing.Size(81, 26);
             this.wyczyśćToolStripMenuItem.Text = "Wyczyść";
             // 
             // posiłekToolStripMenuItem2
@@ -7355,6 +7587,46 @@
             this.dzieńToolStripMenuItem2.Size = new System.Drawing.Size(192, 26);
             this.dzieńToolStripMenuItem2.Text = "Wyczyść dzień";
             this.dzieńToolStripMenuItem2.Click += new System.EventHandler(this.dzieńToolStripMenuItem2_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(243)))), ((int)(((byte)(233)))));
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.cb_kategorie);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.lb_produkty);
+            this.panel1.Controls.Add(this.tb_masa);
+            this.panel1.Location = new System.Drawing.Point(10, 120);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(195, 325);
+            this.panel1.TabIndex = 152;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(100, 275);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 151;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.Edytuj_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(45, 275);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 150;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.Dodaj_Click);
             // 
             // panel_kontrola
             // 
@@ -7447,9 +7719,9 @@
             this.panel_kontrola.Controls.Add(this.dateTimePicker4);
             this.panel_kontrola.Controls.Add(this.label79);
             this.panel_kontrola.Controls.Add(this.pictureBox28);
-            this.panel_kontrola.Location = new System.Drawing.Point(484, 53);
+            this.panel_kontrola.Location = new System.Drawing.Point(247, 579);
             this.panel_kontrola.Name = "panel_kontrola";
-            this.panel_kontrola.Size = new System.Drawing.Size(167, 67);
+            this.panel_kontrola.Size = new System.Drawing.Size(45, 40);
             this.panel_kontrola.TabIndex = 96;
             this.panel_kontrola.Visible = false;
             // 
@@ -7459,7 +7731,7 @@
             this.k_sol_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_sol_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_sol_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_sol_zakres.Location = new System.Drawing.Point(922, 318);
+            this.k_sol_zakres.Location = new System.Drawing.Point(922, 377);
             this.k_sol_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_sol_zakres.Name = "k_sol_zakres";
             this.k_sol_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7473,7 +7745,7 @@
             this.k_sol_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_sol_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_sol_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_sol_plus.Location = new System.Drawing.Point(922, 303);
+            this.k_sol_plus.Location = new System.Drawing.Point(922, 362);
             this.k_sol_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_sol_plus.Name = "k_sol_plus";
             this.k_sol_plus.Size = new System.Drawing.Size(100, 13);
@@ -7487,7 +7759,7 @@
             this.label69.BackColor = System.Drawing.Color.Transparent;
             this.label69.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label69.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label69.Location = new System.Drawing.Point(721, 386);
+            this.label69.Location = new System.Drawing.Point(721, 445);
             this.label69.MinimumSize = new System.Drawing.Size(100, 6);
             this.label69.Name = "label69";
             this.label69.Size = new System.Drawing.Size(100, 11);
@@ -7501,7 +7773,7 @@
             this.label70.BackColor = System.Drawing.Color.Transparent;
             this.label70.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label70.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label70.Location = new System.Drawing.Point(627, 385);
+            this.label70.Location = new System.Drawing.Point(627, 444);
             this.label70.MinimumSize = new System.Drawing.Size(100, 6);
             this.label70.Name = "label70";
             this.label70.Size = new System.Drawing.Size(100, 11);
@@ -7515,7 +7787,7 @@
             this.label71.BackColor = System.Drawing.Color.Transparent;
             this.label71.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label71.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label71.Location = new System.Drawing.Point(522, 385);
+            this.label71.Location = new System.Drawing.Point(522, 444);
             this.label71.MinimumSize = new System.Drawing.Size(100, 6);
             this.label71.Name = "label71";
             this.label71.Size = new System.Drawing.Size(100, 11);
@@ -7529,7 +7801,7 @@
             this.k_sod_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_sod_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_sod_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_sod_zakres.Location = new System.Drawing.Point(822, 318);
+            this.k_sod_zakres.Location = new System.Drawing.Point(822, 377);
             this.k_sod_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_sod_zakres.Name = "k_sod_zakres";
             this.k_sod_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7543,7 +7815,7 @@
             this.k_sod_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_sod_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_sod_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_sod_plus.Location = new System.Drawing.Point(822, 303);
+            this.k_sod_plus.Location = new System.Drawing.Point(822, 362);
             this.k_sod_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_sod_plus.Name = "k_sod_plus";
             this.k_sod_plus.Size = new System.Drawing.Size(100, 13);
@@ -7557,7 +7829,7 @@
             this.k_blonnik_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_blonnik_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_blonnik_zakres.Location = new System.Drawing.Point(722, 318);
+            this.k_blonnik_zakres.Location = new System.Drawing.Point(722, 377);
             this.k_blonnik_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_blonnik_zakres.Name = "k_blonnik_zakres";
             this.k_blonnik_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7571,7 +7843,7 @@
             this.k_blonnik_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_blonnik_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_blonnik_tysiac_zakres.Location = new System.Drawing.Point(722, 368);
+            this.k_blonnik_tysiac_zakres.Location = new System.Drawing.Point(722, 427);
             this.k_blonnik_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_blonnik_tysiac_zakres.Name = "k_blonnik_tysiac_zakres";
             this.k_blonnik_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7585,7 +7857,7 @@
             this.k_blonnik_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_blonnik_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_blonnik_tysiac.Location = new System.Drawing.Point(722, 348);
+            this.k_blonnik_tysiac.Location = new System.Drawing.Point(722, 407);
             this.k_blonnik_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_blonnik_tysiac.Name = "k_blonnik_tysiac";
             this.k_blonnik_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7599,7 +7871,7 @@
             this.k_blonnik_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_blonnik_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_blonnik_procent_zakres.Location = new System.Drawing.Point(722, 423);
+            this.k_blonnik_procent_zakres.Location = new System.Drawing.Point(722, 482);
             this.k_blonnik_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_blonnik_procent_zakres.Name = "k_blonnik_procent_zakres";
             this.k_blonnik_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7613,7 +7885,7 @@
             this.k_blonnik_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_blonnik_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_blonnik_procent.Location = new System.Drawing.Point(722, 403);
+            this.k_blonnik_procent.Location = new System.Drawing.Point(722, 462);
             this.k_blonnik_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_blonnik_procent.Name = "k_blonnik_procent";
             this.k_blonnik_procent.Size = new System.Drawing.Size(100, 20);
@@ -7627,7 +7899,7 @@
             this.k_cukry_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_cukry_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_cukry_zakres.Location = new System.Drawing.Point(622, 318);
+            this.k_cukry_zakres.Location = new System.Drawing.Point(622, 377);
             this.k_cukry_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_cukry_zakres.Name = "k_cukry_zakres";
             this.k_cukry_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7641,7 +7913,7 @@
             this.k_cukry_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_cukry_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_cukry_tysiac_zakres.Location = new System.Drawing.Point(622, 368);
+            this.k_cukry_tysiac_zakres.Location = new System.Drawing.Point(622, 427);
             this.k_cukry_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_cukry_tysiac_zakres.Name = "k_cukry_tysiac_zakres";
             this.k_cukry_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7655,7 +7927,7 @@
             this.k_cukry_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_cukry_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_cukry_tysiac.Location = new System.Drawing.Point(622, 348);
+            this.k_cukry_tysiac.Location = new System.Drawing.Point(622, 407);
             this.k_cukry_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_cukry_tysiac.Name = "k_cukry_tysiac";
             this.k_cukry_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7669,7 +7941,7 @@
             this.k_przyswajalne_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_przyswajalne_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_przyswajalne_tysiac_zakres.Location = new System.Drawing.Point(521, 368);
+            this.k_przyswajalne_tysiac_zakres.Location = new System.Drawing.Point(521, 427);
             this.k_przyswajalne_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_przyswajalne_tysiac_zakres.Name = "k_przyswajalne_tysiac_zakres";
             this.k_przyswajalne_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7683,7 +7955,7 @@
             this.k_przyswajalne_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_przyswajalne_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_przyswajalne_tysiac.Location = new System.Drawing.Point(521, 348);
+            this.k_przyswajalne_tysiac.Location = new System.Drawing.Point(521, 407);
             this.k_przyswajalne_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_przyswajalne_tysiac.Name = "k_przyswajalne_tysiac";
             this.k_przyswajalne_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7697,7 +7969,7 @@
             this.k_przyswajalne_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_przyswajalne_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_przyswajalne_zakres.Location = new System.Drawing.Point(521, 318);
+            this.k_przyswajalne_zakres.Location = new System.Drawing.Point(521, 377);
             this.k_przyswajalne_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_przyswajalne_zakres.Name = "k_przyswajalne_zakres";
             this.k_przyswajalne_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7711,7 +7983,7 @@
             this.k_blonnik_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_blonnik_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_blonnik_plus.Location = new System.Drawing.Point(722, 303);
+            this.k_blonnik_plus.Location = new System.Drawing.Point(722, 362);
             this.k_blonnik_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_blonnik_plus.Name = "k_blonnik_plus";
             this.k_blonnik_plus.Size = new System.Drawing.Size(100, 13);
@@ -7725,7 +7997,7 @@
             this.k_cukry_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_cukry_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_cukry_plus.Location = new System.Drawing.Point(622, 303);
+            this.k_cukry_plus.Location = new System.Drawing.Point(622, 362);
             this.k_cukry_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_cukry_plus.Name = "k_cukry_plus";
             this.k_cukry_plus.Size = new System.Drawing.Size(100, 13);
@@ -7739,7 +8011,7 @@
             this.k_przyswajalne_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_przyswajalne_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_przyswajalne_plus.Location = new System.Drawing.Point(521, 303);
+            this.k_przyswajalne_plus.Location = new System.Drawing.Point(521, 362);
             this.k_przyswajalne_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_przyswajalne_plus.Name = "k_przyswajalne_plus";
             this.k_przyswajalne_plus.Size = new System.Drawing.Size(100, 13);
@@ -7753,7 +8025,7 @@
             this.k_cukry_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_cukry_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_cukry_procent_zakres.Location = new System.Drawing.Point(622, 423);
+            this.k_cukry_procent_zakres.Location = new System.Drawing.Point(622, 482);
             this.k_cukry_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_cukry_procent_zakres.Name = "k_cukry_procent_zakres";
             this.k_cukry_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7767,7 +8039,7 @@
             this.k_przyswajalne_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_przyswajalne_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_przyswajalne_procent_zakres.Location = new System.Drawing.Point(521, 423);
+            this.k_przyswajalne_procent_zakres.Location = new System.Drawing.Point(521, 482);
             this.k_przyswajalne_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_przyswajalne_procent_zakres.Name = "k_przyswajalne_procent_zakres";
             this.k_przyswajalne_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7781,7 +8053,7 @@
             this.k_cukry_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_cukry_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_cukry_procent.Location = new System.Drawing.Point(622, 403);
+            this.k_cukry_procent.Location = new System.Drawing.Point(622, 462);
             this.k_cukry_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_cukry_procent.Name = "k_cukry_procent";
             this.k_cukry_procent.Size = new System.Drawing.Size(100, 20);
@@ -7795,7 +8067,7 @@
             this.k_przyswajalne_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_przyswajalne_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_przyswajalne_procent.Location = new System.Drawing.Point(521, 403);
+            this.k_przyswajalne_procent.Location = new System.Drawing.Point(521, 462);
             this.k_przyswajalne_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_przyswajalne_procent.Name = "k_przyswajalne_procent";
             this.k_przyswajalne_procent.Size = new System.Drawing.Size(100, 20);
@@ -7809,7 +8081,7 @@
             this.label129.BackColor = System.Drawing.Color.Transparent;
             this.label129.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label129.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label129.Location = new System.Drawing.Point(422, 385);
+            this.label129.Location = new System.Drawing.Point(422, 444);
             this.label129.MinimumSize = new System.Drawing.Size(100, 6);
             this.label129.Name = "label129";
             this.label129.Size = new System.Drawing.Size(100, 11);
@@ -7822,7 +8094,7 @@
             this.label130.BackColor = System.Drawing.Color.Transparent;
             this.label130.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label130.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label130.Location = new System.Drawing.Point(321, 386);
+            this.label130.Location = new System.Drawing.Point(321, 445);
             this.label130.MinimumSize = new System.Drawing.Size(100, 6);
             this.label130.Name = "label130";
             this.label130.Size = new System.Drawing.Size(100, 11);
@@ -7836,7 +8108,7 @@
             this.label131.BackColor = System.Drawing.Color.Transparent;
             this.label131.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label131.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label131.Location = new System.Drawing.Point(223, 385);
+            this.label131.Location = new System.Drawing.Point(223, 444);
             this.label131.MinimumSize = new System.Drawing.Size(100, 6);
             this.label131.Name = "label131";
             this.label131.Size = new System.Drawing.Size(100, 11);
@@ -7850,7 +8122,7 @@
             this.label132.BackColor = System.Drawing.Color.Transparent;
             this.label132.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.label132.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label132.Location = new System.Drawing.Point(123, 385);
+            this.label132.Location = new System.Drawing.Point(123, 444);
             this.label132.MinimumSize = new System.Drawing.Size(100, 6);
             this.label132.Name = "label132";
             this.label132.Size = new System.Drawing.Size(100, 11);
@@ -7864,7 +8136,7 @@
             this.k_wegle_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_wegle_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_wegle_zakres.Location = new System.Drawing.Point(422, 318);
+            this.k_wegle_zakres.Location = new System.Drawing.Point(422, 377);
             this.k_wegle_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_wegle_zakres.Name = "k_wegle_zakres";
             this.k_wegle_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7878,7 +8150,7 @@
             this.k_wegle_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_wegle_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_wegle_tysiac_zakres.Location = new System.Drawing.Point(422, 368);
+            this.k_wegle_tysiac_zakres.Location = new System.Drawing.Point(422, 427);
             this.k_wegle_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_wegle_tysiac_zakres.Name = "k_wegle_tysiac_zakres";
             this.k_wegle_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7891,7 +8163,7 @@
             this.k_wegle_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_wegle_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_wegle_tysiac.Location = new System.Drawing.Point(422, 348);
+            this.k_wegle_tysiac.Location = new System.Drawing.Point(422, 407);
             this.k_wegle_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_wegle_tysiac.Name = "k_wegle_tysiac";
             this.k_wegle_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7904,7 +8176,7 @@
             this.k_wegle_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_wegle_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_wegle_procent_zakres.Location = new System.Drawing.Point(422, 423);
+            this.k_wegle_procent_zakres.Location = new System.Drawing.Point(422, 482);
             this.k_wegle_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_wegle_procent_zakres.Name = "k_wegle_procent_zakres";
             this.k_wegle_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7917,7 +8189,7 @@
             this.k_wegle_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_wegle_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_wegle_procent.Location = new System.Drawing.Point(422, 403);
+            this.k_wegle_procent.Location = new System.Drawing.Point(422, 462);
             this.k_wegle_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_wegle_procent.Name = "k_wegle_procent";
             this.k_wegle_procent.Size = new System.Drawing.Size(100, 20);
@@ -7930,7 +8202,7 @@
             this.k_wegle_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_wegle_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_wegle_plus.Location = new System.Drawing.Point(422, 303);
+            this.k_wegle_plus.Location = new System.Drawing.Point(422, 362);
             this.k_wegle_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_wegle_plus.Name = "k_wegle_plus";
             this.k_wegle_plus.Size = new System.Drawing.Size(100, 13);
@@ -7944,7 +8216,7 @@
             this.k_kwasy_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_kwasy_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_kwasy_zakres.Location = new System.Drawing.Point(322, 318);
+            this.k_kwasy_zakres.Location = new System.Drawing.Point(322, 377);
             this.k_kwasy_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_kwasy_zakres.Name = "k_kwasy_zakres";
             this.k_kwasy_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7958,7 +8230,7 @@
             this.k_kwasy_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_kwasy_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_kwasy_tysiac_zakres.Location = new System.Drawing.Point(322, 368);
+            this.k_kwasy_tysiac_zakres.Location = new System.Drawing.Point(322, 427);
             this.k_kwasy_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_kwasy_tysiac_zakres.Name = "k_kwasy_tysiac_zakres";
             this.k_kwasy_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -7972,7 +8244,7 @@
             this.k_kwasy_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_kwasy_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_kwasy_tysiac.Location = new System.Drawing.Point(322, 348);
+            this.k_kwasy_tysiac.Location = new System.Drawing.Point(322, 407);
             this.k_kwasy_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_kwasy_tysiac.Name = "k_kwasy_tysiac";
             this.k_kwasy_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -7986,7 +8258,7 @@
             this.k_kwasy_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_kwasy_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_kwasy_procent_zakres.Location = new System.Drawing.Point(322, 423);
+            this.k_kwasy_procent_zakres.Location = new System.Drawing.Point(322, 482);
             this.k_kwasy_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_kwasy_procent_zakres.Name = "k_kwasy_procent_zakres";
             this.k_kwasy_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8000,7 +8272,7 @@
             this.k_kwasy_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_kwasy_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_kwasy_procent.Location = new System.Drawing.Point(322, 403);
+            this.k_kwasy_procent.Location = new System.Drawing.Point(322, 462);
             this.k_kwasy_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_kwasy_procent.Name = "k_kwasy_procent";
             this.k_kwasy_procent.Size = new System.Drawing.Size(100, 20);
@@ -8014,7 +8286,7 @@
             this.k_tluszcze_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_tluszcze_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_tluszcze_zakres.Location = new System.Drawing.Point(222, 318);
+            this.k_tluszcze_zakres.Location = new System.Drawing.Point(222, 377);
             this.k_tluszcze_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_tluszcze_zakres.Name = "k_tluszcze_zakres";
             this.k_tluszcze_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8028,7 +8300,7 @@
             this.k_tluszcze_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_tluszcze_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_tluszcze_tysiac_zakres.Location = new System.Drawing.Point(222, 368);
+            this.k_tluszcze_tysiac_zakres.Location = new System.Drawing.Point(222, 427);
             this.k_tluszcze_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_tluszcze_tysiac_zakres.Name = "k_tluszcze_tysiac_zakres";
             this.k_tluszcze_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8042,7 +8314,7 @@
             this.k_tluszcze_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_tluszcze_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_tluszcze_tysiac.Location = new System.Drawing.Point(222, 348);
+            this.k_tluszcze_tysiac.Location = new System.Drawing.Point(222, 407);
             this.k_tluszcze_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_tluszcze_tysiac.Name = "k_tluszcze_tysiac";
             this.k_tluszcze_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -8056,7 +8328,7 @@
             this.k_bialko_tysiac_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko_tysiac_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_bialko_tysiac_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_bialko_tysiac_zakres.Location = new System.Drawing.Point(122, 368);
+            this.k_bialko_tysiac_zakres.Location = new System.Drawing.Point(122, 427);
             this.k_bialko_tysiac_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_bialko_tysiac_zakres.Name = "k_bialko_tysiac_zakres";
             this.k_bialko_tysiac_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8070,7 +8342,7 @@
             this.k_bialko_tysiac.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko_tysiac.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_bialko_tysiac.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_bialko_tysiac.Location = new System.Drawing.Point(122, 348);
+            this.k_bialko_tysiac.Location = new System.Drawing.Point(122, 407);
             this.k_bialko_tysiac.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_bialko_tysiac.Name = "k_bialko_tysiac";
             this.k_bialko_tysiac.Size = new System.Drawing.Size(100, 20);
@@ -8084,7 +8356,7 @@
             this.k_bialko_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_bialko_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_bialko_zakres.Location = new System.Drawing.Point(122, 318);
+            this.k_bialko_zakres.Location = new System.Drawing.Point(122, 377);
             this.k_bialko_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_bialko_zakres.Name = "k_bialko_zakres";
             this.k_bialko_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8098,7 +8370,7 @@
             this.k_energia_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_energia_zakres.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_energia_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_energia_zakres.Location = new System.Drawing.Point(22, 318);
+            this.k_energia_zakres.Location = new System.Drawing.Point(22, 377);
             this.k_energia_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_energia_zakres.Name = "k_energia_zakres";
             this.k_energia_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8112,7 +8384,7 @@
             this.k_sol.BackColor = System.Drawing.Color.Transparent;
             this.k_sol.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_sol.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_sol.Location = new System.Drawing.Point(922, 283);
+            this.k_sol.Location = new System.Drawing.Point(922, 342);
             this.k_sol.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_sol.Name = "k_sol";
             this.k_sol.Size = new System.Drawing.Size(100, 20);
@@ -8126,7 +8398,7 @@
             this.label158.BackColor = System.Drawing.Color.Transparent;
             this.label158.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label158.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label158.Location = new System.Drawing.Point(922, 263);
+            this.label158.Location = new System.Drawing.Point(922, 322);
             this.label158.MinimumSize = new System.Drawing.Size(100, 0);
             this.label158.Name = "label158";
             this.label158.Size = new System.Drawing.Size(100, 20);
@@ -8140,7 +8412,7 @@
             this.k_cukry.BackColor = System.Drawing.Color.Transparent;
             this.k_cukry.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_cukry.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_cukry.Location = new System.Drawing.Point(622, 283);
+            this.k_cukry.Location = new System.Drawing.Point(622, 342);
             this.k_cukry.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_cukry.Name = "k_cukry";
             this.k_cukry.Size = new System.Drawing.Size(100, 20);
@@ -8154,7 +8426,7 @@
             this.label160.BackColor = System.Drawing.Color.Transparent;
             this.label160.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label160.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label160.Location = new System.Drawing.Point(622, 263);
+            this.label160.Location = new System.Drawing.Point(622, 322);
             this.label160.MinimumSize = new System.Drawing.Size(100, 0);
             this.label160.Name = "label160";
             this.label160.Size = new System.Drawing.Size(100, 20);
@@ -8168,7 +8440,7 @@
             this.label161.BackColor = System.Drawing.Color.Transparent;
             this.label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold);
             this.label161.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label161.Location = new System.Drawing.Point(522, 273);
+            this.label161.Location = new System.Drawing.Point(522, 332);
             this.label161.MinimumSize = new System.Drawing.Size(100, 0);
             this.label161.Name = "label161";
             this.label161.Size = new System.Drawing.Size(100, 7);
@@ -8182,7 +8454,7 @@
             this.k_przyswajalne.BackColor = System.Drawing.Color.Transparent;
             this.k_przyswajalne.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_przyswajalne.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_przyswajalne.Location = new System.Drawing.Point(522, 283);
+            this.k_przyswajalne.Location = new System.Drawing.Point(522, 342);
             this.k_przyswajalne.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_przyswajalne.Name = "k_przyswajalne";
             this.k_przyswajalne.Size = new System.Drawing.Size(100, 20);
@@ -8196,7 +8468,7 @@
             this.label163.BackColor = System.Drawing.Color.Transparent;
             this.label163.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label163.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label163.Location = new System.Drawing.Point(522, 261);
+            this.label163.Location = new System.Drawing.Point(522, 320);
             this.label163.MinimumSize = new System.Drawing.Size(100, 0);
             this.label163.Name = "label163";
             this.label163.Size = new System.Drawing.Size(100, 9);
@@ -8210,7 +8482,7 @@
             this.label164.BackColor = System.Drawing.Color.Transparent;
             this.label164.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.label164.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label164.Location = new System.Drawing.Point(433, 266);
+            this.label164.Location = new System.Drawing.Point(433, 325);
             this.label164.MaximumSize = new System.Drawing.Size(80, 0);
             this.label164.MinimumSize = new System.Drawing.Size(80, 0);
             this.label164.Name = "label164";
@@ -8225,7 +8497,7 @@
             this.label165.BackColor = System.Drawing.Color.Transparent;
             this.label165.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label165.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label165.Location = new System.Drawing.Point(722, 267);
+            this.label165.Location = new System.Drawing.Point(722, 326);
             this.label165.MinimumSize = new System.Drawing.Size(100, 0);
             this.label165.Name = "label165";
             this.label165.Size = new System.Drawing.Size(100, 15);
@@ -8239,7 +8511,7 @@
             this.k_blonnik.BackColor = System.Drawing.Color.Transparent;
             this.k_blonnik.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_blonnik.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_blonnik.Location = new System.Drawing.Point(722, 283);
+            this.k_blonnik.Location = new System.Drawing.Point(722, 342);
             this.k_blonnik.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_blonnik.Name = "k_blonnik";
             this.k_blonnik.Size = new System.Drawing.Size(100, 20);
@@ -8253,7 +8525,7 @@
             this.label175.BackColor = System.Drawing.Color.Transparent;
             this.label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label175.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label175.Location = new System.Drawing.Point(722, 252);
+            this.label175.Location = new System.Drawing.Point(722, 311);
             this.label175.MinimumSize = new System.Drawing.Size(100, 0);
             this.label175.Name = "label175";
             this.label175.Size = new System.Drawing.Size(100, 15);
@@ -8267,7 +8539,7 @@
             this.k_kwasy_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_kwasy_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_kwasy_plus.Location = new System.Drawing.Point(322, 303);
+            this.k_kwasy_plus.Location = new System.Drawing.Point(322, 362);
             this.k_kwasy_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_kwasy_plus.Name = "k_kwasy_plus";
             this.k_kwasy_plus.Size = new System.Drawing.Size(100, 13);
@@ -8281,7 +8553,7 @@
             this.k_tluszcze_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_tluszcze_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_tluszcze_plus.Location = new System.Drawing.Point(222, 303);
+            this.k_tluszcze_plus.Location = new System.Drawing.Point(222, 362);
             this.k_tluszcze_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_tluszcze_plus.Name = "k_tluszcze_plus";
             this.k_tluszcze_plus.Size = new System.Drawing.Size(100, 13);
@@ -8295,7 +8567,7 @@
             this.k_bialko_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_bialko_plus.ForeColor = System.Drawing.Color.ForestGreen;
-            this.k_bialko_plus.Location = new System.Drawing.Point(122, 303);
+            this.k_bialko_plus.Location = new System.Drawing.Point(122, 362);
             this.k_bialko_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_bialko_plus.Name = "k_bialko_plus";
             this.k_bialko_plus.Size = new System.Drawing.Size(100, 13);
@@ -8309,7 +8581,7 @@
             this.k_energia_plus.BackColor = System.Drawing.Color.Transparent;
             this.k_energia_plus.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.k_energia_plus.ForeColor = System.Drawing.Color.Red;
-            this.k_energia_plus.Location = new System.Drawing.Point(22, 303);
+            this.k_energia_plus.Location = new System.Drawing.Point(22, 362);
             this.k_energia_plus.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_energia_plus.Name = "k_energia_plus";
             this.k_energia_plus.Size = new System.Drawing.Size(100, 13);
@@ -8323,7 +8595,7 @@
             this.k_tluszcze_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_tluszcze_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_tluszcze_procent_zakres.Location = new System.Drawing.Point(222, 423);
+            this.k_tluszcze_procent_zakres.Location = new System.Drawing.Point(222, 482);
             this.k_tluszcze_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_tluszcze_procent_zakres.Name = "k_tluszcze_procent_zakres";
             this.k_tluszcze_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8337,7 +8609,7 @@
             this.k_bialko_procent_zakres.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko_procent_zakres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.k_bialko_procent_zakres.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.k_bialko_procent_zakres.Location = new System.Drawing.Point(122, 423);
+            this.k_bialko_procent_zakres.Location = new System.Drawing.Point(122, 482);
             this.k_bialko_procent_zakres.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_bialko_procent_zakres.Name = "k_bialko_procent_zakres";
             this.k_bialko_procent_zakres.Size = new System.Drawing.Size(100, 20);
@@ -8351,7 +8623,7 @@
             this.label182.BackColor = System.Drawing.Color.Transparent;
             this.label182.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label182.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label182.Location = new System.Drawing.Point(322, 269);
+            this.label182.Location = new System.Drawing.Point(322, 328);
             this.label182.MinimumSize = new System.Drawing.Size(100, 6);
             this.label182.Name = "label182";
             this.label182.Size = new System.Drawing.Size(100, 12);
@@ -8365,7 +8637,7 @@
             this.label183.BackColor = System.Drawing.Color.Transparent;
             this.label183.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label183.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label183.Location = new System.Drawing.Point(322, 259);
+            this.label183.Location = new System.Drawing.Point(322, 318);
             this.label183.MinimumSize = new System.Drawing.Size(100, 6);
             this.label183.Name = "label183";
             this.label183.Size = new System.Drawing.Size(100, 12);
@@ -8379,7 +8651,7 @@
             this.k_kwasy.BackColor = System.Drawing.Color.Transparent;
             this.k_kwasy.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_kwasy.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_kwasy.Location = new System.Drawing.Point(322, 283);
+            this.k_kwasy.Location = new System.Drawing.Point(322, 342);
             this.k_kwasy.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_kwasy.Name = "k_kwasy";
             this.k_kwasy.Size = new System.Drawing.Size(100, 20);
@@ -8393,7 +8665,7 @@
             this.label185.BackColor = System.Drawing.Color.Transparent;
             this.label185.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold);
             this.label185.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label185.Location = new System.Drawing.Point(322, 249);
+            this.label185.Location = new System.Drawing.Point(322, 308);
             this.label185.MinimumSize = new System.Drawing.Size(100, 6);
             this.label185.Name = "label185";
             this.label185.Size = new System.Drawing.Size(100, 12);
@@ -8407,7 +8679,7 @@
             this.k_sod.BackColor = System.Drawing.Color.Transparent;
             this.k_sod.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_sod.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_sod.Location = new System.Drawing.Point(822, 283);
+            this.k_sod.Location = new System.Drawing.Point(822, 342);
             this.k_sod.MinimumSize = new System.Drawing.Size(100, 0);
             this.k_sod.Name = "k_sod";
             this.k_sod.Size = new System.Drawing.Size(100, 20);
@@ -8421,7 +8693,7 @@
             this.label187.BackColor = System.Drawing.Color.Transparent;
             this.label187.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label187.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label187.Location = new System.Drawing.Point(822, 263);
+            this.label187.Location = new System.Drawing.Point(822, 322);
             this.label187.MinimumSize = new System.Drawing.Size(100, 0);
             this.label187.Name = "label187";
             this.label187.Size = new System.Drawing.Size(100, 20);
@@ -8435,7 +8707,7 @@
             this.k_wegle.BackColor = System.Drawing.Color.Transparent;
             this.k_wegle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_wegle.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_wegle.Location = new System.Drawing.Point(432, 283);
+            this.k_wegle.Location = new System.Drawing.Point(432, 342);
             this.k_wegle.MaximumSize = new System.Drawing.Size(80, 0);
             this.k_wegle.MinimumSize = new System.Drawing.Size(80, 0);
             this.k_wegle.Name = "k_wegle";
@@ -8450,7 +8722,7 @@
             this.label189.BackColor = System.Drawing.Color.Transparent;
             this.label189.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold);
             this.label189.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label189.Location = new System.Drawing.Point(422, 257);
+            this.label189.Location = new System.Drawing.Point(422, 316);
             this.label189.MinimumSize = new System.Drawing.Size(100, 0);
             this.label189.Name = "label189";
             this.label189.Size = new System.Drawing.Size(100, 9);
@@ -8464,7 +8736,7 @@
             this.k_tluszcze_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_tluszcze_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_tluszcze_procent.Location = new System.Drawing.Point(222, 403);
+            this.k_tluszcze_procent.Location = new System.Drawing.Point(222, 462);
             this.k_tluszcze_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_tluszcze_procent.Name = "k_tluszcze_procent";
             this.k_tluszcze_procent.Size = new System.Drawing.Size(100, 20);
@@ -8478,7 +8750,7 @@
             this.k_tluszcze.BackColor = System.Drawing.Color.Transparent;
             this.k_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_tluszcze.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_tluszcze.Location = new System.Drawing.Point(222, 283);
+            this.k_tluszcze.Location = new System.Drawing.Point(222, 342);
             this.k_tluszcze.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_tluszcze.Name = "k_tluszcze";
             this.k_tluszcze.Size = new System.Drawing.Size(100, 20);
@@ -8492,7 +8764,7 @@
             this.label192.BackColor = System.Drawing.Color.Transparent;
             this.label192.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label192.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label192.Location = new System.Drawing.Point(222, 263);
+            this.label192.Location = new System.Drawing.Point(222, 322);
             this.label192.MinimumSize = new System.Drawing.Size(100, 20);
             this.label192.Name = "label192";
             this.label192.Size = new System.Drawing.Size(100, 20);
@@ -8506,7 +8778,7 @@
             this.k_bialko_procent.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko_procent.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.k_bialko_procent.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.k_bialko_procent.Location = new System.Drawing.Point(122, 403);
+            this.k_bialko_procent.Location = new System.Drawing.Point(122, 462);
             this.k_bialko_procent.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_bialko_procent.Name = "k_bialko_procent";
             this.k_bialko_procent.Size = new System.Drawing.Size(100, 20);
@@ -8520,7 +8792,7 @@
             this.k_bialko.BackColor = System.Drawing.Color.Transparent;
             this.k_bialko.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_bialko.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_bialko.Location = new System.Drawing.Point(122, 283);
+            this.k_bialko.Location = new System.Drawing.Point(122, 342);
             this.k_bialko.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_bialko.Name = "k_bialko";
             this.k_bialko.Size = new System.Drawing.Size(100, 20);
@@ -8534,7 +8806,7 @@
             this.label195.BackColor = System.Drawing.Color.Transparent;
             this.label195.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.label195.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label195.Location = new System.Drawing.Point(122, 263);
+            this.label195.Location = new System.Drawing.Point(122, 322);
             this.label195.MinimumSize = new System.Drawing.Size(100, 20);
             this.label195.Name = "label195";
             this.label195.Size = new System.Drawing.Size(100, 20);
@@ -8548,7 +8820,7 @@
             this.k_energia.BackColor = System.Drawing.Color.Transparent;
             this.k_energia.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.k_energia.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.k_energia.Location = new System.Drawing.Point(22, 283);
+            this.k_energia.Location = new System.Drawing.Point(22, 342);
             this.k_energia.MinimumSize = new System.Drawing.Size(100, 20);
             this.k_energia.Name = "k_energia";
             this.k_energia.Size = new System.Drawing.Size(100, 20);
@@ -8562,7 +8834,7 @@
             this.label197.BackColor = System.Drawing.Color.Transparent;
             this.label197.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label197.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label197.Location = new System.Drawing.Point(22, 263);
+            this.label197.Location = new System.Drawing.Point(22, 322);
             this.label197.MinimumSize = new System.Drawing.Size(100, 20);
             this.label197.Name = "label197";
             this.label197.Size = new System.Drawing.Size(100, 20);
@@ -8575,7 +8847,8 @@
             this.label67.AutoSize = true;
             this.label67.BackColor = System.Drawing.Color.Transparent;
             this.label67.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label67.Location = new System.Drawing.Point(22, 95);
+            this.label67.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label67.Location = new System.Drawing.Point(25, 149);
             this.label67.Name = "label67";
             this.label67.Size = new System.Drawing.Size(49, 21);
             this.label67.TabIndex = 95;
@@ -8583,20 +8856,28 @@
             // 
             // k_dieta
             // 
+            this.k_dieta.BackColor = System.Drawing.Color.White;
+            this.k_dieta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.k_dieta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.k_dieta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.k_dieta.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.k_dieta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.k_dieta.FormattingEnabled = true;
-            this.k_dieta.Location = new System.Drawing.Point(24, 119);
+            this.k_dieta.ItemHeight = 40;
+            this.k_dieta.Location = new System.Drawing.Point(25, 174);
             this.k_dieta.Name = "k_dieta";
-            this.k_dieta.Size = new System.Drawing.Size(502, 29);
+            this.k_dieta.Size = new System.Drawing.Size(500, 46);
             this.k_dieta.TabIndex = 94;
+            this.k_dieta.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cb_dieta_DrawItem);
+            this.k_dieta.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cb_dieta_MeasureItem);
             // 
             // label75
             // 
             this.label75.AutoSize = true;
             this.label75.BackColor = System.Drawing.Color.Transparent;
             this.label75.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label75.Location = new System.Drawing.Point(22, 28);
+            this.label75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label75.Location = new System.Drawing.Point(25, 84);
             this.label75.Name = "label75";
             this.label75.Size = new System.Drawing.Size(60, 21);
             this.label75.TabIndex = 91;
@@ -8604,19 +8885,24 @@
             // 
             // k_miasto
             // 
+            this.k_miasto.BackColor = System.Drawing.Color.White;
+            this.k_miasto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.k_miasto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.k_miasto.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.k_miasto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.k_miasto.FormattingEnabled = true;
-            this.k_miasto.Location = new System.Drawing.Point(24, 52);
+            this.k_miasto.Location = new System.Drawing.Point(25, 109);
             this.k_miasto.Name = "k_miasto";
-            this.k_miasto.Size = new System.Drawing.Size(502, 29);
+            this.k_miasto.Size = new System.Drawing.Size(500, 29);
             this.k_miasto.TabIndex = 90;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker3.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker3.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dateTimePicker3.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dateTimePicker3.Location = new System.Drawing.Point(307, 190);
+            this.dateTimePicker3.Location = new System.Drawing.Point(308, 250);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(192, 29);
             this.dateTimePicker3.TabIndex = 88;
@@ -8626,7 +8912,8 @@
             this.label77.AutoSize = true;
             this.label77.BackColor = System.Drawing.Color.Transparent;
             this.label77.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label77.Location = new System.Drawing.Point(383, 168);
+            this.label77.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label77.Location = new System.Drawing.Point(384, 228);
             this.label77.Name = "label77";
             this.label77.Size = new System.Drawing.Size(34, 21);
             this.label77.TabIndex = 89;
@@ -8634,9 +8921,11 @@
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker4.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateTimePicker4.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.dateTimePicker4.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
             this.dateTimePicker4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dateTimePicker4.Location = new System.Drawing.Point(40, 190);
+            this.dateTimePicker4.Location = new System.Drawing.Point(41, 250);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(192, 29);
             this.dateTimePicker4.TabIndex = 86;
@@ -8646,7 +8935,8 @@
             this.label79.AutoSize = true;
             this.label79.BackColor = System.Drawing.Color.Transparent;
             this.label79.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label79.Location = new System.Drawing.Point(119, 166);
+            this.label79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(42)))));
+            this.label79.Location = new System.Drawing.Point(120, 226);
             this.label79.Name = "label79";
             this.label79.Size = new System.Drawing.Size(34, 21);
             this.label79.TabIndex = 87;
@@ -8657,7 +8947,7 @@
             this.pictureBox28.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox28.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox28.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox28.Image")));
-            this.pictureBox28.Location = new System.Drawing.Point(838, 28);
+            this.pictureBox28.Location = new System.Drawing.Point(875, 25);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(45, 45);
             this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -8665,14 +8955,26 @@
             this.pictureBox28.TabStop = false;
             this.pictureBox28.Click += new System.EventHandler(this.pictureBox28_Click);
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(82, 76);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 152;
+            this.pictureBox8.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(1404, 839);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1457, 839);
             this.Controls.Add(this.panel_kontrola);
             this.Controls.Add(this.panel_drukuj);
             this.Controls.Add(this.panel_receptura);
@@ -8755,6 +9057,9 @@
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_wstecz)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dieta_dodaj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieta_edytuj)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dieta_usun)).EndInit();
             this.panel_jadlospis.ResumeLayout(false);
             this.panel_jadlospis.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
@@ -8771,9 +9076,6 @@
             this.tabPage9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_ok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_edytuj)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dieta_usun)).EndInit();
             this.panel_jednostka.ResumeLayout(false);
             this.panel_jednostka.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -8785,6 +9087,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.jednostka_usun)).EndInit();
             this.panel_receptura.ResumeLayout(false);
             this.panel_receptura.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receptura_down)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receptura_del)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receptura_up)).EndInit();
@@ -8799,7 +9103,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.panel_drukuj.ResumeLayout(false);
             this.panel_drukuj.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -8819,9 +9122,14 @@
             this.panel_glowny.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel_kontrola.ResumeLayout(false);
             this.panel_kontrola.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -8954,9 +9262,6 @@
         private System.Windows.Forms.ListBox receptura_produkty;
         private System.Windows.Forms.ComboBox receptura_kategoria;
         private System.Windows.Forms.TextBox receptura_masa;
-        private System.Windows.Forms.Button receptura_produkt_dodaj;
-        private System.Windows.Forms.Label receptura_masa_label;
-        private System.Windows.Forms.Button receptura_dodaj_edytuj;
         private System.Windows.Forms.PictureBox receptura_down;
         private System.Windows.Forms.PictureBox receptura_del;
         private System.Windows.Forms.PictureBox receptura_up;
@@ -8977,7 +9282,6 @@
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.PictureBox pictureBox25;
-        private System.Windows.Forms.DateTimePicker ja;
         private System.Windows.Forms.Label label87;
         private System.Windows.Forms.Label label88;
         private System.Windows.Forms.ComboBox jadlospis_dieta;
@@ -8985,19 +9289,14 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label91;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label92;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label93;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label94;
         private System.Windows.Forms.TabPage tabPage10;
         private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label95;
         private System.Windows.Forms.ComboBox jadlospis_miasto;
         private System.Windows.Forms.ComboBox dieta_miasto;
         private System.Windows.Forms.Label label90;
@@ -9016,7 +9315,6 @@
         private System.Windows.Forms.Label drukuj_do_label;
         private System.Windows.Forms.DateTimePicker drukuj_od;
         private System.Windows.Forms.Label drukuj_od_label;
-        private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.Label drukuj_rodzaj_label;
         private System.Windows.Forms.ComboBox drukuj_rodzaj;
@@ -9025,13 +9323,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cb_miasto;
         private System.Windows.Forms.TabControl tc_posilki;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label procent_sniadanie;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView lv_sniadanie;
         private System.Windows.Forms.ColumnHeader c_nazwa;
         private System.Windows.Forms.ColumnHeader c_masa;
@@ -9044,21 +9340,15 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label procent_IIsniadanie;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label procent_obiad;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label procent_podwieczorek;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label procent_kolacja;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_masa;
-        private System.Windows.Forms.Button btn_dodaj;
         private System.Windows.Forms.TextBox tb_masa;
         private System.Windows.Forms.Label lbl_data;
         private System.Windows.Forms.ComboBox cb_dieta;
@@ -9505,6 +9795,13 @@
         private System.Windows.Forms.PictureBox i_de;
         private System.Windows.Forms.Label t_de;
         private System.Windows.Forms.Label generowanie_status;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.DateTimePicker ja;
+        private System.Windows.Forms.Panel panel1;
+        private PictureBox pictureBox8;
     }
 }
 
