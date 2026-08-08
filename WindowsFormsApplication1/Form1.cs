@@ -5318,40 +5318,93 @@
 
         private void pictureBox22_Click(object sender, EventArgs e)
         {
+            string miasto = drukuj_combo.SelectedItem.ToString();
             switch (drukuj_rodzaj.SelectedItem.ToString())
             {
                 case "Szablon":
-                    bool success = Printer.Dekadowka(drukuj_combo.SelectedItem.ToString(), drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
-                    if(success) MessageBox.Show("Wygenerowano szablon");
+                    if (miasto == "Szpital")
+                    { 
+                        bool success = Printer.Dekadowka(miasto, "Lesko", drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
+                        bool success2 = Printer.Dekadowka(miasto, "Ustrzyki Dolne", drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
+                        if (success && success2) MessageBox.Show("Wygenerowano szablon");
+                    }
+                    else
+                    {
+                        bool success = Printer.Dekadowka(miasto, miasto, drukuj_od.Text, drukuj_do.Text, DAO.JadlospisDAO.SelectAll(drukuj_od.Text, drukuj_do.Text));
+                        if (success) MessageBox.Show("Wygenerowano szablon");
+                    }
                     break;
                 case "Jadłospis":
                     Jadlospis jadlospis = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
-                    Printer.Jadlospis(jadlospis);
-                    if (jadlospis.dieta.nazwa.Contains("dzieci"))
+
+                    if (miasto == "Szpital")
                     {
-                        Jadlospis jadlospis2 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
-                        DuplicateJadlospis(jadlospis2.DeepCopy(), 0.5);
-                        Jadlospis jadlospis3 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
-                        DuplicateJadlospis(jadlospis3.DeepCopy(), 0.7);
+                        Printer.Jadlospis(jadlospis, "Lesko");
+                        Printer.Jadlospis(jadlospis, "Ustrzyki Dolne");
+                        if (jadlospis.dieta.nazwa.Contains("dzieci"))
+                        {
+                            Jadlospis jadlospis2 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                            DuplicateJadlospis(jadlospis2.DeepCopy(), 0.5, "Lesko");
+                            DuplicateJadlospis(jadlospis2.DeepCopy(), 0.5, "Ustrzyki Dolne");
+                            Jadlospis jadlospis3 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                            DuplicateJadlospis(jadlospis3.DeepCopy(), 0.7, "Lesko");
+                            DuplicateJadlospis(jadlospis3.DeepCopy(), 0.7, "Ustrzyki Dolne");
+                        }
+                    }
+                    else
+                    {
+                        Printer.Jadlospis(jadlospis, miasto);
+                        if (jadlospis.dieta.nazwa.Contains("dzieci"))
+                        {
+                            Jadlospis jadlospis2 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                            DuplicateJadlospis(jadlospis2.DeepCopy(), 0.5, miasto);
+                            Jadlospis jadlospis3 = DAO.JadlospisDAO.SelectAll(drukuj_data.Text, drukuj_combo.SelectedItem.ToString(), drukuj_dieta.SelectedItem.ToString());
+                            DuplicateJadlospis(jadlospis3.DeepCopy(), 0.7, miasto);
+                        }
                     }
                     MessageBox.Show("Wygenerowano jadłospis");
                     break;
                 case "Jadłospisy w danym okresie":
                     DateTime dateFrom = Convert.ToDateTime(drukuj_od.Text);
                     DateTime dateTo = Convert.ToDateTime(drukuj_do.Text);
-                    for (DateTime data = dateFrom; data <= dateTo; data = data.AddDays(1))
+                    if (miasto == "Szpital")
                     {
-                        string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
-                        List<Jadlospis> jad = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
-                        for(int i = 0; i<jad.Count;i++)
+                        for (DateTime data = dateFrom; data <= dateTo; data = data.AddDays(1))
                         {
-                            Printer.Jadlospis(jad[i]);
-                            if (jad[i].dieta.nazwa.Contains("dzieci"))
+                            string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
+                            List<Jadlospis> jad = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                            for (int i = 0; i < jad.Count; i++)
                             {
-                                List<Jadlospis> jad2 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
-                                DuplicateJadlospis(jad2[i].DeepCopy(), 0.5);
-                                List<Jadlospis> jad3 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
-                                DuplicateJadlospis(jad3[i].DeepCopy(), 0.7);
+                                Printer.Jadlospis(jad[i], "Lesko");
+                                Printer.Jadlospis(jad[i], "Ustrzyki Dolne");
+                                if (jad[i].dieta.nazwa.Contains("dzieci"))
+                                {
+                                    List<Jadlospis> jad2 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                                    DuplicateJadlospis(jad2[i].DeepCopy(), 0.5, "Lesko");
+                                    DuplicateJadlospis(jad2[i].DeepCopy(), 0.5, "Ustrzyki Dolne");
+                                    List<Jadlospis> jad3 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                                    DuplicateJadlospis(jad3[i].DeepCopy(), 0.7, "Lesko");
+                                    DuplicateJadlospis(jad2[i].DeepCopy(), 0.7, "Ustrzyki Dolne");
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (DateTime data = dateFrom; data <= dateTo; data = data.AddDays(1))
+                        {
+                            string dt = (data.Day + " " + GetMonthForDate(data.Month) + " " + data.Year).ToString();
+                            List<Jadlospis> jad = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                            for (int i = 0; i < jad.Count; i++)
+                            {
+                                Printer.Jadlospis(jad[i], miasto);
+                                if (jad[i].dieta.nazwa.Contains("dzieci"))
+                                {
+                                    List<Jadlospis> jad2 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                                    DuplicateJadlospis(jad2[i].DeepCopy(), 0.5, miasto);
+                                    List<Jadlospis> jad3 = DAO.JadlospisDAO.Select(dt, drukuj_combo.SelectedItem.ToString());
+                                    DuplicateJadlospis(jad3[i].DeepCopy(), 0.7, miasto);
+                                }
                             }
                         }
                     }
@@ -5377,10 +5430,9 @@
                     MessageBox.Show("Wygernerowano produkt");
                     break;
             }
-            //glownaClick();
         }
 
-        private void DuplicateJadlospis(Jadlospis j3, double percentage)
+        private void DuplicateJadlospis(Jadlospis j3, double percentage, string miasto)
         {
             j3.dieta.nazwa = j3.dieta.nazwa + $" {percentage*100}%";
 
@@ -5464,7 +5516,7 @@
             }
             j3.sklad_kolacja = String.Join("$", pr);
 
-            Printer.Jadlospis(j3);
+            Printer.Jadlospis(j3, miasto);
         }
 
         private void label29_Click(object sender, EventArgs e)
